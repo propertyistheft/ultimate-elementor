@@ -1,0 +1,16 @@
+<wpml-config>
+    <elementor-widgets>
+    	<widget name="uael-table">
+    		<fields>
+        		<field type="Table : Search Label" editor_type="LINE">search_text</field>
+    		</fields>
+    		<fields-in-item items_of="table_headings">
+       			<field type="Heading text" editor_type="LINE">heading_text</field>
+    		</fields-in-item>
+    		<fields-in-item items_of="table_content">
+        		<field type="Cell text" editor_type="LINE">cell_text</field>
+				<field type="Link" editor_type="LINE">url</field>
+    		</fields-in-item>
+    	</widget>
+    </elementor-widgets>
+</wpml-config>
