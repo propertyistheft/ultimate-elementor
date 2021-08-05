@@ -1544,4 +1544,20 @@ class UAEL_Helper {
 			return in_array( strtolower( $tag ), self::ALLOWED_HTML_WRAPPER_TAGS, true ) ? $tag : 'div';
 		}
 	}
+
+	/**
+	 * Output the ld+json schema markup.
+	 *
+	 * @since  1.33.1
+	 *
+	 * @param  array $schema_data Array to be converted to json markup.
+	 */
+	public static function print_json_schema( $schema_data ) {
+		$schema_output = '';
+		if ( ! empty( $schema_data ) && is_array( $schema_data ) ) {
+			$encoded_data   = wp_json_encode( $schema_data, self::is_script_debug() ? JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES : JSON_UNESCAPED_SLASHES );
+			$schema_output .= '<script type="application/ld+json">' . $encoded_data . '</script>';
+		}
+		echo $schema_output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	}
 }

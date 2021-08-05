@@ -118,6 +118,7 @@ class Video extends Common_Widget {
 		$this->register_video_lightbox();
 		$this->register_video_sticky();
 		$this->register_video_subscribe_bar();
+		$this->register_schema_controls();
 		$this->register_helpful_information();
 	}
 
@@ -1848,6 +1849,89 @@ class Video extends Common_Widget {
 	}
 
 	/**
+	 * Schema related controls.
+	 *
+	 * @since 1.33.1
+	 * @access protected
+	 */
+	protected function register_schema_controls() {
+		$this->start_controls_section(
+			'section_schema',
+			array(
+				'label' => __( 'Video Schema', 'uael' ),
+				'tab'   => Controls_Manager::TAB_CONTENT,
+			)
+		);
+
+		$this->add_control(
+			'schema_support',
+			array(
+				'label'     => __( 'Enable Schema Support', 'uael' ),
+				'type'      => Controls_Manager::SWITCHER,
+				'label_on'  => __( 'Yes', 'uael' ),
+				'label_off' => __( 'No', 'uael' ),
+				'default'   => 'no',
+			)
+		);
+
+		$this->add_control(
+			'schema_title',
+			array(
+				'label'       => __( 'Video Title', 'uael' ),
+				'label_block' => true,
+				'type'        => Controls_Manager::TEXT,
+				'default'     => __( 'Title of the video.', 'uael' ),
+				'condition'   => array(
+					'schema_support' => 'yes',
+				),
+			)
+		);
+
+		$this->add_control(
+			'schema_description',
+			array(
+				'label'     => __( 'Video Description', 'uael' ),
+				'type'      => Controls_Manager::TEXTAREA,
+				'rows'      => 10,
+				'default'   => __( 'Description of the video.', 'uael' ),
+				'condition' => array(
+					'schema_support' => 'yes',
+				),
+			)
+		);
+
+		$this->add_control(
+			'schema_thumbnail',
+			array(
+				'label'     => __( 'Video Thumbnail', 'uael' ),
+				'type'      => Controls_Manager::MEDIA,
+				'default'   => array(
+					'url' => Utils::get_placeholder_image_src(),
+				),
+				'condition' => array(
+					'schema_support'      => 'yes',
+					'show_image_overlay!' => 'yes',
+				),
+			)
+		);
+
+		$this->add_control(
+			'schema_upload_date',
+			array(
+				'label'       => __( 'Video Upload Date & Time', 'uael' ),
+				'type'        => Controls_Manager::DATE_TIME,
+				'placeholder' => __( 'yyyy-mm-dd', 'uael' ),
+				'default'     => gmdate( 'Y-m-d H:i' ),
+				'condition'   => array(
+					'schema_support' => 'yes',
+				),
+			)
+		);
+
+		$this->end_controls_section();
+	}
+
+	/**
 	 * Helpful Information.
 	 *
 	 * @since 1.3.2
@@ -2447,7 +2531,28 @@ class Video extends Common_Widget {
 	 */
 	protected function render() {
 
-		$settings = $this->get_settings_for_display();
+		$settings               = $this->get_settings_for_display();
+		$enable_schema          = $settings['schema_support'];
+		$content_schema_warning = false;
+		$is_editor              = \Elementor\Plugin::instance()->editor->is_edit_mode();
+		$is_custom_thumbnail    = 'yes' === $settings['show_image_overlay'] ? true : false;
+		$custom_thumbnail_url   = isset( $settings['image_overlay']['url'] ) ? $settings['image_overlay']['url'] : '';
+
+		if ( 'yes' === $enable_schema && ( ( '' === $settings['schema_title'] || '' === $settings['schema_description'] || ( ! $is_custom_thumbnail && '' === $settings['schema_thumbnail']['url'] ) || '' === $settings['schema_upload_date'] ) || ( $is_custom_thumbnail && '' === $custom_thumbnail_url ) ) ) {
+			$content_schema_warning = true;
+		}
+
+		if ( 'yes' === $enable_schema && true === $content_schema_warning && $is_editor ) {
+			?>
+			<div class="uael-builder-msg elementor-alert elementor-alert-warning">
+				<?php if ( $is_custom_thumbnail && '' === $custom_thumbnail_url ) { ?>
+					<span class="elementor-alert-description"><?php esc_attr_e( 'Please set a custom thumbnail to display video schema properly.', 'uael' ); ?></span>
+				<?php } else { ?>
+					<span class="elementor-alert-description"><?php esc_attr_e( 'Some fields are empty under the video schema section. Please fill in all required fields.', 'uael' ); ?></span>
+				<?php } ?>
+			</div>
+			<?php
+		}
 
 		if ( '' === $settings['youtube_link'] && 'youtube' === $settings['video_type'] ) {
 			return '';

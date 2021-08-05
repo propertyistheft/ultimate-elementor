@@ -165,22 +165,34 @@ class Woo_Checkout extends Common_Widget {
 		$this->add_control(
 			'enable_back_to_cart_btn',
 			array(
-				'label'        => __( 'Enable Cart Button', 'uael' ),
+				'label'        => __( 'Cart Link', 'uael' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Yes', 'uael' ),
-				'label_off'    => __( 'No', 'uael' ),
+				'label_on'     => __( 'Show', 'uael' ),
+				'label_off'    => __( 'Hide', 'uael' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 			)
 		);
 
 		$this->add_control(
+			'enable_shop_link',
+			array(
+				'label'        => esc_html__( 'Shop Link', 'uael' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'label_on'     => __( 'Show', 'uael' ),
+				'label_off'    => __( 'Hide', 'uael' ),
+				'return_value' => 'yes',
+				'default'      => 'no',
+			)
+		);
+
+		$this->add_control(
 			'additional_info_box',
 			array(
-				'label'        => __( 'Show Additional Information Box', 'uael' ),
+				'label'        => __( 'Additional Information Box', 'uael' ),
 				'type'         => Controls_Manager::SWITCHER,
-				'label_on'     => __( 'Yes', 'uael' ),
-				'label_off'    => __( 'No', 'uael' ),
+				'label_on'     => __( 'Show', 'uael' ),
+				'label_off'    => __( 'Hide', 'uael' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
 			)
@@ -263,6 +275,24 @@ class Woo_Checkout extends Common_Widget {
 				),
 				'condition' => array(
 					'enable_back_to_cart_btn' => 'yes',
+				),
+			)
+		);
+
+		$this->add_control(
+			'shop_link_text',
+			array(
+				'label'     => __( 'Shop Link Text', 'uael' ),
+				'type'      => Controls_Manager::TEXT,
+				'dynamic'   => array(
+					'active' => true,
+				),
+				'default'   => __( 'Continue Shopping?', 'uael' ),
+				'dynamic'   => array(
+					'active' => true,
+				),
+				'condition' => array(
+					'enable_shop_link' => 'yes',
 				),
 			)
 		);
@@ -957,6 +987,18 @@ class Woo_Checkout extends Common_Widget {
 			)
 		);
 
+		$this->add_control(
+			'active_border_color',
+			array(
+				'label'     => __( 'Border Active Color', 'uael' ),
+				'type'      => Controls_Manager::COLOR,
+				'default'   => '',
+				'selectors' => array(
+					'{{WRAPPER}} .uael-woo-checkout form .input-text:focus, {{WRAPPER}} .uael-woo-checkout form select:focus, {{WRAPPER}} .uael-woo-checkout form .woocommerce-input-wrapper .select2-selection--single:focus' => 'border-color: {{VALUE}};',
+				),
+			)
+		);
+
 		$this->add_responsive_control(
 			'inputs_border_radius',
 			array(
@@ -1494,11 +1536,23 @@ class Woo_Checkout extends Common_Widget {
 		$this->add_control(
 			'order_review_cart_link',
 			array(
-				'label'     => __( 'Cart Link', 'uael' ),
-				'type'      => Controls_Manager::HEADING,
-				'separator' => 'before',
-				'condition' => array(
-					'enable_back_to_cart_btn' => 'yes',
+				'label'      => __( 'Cart/Shop Link', 'uael' ),
+				'type'       => Controls_Manager::HEADING,
+				'separator'  => 'before',
+				'conditions' => array(
+					'relation' => 'or',
+					'terms'    => array(
+						array(
+							'name'     => 'enable_back_to_cart_btn',
+							'operator' => '==',
+							'value'    => 'yes',
+						),
+						array(
+							'name'     => 'enable_shop_link',
+							'operator' => '==',
+							'value'    => 'yes',
+						),
+					),
 				),
 			)
 		);
@@ -1506,16 +1560,28 @@ class Woo_Checkout extends Common_Widget {
 		$this->add_control(
 			'order_review_cart_link_color_normal',
 			array(
-				'label'     => __( 'Color', 'uael' ),
-				'type'      => Controls_Manager::COLOR,
-				'global'    => array(
+				'label'      => __( 'Color', 'uael' ),
+				'type'       => Controls_Manager::COLOR,
+				'global'     => array(
 					'default' => Global_Colors::COLOR_ACCENT,
 				),
-				'selectors' => array(
-					'{{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-order-review .uael-order-review-table-footer .back-to-shop .back-to-shop-link' => 'color: {{VALUE}};',
+				'selectors'  => array(
+					'{{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-order-review .uael-order-review-table-footer .back-to-shop .back-to-shop-link, {{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-order-review .uael-order-review-table-footer .uae-shop-link .uae-back-to-shop-link' => 'color: {{VALUE}};',
 				),
-				'condition' => array(
-					'enable_back_to_cart_btn' => 'yes',
+				'conditions' => array(
+					'relation' => 'or',
+					'terms'    => array(
+						array(
+							'name'     => 'enable_back_to_cart_btn',
+							'operator' => '==',
+							'value'    => 'yes',
+						),
+						array(
+							'name'     => 'enable_shop_link',
+							'operator' => '==',
+							'value'    => 'yes',
+						),
+					),
 				),
 			)
 		);
@@ -1523,16 +1589,28 @@ class Woo_Checkout extends Common_Widget {
 		$this->add_control(
 			'order_review_cart_link_color_hover',
 			array(
-				'label'     => __( 'Hover Color', 'uael' ),
-				'type'      => Controls_Manager::COLOR,
-				'global'    => array(
+				'label'      => __( 'Hover Color', 'uael' ),
+				'type'       => Controls_Manager::COLOR,
+				'global'     => array(
 					'default' => Global_Colors::COLOR_ACCENT,
 				),
-				'selectors' => array(
-					'{{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-order-review .uael-order-review-table-footer .back-to-shop .back-to-shop-link:hover' => 'color: {{VALUE}};',
+				'selectors'  => array(
+					'{{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-order-review .uael-order-review-table-footer .back-to-shop .back-to-shop-link:hover,{{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-order-review .uael-order-review-table-footer .uae-shop-link .uae-back-to-shop-link:hover' => 'color: {{VALUE}};',
 				),
-				'condition' => array(
-					'enable_back_to_cart_btn' => 'yes',
+				'conditions' => array(
+					'relation' => 'or',
+					'terms'    => array(
+						array(
+							'name'     => 'enable_back_to_cart_btn',
+							'operator' => '==',
+							'value'    => 'yes',
+						),
+						array(
+							'name'     => 'enable_shop_link',
+							'operator' => '==',
+							'value'    => 'yes',
+						),
+					),
 				),
 			)
 		);

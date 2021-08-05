@@ -1630,7 +1630,7 @@ class GfStyler extends Common_Widget {
 						),
 					),
 					'selectors'  => array(
-						'{{WRAPPER}} .uael-gf-form-desc, {{WRAPPER}} .uael-gf-style .gform_description' => 'margin-bottom: {{SIZE}}{{UNIT}};',
+						'{{WRAPPER}} .uael-gf-form-desc, {{WRAPPER}} .uael-gf-style .gform_heading' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 					),
 					'condition'  => array(
 						'form_title_option!' => 'none',

@@ -382,16 +382,26 @@ trait Woo_Checkout_Template {
 				</ul>
 
 				<div class="uael-order-review-table-footer">
+					<div class="uae-shop-main-div">
 					<?php
 					if ( 'yes' === $setting['enable_back_to_cart_btn'] ) {
 						?>
-						<div class="back-to-shop">
-							<a class="back-to-shop-link" href="<?php echo esc_url( apply_filters( 'woocommerce_return_to_shop_redirect', wc_get_page_permalink( 'cart' ) ) ); ?>">
-								<i class="fas fa-long-arrow-alt-left"></i>
+							<div class="back-to-shop">
+								<a class="back-to-shop-link" href="<?php echo esc_url( apply_filters( 'woocommerce_return_to_shop_redirect', wc_get_page_permalink( 'cart' ) ) ); ?>">
+									<i class="fas fa-long-arrow-alt-left"></i>
 								<?php echo esc_html( $setting['labels_back_to_cart'] ); ?>
-							</a>
-						</div>
-					<?php } ?>
+								</a>
+							</div>
+						<?php } ?>
+						<?php if ( 'yes' === $setting['enable_shop_link'] ) { ?>
+							<div class="uae-shop-link">
+								<a class="uae-back-to-shop-link" href="<?php echo esc_url( apply_filters( 'woocommerce_return_to_shop_redirect', wc_get_page_permalink( 'shop' ) ) ); ?>">
+									<?php echo esc_html( $setting['shop_link_text'] ); ?>
+									<i class="fas fa-long-arrow-alt-right"></i>
+								</a>
+							</div>
+						<?php } ?>
+					</div>
 
 					<div class="footer-content">
 						<div class="cart-subtotal">

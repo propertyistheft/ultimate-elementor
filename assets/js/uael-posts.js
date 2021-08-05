@@ -157,10 +157,11 @@
 				str_text = str_text.substring( def_filter.length, str_text.length );
 				$scope.find( '.uael-filters-dropdown-button' ).text( str_text );
 
-				count = 1;
-
-				_uaelPostAjax( $scope, $this );
-			}
+					count = 1;
+				}
+				if ( 13 === e.keyCode ) {
+					_uaelPostAjax( $scope, $this );
+				}
 
 		});
 

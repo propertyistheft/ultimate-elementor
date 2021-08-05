@@ -67,6 +67,12 @@
 				map_options.gestureHandling = 'none';
 			}
 
+			if( typeof map_options.zoom_mobile !== 'undefined' && window.matchMedia( "( max-width: 768px )" ).matches ){
+				map_options.zoom = map_options.zoom_mobile;
+			}else if( typeof map_options.zoom_tablet !== 'undefined' && window.matchMedia( "( max-width: 1024px )" ).matches ){
+				map_options.zoom = map_options.zoom_tablet;
+			}
+
 			var map = new google.maps.Map( $scope.find( '.uael-google-map' )[0], map_options );
 			var infowindow = new google.maps.InfoWindow();
 

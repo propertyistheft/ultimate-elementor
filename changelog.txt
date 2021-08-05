@@ -1,3 +1,21 @@
+Version 1.33.1 - Thursday, 5th August 2021
+- Improvement: Added WPML translation support for all widgets through wpml-config.xml file.
+- Improvement: Display Conditions - Added request parameter support.
+- Improvement: Google Map - Added 'uael_map_options' filter to pass responsive zoom options.
+- Improvement: Navigation Menu - Added label support to the menu icon.
+- Improvement: Navigation Menu - Added 'SiteNavigationElement' schema support.
+- Improvement: Video - Added video schema support.
+- Improvement: Woo - Checkout - Added active border color support to the input fields.
+- Improvement: Woo - Checkout - Added shop link support.
+- Fix: Gravity Forms Styler - Form description bottom spacing not working with Gravity Forms version 2.5 and above.
+- Fix: Image Gallery - Lightbox images not traversing according to the selected filterable tab.
+- Fix: Posts - Fixed filterable tabs opening on Tab key instead of Enter key.
+- Fix: Posts - Image ratio not working properly if equal height option is ON with carousel layout.
+- Fix: Social Share - Social icons alignment not working.
+- Fix: Woo - Products - Grid layout breaks on Kadence theme.
+- Fix: Woo - Categories - Grid and carousel layout breaks on Kadence theme.
+- Fix: Woo - Checkout - One and Two-column layout issue with Hello Elementor theme due to an additional column.
+
 Version 1.33.0 - Wednesday, 21st July 2021
 - New: Advanced Heading - Added preset designs.
 - New: Business Hours - Added preset designs.

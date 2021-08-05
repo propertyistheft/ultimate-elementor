@@ -459,6 +459,19 @@ class Nav_Menu extends Common_Widget {
 			);
 		}
 
+		$this->add_control(
+			'schema_support',
+			array(
+				'label'        => __( 'Enable Schema Support', 'uael' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'label_on'     => __( 'Yes', 'uael' ),
+				'label_off'    => __( 'No', 'uael' ),
+				'return_value' => 'yes',
+				'default'      => 'no',
+				'render_type'  => 'template',
+			)
+		);
+
 		$this->end_controls_section();
 
 			$this->start_controls_section(
@@ -768,6 +781,74 @@ class Nav_Menu extends Common_Widget {
 					'dropdown!' => 'none',
 				),
 				'render_type'  => 'template',
+			)
+		);
+
+		$this->add_control(
+			'toggle_layout_heading',
+			array(
+				'label'     => __( 'Toggle Button', 'uael' ),
+				'type'      => Controls_Manager::HEADING,
+				'separator' => 'before',
+				'condition' => array(
+					'dropdown!' => 'none',
+				),
+			)
+		);
+
+		$this->add_control(
+			'toggle_label_show',
+			array(
+				'label'        => __( 'Show Label', 'uael' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'label_on'     => __( 'Yes', 'uael' ),
+				'label_off'    => __( 'No', 'uael' ),
+				'return_value' => 'yes',
+				'default'      => 'no',
+				'render_type'  => 'template',
+				'prefix_class' => 'uael-nav-menu-toggle-label-',
+				'condition'    => array(
+					'dropdown!' => 'none',
+				),
+			)
+		);
+
+		$this->add_control(
+			'toggle_label_text',
+			array(
+				'label'       => __( 'Label Text', 'uael' ),
+				'type'        => Controls_Manager::TEXT,
+				'default'     => __( 'Menu', 'uael' ),
+				'placeholder' => __( 'Type your label text', 'uael' ),
+				'condition'   => array(
+					'toggle_label_show' => 'yes',
+					'dropdown!'         => 'none',
+				),
+			)
+		);
+
+		$this->add_control(
+			'toggle_label_align',
+			array(
+				'label'                => __( 'Label Position', 'uael' ),
+				'type'                 => Controls_Manager::SELECT,
+				'options'              => array(
+					'left'  => __( 'Before Icon', 'uael' ),
+					'right' => __( 'After Icon', 'uael' ),
+				),
+				'default'              => 'right',
+				'prefix_class'         => 'uael-nav-menu-label-align-',
+				'selectors_dictionary' => array(
+					'left'  => 'flex-direction: row-reverse',
+					'right' => 'flex-direction: row',
+				),
+				'selectors'            => array(
+					'{{WRAPPER}}.uael-nav-menu-toggle-label-yes .uael-nav-menu__toggle' => '{{VALUE}}',
+				),
+				'condition'            => array(
+					'toggle_label_show' => 'yes',
+					'dropdown!'         => 'none',
+				),
 			)
 		);
 
@@ -1867,6 +1948,77 @@ class Nav_Menu extends Common_Widget {
 			)
 		);
 
+		$this->add_control(
+			'toggle_styles_heading',
+			array(
+				'label'     => __( 'Label', 'uael' ),
+				'type'      => Controls_Manager::HEADING,
+				'separator' => 'before',
+				'condition' => array(
+					'toggle_label_show' => 'yes',
+				),
+			)
+		);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			array(
+				'name'      => 'toggle_label_typography',
+				'label'     => __( 'Typography', 'uael' ),
+				'selector'  => '{{WRAPPER}} .uael-nav-menu__toggle .uael-nav-menu-label',
+				'condition' => array(
+					'toggle_label_show' => 'yes',
+				),
+			)
+		);
+
+		$this->add_control(
+			'toggle_label_color',
+			array(
+				'label'     => __( 'Text Color', 'uael' ),
+				'type'      => Controls_Manager::COLOR,
+				'global'    => array(
+					'default' => Global_Colors::COLOR_TEXT,
+				),
+				'selectors' => array(
+					'{{WRAPPER}} .uael-nav-menu__toggle .uael-nav-menu-label' => 'color: {{VALUE}}',
+				),
+				'condition' => array(
+					'toggle_label_show' => 'yes',
+				),
+			)
+		);
+
+		$this->add_control(
+			'toggle_label_spacing',
+			array(
+				'label'      => __( 'Spacing', 'uael' ),
+				'type'       => Controls_Manager::SLIDER,
+				'size_units' => array( 'px', '%' ),
+				'range'      => array(
+					'px' => array(
+						'min' => 0,
+						'max' => 100,
+					),
+					'%'  => array(
+						'min' => 0,
+						'max' => 100,
+					),
+				),
+				'default'    => array(
+					'unit' => 'px',
+					'size' => 10,
+				),
+				'selectors'  => array(
+					'{{WRAPPER}}.uael-nav-menu-label-align-left .uael-nav-menu__toggle .uael-nav-menu-label' => 'margin-right: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}}.uael-nav-menu-label-align-right .uael-nav-menu__toggle .uael-nav-menu-label' => 'margin-left: {{SIZE}}{{UNIT}};',
+				),
+				'condition'  => array(
+					'toggle_label_show' => 'yes',
+				),
+			)
+		);
+
 		$this->end_controls_section();
 	}
 
@@ -1982,6 +2134,13 @@ class Nav_Menu extends Common_Widget {
 					}
 				}
 
+				if ( 'yes' === $settings['schema_support'] ) {
+
+					$this->add_render_attribute( $repeater_link, 'itemprop', 'url' );
+					$this->add_render_attribute( 'menu-sub-item' . $item['_id'], 'itemprop', 'name' );
+					$this->add_render_attribute( 'menu-item' . $item['_id'], 'itemprop', 'name' );
+				}
+
 				if ( 'item_submenu' === $item['item_type'] ) {
 					if ( false === $is_child ) {
 						$output .= "<ul class='sub-menu parent-do-not-have-template'>";
@@ -2075,6 +2234,19 @@ class Nav_Menu extends Common_Widget {
 	}
 
 	/**
+	 * Add itemprop for Navigation Schema.
+	 *
+	 * @since 1.33.1
+	 * @param string $atts link attributes.
+	 * @access protected
+	 */
+	public function handle_link_attrs( $atts ) {
+
+		$atts .= ' itemprop="url"';
+		return $atts;
+	}
+
+	/**
 	 * Get the menu and close icon HTML.
 	 *
 	 * @since 1.25.2
@@ -2112,6 +2284,18 @@ class Nav_Menu extends Common_Widget {
 	}
 
 	/**
+	 * Add itemprop for Navigation Schema.
+	 *
+	 * @since 1.33.1
+	 * @param string $atts link attributes.
+	 * @access public
+	 */
+	public function handle_li_atts( $atts ) {
+		$atts .= ' itemprop="name"';
+		return $atts;
+	}
+
+	/**
 	 * Render Nav Menu output on the frontend.
 	 *
 	 * Written in PHP and used to generate the final HTML.
@@ -2125,6 +2309,14 @@ class Nav_Menu extends Common_Widget {
 		$menu_close_icons = array();
 		$menu_close_icons = $this->get_menu_close_icon( $settings );
 
+		if ( 'yes' === $settings['schema_support'] ) {
+
+			$this->add_render_attribute( 'uael-nav-menu', 'itemscope', 'itemscope' );
+
+			$this->add_render_attribute( 'uael-nav-menu', 'itemtype', 'http://schema.org/SiteNavigationElement' );
+
+		}
+
 		if ( 'wordpress_menu' === $settings['menu_type'] ) {
 			$args = array(
 				'echo'        => false,
@@ -2135,6 +2327,12 @@ class Nav_Menu extends Common_Widget {
 				'container'   => '',
 				'walker'      => new Menu_Walker(),
 			);
+
+			if ( 'yes' === $settings['schema_support'] ) {
+
+				add_filter( 'uael_nav_menu_attrs', array( $this, 'handle_link_attrs' ) );
+				add_filter( 'nav_menu_values', array( $this, 'handle_li_atts' ) );
+			}
 
 			$menu_html = wp_nav_menu( $args );
 		}
@@ -2150,6 +2348,9 @@ class Nav_Menu extends Common_Widget {
 					<div class="uael-nav-menu-icon">
 						<?php echo isset( $menu_close_icons[0] ) ? $menu_close_icons[0] : ''; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 					</div>
+					<?php if ( 'yes' === $settings['toggle_label_show'] ) { ?>
+						<span class="uael-nav-menu-label"><?php echo esc_html( $settings['toggle_label_text'] ); ?></span>
+					<?php } ?>
 				</div>
 		<div <?php echo wp_kses_post( $this->get_render_attribute_string( 'uael-flyout' ) ); ?> >
 			<div class="uael-flyout-overlay elementor-clickable"></div>
@@ -2228,6 +2429,9 @@ class Nav_Menu extends Common_Widget {
 					<div class="uael-nav-menu-icon">
 						<?php echo isset( $menu_close_icons[0] ) ? $menu_close_icons[0] : ''; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 					</div>
+					<?php if ( 'yes' === $settings['toggle_label_show'] ) { ?>
+						<span class="uael-nav-menu-label"><?php echo esc_html( $settings['toggle_label_text'] ); ?></span>
+					<?php } ?>
 				</div>
 			<?php if ( 'wordpress_menu' === $settings['menu_type'] ) { ?>
 				<nav <?php echo wp_kses_post( $this->get_render_attribute_string( 'uael-nav-menu' ) ); ?>><?php echo $menu_html; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></nav>

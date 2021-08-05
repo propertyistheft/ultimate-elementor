@@ -8,7 +8,7 @@
 	var id = window.location.hash.substring( 1 );
 	var pattern = new RegExp( "^[\\w\\-]+$" );
 	var sanitize_input = pattern.test( id );
-	
+
 	/**
 	 * Function for Before After Slider animation.
 	 *
@@ -49,24 +49,24 @@
 			} else {
 				gfSelectField.wrap( "<span class='uael-gf-select-custom'></span>" );
 			}
-		});		
+		});
 
-		
+
 		if( $scope.hasClass( 'uael-gf-ajax-yes' ) ){
 			//AJAX form submission
 			jQuery( document ).on( 'gform_confirmation_loaded', function( event, formId ){
     		// code to be trigger when confirmation page is loaded
 				form_title.hide();
 				form_desc.hide();
-			});			
+			});
 		} else {
 			//Hide the forms title and description after submit.
 			if( confirmation_div.length > 0 ){
 				form_title.hide();
 				form_desc.hide();
 			} else {
-				form_title.show();	
-				form_desc.show();		
+				form_title.show();
+				form_desc.show();
 			}
 		}
 
@@ -74,14 +74,14 @@
 			gform.addAction( 'gform_input_change', function( elem, formId, fieldId ) {
 			    if( $scope.find( '.gfield_radio .gchoice_button' ).length && ! $scope.hasClass( 'uael-gf-check-default-yes' ) && 'radio' == $scope.find( elem ).attr( 'type' ) ){
 			    	if( $scope.find( elem ).parent().hasClass( 'uael-radio-active') ){
-						$scope.find( elem ).parent().removeClass( 'uael-radio-active' );		    		
+						$scope.find( elem ).parent().removeClass( 'uael-radio-active' );
 			    	} else {
-						$scope.find( '.gchoice_button' ).removeClass( 'uael-radio-active' );	    		
-						$scope.find( elem ).parent().addClass( 'uael-radio-active' );		    		
+						$scope.find( '.gchoice_button' ).removeClass( 'uael-radio-active' );
+						$scope.find( elem ).parent().addClass( 'uael-radio-active' );
 			    	}
 			    }
-			}, 10, 3 );			
-		}		
+			}, 10, 3 );
+		}
 	}
 
 	/**
@@ -89,7 +89,7 @@
 	 *
 	 */
 	var WidgetUAELCafStylerHandler = function( $scope, $ ) {
-		
+
 		if ( 'undefined' == typeof $scope )
 			return;
 
@@ -193,11 +193,11 @@
 					pause: pause,
 					mousePause: mousepause,
 			});
-		} else {	
-					
-			UAELEffects._animateHeadline( 
+		} else {
+
+			UAELEffects._animateHeadline(
 				$( nodeclass ).find( '.uael-slide-main_ul' ), $this
-			);		
+			);
 		}
 	}
 
@@ -209,8 +209,8 @@
 
 		if ( 'undefined' == typeof $scope ) {
 			return;
-		}	
-		
+		}
+
 		var id 				= $scope.data( 'id' );
 		var $this 			= $scope.find( '.uael-hotspot-container' );
 		var side			= $this.data( 'side' );
@@ -226,7 +226,7 @@
 		var repeat 			= $this.data( 'repeat' );
 		var overlay 		= $this.data( 'overlay' );
 
-		var length 			= $this.data( 'length' );		
+		var length 			= $this.data( 'length' );
 		var $tour_item 		= $scope.find( '.uael-hotspot-main-' + id );
 		var $item_num 		= $tour_item.data( 'uaeltour' );
 		var tour_interval 	= $this.data( 'tourinterval' );
@@ -243,7 +243,7 @@
 			passtrigger = trigger;
 		}
 		clearInterval( hotspotInterval[ id ] );
-		
+
 		// Declare & pass values to Tooltipster js function.
 		function tooltipsterCall( selector, triggerValue ) {
 			$( selector ).tooltipster({
@@ -390,7 +390,7 @@
 			$( '.uael-tour-end-' + id ).off('click.endtour').on( 'click.endtour', function(e) {
 				clearInterval( hotspotInterval[ id ] );
 				e.preventDefault();
-				
+
 				$('.uael-hotspot-main-' + id + '.open').tooltipster( 'close' );
 				$('.uael-hotspot-main-' + id + '.open').removeClass( 'open' );
 
@@ -444,12 +444,12 @@
 					if( 'yes' == autoplay ) {
 						var overlay_id 	= $scope.find( '.uael-hotspot-overlay' );
 						var button_id 	= $scope.find( '.uael-overlay-button' );
-						
+
 						if( ! isElEditMode ) {
 							$( button_id ).off().on( 'click', function(e) {
 								$( overlay_id ).hide();
 								tourPlay();
-							});	
+							});
 						}
 					}
 				} else if( 'auto' == action_autoplay && 'yes' == autoplay ) {
@@ -476,7 +476,7 @@
 
 			var overlay_id 	= $scope.find( '.uael-hotspot-overlay' );
 			var button_id 	= $scope.find( '.uael-overlay-button' );
-			buttonOverlay();	
+			buttonOverlay();
 		} else {
 			clearInterval( hotspotInterval[ id ] );
 		}
@@ -491,8 +491,8 @@
 
 		if ( 'undefined' == typeof $scope ) {
 			return;
-		}	
-		
+		}
+
 		var id 				= $scope.data( 'id' );
 		var $this 			= $scope.find( '.uael-price-table-features-list' );
 		var side			= $this.data( 'side' );
@@ -504,7 +504,7 @@
 		var anim_duration 	= $this.data( 'animduration' );
 		var uaelclass		= 'uael-price-table-wrap-' + id;
 		var zindex			= $this.data( 'zindex' );
-		var length 			= $this.data( 'length' );		
+		var length 			= $this.data( 'length' );
 		var tooltip_maxwidth	= $this.data( 'tooltip-maxwidth' );
 		var tooltip_minwidth	= $this.data( 'tooltip-minwidth' );
 		var responsive = $this.data( 'tooltip-responsive' );
@@ -512,7 +512,7 @@
 
 		uaelclass += ' uael-price-table-tooltip uael-features-tooltip-hide-' + responsive;
 		$this.addClass( 'uael-features-tooltip-hide-' + responsive );
-		
+
 		// Declare & pass values to Tooltipster js function.
 		function tableTooltipsterCall( selector, triggerValue ) {
 			$( selector ).tooltipster({
@@ -607,7 +607,7 @@
 				}
 			);
 		}
-		
+
 	};
 
 	/**
@@ -832,9 +832,9 @@
 						window.addEventListener("resize", uaelTimelineFunc);
 						window.addEventListener("scroll", uaelTimelineFunc);
 			        }
-				}); 
+				});
 			});
-	
+
 		}
 	};
 
@@ -877,15 +877,15 @@
 				break;
 		}
 		var rbs_switch      = $scope.find( current_class );
-		
+
 		if( '' !== id && sanitize_input ){
 			if ( id === 'content-1' || id === 'content-2' ) {
 				UAELContentToggle._openOnLink( $scope, rbs_switch );
-			}			
-		}		
-		
+			}
+		}
+
 		setTimeout( function(){
-			
+
 			if( rbs_switch.is( ':checked' ) ) {
 				rbs_section_1.hide();
 				rbs_section_2.show();
@@ -930,24 +930,24 @@
 			var main_btn        = $scope.find( ".uael-main-btn" );
 			var switch_type     = main_btn.attr( 'data-switch-type' );
 			var node          	= '.elementor-element-' + node_id;
-			var node_toggle     = '#uael-toggle-init' + node;			
+			var node_toggle     = '#uael-toggle-init' + node;
 
 			$( 'html, body' ).animate( {
 		        scrollTop: $( '#uael-toggle-init' ).find( '.uael-rbs-wrapper' ).offset().top
 		    }, 500 );
 
 			if( id === 'content-1' ) {
-				
+
 				$( node_toggle +' .uael-rbs-content-1' ).show();
 				$( node_toggle +' .uael-rbs-content-2' ).hide();
 				rbs_switch.prop( "checked", false );
 			} else {
-				
+
 				$( node_toggle +' .uael-rbs-content-2' ).show();
 				$( node_toggle +' .uael-rbs-content-1' ).hide();
 				rbs_switch.prop( "checked", true );
-			}			
-		},	
+			}
+		},
 	}
 
 	/**
@@ -1003,7 +1003,7 @@
 			if ( selector.find( '.uael-video__gallery-iframe' ).imagesLoaded( { background: true } ) )
 			{
 				selector.slick( slider_options );
-			} 
+			}
 		}
 
 		$( 'html' ).on( 'click', function() {
@@ -1032,8 +1032,8 @@
 				}
 			}
 
-			
-			
+
+
 			if ( filters.length > 0 ) {
 
 				var def_filter = filters.data( 'default' );
@@ -1094,7 +1094,7 @@
 				var str_vid_text = $scope.find( '.uael-filter__current' ).text();
 				str_vid_text = str_vid_text.substring( def_filter_length, str_vid_text.length );
 				$scope.find( '.uael-filters-dropdown-button' ).text( str_vid_text );
- 
+
 
 				selector.isotope( { filter: value } );
 			});
@@ -1133,17 +1133,50 @@
 		var lightbox_actions 	= [];
 		var fancybox_node_id 	= 'uael-fancybox-gallery-' + $scope.data( 'id' );
 		var lightbox_loop 		= img_gallery.data( 'lightbox-gallery-loop' );
-	
+		var default_filter;
+
+		if ( $scope.find( '.uael-masonry-filters' ).data( 'default' ) ) {
+			default_filter = $scope.find( '.uael-masonry-filters' ).data( 'default' );
+		} else {
+			default_filter = $scope.find( '.uael-img-gallery-wrap' ).data( 'filter-default' )
+		}
+
 		if( img_gallery.length > 0 ) {
 			lightbox_actions = JSON.parse( img_gallery.attr('data-lightbox_actions') );
 		}
 
-		$scope.find( '[data-fancybox="uael-gallery"]' ).fancybox({
-			buttons: lightbox_actions,
-			animationEffect: "fade",
-			baseClass: fancybox_node_id,
-			loop: lightbox_loop,
-		});
+		var fancyboxInit = {
+			initializeLightbox: function ( imgNode ) {
+				$scope.find( imgNode + ' [data-fancybox="uael-gallery"]' ).fancybox({
+					buttons: lightbox_actions,
+					animationEffect: "fade",
+					baseClass: fancybox_node_id,
+					loop: lightbox_loop,
+				});
+			}
+		}
+
+		if ( undefined !== default_filter ) {
+			if ( '' === default_filter || 'All' === default_filter ) {
+				fancyboxInit.initializeLightbox( '.uael-grid-item' );
+			} else {
+				fancyboxInit.initializeLightbox( '.uael-grid-item.' + default_filter.substr( 1 ) );
+			}
+		}
+
+		$scope.on(
+			'click',
+			'.uael-masonry-filter',
+			function (){
+				var $this  = $( this );
+				var filter = $this.attr( 'data-filter' );
+				if ( '*' === filter ) {
+					fancyboxInit.initializeLightbox( '.uael-grid-item' );
+				} else {
+					fancyboxInit.initializeLightbox( '.uael-grid-item.' + filter.substr( 1 ) );
+				}
+			}
+		);
 
 		if ( $justified_selector.length > 0 ) {
 			$justified_selector.imagesLoaded( function() {
@@ -1236,7 +1269,7 @@
 
 			var filters = $scope.find('.uael-masonry-filters');
 			var def_cat = '*';
-									
+
 			if( '' !== id && sanitize_input ) {
 				var select_filter = filters.find("[data-filter='" + '.' + id.toLowerCase() + "']");
 
@@ -1319,7 +1352,7 @@
 				$scope.find( '.uael-filters-dropdown-button' ).text( str_img_text );
 
 				if ( $justified_selector.length > 0 ) {
-					$justified_selector.justifiedGallery({ 
+					$justified_selector.justifiedGallery({
 						filter: filterValue,
 						rowHeight : row_height,
 					    lastRow : lastrow,
@@ -1353,7 +1386,7 @@
 
 			var iframe 		= $( "<iframe/>" );
 			var vurl 		= selector.data( 'src' );
-			
+
 	        if ( 0 == selector.find( 'iframe' ).length ) {
 
 				iframe.attr( 'src', vurl );
@@ -1385,11 +1418,11 @@
 
         		var headline = $( this );
         		var speed    = $widget_data.data( 'speed' );
-      
+
       			setTimeout( function()
-	    			{ 
-	    				UAELEffects._hideWord ( headline.find( '.uael-active-heading' ), $widget_data ); 
-	      			}, 
+	    			{
+	    				UAELEffects._hideWord ( headline.find( '.uael-active-heading' ), $widget_data );
+	      			},
 
       			speed );
 	    	});
@@ -1407,8 +1440,8 @@
 				var pause_time = $widget_data.data( 'pause_time' );
 
 				$word.parents( '.uael-slide-main_ul' ).animate(
-					{ width : '0px' }, 
-					clip_speed, function(){	
+					{ width : '0px' },
+					clip_speed, function(){
 						setTimeout( function(){
 
 							UAELEffects._switchWord( $word, nextWord );
@@ -1422,11 +1455,11 @@
 				UAELEffects._switchWord( $word, nextWord );
 
 				setTimeout( function()
-				   	{ 
-						UAELEffects._hideWord( nextWord, $widget_data ) 
-				   	}, 
-				speed );				
-			}		
+				   	{
+						UAELEffects._hideWord( nextWord, $widget_data )
+				   	},
+				speed );
+			}
 		},
 
 		_takeNext: function( $word ) {
@@ -1448,15 +1481,15 @@
 				var clip_speed = $widget_data.data( 'clip_speed' );
 				var pause_time = $widget_data.data( 'pause_time' );
 
-				$word.parents( '.uael-slide-main_ul' ).animate( 
-					{ 'width' : $word.width() + 3 }, 
-					clip_speed, 
-					function(){ 
+				$word.parents( '.uael-slide-main_ul' ).animate(
+					{ 'width' : $word.width() + 3 },
+					clip_speed,
+					function(){
 						setTimeout( function()
-							{ 
-								UAELEffects._hideWord( $word, $widget_data ) 
-							}, 
-						pause_time ); 
+							{
+								UAELEffects._hideWord( $word, $widget_data )
+							},
+						pause_time );
 					}
 				);
 			}
@@ -1506,7 +1539,7 @@
 		if( 'yes' == outer_wrap.data( 'vsticky' ) ) {
 
 			if( typeof elementorFrontend.waypoint !== 'undefined' ) {
-				var uael_waypoint = elementorFrontend.waypoint( 
+				var uael_waypoint = elementorFrontend.waypoint(
 					outer_wrap,
 					function ( direction ) {
 						if ( 'down' === direction ) {
@@ -1519,7 +1552,7 @@
 						}
 					},
 					{ offset: viewport + '%', triggerOnce: false }
-				); 
+				);
 			}
 
 			var close_button = $scope.find( '.uael-video-sticky-close' );
@@ -1550,7 +1583,7 @@
 	  		} else {
 	  			uael_waypoint[0].enable();
 	  		}
-	  		
+
 		}
 
 		function disableSticky( uael_waypoint ) {
@@ -1571,7 +1604,7 @@
 
 		$( document ).on( 'uael_after_sticky_applied', function( e, $scope ) {
 			var infobar = $scope.find( '.uael-video-sticky-infobar' );
-			
+
 			if( 0 !== infobar.length ) {
 				var infobar_height = infobar.outerHeight();
 
@@ -1579,7 +1612,7 @@
 		        	infobar_height = Math.ceil( infobar_height / 2 );
 		        	inner_wrap.css( 'top', 'calc( 50% - ' + infobar_height + 'px )' );
 				}
-				
+
 				if( $scope.hasClass( 'uael-video-sticky-bottom_left' ) || $scope.hasClass( 'uael-video-sticky-bottom_right' ) ) {
 					if( '' !== sticky_margin_bottom ) {
 			        	infobar_height = Math.ceil( infobar_height );
@@ -1608,7 +1641,7 @@
 		var form_wrapper = widget_wrapper.find( '.uael-form' );
 		var submit_button = $scope.find( '.uael-login-form-submit' );
 		var submit_text = submit_button.find( '.elementor-button-text' );
-		
+
 		var username = $scope.find( '.uael-login-form-username' );
 		var password = $scope.find( '.uael-login-form-password' );
 		var rememberme = $scope.find( '.uael-login-form-remember' );
@@ -1617,12 +1650,12 @@
 		var facebook_text = facebook_button.find('.uael-facebook-text');
 
 		var google_button = $scope.find( '.uaelGoogleContentWrapper' );
-		
+
 		var redirect_url =  $scope.find( '.uael-login-form-wrapper' ).data( 'redirect-url' );
 		var send_email = $scope.find( '.uael-login-form-social-wrapper' ).data( 'send-email' );
-		
+
 		var nonce = $scope.find('.uael-login-form-wrapper' ).data('nonce');
-		
+
 		var ajax_enable = submit_button.data( 'ajax-enable' );
 		var toggle_password = $scope.find('.toggle-password');
 
@@ -1738,7 +1771,7 @@
 					} else {
 						return false;
 					}
-				}				
+				}
 			}
 
 		});
@@ -1753,7 +1786,7 @@
 			var password_wrapper = $scope.find( '.uael-password-wrapper' );
 			var is_password_error = password_wrapper.next().hasClass( 'uael-register-field-message' );
 			var $is_error = form_field.next().hasClass( 'uael-register-field-message' );
-	
+
 				switch( field_type ) {
 					case 'password':
 						if( is_password_error ) {
@@ -1825,7 +1858,7 @@
 								form_wrapper.animate({
 										opacity: '0.45'
 								}, 500 ).addClass( 'uael-form-waiting' );
-				
+
 								if( ! facebook_text.hasClass( 'disabled' ) ) {
 										facebook_text.addClass( 'disabled' );
 										facebook_text.append( '<span class="uael-form-loader"></span>' );
@@ -1837,7 +1870,7 @@
 							form_wrapper.animate({
 								opacity: '1'
 							}, 100 ).removeClass( 'uael-form-waiting' );
-					
+
 							facebook_text.find( '.uael-form-loader' ).remove();
 							facebook_text.removeClass( 'disabled' );
 
@@ -1874,7 +1907,7 @@
 				    if ( d.getElementById( id ) ) {
 				    	return;
 				    }
-				    js = d.createElement( s ); 
+				    js = d.createElement( s );
 				    js.id = id;
 				    js.src = "//connect.facebook.net/en_US/sdk.js";
 				    fjs.parentNode.insertBefore( js, fjs );
@@ -1896,7 +1929,7 @@
 						client_id: client_id,
 						cookiepolicy: 'single_host_origin',
 					});
-					
+
 					auth2.attachClickHandler( google_scope_id, {},
 
 						function( googleUser ) {
@@ -1912,7 +1945,7 @@
 
 								var id_token = googleUser.getAuthResponse().id_token;
 								var google_text = google_button.find('.uael-google-text');
-								
+
 								$.ajax({
 									url: ajaxurl,
 									method: 'post',
@@ -1921,7 +1954,7 @@
 										nonce: nonce,
 										action: 'uael_login_form_google',
 										data: google_data,
-										id_token: id_token,	
+										id_token: id_token,
 									},
 									beforeSend: function () {
 										form_wrapper.animate({
@@ -1939,7 +1972,7 @@
 										form_wrapper.animate({
 											opacity: '1'
 										}, 100 ).removeClass( 'uael-form-waiting' );
-								
+
 										google_text.find( '.uael-form-loader' ).remove();
 										google_text.removeClass( 'disabled' );
 
@@ -1978,7 +2011,7 @@
 				function(e){
 					e.preventDefault();
 					$this = $(this);
-					uael_accordion_activate_deactivate($this);	
+					uael_accordion_activate_deactivate($this);
 				}
 			);
 			function uael_accordion_activate_deactivate($this) {
@@ -1996,7 +2029,7 @@
 					else if( 'accordion' == faq_layout ){
 						if( $this.hasClass('uael-title-active') ){
 							$this.removeClass( 'uael-title-active');
-							$this.next('.uael-accordion-content').slideUp( 'normal','swing',						
+							$this.next('.uael-accordion-content').slideUp( 'normal','swing',
 							    function(){
 						    		$(this).prev().removeClass('uael-title-active');
 									$this.attr('aria-expanded', 'false');
@@ -2017,7 +2050,7 @@
 						}
 				    return false;
 					}
-				}					
+				}
 	}
 
 	/**
@@ -2032,7 +2065,7 @@
 		$scope.find('select:not([multiple])').each(function() {
 			var	gfSelectField = $( this );
 			gfSelectField.wrap( "<span class='uael-ff-select-custom'></span>" );
-		});		
+		});
 	}
 
 	$( window ).on( 'elementor/frontend/init', function () {

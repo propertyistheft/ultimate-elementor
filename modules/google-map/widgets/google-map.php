@@ -810,6 +810,7 @@ class GoogleMap extends Common_Widget {
 		ob_start();
 
 		$map_options     = $this->get_map_options();
+		$map_options     = apply_filters( 'uael_map_options', $map_options );
 		$locations       = $this->get_locations();
 		$cluster_options = array();
 		$cluster_attrs   = apply_filters( 'uael_cluster_options', $cluster_options );
