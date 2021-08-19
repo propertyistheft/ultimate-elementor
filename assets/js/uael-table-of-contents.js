@@ -22,29 +22,26 @@
     //   headings: string with a comma-separated list of selectors to be used as headings, ordered
     //   by their relative hierarchy level
 
-
     OffSet = {
 
         _setoffset: function( lists ){
 
-                if (window.matchMedia("(max-width: 767px)").matches) {
+                if ( window.matchMedia("(max-width: 767px)").matches ) {
                     
                     if( undefined == lists.data( 'scroll-offset-mobile' ) ){
                         scroll_offset = lists.data( 'scroll-offset' );
                         return scroll_offset;
-                    }
-                    else{
+                    } else {
                         scroll_offset = lists.data( 'scroll-offset-mobile' );
                         return scroll_offset;
                     }
 
-                } else if ( window.matchMedia("(max-width: 976px)").matches  ) {
+                } else if ( window.matchMedia("(max-width: 976px)").matches ) {
 
                         if( undefined == lists.data( 'scroll-offset-tablet' ) ){
                             scroll_offset = lists.data( 'scroll-offset' );
                             return scroll_offset;
-                        }
-                        else{
+                        } else {
                             scroll_offset = lists.data( 'scroll-offset-tablet' );
                             return scroll_offset;
                         }
@@ -55,12 +52,11 @@
         },
 
         __scroll_to_top_offset: function( lists, scroll_to_top_offset ) {
-            if (window.matchMedia("(max-width: 767px)").matches) {
+            if ( window.matchMedia("(max-width: 767px)").matches ) {
                     
                 if( undefined == lists.data( 'scroll-to-top-offset-mobile' ) ){
                     return scroll_to_top_offset;
-                }
-                else{
+                } else {
                     scroll_to_top_offset = lists.data( 'scroll-to-top-offset-mobile' );
                     return scroll_to_top_offset;
                 }
@@ -69,19 +65,18 @@
 
                     if( undefined == lists.data( 'scroll-to-top-offset-tablet' ) ){
                         return scroll_to_top_offset;
-                    }
-                    else{
+                    } else {
                         scroll_to_top_offset = lists.data( 'scroll-to-top-offset-tablet' );
                         return scroll_to_top_offset;
                     }
-                } else {
-                    return scroll_to_top_offset;
+            } else {
+                return scroll_to_top_offset;
             } 
         }
     }
 
-    var toc = function (options) {
-        return this.each(function () {
+    var toc = function ( options ) {
+        return this.each( function () {
             var root = $(this),
                 data = root.data(),
                 thisOptions,
@@ -106,7 +101,6 @@
             $( thisOptions.content ).find( thisOptions.headings ).addClass( "uael-toc-text" );
 
             var exclude_parent = $( 'body' ).find( '.uae-toc-hide-heading' );
-            var exclude_ids = [];
             exclude_parent.each( function( i ) {
                 var $this = $( this );
                 if( $this.hasClass( 'uael-toc-text' ) ) {
@@ -195,9 +189,7 @@
         toc.call($("[data-toc]"));
     });
 
-    var scroll = true
-    var scroll_element = null
-    var isElEditMode = false;
+    var scroll_element = null;
 
     UAELTableOfContents = {
 
@@ -213,6 +205,27 @@
                 } else {
                     scroll_element.removeClass( "uael-toc__show-scroll" );
                 }
+            }
+        },
+
+        /**
+         * Show Hide toggle button
+         *
+         */
+         _toggleButton: function( separator, wrapper, toggle_content ) {
+            separator.toggle( 100 );
+            if ( wrapper.hasClass( 'content-show' ) ) {
+                toggle_content.slideUp( 350 );
+                wrapper.removeClass( 'content-show' );
+            } else {
+                toggle_content.slideDown( 350 );
+                wrapper.addClass( 'content-show' );
+            }
+
+            if( wrapper.hasClass( 'uael-toc-auto-collapse' ) ) {
+                wrapper.removeClass( 'uael-toc-auto-collapse' );
+            } else {
+                wrapper.toggleClass( 'uael-toc-hidden' );
             }
         }
 
@@ -235,6 +248,7 @@
         var scroll_offset = OffSet._setoffset( lists );
         var lists_scroll_to_top_offset = lists.data( 'scroll-to-top-offset' );
         var scroll_to_top_offset = OffSet.__scroll_to_top_offset( lists, lists_scroll_to_top_offset );
+        
         if( $body.length === 0 ) {
             $body = body_wrap.find( '.page-content' );
         }
@@ -252,24 +266,8 @@
         // Toggle content on Show/Hide button.
         toggle_button.on( 'click', function( e ) {
 
-            $this = $( this );
-
             if( 'yes' === is_collapsible ) {
-                separator.toggle( 100 );
-                if ( wrapper.hasClass( 'content-show' ) ) {
-                    toggle_content.slideUp( 350 );
-                    wrapper.removeClass( 'content-show' );
-                } else {
-                    toggle_content.slideDown( 350 );
-                    wrapper.addClass( 'content-show' );
-                }
-
-                if( wrapper.hasClass( 'uael-toc-auto-collapse' ) ) {
-                    wrapper.removeClass( 'uael-toc-auto-collapse' );
-                } else {
-                    wrapper.toggleClass( 'uael-toc-hidden' );
-                }
-
+                UAELTableOfContents._toggleButton( separator, wrapper, toggle_content );
             }
 
         });
@@ -318,10 +316,6 @@
     }
 
     $( window ).on( 'elementor/frontend/init', function () {
-
-        if ( elementorFrontend.isEditMode() ) {
-            isElEditMode = true;
-        }
 
         elementorFrontend.hooks.addAction( 'frontend/element_ready/uael-table-of-contents.default', WidgetUAELTableOfContents );
 

@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the Ultimate Addons for Elementor package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ultimate Addons for Elementor 1.33.1\n"
+"Project-Id-Version: Ultimate Addons for Elementor 1.33.2\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/ultimate-elementor\n"
-"POT-Creation-Date: 2021-08-05 05:34:21+00:00\n"
+"POT-Creation-Date: 2021-08-16 06:17:54+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -84,7 +84,8 @@ msgstr ""
 #: modules/caf-styler/widgets/caf-styler.php:945
 #: modules/cf-styler/widgets/cf-styler.php:885
 #: modules/countdown/widgets/countdown.php:525
-#: modules/google-map/widgets/google-map.php:240
+#: modules/google-map/widgets/google-map.php:102
+#: modules/google-map/widgets/google-map.php:265
 #: modules/headings/widgets/advanced-heading.php:255
 #: modules/hotspot/widgets/hotspot.php:924
 #: modules/image-gallery/widgets/image-gallery.php:624
@@ -469,7 +470,7 @@ msgstr ""
 #: classes/uael-config.php:452
 #: modules/image-gallery/widgets/image-gallery.php:706
 #: modules/social-share/widgets/social-share.php:194
-#: modules/social-share/widgets/social-share.php:544
+#: modules/social-share/widgets/social-share.php:545
 msgid "Social Share"
 msgstr ""
 
@@ -734,8 +735,8 @@ msgstr ""
 #: classes/uael-posts-helper.php:108
 #: modules/business-reviews/skins/skin-base.php:354
 #: modules/countdown/widgets/countdown.php:526
-#: modules/google-map/widgets/google-map.php:241
-#: modules/google-map/widgets/google-map.php:360
+#: modules/google-map/widgets/google-map.php:266
+#: modules/google-map/widgets/google-map.php:385
 #: modules/headings/widgets/advanced-heading.php:809
 #: modules/headings/widgets/dual-heading.php:691
 #: modules/image-gallery/widgets/image-gallery.php:362
@@ -748,7 +749,7 @@ msgstr ""
 #: modules/registration-form/widgets/registration-form.php:1095
 #: modules/registration-form/widgets/registration-form.php:2030
 #: modules/registration-form/widgets/registration-form.php:2120
-#: modules/social-share/widgets/social-share.php:517
+#: modules/social-share/widgets/social-share.php:518
 #: modules/team-member/widgets/team-member.php:1212
 #: modules/timeline/widgets/timeline.php:178
 #: modules/timeline/widgets/timeline.php:666
@@ -1469,8 +1470,8 @@ msgstr ""
 #: modules/countdown/widgets/countdown.php:1278
 #: modules/faq/widgets/faq.php:1273
 #: modules/ff-styler/widgets/ff-styler.php:1876
-#: modules/gf-styler/widgets/gf-styler.php:1946
-#: modules/google-map/widgets/google-map.php:701
+#: modules/gf-styler/widgets/gf-styler.php:1950
+#: modules/google-map/widgets/google-map.php:790
 #: modules/headings/widgets/advanced-heading.php:1486
 #: modules/headings/widgets/dual-heading.php:766
 #: modules/headings/widgets/fancy-heading.php:924
@@ -1488,7 +1489,7 @@ msgstr ""
 #: modules/price-table/widgets/price-table.php:3147
 #: modules/registration-form/widgets/registration-form.php:1252
 #: modules/retina-image/widgets/retina-image.php:642
-#: modules/social-share/widgets/social-share.php:1457
+#: modules/social-share/widgets/social-share.php:1458
 #: modules/table/widgets/table.php:1842
 #: modules/table-of-contents/widgets/table-of-contents.php:535
 #: modules/team-member/widgets/team-member.php:674
@@ -1996,9 +1997,9 @@ msgstr ""
 #: modules/registration-form/widgets/registration-form.php:642
 #: modules/registration-form/widgets/registration-form.php:971
 #: modules/retina-image/widgets/retina-image.php:172
-#: modules/social-share/widgets/social-share.php:393
-#: modules/social-share/widgets/social-share.php:420
-#: modules/social-share/widgets/social-share.php:1412
+#: modules/social-share/widgets/social-share.php:394
+#: modules/social-share/widgets/social-share.php:421
+#: modules/social-share/widgets/social-share.php:1413
 #: modules/table-of-contents/widgets/table-of-contents.php:621
 #: modules/woocommerce/skins/skin-grid-default.php:195
 #: modules/woocommerce/skins/skin-grid-franko.php:220
@@ -2034,7 +2035,7 @@ msgstr ""
 #: modules/ff-styler/widgets/ff-styler.php:758
 #: modules/ff-styler/widgets/ff-styler.php:1212
 #: modules/gf-styler/widgets/gf-styler.php:302
-#: modules/gf-styler/widgets/gf-styler.php:1145
+#: modules/gf-styler/widgets/gf-styler.php:1147
 #: modules/headings/widgets/advanced-heading.php:439
 #: modules/headings/widgets/dual-heading.php:245
 #: modules/headings/widgets/fancy-heading.php:559
@@ -2087,9 +2088,9 @@ msgstr ""
 #: modules/registration-form/widgets/registration-form.php:646
 #: modules/registration-form/widgets/registration-form.php:975
 #: modules/retina-image/widgets/retina-image.php:176
-#: modules/social-share/widgets/social-share.php:397
-#: modules/social-share/widgets/social-share.php:425
-#: modules/social-share/widgets/social-share.php:1416
+#: modules/social-share/widgets/social-share.php:398
+#: modules/social-share/widgets/social-share.php:426
+#: modules/social-share/widgets/social-share.php:1417
 #: modules/table/widgets/table.php:938 modules/table/widgets/table.php:1206
 #: modules/table-of-contents/widgets/table-of-contents.php:625
 #: modules/team-member/widgets/team-member.php:715
@@ -2136,8 +2137,8 @@ msgstr ""
 #: modules/ff-styler/widgets/ff-styler.php:762
 #: modules/ff-styler/widgets/ff-styler.php:1216
 #: modules/gf-styler/widgets/gf-styler.php:306
-#: modules/gf-styler/widgets/gf-styler.php:1149
-#: modules/google-map/widgets/google-map.php:519
+#: modules/gf-styler/widgets/gf-styler.php:1151
+#: modules/google-map/widgets/google-map.php:608
 #: modules/headings/widgets/advanced-heading.php:443
 #: modules/headings/widgets/dual-heading.php:249
 #: modules/headings/widgets/fancy-heading.php:563
@@ -2180,8 +2181,8 @@ msgstr ""
 #: modules/registration-form/widgets/registration-form.php:650
 #: modules/registration-form/widgets/registration-form.php:979
 #: modules/retina-image/widgets/retina-image.php:180
-#: modules/social-share/widgets/social-share.php:401
-#: modules/social-share/widgets/social-share.php:1420
+#: modules/social-share/widgets/social-share.php:402
+#: modules/social-share/widgets/social-share.php:1421
 #: modules/table/widgets/table.php:942 modules/table/widgets/table.php:1210
 #: modules/table-of-contents/widgets/table-of-contents.php:629
 #: modules/team-member/widgets/team-member.php:919
@@ -2225,7 +2226,7 @@ msgstr ""
 #: modules/ff-styler/widgets/ff-styler.php:766
 #: modules/ff-styler/widgets/ff-styler.php:1220
 #: modules/gf-styler/widgets/gf-styler.php:310
-#: modules/gf-styler/widgets/gf-styler.php:1153
+#: modules/gf-styler/widgets/gf-styler.php:1155
 #: modules/headings/widgets/advanced-heading.php:447
 #: modules/headings/widgets/dual-heading.php:253
 #: modules/headings/widgets/fancy-heading.php:567
@@ -2277,9 +2278,9 @@ msgstr ""
 #: modules/registration-form/widgets/registration-form.php:654
 #: modules/registration-form/widgets/registration-form.php:983
 #: modules/retina-image/widgets/retina-image.php:184
-#: modules/social-share/widgets/social-share.php:405
-#: modules/social-share/widgets/social-share.php:429
-#: modules/social-share/widgets/social-share.php:1424
+#: modules/social-share/widgets/social-share.php:406
+#: modules/social-share/widgets/social-share.php:430
+#: modules/social-share/widgets/social-share.php:1425
 #: modules/table/widgets/table.php:946 modules/table/widgets/table.php:1214
 #: modules/table-of-contents/widgets/table-of-contents.php:633
 #: modules/team-member/widgets/team-member.php:716
@@ -2328,9 +2329,9 @@ msgstr ""
 #: modules/ff-styler/widgets/ff-styler.php:1353
 #: modules/gf-styler/widgets/gf-styler.php:204
 #: modules/gf-styler/widgets/gf-styler.php:217
-#: modules/gf-styler/widgets/gf-styler.php:803
-#: modules/gf-styler/widgets/gf-styler.php:817
-#: modules/gf-styler/widgets/gf-styler.php:1385
+#: modules/gf-styler/widgets/gf-styler.php:805
+#: modules/gf-styler/widgets/gf-styler.php:819
+#: modules/gf-styler/widgets/gf-styler.php:1387
 #: modules/headings/widgets/advanced-heading.php:145
 #: modules/headings/widgets/advanced-heading.php:203
 #: modules/headings/widgets/advanced-heading.php:229
@@ -2468,9 +2469,9 @@ msgstr ""
 #: modules/ff-styler/widgets/ff-styler.php:1354
 #: modules/gf-styler/widgets/gf-styler.php:205
 #: modules/gf-styler/widgets/gf-styler.php:218
-#: modules/gf-styler/widgets/gf-styler.php:804
-#: modules/gf-styler/widgets/gf-styler.php:818
-#: modules/gf-styler/widgets/gf-styler.php:1386
+#: modules/gf-styler/widgets/gf-styler.php:806
+#: modules/gf-styler/widgets/gf-styler.php:820
+#: modules/gf-styler/widgets/gf-styler.php:1388
 #: modules/headings/widgets/advanced-heading.php:144
 #: modules/headings/widgets/advanced-heading.php:202
 #: modules/headings/widgets/advanced-heading.php:228
@@ -2560,7 +2561,7 @@ msgstr ""
 #: modules/registration-form/widgets/registration-form.php:524
 #: modules/registration-form/widgets/registration-form.php:585
 #: modules/registration-form/widgets/registration-form.php:815
-#: modules/social-share/widgets/social-share.php:1088
+#: modules/social-share/widgets/social-share.php:1089
 #: modules/table/widgets/table.php:693 modules/table/widgets/table.php:839
 #: modules/table/widgets/table.php:869
 #: modules/table-of-contents/widgets/table-of-contents.php:296
@@ -2715,10 +2716,10 @@ msgstr ""
 #: modules/ff-styler/widgets/ff-styler.php:1489
 #: modules/ff-styler/widgets/ff-styler.php:1742
 #: modules/ff-styler/widgets/ff-styler.php:1786
-#: modules/gf-styler/widgets/gf-styler.php:1782
-#: modules/gf-styler/widgets/gf-styler.php:1826
-#: modules/google-map/widgets/google-map.php:637
-#: modules/google-map/widgets/google-map.php:667
+#: modules/gf-styler/widgets/gf-styler.php:1784
+#: modules/gf-styler/widgets/gf-styler.php:1828
+#: modules/google-map/widgets/google-map.php:726
+#: modules/google-map/widgets/google-map.php:756
 #: modules/headings/widgets/advanced-heading.php:507
 #: modules/headings/widgets/advanced-heading.php:516
 #: modules/headings/widgets/advanced-heading.php:639
@@ -2774,7 +2775,7 @@ msgstr ""
 #: modules/price-table/widgets/price-table.php:2021
 #: modules/price-table/widgets/price-table.php:2309
 #: modules/price-table/widgets/price-table.php:2998
-#: modules/social-share/widgets/social-share.php:802
+#: modules/social-share/widgets/social-share.php:803
 #: modules/table/widgets/table.php:401 modules/table/widgets/table.php:708
 #: modules/table-of-contents/widgets/table-of-contents.php:648
 #: modules/table-of-contents/widgets/table-of-contents.php:746
@@ -2868,9 +2869,9 @@ msgstr ""
 #: modules/ff-styler/widgets/ff-styler.php:923
 #: modules/ff-styler/widgets/ff-styler.php:994
 #: modules/ff-styler/widgets/ff-styler.php:1069
-#: modules/gf-styler/widgets/gf-styler.php:866
-#: modules/gf-styler/widgets/gf-styler.php:1221
-#: modules/gf-styler/widgets/gf-styler.php:1300
+#: modules/gf-styler/widgets/gf-styler.php:868
+#: modules/gf-styler/widgets/gf-styler.php:1223
+#: modules/gf-styler/widgets/gf-styler.php:1302
 #: modules/headings/widgets/advanced-heading.php:1266
 #: modules/headings/widgets/dual-heading.php:388
 #: modules/headings/widgets/dual-heading.php:479
@@ -3019,9 +3020,9 @@ msgstr ""
 #: modules/ff-styler/widgets/ff-styler.php:961
 #: modules/ff-styler/widgets/ff-styler.php:1143
 #: modules/ff-styler/widgets/ff-styler.php:1247
-#: modules/gf-styler/widgets/gf-styler.php:1186
-#: modules/gf-styler/widgets/gf-styler.php:1371
-#: modules/google-map/widgets/google-map.php:593
+#: modules/gf-styler/widgets/gf-styler.php:1188
+#: modules/gf-styler/widgets/gf-styler.php:1373
+#: modules/google-map/widgets/google-map.php:682
 #: modules/headings/widgets/advanced-heading.php:1134
 #: modules/headings/widgets/dual-heading.php:400
 #: modules/headings/widgets/dual-heading.php:549
@@ -3152,8 +3153,8 @@ msgstr ""
 #: modules/buttons/widgets/buttons.php:526
 #: modules/cf-styler/widgets/cf-styler.php:1316
 #: modules/content-toggle/widgets/content-toggle.php:965
-#: modules/gf-styler/widgets/gf-styler.php:1955
-#: modules/google-map/widgets/google-map.php:710
+#: modules/gf-styler/widgets/gf-styler.php:1959
+#: modules/google-map/widgets/google-map.php:799
 #: modules/headings/widgets/dual-heading.php:775
 #: modules/headings/widgets/fancy-heading.php:933
 #: modules/image-gallery/widgets/image-gallery.php:1835
@@ -3196,7 +3197,7 @@ msgstr ""
 #: modules/price-table/widgets/price-table.php:3156
 #: modules/registration-form/widgets/registration-form.php:1261
 #: modules/retina-image/widgets/retina-image.php:651
-#: modules/social-share/widgets/social-share.php:1466
+#: modules/social-share/widgets/social-share.php:1467
 #: modules/table/widgets/table.php:1851
 #: modules/table-of-contents/widgets/table-of-contents.php:544
 #: modules/team-member/widgets/team-member.php:683
@@ -3378,7 +3379,7 @@ msgstr ""
 #: modules/price-table/widgets/price-table.php:1998
 #: modules/price-table/widgets/price-table.php:2288
 #: modules/social-share/widgets/social-share.php:291
-#: modules/social-share/widgets/social-share.php:1305
+#: modules/social-share/widgets/social-share.php:1306
 #: modules/table-of-contents/widgets/table-of-contents.php:725
 #: modules/timeline/widgets/timeline.php:885
 #: modules/woocommerce/widgets/woo-categories.php:408
@@ -3397,8 +3398,8 @@ msgstr ""
 #: modules/countdown/widgets/countdown.php:976 modules/faq/widgets/faq.php:583
 #: modules/faq/widgets/faq.php:656 modules/faq/widgets/faq.php:779
 #: modules/ff-styler/widgets/ff-styler.php:395
-#: modules/gf-styler/widgets/gf-styler.php:537
-#: modules/gf-styler/widgets/gf-styler.php:1052
+#: modules/gf-styler/widgets/gf-styler.php:539
+#: modules/gf-styler/widgets/gf-styler.php:1054
 #: modules/headings/widgets/advanced-heading.php:898
 #: modules/headings/widgets/advanced-heading.php:1313
 #: modules/hotspot/widgets/hotspot.php:1169
@@ -3427,8 +3428,8 @@ msgstr ""
 #: modules/countdown/widgets/countdown.php:978 modules/faq/widgets/faq.php:585
 #: modules/faq/widgets/faq.php:658 modules/faq/widgets/faq.php:781
 #: modules/ff-styler/widgets/ff-styler.php:397
-#: modules/gf-styler/widgets/gf-styler.php:539
-#: modules/gf-styler/widgets/gf-styler.php:1054
+#: modules/gf-styler/widgets/gf-styler.php:541
+#: modules/gf-styler/widgets/gf-styler.php:1056
 #: modules/headings/widgets/advanced-heading.php:900
 #: modules/headings/widgets/advanced-heading.php:1315
 #: modules/hotspot/widgets/hotspot.php:1171
@@ -3457,8 +3458,8 @@ msgstr ""
 #: modules/countdown/widgets/countdown.php:979 modules/faq/widgets/faq.php:584
 #: modules/faq/widgets/faq.php:657 modules/faq/widgets/faq.php:780
 #: modules/ff-styler/widgets/ff-styler.php:398
-#: modules/gf-styler/widgets/gf-styler.php:540
-#: modules/gf-styler/widgets/gf-styler.php:1055
+#: modules/gf-styler/widgets/gf-styler.php:542
+#: modules/gf-styler/widgets/gf-styler.php:1057
 #: modules/headings/widgets/advanced-heading.php:899
 #: modules/headings/widgets/advanced-heading.php:1316
 #: modules/hotspot/widgets/hotspot.php:1172
@@ -3562,7 +3563,7 @@ msgstr ""
 #: modules/registration-form/widgets/registration-form.php:393
 #: modules/registration-form/widgets/registration-form.php:405
 #: modules/registration-form/widgets/registration-form.php:769
-#: modules/social-share/widgets/social-share.php:1074
+#: modules/social-share/widgets/social-share.php:1075
 #: modules/table-of-contents/widgets/table-of-contents.php:218
 #: modules/table-of-contents/widgets/table-of-contents.php:379
 #: modules/team-member/widgets/team-member.php:291
@@ -3628,7 +3629,7 @@ msgstr ""
 #: modules/registration-form/widgets/registration-form.php:394
 #: modules/registration-form/widgets/registration-form.php:406
 #: modules/registration-form/widgets/registration-form.php:770
-#: modules/social-share/widgets/social-share.php:1075
+#: modules/social-share/widgets/social-share.php:1076
 #: modules/table-of-contents/widgets/table-of-contents.php:219
 #: modules/table-of-contents/widgets/table-of-contents.php:380
 #: modules/team-member/widgets/team-member.php:292
@@ -3759,7 +3760,7 @@ msgstr ""
 #: modules/modal-popup/widgets/modal-popup.php:1627
 #: modules/modal-popup/widgets/modal-popup.php:1771
 #: modules/nav-menu/widgets/nav-menu.php:1872
-#: modules/social-share/widgets/social-share.php:710
+#: modules/social-share/widgets/social-share.php:711
 #: modules/table-of-contents/widgets/table-of-contents.php:320
 #: modules/team-member/widgets/team-member.php:1129
 #: modules/timeline/widgets/timeline.php:1895
@@ -3816,9 +3817,9 @@ msgstr ""
 #: modules/ff-styler/widgets/ff-styler.php:898
 #: modules/ff-styler/widgets/ff-styler.php:982
 #: modules/ff-styler/widgets/ff-styler.php:1046
-#: modules/gf-styler/widgets/gf-styler.php:1022
-#: modules/gf-styler/widgets/gf-styler.php:1208
-#: modules/gf-styler/widgets/gf-styler.php:1277
+#: modules/gf-styler/widgets/gf-styler.php:1024
+#: modules/gf-styler/widgets/gf-styler.php:1210
+#: modules/gf-styler/widgets/gf-styler.php:1279
 #: modules/headings/widgets/advanced-heading.php:1020
 #: modules/headings/widgets/dual-heading.php:352
 #: modules/headings/widgets/fancy-heading.php:689
@@ -3928,7 +3929,7 @@ msgstr ""
 #: modules/content-toggle/widgets/content-toggle.php:868
 #: modules/faq/widgets/faq.php:1238
 #: modules/ff-styler/widgets/ff-styler.php:1515
-#: modules/gf-styler/widgets/gf-styler.php:1594
+#: modules/gf-styler/widgets/gf-styler.php:1596
 #: modules/how-to/widgets/how-to.php:774
 #: modules/login-form/widgets/login-form.php:1389
 #: modules/nav-menu/widgets/nav-menu.php:1995
@@ -3963,7 +3964,7 @@ msgstr ""
 #: modules/image-gallery/widgets/image-gallery.php:846
 #: modules/posts/skins/skin-base.php:1854
 #: modules/registration-form/widgets/registration-form.php:1379
-#: modules/social-share/widgets/social-share.php:552
+#: modules/social-share/widgets/social-share.php:553
 #: modules/video-gallery/widgets/video-gallery.php:947
 #: modules/woocommerce/widgets/woo-categories.php:699
 #: modules/woocommerce/widgets/woo-products.php:789
@@ -3976,7 +3977,7 @@ msgstr ""
 #: modules/login-form/widgets/login-form.php:1397
 #: modules/posts/skins/skin-base.php:1878
 #: modules/registration-form/widgets/registration-form.php:1400
-#: modules/social-share/widgets/social-share.php:602
+#: modules/social-share/widgets/social-share.php:603
 #: modules/video-gallery/widgets/video-gallery.php:969
 #: modules/woocommerce/widgets/woo-categories.php:720
 #: modules/woocommerce/widgets/woo-products.php:810
@@ -4025,7 +4026,7 @@ msgstr ""
 #: modules/countdown/widgets/countdown.php:728
 #: modules/ff-styler/widgets/ff-styler.php:867
 #: modules/ff-styler/widgets/ff-styler.php:1017
-#: modules/gf-styler/widgets/gf-styler.php:1248
+#: modules/gf-styler/widgets/gf-styler.php:1250
 #: modules/headings/widgets/dual-heading.php:436
 #: modules/headings/widgets/dual-heading.php:583
 #: modules/headings/widgets/fancy-heading.php:763
@@ -4178,9 +4179,9 @@ msgstr ""
 #: modules/cf-styler/widgets/cf-styler.php:1254
 #: modules/ff-styler/widgets/ff-styler.php:1690
 #: modules/ff-styler/widgets/ff-styler.php:1851
-#: modules/gf-styler/widgets/gf-styler.php:1035
-#: modules/gf-styler/widgets/gf-styler.php:1730
-#: modules/gf-styler/widgets/gf-styler.php:1924
+#: modules/gf-styler/widgets/gf-styler.php:1037
+#: modules/gf-styler/widgets/gf-styler.php:1732
+#: modules/gf-styler/widgets/gf-styler.php:1928
 #: modules/hotspot/widgets/hotspot.php:1366
 #: modules/hotspot/widgets/hotspot.php:1507
 #: modules/image-gallery/widgets/image-gallery.php:763
@@ -4233,7 +4234,7 @@ msgstr ""
 #: modules/cf-styler/widgets/cf-styler.php:315
 #: modules/countdown/widgets/countdown.php:971 modules/faq/widgets/faq.php:577
 #: modules/faq/widgets/faq.php:650 modules/ff-styler/widgets/ff-styler.php:389
-#: modules/gf-styler/widgets/gf-styler.php:531
+#: modules/gf-styler/widgets/gf-styler.php:533
 #: modules/headings/widgets/advanced-heading.php:1307
 #: modules/hotspot/widgets/hotspot.php:1163
 #: modules/infobox/widgets/infobox.php:667
@@ -4261,10 +4262,10 @@ msgstr ""
 #: modules/ff-styler/widgets/ff-styler.php:189
 #: modules/ff-styler/widgets/ff-styler.php:394
 #: modules/gf-styler/widgets/gf-styler.php:261
-#: modules/gf-styler/widgets/gf-styler.php:536
-#: modules/gf-styler/widgets/gf-styler.php:1051
-#: modules/google-map/widgets/google-map.php:205
-#: modules/google-map/widgets/google-map.php:388
+#: modules/gf-styler/widgets/gf-styler.php:538
+#: modules/gf-styler/widgets/gf-styler.php:1053
+#: modules/google-map/widgets/google-map.php:230
+#: modules/google-map/widgets/google-map.php:413
 #: modules/headings/widgets/advanced-heading.php:289
 #: modules/headings/widgets/advanced-heading.php:808
 #: modules/headings/widgets/advanced-heading.php:1312
@@ -4330,8 +4331,8 @@ msgstr ""
 #: modules/countdown/widgets/countdown.php:1013
 #: modules/ff-styler/widgets/ff-styler.php:415
 #: modules/ff-styler/widgets/ff-styler.php:682
-#: modules/gf-styler/widgets/gf-styler.php:567
-#: modules/gf-styler/widgets/gf-styler.php:949
+#: modules/gf-styler/widgets/gf-styler.php:569
+#: modules/gf-styler/widgets/gf-styler.php:951
 #: modules/headings/widgets/advanced-heading.php:1349
 #: modules/hotspot/widgets/hotspot.php:1183
 #: modules/infobox/widgets/infobox.php:709
@@ -4365,11 +4366,11 @@ msgstr ""
 #: modules/ff-styler/widgets/ff-styler.php:933
 #: modules/ff-styler/widgets/ff-styler.php:1078
 #: modules/ff-styler/widgets/ff-styler.php:1309
-#: modules/gf-styler/widgets/gf-styler.php:606
-#: modules/gf-styler/widgets/gf-styler.php:677
-#: modules/gf-styler/widgets/gf-styler.php:929
-#: modules/gf-styler/widgets/gf-styler.php:1092
-#: modules/gf-styler/widgets/gf-styler.php:1309
+#: modules/gf-styler/widgets/gf-styler.php:608
+#: modules/gf-styler/widgets/gf-styler.php:679
+#: modules/gf-styler/widgets/gf-styler.php:931
+#: modules/gf-styler/widgets/gf-styler.php:1094
+#: modules/gf-styler/widgets/gf-styler.php:1311
 #: modules/headings/widgets/advanced-heading.php:1330
 #: modules/hotspot/widgets/hotspot.php:1205
 #: modules/hotspot/widgets/hotspot.php:1290
@@ -4425,7 +4426,7 @@ msgstr ""
 #: modules/content-toggle/widgets/content-toggle.php:822
 #: modules/ff-styler/widgets/ff-styler.php:856
 #: modules/ff-styler/widgets/ff-styler.php:1007
-#: modules/gf-styler/widgets/gf-styler.php:1238
+#: modules/gf-styler/widgets/gf-styler.php:1240
 #: modules/headings/widgets/dual-heading.php:423
 #: modules/headings/widgets/dual-heading.php:571
 #: modules/headings/widgets/fancy-heading.php:751
@@ -4661,7 +4662,7 @@ msgstr ""
 #: modules/content-toggle/widgets/content-toggle.php:587
 #: modules/countdown/widgets/countdown.php:704 modules/faq/widgets/faq.php:381
 #: modules/faq/widgets/faq.php:387
-#: modules/google-map/widgets/google-map.php:324
+#: modules/google-map/widgets/google-map.php:349
 #: modules/headings/widgets/dual-heading.php:267
 #: modules/headings/widgets/fancy-heading.php:581
 #: modules/image-gallery/widgets/image-gallery.php:193
@@ -4925,8 +4926,8 @@ msgstr ""
 #: modules/registration-form/widgets/registration-form.php:824
 #: modules/registration-form/widgets/registration-form.php:926
 #: modules/social-share/widgets/social-share.php:297
-#: modules/social-share/widgets/social-share.php:1309
-#: modules/social-share/widgets/social-share.php:1322
+#: modules/social-share/widgets/social-share.php:1310
+#: modules/social-share/widgets/social-share.php:1323
 #: modules/table/widgets/table.php:235 modules/table/widgets/table.php:532
 #: modules/timeline/widgets/timeline.php:635
 #: modules/video/widgets/video.php:1517
@@ -4958,7 +4959,7 @@ msgstr ""
 #: modules/price-table/widgets/price-table.php:2667
 #: modules/retina-image/widgets/retina-image.php:228
 #: modules/retina-image/widgets/retina-image.php:241
-#: modules/social-share/widgets/social-share.php:527
+#: modules/social-share/widgets/social-share.php:528
 #: modules/table/widgets/table.php:547
 #: modules/team-member/widgets/team-member.php:569
 #: modules/timeline/widgets/timeline.php:869
@@ -4995,7 +4996,7 @@ msgstr ""
 #: modules/registration-form/widgets/registration-form.php:1000
 #: modules/registration-form/widgets/registration-form.php:1009
 #: modules/social-share/widgets/social-share.php:296
-#: modules/social-share/widgets/social-share.php:1308
+#: modules/social-share/widgets/social-share.php:1309
 #: modules/table/widgets/table.php:267 modules/table/widgets/table.php:279
 #: modules/table/widgets/table.php:295 modules/table/widgets/table.php:584
 #: modules/table/widgets/table.php:596 modules/table/widgets/table.php:611
@@ -5077,7 +5078,7 @@ msgstr ""
 #: modules/cf-styler/widgets/cf-styler.php:742 modules/faq/widgets/faq.php:891
 #: modules/faq/widgets/faq.php:1081 modules/ff-styler/widgets/ff-styler.php:817
 #: modules/ff-styler/widgets/ff-styler.php:975
-#: modules/gf-styler/widgets/gf-styler.php:1201
+#: modules/gf-styler/widgets/gf-styler.php:1203
 #: modules/headings/widgets/advanced-heading.php:579
 #: modules/headings/widgets/advanced-heading.php:1236
 #: modules/headings/widgets/dual-heading.php:345
@@ -5112,7 +5113,7 @@ msgstr ""
 #: modules/price-table/widgets/price-table.php:2772
 #: modules/registration-form/widgets/registration-form.php:1879
 #: modules/retina-image/widgets/retina-image.php:431
-#: modules/social-share/widgets/social-share.php:817
+#: modules/social-share/widgets/social-share.php:818
 #: modules/table-of-contents/widgets/table-of-contents.php:857
 #: modules/team-member/widgets/team-member.php:1224
 #: modules/video/widgets/video.php:942
@@ -5143,7 +5144,7 @@ msgstr ""
 #: modules/cf-styler/widgets/cf-styler.php:811 modules/faq/widgets/faq.php:959
 #: modules/faq/widgets/faq.php:1116 modules/ff-styler/widgets/ff-styler.php:891
 #: modules/ff-styler/widgets/ff-styler.php:1039
-#: modules/gf-styler/widgets/gf-styler.php:1270
+#: modules/gf-styler/widgets/gf-styler.php:1272
 #: modules/headings/widgets/advanced-heading.php:1399
 #: modules/hotspot/widgets/hotspot.php:865
 #: modules/hotspot/widgets/hotspot.php:1640
@@ -5174,7 +5175,7 @@ msgstr ""
 #: modules/price-table/widgets/price-table.php:2906
 #: modules/registration-form/widgets/registration-form.php:1938
 #: modules/retina-image/widgets/retina-image.php:466
-#: modules/social-share/widgets/social-share.php:927
+#: modules/social-share/widgets/social-share.php:928
 #: modules/table/widgets/table.php:1079 modules/table/widgets/table.php:1418
 #: modules/table-of-contents/widgets/table-of-contents.php:880
 #: modules/team-member/widgets/team-member.php:1266
@@ -5206,7 +5207,7 @@ msgstr ""
 #: modules/cf-styler/widgets/cf-styler.php:829
 #: modules/ff-styler/widgets/ff-styler.php:910
 #: modules/ff-styler/widgets/ff-styler.php:1057
-#: modules/gf-styler/widgets/gf-styler.php:1288
+#: modules/gf-styler/widgets/gf-styler.php:1290
 #: modules/headings/widgets/advanced-heading.php:1441
 #: modules/hotspot/widgets/hotspot.php:1688
 #: modules/image-gallery/widgets/image-gallery.php:1781
@@ -5277,7 +5278,7 @@ msgstr ""
 #: modules/ff-styler/widgets/ff-styler.php:288
 #: modules/ff-styler/widgets/ff-styler.php:785
 #: modules/ff-styler/widgets/ff-styler.php:1364
-#: modules/gf-styler/widgets/gf-styler.php:1169
+#: modules/gf-styler/widgets/gf-styler.php:1171
 #: modules/hotspot/widgets/hotspot.php:654
 #: modules/infobox/widgets/infobox.php:382
 #: modules/infobox/widgets/infobox.php:1259
@@ -5297,7 +5298,7 @@ msgstr ""
 #: modules/price-table/widgets/price-table.php:1758
 #: modules/price-table/widgets/price-table.php:2736
 #: modules/registration-form/widgets/registration-form.php:939
-#: modules/social-share/widgets/social-share.php:1342
+#: modules/social-share/widgets/social-share.php:1343
 #: modules/table-of-contents/widgets/table-of-contents.php:407
 #: modules/video/widgets/video.php:895
 #: modules/video-gallery/widgets/video-gallery.php:1390
@@ -5341,7 +5342,7 @@ msgstr ""
 #: modules/price-list/widgets/price-list.php:999
 #: modules/price-table/widgets/price-table.php:172
 #: modules/retina-image/widgets/retina-image.php:498
-#: modules/social-share/widgets/social-share.php:1022
+#: modules/social-share/widgets/social-share.php:1023
 #: modules/team-member/widgets/team-member.php:884
 #: modules/team-member/widgets/team-member.php:1388
 #: modules/video/widgets/video.php:921 modules/video/widgets/video.php:1088
@@ -5364,7 +5365,7 @@ msgstr ""
 #: modules/ff-styler/widgets/ff-styler.php:267
 #: modules/ff-styler/widgets/ff-styler.php:1805
 #: modules/gf-styler/widgets/gf-styler.php:341
-#: modules/gf-styler/widgets/gf-styler.php:1845
+#: modules/gf-styler/widgets/gf-styler.php:1847
 #: modules/login-form/widgets/login-form.php:162
 #: modules/login-form/widgets/login-form.php:1733
 #: modules/registration-form/widgets/registration-form.php:211
@@ -5405,7 +5406,7 @@ msgstr ""
 #: modules/ff-styler/widgets/ff-styler.php:292
 #: modules/ff-styler/widgets/ff-styler.php:789
 #: modules/gf-styler/widgets/gf-styler.php:366
-#: modules/gf-styler/widgets/gf-styler.php:1173
+#: modules/gf-styler/widgets/gf-styler.php:1175
 #: modules/hotspot/widgets/hotspot.php:658
 #: modules/infobox/widgets/infobox.php:1263
 #: modules/login-form/widgets/login-form.php:264
@@ -5427,7 +5428,7 @@ msgstr ""
 #: modules/ff-styler/widgets/ff-styler.php:293
 #: modules/ff-styler/widgets/ff-styler.php:790
 #: modules/gf-styler/widgets/gf-styler.php:367
-#: modules/gf-styler/widgets/gf-styler.php:1174
+#: modules/gf-styler/widgets/gf-styler.php:1176
 #: modules/headings/widgets/advanced-heading.php:256
 #: modules/hotspot/widgets/hotspot.php:659
 #: modules/infobox/widgets/infobox.php:1264
@@ -5450,7 +5451,7 @@ msgstr ""
 #: modules/ff-styler/widgets/ff-styler.php:294
 #: modules/ff-styler/widgets/ff-styler.php:791
 #: modules/gf-styler/widgets/gf-styler.php:368
-#: modules/gf-styler/widgets/gf-styler.php:1175
+#: modules/gf-styler/widgets/gf-styler.php:1177
 #: modules/headings/widgets/advanced-heading.php:257
 #: modules/hotspot/widgets/hotspot.php:660
 #: modules/infobox/widgets/infobox.php:1265
@@ -5473,7 +5474,7 @@ msgstr ""
 #: modules/ff-styler/widgets/ff-styler.php:295
 #: modules/ff-styler/widgets/ff-styler.php:792
 #: modules/gf-styler/widgets/gf-styler.php:369
-#: modules/gf-styler/widgets/gf-styler.php:1176
+#: modules/gf-styler/widgets/gf-styler.php:1178
 #: modules/headings/widgets/advanced-heading.php:258
 #: modules/hotspot/widgets/hotspot.php:661
 #: modules/infobox/widgets/infobox.php:1266
@@ -5496,7 +5497,7 @@ msgstr ""
 #: modules/ff-styler/widgets/ff-styler.php:296
 #: modules/ff-styler/widgets/ff-styler.php:793
 #: modules/gf-styler/widgets/gf-styler.php:370
-#: modules/gf-styler/widgets/gf-styler.php:1177
+#: modules/gf-styler/widgets/gf-styler.php:1179
 #: modules/hotspot/widgets/hotspot.php:662
 #: modules/infobox/widgets/infobox.php:1267
 #: modules/login-form/widgets/login-form.php:268
@@ -5522,7 +5523,7 @@ msgstr ""
 #: modules/cf-styler/widgets/cf-styler.php:264
 #: modules/ff-styler/widgets/ff-styler.php:1168
 #: modules/gf-styler/widgets/gf-styler.php:400
-#: modules/gf-styler/widgets/gf-styler.php:1396
+#: modules/gf-styler/widgets/gf-styler.php:1398
 #: modules/wpf-styler/widgets/wpf-styler.php:326
 msgid "Field Background Color"
 msgstr ""
@@ -5535,7 +5536,7 @@ msgstr ""
 #: modules/ff-styler/widgets/ff-styler.php:337
 #: modules/ff-styler/widgets/ff-styler.php:652
 #: modules/gf-styler/widgets/gf-styler.php:428
-#: modules/gf-styler/widgets/gf-styler.php:910
+#: modules/gf-styler/widgets/gf-styler.php:912
 #: modules/registration-form/widgets/registration-form.php:1751
 #: modules/table/widgets/table.php:1698
 #: modules/woocommerce/widgets/woo-checkout.php:1836
@@ -5558,7 +5559,7 @@ msgstr ""
 
 #: modules/caf-styler/widgets/caf-styler.php:303
 #: modules/ff-styler/widgets/ff-styler.php:377
-#: modules/gf-styler/widgets/gf-styler.php:519
+#: modules/gf-styler/widgets/gf-styler.php:521
 #: modules/wpf-styler/widgets/wpf-styler.php:414
 msgid "Required Asterisk Color"
 msgstr ""
@@ -5568,8 +5569,8 @@ msgstr ""
 #: modules/countdown/widgets/countdown.php:977 modules/faq/widgets/faq.php:586
 #: modules/faq/widgets/faq.php:659 modules/faq/widgets/faq.php:782
 #: modules/ff-styler/widgets/ff-styler.php:396
-#: modules/gf-styler/widgets/gf-styler.php:538
-#: modules/gf-styler/widgets/gf-styler.php:1053
+#: modules/gf-styler/widgets/gf-styler.php:540
+#: modules/gf-styler/widgets/gf-styler.php:1055
 #: modules/headings/widgets/advanced-heading.php:901
 #: modules/headings/widgets/advanced-heading.php:1314
 #: modules/hotspot/widgets/hotspot.php:1170
@@ -5596,9 +5597,9 @@ msgstr ""
 #: modules/cf-styler/widgets/cf-styler.php:1066
 #: modules/ff-styler/widgets/ff-styler.php:460
 #: modules/ff-styler/widgets/ff-styler.php:1290
-#: modules/gf-styler/widgets/gf-styler.php:637
-#: modules/gf-styler/widgets/gf-styler.php:1486
-#: modules/social-share/widgets/social-share.php:747
+#: modules/gf-styler/widgets/gf-styler.php:639
+#: modules/gf-styler/widgets/gf-styler.php:1488
+#: modules/social-share/widgets/social-share.php:748
 #: modules/wpf-styler/widgets/wpf-styler.php:510
 msgid "Border Size"
 msgstr ""
@@ -5607,8 +5608,8 @@ msgstr ""
 #: modules/cf-styler/widgets/cf-styler.php:425
 #: modules/ff-styler/widgets/ff-styler.php:506
 #: modules/ff-styler/widgets/ff-styler.php:524
-#: modules/gf-styler/widgets/gf-styler.php:707
-#: modules/gf-styler/widgets/gf-styler.php:730
+#: modules/gf-styler/widgets/gf-styler.php:709
+#: modules/gf-styler/widgets/gf-styler.php:732
 #: modules/posts/skins/skin-base.php:2266 modules/posts/skins/skin-feed.php:824
 #: modules/posts/skins/skin-news.php:585
 #: modules/registration-form/widgets/registration-form.php:1618
@@ -5622,8 +5623,8 @@ msgstr ""
 #: modules/cf-styler/widgets/cf-styler.php:1085
 #: modules/ff-styler/widgets/ff-styler.php:540
 #: modules/ff-styler/widgets/ff-styler.php:1321
-#: modules/gf-styler/widgets/gf-styler.php:751
-#: modules/gf-styler/widgets/gf-styler.php:1506
+#: modules/gf-styler/widgets/gf-styler.php:753
+#: modules/gf-styler/widgets/gf-styler.php:1508
 #: modules/headings/widgets/advanced-heading.php:1372
 #: modules/hotspot/widgets/hotspot.php:1223
 #: modules/hotspot/widgets/hotspot.php:1421
@@ -5655,7 +5656,7 @@ msgstr ""
 #: modules/caf-styler/widgets/caf-styler.php:520
 #: modules/cf-styler/widgets/cf-styler.php:492
 #: modules/ff-styler/widgets/ff-styler.php:573
-#: modules/gf-styler/widgets/gf-styler.php:794
+#: modules/gf-styler/widgets/gf-styler.php:796
 #: modules/wpf-styler/widgets/wpf-styler.php:630
 msgid "Radio & Checkbox"
 msgstr ""
@@ -5664,7 +5665,7 @@ msgstr ""
 #: modules/cf-styler/widgets/cf-styler.php:499
 #: modules/ff-styler/widgets/ff-styler.php:580
 #: modules/ff-styler/widgets/ff-styler.php:1351
-#: modules/gf-styler/widgets/gf-styler.php:801
+#: modules/gf-styler/widgets/gf-styler.php:803
 #: modules/wpf-styler/widgets/wpf-styler.php:636
 msgid "Override Current Style"
 msgstr ""
@@ -5673,7 +5674,7 @@ msgstr ""
 #: modules/cf-styler/widgets/cf-styler.php:566
 #: modules/ff-styler/widgets/ff-styler.php:634
 #: modules/ff-styler/widgets/ff-styler.php:1386
-#: modules/gf-styler/widgets/gf-styler.php:887
+#: modules/gf-styler/widgets/gf-styler.php:889
 #: modules/wpf-styler/widgets/wpf-styler.php:691
 msgid "Selected Color"
 msgstr ""
@@ -5681,28 +5682,28 @@ msgstr ""
 #: modules/caf-styler/widgets/caf-styler.php:679
 #: modules/cf-styler/widgets/cf-styler.php:642
 #: modules/ff-styler/widgets/ff-styler.php:707
-#: modules/gf-styler/widgets/gf-styler.php:980
+#: modules/gf-styler/widgets/gf-styler.php:982
 #: modules/wpf-styler/widgets/wpf-styler.php:766
 msgid "Checkbox Rounded Corners"
 msgstr ""
 
 #: modules/caf-styler/widgets/caf-styler.php:714
 #: modules/cf-styler/widgets/cf-styler.php:675
-#: modules/gf-styler/widgets/gf-styler.php:1135
+#: modules/gf-styler/widgets/gf-styler.php:1137
 #: modules/wpf-styler/widgets/wpf-styler.php:799
 msgid "Submit Button"
 msgstr ""
 
 #: modules/caf-styler/widgets/caf-styler.php:722
 #: modules/cf-styler/widgets/cf-styler.php:682
-#: modules/gf-styler/widgets/gf-styler.php:1141
+#: modules/gf-styler/widgets/gf-styler.php:1143
 #: modules/wpf-styler/widgets/wpf-styler.php:805
 msgid "Button Alignment"
 msgstr ""
 
 #: modules/caf-styler/widgets/caf-styler.php:738
 #: modules/cf-styler/widgets/cf-styler.php:698 modules/faq/widgets/faq.php:530
-#: modules/gf-styler/widgets/gf-styler.php:1157
+#: modules/gf-styler/widgets/gf-styler.php:1159
 #: modules/image-gallery/widgets/image-gallery.php:199
 #: modules/login-form/widgets/login-form.php:949
 #: modules/modal-popup/widgets/modal-popup.php:1181
@@ -5716,7 +5717,7 @@ msgstr ""
 #: modules/caf-styler/widgets/caf-styler.php:926
 #: modules/cf-styler/widgets/cf-styler.php:865
 #: modules/ff-styler/widgets/ff-styler.php:1106
-#: modules/gf-styler/widgets/gf-styler.php:1337
+#: modules/gf-styler/widgets/gf-styler.php:1339
 #: modules/wpf-styler/widgets/wpf-styler.php:990
 msgid "Success / Error Message"
 msgstr ""
@@ -5742,7 +5743,7 @@ msgstr ""
 #: modules/cf-styler/widgets/cf-styler.php:910
 #: modules/ff-styler/widgets/ff-styler.php:1131
 #: modules/ff-styler/widgets/ff-styler.php:1266
-#: modules/gf-styler/widgets/gf-styler.php:1350
+#: modules/gf-styler/widgets/gf-styler.php:1352
 #: modules/registration-form/widgets/registration-form.php:2040
 #: modules/registration-form/widgets/registration-form.php:2070
 #: modules/woocommerce/widgets/woo-mini-cart.php:975
@@ -5768,19 +5769,19 @@ msgstr ""
 #: modules/caf-styler/widgets/caf-styler.php:1039
 #: modules/cf-styler/widgets/cf-styler.php:953
 #: modules/ff-styler/widgets/ff-styler.php:1182
-#: modules/gf-styler/widgets/gf-styler.php:1410
+#: modules/gf-styler/widgets/gf-styler.php:1412
 msgid "Highlight Border Color"
 msgstr ""
 
 #: modules/caf-styler/widgets/caf-styler.php:1054
 #: modules/ff-styler/widgets/ff-styler.php:1199
-#: modules/gf-styler/widgets/gf-styler.php:1551
+#: modules/gf-styler/widgets/gf-styler.php:1553
 msgid "Form Success Validation"
 msgstr ""
 
 #: modules/caf-styler/widgets/caf-styler.php:1063
 #: modules/cf-styler/widgets/cf-styler.php:988
-#: modules/gf-styler/widgets/gf-styler.php:1560
+#: modules/gf-styler/widgets/gf-styler.php:1562
 #: modules/registration-form/widgets/registration-form.php:2128
 msgid "Success Message Color"
 msgstr ""
@@ -5792,13 +5793,13 @@ msgstr ""
 
 #: modules/caf-styler/widgets/caf-styler.php:1161
 #: modules/ff-styler/widgets/ff-styler.php:1565
-#: modules/gf-styler/widgets/gf-styler.php:1644
+#: modules/gf-styler/widgets/gf-styler.php:1646
 msgid "Between Two Fields"
 msgstr ""
 
 #: modules/caf-styler/widgets/caf-styler.php:1179
 #: modules/ff-styler/widgets/ff-styler.php:1583
-#: modules/gf-styler/widgets/gf-styler.php:1665
+#: modules/gf-styler/widgets/gf-styler.php:1667
 #: modules/login-form/widgets/login-form.php:1418
 #: modules/registration-form/widgets/registration-form.php:1420
 #: modules/wpf-styler/widgets/wpf-styler.php:1235
@@ -5824,7 +5825,7 @@ msgid "Field Description"
 msgstr ""
 
 #: modules/cf-styler/widgets/cf-styler.php:119
-#: modules/cf-styler/widgets/cf-styler.php:1443
+#: modules/cf-styler/widgets/cf-styler.php:1448
 msgid "You have not added any Contact Form 7 yet."
 msgstr ""
 
@@ -5834,7 +5835,7 @@ msgstr ""
 
 #: modules/cf-styler/widgets/cf-styler.php:872
 #: modules/ff-styler/widgets/ff-styler.php:1112
-#: modules/gf-styler/widgets/gf-styler.php:1343
+#: modules/gf-styler/widgets/gf-styler.php:1345
 #: modules/woocommerce/widgets/woo-checkout.php:1827
 #: modules/wpf-styler/widgets/wpf-styler.php:997
 msgid "Field Validation"
@@ -5857,14 +5858,14 @@ msgid "Success Border Color"
 msgstr ""
 
 #: modules/cf-styler/widgets/cf-styler.php:1027
-#: modules/gf-styler/widgets/gf-styler.php:1447
+#: modules/gf-styler/widgets/gf-styler.php:1449
 #: modules/registration-form/widgets/registration-form.php:2143
 #: modules/woocommerce/widgets/woo-checkout.php:1876
 msgid "Error Message Color"
 msgstr ""
 
 #: modules/cf-styler/widgets/cf-styler.php:1039
-#: modules/gf-styler/widgets/gf-styler.php:1460
+#: modules/gf-styler/widgets/gf-styler.php:1462
 msgid "Error Message Background Color"
 msgstr ""
 
@@ -5873,7 +5874,7 @@ msgid "Error Border Color"
 msgstr ""
 
 #: modules/cf-styler/widgets/cf-styler.php:1097
-#: modules/gf-styler/widgets/gf-styler.php:1519
+#: modules/gf-styler/widgets/gf-styler.php:1521
 msgid "Message Padding"
 msgstr ""
 
@@ -5903,11 +5904,11 @@ msgstr ""
 msgid "%1$s Unable to see Checkbox / Radio / Acceptance control » %2$s"
 msgstr ""
 
-#: modules/cf-styler/widgets/cf-styler.php:1415
+#: modules/cf-styler/widgets/cf-styler.php:1420
 msgid "select"
 msgstr ""
 
-#: modules/cf-styler/widgets/cf-styler.php:1428
+#: modules/cf-styler/widgets/cf-styler.php:1433
 msgid "Please select a Contact Form 7."
 msgstr ""
 
@@ -6045,7 +6046,7 @@ msgstr ""
 
 #: modules/content-toggle/widgets/content-toggle.php:541
 #: modules/faq/widgets/faq.php:857 modules/ff-styler/widgets/ff-styler.php:1707
-#: modules/gf-styler/widgets/gf-styler.php:1747
+#: modules/gf-styler/widgets/gf-styler.php:1749
 #: modules/headings/widgets/advanced-heading.php:478
 #: modules/headings/widgets/advanced-heading.php:999
 #: modules/image-gallery/widgets/image-gallery.php:1335
@@ -6499,12 +6500,12 @@ msgstr ""
 
 #: modules/countdown/widgets/countdown.php:1060
 #: modules/display-conditions/display-conditions.php:156
-#: modules/google-map/widgets/google-map.php:458
-#: modules/google-map/widgets/google-map.php:470
-#: modules/google-map/widgets/google-map.php:482
-#: modules/google-map/widgets/google-map.php:494
-#: modules/google-map/widgets/google-map.php:506
-#: modules/google-map/widgets/google-map.php:532
+#: modules/google-map/widgets/google-map.php:483
+#: modules/google-map/widgets/google-map.php:511
+#: modules/google-map/widgets/google-map.php:539
+#: modules/google-map/widgets/google-map.php:567
+#: modules/google-map/widgets/google-map.php:595
+#: modules/google-map/widgets/google-map.php:621
 #: modules/login-form/widgets/login-form.php:602
 #: modules/login-form/widgets/login-form.php:1050
 #: modules/login-form/widgets/login-form.php:1077
@@ -6513,12 +6514,12 @@ msgstr ""
 
 #: modules/countdown/widgets/countdown.php:1061
 #: modules/display-conditions/display-conditions.php:157
-#: modules/google-map/widgets/google-map.php:459
-#: modules/google-map/widgets/google-map.php:471
-#: modules/google-map/widgets/google-map.php:483
-#: modules/google-map/widgets/google-map.php:495
-#: modules/google-map/widgets/google-map.php:507
-#: modules/google-map/widgets/google-map.php:533
+#: modules/google-map/widgets/google-map.php:484
+#: modules/google-map/widgets/google-map.php:512
+#: modules/google-map/widgets/google-map.php:540
+#: modules/google-map/widgets/google-map.php:568
+#: modules/google-map/widgets/google-map.php:596
+#: modules/google-map/widgets/google-map.php:622
 #: modules/login-form/widgets/login-form.php:603
 #: modules/login-form/widgets/login-form.php:1049
 #: modules/login-form/widgets/login-form.php:1076
@@ -6948,7 +6949,7 @@ msgid "Border radius"
 msgstr ""
 
 #: modules/faq/widgets/faq.php:860 modules/ff-styler/widgets/ff-styler.php:1710
-#: modules/gf-styler/widgets/gf-styler.php:1750
+#: modules/gf-styler/widgets/gf-styler.php:1752
 #: modules/headings/widgets/advanced-heading.php:481
 #: modules/headings/widgets/advanced-heading.php:1002
 #: modules/headings/widgets/dual-heading.php:224
@@ -6970,7 +6971,7 @@ msgid "H1"
 msgstr ""
 
 #: modules/faq/widgets/faq.php:861 modules/ff-styler/widgets/ff-styler.php:1711
-#: modules/gf-styler/widgets/gf-styler.php:1751
+#: modules/gf-styler/widgets/gf-styler.php:1753
 #: modules/headings/widgets/advanced-heading.php:482
 #: modules/headings/widgets/advanced-heading.php:1003
 #: modules/headings/widgets/dual-heading.php:225
@@ -6992,7 +6993,7 @@ msgid "H2"
 msgstr ""
 
 #: modules/faq/widgets/faq.php:862 modules/ff-styler/widgets/ff-styler.php:1712
-#: modules/gf-styler/widgets/gf-styler.php:1752
+#: modules/gf-styler/widgets/gf-styler.php:1754
 #: modules/headings/widgets/advanced-heading.php:483
 #: modules/headings/widgets/advanced-heading.php:1004
 #: modules/headings/widgets/dual-heading.php:226
@@ -7014,7 +7015,7 @@ msgid "H3"
 msgstr ""
 
 #: modules/faq/widgets/faq.php:863 modules/ff-styler/widgets/ff-styler.php:1713
-#: modules/gf-styler/widgets/gf-styler.php:1753
+#: modules/gf-styler/widgets/gf-styler.php:1755
 #: modules/headings/widgets/advanced-heading.php:484
 #: modules/headings/widgets/advanced-heading.php:1005
 #: modules/headings/widgets/dual-heading.php:227
@@ -7036,7 +7037,7 @@ msgid "H4"
 msgstr ""
 
 #: modules/faq/widgets/faq.php:864 modules/ff-styler/widgets/ff-styler.php:1714
-#: modules/gf-styler/widgets/gf-styler.php:1754
+#: modules/gf-styler/widgets/gf-styler.php:1756
 #: modules/headings/widgets/advanced-heading.php:485
 #: modules/headings/widgets/advanced-heading.php:1006
 #: modules/headings/widgets/dual-heading.php:228
@@ -7058,7 +7059,7 @@ msgid "H5"
 msgstr ""
 
 #: modules/faq/widgets/faq.php:865 modules/ff-styler/widgets/ff-styler.php:1715
-#: modules/gf-styler/widgets/gf-styler.php:1755
+#: modules/gf-styler/widgets/gf-styler.php:1757
 #: modules/headings/widgets/advanced-heading.php:486
 #: modules/headings/widgets/advanced-heading.php:1007
 #: modules/headings/widgets/dual-heading.php:229
@@ -7080,7 +7081,7 @@ msgid "H6"
 msgstr ""
 
 #: modules/faq/widgets/faq.php:866 modules/ff-styler/widgets/ff-styler.php:1716
-#: modules/gf-styler/widgets/gf-styler.php:1756
+#: modules/gf-styler/widgets/gf-styler.php:1758
 #: modules/headings/widgets/dual-heading.php:230
 #: modules/headings/widgets/fancy-heading.php:546
 #: modules/how-to/widgets/how-to.php:1113
@@ -7097,7 +7098,7 @@ msgid "div"
 msgstr ""
 
 #: modules/faq/widgets/faq.php:867 modules/ff-styler/widgets/ff-styler.php:1717
-#: modules/gf-styler/widgets/gf-styler.php:1757
+#: modules/gf-styler/widgets/gf-styler.php:1759
 #: modules/headings/widgets/dual-heading.php:232
 #: modules/headings/widgets/fancy-heading.php:547
 #: modules/how-to/widgets/how-to.php:1115
@@ -7164,7 +7165,7 @@ msgstr ""
 #: modules/ff-styler/widgets/ff-styler.php:197
 #: modules/ff-styler/widgets/ff-styler.php:1697
 #: modules/gf-styler/widgets/gf-styler.php:269
-#: modules/gf-styler/widgets/gf-styler.php:1737
+#: modules/gf-styler/widgets/gf-styler.php:1739
 #: modules/wpf-styler/widgets/wpf-styler.php:200
 #: modules/wpf-styler/widgets/wpf-styler.php:1339
 msgid "Form Title"
@@ -7173,7 +7174,7 @@ msgstr ""
 #: modules/ff-styler/widgets/ff-styler.php:212
 #: modules/ff-styler/widgets/ff-styler.php:1761
 #: modules/gf-styler/widgets/gf-styler.php:284
-#: modules/gf-styler/widgets/gf-styler.php:1801
+#: modules/gf-styler/widgets/gf-styler.php:1803
 #: modules/wpf-styler/widgets/wpf-styler.php:215
 #: modules/wpf-styler/widgets/wpf-styler.php:1405
 msgid "Form Description"
@@ -7198,7 +7199,7 @@ msgid "Secondary Button"
 msgstr ""
 
 #: modules/ff-styler/widgets/ff-styler.php:1155
-#: modules/gf-styler/widgets/gf-styler.php:1383
+#: modules/gf-styler/widgets/gf-styler.php:1385
 #: modules/headings/widgets/fancy-heading.php:285
 #: modules/hotspot/widgets/hotspot.php:939
 #: modules/modal-popup/widgets/modal-popup.php:543
@@ -7216,24 +7217,24 @@ msgid "Section Break"
 msgstr ""
 
 #: modules/ff-styler/widgets/ff-styler.php:1523
-#: modules/gf-styler/widgets/gf-styler.php:1602
+#: modules/gf-styler/widgets/gf-styler.php:1604
 #: modules/wpf-styler/widgets/wpf-styler.php:1164
 msgid "Form Title Bottom Margin"
 msgstr ""
 
 #: modules/ff-styler/widgets/ff-styler.php:1544
-#: modules/gf-styler/widgets/gf-styler.php:1623
+#: modules/gf-styler/widgets/gf-styler.php:1625
 #: modules/wpf-styler/widgets/wpf-styler.php:1185
 msgid "Form Description Bottom Margin"
 msgstr ""
 
 #: modules/ff-styler/widgets/ff-styler.php:1601
-#: modules/gf-styler/widgets/gf-styler.php:1683
+#: modules/gf-styler/widgets/gf-styler.php:1685
 msgid "Input Top Spacing"
 msgstr ""
 
 #: modules/ff-styler/widgets/ff-styler.php:1619
-#: modules/gf-styler/widgets/gf-styler.php:1701
+#: modules/gf-styler/widgets/gf-styler.php:1703
 msgid "Input Bottom Spacing"
 msgstr ""
 
@@ -7286,29 +7287,29 @@ msgstr ""
 msgid "Placeholder Color"
 msgstr ""
 
-#: modules/gf-styler/widgets/gf-styler.php:814
+#: modules/gf-styler/widgets/gf-styler.php:816
 msgid "Default Checkboxes/Radio Buttons"
 msgstr ""
 
-#: modules/gf-styler/widgets/gf-styler.php:815
+#: modules/gf-styler/widgets/gf-styler.php:817
 msgid ""
 "This option lets you use browser default checkboxes and radio buttons. "
 "Enable this if you face any issues with custom checkboxes and radio buttons."
 msgstr ""
 
-#: modules/gf-styler/widgets/gf-styler.php:1015
+#: modules/gf-styler/widgets/gf-styler.php:1017
 msgid "Section Field"
 msgstr ""
 
-#: modules/gf-styler/widgets/gf-styler.php:1047
+#: modules/gf-styler/widgets/gf-styler.php:1049
 msgid "Border Type"
 msgstr ""
 
-#: modules/gf-styler/widgets/gf-styler.php:1067
+#: modules/gf-styler/widgets/gf-styler.php:1069
 msgid "Border Thickness"
 msgstr ""
 
-#: modules/gf-styler/widgets/gf-styler.php:1107
+#: modules/gf-styler/widgets/gf-styler.php:1109
 #: modules/posts/skins/skin-base.php:2829
 #: modules/posts/skins/skin-base.php:2921
 #: modules/posts/skins/skin-base.php:3139
@@ -7322,15 +7323,15 @@ msgstr ""
 msgid "Bottom Spacing"
 msgstr ""
 
-#: modules/gf-styler/widgets/gf-styler.php:1438
+#: modules/gf-styler/widgets/gf-styler.php:1440
 msgid "Form Error Validation"
 msgstr ""
 
-#: modules/gf-styler/widgets/gf-styler.php:1473
+#: modules/gf-styler/widgets/gf-styler.php:1475
 msgid "Error Message Border Color"
 msgstr ""
 
-#: modules/gf-styler/widgets/gf-styler.php:1914
+#: modules/gf-styler/widgets/gf-styler.php:1918
 #: modules/wpf-styler/widgets/wpf-styler.php:1516
 msgid "Button Typography"
 msgstr ""
@@ -7339,11 +7340,69 @@ msgstr ""
 msgid "Please select a Gravity Form"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:133
+#: modules/google-map/widgets/google-map.php:103
+msgid "Top Center"
+msgstr ""
+
+#: modules/google-map/widgets/google-map.php:104
+#: modules/particles/module.php:349 modules/video/widgets/video.php:1342
+msgid "Top Left"
+msgstr ""
+
+#: modules/google-map/widgets/google-map.php:105
+#: modules/particles/module.php:350 modules/video/widgets/video.php:1343
+msgid "Top Right"
+msgstr ""
+
+#: modules/google-map/widgets/google-map.php:106
+#: modules/offcanvas/widgets/offcanvas.php:836
+msgid "Left Top"
+msgstr ""
+
+#: modules/google-map/widgets/google-map.php:107
+#: modules/offcanvas/widgets/offcanvas.php:837
+msgid "Right Top"
+msgstr ""
+
+#: modules/google-map/widgets/google-map.php:108
+msgid "Left Center"
+msgstr ""
+
+#: modules/google-map/widgets/google-map.php:109
+msgid "Right Center"
+msgstr ""
+
+#: modules/google-map/widgets/google-map.php:110
+msgid "Left Bottom"
+msgstr ""
+
+#: modules/google-map/widgets/google-map.php:111
+msgid "Right Bottom"
+msgstr ""
+
+#: modules/google-map/widgets/google-map.php:112
+msgid "Bottom Center"
+msgstr ""
+
+#: modules/google-map/widgets/google-map.php:113
+#: modules/particles/module.php:351
+#: modules/registration-form/widgets/registration-form.php:312
+#: modules/video/widgets/video.php:1344
+msgid "Bottom Left"
+msgstr ""
+
+#: modules/google-map/widgets/google-map.php:114
+#: modules/particles/module.php:352
+#: modules/registration-form/widgets/registration-form.php:311
+#: modules/video/widgets/video.php:1345
+msgid "Bottom Right"
+msgstr ""
+
+#: modules/google-map/widgets/google-map.php:158
 msgid "Addresses"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:148
+#: modules/google-map/widgets/google-map.php:173
 #. translators: %s admin link
 msgid ""
 "To display customized Google Map without an issue, you need to configure "
@@ -7351,212 +7410,228 @@ msgid ""
 "target=\"_blank\" rel=\"noopener\">here</a>."
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:159
+#: modules/google-map/widgets/google-map.php:184
 msgid "Latitude"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:160
-#: modules/google-map/widgets/google-map.php:174
-#: modules/google-map/widgets/google-map.php:372
+#: modules/google-map/widgets/google-map.php:185
+#: modules/google-map/widgets/google-map.php:199
+#: modules/google-map/widgets/google-map.php:397
 msgid "Click here"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:160
+#: modules/google-map/widgets/google-map.php:185
 msgid "to find Latitude of your location"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:173
+#: modules/google-map/widgets/google-map.php:198
 msgid "Longitude"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:174
+#: modules/google-map/widgets/google-map.php:199
 msgid "to find Longitude of your location"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:187
-#: modules/google-map/widgets/google-map.php:629
+#: modules/google-map/widgets/google-map.php:212
+#: modules/google-map/widgets/google-map.php:718
 msgid "Address Title"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:200
+#: modules/google-map/widgets/google-map.php:225
 msgid "Display Info Window"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:206
+#: modules/google-map/widgets/google-map.php:231
 msgid "On Mouse Click"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:207
+#: modules/google-map/widgets/google-map.php:232
 msgid "On Page Load"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:215
-#: modules/google-map/widgets/google-map.php:659
+#: modules/google-map/widgets/google-map.php:240
+#: modules/google-map/widgets/google-map.php:748
 msgid "Address Information"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:236
+#: modules/google-map/widgets/google-map.php:261
 #: modules/hotspot/widgets/hotspot.php:236
 #: modules/hotspot/widgets/hotspot.php:251
 msgid "Marker Icon"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:249
+#: modules/google-map/widgets/google-map.php:274
 msgid "Select Marker"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:266
+#: modules/google-map/widgets/google-map.php:291
 msgid "Marker Size"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:269
+#: modules/google-map/widgets/google-map.php:294
 msgid ""
 "Note: If you want to retain the image original size, then set the Marker "
 "Size as blank."
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:301
+#: modules/google-map/widgets/google-map.php:326
 msgid "Coca-Cola London Eye"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:331
+#: modules/google-map/widgets/google-map.php:356
 msgid "Map Type"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:335
+#: modules/google-map/widgets/google-map.php:360
 msgid "Road Map"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:336
+#: modules/google-map/widgets/google-map.php:361
 msgid "Satellite"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:337
+#: modules/google-map/widgets/google-map.php:362
 msgid "Hybrid"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:338
+#: modules/google-map/widgets/google-map.php:363
 msgid "Terrain"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:346
+#: modules/google-map/widgets/google-map.php:371
 msgid "Map Skin"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:350
+#: modules/google-map/widgets/google-map.php:375
 msgid "Standard"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:351
+#: modules/google-map/widgets/google-map.php:376
 msgid "Silver"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:352
+#: modules/google-map/widgets/google-map.php:377
 msgid "Retro"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:353
+#: modules/google-map/widgets/google-map.php:378
 #: modules/login-form/widgets/login-form.php:637
 msgid "Dark"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:354
+#: modules/google-map/widgets/google-map.php:379
 msgid "Night"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:355
+#: modules/google-map/widgets/google-map.php:380
 msgid "Aubergine"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:356
+#: modules/google-map/widgets/google-map.php:381
 msgid "Aqua"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:357
+#: modules/google-map/widgets/google-map.php:382
 msgid "Classic Blue"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:358
+#: modules/google-map/widgets/google-map.php:383
 msgid "Earth"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:359
+#: modules/google-map/widgets/google-map.php:384
 msgid "Magnesium"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:371
+#: modules/google-map/widgets/google-map.php:396
 msgid "Custom Style"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:372
+#: modules/google-map/widgets/google-map.php:397
 msgid "to get JSON style code to style your map"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:384
+#: modules/google-map/widgets/google-map.php:409
 msgid "Marker Animation"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:389
+#: modules/google-map/widgets/google-map.php:414
 msgid "On Load"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:390
+#: modules/google-map/widgets/google-map.php:415
 msgid "Continuous"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:398
+#: modules/google-map/widgets/google-map.php:423
 msgid "Map Zoom"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:415
+#: modules/google-map/widgets/google-map.php:440
 #: modules/team-member/widgets/team-member.php:184
 #: modules/woocommerce/widgets/woo-mini-cart.php:465
 msgid "Height"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:448
+#: modules/google-map/widgets/google-map.php:473
 msgid "Controls"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:455
+#: modules/google-map/widgets/google-map.php:480
 msgid "Street View Controls"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:467
+#: modules/google-map/widgets/google-map.php:493
+msgid "Street View Position"
+msgstr ""
+
+#: modules/google-map/widgets/google-map.php:508
 msgid "Map Type Control"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:479
+#: modules/google-map/widgets/google-map.php:521
+msgid "Map Type Position"
+msgstr ""
+
+#: modules/google-map/widgets/google-map.php:536
 msgid "Zoom Control"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:491
+#: modules/google-map/widgets/google-map.php:549
+msgid "Zoom Control Position"
+msgstr ""
+
+#: modules/google-map/widgets/google-map.php:564
 msgid "Fullscreen Control"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:503
+#: modules/google-map/widgets/google-map.php:577
+msgid "Fullscreen Position"
+msgstr ""
+
+#: modules/google-map/widgets/google-map.php:592
 msgid "Zoom on Scroll"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:515
+#: modules/google-map/widgets/google-map.php:604
 msgid "Map Alignment"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:520
+#: modules/google-map/widgets/google-map.php:609
 msgid "Moderate"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:522
+#: modules/google-map/widgets/google-map.php:611
 msgid ""
 "Generally, the map is center aligned. If you have multiple locations & wish "
 "to make your first location as a center point, then switch to moderate mode."
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:529
+#: modules/google-map/widgets/google-map.php:618
 msgid "Cluster the Markers"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:544
+#: modules/google-map/widgets/google-map.php:633
 #. translators: %1$s admin link
 msgid ""
 "Enable this to group your markers together if you have many in a close "
@@ -7564,19 +7639,19 @@ msgid ""
 "article %2$s for more information."
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:565
+#: modules/google-map/widgets/google-map.php:654
 msgid "Info Window"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:572
+#: modules/google-map/widgets/google-map.php:661
 msgid "Max Width for Info Window"
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:605
+#: modules/google-map/widgets/google-map.php:694
 msgid "Spacing Between Title & Info."
 msgstr ""
 
-#: modules/google-map/widgets/google-map.php:720
+#: modules/google-map/widgets/google-map.php:809
 #. translators: %1$s doc link
 msgid "%1$s Google Map localization » %2$s"
 msgstr ""
@@ -7615,7 +7690,7 @@ msgstr ""
 #: modules/login-form/widgets/login-form.php:1061
 #: modules/login-form/widgets/login-form.php:1088
 #: modules/retina-image/widgets/retina-image.php:246
-#: modules/social-share/widgets/social-share.php:530
+#: modules/social-share/widgets/social-share.php:531
 #: modules/team-member/widgets/team-member.php:575
 #: modules/timeline/widgets/timeline.php:871
 msgid "https://your-link.com"
@@ -7763,7 +7838,7 @@ msgstr ""
 #: modules/headings/widgets/advanced-heading.php:819
 #: modules/headings/widgets/dual-heading.php:701
 #: modules/price-table/widgets/price-table.php:1068
-#: modules/social-share/widgets/social-share.php:479
+#: modules/social-share/widgets/social-share.php:480
 msgid "Horizontal Position"
 msgstr ""
 
@@ -7773,7 +7848,7 @@ msgstr ""
 #: modules/price-table/widgets/price-table.php:1778
 #: modules/price-table/widgets/price-table.php:1859
 #: modules/price-table/widgets/price-table.php:1938
-#: modules/social-share/widgets/social-share.php:446
+#: modules/social-share/widgets/social-share.php:447
 msgid "Vertical Position"
 msgstr ""
 
@@ -9611,8 +9686,8 @@ msgid "Google"
 msgstr ""
 
 #: modules/login-form/widgets/login-form.php:2462
-#: modules/social-share/widgets/social-share.php:1188
-#: modules/social-share/widgets/social-share.php:1278
+#: modules/social-share/widgets/social-share.php:1189
+#: modules/social-share/widgets/social-share.php:1279
 msgid "Facebook"
 msgstr ""
 
@@ -10479,14 +10554,6 @@ msgstr ""
 msgid "Icon Alignment"
 msgstr ""
 
-#: modules/offcanvas/widgets/offcanvas.php:836
-msgid "Left Top"
-msgstr ""
-
-#: modules/offcanvas/widgets/offcanvas.php:837
-msgid "Right Top"
-msgstr ""
-
 #: modules/offcanvas/widgets/offcanvas.php:1407
 msgid "Menu Item"
 msgstr ""
@@ -10578,26 +10645,6 @@ msgstr ""
 
 #: modules/particles/module.php:341
 msgid "Flow Direction"
-msgstr ""
-
-#: modules/particles/module.php:349 modules/video/widgets/video.php:1342
-msgid "Top Left"
-msgstr ""
-
-#: modules/particles/module.php:350 modules/video/widgets/video.php:1343
-msgid "Top Right"
-msgstr ""
-
-#: modules/particles/module.php:351
-#: modules/registration-form/widgets/registration-form.php:312
-#: modules/video/widgets/video.php:1344
-msgid "Bottom Left"
-msgstr ""
-
-#: modules/particles/module.php:352
-#: modules/registration-form/widgets/registration-form.php:311
-#: modules/video/widgets/video.php:1345
-msgid "Bottom Right"
 msgstr ""
 
 #: modules/particles/module.php:382
@@ -12286,7 +12333,7 @@ msgid "Select Network"
 msgstr ""
 
 #: modules/social-share/widgets/social-share.php:235
-#: modules/social-share/widgets/social-share.php:1550
+#: modules/social-share/widgets/social-share.php:1551
 #. translators: %s Pinterest share link
 msgid ""
 "To share the post on Pinterest you must assign a featured image for the "
@@ -12331,185 +12378,185 @@ msgstr ""
 msgid "Square"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:513
+#: modules/social-share/widgets/social-share.php:514
 msgid "Target URL"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:516
+#: modules/social-share/widgets/social-share.php:517
 msgid "Current Page"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:644
+#: modules/social-share/widgets/social-share.php:645
 msgid "Button Size"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:676
+#: modules/social-share/widgets/social-share.php:677
 msgid "Button Height"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:806
+#: modules/social-share/widgets/social-share.php:807
 #: modules/team-member/widgets/team-member.php:1211
 msgid "Official Color"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:807
+#: modules/social-share/widgets/social-share.php:808
 msgid "Custom color"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:827
-#: modules/social-share/widgets/social-share.php:937
+#: modules/social-share/widgets/social-share.php:828
+#: modules/social-share/widgets/social-share.php:938
 msgid "Primary Color"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:875
-#: modules/social-share/widgets/social-share.php:988
+#: modules/social-share/widgets/social-share.php:876
+#: modules/social-share/widgets/social-share.php:989
 msgid "Secondary Color"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1038
+#: modules/social-share/widgets/social-share.php:1039
 msgid "Text Padding"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1064
-#: modules/social-share/widgets/social-share.php:1071
+#: modules/social-share/widgets/social-share.php:1065
+#: modules/social-share/widgets/social-share.php:1072
 msgid "Share Count"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1072
+#: modules/social-share/widgets/social-share.php:1073
 msgid "Enable this option to display the total share count of target post/page."
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1084
+#: modules/social-share/widgets/social-share.php:1085
 msgid "Show Fake Count"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1089
+#: modules/social-share/widgets/social-share.php:1090
 msgid "Static Count"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1090
+#: modules/social-share/widgets/social-share.php:1091
 msgid "Random Count"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1102
+#: modules/social-share/widgets/social-share.php:1103
 msgid "Fake Count"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1103
+#: modules/social-share/widgets/social-share.php:1104
 msgid "Note: Enter the number of fake count you want to display."
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1119
+#: modules/social-share/widgets/social-share.php:1120
 msgid "Minimum Count"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1135
+#: modules/social-share/widgets/social-share.php:1136
 msgid "Maximum Count"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1165
+#: modules/social-share/widgets/social-share.php:1166
 #. translators: %s admin link
 msgid "Fake Count Limit"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1166
+#: modules/social-share/widgets/social-share.php:1167
 msgid ""
 "Once the original count reaches this limit the fake count will be hidden. "
 "Only the original count will be shown after this limit reaches."
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1182
+#: modules/social-share/widgets/social-share.php:1183
 msgid "Fetch Share Count From"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1183
+#: modules/social-share/widgets/social-share.php:1184
 msgid ""
 "Choose Social media from above actions to display share count of particular "
 "media."
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1189
-#: modules/social-share/widgets/social-share.php:1219
+#: modules/social-share/widgets/social-share.php:1190
+#: modules/social-share/widgets/social-share.php:1220
 #. translators: %s admin link
 msgid "Twitter"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1190
-#: modules/social-share/widgets/social-share.php:1246
+#: modules/social-share/widgets/social-share.php:1191
+#: modules/social-share/widgets/social-share.php:1247
 msgid "Pinterest"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1191
+#: modules/social-share/widgets/social-share.php:1192
 msgid "Tumblr"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1192
+#: modules/social-share/widgets/social-share.php:1193
 msgid "Reddit"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1193
+#: modules/social-share/widgets/social-share.php:1194
 msgid "Buffer"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1194
+#: modules/social-share/widgets/social-share.php:1195
 msgid "VK"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1195
+#: modules/social-share/widgets/social-share.php:1196
 msgid "OK"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1234
+#: modules/social-share/widgets/social-share.php:1235
 #. translators: %s link
 msgid ""
 "For Twitter you will need to register your website %s in order to return "
 "the share counts."
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1260
+#: modules/social-share/widgets/social-share.php:1261
 msgid ""
 "For pinterest you need to set up a featured image and Image URL should "
 "contain https://"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1292
+#: modules/social-share/widgets/social-share.php:1293
 #. translators: %s admin link
 msgid ""
 "Please configure Facebook Access Token from <a href=\"%s\" "
 "target=\"_blank\" rel=\"noopener\">here</a>."
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1324
+#: modules/social-share/widgets/social-share.php:1325
 msgid "Share "
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1325
+#: modules/social-share/widgets/social-share.php:1326
 msgid "Custom Text"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1375
+#: modules/social-share/widgets/social-share.php:1376
 msgid "Text/Icon Color"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1506
+#: modules/social-share/widgets/social-share.php:1507
 msgid "Floating Social Share - ID"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1507
+#: modules/social-share/widgets/social-share.php:1508
 msgid ""
 "Click here to edit the \"Floating Social Share\" settings. This text will "
 "not be visible on frontend."
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1534
+#: modules/social-share/widgets/social-share.php:1535
 msgid ""
 "Please set the Facebook token from Dashboard -> Settings -> UAE -> Social "
 "Share - Facebook Access Token."
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1677
-#: modules/social-share/widgets/social-share.php:1686
-#: modules/social-share/widgets/social-share.php:1706
+#: modules/social-share/widgets/social-share.php:1678
+#: modules/social-share/widgets/social-share.php:1687
+#: modules/social-share/widgets/social-share.php:1707
 #. translators: %s share text
 msgid "Share on %s"
 msgstr ""
@@ -14709,7 +14756,7 @@ msgstr ""
 #: modules/caf-styler/widgets/caf-styler.php:542
 #: modules/cf-styler/widgets/cf-styler.php:513
 #: modules/ff-styler/widgets/ff-styler.php:593
-#: modules/gf-styler/widgets/gf-styler.php:831
+#: modules/gf-styler/widgets/gf-styler.php:833
 #: modules/wpf-styler/widgets/wpf-styler.php:649
 msgctxt "uael"
 msgid "Size"

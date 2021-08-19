@@ -2070,19 +2070,4 @@ class HowTo extends Common_Widget {
 	 * @access protected
 	 */
 	protected function content_template() {}
-
-	/**
-	 * Render HowTo widget widgets output in the editor.
-	 *
-	 * Written as a Backbone JavaScript template and used to generate the live preview.
-	 *
-	 * Remove this after Elementor v3.3.0
-	 *
-	 * @since 1.23.0
-	 * @access protected
-	 */
-	protected function _content_template() { // phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
-		$this->content_template();
-	}
-
 }

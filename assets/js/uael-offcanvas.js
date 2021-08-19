@@ -13,16 +13,19 @@
 
 			var wrap_width = $canvas_element.width() + 'px';
 
+			var body = $( 'body' );
+			var html = $( 'html' );
+
 			/* If Off-Canvas at Left position */
 			if( $canvas_element.hasClass( 'position-at-left' ) ) {
 
-				$( 'body' ).css( 'margin-left' , '0' );
+				body.css( 'margin-left' , '0' );
 				$canvas_element.css( 'left', '0' );
 
 				/* If Push Transition is enabled */
 				if( $canvas_element.hasClass( 'uael-offcanvas-type-push' ) ) {
 
-					$( 'body' ).addClass( 'uael-offcanvas-animating' ).css({ 
+					body.addClass( 'uael-offcanvas-animating' ).css({ 
 						position: 'absolute',
 						width: '100%',
 						'margin-left' : wrap_width,
@@ -35,13 +38,13 @@
 
 			} else {
 
-				$( 'body' ).css( 'margin-right', '0' );
+				body.css( 'margin-right', '0' );
 				$canvas_element.css( 'right', '0' );
 
 				/* If Push Transition is enabled */
 				if( $canvas_element.hasClass( 'uael-offcanvas-type-push' ) ) {
 
-					$( 'body' ).addClass( 'uael-offcanvas-animating' ).css({ 
+					body.addClass( 'uael-offcanvas-animating' ).css({ 
 						position: 'absolute',
 						width: '100%',
 						'margin-left' : '-' + wrap_width,
@@ -53,12 +56,12 @@
 			}
 
 			if( $canvas_element.hasClass( 'uael-offcanvas-scroll-disable' ) ) {
-				$( 'html' ).addClass( 'uael-offcanvas-enabled' );
+				html.addClass( 'uael-offcanvas-enabled' );
 			}
 
-			device_mode = $( 'body' ).data( 'elementor-device-mode' );
+			device_mode = body.data( 'elementor-device-mode' );
 			if( 'mobile' == device_mode ){
-			    $( 'html' ).addClass( 'uael-off-canvas-overlay' );
+			    html.addClass( 'uael-off-canvas-overlay' );
 			} 
 		},
 
@@ -70,6 +73,9 @@
 
 			var wrap_width = $canvas_element.width() + 'px';
 
+			var body = $( 'body' );
+			var html = $( 'html' );
+
 			/* If Off-Canvas at Left position */
 			if( $canvas_element.hasClass( 'position-at-left' ) ) {
 
@@ -78,14 +84,14 @@
 				/* If Push Transition  is enabled*/
 				if( $canvas_element.hasClass( 'uael-offcanvas-type-push' ) ) {
 
-					$( 'body' ).css({ 
+					body.css({ 
 						position: '',
 						'margin-left' : '',
 						'margin-right' : '',
 					});
 
 					setTimeout( function() {
-						$( 'body' ).removeClass( 'uael-offcanvas-animating' ).css({ 
+						body.removeClass( 'uael-offcanvas-animating' ).css({ 
 							width: '',
 						});
 					}, 300 );
@@ -99,14 +105,14 @@
 				/* If Push Transition is enabled */
 				if( $canvas_element.hasClass( 'uael-offcanvas-type-push' ) ) {
 
-					$( 'body' ).css({
+					body.css({
 						position: '',
 						'margin-right' : '',
 						'margin-left' : '',
 					});
 
 					setTimeout( function() {
-						$( 'body' ).removeClass( 'uael-offcanvas-animating' ).css({ 
+						body.removeClass( 'uael-offcanvas-animating' ).css({ 
 							width: '',
 						});
 					}, 300 );
@@ -115,11 +121,11 @@
 				$canvas_element.removeClass( 'uael-offcanvas-show' );
 			}
 
-			$( 'html' ).removeClass( 'uael-offcanvas-enabled' );
+			html.removeClass( 'uael-offcanvas-enabled' );
 
-			device_mode = $( 'body' ).data( 'elementor-device-mode' );
+			device_mode = body.data( 'elementor-device-mode' );
 			if( 'mobile' == device_mode ){
-			    $( 'html' ).removeClass( 'uael-off-canvas-overlay' );
+			    html.removeClass( 'uael-off-canvas-overlay' );
 			}
 		},
 	}
@@ -259,18 +265,19 @@
 				return;
 				
 			var id = $scope.data( 'id' );
-			var wrap_menu_item = $scope.find( '.uael-offcanvas-parent-wrapper' ).data( 'wrap-menu-item' );
+			var parent_wrap = $scope.find( '.uael-offcanvas-parent-wrapper' );
+			var wrap_menu_item = parent_wrap.data( 'wrap-menu-item' );
 			
 			if ( $scope.hasClass('elementor-hidden-desktop') ) {
-	        	$scope.find( '.uael-offcanvas-parent-wrapper' ).addClass( 'uael-offcanvas-hide-desktop' );
+	        	parent_wrap.addClass( 'uael-offcanvas-hide-desktop' );
 			}
 
 			if ( $scope.hasClass('elementor-hidden-tablet') ) {
-	        	$scope.find( '.uael-offcanvas-parent-wrapper' ).addClass( 'uael-offcanvas-hide-tablet' );
+	        	parent_wrap.addClass( 'uael-offcanvas-hide-tablet' );
 			}
 
 			if ( $scope.hasClass('elementor-hidden-phone') ) {
-	        	$scope.find( '.uael-offcanvas-parent-wrapper' ).addClass( 'uael-offcanvas-hide-phone' );
+	        	parent_wrap.addClass( 'uael-offcanvas-hide-phone' );
 			}
 
 			$( document ).trigger( 'uael_offcanvas_init', [ $scope.data( 'id' ) ] );

@@ -497,6 +497,8 @@ class GfStyler extends Common_Widget {
 				'default'   => '',
 				'selectors' => array(
 					'{{WRAPPER}} .uael-gf-style .gform_wrapper .gfield .gfield_description,
+					{{WRAPPER}} .uael-gf-style .ginput_container .gfield_post_tags_hint, 
+					{{WRAPPER}} .uael-gf-style .ginput_container .gform_fileupload_rules,
 					{{WRAPPER}} .uael-gf-style .ginput_container_name input + label, 
 					{{WRAPPER}} .uael-gf-style .ginput_container_creditcard input + span + label,
 					{{WRAPPER}} .uael-gf-style .ginput_container input + label,
@@ -1893,6 +1895,8 @@ class GfStyler extends Common_Widget {
 					'default' => Global_Typography::TYPOGRAPHY_TEXT,
 				),
 				'selector' => '{{WRAPPER}} .uael-gf-style .gform_wrapper .gfield .gfield_description,
+				{{WRAPPER}} .uael-gf-style .ginput_container .gfield_post_tags_hint, 
+				{{WRAPPER}} .uael-gf-style .ginput_container .gform_fileupload_rules,
 				{{WRAPPER}} .uael-gf-style .ginput_container_name input + label,
 				{{WRAPPER}} .uael-gf-style .ginput_container_creditcard input + span + label,
 				{{WRAPPER}} .uael-gf-style .ginput_container input + label,

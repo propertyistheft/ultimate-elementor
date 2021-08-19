@@ -3,7 +3,6 @@
 	var RegisterUAELQuickView = function( $scope, $ ) {
 
 		var scope_id 		= $scope.data( 'id' );
-		var quick_view_btn 	= $scope.find('.uael-quick-view-btn');
 		var modal_wrap 		= $scope.find('.uael-quick-view-' + scope_id );
 
 		modal_wrap.appendTo( document.body );
@@ -12,9 +11,7 @@
 			uael_qv_modal    		= modal_wrap.find( '#uael-quick-view-modal' ),
 			uael_qv_content  		= uael_qv_modal.find( '#uael-quick-view-content' ),
 			uael_qv_close_btn 		= uael_qv_modal.find( '#uael-quick-view-close' ),
-			uael_qv_wrapper  		= uael_qv_modal.find( '.uael-content-main-wrapper'),
-			uael_qv_wrapper_w 		= uael_qv_wrapper.width(),
-			uael_qv_wrapper_h 		= uael_qv_wrapper.height();
+			uael_qv_wrapper  		= uael_qv_modal.find( '.uael-content-main-wrapper');
 
 		$scope
 			.off( 'click', '.uael-quick-view-btn' )
@@ -22,7 +19,6 @@
 				e.preventDefault();
 
 				var $this       = $(this);
-				var	wrap 		= $this.closest('li.product');
 				var product_id  = $this.data( 'product_id' );
 
 				if( ! uael_qv_modal.hasClass( 'loading' ) ) {
@@ -43,7 +39,6 @@
 			.on( 'click', '.uael-quick-view-data', function( e ) {
 				e.preventDefault();
 				var $this       = $(this);
-				var	wrap 		= $this.closest('li.product');
 				var product_id  = $this.data( 'product_id' );
 
 				if( ! uael_qv_modal.hasClass( 'loading' ) ) {
@@ -320,7 +315,6 @@
 
 	var RegisterUAELAddCart = function( $scope, $ ) {
 
-		//
 		$layout = $scope.data('widget_type');
 
 		if ( 'uael-woo-products.grid-franko' !== $layout && 'uael-woo-products-slider.slider-franko' !== $layout ) {
@@ -347,8 +341,7 @@
 
 			var $thisbutton = $(this),
 				product_id 	= $thisbutton.data('product_id'),
-				quantity 	= 1,
-				cart_icon 	= $thisbutton.find('uael-action-item');
+				quantity 	= 1;
 
 			$thisbutton.removeClass( 'added' );
 			$thisbutton.addClass( 'loading' );
@@ -492,8 +485,7 @@
 			}
 
 			var $thisbutton = $( this ),
-				product_id = $( this ).val(),
-				variation_id = $( 'input[name="variation_id"]' ).val() || '';
+				product_id = $( this ).val();
 
 			// Set Quantity.
 			//

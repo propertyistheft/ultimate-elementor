@@ -23,15 +23,14 @@
 		 */
 		_centerModal: function ( popup_id ) {
 
-			var popup_wrap = $('.uamodal-' + popup_id ),
-				modal_popup  = '#modal-' + popup_id,
-				node 		 = '.uamodal-' + popup_id,
+			var popup_wrap = $( '.uamodal-' + popup_id ),
+				modal_popup  = $( '#modal-' + popup_id ),
 				extra_value = 0,
-				close_handle = $( '#modal-' + popup_id ).find( '.uael-modal-close' ),
-				top_pos = ( ( $( window ).height() - $( '#modal-' + popup_id ).outerHeight() ) / 2 );
+				close_handle = modal_popup.find( '.uael-modal-close' ),
+				top_pos = ( ( $( window ).height() - modal_popup.outerHeight() ) / 2 );
 
-			if ( $( '#modal-' + popup_id ).hasClass('uael-center-modal') ) {
-	        	$( '#modal-' + popup_id ).removeClass('uael-center-modal');
+			if ( modal_popup.hasClass('uael-center-modal') ) {
+	        	modal_popup.removeClass('uael-center-modal');
 			}
 
 			if( close_handle.hasClass( 'uael-close-custom-popup-top-right' ) || close_handle.hasClass( 'uael-close-custom-popup-top-left' ) ) {
@@ -40,22 +39,26 @@
 
 			if ( popup_wrap.find( '.uael-content' ).outerHeight() > $( window ).height() ) {
 				top_pos = ( 20 + extra_value );
-				if( $( '#modal-' + popup_id ).hasClass( 'uael-show' ) ) {
+				if( modal_popup.hasClass( 'uael-show' ) ) {
 					$( 'html' ).addClass( 'uael-html-modal' );
-					$( '#modal-' + popup_id ).addClass( 'uael-modal-scroll' );
+					modal_popup.addClass( 'uael-modal-scroll' );
 
-					if( $( '#wpadminbar' ).length > 0 ) {
-						top_pos = ( top_pos + parseInt( $( '#wpadminbar' ).outerHeight() ) );
+					var $admin_bar = $( '#wpadminbar' );
+
+					if( $admin_bar.length > 0 ) {
+						top_pos = ( top_pos + parseInt( $admin_bar.outerHeight() ) );
 					}
-					$( modal_popup ).find( '.uael-content' ).css( 'margin-top', + top_pos +'px' );
-					$( modal_popup ).find( '.uael-content' ).css( 'margin-bottom', '20px' );
+
+					var modal_popup_content = modal_popup.find( '.uael-content' );
+					modal_popup_content.css( 'margin-top', + top_pos +'px' );
+					modal_popup_content.css( 'margin-bottom', '20px' );
 				}
 			} else {
 				top_pos = ( parseInt( top_pos ) + 20 );
 			}
 
-			$( modal_popup ).css( 'top', + top_pos +'px' );
-			$( modal_popup ).css( 'margin-bottom', '20px' );
+			modal_popup.css( 'top', + top_pos +'px' );
+			modal_popup.css( 'margin-bottom', '20px' );
 		},
 
 		/**
@@ -68,14 +71,16 @@
 
 			UAELModalPopup._autoPlay( popup_id );
 
-			if( $( '#modal-' + popup_id ).hasClass( 'uael-modal-vimeo' ) || $( '#modal-' + popup_id ).hasClass( 'uael-modal-youtube' ) ) {
-				setTimeout( function() { $( '#modal-' + popup_id ).addClass( 'uael-show' ); }, 300 );
+			var modal_popup  = $( '#modal-' + popup_id );
+
+			if( modal_popup.hasClass( 'uael-modal-vimeo' ) || modal_popup.hasClass( 'uael-modal-youtube' ) ) {
+				setTimeout( function() { modal_popup.addClass( 'uael-show' ); }, 300 );
 			} else {
-				$( '#modal-' + popup_id ).addClass( 'uael-show' );
+				modal_popup.addClass( 'uael-show' );
 			}
 			setTimeout(
 				function() {
-					$( '#modal-' + popup_id ).removeClass( 'uael-effect-13' );
+					modal_popup.removeClass( 'uael-effect-13' );
 				},
 				1000
 			);
@@ -88,9 +93,10 @@
 		 *
 		 */
 		_close: function( popup_id ) {
-			$( '#modal-' + popup_id ).removeClass( 'uael-show' );
+			var modal_popup  = $( '#modal-' + popup_id );
+			modal_popup.removeClass( 'uael-show' );
 			$( 'html' ).removeClass( 'uael-html-modal' );
-			$( '#modal-' + popup_id ).removeClass('uael-modal-scroll');
+			modal_popup.removeClass( 'uael-modal-scroll' );
 			UAELModalPopup._stopVideo( popup_id );
 		},
 
@@ -98,7 +104,7 @@
 		 * Check all the end conditions to show modal popup
 		 *
 		 */
-		_canShow: function( popup_id ) {
+		_canShow: function( popup_id ) {0
 
 			var is_cookie = $( '.uamodal-' + popup_id ).data( 'cookies' );
 			var current_cookie = Cookies.get( 'uael-modal-popup-' + popup_id );
@@ -136,16 +142,17 @@
 
 			var active_popup = $( '.uamodal-' + popup_id ),
 				video_autoplay = active_popup.data( 'autoplay' ),
-				modal_content = active_popup.data( 'content' );
-
+				modal_content = active_popup.data( 'content' ),
+				modal_popup  = $( '#modal-' + popup_id );
 
 			if ( video_autoplay == 'yes' && ( modal_content == 'youtube' || modal_content == 'vimeo' ) ) {
 
-				var vid_id = $( '#modal-' + popup_id ).find( '.uael-video-player' ).data( 'id' );
+				var vid_id = modal_popup.find( '.uael-video-player' ).data( 'id' );
 
-				if( 0 == $( '#modal-' + popup_id ).find( '.uael-video-player iframe' ).length ) {
+				if( 0 == modal_popup.find( '.uael-video-player iframe' ).length ) {
 
-					$( '#modal-' + popup_id ).find( '.uael-video-player div[data-id=' + vid_id + ']' ).trigger( 'click' );
+					modal_popup.find( '.uael-video-player div[data-id=' + vid_id + ']' ).trigger( 'click' );
+
 				} else {
 
 					var modal_iframe 		= active_popup.find( 'iframe' ),
@@ -170,8 +177,10 @@
 					iframe.setAttribute( "height", "100%" );
 					iframe.setAttribute( "class", "uael-content-iframe" );
 
-					active_popup.find( '.uael-modal-content-data' ).html( iframe );
-					active_popup.find( '.uael-modal-content-data' ).append( '<div class="uael-loader"><div class="uael-loader-1"></div><div class="uael-loader-2"></div><div class="uael-loader-3"></div></div>' );
+					var active_popup_data = active_popup.find( '.uael-modal-content-data' );
+
+					active_popup_data.html( iframe );
+					active_popup_data.append( '<div class="uael-loader"><div class="uael-loader-1"></div><div class="uael-loader-2"></div><div class="uael-loader-3"></div></div>' );
 
 					iframe.onload = function() {
 						window.parent.jQuery( document ).find('#modal-' + popup_id + ' .uael-loader' ).fadeOut();
@@ -307,8 +316,9 @@
 			}, 400 );
 		}
 
-		var content_type = $( '#' + node_id + '-overlay' ).data( 'content' );
-		var device = $( '#' + node_id + '-overlay' ).data( 'device' );
+		var overlay_node = $( '#' + node_id + '-overlay' );
+		var content_type = overlay_node.data( 'content' );
+		var device = overlay_node.data( 'device' );
 
 		if ( 'youtube' == content_type || 'vimeo' == content_type ) {
 
@@ -316,15 +326,16 @@
 
 				$( '.uael-video-player' ).each( function( index, value ) {
 
-					var div = $( "<div/>" );
-						div.attr( 'data-id', $( this ).data( 'id' ) );
-						div.attr( 'data-src', $( this ).data( 'src' ) );
-						div.attr( 'data-sourcelink', $( this ).data( 'sourcelink' ) );
-						div.html( '<img src="' + $( this ).data( 'thumb' ) + '"><div class="play ' + $( this ).data( 'play-icon' ) + '"></div>' );
+					var div = $( "<div/>" ),
+						$this = $( this );
+						div.attr( 'data-id', $this.data( 'id' ) );
+						div.attr( 'data-src', $this.data( 'src' ) );
+						div.attr( 'data-sourcelink', $this.data( 'sourcelink' ) );
+						div.html( '<img src="' + $this.data( 'thumb' ) + '"><div class="play ' + $this.data( 'play-icon' ) + '"></div>' );
 
 					div.on( "click", videoIframe );
 
-					$( this ).html( div );
+					$this.html( div );
 
 					if( true == device ) {
 
@@ -343,7 +354,7 @@
 	 * Resize event
 	 *
 	 */
-	$( window ).resize( function() {
+	$( window ).on( 'resize', function() {
 		UAELModalPopup._center();
 	} );
 
@@ -351,7 +362,7 @@
 	 * Exit intent event
 	 *
 	 */
-	$(document).on( 'mouseleave', function( e ) {
+	$( document ).on( 'mouseleave', function( e ) {
 
 		if ( e.clientY > 20 ) {
             return;
@@ -496,18 +507,19 @@
 		if ( 'undefined' == typeof $scope )
 			return;
 		
-		var scope_id = $scope.data( 'id' );
+		var scope_id = $scope.data( 'id' ),
+			modal_scope = $( '.uamodal-' + scope_id );
 
 		if ( $scope.hasClass('elementor-hidden-desktop') ) {
-        	$( '.uamodal-' + scope_id ).addClass( 'uael-modal-hide-desktop' );
+        	modal_scope.addClass( 'uael-modal-hide-desktop' );
 		}
 
 		if ( $scope.hasClass('elementor-hidden-tablet') ) {
-        	$( '.uamodal-' + scope_id ).addClass( 'uael-modal-hide-tablet' );
+        	modal_scope.addClass( 'uael-modal-hide-tablet' );
 		}
 
 		if ( $scope.hasClass('elementor-hidden-phone') ) {
-        	$( '.uamodal-' + scope_id ).addClass( 'uael-modal-hide-phone' );
+        	modal_scope.addClass( 'uael-modal-hide-phone' );
 		}
 
 		$( document ).trigger( 'uael_modal_popup_init', scope_id );

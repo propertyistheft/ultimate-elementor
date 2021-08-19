@@ -20,8 +20,9 @@
 
         post_active.each( function( i ) {
 
-            var this_height = $( this ).outerHeight(),
-                blog_post = $( this ).find( '.uael-post__bg-wrap' ),
+            var $this = $( this ),
+				this_height = $this.outerHeight(),
+                blog_post = $this.find( '.uael-post__bg-wrap' ),
                 blog_post_height = blog_post.outerHeight();
 
             if( max_height < blog_post_height ) {
@@ -48,7 +49,6 @@
 
             var $this = jQuery( this ),
                 selector = $this.find( '.uael-post__bg-wrap' ),
-                blog_post = $this.find( '.uael-post__inner-wrap' ),
                 blog_post_height = selector.outerHeight();
 
             if ( $this.hasClass('slick-active') ) {
@@ -68,13 +68,13 @@
 
 		var selector = $scope.find( '.uael-post-grid__inner' );
 
-		loader = $scope.find( '.uael-post-inf-loader' );
-
-		var $tabs_dropdown = $scope.find('.uael-filters-dropdown-list');
-
 		if ( selector.length < 1 ) {
 			return;
 		}
+
+		loader = $scope.find( '.uael-post-inf-loader' );
+
+		var $tabs_dropdown = $scope.find('.uael-filters-dropdown-list');
 
 		$( 'html' ).on( 'click', function() {
 			$tabs_dropdown.removeClass( 'show-list' );
@@ -85,8 +85,9 @@
 			$tabs_dropdown.toggleClass( 'show-list' );
 		});
 
-		var layout = $scope.find( '.uael-post-grid' ).data( 'layout' ),
-			structure = $scope.find( '.uael-post-grid' ).data( 'structure' );
+		var post_grid = $scope.find( '.uael-post-grid' );
+			layout = post_grid.data( 'layout' ),
+			structure = post_grid.data( 'structure' );
 
 		var filter_cat;
 
@@ -108,18 +109,18 @@
 			$this.addClass( 'uael-filter__current' );
 
 			var filterValue = $this.attr( 'data-filter' );
+			var def_filter = '';
 
 			if( '*' === filterValue ) {
-				filter_cat = $scope.find( '.uael-post-grid' ).data( 'filter-default' );
+				filter_cat = post_grid.data( 'filter-default' );
 			} else {
 				filter_cat = filterValue.substr(1);
 			}
 
-			if( $scope.find( '.uael-post-grid' ).data( 'default-filter' ) ){
-				var def_filter = $scope.find( '.uael-post-grid' ).data( 'default-filter' );
-			}
-			else{
-				var def_filter = $scope.find( '.uael-post-grid' ).data( 'filter-default' );
+			if( post_grid.data( 'default-filter' ) ) {
+				def_filter = post_grid.data( 'default-filter' );
+			} else {
+				def_filter = post_grid.data( 'filter-default' );
 			}
 
 			var str_text = $scope.find( '.uael-filter__current' ).text();
@@ -139,18 +140,18 @@
 				$this.addClass( 'uael-filter__current' );
 
 				var filterValue = $this.attr( 'data-filter' );
+				var def_filter = '';
 
 				if( '*' === filterValue ) {
-					filter_cat = $scope.find( '.uael-post-grid' ).data( 'filter-default' );
+					filter_cat = post_grid.data( 'filter-default' );
 				} else {
 					filter_cat = filterValue.substr(1);
 				}
 
-				if( $scope.find( '.uael-post-grid' ).data( 'default-filter' ) ){
-					var def_filter = $scope.find( '.uael-post-grid' ).data( 'default-filter' );
-				}
-				else{
-					var def_filter = $scope.find( '.uael-post-grid' ).data( 'filter-default' );
+				if( post_grid.data( 'default-filter' ) ){
+					def_filter = post_grid.data( 'default-filter' );
+				} else {
+					def_filter = post_grid.data( 'filter-default' );
 				}
 
 				var str_text = $scope.find( '.uael-filter__current' ).text();
@@ -170,23 +171,24 @@
 			var default_filter = $scope.find( '.uael-post-grid' ).data( 'default-filter' );
 			var cat_id 	       = window.location.hash.substring(1);
 			var pattern        = new RegExp( "^[\\w\\-]+$" );
-			var cat_filter 	   = $scope.find( '.uael-post__header-filters' );
 
 			if( '' !== cat_id && pattern.test( cat_id ) ) {
 				$scope.find( '.uael-post__header-filter' ).each( function( key, value ) {
-					var current_filter = $( this ).attr('data-filter');
+					var $this = $( this );
+					var current_filter = $this.attr('data-filter');
 					if ( cat_id == current_filter.split('.').join("") ) {
-						$( this ).trigger( 'click' );
-						$( this ).trigger( 'keyup' );
+						$this.trigger( 'click' );
+						$this.trigger( 'keyup' );
 					}
 				});
 			}
 
 			if ( 'undefined' != typeof default_filter && '' != default_filter ) {
 				$scope.find( '.uael-post__header-filter' ).each( function( key, value ) {
-					if ( default_filter == $( this ).text() ) {
-						$( this ).trigger( 'click' );
-						$( this ).trigger( 'keyup' );
+					var $this = $( this );
+					if ( default_filter == $this.text() ) {
+						$this.trigger( 'click' );
+						$this.trigger( 'keyup' );
 					}
 				} );
 			}
@@ -228,7 +230,6 @@
 					loader.show();
 					return false;
 				}
-
 
 				if( ( $( window ).scrollTop() + windowHeight50 ) >= ( $scope.find( '.uael-post-wrapper:last' ).offset().top ) ) {
 
@@ -299,8 +300,9 @@
 	$( 'body' ).on( 'click', '.uael-grid-pagination .page-numbers', function( e ) {
 
 		$scope = $( this ).closest( '.elementor-widget-uael-posts' );
+		var post_grid = $scope.find( '.uael-post-grid' );
 
-		if ( 'main' == $scope.find( '.uael-post-grid' ).data( 'query-type' ) ) {
+		if ( 'main' == post_grid.data( 'query-type' ) ) {
 			return;
 		}
 
@@ -310,27 +312,27 @@
 
 		var page_number = 1;
 		var curr = parseInt( $scope.find( '.uael-grid-pagination .page-numbers.current' ).html() );
-
-		if ( $( this ).hasClass( 'next' ) ) {
+		var $this = $( this );
+		if ( $this.hasClass( 'next' ) ) {
 			page_number = curr + 1;
-		} else if ( $( this ).hasClass( 'prev' ) ) {
+		} else if ( $this.hasClass( 'prev' ) ) {
 			page_number = curr - 1;
 		} else {
-			page_number = $( this ).html();
+			page_number = $this.html();
 		}
 
 		$scope.find( '.uael-post-grid .uael-post-wrapper' ).last().after( '<div class="uael-post-loader"><div class="uael-loader"></div><div class="uael-loader-overlay"></div></div>' );
 
 		var $args = {
-			'page_id' : $scope.find( '.uael-post-grid' ).data('page'),
+			'page_id' : post_grid.data('page'),
 			'widget_id' : $scope.data( 'id' ),
 			'filter' : $scope.find( '.uael-filter__current' ).data( 'filter' ),
-			'skin' : $scope.find( '.uael-post-grid' ).data( 'skin' ),
+			'skin' : post_grid.data( 'skin' ),
 			'page_number' : page_number
 		};
 
-		var offset_top = $scope.find( '.uael-post-grid' ).data( 'offset-top' );
-		if( '' != $scope.find( '.uael-post-grid' ).data('filter-default') ){
+		var offset_top = post_grid.data( 'offset-top' );
+		if( '' != post_grid.data('filter-default') ){
 			offset_top = $scope.find('.uael-post__header-filters').outerHeight() + parseFloat( $scope.find( '.uael-post__header .uael-post__header-filters-wrap').css( 'marginBottom' ));
 		}
 

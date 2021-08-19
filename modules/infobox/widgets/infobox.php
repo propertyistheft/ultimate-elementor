@@ -323,7 +323,7 @@ class Infobox extends Common_Widget {
 				'options' => array(
 					'photo' => array(
 						'title' => __( 'Image', 'uael' ),
-						'icon'  => 'fa fa-picture-o',
+						'icon'  => 'fa fa-image',
 					),
 					'icon'  => array(
 						'title' => __( 'Font Icon', 'uael' ),
@@ -2773,19 +2773,5 @@ class Infobox extends Common_Widget {
 				</div>
 			</div>
 		<?php
-	}
-
-	/**
-	 * Render Info Box widget output in the editor.
-	 *
-	 * Written as a Backbone JavaScript template and used to generate the live preview.
-	 *
-	 * Remove this after Elementor v3.3.0
-	 *
-	 * @since 0.0.1
-	 * @access protected
-	 */
-	protected function _content_template() { // phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
-		$this->content_template();
 	}
 }

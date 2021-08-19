@@ -2187,18 +2187,4 @@ class Hotspot extends Common_Widget {
 		<# elementorFrontend.hooks.doAction( 'frontend/element_ready/uael-hotspot.default' ); #>
 		<?php
 	}
-
-	/**
-	 * Render Hotspot widget output in the editor.
-	 *
-	 * Written as a Backbone JavaScript template and used to generate the live preview.
-	 *
-	 * Remove this after Elementor v3.3.0
-	 *
-	 * @since 1.9.0
-	 * @access protected
-	 */
-	protected function _content_template() { // phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
-		$this->content_template();
-	}
 }

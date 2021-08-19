@@ -1,3 +1,15 @@
+Version 1.33.2 - Tuesday, 17th August 2021
+- Improvement : Elementor 3.4 compatibility.
+- Improvement: Optimized CSS & JS in the plugin for improving Core Web Vitals.
+- Improvement: Google Map - Added option for position of map controls.
+- Fix: Modal Popup - Fixed jQuery '.resize()' event shorthand is deprecated.
+- Fix: Modal Popup - Undefined play icon notice when content type Vimeo selected.
+- Fix: Gravity Forms Styler - Description style not applying to the Post Fields description.
+- Fix: WP Forms Styler - Input size not applying to the Textarea field.
+- Fix: Social Share - Social items not adding on a new line.
+- Fix: Woo - Products - Fixed grid layout column issue on Product archive template with Astra theme.
+- Fix: Contact Form 7 Styler - Console error when selecting the form from widget settings.
+
 Version 1.33.1 - Thursday, 5th August 2021
 - Improvement: Added WPML translation support for all widgets through wpml-config.xml file.
 - Improvement: Display Conditions - Added request parameter support.

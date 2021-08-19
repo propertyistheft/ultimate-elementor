@@ -384,6 +384,7 @@ class SocialShare extends Common_Widget {
 				'condition'    => array(
 					'display_position' => 'inline',
 				),
+				'render_type'  => 'template',
 			)
 		);
 
@@ -2094,19 +2095,5 @@ class SocialShare extends Common_Widget {
 	 * @access protected
 	 */
 	protected function content_template() {
-	}
-
-	/**
-	 * Render widget output in the editor.
-	 *
-	 * Written as a Backbone JavaScript template and used to generate the live preview.
-	 *
-	 * Remove this after Elementor v3.3.0
-	 *
-	 * @since 1.30.0
-	 * @access protected
-	 */
-	protected function _content_template() { // phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore  
-		$this->content_template();
 	}
 }

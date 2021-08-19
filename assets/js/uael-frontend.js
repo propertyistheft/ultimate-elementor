@@ -71,7 +71,7 @@
 		}
 
 		if( typeof gform !== 'undefined' ){
-			gform.addAction( 'gform_input_change', function( elem, formId, fieldId ) {
+			gform.addAction( 'gform_input_change', function( elem ) {
 			    if( $scope.find( '.gfield_radio .gchoice_button' ).length && ! $scope.hasClass( 'uael-gf-check-default-yes' ) && 'radio' == $scope.find( elem ).attr( 'type' ) ){
 			    	if( $scope.find( elem ).parent().hasClass( 'uael-radio-active') ){
 						$scope.find( elem ).parent().removeClass( 'uael-radio-active' );
@@ -107,12 +107,14 @@
 
 			$scope.find('input:radio').each(function() {
 
-				var radioField = $( this ).next().hasClass('uael-caf-radio-custom');
+				var $this = $( this );
+
+				var radioField = $this.next().hasClass('uael-caf-radio-custom');
 
 				if( radioField ) {
 					return;
 				} else {
-					$( this ).after( "<span class='uael-caf-radio-custom'></span>" );
+					$this.after( "<span class='uael-caf-radio-custom'></span>" );
 				}
 
 			});
@@ -148,12 +150,11 @@
 
 	}
 
-
 	/**
 	 * Function for Fancy Text animation.
 	 *
 	 */
-	var UAELFancyText = function() {
+	 var UAELFancyText = function() {
 
 		var id 					= $( this ).data( 'id' );
 		var $this 				= $( this ).find( '.uael-fancy-text-node' );
@@ -200,7 +201,7 @@
 			);
 		}
 	}
-
+	
 	/**
 	 * Hotspot Tooltip handler Function.
 	 *
@@ -227,8 +228,6 @@
 		var overlay 		= $this.data( 'overlay' );
 
 		var length 			= $this.data( 'length' );
-		var $tour_item 		= $scope.find( '.uael-hotspot-main-' + id );
-		var $item_num 		= $tour_item.data( 'uaeltour' );
 		var tour_interval 	= $this.data( 'tourinterval' );
 		var action_autoplay = $this.data( 'autoaction' );
 		var sid;
@@ -278,10 +277,11 @@
 		function sectionInterval() {
 
 			hotspotInterval[ id ] = setInterval( function() {
-				sid = $( '.uael-hotspot-main-' + id + '.open' ).data( 'uaeltour' );
+				var $open_hotspot_node = $( '.uael-hotspot-main-' + id + '.open' );
+				sid = $open_hotspot_node.data( 'uaeltour' );
 
 				if( ! hoverFlag ) {
-					$( '.uael-hotspot-main-' + id + '.open' ).trigger( 'click' );
+					$open_hotspot_node.trigger( 'click' );
 					if( 'yes' == repeat ) {
 						if ( ! elementorFrontend.isEditMode() ) {
 							if( sid == length ) {
@@ -306,8 +306,9 @@
 
 								if( ! (section.offset().top - halfWindowHeight < scrollTop ) && ( section.offset().top + section.height() - halfWindowHeight > scrollTop) ) {
 								} else {
-									$('.uael-hotspot-main-' + id + '.open').tooltipster( 'close' );
-									$('.uael-hotspot-main-' + id + '.open').removeClass( 'open' );
+									var hotspot_main = $( '.uael-hotspot-main-' + id + '.open' );
+									hotspot_main.tooltipster( 'close' );
+									hotspot_main.removeClass( 'open' );
 									clearInterval( hotspotInterval[ id ] );
 									buttonOverlay();
 									$( overlay_id ).show();
@@ -390,9 +391,9 @@
 			$( '.uael-tour-end-' + id ).off('click.endtour').on( 'click.endtour', function(e) {
 				clearInterval( hotspotInterval[ id ] );
 				e.preventDefault();
-
-				$('.uael-hotspot-main-' + id + '.open').tooltipster( 'close' );
-				$('.uael-hotspot-main-' + id + '.open').removeClass( 'open' );
+				var hotspot_main = $( '.uael-hotspot-main-' + id + '.open' );
+				hotspot_main.tooltipster( 'close' );
+				hotspot_main.removeClass( 'open' );
 
 				if( 'auto' == action_autoplay && 'yes' == autoplay ) {
 					$( '.uael-hotspot-main-' + id ).css( "pointer-events", "none" );
@@ -404,11 +405,12 @@
 
 			// Add & remove open class for tooltip.
 			$( '.uael-hotspot-main-' + id ).off('click.triggertour').on('click.triggertour', function(e) {
-				if ( ! $(this).hasClass('open') ) {
-					$(this).tooltipster( 'open' );
-					$(this).addClass( 'open' );
+				var $this = $(this);
+				if ( ! $this.hasClass('open') ) {
+					$this.tooltipster( 'open' );
+					$this.addClass( 'open' );
 				    if( 'yes' == autoplay ) {
-						$(this).css( "pointer-events", "visible" );
+						$this.css( "pointer-events", "visible" );
 						$( '.uael-hotspot-main-' + id + '.open' ).on( 'mouseenter mouseleave', function(){
 							hoverFlag = true;
 						}, function(){
@@ -416,10 +418,10 @@
 						});
 					}
 				} else {
-					$(this).tooltipster( 'close' );
-					$(this).removeClass( 'open' );
+					$this.tooltipster( 'close' );
+					$this.removeClass( 'open' );
 					if( 'yes' == autoplay ) {
-						$(this).css( "pointer-events", "none" );
+						$this.css( "pointer-events", "none" );
 					}
 				}
 			});
@@ -475,8 +477,7 @@
 		if( 'custom' == trigger ) {
 
 			var overlay_id 	= $scope.find( '.uael-hotspot-overlay' );
-			var button_id 	= $scope.find( '.uael-overlay-button' );
-			buttonOverlay();
+			buttonOverlay();	
 		} else {
 			clearInterval( hotspotInterval[ id ] );
 		}
@@ -538,12 +539,11 @@
 		}
 	}
 
-
 	/**
 	 * Before After Slider handler Function.
 	 *
 	 */
-	var WidgetUAELBASliderHandler = function( $scope, $ ) {
+	 var WidgetUAELBASliderHandler = function( $scope, $ ) {
 
 		if ( 'undefined' == typeof $scope )
 			return;
@@ -584,7 +584,7 @@
 	 * Fancy text handler Function.
 	 *
 	 */
-	var WidgetUAELFancyTextHandler = function( $scope, $ ) {
+	 var WidgetUAELFancyTextHandler = function( $scope, $ ) {
 
 		if ( 'undefined' == typeof $scope ) {
 			return;
@@ -630,11 +630,8 @@
 
 		var animate_border 		= $scope.find(".animate-border");
 		var timeline_icon  		= $scope.find(".uael-timeline-marker");
-		var uael_events  		= $scope.find(".uael-events");
-		var events_inner 		= $scope.find(".uael-timeline-widget");
 		var line_inner   		= $scope.find(".uael-timeline__line__inner");
 		var line_outer   		= $scope.find(".uael-timeline__line");
-		var $main_class			= $scope.find(".elementor-widget-uael-timeline");
 		var $icon_class 		= $scope.find(".uael-timeline-marker");
 		var $card_last 			= $scope.find(".uael-timeline-field:last-child");
 
@@ -672,11 +669,6 @@
 			$last_item = parent_top + timeline_end_icon.top;
 
 		}
-
-		var viewportHeight = document.documentElement.clientHeight;
-		var elementPos = $this.offset().top;
-
-		var photoViewportOffsetTop = elementPos - $(document).scrollTop();
 
 		var elementEnd = $last_item + 20;
 
@@ -815,7 +807,6 @@
 		window.addEventListener("resize", uaelTimelineFunc);
 		window.addEventListener("scroll", uaelTimelineFunc);
 
-
 		var post_selector = $scope.find( '.uael-days' );
 
 		var node_id = $scope.data( 'id' );
@@ -849,8 +840,6 @@
 			return;
 		}
 
-		var $this           = $scope.find( '.uael-rbs-wrapper' );
-		var node_id 		= $scope.data( 'id' );
 		var rbs_section_1   = $scope.find( ".uael-rbs-section-1" );
 		var rbs_section_2   = $scope.find( ".uael-rbs-section-2" );
 		var main_btn        = $scope.find( ".uael-main-btn" );
@@ -881,9 +870,9 @@
 		if( '' !== id && sanitize_input ){
 			if ( id === 'content-1' || id === 'content-2' ) {
 				UAELContentToggle._openOnLink( $scope, rbs_switch );
-			}
+			}			
 		}
-
+		
 		setTimeout( function(){
 
 			if( rbs_switch.is( ':checked' ) ) {
@@ -893,29 +882,29 @@
 				rbs_section_1.show();
 				rbs_section_2.hide();
 			}
-		}, 100);
+		}, 100 );
 
-		rbs_switch.on('click', function(e){
-	        rbs_section_1.toggle();
-	        rbs_section_2.toggle();
-	    });
+		rbs_switch.on( 'click', function(e){
+			rbs_section_1.toggle();
+			rbs_section_2.toggle();
+		});
 
 		/* Label 1 Click */
-		rbs_label_1.on('click', function(e){
+		rbs_label_1.on( 'click', function(e){
 			// Uncheck
-			rbs_switch.prop("checked", false);
+			rbs_switch.prop( "checked", false);
 			rbs_section_1.show();
 			rbs_section_2.hide();
 
-	    });
+		});
 
-	    /* Label 2 Click */
+		/* Label 2 Click */
 		rbs_label_2.on('click', function(e){
 			// Check
-			rbs_switch.prop("checked", true);
+			rbs_switch.prop( "checked", true);
 			rbs_section_1.hide();
 			rbs_section_2.show();
-	    });
+		});
 	};
 
 	UAELContentToggle = {
@@ -927,34 +916,32 @@
 		_openOnLink: function( $scope, rbs_switch ){
 
 			var node_id 		= $scope.data( 'id' );
-			var main_btn        = $scope.find( ".uael-main-btn" );
-			var switch_type     = main_btn.attr( 'data-switch-type' );
 			var node          	= '.elementor-element-' + node_id;
 			var node_toggle     = '#uael-toggle-init' + node;
 
 			$( 'html, body' ).animate( {
-		        scrollTop: $( '#uael-toggle-init' ).find( '.uael-rbs-wrapper' ).offset().top
-		    }, 500 );
+				scrollTop: $( '#uael-toggle-init' ).find( '.uael-rbs-wrapper' ).offset().top
+			}, 500 );
 
 			if( id === 'content-1' ) {
-
-				$( node_toggle +' .uael-rbs-content-1' ).show();
-				$( node_toggle +' .uael-rbs-content-2' ).hide();
+				
+				$( node_toggle + ' .uael-rbs-content-1' ).show();
+				$( node_toggle + ' .uael-rbs-content-2' ).hide();
 				rbs_switch.prop( "checked", false );
 			} else {
-
-				$( node_toggle +' .uael-rbs-content-2' ).show();
-				$( node_toggle +' .uael-rbs-content-1' ).hide();
+				
+				$( node_toggle + ' .uael-rbs-content-2' ).show();
+				$( node_toggle + ' .uael-rbs-content-1' ).hide();
 				rbs_switch.prop( "checked", true );
 			}
-		},
+		}
 	}
 
 	/**
 	 * Video Gallery handler Function.
 	 *
 	 */
-	var WidgetUAELVideoGalleryHandler = function( $scope, $ ) {
+	 var WidgetUAELVideoGalleryHandler = function( $scope, $ ) {
 
 		if ( 'undefined' == typeof $scope ) {
 			return;
@@ -1031,9 +1018,7 @@
 					select_filter.addClass( 'uael-filter__current' );
 				}
 			}
-
-
-
+			
 			if ( filters.length > 0 ) {
 
 				var def_filter = filters.data( 'default' );
@@ -1115,9 +1100,9 @@
 	}
 
 	/*
-	 * Image Gallery handler Function.
-	 *
-	 */
+		* Image Gallery handler Function.
+		*
+		*/
 	var WidgetUAELImageGalleryHandler = function( $scope, $ ) {
 
 		if ( 'undefined' == typeof $scope ) {
@@ -1183,10 +1168,10 @@
 			})
 			.done(function( instance ) {
 				$justified_selector.justifiedGallery({
-				    rowHeight : row_height,
-				    lastRow : lastrow,
-				    selector : 'div',
-				    waitThumbnailsLoad : true,
+					rowHeight : row_height,
+					lastRow : lastrow,
+					selector : 'div',
+					waitThumbnailsLoad : true,
 				});
 			});
 		}
@@ -1208,21 +1193,21 @@
 			var adaptiveImageHeight = function( e, obj ) {
 
 				var node = obj.$slider,
-                post_active = node.find('.slick-slide.slick-active'),
-                max_height = -1;
+				post_active = node.find('.slick-slide.slick-active'),
+				max_height = -1;
 
-	            post_active.each(function( i ) {
+				post_active.each(function( i ) {
 
-	                var $this = $( this ),
-	                    this_height = $this.innerHeight();
+					var $this = $( this ),
+						this_height = $this.innerHeight();
 
-	                if( max_height < this_height ) {
-	                    max_height = this_height;
-	                }
-	            });
+					if( max_height < this_height ) {
+						max_height = this_height;
+					}
+				});
 
-	            node.find('.slick-list.draggable').animate({ height: max_height }, { duration: 200, easing: 'linear' });
-	            max_height = -1;
+				node.find('.slick-list.draggable').animate({ height: max_height }, { duration: 200, easing: 'linear' });
+				max_height = -1;
 			};
 
 			var slider_options 	= JSON.parse( slider_selector.attr('data-image_carousel') );
@@ -1301,10 +1286,10 @@
 				})
 				.done(function( instance ) {
 					$justified_selector.justifiedGallery({
-					    filter: def_cat,
+						filter: def_cat,
 						rowHeight : row_height,
-					    lastRow : lastrow,
-					    selector : 'div',
+						lastRow : lastrow,
+						selector : 'div',
 					});
 				});
 			} else {
@@ -1355,8 +1340,8 @@
 					$justified_selector.justifiedGallery({
 						filter: filterValue,
 						rowHeight : row_height,
-					    lastRow : lastrow,
-					    selector : 'div',
+						lastRow : lastrow,
+						selector : 'div',
 					});
 				} else {
 					$isotopeObj.isotope({ filter: filterValue });
@@ -1497,9 +1482,9 @@
 	}
 
 	/*
-	 * Video handler Function.
-	 *
-	 */
+	* Video handler Function.
+	*
+	*/
 	var WidgetUAELVideoHandler = function( $scope, $ ) {
 
 		if ( 'undefined' == typeof $scope ) {
@@ -1566,29 +1551,24 @@
 
 			window.addEventListener( "scroll", checkScroll );
 			$( window ).on( 'resize', function( e ) {
-	        	checkResize( uael_waypoint );
-	        } );
+				checkResize( uael_waypoint );
+			} );
 
 		}
 
 		function checkResize( uael_waypoint ) {
 			var currentDeviceMode = elementorFrontend.getCurrentDeviceMode();
 
-	  		if( '' !== sticky_desktop && currentDeviceMode == sticky_desktop ) {
+	  		if( ( '' !== sticky_desktop && currentDeviceMode == sticky_desktop ) || ( '' !== sticky_tablet && currentDeviceMode == sticky_tablet ) || ( '' !== sticky_mobile && currentDeviceMode == sticky_mobile ) ) {
   				disableSticky( uael_waypoint );
-	  		} else if( '' !== sticky_tablet && currentDeviceMode == sticky_tablet ) {
-	  			disableSticky( uael_waypoint );
-	  		} else if( '' !== sticky_mobile && currentDeviceMode == sticky_mobile ) {
-	  			disableSticky( uael_waypoint );
 	  		} else {
 	  			uael_waypoint[0].enable();
 	  		}
-
 		}
 
 		function disableSticky( uael_waypoint ) {
 			uael_waypoint[0].disable();
-            outer_wrap.removeClass( 'uael-sticky-apply' );
+			outer_wrap.removeClass( 'uael-sticky-apply' );
 			outer_wrap.removeClass( 'uael-sticky-hide' );
 		}
 
@@ -1609,21 +1589,20 @@
 				var infobar_height = infobar.outerHeight();
 
 				if( $scope.hasClass( 'uael-video-sticky-center_left' ) || $scope.hasClass( 'uael-video-sticky-center_right' ) ) {
-		        	infobar_height = Math.ceil( infobar_height / 2 );
-		        	inner_wrap.css( 'top', 'calc( 50% - ' + infobar_height + 'px )' );
+					infobar_height = Math.ceil( infobar_height / 2 );
+					inner_wrap.css( 'top', 'calc( 50% - ' + infobar_height + 'px )' );
 				}
 
 				if( $scope.hasClass( 'uael-video-sticky-bottom_left' ) || $scope.hasClass( 'uael-video-sticky-bottom_right' ) ) {
 					if( '' !== sticky_margin_bottom ) {
-			        	infobar_height = Math.ceil( infobar_height );
-			        	var stick_bottom = infobar_height + sticky_margin_bottom;
-			        	inner_wrap.css( 'bottom', stick_bottom );
-			        }
+						infobar_height = Math.ceil( infobar_height );
+						var stick_bottom = infobar_height + sticky_margin_bottom;
+						inner_wrap.css( 'bottom', stick_bottom );
+					}
 				}
-		    }
+			}
 		});
 	};
-
 
 	/*
 	 * Login Form handler Function.
@@ -1684,7 +1663,6 @@
 		 */
 		submit_button.on( 'click', function() {
 
-			var $this = $( this );
 			var invalid_field = false;
 			var error_exists = $scope.find( '.uael-loginform-error' );
 
@@ -1860,19 +1838,19 @@
 								}, 500 ).addClass( 'uael-form-waiting' );
 
 								if( ! facebook_text.hasClass( 'disabled' ) ) {
-										facebook_text.addClass( 'disabled' );
-										facebook_text.append( '<span class="uael-form-loader"></span>' );
+									facebook_text.addClass( 'disabled' );
+									facebook_text.append( '<span class="uael-form-loader"></span>' );
 								}
 							}
 						}, function ( data ) {
 							if( data.success === true ) {
 
-							form_wrapper.animate({
-								opacity: '1'
-							}, 100 ).removeClass( 'uael-form-waiting' );
-
-							facebook_text.find( '.uael-form-loader' ).remove();
-							facebook_text.removeClass( 'disabled' );
+								form_wrapper.animate({
+									opacity: '1'
+								}, 100 ).removeClass( 'uael-form-waiting' );
+						
+								facebook_text.find( '.uael-form-loader' ).remove();
+								facebook_text.removeClass( 'disabled' );
 
 								$scope.find( '.status' ).addClass( 'success' ).text( uael_login_form_script.logged_in_message + response.first_name + '!' );
 								if( undefined === redirect_url ) {
@@ -1934,9 +1912,6 @@
 
 						function( googleUser ) {
 
-							var profile = googleUser.getBasicProfile();
-							var name =  profile.getName();
-							var email = profile.getEmail();
 							var google_data = {
 								'send_email' : send_email,
 							};
@@ -1969,12 +1944,12 @@
 									success: function( data ) {
 										if( data.success === true ) {
 
-										form_wrapper.animate({
-											opacity: '1'
-										}, 100 ).removeClass( 'uael-form-waiting' );
-
-										google_text.find( '.uael-form-loader' ).remove();
-										google_text.removeClass( 'disabled' );
+											form_wrapper.animate({
+												opacity: '1'
+											}, 100 ).removeClass( 'uael-form-waiting' );
+									
+											google_text.find( '.uael-form-loader' ).remove();
+											google_text.removeClass( 'disabled' );
 
 											$scope.find( '.status' ).addClass( 'success' ).text( uael_login_form_script.logged_in_message + data.username + '!' );
 											if( undefined === redirect_url ) {

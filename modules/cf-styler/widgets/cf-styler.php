@@ -1379,7 +1379,12 @@ class CfStyler extends Common_Widget {
 
 					selector.find( 'div.wpcf7 > form' ).each( function() {
 						var $form = $( this );
-						wpcf7.initForm( $form );
+						//compatibility check for cf7 prior v5.4
+						if(undefined == wpcf7.initForm){
+							wpcf7.init( $form[0] );
+						}else {
+							wpcf7.initForm( $form );
+						}
 					} );
 				});
 			});

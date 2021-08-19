@@ -646,7 +646,7 @@ class Modal_Popup extends Common_Widget {
 					'options' => array(
 						'img'  => array(
 							'title' => __( 'Image', 'uael' ),
-							'icon'  => 'fa fa-picture-o',
+							'icon'  => 'fa fa-image',
 						),
 						'icon' => array(
 							'title' => __( 'Icon', 'uael' ),
@@ -2371,9 +2371,9 @@ class Modal_Popup extends Common_Widget {
 				$vimeo_migrated = isset( $settings['__fa4_migrated']['new_vimeo_play_icon'] );
 				$vimeo_is_new   = ! isset( $settings['vimeo_play_icon'] );
 
-				if ( $vimeo_is_new || $vimeo_migrated ) {
+				if ( ( $vimeo_is_new || $vimeo_migrated ) && isset( $settings['new_vimeo_play_icon'] ) ) {
 					$play_icon = $settings['new_vimeo_play_icon']['value'];
-				} else {
+				} elseif ( isset( $settings['vimeo_play_icon'] ) ) {
 					$play_icon = $settings['vimeo_play_icon'];
 				}
 			} else {
@@ -2842,18 +2842,4 @@ class Modal_Popup extends Common_Widget {
 	 * @access protected
 	 */
 	protected function content_template() {}
-
-	/**
-	 * Render Modal Popup output in the editor.
-	 *
-	 * Written as a Backbone JavaScript template and used to generate the live preview.
-	 *
-	 * Remove this after Elementor v3.3.0
-	 *
-	 * @since 0.0.1
-	 * @access protected
-	 */
-	protected function _content_template() { // phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
-		$this->content_template();
-	}
 }

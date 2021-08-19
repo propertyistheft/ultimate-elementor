@@ -90,6 +90,31 @@ class GoogleMap extends Common_Widget {
 		return array( 'uael-google-maps', 'uael-google-maps-api', 'uael-google-maps-cluster' );
 	}
 
+	/**
+	 * Returns an array of position options for map controls.
+	 *
+	 * @since 1.33.2
+	 * @access protected
+	 * @return array
+	 */
+	protected function get_control_position_options() {
+		return array(
+			''              => __( 'Default', 'uael' ),
+			'TOP_CENTER'    => __( 'Top Center', 'uael' ),
+			'TOP_LEFT'      => __( 'Top Left', 'uael' ),
+			'TOP_RIGHT'     => __( 'Top Right', 'uael' ),
+			'LEFT_TOP'      => __( 'Left Top', 'uael' ),
+			'RIGHT_TOP'     => __( 'Right Top', 'uael' ),
+			'LEFT_CENTER'   => __( 'Left Center', 'uael' ),
+			'RIGHT_CENTER'  => __( 'Right Center', 'uael' ),
+			'LEFT_BOTTOM'   => __( 'Left Bottom', 'uael' ),
+			'RIGHT_BOTTOM'  => __( 'Right Bottom', 'uael' ),
+			'BOTTOM_CENTER' => __( 'Bottom Center', 'uael' ),
+			'BOTTOM_LEFT'   => __( 'Bottom Left', 'uael' ),
+			'BOTTOM_RIGHT'  => __( 'Bottom Right', 'uael' ),
+		);
+	}
+
 
 	/**
 	 * Register GoogleMap controls.
@@ -452,50 +477,114 @@ class GoogleMap extends Common_Widget {
 			$this->add_control(
 				'option_streeview',
 				array(
-					'label'        => __( 'Street View Controls', 'uael' ),
-					'type'         => Controls_Manager::SWITCHER,
-					'default'      => 'yes',
-					'label_on'     => __( 'On', 'uael' ),
-					'label_off'    => __( 'Off', 'uael' ),
-					'return_value' => 'yes',
+					'label'              => __( 'Street View Controls', 'uael' ),
+					'type'               => Controls_Manager::SWITCHER,
+					'default'            => 'yes',
+					'label_on'           => __( 'On', 'uael' ),
+					'label_off'          => __( 'Off', 'uael' ),
+					'return_value'       => 'yes',
+					'frontend_available' => true,
 				)
 			);
+
+		$this->add_control(
+			'street_view_pos',
+			array(
+				'label'              => __( 'Street View Position', 'uael' ),
+				'type'               => Controls_Manager::SELECT,
+				'default'            => '',
+				'options'            => $this->get_control_position_options(),
+				'render_type'        => 'template',
+				'condition'          => array(
+					'option_streeview' => 'yes',
+				),
+				'frontend_available' => true,
+			)
+		);
 
 			$this->add_control(
 				'type_control',
 				array(
-					'label'        => __( 'Map Type Control', 'uael' ),
-					'type'         => Controls_Manager::SWITCHER,
-					'default'      => 'yes',
-					'label_on'     => __( 'On', 'uael' ),
-					'label_off'    => __( 'Off', 'uael' ),
-					'return_value' => 'yes',
+					'label'              => __( 'Map Type Control', 'uael' ),
+					'type'               => Controls_Manager::SWITCHER,
+					'default'            => 'yes',
+					'label_on'           => __( 'On', 'uael' ),
+					'label_off'          => __( 'Off', 'uael' ),
+					'return_value'       => 'yes',
+					'frontend_available' => true,
 				)
 			);
+
+		$this->add_control(
+			'map_type_pos',
+			array(
+				'label'              => __( 'Map Type Position', 'uael' ),
+				'type'               => Controls_Manager::SELECT,
+				'default'            => '',
+				'options'            => $this->get_control_position_options(),
+				'render_type'        => 'template',
+				'condition'          => array(
+					'type_control' => 'yes',
+				),
+				'frontend_available' => true,
+			)
+		);
 
 			$this->add_control(
 				'zoom_control',
 				array(
-					'label'        => __( 'Zoom Control', 'uael' ),
-					'type'         => Controls_Manager::SWITCHER,
-					'default'      => 'yes',
-					'label_on'     => __( 'On', 'uael' ),
-					'label_off'    => __( 'Off', 'uael' ),
-					'return_value' => 'yes',
+					'label'              => __( 'Zoom Control', 'uael' ),
+					'type'               => Controls_Manager::SWITCHER,
+					'default'            => 'yes',
+					'label_on'           => __( 'On', 'uael' ),
+					'label_off'          => __( 'Off', 'uael' ),
+					'return_value'       => 'yes',
+					'frontend_available' => true,
 				)
 			);
+
+		$this->add_control(
+			'zoom_control_pos',
+			array(
+				'label'              => __( 'Zoom Control Position', 'uael' ),
+				'type'               => Controls_Manager::SELECT,
+				'default'            => '',
+				'options'            => $this->get_control_position_options(),
+				'render_type'        => 'template',
+				'condition'          => array(
+					'zoom_control' => 'yes',
+				),
+				'frontend_available' => true,
+			)
+		);
 
 			$this->add_control(
 				'fullscreen_control',
 				array(
-					'label'        => __( 'Fullscreen Control', 'uael' ),
-					'type'         => Controls_Manager::SWITCHER,
-					'default'      => 'yes',
-					'label_on'     => __( 'On', 'uael' ),
-					'label_off'    => __( 'Off', 'uael' ),
-					'return_value' => 'yes',
+					'label'              => __( 'Fullscreen Control', 'uael' ),
+					'type'               => Controls_Manager::SWITCHER,
+					'default'            => 'yes',
+					'label_on'           => __( 'On', 'uael' ),
+					'label_off'          => __( 'Off', 'uael' ),
+					'return_value'       => 'yes',
+					'frontend_available' => true,
 				)
 			);
+
+		$this->add_control(
+			'fullscreen_pos',
+			array(
+				'label'              => __( 'Fullscreen Position', 'uael' ),
+				'type'               => Controls_Manager::SELECT,
+				'default'            => '',
+				'options'            => $this->get_control_position_options(),
+				'render_type'        => 'template',
+				'condition'          => array(
+					'fullscreen_control' => 'yes',
+				),
+				'frontend_available' => true,
+			)
+		);
 
 			$this->add_control(
 				'scroll_zoom',
@@ -954,19 +1043,4 @@ class GoogleMap extends Common_Widget {
 		<# elementorFrontend.hooks.doAction( 'frontend/element_ready/uael-google-map.default' ); #>
 		<?php
 	}
-
-	/**
-	 * Render GoogleMap widget output in the editor.
-	 *
-	 * Written as a Backbone JavaScript template and used to generate the live preview.
-	 *
-	 * Remove this after Elementor v3.3.0
-	 *
-	 * @since 0.0.1
-	 * @access protected
-	 */
-	protected function _content_template() { // phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
-		$this->content_template();
-	}
-
 }

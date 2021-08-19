@@ -4246,19 +4246,5 @@ class Price_Table extends Common_Widget {
 		#>
 		<?php
 	}
-
-	/**
-	 * Render Price Table widget output in the editor.
-	 *
-	 * Written as a Backbone JavaScript template and used to generate the live preview.
-	 *
-	 * Remove this after Elementor v3.3.0
-	 *
-	 * @since 0.0.1
-	 * @access protected
-	 */
-	protected function _content_template() { // phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
-		$this->content_template();
-	}
 }
 

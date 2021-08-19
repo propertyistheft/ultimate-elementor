@@ -44,12 +44,11 @@
             }
 
             var review_wrapper = widget_wrapper.find( $parent_wrap ),
-                review_active = widget_wrapper.find( $parent_wrap ),
                 max_height = -1,
                 wrapper_height = -1,
                 box_active_height = -1;
 
-            review_active.each( function( i ) {
+            review_wrapper.each( function( i ) {
 
                 var this_height = $( this ).outerHeight(),
                     blog_post = $( this ).find( $child_wrap ),
@@ -65,7 +64,7 @@
                 }
             });
 
-            review_active.each( function( i ) {
+            review_wrapper.each( function( i ) {
                 var selector = $( this ).find( $child_wrap );
                 selector.animate({ height: max_height }, { duration: 0, easing: 'linear' });
             });

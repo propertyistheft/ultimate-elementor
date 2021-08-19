@@ -1,6 +1,35 @@
 ( function( $ ) {
 
 	/**
+	 * Function to fetch widget settings.
+	 */
+
+	var getWidgetSettings = function ($element) {
+		var widgetSettings = {},
+			modelCID       = $element.data( 'model-cid' );
+
+		if ( isEditMode && modelCID ) {
+			var settings     = elementorFrontend.config.elements.data[ modelCID ],
+				settingsKeys = elementorFrontend.config.elements.keys[ settings.attributes.widgetType || settings.attributes.elType ];
+
+			jQuery.each(
+				settings.getActiveControls(),
+				function( controlKey ) {
+					if ( -1 !== settingsKeys.indexOf( controlKey ) ) {
+						widgetSettings[ controlKey ] = settings.attributes[ controlKey ];
+					}
+				}
+			);
+		} else {
+			widgetSettings = $element.data( 'settings' ) || {};
+		}
+
+		return widgetSettings;
+	};
+
+	var isEditMode = false;
+
+	/**
 	 * Google Map handler Function.
 	 *
 	 */
@@ -23,8 +52,9 @@
 			bounds 					= new google.maps.LatLngBounds(),
 			marker_cluster 			= [],
 			device_size 			= elementorFrontend.getCurrentDeviceMode(),
-			cluster_object;
-			
+			cluster_object,
+			widgetSettings          = getWidgetSettings( $scope );
+
 		if( 'drop' == animate ) {
 			var animation = google.maps.Animation.DROP;
 		} else if( 'bounce' == animate ) {
@@ -74,6 +104,44 @@
 			}
 
 			var map = new google.maps.Map( $scope.find( '.uael-google-map' )[0], map_options );
+
+			if ( 'undefined' !== widgetSettings.option_streeview && '' !== widgetSettings.street_view_pos) {
+				map.setOptions(
+					{
+						streetViewControlOptions: {
+							position: google.maps.ControlPosition[widgetSettings.street_view_pos]
+						}
+					}
+				)
+			}
+			if ( 'undefined' !== widgetSettings.type_control && '' !== widgetSettings.map_type_pos) {
+				map.setOptions(
+					{
+						mapTypeControlOptions: {
+							position: google.maps.ControlPosition[widgetSettings.map_type_pos]
+						}
+					}
+				)
+			}
+			if ( 'undefined' !== widgetSettings.zoom_control && '' !== widgetSettings.zoom_control_pos) {
+				map.setOptions(
+					{
+						zoomControlOptions: {
+							position: google.maps.ControlPosition[widgetSettings.zoom_control_pos]
+						}
+					}
+				)
+			}
+			if ( 'undefined' !== widgetSettings.fullscreen_control && '' !== widgetSettings.fullscreen_pos) {
+				map.setOptions(
+					{
+						fullscreenControlOptions: {
+							position: google.maps.ControlPosition[widgetSettings.fullscreen_pos]
+						}
+					}
+				)
+			}
+
 			var infowindow = new google.maps.InfoWindow();
 
 			for ( i = 0; i < locations.length; i++ ) {
@@ -229,6 +297,10 @@
 	};
 
 	$( window ).on( 'elementor/frontend/init', function () {
+
+		if ( elementorFrontend.isEditMode() ) {
+			isEditMode = true;
+		}
 
 		elementorFrontend.hooks.addAction( 'frontend/element_ready/uael-google-map.default', WidgetUAELGoogleMapHandler );
 	});
