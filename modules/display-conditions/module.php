@@ -93,6 +93,22 @@ class Module extends Module_Base {
 
 		if ( UAEL_Helper::is_widget_active( 'DisplayConditions' ) ) {
 
+			if ( ! session_id() && ! headers_sent() ) {
+				session_start(
+					array(
+						'read_and_close' => true,
+					)
+				);
+			}
+
+			if ( ! isset( $_COOKIE['uael_visitor'] ) && ! headers_sent() ) {
+
+				setcookie( 'uael_visitor', true, time() + ( 86400 * 30 * 12 ), '/' );
+
+				$_SESSION['uael_visitor_data'] = 'enabled';
+
+			}
+
 			add_action( 'elementor/element/common/_section_style/after_section_end', array( __CLASS__, 'add_controls_sections' ), 1, 2 );
 			// Activate column for sections.
 			add_action( 'elementor/element/column/section_advanced/after_section_end', array( __CLASS__, 'add_controls_sections' ), 1, 2 );

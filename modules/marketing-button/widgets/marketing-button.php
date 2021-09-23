@@ -109,6 +109,8 @@ class Marketing_Button extends Common_Widget {
 	 */
 	protected function register_controls() {
 
+		$this->register_presets_control( 'Marketing_Button', $this );
+
 		// Content Tab.
 		$this->register_buttons_content_controls();
 
@@ -526,6 +528,17 @@ class Marketing_Button extends Common_Widget {
 						)
 					);
 
+					$this->add_control(
+						'all_desc_color',
+						array(
+							'label'     => __( 'Description Color', 'uael' ),
+							'type'      => Controls_Manager::COLOR,
+							'selectors' => array(
+								'{{WRAPPER}} .uael-marketing-button .uael-marketing-button-desc' => 'color: {{VALUE}};',
+							),
+						)
+					);
+
 					$this->add_group_control(
 						Group_Control_Background::get_type(),
 						array(
@@ -601,6 +614,17 @@ class Marketing_Button extends Common_Widget {
 						)
 					);
 
+					$this->add_control(
+						'all_desc__hover_color',
+						array(
+							'label'     => __( 'Description Color', 'uael' ),
+							'type'      => Controls_Manager::COLOR,
+							'selectors' => array(
+								'{{WRAPPER}} .uael-marketing-button a.elementor-button:hover .uael-marketing-button-desc' => 'color: {{VALUE}};',
+							),
+						)
+					);
+
 					$this->add_group_control(
 						Group_Control_Background::get_type(),
 						array(
@@ -644,7 +668,7 @@ class Marketing_Button extends Common_Widget {
 						array(
 							'label'       => __( 'Hover Animation', 'uael' ),
 							'type'        => Controls_Manager::HOVER_ANIMATION,
-							'label_block' => false,
+							'label_block' => true,
 						)
 					);
 
@@ -753,15 +777,10 @@ class Marketing_Button extends Common_Widget {
 		$this->add_render_attribute( 'wrapper', 'class', 'uael-button-wrapper elementor-button-wrapper' );
 
 		if ( ! empty( $settings['link']['url'] ) ) {
-			$this->add_render_attribute( 'button', 'href', $settings['link']['url'] );
+
 			$this->add_render_attribute( 'button', 'class', 'elementor-button-link' );
 
-			if ( $settings['link']['is_external'] ) {
-				$this->add_render_attribute( 'button', 'target', '_blank' );
-			}
-			if ( $settings['link']['nofollow'] ) {
-				$this->add_render_attribute( 'button', 'rel', 'nofollow' );
-			}
+			$this->add_link_attributes( 'button', $settings['link'] );
 		}
 
 		if ( '' !== $settings['css_id'] ) {

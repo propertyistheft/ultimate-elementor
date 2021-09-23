@@ -809,15 +809,9 @@ class Dual_Heading extends Common_Widget {
 		<?php
 		$link = '';
 		if ( ! empty( $settings['heading_link']['url'] ) ) {
-			$this->add_render_attribute( 'url', 'href', $settings['heading_link']['url'] );
 
-			if ( $settings['heading_link']['is_external'] ) {
-				$this->add_render_attribute( 'url', 'target', '_blank' );
-			}
+			$this->add_link_attributes( 'url', $settings['heading_link'] );
 
-			if ( ! empty( $settings['heading_link']['nofollow'] ) ) {
-				$this->add_render_attribute( 'url', 'rel', 'nofollow' );
-			}
 			$link = $this->get_render_attribute_string( 'url' );
 		}
 
@@ -847,7 +841,7 @@ class Dual_Heading extends Common_Widget {
 		<div <?php echo wp_kses_post( $this->get_render_attribute_string( 'uael-dual-heading' ) ); ?>>
 			<<?php echo esc_attr( $dual_html_tag ); ?>>
 				<?php if ( ! empty( $settings['heading_link']['url'] ) ) { ?>
-					<a <?php echo wp_kses_post( $link ); ?> >
+					<a <?php echo $link; ?> > <?php //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 				<?php } ?>
 						<?php
 						// Ignore the PHPCS warning about constant declaration.
@@ -862,7 +856,7 @@ class Dual_Heading extends Common_Widget {
 		</div>
 		<?php
 		$html = ob_get_clean();
-		echo wp_kses_post( $html );
+		echo $html; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}
 
 	/**

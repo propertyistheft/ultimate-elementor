@@ -1,12 +1,12 @@
 @font-face {
-  font-family: 'uael';
-  src:  url('../fonts/uael.eot?ejqak3');
-  src:  url('../fonts/uael.eot?ejqak3#iefix') format('embedded-opentype'),
-    url('../fonts/uael.ttf?ejqak3') format('truetype'),
-    url('../fonts/uael.woff?ejqak3') format('woff'),
-    url('../fonts/uael.svg?ejqak3#uael') format('svg');
-  font-weight: normal;
-  font-style: normal;
+	font-family: 'uael';
+	src:  url('../fonts/uael.eot?b0kjvf');
+	src:  url('../fonts/uael.eot?b0kjvf#iefix') format('embedded-opentype'),
+	url('../fonts/uael.ttf?b0kjvf') format('truetype'),
+	url('../fonts/uael.woff?b0kjvf') format('woff'),
+	url('../fonts/uael.svg?b0kjvf#uael') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
 
 [class^="uael-icon-"], [class*=" uael-icon-"] {
@@ -102,7 +102,7 @@
   content: "\e917";
 }
 .uael-icon-social-share:before {
-  content: "\e918";
+  content: "\e900";
 }
 .uael-icon-gravity-form-styler:before {
   content: "\e919";

@@ -53,15 +53,9 @@ $this->add_render_attribute( 'line-inner', 'class', 'uael-timeline__line__inner'
 
 
 				if ( ! empty( $item['timeline_single_link']['url'] ) ) {
-					$this->add_render_attribute( 'url_' . $item['_id'], 'href', $item['timeline_single_link']['url'] );
 
-					if ( $item['timeline_single_link']['is_external'] ) {
-						$this->add_render_attribute( 'url_' . $item['_id'], 'target', '_blank' );
-					}
+					$this->add_link_attributes( 'url_' . $item['_id'], $item['timeline_single_link'] );
 
-					if ( ! empty( $item['timeline_single_link']['nofollow'] ) ) {
-						$this->add_render_attribute( 'url_' . $item['_id'], 'rel', 'nofollow' );
-					}
 					$timeline_link = $this->get_render_attribute_string( 'url_' . $item['_id'] );
 				}
 				$this->add_render_attribute( 'card_' . $item['_id'], 'class', 'timeline-icon-new' );

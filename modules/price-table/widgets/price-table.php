@@ -3318,24 +3318,15 @@ class Price_Table extends Common_Widget {
 	 */
 	public function render_button( $settings ) {
 		if ( 'link' === $settings['price_cta_type'] ) {
-			$_nofollow = ( 'on' === $settings['link']['nofollow'] ) ? 'nofollow' : '';
-			$_target   = ( 'on' === $settings['link']['is_external'] ) ? '_blank' : '';
-			$_link     = ( isset( $settings['link']['url'] ) ) ? $settings['link']['url'] : '';
 
 			if ( ! empty( $settings['link']['url'] ) ) {
-				$this->add_render_attribute( 'cta_link', 'href', $settings['link']['url'] );
 				$this->add_render_attribute( 'cta_link', 'class', 'uael-pricebox-cta-link' );
 
-				if ( $settings['link']['is_external'] ) {
-					$this->add_render_attribute( 'cta_link', 'target', '_blank' );
-				}
-				if ( $settings['link']['nofollow'] ) {
-					$this->add_render_attribute( 'cta_link', 'rel', 'nofollow' );
-				}
+				$this->add_link_attributes( 'cta_link', $settings['link'] );
 			}
 
 			?>
-			<a <?php echo wp_kses_post( $this->get_render_attribute_string( 'cta_link' ) ); ?>>
+			<a <?php echo $this->get_render_attribute_string( 'cta_link' ); ?>> <?php //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 				<?php if ( 'left' === $settings['cta_icon_position'] ) { ?>
 					<?php $this->render_button_icon( $settings, 'before' ); ?>
 				<?php } ?>
@@ -3354,15 +3345,10 @@ class Price_Table extends Common_Widget {
 		} elseif ( 'button' === $settings['price_cta_type'] ) {
 			$this->add_render_attribute( 'wrapper', 'class', 'uael-button-wrapper elementor-button-wrapper' );
 			if ( ! empty( $settings['link']['url'] ) ) {
-				$this->add_render_attribute( 'button', 'href', $settings['link']['url'] );
+
 				$this->add_render_attribute( 'button', 'class', 'elementor-button-link' );
 
-				if ( $settings['link']['is_external'] ) {
-					$this->add_render_attribute( 'button', 'target', '_blank' );
-				}
-				if ( $settings['link']['nofollow'] ) {
-					$this->add_render_attribute( 'button', 'rel', 'nofollow' );
-				}
+				$this->add_link_attributes( 'button', $settings['link'] );
 			}
 			$this->add_render_attribute( 'button', 'class', ' elementor-button' );
 			if ( ! empty( $settings['button_size'] ) ) {

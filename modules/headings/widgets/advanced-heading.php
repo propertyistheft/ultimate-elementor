@@ -1679,16 +1679,7 @@ class Advanced_Heading extends Common_Widget {
 		}
 
 		if ( ! empty( $dynamic_settings['heading_link']['url'] ) ) {
-			$this->add_render_attribute( 'url', 'href', $dynamic_settings['heading_link']['url'] );
-
-			if ( $dynamic_settings['heading_link']['is_external'] ) {
-				$this->add_render_attribute( 'url', 'target', '_blank' );
-			}
-
-			if ( ! empty( $dynamic_settings['heading_link']['nofollow'] ) ) {
-				$this->add_render_attribute( 'url', 'rel', 'nofollow' );
-			}
-			$link = $this->get_render_attribute_string( 'url' );
+			$this->add_link_attributes( 'url', $dynamic_settings['heading_link'] );
 		}
 
 		$this->add_render_attribute( 'uael-heading-wrapper', 'class', 'uael-module-content uael-heading-wrapper' );
@@ -1710,7 +1701,7 @@ class Advanced_Heading extends Common_Widget {
 
 			<<?php echo esc_attr( $heading_size_tag ); ?> class="uael-heading">
 				<?php if ( ! empty( $dynamic_settings['heading_link']['url'] ) ) { ?>
-					<a <?php echo wp_kses_post( $link ); ?> >
+					<a <?php echo wp_kses_post( $this->get_render_attribute_string( 'url' ) ); ?> >
 				<?php } ?>
 						<span class="uael-heading-text elementor-inline-editing uael-size--<?php echo esc_attr( $settings['size'] ); ?>" data-elementor-setting-key="heading_title" data-elementor-inline-editing-toolbar="basic"><?php echo wp_kses_post( $this->get_settings_for_display( 'heading_title' ) ); ?></span>
 				<?php if ( ! empty( $dynamic_settings['heading_link']['url'] ) ) { ?>

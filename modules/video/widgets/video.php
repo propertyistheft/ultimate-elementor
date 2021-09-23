@@ -2153,6 +2153,9 @@ class Video extends Common_Widget {
 
 			$time = gmdate( 'H\hi\ms\s', $settings['start'] );
 			$url .= '#t=' . $time;
+		} elseif ( 'vimeo' === $settings['video_type'] ) {
+
+			$url .= '#t=';
 		}
 
 		$url = apply_filters( 'uael_video_url_filter', $url, $id );

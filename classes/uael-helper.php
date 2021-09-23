@@ -824,6 +824,10 @@ class UAEL_Helper {
 	public static function display_conditions_compare( $left_value, $right_value, $operator ) {
 		switch ( $operator ) {
 			case 'is':
+			case 'less':
+			case 'greater':
+			case 'less_than_equal':
+			case 'greater_than_equal':
 				return $left_value === $right_value;
 			case 'not':
 				return $left_value !== $right_value;

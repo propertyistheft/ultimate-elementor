@@ -110,6 +110,8 @@ class Fancy_Heading extends Common_Widget {
 	 */
 	protected function register_controls() {
 
+		$this->register_presets_control( 'Fancy_Heading', $this );
+
 		$this->register_headingtext_content_controls();
 		$this->register_effect_content_controls();
 		$this->register_general_content_controls();

@@ -122,6 +122,7 @@ class UAEL_Config {
 					'title_url' => '#',
 					'default'   => true,
 					'doc_url'   => UAEL_DOMAIN . 'docs-category/widgets/fancy-heading/?utm_source=uael-pro-dashboard&utm_medium=uael-menu-page&utm_campaign=uael-pro-plugin',
+					'preset'    => '5',
 				),
 				'GoogleMap'         => array(
 					'slug'         => 'uael-google-map',
@@ -284,6 +285,7 @@ class UAEL_Config {
 					'title_url' => '#',
 					'default'   => true,
 					'doc_url'   => UAEL_DOMAIN . 'docs-category/widgets/timeline/?utm_source=uael-pro-dashboard&utm_medium=uael-menu-page&utm_campaign=uael-pro-plugin',
+					'preset'    => '5',
 				),
 				'Video_Gallery'     => array(
 					'slug'      => 'uael-video-gallery',
@@ -320,6 +322,7 @@ class UAEL_Config {
 					'title_url' => '#',
 					'default'   => true,
 					'doc_url'   => UAEL_DOMAIN . 'docs-category/widgets/countdown-timer/?utm_source=uael-pro-dashboard&utm_medium=uael-menu-page&utm_campaign=uael-pro-plugin',
+					'preset'    => '6',
 				),
 				'Business_Reviews'  => array(
 					'slug'         => 'uael-business-reviews',
@@ -349,6 +352,7 @@ class UAEL_Config {
 					'title_url' => '#',
 					'default'   => true,
 					'doc_url'   => UAEL_DOMAIN . 'docs-category/widgets/marketing-button/?utm_source=uael-pro-dashboard&utm_medium=uael-menu-page&utm_campaign=uael-pro-plugin',
+					'preset'    => '5',
 				),
 				'Team_Member'       => array(
 					'slug'      => 'uael-team-member',
@@ -379,6 +383,7 @@ class UAEL_Config {
 					'setting_url'  => $integration_url,
 					'setting_text' => __( 'Settings', 'uael' ),
 					'doc_url'      => UAEL_DOMAIN . 'docs-category/widgets/user-registration-form/?utm_source=uael-pro-dashboard&utm_medium=uael-menu-page&utm_campaign=uael-pro-plugin',
+					'preset'       => '5',
 				),
 				'Nav_Menu'          => array(
 					'slug'      => 'uael-nav-menu',
@@ -457,6 +462,7 @@ class UAEL_Config {
 					'setting_text' => __( 'Settings', 'uael' ),
 					'setting_url'  => admin_url( 'options-general.php?page=' . UAEL_SLUG . '&action=integration' ),
 					'doc_url'      => UAEL_DOMAIN . 'docs-category/widgets/social-share/?utm_source=uael-pro-dashboard&utm_medium=uael-menu-page&utm_campaign=uael-pro-plugin',
+					'preset'       => '5',
 				),
 				'Woo_Checkout'      => array(
 					'slug'      => 'uael-woo-checkout',

@@ -425,6 +425,52 @@ class Table extends Common_Widget {
 						)
 					);
 
+					$repeater->add_control(
+						'show_head_id_class',
+						array(
+							'label'        => __( 'Additional Settings', 'uael' ),
+							'type'         => Controls_Manager::SWITCHER,
+							'label_on'     => __( 'Show', 'uael' ),
+							'label_off'    => __( 'Hide', 'uael' ),
+							'return_value' => 'yes',
+							'default'      => 'no',
+						)
+					);
+
+					$repeater->add_control(
+						'table_head_cell_id',
+						array(
+							'label'          => __( 'CSS ID', 'uael' ),
+							'type'           => Controls_Manager::TEXT,
+							'dynamic'        => array(
+								'active' => true,
+							),
+							'title'          => __( 'Add your custom id WITHOUT the Pound key. e.g: my-id', 'uael' ),
+							'style_transfer' => false,
+							'render_type'    => 'template',
+							'condition'      => array(
+								'show_head_id_class' => 'yes',
+							),
+						)
+					);
+
+					$repeater->add_control(
+						'table_head_cell_class',
+						array(
+							'label'          => __( 'CSS Classes', 'uael' ),
+							'type'           => Controls_Manager::TEXT,
+							'dynamic'        => array(
+								'active' => true,
+							),
+							'title'          => __( 'Add your custom class WITHOUT the dot. e.g: my-class', 'uael' ),
+							'style_transfer' => false,
+							'render_type'    => 'template',
+							'condition'      => array(
+								'show_head_id_class' => 'yes',
+							),
+						)
+					);
+
 				$repeater->end_controls_tab();
 
 			$repeater->end_controls_tab();
@@ -731,6 +777,52 @@ class Table extends Common_Widget {
 					),
 				)
 			);
+
+		$repeater_content->add_control(
+			'show_content_id_class',
+			array(
+				'label'        => __( 'Additional Settings', 'uael' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'label_on'     => __( 'Show', 'uael' ),
+				'label_off'    => __( 'Hide', 'uael' ),
+				'return_value' => 'yes',
+				'default'      => 'no',
+			)
+		);
+
+		$repeater_content->add_control(
+			'table_content_cell_id',
+			array(
+				'label'          => __( 'CSS ID', 'uael' ),
+				'type'           => Controls_Manager::TEXT,
+				'dynamic'        => array(
+					'active' => true,
+				),
+				'title'          => __( 'Add your custom id WITHOUT the Pound key. e.g: my-id', 'uael' ),
+				'style_transfer' => false,
+				'render_type'    => 'template',
+				'condition'      => array(
+					'show_content_id_class' => 'yes',
+				),
+			)
+		);
+
+		$repeater_content->add_control(
+			'table_content_cell_class',
+			array(
+				'label'          => __( 'CSS Classes', 'uael' ),
+				'type'           => Controls_Manager::TEXT,
+				'dynamic'        => array(
+					'active' => true,
+				),
+				'title'          => __( 'Add your custom class WITHOUT the dot. e.g: my-class', 'uael' ),
+				'style_transfer' => false,
+				'render_type'    => 'template',
+				'condition'      => array(
+					'show_content_id_class' => 'yes',
+				),
+			)
+		);
 
 			// End Media control tab.
 			$repeater_content->end_controls_tab();

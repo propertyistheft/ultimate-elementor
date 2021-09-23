@@ -64,7 +64,9 @@ class Display_Conditions {
 			'post',
 			'static_page',
 			'time_span',
+			'visitor_type',
 			'request_parameter',
+			'advanced_date',
 		);
 
 		foreach ( $conditions_list as $condition_name ) {
@@ -213,6 +215,27 @@ class Display_Conditions {
 					'is'  => __( 'Is', 'uael' ),
 					'not' => __( 'Is not', 'uael' ),
 				),
+				'condition'   => array(
+					'display_condition_key!' => 'advanced_date',
+				),
+			)
+		);
+
+		$repeater->add_control(
+			'display_condition_operator_advanced_date',
+			array(
+				'type'        => Controls_Manager::SELECT,
+				'default'     => 'less',
+				'label_block' => true,
+				'options'     => array(
+					'less'               => __( 'Is Less than', 'uael' ),
+					'greater'            => __( 'Is Greater than', 'uael' ),
+					'less_than_equal'    => __( 'Is Less than equal to', 'uael' ),
+					'greater_than_equal' => __( 'Is Greater than equal to', 'uael' ),
+				),
+				'condition'   => array(
+					'display_condition_key' => 'advanced_date',
+				),
 			)
 		);
 
@@ -332,8 +355,14 @@ class Display_Conditions {
 		}
 
 		foreach ( $lists as $key => $list ) {
-			$class    = static::$conditions[ $list['display_condition_key'] ];
-			$operator = $list['display_condition_operator'];
+			$class = static::$conditions[ $list['display_condition_key'] ];
+
+			if ( 'advanced_date' === $list['display_condition_key'] ) {
+				$operator = $list['display_condition_operator_advanced_date'];
+			} else {
+				$operator = $list['display_condition_operator'];
+			}
+
 			$item_key = 'display_condition_' . $list['display_condition_key'];
 			$value    = isset( $list[ $item_key ] ) ? $list[ $item_key ] : '';
 			$id       = $item_key . '_' . $list['_id'];

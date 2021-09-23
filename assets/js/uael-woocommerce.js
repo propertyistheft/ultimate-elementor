@@ -437,7 +437,7 @@
 	 var WidgetUAELSlickCall = function( slider_selector, slider_options ) {
 
 		// Slick slider has issue with the tablet breakpoint. So, we are managing this with a tweak.
-		var tablet_breakpoint = ( 'undefined' !== slider_options.responsive[0].breakpoint ) ? slider_options.responsive[0].breakpoint : '';
+		var tablet_breakpoint = ( slider_options.responsive && 'undefined' !== slider_options.responsive[0].breakpoint ) ? slider_options.responsive[0].breakpoint : '';
 
 		if( tablet_breakpoint == $( window ).width() ) {
 			slider_options.mobileFirst = true;

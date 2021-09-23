@@ -54,10 +54,12 @@ require_once 'includes/system-info.php';
 require_once 'auto-update/admin-functions.php';
 require_once 'auto-update/updater.php';
 require_once 'class-bsf-update-manager.php';
+require_once 'class-bsf-rollback-version-manager.php';
 require_once 'class-bsf-license-manager.php';
 require_once 'classes/class-bsf-extension-installer.php';
 
 require_once 'classes/class-bsf-core-update.php';
+require_once 'classes/class-bsf-rollback-version.php';
 
 if ( defined( 'WP_CLI' ) ) {
 	require 'class-bsf-wp-cli-command.php';
@@ -245,7 +247,7 @@ if ( ! function_exists( 'bsf_extract_product_id' ) ) {
 		}
 
 		// Use of file_get_contents() - https://github.com/WordPress/WordPress-Coding-Standards/pull/1374/files#diff-400e43bc09c24262b43f26fce487fdabR43-R52.
-		$filelines = file_get_contents( $file ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
+		$filelines = file_get_contents( $file ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents -- Reading local file is OK.
 		if ( stripos( $filelines, 'ID:[' ) !== false ) {
 			preg_match_all( '/ID:\[(.*?)\]/', $filelines, $matches );
 			if ( isset( $matches[1] ) ) {

@@ -7,6 +7,8 @@
 
 namespace UltimateElementor\Modules\Woocommerce\Templates;
 
+use Elementor\Icons_Manager;
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;   // Exit if accessed directly.
 }
@@ -23,6 +25,15 @@ trait Woo_Checkout_Template {
 	 * @var array
 	 */
 	public static $settings_data = array();
+
+	/**
+	 * Stores status to show/hide login on multistep layout.
+	 *
+	 * @since 1.34.0
+	 * @access public
+	 * @var boolean
+	 */
+	public static $enable_login_reminder = false;
 
 
 	/**
@@ -321,7 +332,7 @@ trait Woo_Checkout_Template {
 								<?php endforeach; ?>
 							</div>
 						<?php do_action( 'woocommerce_after_order_notes', $checkout ); ?>
-					</div>	
+					</div>
 				<?php endif; ?>
 			<?php
 			}
@@ -369,7 +380,7 @@ trait Woo_Checkout_Template {
 								<div class="table-col-3 product-total">
 									<?php
 									$product_subtotal = WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] );
-									echo apply_filters( 'woocommerce_cart_item_subtotal', $product_subtotal, $cart_item, $cart_item_key ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped 
+									echo apply_filters( 'woocommerce_cart_item_subtotal', $product_subtotal, $cart_item, $cart_item_key ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 									?>
 								</div>
 							</li>
@@ -748,11 +759,11 @@ trait Woo_Checkout_Template {
 		// If checkout registration is disabled and not logged in, the user cannot checkout.
 		if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_required() && ! is_user_logged_in() ) {
 			?>
-			<div class="uael-woo-checkout-login-msg"> 
+			<div class="uael-woo-checkout-login-msg">
 				<?php
 				echo esc_html( apply_filters( 'woocommerce_checkout_must_be_logged_in_message', __( 'You must be logged in to checkout.', 'uael' ) ) );
 				?>
-			</div> 
+			</div>
 			<?php
 			return;
 		}
@@ -807,11 +818,11 @@ trait Woo_Checkout_Template {
 		// If checkout registration is disabled and not logged in, the user cannot checkout.
 		if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_required() && ! is_user_logged_in() ) {
 			?>
-			<div class="uael-woo-checkout-login-msg"> 
+			<div class="uael-woo-checkout-login-msg">
 				<?php
 				echo esc_html( apply_filters( 'woocommerce_checkout_must_be_logged_in_message', __( 'You must be logged in to checkout.', 'uael' ) ) );
 				?>
-			</div> 
+			</div>
 			<?php
 			return;
 		}
@@ -850,6 +861,75 @@ trait Woo_Checkout_Template {
 	}
 
 	/**
+	 * Renders the multistep progress bar layout.
+	 *
+	 * @since 1.34.0
+	 * @access public
+	 * @param boolean $is_login_allow Is login allowed.
+	 * @param array   $setting Widget Settings.
+	 * @param string  $style Progress bar style.
+	 * @param boolean $skip_shipping If shipping needs to be skiped.
+	 */
+	public static function get_progress_bar_markup( $is_login_allow, $setting, $style, $skip_shipping ) {
+		$style_class = array(
+			'default' => '',
+			'icons'   => 'uael-step-icon',
+			'dot'     => 'uael-step-dot',
+			'counter' => 'uael-step-counter',
+		);
+		?>
+		<ul id="uael-tabs" class="uael-tabs <?php echo esc_attr( $style_class[ $style ] ); ?> <?php echo esc_attr( $setting['tab_alignment'] ); ?>">
+			<?php
+			$step1_class = 'first active';
+			$tab1_class  = 'uael-tab-after';
+			if ( $is_login_allow ) {
+				self::$enable_login_reminder = true;
+				$step1_class                 = '';
+				$tab_class                   = '';
+				?>
+				<li class="uael-tab uael-tab-after">
+					<a href="javascript:void(0)" id="step-0" data-step="0" class="first active">
+						<?php if ( 'icons' === $style ) : ?>
+							<span> <?php Icons_Manager::render_icon( $setting['login_step_icon'], array( 'aria-hidden' => 'true' ) ); ?> </span>
+						<?php endif; ?>
+						<?php esc_html_e( 'Login', 'uael' ); ?>
+					</a>
+				</li>
+				<?php
+			}
+			?>
+
+			<li class="uael-tab <?php echo esc_attr( $tab1_class ); ?>">
+				<a href="javascript:void(0)" id="step-1" data-step="1" class="<?php echo esc_attr( $step1_class ); ?>">
+					<?php if ( 'icons' === $style ) : ?>
+						<span> <?php Icons_Manager::render_icon( $setting['billing_step_icon'], array( 'aria-hidden' => 'true' ) ); ?> </span>
+					<?php endif; ?>
+					<?php esc_html_e( 'Billing', 'uael' ); ?>
+				</a>
+			</li>
+			<?php if ( ! $skip_shipping ) : ?>
+			<li class="uael-tab">
+				<a href="javascript:void(0)" id="step-2" data-step="2">
+					<?php if ( 'icons' === $style ) : ?>
+						<span> <?php Icons_Manager::render_icon( $setting['shipping_step_icon'], array( 'aria-hidden' => 'true' ) ); ?> </span>
+					<?php endif; ?>
+					<?php esc_html_e( 'Shipping', 'uael' ); ?>
+				</a>
+			</li>
+			<?php endif; ?>
+			<li class="uael-tab">
+				<a href="javascript:void(0)" id="<?php $skip_shipping ? esc_attr_e( 'step-2', 'uael' ) : esc_attr_e( 'step-3', 'uael' ); ?>" data-step="<?php $skip_shipping ? esc_attr_e( '2', 'uael' ) : esc_attr_e( '3', 'uael' ); ?>" class="last">
+					<?php if ( 'icons' === $style ) : ?>
+						<span> <?php Icons_Manager::render_icon( $setting['payment_step_icon'], array( 'aria-hidden' => 'true' ) ); ?> </span>
+					<?php endif; ?>
+					<?php esc_html_e( 'Payment', 'uael' ); ?>
+				</a>
+			</li>
+		</ul>
+		<?php
+	}
+
+	/**
 	 * Renders the multistep checkout page layout.
 	 *
 	 * @since 1.31.0
@@ -859,6 +939,8 @@ trait Woo_Checkout_Template {
 	 */
 	public static function multistep_layout( $checkout, $setting ) {
 		$is_login_allow = ( ! is_user_logged_in() && 'yes' === get_option( 'woocommerce_enable_checkout_login_reminder' ) ) ? true : false;
+		$style          = $setting['multistep_style'];
+		$skip_shipping  = self::is_shipping_skipped();
 		?>
 		<?php
 		wc_print_notices();
@@ -868,11 +950,11 @@ trait Woo_Checkout_Template {
 		// If checkout registration is disabled and not logged in, the user cannot checkout.
 		if ( ! $checkout->is_registration_enabled() && $checkout->is_registration_required() && ! is_user_logged_in() ) {
 			?>
-			<div class="uael-woo-checkout-login-msg"> 
+			<div class="uael-woo-checkout-login-msg">
 				<?php
 				echo esc_html( apply_filters( 'woocommerce_checkout_must_be_logged_in_message', __( 'You must be logged in to checkout.', 'uael' ) ) );
 				?>
-			</div> 
+			</div>
 			<?php
 			return;
 		}
@@ -880,36 +962,10 @@ trait Woo_Checkout_Template {
 		?>
 
 		<div id="uael_multistep_container" class="uael_multistep_container uael_horizontal_box">
-			<ul id="uael-tabs" class="uael-tabs <?php echo esc_attr( $setting['tab_alignment'] ); ?>">
-				<?php
-				$step1_class           = 'first active';
-				$tab1_class            = 'uael-tab-after';
-				$enable_login_reminder = false;
-				if ( $is_login_allow ) {
-					$enable_login_reminder = true;
-					$step1_class           = '';
-					$tab_class             = '';
-					?>
-					<li class="uael-tab uael-tab-after">
-						<a href="javascript:void(0)" id="step-0" data-step="0" class="first active">Login</a>
-					</li>
-					<?php
-				}
-				?>
-
-				<li class="uael-tab <?php echo esc_attr( $tab1_class ); ?>">
-					<a href="javascript:void(0)" id="step-1" data-step="1" class="<?php echo esc_attr( $step1_class ); ?>">Billing</a>
-				</li>
-				<li class="uael-tab">
-					<a href="javascript:void(0)" id="step-2" data-step="2">Shipping</a>
-				</li>
-				<li class="uael-tab">
-					<a href="javascript:void(0)" id="step-3" data-step="3" class="last">Payment</a>
-				</li>
-			</ul>
+			<?php self::get_progress_bar_markup( $is_login_allow, $setting, $style, $skip_shipping ); ?>
 			<div id="uael-tab-panels" class="uael-tab-panels">
 				<?php
-				if ( $enable_login_reminder ) {
+				if ( self::$enable_login_reminder ) {
 					?>
 					<div class="uael-tab-panel" id="uael-tab-panel-0">
 						<?php echo self::uael_login_template(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
@@ -925,16 +981,42 @@ trait Woo_Checkout_Template {
 						<div class="customer_details uael-tab-panel" id="uael-tab-panel-1">
 							<?php do_action( 'woocommerce_checkout_before_customer_details' ); ?>
 							<?php do_action( 'woocommerce_checkout_billing' ); ?>
+							<?php if ( $skip_shipping ) : ?>
+								<?php if ( apply_filters( 'woocommerce_enable_order_notes_field', 'yes' === get_option( 'woocommerce_enable_order_comments', 'yes' ) ) ) { ?>
+									<div class="woocommerce-additional-fields">
+										<?php do_action( 'woocommerce_before_order_notes', $checkout ); ?>
+
+										<?php if ( ! WC()->cart->needs_shipping() || wc_ship_to_billing_address_only() ) : ?>
+
+											<h3><?php esc_html_e( 'Additional information', 'uael' ); ?></h3>
+
+										<?php endif; ?>
+
+										<div class="woocommerce-additional-fields__field-wrapper">
+											<?php
+											$order_fields = $checkout->get_checkout_fields( 'order' );
+											foreach ( $order_fields as $key => $field ) :
+												?>
+												<?php woocommerce_form_field( $key, $field, $checkout->get_value( $key ) ); ?>
+											<?php endforeach; ?>
+										</div>
+
+										<?php do_action( 'woocommerce_after_order_notes', $checkout ); ?>
+									</div>
+								<?php } ?>
+							<?php endif; ?>
 						</div>
 
+						<?php if ( ! $skip_shipping ) : ?>
 						<div class="customer_details uael-tab-panel" id="uael-tab-panel-2">
 							<?php do_action( 'woocommerce_checkout_shipping' ); ?>
 							<?php do_action( 'woocommerce_checkout_after_customer_details' ); ?>
 						</div>
+						<?php endif; ?>
 
 					<?php endif; ?>
 
-					<div class="uael-tab-panel" id="uael-tab-panel-3">
+					<div class="uael-tab-panel" id="<?php $skip_shipping ? esc_attr_e( 'uael-tab-panel-2', 'uael' ) : esc_attr_e( 'uael-tab-panel-3', 'uael' ); ?>">
 
 						<?php do_action( 'woocommerce_checkout_before_order_review' ); ?>
 
@@ -955,6 +1037,20 @@ trait Woo_Checkout_Template {
 
 		<?php do_action( 'woocommerce_after_checkout_form', $checkout ); ?>
 		<?php
+	}
+
+	/**
+	 * Returns true if the shipping step is disabled in multi-step checkout.
+	 *
+	 * @since 1.34.0
+	 * @access public
+	 * @return bool
+	 */
+	public static function is_shipping_skipped() {
+		$skip = false;
+		// Filter to skip/hide/disable the shipping step from multi-step checkout.
+		// Usage: add_filter('uael_multistep_checkout_hide_shipping_step', '__return_true').
+		return apply_filters( 'uael_multistep_checkout_hide_shipping_step', $skip );
 	}
 
 	/**

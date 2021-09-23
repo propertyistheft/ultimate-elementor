@@ -779,6 +779,21 @@ class GfStyler extends Common_Widget {
 			)
 		);
 
+		$this->add_control(
+			'enable_gforms_css_classes',
+			array(
+				'label'        => __( 'Support to CSS Ready Classes', 'uael' ),
+				/* translators: %1$s doc link, %2$s link close */
+				'description'  => sprintf( __( 'Enable this option to add support to Gravity Forms CSS Ready Classes. %1$s Learn More. %2$s', 'uael' ), '<a href="https://www.gravityforms.com/css-ready-classes/" target="_blank" rel="noopener">', '</a>' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'label_on'     => __( 'Yes', 'uael' ),
+				'label_off'    => __( 'No', 'uael' ),
+				'return_value' => 'yes',
+				'default'      => 'no',
+				'prefix_class' => 'uael-gf-enable-classes-',
+			)
+		);
+
 		$this->end_controls_section();
 	}
 

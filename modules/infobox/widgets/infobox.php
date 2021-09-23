@@ -2659,7 +2659,10 @@ class Infobox extends Common_Widget {
 						#>
 						<span {{{ view.getRenderAttributeString( 'content-wrapper' ) }}}>
 							<?php if ( UAEL_Helper::is_elementor_updated() ) { ?>
-								<# if ( settings.infobox_button_icon || settings.new_infobox_button_icon ) { #>
+								<# if ( settings.infobox_button_icon || settings.new_infobox_button_icon ) { 
+									var buttoniconHTML = elementor.helpers.renderIcon( view, settings.new_infobox_button_icon, { 'aria-hidden': true }, 'i' , 'object' );
+									var buttonMigrated = elementor.helpers.isIconMigrated( settings, 'new_infobox_button_icon' );
+									#>
 									<span {{{ view.getRenderAttributeString( 'icon-align' ) }}}>
 										<# if ( buttoniconHTML && buttoniconHTML.rendered && ( ! settings.infobox_button_icon || buttonMigrated ) ) { #>
 											{{{ buttoniconHTML.value }}}

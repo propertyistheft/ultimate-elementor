@@ -1680,8 +1680,6 @@ class Team_Member extends Common_Widget {
 									$link_key        = 'link_' . $index;
 									$class_animation = ' elementor-animation-' . $settings['icon_hover_animation'];
 
-									$this->add_render_attribute( $link_key, 'href', $item['link']['url'] );
-
 									$this->add_render_attribute(
 										$link_key,
 										'class',
@@ -1693,12 +1691,7 @@ class Team_Member extends Common_Widget {
 										)
 									);
 
-									if ( $item['link']['is_external'] ) {
-										$this->add_render_attribute( $link_key, 'target', '_blank' );
-									}
-									if ( $item['link']['nofollow'] ) {
-										$this->add_render_attribute( $link_key, 'rel', 'nofollow' );
-									}
+									$this->add_link_attributes( $link_key, $item['link'] );
 
 									?>
 									<a <?php echo wp_kses_post( $this->get_render_attribute_string( $link_key ) ); ?>>

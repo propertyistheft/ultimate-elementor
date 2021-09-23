@@ -614,14 +614,17 @@ abstract class Skin_Style {
 
 		$settings = self::$settings;
 
+		$product_column_tablet = isset( $settings['products_columns_tablet'] ) ? $settings['products_columns_tablet'] : '';
+		$product_column_mobile = isset( $settings['products_columns_mobile'] ) ? $settings['products_columns_mobile'] : '';
+
 		$this->add_render_attribute(
 			'inner',
 			array(
 				'class' => array(
 					'uael-woo-products-inner',
 					'uael-woo-product__column-' . $settings['products_columns'],
-					'uael-woo-product__column-tablet-' . $settings['products_columns_tablet'],
-					'uael-woo-product__column-mobile-' . $settings['products_columns_mobile'],
+					'uael-woo-product__column-tablet-' . $product_column_tablet,
+					'uael-woo-product__column-mobile-' . $product_column_mobile,
 				),
 			)
 		);

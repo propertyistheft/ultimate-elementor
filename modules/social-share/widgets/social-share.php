@@ -172,7 +172,8 @@ class SocialShare extends Common_Widget {
 	 *
 	 * @access protected
 	 */
-	protected function _register_controls() { // phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore 
+	protected function _register_controls() { // phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
+		$this->register_presets_control( 'SocialShare', $this );
 
 		$this->register_general_content_controls();
 
@@ -268,12 +269,12 @@ class SocialShare extends Common_Widget {
 						'text' => 'linkedin',
 					),
 				),
-				'title_field' => '<# 
+				'title_field' => '<#
 				var networksClassDictionary = {
 					pocket: "fab fa-get-pocket",
 					email: "fas fa-envelope",
 					print: "fa fa-print"
-				}; 
+				};
 				var networkClass = networksClassDictionary[text] || "fab fa-" + text;
 
 			    if( elementor.config.icons_update_needed ) {
@@ -881,9 +882,9 @@ class SocialShare extends Common_Widget {
 				'selectors' => array(
 
 					'{{WRAPPER}}.elementor-widget-uael-social-share .uael-style-inline .elementor-grid .uael-share-btn.uaelbtn--skin-flat div.uael-share-btn__text,
-					.elementor-widget-uael-social-share .uael-style-inline .elementor-grid .uael-share-btn.uaelbtn--skin-flat span.uael-share-btn__icon.uael-share-btn__icon' => 'background-color: {{VALUE}};',
+					{{WRAPPER}}.elementor-widget-uael-social-share .uael-style-inline .elementor-grid .uael-share-btn.uaelbtn--skin-flat span.uael-share-btn__icon.uael-share-btn__icon' => 'color: {{VALUE}};',
 					'{{WRAPPER}}.elementor-widget-uael-social-share .uael-style-inline .elementor-grid .elementor-grid-item div.uael-share-btn.uaelbtn--skin-boxed span.uael-share-btn__icon i' => 'color: {{VALUE}};',
-					'{{WRAPPER}}.elementor-widget-uael-social-share .uael-style-inline .elementor-grid .uael-share-btn.uaelbtn--skin-minimal span.uael-share-btn__icon' => 'background-color: {{VALUE}};',
+					'{{WRAPPER}}.elementor-widget-uael-social-share .uael-style-inline .elementor-grid .uael-share-btn.uaelbtn--skin-minimal span.uael-share-btn__icon' => 'color: {{VALUE}};',
 
 					'{{WRAPPER}}.elementor-widget-uael-social-share .uael-style-inline .elementor-grid .elementor-grid-item .uael-share-btn.uaelbtn--skin-gradient span.uael-share-btn__icon,
                     {{WRAPPER}}.elementor-widget-uael-social-share .uael-style-inline .elementor-grid .elementor-grid-item .uael-share-btn.uaelbtn--skin-gradient div.uael-share-btn__text,

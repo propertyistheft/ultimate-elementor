@@ -1102,13 +1102,6 @@ if ( ! class_exists( 'Price_List' ) ) {
 			if ( $url ) {
 				$unique_link_id = 'item-link-' . $item_id;
 
-				$this->add_render_attribute(
-					$unique_link_id,
-					array(
-						'href' => $url,
-					)
-				);
-
 				if ( '' === $settings['link_complete_box'] || 'no' === $settings['link_complete_box'] ) {
 					$this->add_render_attribute(
 						$unique_link_id,
@@ -1125,9 +1118,7 @@ if ( ! class_exists( 'Price_List' ) ) {
 					);
 				}
 
-				if ( $item['link']['is_external'] ) {
-					$this->add_render_attribute( $unique_link_id, 'target', '_blank' );
-				}
+				$this->add_link_attributes( $unique_link_id, $item['link'] );
 
 				return '<a ' . $this->get_render_attribute_string( $unique_link_id ) . '>';
 			} else {

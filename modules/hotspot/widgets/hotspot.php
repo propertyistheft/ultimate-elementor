@@ -1856,15 +1856,9 @@ class Hotspot extends Common_Widget {
 					$hotspot_glow = '';
 
 					if ( ! empty( $item['marker_link']['url'] ) ) {
-						$this->add_render_attribute( 'url-' . $item['_id'], 'href', $item['marker_link']['url'] );
 
-						if ( $item['marker_link']['is_external'] ) {
-							$this->add_render_attribute( 'url-' . $item['_id'], 'target', '_blank' );
-						}
+						$this->add_link_attributes( 'url-' . $item['_id'], $item['marker_link'] );
 
-						if ( ! empty( $item['marker_link']['nofollow'] ) ) {
-							$this->add_render_attribute( 'url-' . $item['_id'], 'rel', 'nofollow' );
-						}
 						$link = $this->get_render_attribute_string( 'url-' . $item['_id'] );
 					}
 
@@ -1891,10 +1885,10 @@ class Hotspot extends Common_Widget {
 					<?php if ( ! empty( $item['marker_link']['url'] ) ) { ?>
 						<?php if ( 'yes' === $settings['hotspot_tooltip_data'] ) { ?>
 							<?php if ( 'yes' !== $settings['hotspot_tour'] && 'hover' === $settings['trigger'] ) { ?>
-								<a <?php echo wp_kses_post( $link ); ?> >
+								<a <?php echo $link; ?> > <?php //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 							<?php } ?>
 						<?php } else { ?>
-							<a <?php echo wp_kses_post( $link ); ?> >
+							<a <?php echo $link; ?> ><?php //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 						<?php } ?>
 					<?php } ?>
 					<span class="uael-tooltip elementor-repeater-item-<?php echo esc_attr( $item['_id'] ); ?>">

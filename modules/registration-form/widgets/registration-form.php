@@ -93,6 +93,25 @@ class RegistrationForm extends Common_Widget {
 	}
 
 	/**
+	 * Retrieve the list of styles needed for Registration Form.
+	 *
+	 * Used to set styles dependencies required to run the widget.
+	 *
+	 * @since 1.34.0
+	 * @access public
+	 *
+	 * @return array Widget styles dependencies.
+	 */
+	public function get_style_depends() {
+		if ( \Elementor\Icons_Manager::is_migration_allowed() ) {
+			return array(
+				'elementor-icons-fa-solid',
+			);
+		}
+		return array();
+	}
+
+	/**
 	 * Get array of fields type.
 	 *
 	 * @since 1.18.0
@@ -170,6 +189,7 @@ class RegistrationForm extends Common_Widget {
 	 */
 	protected function _register_controls() { // phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
 
+		$this->register_presets_control( 'RegistrationForm', $this );
 		$this->register_controls();
 	}
 
@@ -407,6 +427,49 @@ class RegistrationForm extends Common_Widget {
 					'default'   => '',
 					'condition' => array(
 						'show_labels!' => '',
+					),
+				)
+			);
+
+			$this->add_control(
+				'fields_icon',
+				array(
+					'label'        => __( 'Fields Icon', 'uael' ),
+					'description'  => __( 'Enable this option to add icon for fields.', 'uael' ),
+					'type'         => Controls_Manager::SWITCHER,
+					'default'      => 'no',
+					'label_off'    => __( 'Hide', 'uael' ),
+					'label_on'     => __( 'Show', 'uael' ),
+					'return_value' => 'yes',
+					'render_type'  => 'template',
+					'prefix_class' => 'uael-urf-icon-',
+				)
+			);
+
+			$this->add_control(
+				'spacing_between_field_icon',
+				array(
+					'label'     => __( 'Spacing', 'uael' ),
+					'type'      => Controls_Manager::SLIDER,
+					'default'   => array(
+						'size' => 30,
+						'unit' => 'px',
+					),
+					'range'     => array(
+						'px' => array(
+							'min' => 1,
+							'max' => 50,
+						),
+					),
+					'selectors' => array(
+						'{{WRAPPER}}.uael-urf-icon-yes .elementor-field-textual.elementor-size-sm' => 'padding: 0.75em 0.75em 0.75em {{SIZE}}{{UNIT}};',
+						'{{WRAPPER}}.uael-urf-icon-yes .elementor-field-textual.elementor-size-xs' => 'padding: 4px 4px 4px {{SIZE}}{{UNIT}}',
+						'{{WRAPPER}}.uael-urf-icon-yes .elementor-field-textual.elementor-size-md' => 'padding: 6px 6px 6px {{SIZE}}{{UNIT}}',
+						'{{WRAPPER}}.uael-urf-icon-yes .elementor-field-textual.elementor-size-lg' => 'padding: 7px 7px 7px {{SIZE}}{{UNIT}}',
+						'{{WRAPPER}}.uael-urf-icon-yes .elementor-field-textual.elementor-size-xl' => 'padding: 8px 8px 8px {{SIZE}}{{UNIT}}',
+					),
+					'condition' => array(
+						'fields_icon' => 'yes',
 					),
 				)
 			);
@@ -829,6 +892,22 @@ class RegistrationForm extends Common_Widget {
 				),
 			)
 		);
+
+		$this->add_control(
+			'acceptance_conditions_switcher',
+			array(
+				'label'        => __( 'Show Terms and Conditions', 'uael' ),
+				'type'         => Controls_Manager::SWITCHER,
+				'label_on'     => __( 'Yes', 'uael' ),
+				'label_off'    => __( 'No', 'uael' ),
+				'default'      => 'yes',
+				'return_value' => 'yes',
+				'condition'    => array(
+					'acceptance_switcher' => 'yes',
+				),
+			)
+		);
+
 		$this->add_control(
 			'acceptance_conditions',
 			array(
@@ -837,7 +916,8 @@ class RegistrationForm extends Common_Widget {
 				'rows'      => '5',
 				'default'   => __( 'Please go through the following terms and conditions carefully.', 'uael' ),
 				'condition' => array(
-					'acceptance_switcher' => 'yes',
+					'acceptance_switcher'            => 'yes',
+					'acceptance_conditions_switcher' => 'yes',
 				),
 			)
 		);
@@ -1594,7 +1674,7 @@ class RegistrationForm extends Common_Widget {
 					'type'       => Controls_Manager::DIMENSIONS,
 					'size_units' => array( 'px', 'em', '%' ),
 					'selectors'  => array(
-						'{{WRAPPER}} .elementor-field-group .elementor-field' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+						'{{WRAPPER}} .elementor-field-group .elementor-field.elementor-field-textual' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					),
 				)
 			);
@@ -1681,6 +1761,53 @@ class RegistrationForm extends Common_Widget {
 				)
 			);
 
+			$this->add_control(
+				'fields_icon_heading',
+				array(
+					'label'     => __( 'Fields Icon', 'uael' ),
+					'type'      => Controls_Manager::HEADING,
+					'separator' => 'before',
+					'condition' => array(
+						'fields_icon' => 'yes',
+					),
+				)
+			);
+
+			$this->add_control(
+				'fields_icon_color',
+				array(
+					'label'     => __( 'Color', 'uael' ),
+					'type'      => Controls_Manager::COLOR,
+					'default'   => '',
+					'selectors' => array(
+						'{{WRAPPER}} .uael-fields-icon i' => 'color: {{VALUE}};',
+					),
+					'condition' => array(
+						'fields_icon' => 'yes',
+					),
+				)
+			);
+
+			$this->add_responsive_control(
+				'fields_icon_size',
+				array(
+					'label'     => __( 'Size', 'uael' ),
+					'type'      => Controls_Manager::SLIDER,
+					'range'     => array(
+						'px' => array(
+							'min' => 15,
+							'max' => 100,
+						),
+					),
+					'selectors' => array(
+						'{{WRAPPER}} .uael-fields-icon i' => 'font-size: calc( {{SIZE}}{{UNIT}} / 4 );',
+					),
+					'condition' => array(
+						'fields_icon' => 'yes',
+					),
+				)
+			);
+
 		$this->end_controls_section();
 	}
 
@@ -1695,10 +1822,20 @@ class RegistrationForm extends Common_Widget {
 		$this->start_controls_section(
 			'section_acceptance_style',
 			array(
-				'label'     => __( 'Acceptance Field Style', 'uael' ),
-				'tab'       => Controls_Manager::TAB_STYLE,
-				'condition' => array(
-					'acceptance_switcher' => 'yes',
+				'label'      => __( 'Acceptance Field Style', 'uael' ),
+				'tab'        => Controls_Manager::TAB_STYLE,
+				'conditions' => array(
+					'relation' => 'or',
+					'terms'    => array(
+						array(
+							'name'  => 'acceptance_switcher',
+							'value' => 'yes',
+						),
+						array(
+							'name'  => 'acceptance_conditions_switcher',
+							'value' => 'yes',
+						),
+					),
 				),
 			)
 		);
@@ -2217,6 +2354,20 @@ class RegistrationForm extends Common_Widget {
 
 			if ( ! empty( $settings['fields_list'] ) ) :
 
+				$field_icon_list = array();
+
+				if ( 'yes' === $settings['fields_icon'] ) {
+					$field_icon_list = array(
+						'user_name'    => 'fa fa-user',
+						'email'        => 'fas fa-envelope',
+						'password'     => 'fa fa-lock',
+						'first_name'   => 'fa fa-user',
+						'last_name'    => 'fa fa-user',
+						'confirm_pass' => 'fa fa-lock',
+						'phone'        => 'fas fa-phone-alt',
+					);
+				}
+
 				$this->add_render_attribute(
 					array(
 						'wrapper'      => array(
@@ -2364,6 +2515,8 @@ class RegistrationForm extends Common_Widget {
 									} elseif ( 'confirm_pass' === $field_type ) {
 										$field_input_type = 'password';
 										$is_confirm_pass  = true;
+									} elseif ( 'phone' === $field_type ) {
+										$field_input_type = 'tel';
 									} else {
 										if ( 'password' === $field_type ) {
 											$is_pass_valid = true;
@@ -2450,8 +2603,13 @@ class RegistrationForm extends Common_Widget {
 												case 'last_name':
 												case 'confirm_pass':
 												case 'phone':
-													$this->add_render_attribute( 'input' . $item_index, 'class', 'elementor-field-textual' );
-													echo '<input size="1" ' . wp_kses_post( $this->get_render_attribute_string( 'input' . $item_index ) ) . '>';
+													echo '<div class="uael-urf-field-wrapper">';
+														$this->add_render_attribute( 'input' . $item_index, 'class', 'elementor-field-textual' );
+														echo '<input size="1" ' . wp_kses_post( $this->get_render_attribute_string( 'input' . $item_index ) ) . '>';
+													if ( 'yes' === $settings['fields_icon'] ) {
+														echo '<span class="uael-fields-icon"><i class="' . wp_kses_post( $field_icon_list[ $field_type ] ) . '"></i></span>';
+													}
+													echo '</div>';
 													break;
 												case 'recaptcha_v3':
 													if ( '' !== $sitekey && '' !== $secretkey ) {
@@ -2485,9 +2643,9 @@ class RegistrationForm extends Common_Widget {
 									}
 								endforeach;
 								?>
-								<?php if ( 'yes' === $settings['acceptance_switcher'] ) : ?>
+								<?php if ( 'yes' === $settings['acceptance_switcher'] || 'yes' === $settings['acceptance_conditions_switcher'] ) : ?>
 									<div <?php echo wp_kses_post( $this->get_render_attribute_string( 'acceptance_wrapper' ) ); ?>>
-										<?php if ( ! empty( $settings['acceptance_conditions'] ) ) { ?>
+										<?php if ( 'yes' === $settings['acceptance_conditions_switcher'] && ! empty( $settings['acceptance_conditions'] ) ) { ?>
 											<div class="acceptance-conditions"><?php echo wp_kses_post( $settings['acceptance_conditions'] ); ?></div>
 										<?php } ?>
 										<div class="elementor-field-subgroup">
@@ -2536,15 +2694,8 @@ class RegistrationForm extends Common_Widget {
 
 										if ( 'custom' === $settings['login_select'] && ! empty( $settings['login_url'] ) ) {
 
-											$this->add_render_attribute( 'login', 'href', $settings['login_url']['url'] );
+											$this->add_link_attributes( 'login', $settings['login_url'] );
 
-											if ( $settings['login_url']['is_external'] ) {
-												$this->add_render_attribute( 'login', 'target', '_blank' );
-											}
-
-											if ( $settings['login_url']['nofollow'] ) {
-												$this->add_render_attribute( 'login', 'rel', 'nofollow' );
-											}
 										} else {
 											$this->add_render_attribute( 'login', 'href', $login_url );
 										}
@@ -2564,15 +2715,8 @@ class RegistrationForm extends Common_Widget {
 
 										if ( 'custom' === $settings['lost_password_select'] && ! empty( $settings['lost_password_url'] ) ) {
 
-											$this->add_render_attribute( 'lost_pass', 'href', $settings['lost_password_url']['url'] );
+											$this->add_link_attributes( 'lost_pass', $settings['lost_password_url'] );
 
-											if ( $settings['lost_password_url']['is_external'] ) {
-												$this->add_render_attribute( 'lost_pass', 'target', '_blank' );
-											}
-
-											if ( $settings['lost_password_url']['nofollow'] ) {
-												$this->add_render_attribute( 'lost_pass', 'rel', 'nofollow' );
-											}
 										} else {
 											$this->add_render_attribute( 'lost_pass', 'href', $lost_pass_url );
 										}

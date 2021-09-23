@@ -46,7 +46,7 @@
 					<?php
 					if ( empty( $link_complete_box ) || 'no' === $link_complete_box ) {
 
-						echo wp_kses_post( $this->render_item_header( $item, $settings ) );
+						echo $this->render_item_header( $item, $settings ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 					} else {
 						echo '<div class="uael-price-list-title">';
 					}

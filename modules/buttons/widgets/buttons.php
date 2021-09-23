@@ -856,7 +856,9 @@ class Buttons extends Common_Widget {
 					}
 
 					if ( ! empty( $button['link']['url'] ) ) {
+
 						$this->add_link_attributes( 'button_' . $i, $button['link'] );
+
 						$this->add_render_attribute( 'button_' . $i, 'class', 'elementor-button-link' );
 					}
 

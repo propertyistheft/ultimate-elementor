@@ -123,6 +123,8 @@ class Countdown extends Common_Widget {
 	 */
 	protected function register_controls() {
 
+		$this->register_presets_control( 'Countdown', $this );
+
 		// Content Tab.
 		$this->register_countdown_general_controls();
 		$this->register_after_countdown_expire_controls();
@@ -369,6 +371,8 @@ class Countdown extends Common_Widget {
 				'label_off'    => __( 'Hide', 'uael' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
+				'prefix_class' => 'uael-countdown-show-seconds-',
+				'render_type'  => 'template',
 			)
 		);
 

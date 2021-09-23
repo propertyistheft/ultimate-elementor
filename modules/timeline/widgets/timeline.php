@@ -137,6 +137,9 @@ class Timeline extends Common_Widget {
 	 * @access protected
 	 */
 	protected function register_controls() {
+
+		$this->register_presets_control( 'Timeline', $this );
+
 		// Content Tab.
 		$this->register_general_content_controls();
 		$this->register_timeline_content_controls();
@@ -1851,6 +1854,7 @@ class Timeline extends Common_Widget {
 						'value'   => 'fa fa-calendar',
 						'library' => 'fa-solid',
 					),
+					'style_transfer'   => true,
 				)
 			);
 		} else {
@@ -1858,9 +1862,10 @@ class Timeline extends Common_Widget {
 			$this->add_control(
 				'timeline_all_icon',
 				array(
-					'label'   => __( 'Connector Icon', 'uael' ),
-					'type'    => Controls_Manager::ICON,
-					'default' => 'fa fa-calendar',
+					'label'          => __( 'Connector Icon', 'uael' ),
+					'type'           => Controls_Manager::ICON,
+					'default'        => 'fa fa-calendar',
+					'style_transfer' => true,
 				)
 			);
 		}
@@ -1931,7 +1936,7 @@ class Timeline extends Common_Widget {
 				'size_units' => array( 'px', 'em' ),
 				'range'      => array(
 					'px' => array(
-						'min' => 20,
+						'min' => 0,
 						'max' => 100,
 					),
 					'em' => array(

@@ -1,5 +1,32 @@
+Version 1.34.1 - Thursday, 23rd September 2021
+- Fix: Display Conditions - Active PHP session issue in WP Site Health Screen.
+
+Version 1.34.0 - Wednesday, 22nd September 2021
+- New: Countdown Timer - Added preset designs.
+- New: Fancy Heading - Added preset designs.
+- New: Marketing Button - Added preset designs.
+- New: Social Share - Added preset designs.
+- New: Timeline - Added preset designs.
+- New: User Registration Form - Added preset designs.
+- Improvement: Display Conditions - Added new/returning visitor type option based on cookies.
+- Improvement: Display Conditions - Added advanced date support.
+- Improvement: Navigation Menu - Added an option to convert the last menu item into the CTA button.
+- Improvement: Table - Added CSS ID & CSS Class options for table cells.
+- Improvement: User Registration Form - Added icon support to form fields.
+- Improvement: Woo - Checkout - Added 'uael_multistep_checkout_hide_shipping_step' filter to exclude the shipping step from multi-step form.
+- Improvement: Woo - Checkout - Added new progress bar styles to multi-step form.
+- Fix: Gravity Forms Styler - Added an option "Support to Gravity Forms CSS Ready Classes" to fix the fields spacing issue.
+- Fix: Info Box - CTA icon not displaying in the editor.
+- Fix: Marketing Button - Hover animation options are not adequately visible.
+- Fix: Marketing Button - Button content alignment issue when icon alignment is set to right.
+- Fix: Price Box - Margin right applied to the Features section.
+- Fix: User Registration Form - Changed Phone field type to "tel" to fix the Theme CSS not applying issue.
+- Fix: Video - Lightbox is not working with the Vimeo video type.
+- Fix: Woo - Products - Fixed console error when the responsive value of the "Product to show" option is empty.
+- Fix: Woo - Products - Fixed grid layout column issue.
+
 Version 1.33.2 - Tuesday, 17th August 2021
-- Improvement : Elementor 3.4 compatibility.
+- Improvement: Elementor 3.4 compatibility.
 - Improvement: Optimized CSS & JS in the plugin for improving Core Web Vitals.
 - Improvement: Google Map - Added option for position of map controls.
 - Fix: Modal Popup - Fixed jQuery '.resize()' event shorthand is deprecated.
