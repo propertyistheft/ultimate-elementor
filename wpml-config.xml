@@ -459,5 +459,13 @@
 				<field type="Woo - Products: Next Label" editor_type="LINE">pagination_next_label</field>
 			</fields>
 		</widget>
+		<widget name="uael-welcome-music">
+			<conditions>
+				<condition key="widgetType">uael-welcome-music</condition>
+			</conditions>
+			<fields>
+				<field type="Welcome Music: Music Link" editor_type="LINK" key_of="music_link">url</field>
+			</fields>
+		</widget>
 	</elementor-widgets>
 </wpml-config>

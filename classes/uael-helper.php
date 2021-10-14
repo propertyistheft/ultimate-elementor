@@ -1368,21 +1368,23 @@ class UAEL_Helper {
 	 */
 	public static function get_active_widget_stylesheet() {
 
-		$saved_blocks             = self::get_admin_settings_option( '_uael_widgets' );
-		$combined                 = array();
-		$is_already_heading       = false;
-		$is_already_buttons       = false;
-		$is_already_wc            = false;
-		$is_already_widget_common = false;
-		$is_already_fancybox      = false;
-		$folder                   = self::get_css_folder();
-		$suffix                   = self::get_css_suffix();
+		$saved_blocks                     = self::get_admin_settings_option( '_uael_widgets' );
+		$combined                         = array();
+		$is_already_heading               = false;
+		$is_already_buttons               = false;
+		$is_already_wc                    = false;
+		$is_already_widget_common         = false;
+		$is_already_fancybox              = false;
+		$is_already_party_propz_extension = false;
+		$is_already_welcome_music         = false;
+		$folder                           = self::get_css_folder();
+		$suffix                           = self::get_css_suffix();
 
 		foreach ( UAEL_Config::$widget_list as $key => $block ) {
 
 			$block_name = str_replace( 'uael/', '', $key );
 
-			if ( isset( $saved_blocks[ $block_name ] ) && 'disabled' === $saved_blocks[ $block_name ] || 'DisplayConditions' === $block_name || 'Presets' === $block_name ) {
+			if ( isset( $saved_blocks[ $block_name ] ) && 'disabled' === $saved_blocks[ $block_name ] || 'DisplayConditions' === $block_name || 'Presets' === $block_name || 'SectionDivider' === $block_name ) {
 				continue;
 			}
 
@@ -1454,6 +1456,31 @@ class UAEL_Helper {
 					$combined = self::get_active_skins_stylesheet( $saved_blocks, $combined );
 
 					break;
+
+				case 'PartyPropzExtension':
+					if ( ! $is_already_party_propz_extension ) {
+						$combined['uael-party-propz-extension'] = array(
+							'path'     => 'assets/' . $folder . '/modules/party-propz-extension' . $suffix . '.css',
+							'path-rtl' => 'assets/min-css/modules/party-propz-extension-rtl.min.css',
+							'dep'      => array(),
+						);
+						$is_already_party_propz_extension       = true;
+
+					}
+					break;
+
+				case 'Welcome_Music':
+					if ( ! $is_already_welcome_music ) {
+						$combined['uael-welcome-music'] = array(
+							'path'     => 'assets/' . $folder . '/modules/welcome-music' . $suffix . '.css',
+							'path-rtl' => 'assets/min-css/modules/welcome-music-rtl.min.css',
+							'dep'      => array(),
+						);
+						$is_already_welcome_music       = true;
+
+					}
+					break;
+
 				default:
 					if ( 'uael-cross-domain-copy-paste' !== $block['slug'] && 'uael-retina-image' !== $block['slug'] ) {
 

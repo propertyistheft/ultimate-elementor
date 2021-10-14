@@ -61,6 +61,7 @@ class Visitor_Type extends Condition {
 				'returning' => __( 'Returning Visitor', 'uael' ),
 			),
 			'condition'   => $condition,
+
 		);
 	}
 
@@ -75,9 +76,29 @@ class Visitor_Type extends Condition {
 	 */
 	public function compare_value( $settings, $operator, $value ) {
 
+		if ( ! isset( $_COOKIE['UAEVisitorData'] ) && ! isset( $_COOKIE['UAENewVisitor'] ) ) {
+
+			wp_add_inline_script(
+				'elementor-frontend',
+				'jQuery( window ).on( "elementor/frontend/init", function() {
+
+					var current_time = new Date().getTime();
+	
+					var uael_secure = ( document.location.protocol === "https:" ) ? "secure" : "";
+					var visit_date = new Date( current_time + 1000 * 86400 * 365 ).toGMTString();
+					var visit_date_expire = new Date( current_time + 86400 * 1000 ).toGMTString();
+	
+					document.cookie = "UAEVisitorData=enabled;expires=" + visit_date + "SameSite=Strict;" + uael_secure;
+					document.cookie = "UAENewVisitor=enabled;expires=" + visit_date_expire + "SameSite=Strict;" + uael_secure;
+	
+				}); '
+			);
+
+		}
+
 		$user_type = 'new';
 
-		if ( isset( $_COOKIE['uael_visitor'] ) && ! isset( $_SESSION['uael_visitor_data'] ) ) {
+		if ( isset( $_COOKIE['UAEVisitorData'] ) && ! isset( $_COOKIE['UAENewVisitor'] ) ) {
 			$user_type = 'returning';
 		}
 

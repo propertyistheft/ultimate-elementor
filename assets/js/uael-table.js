@@ -19,6 +19,25 @@
 		if ( 0 == uael_table_id.length )
 			return;
 
+		var uael_table_responsive = $( '.elementor-element-' + node_id + ' #' + uael_table_id[0].id ).data( 'responsive' );
+
+		if( 'yes' === uael_table_responsive ) {
+			var column_head = $scope.find( '.uael-table-head-cell-text' );
+			var rowtr = $scope.find( '.uael-table-row' );
+			
+			rowtr.each( function( i, tr ){
+				var th = $( tr ).find( '.uael-table-body-cell-text' );
+				th.each( function( index, th ){
+					var classList = $scope.find( 'thead th.uael-table-col' ).eq( index ).attr( 'class' );
+					var sort1 = $scope.find( 'thead th.uael-table-col' ).eq( index ).data( 'sort' );
+				
+					$( th ).prepend( '<div class="uael-table-head ' + classList + '"data-sort=' + sort1 + '>' + column_head.eq( index ).html() + '</div>' );
+					$( '.uael-table-head span.uael-table__text:nth-child(1)' ).addClass( 'uael-tbody-head-text' );
+					$( 'div.uael-table-head' ).addClass( 'responsive-header-text' );
+				});
+			});
+		}
+
 		var table_node =  $( '.elementor-element-' + node_id + ' #' + uael_table_id[0].id );
 
 		//Search entries
@@ -48,6 +67,7 @@
 		var length_string = uael_table_script.table_length_string;
 		var no_record_found_string = uael_table_script.table_not_found_str;
 
+
 		if( searchable || showentries || sortable ) {
 			$( '#' + uael_table_id[0].id ).DataTable( {
 				"paging": showentries, 
@@ -70,8 +90,7 @@
 			$scope.find( '.uael-table-info').wrapAll( '<div class="uael-advance-heading"></div>' );
 
 		}
-
-
+	
 		function coloumn_rules() {
 			var uael_table_widget = $( uael_table );
 			if( $( window ).width() > 767 ) {

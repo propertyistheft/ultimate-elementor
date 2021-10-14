@@ -233,10 +233,13 @@ class Module extends Module_Base {
 					'type'      => Controls_Manager::SELECT,
 					'default'   => 'nasa',
 					'options'   => array(
-						'default' => __( 'Polygon', 'uael' ),
-						'nasa'    => __( 'NASA', 'uael' ),
-						'snow'    => __( 'Snow', 'uael' ),
-						'custom'  => __( 'Custom', 'uael' ),
+						'default'    => __( 'Polygon', 'uael' ),
+						'nasa'       => __( 'NASA', 'uael' ),
+						'snow'       => __( 'Snow', 'uael' ),
+						'snowflakes' => __( 'Snowflakes', 'uael' ),
+						'christmas'  => __( 'Christmas', 'uael' ),
+						'halloween'  => __( 'Halloween', 'uael' ),
+						'custom'     => __( 'Custom', 'uael' ),
 					),
 					'condition' => array(
 						'uae_enable_particles' => 'yes',
@@ -309,7 +312,7 @@ class Module extends Module_Base {
 					'alpha'       => false,
 					'condition'   => array(
 						'uae_enable_particles'  => 'yes',
-						'uae_particles_styles!' => 'custom',
+						'uae_particles_styles!' => array( 'custom', 'christmas', 'halloween' ),
 					),
 					'render_type' => 'template',
 				)
@@ -353,7 +356,7 @@ class Module extends Module_Base {
 					),
 					'condition' => array(
 						'uae_enable_particles' => 'yes',
-						'uae_particles_styles' => 'snow',
+						'uae_particles_styles' => array( 'snow', 'snowflakes', 'christmas' ),
 					),
 				)
 			);
@@ -447,7 +450,7 @@ class Module extends Module_Base {
 					'return_value' => 'yes',
 					'condition'    => array(
 						'uae_enable_particles'  => 'yes',
-						'uae_particles_styles!' => 'custom',
+						'uae_particles_styles!' => array( 'custom' ),
 						'uae_enable_advanced'   => 'yes',
 					),
 					'render_type'  => 'template',
@@ -463,7 +466,7 @@ class Module extends Module_Base {
 					'content_classes' => 'uael-editor-doc',
 					'condition'       => array(
 						'uae_enable_particles'   => 'yes',
-						'uae_particles_styles!'  => 'custom',
+						'uae_particles_styles!'  => array( 'custom' ),
 						'uae_enable_advanced'    => 'yes',
 						'uae_enable_interactive' => 'yes',
 					),
@@ -480,7 +483,7 @@ class Module extends Module_Base {
 						'content_classes' => 'uael-editor-doc',
 						'condition'       => array(
 							'uae_enable_particles'   => 'yes',
-							'uae_particles_styles!'  => 'custom',
+							'uae_particles_styles!'  => array( 'snowflakes', 'custom', 'christmas' ),
 							'uae_enable_advanced'    => 'yes',
 							'uae_enable_interactive' => 'yes',
 						),

@@ -77,6 +77,9 @@ class Module_Manager {
 			'ff-styler',
 			'social-share',
 			'display-conditions',
+			'welcome-music',
+			'party-propz-extension',
+			'section-divider',
 		);
 
 		foreach ( $all_modules as $module_name ) {

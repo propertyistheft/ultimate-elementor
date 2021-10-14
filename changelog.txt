@@ -1,3 +1,16 @@
+Version 1.35.0 - Monday, 11th October 2021
+- New: Introducing Party Propz extension for sections, columns, and widgets.
+- New: Introducing Welcome Music widget to add background music to the page.
+- Improvement: Added Christmas & Halloween shape dividers to Elementor Shape Divider.
+- Improvement: Modal Popup - Added option to set cookies on close popup action.
+- Improvement: Particle Backgrounds - Added Christmas effect.
+- Improvement: Particle Backgrounds - Added Halloween effect.
+- Improvement: Particle Backgrounds - Added Snowflakes effect.
+- Improvement: Table – Added responsive support.
+- Fix: Login Form - Removed custom field label wrapper when content is empty.
+- Fix: Posts - Fixed columns issue if advanced custom breakpoint setting is active.
+- Fix: Woo - Products - Fixed columns issue if advanced custom breakpoint setting is active.
+
 Version 1.34.1 - Thursday, 23rd September 2021
 - Fix: Display Conditions - Active PHP session issue in WP Site Health Screen.
 

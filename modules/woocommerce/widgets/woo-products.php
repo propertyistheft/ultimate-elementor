@@ -571,12 +571,12 @@ class Woo_Products extends Common_Widget {
 			$this->add_responsive_control(
 				'products_columns',
 				array(
-					'label'          => __( 'Columns', 'uael' ),
-					'type'           => Controls_Manager::SELECT,
-					'default'        => '4',
-					'tablet_default' => '3',
-					'mobile_default' => '1',
-					'options'        => array(
+					'label'              => __( 'Columns', 'uael' ),
+					'type'               => Controls_Manager::SELECT,
+					'default'            => '4',
+					'tablet_default'     => '3',
+					'mobile_default'     => '1',
+					'options'            => array(
 						'1' => '1',
 						'2' => '2',
 						'3' => '3',
@@ -584,10 +584,11 @@ class Woo_Products extends Common_Widget {
 						'5' => '5',
 						'6' => '6',
 					),
-					'condition'      => array(
+					'condition'          => array(
 						'_skin'                => array( 'grid-default', 'grid-franko' ),
 						'products_layout_type' => 'grid',
 					),
+					'frontend_available' => true,
 				)
 			);
 
@@ -664,15 +665,16 @@ class Woo_Products extends Common_Widget {
 		$this->add_responsive_control(
 			'slides_to_show',
 			array(
-				'label'          => __( 'Products to Show', 'uael' ),
-				'type'           => Controls_Manager::NUMBER,
-				'default'        => 4,
-				'tablet_default' => 3,
-				'mobile_default' => 1,
-				'condition'      => array(
+				'label'              => __( 'Products to Show', 'uael' ),
+				'type'               => Controls_Manager::NUMBER,
+				'default'            => 4,
+				'tablet_default'     => 3,
+				'mobile_default'     => 1,
+				'condition'          => array(
 					'_skin'                => array( 'grid-default', 'grid-franko' ),
 					'products_layout_type' => 'slider',
 				),
+				'frontend_available' => true,
 			)
 		);
 

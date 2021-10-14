@@ -98,6 +98,13 @@
 			$( 'html' ).removeClass( 'uael-html-modal' );
 			modal_popup.removeClass( 'uael-modal-scroll' );
 			UAELModalPopup._stopVideo( popup_id );
+			
+			var cookie_type  = $( '.uamodal-' + popup_id ).data( 'cookies-type' );
+
+			if ( 'closed' === cookie_type ){
+				UAELModalPopup._setPopupCookie( popup_id );
+			}
+
 		},
 
 		/**
@@ -221,13 +228,27 @@
 		 */
 		_afterOpen: function( popup_id ) {
 
+			var cookie_type  = $( '.uamodal-' + popup_id ).data( 'cookies-type' );
+
+			if ( 'default' == cookie_type ){
+				UAELModalPopup._setPopupCookie( popup_id );
+			}
+
+			$( window ).trigger( 'uael_after_modal_popup_open', [ popup_id ] );
+		},
+
+		/**
+		 * Process to set cookie
+		 *
+		 */
+		 _setPopupCookie: function( popup_id ) {
+
 			var current_cookie = Cookies.get( 'uael-modal-popup-' + popup_id );
 			var cookies_days  = parseInt( $( '.uamodal-' + popup_id ).data( 'cookies-days' ) );
 
 			if( 'undefined' === typeof current_cookie && 'undefined' !== typeof cookies_days ) {
 				Cookies.set( 'uael-modal-popup-' + popup_id, true, { expires: cookies_days } );
 			}
-			$( window ).trigger( 'uael_after_modal_popup_open', [ popup_id ] );
 		},
 	}
 

@@ -201,7 +201,7 @@
 			);
 		}
 	}
-	
+
 	/**
 	 * Hotspot Tooltip handler Function.
 	 *
@@ -477,7 +477,7 @@
 		if( 'custom' == trigger ) {
 
 			var overlay_id 	= $scope.find( '.uael-hotspot-overlay' );
-			buttonOverlay();	
+			buttonOverlay();
 		} else {
 			clearInterval( hotspotInterval[ id ] );
 		}
@@ -870,9 +870,9 @@
 		if( '' !== id && sanitize_input ){
 			if ( id === 'content-1' || id === 'content-2' ) {
 				UAELContentToggle._openOnLink( $scope, rbs_switch );
-			}			
+			}
 		}
-		
+
 		setTimeout( function(){
 
 			if( rbs_switch.is( ':checked' ) ) {
@@ -924,12 +924,12 @@
 			}, 500 );
 
 			if( id === 'content-1' ) {
-				
+
 				$( node_toggle + ' .uael-rbs-content-1' ).show();
 				$( node_toggle + ' .uael-rbs-content-2' ).hide();
 				rbs_switch.prop( "checked", false );
 			} else {
-				
+
 				$( node_toggle + ' .uael-rbs-content-2' ).show();
 				$( node_toggle + ' .uael-rbs-content-1' ).hide();
 				rbs_switch.prop( "checked", true );
@@ -1018,7 +1018,7 @@
 					select_filter.addClass( 'uael-filter__current' );
 				}
 			}
-			
+
 			if ( filters.length > 0 ) {
 
 				var def_filter = filters.data( 'default' );
@@ -1848,7 +1848,7 @@
 								form_wrapper.animate({
 									opacity: '1'
 								}, 100 ).removeClass( 'uael-form-waiting' );
-						
+
 								facebook_text.find( '.uael-form-loader' ).remove();
 								facebook_text.removeClass( 'disabled' );
 
@@ -1947,7 +1947,7 @@
 											form_wrapper.animate({
 												opacity: '1'
 											}, 100 ).removeClass( 'uael-form-waiting' );
-									
+
 											google_text.find( '.uael-form-loader' ).remove();
 											google_text.removeClass( 'disabled' );
 
@@ -2043,6 +2043,71 @@
 		});
 	}
 
+	/**
+	 * Welcome Music handler Function.
+	 */
+	var WidgetUAELWelcomeMusicHandler = function ($scope, $){
+		if ( 'undefined' == typeof $scope ) {
+			return;
+		}
+
+		var track          = $scope.find( '.uael-welcome-track' );
+		var musicContainer = $scope.find( '.uael-welcome-music-container' );
+		var autoplay       = ( track.length > 0 ) ? track.data( 'autoplay' ) : '';
+		var musicVolume    = musicContainer.data( 'volume' );
+		var audio          = ( track.length > 0 ) ? track[0] : '';
+		var playPauseBtn   = $scope.find( '#uael-play-pause' );
+		var play           = playPauseBtn.find( '.play' );
+		var pause          = playPauseBtn.find( '.pause' );
+
+		if ( autoplay ) {
+			var playPromise = audio.play();
+			if ( playPromise ) {
+				playPromise.catch( ( e ) => {
+					if ( e.name === 'NotAllowedError' || e.name === 'NotSupportedError' ) {
+						playPauseBtn.toggleClass( 'uael-pause' );
+						playPauseBtn.toggleClass( 'uael-play' );
+					}
+				}).then( () => {
+					playPauseBtn.toggleClass( 'uael-play' );
+					playPauseBtn.toggleClass( 'uael-pause' );
+				});
+			}
+		}
+
+		playPauseBtn.on(
+			'click',
+			function (){
+				var $this = $( this );
+				if ( $this.hasClass( 'uael-play' ) ) {
+					audio.play();
+					$this.toggleClass( 'uael-play' );
+					$this.toggleClass( 'uael-pause' );
+
+				} else {
+					audio.pause();
+					$this.toggleClass( 'uael-pause' );
+					$this.toggleClass( 'uael-play' );
+				}
+			}
+		);
+
+		$( '.uael-welcome-track' ).on(
+			'ended',
+			function() {
+				playPauseBtn.toggleClass( 'uael-pause' );
+				play.css( 'display', 'block' );
+				playPauseBtn.toggleClass( 'uael-play' );
+				pause.css( 'display', 'none' );
+			}
+		);
+
+		if ( ! isNaN( musicVolume ) && '' !== musicVolume && undefined !== musicVolume && '' !== audio ) {
+			audio.volume = parseFloat( musicVolume / 100 );
+		}
+
+	}
+
 	$( window ).on( 'elementor/frontend/init', function () {
 
 		if ( elementorFrontend.isEditMode() ) {
@@ -2082,6 +2147,8 @@
 		elementorFrontend.hooks.addAction( 'frontend/element_ready/uael-ff-styler.default', WidgetUAELFFStylerHandler );
 
 		elementorFrontend.hooks.addAction( 'frontend/element_ready/uael-price-table.default', WidgetUAELPriceTableHandler );
+
+		elementorFrontend.hooks.addAction( 'frontend/element_ready/uael-welcome-music.default', WidgetUAELWelcomeMusicHandler );
 
 		if( isElEditMode ) {
 

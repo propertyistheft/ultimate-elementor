@@ -11292,7 +11292,7 @@ function particles_background_script( $scope ) {
 
 	if( typeof particles_style != 'undefined' ) {
 		if( element_type == 'column' ) {
-			$column = $scope.find( '.elementor-column-wrap .elementor-background-overlay' );
+			$column = $scope.find( '.elementor-widget-wrap .elementor-background-overlay' );
 			$particle_wrap = $scope.find( '.uael-particle-wrapper' );
 			if( $column.next( '#uael-particle-' + id ).length == 0 ) {
 				$column.after( $particle_wrap );
@@ -11355,7 +11355,8 @@ function particles_background_script( $scope ) {
 			size_anim_enable  = false,
 			onhover = 'repulse',
 			move_direction = 'none',
-			interactive = false;
+			interactive = false,
+      image_value = false;
 
 		if( 'default' == particles_style ) {
 			line_linked = true;
@@ -11395,10 +11396,85 @@ function particles_background_script( $scope ) {
 			size_random = false;
 			opacity_value = 0.6;
 			opacity_random = false;
+
+		} else if( 'snowflakes' == particles_style ) {
+      number_value = 40;
+      shape_type = 'image';
+      image_value = {
+        "src": uael_particles_script.snowflakes_image,
+        "replaceColor" : true
+      };
+			opacity_value = 0.6;
+			size_value = 23;
+			opacity_random = false;
+			opacity_anim_enable  = false;
+			move_direction = particles_direction;
+			move_speed = 2;
+      size_random = true;
+
+		} else if( 'christmas' == particles_style ) {
+      number_value = 25;
+      shape_type = 'images';
+      image_value = [
+        {
+          src: uael_particles_script.gift,
+          width: 300,
+          height: 300
+        },
+        {
+          src: uael_particles_script.tree,
+          width: 300,
+          height: 300
+        },
+      ];
+			opacity_value = 0.9;
+			size_value = 25;
+			opacity_random = false;
+			opacity_anim_enable  = false;
+			move_direction = particles_direction;
+			move_speed = 4;
+      size_random = true;
+		} else if( 'halloween' == particles_style ) {
+      number_value = 30;
+      shape_type = 'images';
+      image_value = [
+        {
+          src: uael_particles_script.skull,
+          width: 300,
+          height: 300
+        },
+        {
+          src: uael_particles_script.moon,
+          width: 300,
+          height: 300
+        },
+        {
+          src: uael_particles_script.pumpkin,
+          width: 300,
+          height: 300
+        },
+        {
+          src: uael_particles_script.ghost,
+          width: 300,
+          height: 300
+        },
+        {
+          src: uael_particles_script.bat,
+          width: 300,
+          height: 300
+        },
+      ];
+			opacity_value = 0.8;
+			size_value = 20;
+			opacity_random = false;
+			opacity_anim_enable  = false;
+			move_speed = 4;
+      size_random = true;
+			move_direction = 'none';
 		}
 
-		if( particles_dot_color == '' ) {
-			particles_dot_color = '#bdbdbd';
+		if( '' == particles_dot_color ) {
+			particles_dot_color = ( 'snowflakes' == particles_style ) ? '#E1F5FE' : '#bdbdbd';
 		}
 
 		if( particles_opacity != '' || particles_opacity == '0' ) {
@@ -11449,6 +11525,7 @@ function particles_background_script( $scope ) {
 					"polygon": {
 						"nb_sides": shape_nb_sides
 					},
+          "image": image_value
 				},
 				"opacity": {
 					"value": opacity_value,
@@ -11531,6 +11608,7 @@ function particles_background_script( $scope ) {
 			},
 			"retina_detect": true
 		}
+    
 		tsParticles.load( 'uael-particle-' + id, config );
 	}
 }

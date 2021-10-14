@@ -310,6 +310,14 @@ class UAEL_Core_Plugin {
 				array(
 					'uael_particles_url' => UAEL_URL . 'assets/min-js/uael-particles.min.js',
 					'particles_url'      => UAEL_URL . 'assets/lib/particles/particles.min.js',
+					'snowflakes_image'   => UAEL_URL . 'assets/img/snowflake.svg',
+					'gift'               => UAEL_URL . 'assets/img/gift.png',
+					'tree'               => UAEL_URL . 'assets/img/tree.png',
+					'skull'              => UAEL_URL . 'assets/img/skull.png',
+					'ghost'              => UAEL_URL . 'assets/img/ghost.png',
+					'moon'               => UAEL_URL . 'assets/img/moon.png',
+					'bat'                => UAEL_URL . 'assets/img/bat.png',
+					'pumpkin'            => UAEL_URL . 'assets/img/pumpkin.png',
 				)
 			);
 		}
@@ -410,7 +418,15 @@ class UAEL_Core_Plugin {
 			'elementor-editor',
 			'UAEWidgetsData',
 			array(
-				'allowed_tags' => UAEL_Helper::ALLOWED_HTML_WRAPPER_TAGS,
+				'allowed_tags'         => UAEL_Helper::ALLOWED_HTML_WRAPPER_TAGS,
+				'extension_tree'       => UAEL_URL . 'assets/img/extension-tree.png',
+				'extension_snowman'    => UAEL_URL . 'assets/img/extension-snowman.png',
+				'extension_hang_decor' => UAEL_URL . 'assets/img/extension-hang-decor.png',
+				'extension_deer'       => UAEL_URL . 'assets/img/extension-deer.png',
+				'santa_cap'            => UAEL_URL . 'assets/img/uae-santa-cap.png',
+				'santa_claus'          => UAEL_URL . 'assets/img/santa-claus.png',
+				'snow'                 => UAEL_URL . 'assets/img/snow.png',
+				'hanukkah'             => UAEL_URL . 'assets/img/hanukkah.png',
 			)
 		);
 

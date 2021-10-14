@@ -401,7 +401,7 @@ class Table extends Common_Widget {
 							'label'     => __( 'Color', 'uael' ),
 							'type'      => Controls_Manager::COLOR,
 							'selectors' => array(
-								'{{WRAPPER}} .uael-table-row {{CURRENT_ITEM}} .uael-table__text' => 'color: {{VALUE}};',
+								'{{WRAPPER}} .uael-table-row {{CURRENT_ITEM}} .uael-table__text, {{WRAPPER}} tbody .uael-table-head{{CURRENT_ITEM}} .uael-table__text' => 'color: {{VALUE}};',
 								'{{WRAPPER}} .uael-table-row {{CURRENT_ITEM}} .uael-table__text svg' => 'fill: {{VALUE}};',
 							),
 							'condition' => array(
@@ -417,7 +417,7 @@ class Table extends Common_Widget {
 							'label'     => __( 'Background Color', 'uael' ),
 							'type'      => Controls_Manager::COLOR,
 							'selectors' => array(
-								'{{WRAPPER}} thead .uael-table-row {{CURRENT_ITEM}}' => 'background-color: {{VALUE}};',
+								'{{WRAPPER}} thead .uael-table-row {{CURRENT_ITEM}},{{WRAPPER}} .uael-table-row .uael-table-head{{CURRENT_ITEM}}' => 'background-color: {{VALUE}};',
 							),
 							'condition' => array(
 								'header_content_type' => 'cell',
@@ -503,6 +503,19 @@ class Table extends Common_Widget {
 					'condition'   => array(
 						'source' => 'manual',
 					),
+				)
+			);
+
+			$this->add_control(
+				'table_responsive',
+				array(
+					/* translators: 1: <b> 2: </b> */
+					'label'       => sprintf( __( '%1$sResponsive Support%2$s', 'uael' ), '<b>', '</b>' ),
+					'description' => __( 'Note: Advance settings will not work if Responsive Support is Enabled.', 'uael' ),
+					'type'        => Controls_Manager::SWITCHER,
+					'label_on'    => __( 'On', 'uael' ),
+					'label_off'   => __( 'Off', 'uael' ),
+					'default'     => 'no',
 				)
 			);
 
@@ -754,7 +767,7 @@ class Table extends Common_Widget {
 					'label'     => __( 'Color', 'uael' ),
 					'type'      => Controls_Manager::COLOR,
 					'selectors' => array(
-						'{{WRAPPER}} .uael-table-row {{CURRENT_ITEM}} .uael-table__text' => 'color: {{VALUE}};',
+						'{{WRAPPER}} table[data-responsive="horizontal"] .uael-table-row {{CURRENT_ITEM}} .uael-table__text,{{WRAPPER}} table[data-responsive="yes"] .uael-table-row {{CURRENT_ITEM}} div.uael-table-head + span.uael-table__text' => 'color: {{VALUE}};',
 						'{{WRAPPER}} .uael-table-row {{CURRENT_ITEM}} .uael-table__text svg' => 'fill: {{VALUE}};',
 					),
 					'condition' => array(
@@ -903,7 +916,10 @@ class Table extends Common_Widget {
 		$this->start_controls_section(
 			'section_advance_settings',
 			array(
-				'label' => __( 'Advance Settings', 'uael' ),
+				'label'     => __( 'Advance Settings', 'uael' ),
+				'condition' => array(
+					'table_responsive!' => 'yes',
+				),
 			)
 		);
 
@@ -918,6 +934,22 @@ class Table extends Common_Widget {
 					'description'  => __( 'Sort table entries on the click of table headings.', 'uael' ),
 					'return_value' => 'yes',
 					'default'      => 'no',
+				)
+			);
+
+			$this->add_control(
+				'sortable_dropdown',
+				array(
+					'label'        => __( 'Sortable Dropdown', 'uael' ),
+					'description'  => __( 'This will show dropdown menu to sort the table by columns', 'uael' ),
+					'type'         => Controls_Manager::SWITCHER,
+					'default'      => 'show',
+					'label_on'     => __( 'Show', 'uael' ),
+					'label_off'    => __( 'Hide', 'uael' ),
+					'return_value' => 'show',
+					'condition'    => array(
+						'sortable' => 'yes',
+					),
 				)
 			);
 
@@ -993,7 +1025,7 @@ class Table extends Common_Widget {
 				'global'   => array(
 					'default' => Global_Typography::TYPOGRAPHY_ACCENT,
 				),
-				'selector' => '{{WRAPPER}} th.uael-table-col',
+				'selector' => '{{WRAPPER}} th.uael-table-col,{{WRAPPER}} tr.uael-table-row div.responsive-header-text span.uael-table__text-inners',
 			)
 		);
 
@@ -1013,7 +1045,7 @@ class Table extends Common_Widget {
 					'isLinked' => true,
 				),
 				'selectors'  => array(
-					'{{WRAPPER}} th.uael-table-col' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} th.uael-table-col, {{WRAPPER}} tbody .uael-table-col .uael-table-head' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
 			)
 		);
@@ -1040,7 +1072,7 @@ class Table extends Common_Widget {
 					),
 				),
 				'selectors' => array(
-					'{{WRAPPER}} th .uael-table__text' => 'text-align: {{VALUE}};width: 100%;',
+					'{{WRAPPER}} th .uael-table__text,{{WRAPPER}} tbody .uael-table-col .uael-table-head .uael-table__text' => 'text-align: {{VALUE}};width: 100%;',
 				),
 			)
 		);
@@ -1065,6 +1097,8 @@ class Table extends Common_Widget {
 							'{{WRAPPER}} thead .uael-table-row th .uael-table__text svg' => 'fill: {{VALUE}};',
 							'{{WRAPPER}} th' => 'color: {{VALUE}};',
 							'{{WRAPPER}} tbody .uael-table-row th' => 'color: {{VALUE}};',
+							'{{WRAPPER}} tbody .uael-table-head .uael-table__text' => 'color: {{VALUE}};',
+							'{{WRAPPER}} tbody .uael-table-head .uael-table__text svg' => 'fill: {{VALUE}};',
 						),
 					)
 				);
@@ -1077,7 +1111,7 @@ class Table extends Common_Widget {
 						'type'      => Controls_Manager::COLOR,
 						'selectors' => array(
 							'{{WRAPPER}} thead .uael-table-row th' => 'background-color: {{VALUE}};',
-							'{{WRAPPER}} tbody .uael-table-row th' => 'background-color: {{VALUE}};',
+							'{{WRAPPER}} tbody .uael-table-row th, {{WRAPPER}} tbody .uael-table-col .uael-table-head' => 'background-color: {{VALUE}};',
 						),
 					)
 				);
@@ -1141,7 +1175,7 @@ class Table extends Common_Widget {
 					array(
 						'name'           => 'cell_border_head',
 						'label'          => __( 'Cell Border', 'uael' ),
-						'selector'       => '{{WRAPPER}} th.uael-table-col',
+						'selector'       => '{{WRAPPER}} th.uael-table-col, {{WRAPPER}} tbody .uael-table-row th, {{WRAPPER}} tbody .uael-table-row .uael-table-head, {{WRAPPER}} tr.uael-table-row div.responsive-header-text, {{WRAPPER}}.elementor-widget-uael-table .uael-table-wrapper table[data-responsive="yes"] tbody tr.uael-table-row div.responsive-header-text',
 						'fields_options' => array(
 							'border' => array(
 								'default' => 'solid',
@@ -1182,6 +1216,7 @@ class Table extends Common_Widget {
 							'{{WRAPPER}} tbody .uael-table-row:hover th .uael-table__text' => 'color: {{VALUE}};',
 							'{{WRAPPER}} tbody .uael-table-row:hover th .uael-table__text svg' => 'fill: {{VALUE}};',
 							'{{WRAPPER}} .uael-table-row:hover th' => 'color: {{VALUE}};',
+							'{{WRAPPER}} tbody .uael-table-row:hover .uael-table-head .uael-table__text' => 'color: {{VALUE}};',
 						),
 					)
 				);
@@ -1195,6 +1230,7 @@ class Table extends Common_Widget {
 						'selectors' => array(
 							'{{WRAPPER}} thead .uael-table-row:hover > th' => 'background-color: {{VALUE}};',
 							'{{WRAPPER}} .uael-table tbody .uael-table-row:hover > th' => 'background-color: {{VALUE}};',
+							'{{WRAPPER}} tbody .uael-table-row:hover .uael-table-head'  => 'background-color: {{VALUE}};',
 						),
 					)
 				);
@@ -1211,6 +1247,8 @@ class Table extends Common_Widget {
 							'{{WRAPPER}} tr.uael-table-row th.uael-table-col:hover' => 'color: {{VALUE}};',
 							'{{WRAPPER}} thead th.uael-table-col:hover .uael-table__text svg' => 'fill: {{VALUE}};',
 							'{{WRAPPER}} tbody .uael-table-row th.uael-table-col:hover .uael-table__text svg' => 'fill: {{VALUE}};',
+							'{{WRAPPER}} tbody .uael-table-row .uael-table-head:hover .uael-table__text' => 'color: {{VALUE}};',
+							'{{WRAPPER}} tbody .uael-table-row .uael-table-head:hover .uael-table__text svg' => 'fill: {{VALUE}};',
 						),
 					)
 				);
@@ -1224,6 +1262,8 @@ class Table extends Common_Widget {
 						'selectors' => array(
 							'{{WRAPPER}} thead .uael-table-row th.uael-table-col:hover' => 'background-color: {{VALUE}};',
 							'{{WRAPPER}} .uael-table tbody .uael-table-row:hover >  th.uael-table-col:hover' => 'background-color: {{VALUE}};',
+							'{{WRAPPER}} tbody .uael-table-col .uael-table-head:hover' => 'background-color: {{VALUE}};',
+							'{{WRAPPER}} tbody .uael-table-row .uael-table-head:hover' => 'background-color: {{VALUE}};',
 						),
 					)
 				);
@@ -1261,11 +1301,12 @@ class Table extends Common_Widget {
 				'global'   => array(
 					'default' => Global_Typography::TYPOGRAPHY_TEXT,
 				),
-				'selector' => '{{WRAPPER}} td .uael-table__text-inner,{{WRAPPER}} td .uael-align-icon--left,{{WRAPPER}} td .uael-align-icon--right',
+				'selector' => '(desktop){{WRAPPER}} td div:not(.responsive-header-text) .uael-table__text-inner, {{WRAPPER}} td div + .uael-table__text-inner,{{WRAPPER}} tbody .uael-table__text:not(.uael-tbody-head-text),{{WRAPPER}} td .uael-align-icon--left,{{WRAPPER}} td .uael-align-icon--right',
 			)
 		);
 
 		// Cell padding.
+
 		$this->add_responsive_control(
 			'cell_padding',
 			array(
@@ -1281,7 +1322,18 @@ class Table extends Common_Widget {
 					'isLinked' => true,
 				),
 				'selectors'  => array(
-					'{{WRAPPER}} td.uael-table-col' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+					'{{WRAPPER}} tbody td.uael-table-col' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+				),
+			)
+		);
+
+		$this->add_control(
+			'cell_padding_note',
+			array(
+				'type'      => Controls_Manager::RAW_HTML,
+				'raw'       => sprintf( '<p style="font-size: 12px;font-style: italic;line-height: 1.4;color: #a4afb7;">%s</p>', __( 'Note: Padding will not work on responsive devices if Responsive Support is Enabled.', 'uael' ) ),
+				'condition' => array(
+					'table_responsive' => 'yes',
 				),
 			)
 		);
@@ -1356,7 +1408,10 @@ class Table extends Common_Widget {
 							'default' => Global_Colors::COLOR_TEXT,
 						),
 						'selectors' => array(
-							'{{WRAPPER}} tbody td.uael-table-col .uael-table__text' => 'color: {{VALUE}};',
+							'{{WRAPPER}} .uael-table:not([data-responsive="yes"]) tbody td.uael-table-col .uael-table__text,
+
+							{{WRAPPER}} tbody .uael-table__text:not(.uael-tbody-head-text)' => 'color: {{VALUE}};',
+
 							'{{WRAPPER}} tbody td.uael-table-col .uael-table__text svg' => 'fill: {{VALUE}};',
 						),
 					)
@@ -1406,6 +1461,18 @@ class Table extends Common_Widget {
 					)
 				);
 
+				$this->add_control(
+					'striped_note',
+					array(
+						'type'      => Controls_Manager::RAW_HTML,
+						'raw'       => sprintf( '<p style="font-size: 12px;font-style: italic;line-height: 1.4;color: #a4afb7;">%s</p>', __( 'Note: Striped effect will not work on responsive devices.', 'uael' ) ),
+						'condition' => array(
+							'table_responsive'       => 'yes',
+							'striped_effect_feature' => 'yes',
+						),
+					)
+				);
+
 				// Cell background color default.
 				$this->add_control(
 					'cell_background',
@@ -1449,7 +1516,7 @@ class Table extends Common_Widget {
 					array(
 						'name'           => 'row_border',
 						'label'          => __( 'Border', 'uael' ),
-						'selector'       => '{{WRAPPER}} tbody .uael-table-row',
+						'selector'       => '{{WRAPPER}} tbody .uael-table-row,{{WRAPPER}} tbody .uael-table-row .uael-table-head:first-child',
 						'fields_options' => array(
 							'border' => array(
 								'default' => 'solid',
@@ -1516,7 +1583,7 @@ class Table extends Common_Widget {
 						'label'     => __( 'Row Color', 'uael' ),
 						'type'      => Controls_Manager::COLOR,
 						'selectors' => array(
-							'{{WRAPPER}} tbody .uael-table-row:hover td.uael-table-col .uael-table__text' => 'color: {{VALUE}};',
+							'{{WRAPPER}} tbody .uael-table-row:hover td.uael-table-col .uael-table__text:not(.uael-tbody-head-text)' => 'color: {{VALUE}};',
 							'{{WRAPPER}} tbody .uael-table-row:hover td.uael-table-col .uael-table__text svg' => 'fill: {{VALUE}};',
 						),
 					)
@@ -1542,7 +1609,9 @@ class Table extends Common_Widget {
 						'label'     => __( 'Cell Hover Color', 'uael' ),
 						'type'      => Controls_Manager::COLOR,
 						'selectors' => array(
-							'{{WRAPPER}} .uael-table tbody td.uael-table-col:hover .uael-table__text' => 'color: {{VALUE}};',
+							'{{WRAPPER}} table[data-responsive="horizontal"] tbody td.uael-table-col:hover .uael-table__text' => 'color: {{VALUE}};',
+							'{{WRAPPER}} tbody .uael-table-row td.uael-table-col:hover .uael-table__text:not(.uael-tbody-head-text)' => 'color: {{VALUE}}',
+
 							'{{WRAPPER}} .uael-table tbody td.uael-table-col:hover .uael-table__text svg' => 'fill: {{VALUE}};',
 						),
 					)
@@ -1778,8 +1847,11 @@ class Table extends Common_Widget {
 		$this->start_controls_section(
 			'section_search_style',
 			array(
-				'label' => __( 'Search / Show Entries', 'uael' ),
-				'tab'   => Controls_Manager::TAB_STYLE,
+				'label'     => __( 'Search / Show Entries', 'uael' ),
+				'tab'       => Controls_Manager::TAB_STYLE,
+				'condition' => array(
+					'table_responsive!' => 'yes',
+				),
 			)
 		);
 
@@ -2207,6 +2279,7 @@ class Table extends Common_Widget {
 						$this->add_render_attribute( 'current_' . $hkey, 'class', 'sort-this' );
 						$this->add_render_attribute( 'current_' . $hkey, 'class', 'elementor-repeater-item-' . $hkey );
 						$this->add_render_attribute( 'current_' . $hkey, 'class', 'uael-table-col' );
+						$this->add_render_attribute( 'current_' . $hkey, 'class', 'uael-table-head-cell-text' );
 						// Sort Icon.
 						if ( 'yes' === $settings['sortable'] && true === $first_row_h ) {
 							$this->add_render_attribute( 'icon_sort_' . $hkey, 'class', 'uael-sort-icon' );
@@ -2255,6 +2328,7 @@ class Table extends Common_Widget {
 						$this->add_render_attribute( $repeater_cell_text, 'class', 'uael-table__text-inner' );
 
 						$this->add_render_attribute( 'uael_table_col' . $bkey, 'class', 'uael-table-col' );
+						$this->add_render_attribute( 'uael_table_col' . $bkey, 'class', 'uael-table-body-cell-text' );
 						$this->add_render_attribute( 'uael_table_col' . $bkey, 'class', 'elementor-repeater-item-' . $bkey );
 
 						// Fetch corresponding header cell text.

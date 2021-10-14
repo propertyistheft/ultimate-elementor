@@ -2697,7 +2697,7 @@ class LoginForm extends Common_Widget {
 					<div <?php echo wp_kses_post( $this->get_render_attribute_string( 'wrapper' ) ); ?>>
 						<div <?php echo wp_kses_post( $this->get_render_attribute_string( 'field-group' ) ); ?>>
 							<?php
-							if ( 'custom' === $settings['show_labels'] ) {
+							if ( 'custom' === $settings['show_labels'] && '' !== $settings['user_label'] ) {
 								echo '<label ' . wp_kses_post( $this->get_render_attribute_string( 'user_label' ) ) . '>' . wp_kses_post( $settings['user_label'] ) . '</label>';
 							} elseif ( 'default' === $settings['show_labels'] ) {
 								echo '<label ' . wp_kses_post( $this->get_render_attribute_string( 'user_label' ) ) . '>';
@@ -2720,7 +2720,7 @@ class LoginForm extends Common_Widget {
 
 						<div <?php echo wp_kses_post( $this->get_render_attribute_string( 'field-group' ) ); ?>>
 							<?php
-							if ( 'custom' === $settings['show_labels'] ) {
+							if ( 'custom' === $settings['show_labels'] && '' !== $settings['password_label'] ) {
 								echo '<label ' . wp_kses_post( $this->get_render_attribute_string( 'password_label' ) ) . '>' . wp_kses_post( $settings['password_label'] ) . '</label>';
 							} elseif ( 'default' === $settings['show_labels'] ) {
 								echo '<label ' . wp_kses_post( $this->get_render_attribute_string( 'password_label' ) ) . '>';
@@ -2989,7 +2989,7 @@ class LoginForm extends Common_Widget {
 						#>
 
 						<div class="{{ fieldGroupClasses }}">
-							<# if ( 'custom' === settings.show_labels ) { #>
+							<# if ( 'custom' === settings.show_labels && '' !== settings.user_label ) { #>
 								<label class="elementor-field-label" for="user"> {{{ settings.user_label }}} </label>
 							<# } else if ( 'default' === settings.show_labels ) { #>
 								<label class="elementor-field-label" for="user">
@@ -3029,7 +3029,7 @@ class LoginForm extends Common_Widget {
 						</div>
 
 						<div class="{{ fieldGroupClasses }}">
-							<# if ( 'custom' === settings.show_labels ) { #>
+							<# if ( 'custom' === settings.show_labels && '' !== settings.password_label ) { #>
 								<label class="elementor-field-label" for="password"> {{{ settings.password_label }}} </label>
 							<# } else if ( 'default' === settings.show_labels ) { #>
 								<label class="elementor-field-label" for="password">

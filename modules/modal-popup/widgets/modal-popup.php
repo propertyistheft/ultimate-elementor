@@ -1116,8 +1116,30 @@ class Modal_Popup extends Common_Widget {
 					'return_value' => 'yes',
 					'label_off'    => __( 'No', 'uael' ),
 					'label_on'     => __( 'Yes', 'uael' ),
-					'condition'    => array(
-						'modal_on' => 'automatic',
+					'conditions'   => array(
+						'relation' => 'and',
+						'terms'    => array(
+							array(
+								'name'     => 'modal_on',
+								'operator' => '==',
+								'value'    => 'automatic',
+							),
+							array(
+								'relation' => 'or',
+								'terms'    => array(
+									array(
+										'name'     => 'exit_intent',
+										'operator' => '==',
+										'value'    => 'yes',
+									),
+									array(
+										'name'     => 'after_second',
+										'operator' => '==',
+										'value'    => 'yes',
+									),
+								),
+							),
+						),
 					),
 					'selectors'    => array(
 						'.uamodal-{{ID}}' => '',
@@ -1126,9 +1148,28 @@ class Modal_Popup extends Common_Widget {
 			);
 
 			$this->add_control(
+				'set_cookie_on',
+				array(
+					'label'       => __( 'Set Cookies On', 'uael' ),
+					'description' => __( 'Choose an action on which you want to set cookies to hide the popup for number of days.', 'uael' ),
+					'type'        => Controls_Manager::SELECT,
+					'default'     => 'default',
+					'label_block' => false,
+					'condition'   => array(
+						'enable_cookies' => 'yes',
+						'modal_on'       => 'automatic',
+					),
+					'options'     => array(
+						'default' => __( 'Page Refresh', 'uael' ),
+						'closed'  => __( 'Close Action', 'uael' ),
+					),
+				)
+			);
+
+			$this->add_control(
 				'close_cookie_days',
 				array(
-					'label'     => __( 'Do Not Show After Closing (days)', 'uael' ),
+					'label'     => __( 'Hide for Number of Days', 'uael' ),
 					'type'      => Controls_Manager::SLIDER,
 					'default'   => array(
 						'size' => 1,
@@ -2432,7 +2473,11 @@ class Modal_Popup extends Common_Widget {
 
 		if ( ! empty( $settings['btn_align'] ) ) {
 			$this->add_render_attribute( 'wrapper', 'class', 'elementor-align-' . $settings['btn_align'] );
+		}
+		if ( ! empty( $settings['btn_align_tablet'] ) ) {
 			$this->add_render_attribute( 'wrapper', 'class', 'elementor-tablet-align-' . $settings['btn_align_tablet'] );
+		}
+		if ( ! empty( $settings['btn_align_mobile'] ) ) {
 			$this->add_render_attribute( 'wrapper', 'class', 'elementor-mobile-align-' . $settings['btn_align_mobile'] );
 		}
 
@@ -2683,6 +2728,7 @@ class Modal_Popup extends Common_Widget {
 				'data-after-sec-val'    => $settings['after_second_value']['size'],
 				'data-cookies'          => $settings['enable_cookies'],
 				'data-cookies-days'     => $settings['close_cookie_days']['size'],
+				'data-cookies-type'     => $settings['set_cookie_on'],
 				'data-custom'           => $settings['modal_custom'],
 				'data-custom-id'        => $settings['modal_custom_id'],
 				'data-content'          => $settings['content_type'],

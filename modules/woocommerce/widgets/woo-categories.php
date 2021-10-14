@@ -172,12 +172,12 @@ class Woo_Categories extends Common_Widget {
 			$this->add_responsive_control(
 				'cat_columns',
 				array(
-					'label'          => __( 'Columns', 'uael' ),
-					'type'           => Controls_Manager::SELECT,
-					'default'        => '4',
-					'tablet_default' => '3',
-					'mobile_default' => '2',
-					'options'        => array(
+					'label'              => __( 'Columns', 'uael' ),
+					'type'               => Controls_Manager::SELECT,
+					'default'            => '4',
+					'tablet_default'     => '3',
+					'mobile_default'     => '2',
+					'options'            => array(
 						'1' => '1',
 						'2' => '2',
 						'3' => '3',
@@ -185,9 +185,10 @@ class Woo_Categories extends Common_Widget {
 						'5' => '5',
 						'6' => '6',
 					),
-					'condition'      => array(
+					'condition'          => array(
 						'products_layout_type' => 'grid',
 					),
+					'frontend_available' => true,
 				)
 			);
 

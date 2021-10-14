@@ -289,7 +289,8 @@
 #Particles .uael-widget-title:after,
 #Cross_Domain .uael-widget-title:after,
 #DisplayConditions .uael-widget-title:after,
-#Presets .uael-widget-title:after {
+#Presets .uael-widget-title:after,
+#PartyPropzExtension .uael-widget-title:after {
     color: #fff;
     background: #2ecc71;
     font-size: 0.7em;
@@ -307,7 +308,8 @@
 
 #Particles .uael-widget-title:after,
 #DisplayConditions .uael-widget-title:after,
-#Presets .uael-widget-title:after {
+#Presets .uael-widget-title:after,
+#PartyPropzExtension .uael-widget-title:after {
 	content: "extension";
 }
 

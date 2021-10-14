@@ -132,13 +132,14 @@ abstract class Skin_Base extends Elementor_Skin_Base {
 			$this->add_responsive_control(
 				'slides_to_show',
 				array(
-					'label'          => __( 'Columns', 'uael' ),
-					'type'           => Controls_Manager::NUMBER,
-					'default'        => 3,
-					'tablet_default' => 2,
-					'mobile_default' => 1,
-					'min'            => 1,
-					'max'            => 8,
+					'label'              => __( 'Columns', 'uael' ),
+					'type'               => Controls_Manager::NUMBER,
+					'default'            => 3,
+					'tablet_default'     => 2,
+					'mobile_default'     => 1,
+					'min'                => 1,
+					'max'                => 8,
+					'frontend_available' => true,
 				)
 			);
 

@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'uael';
-	src:  url('../fonts/uael.eot?b0kjvf');
-	src:  url('../fonts/uael.eot?b0kjvf#iefix') format('embedded-opentype'),
-	url('../fonts/uael.ttf?b0kjvf') format('truetype'),
-	url('../fonts/uael.woff?b0kjvf') format('woff'),
-	url('../fonts/uael.svg?b0kjvf#uael') format('svg');
+	src:  url('../fonts/uael.eot?iwggsu');
+	src:  url('../fonts/uael.eot?iwggsu#iefix') format('embedded-opentype'),
+	url('../fonts/uael.ttf?iwggsu') format('truetype'),
+	url('../fonts/uael.woff?iwggsu') format('woff'),
+	url('../fonts/uael.svg?iwggsu#uael') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -209,7 +209,9 @@
 .uael-icon-fluent-form-styler:before {
   content: "\e93b";
 }
-
+.uael-icon-welcome-music:before {
+	content: "\e901";
+}
 .uael-editor-doc {
   font-size: 11px;
   font-style: italic;
