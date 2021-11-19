@@ -664,18 +664,20 @@ class UAEL_Helper {
 	public static function get_integrations_options( $name = '' ) {
 
 		$integrations_default = array(
-			'google_api'             => '',
-			'developer_mode'         => false,
-			'language'               => '',
-			'google_places_api'      => '',
-			'yelp_api'               => '',
-			'recaptcha_v3_key'       => '',
-			'recaptcha_v3_secretkey' => '',
-			'recaptcha_v3_score'     => '0.5',
-			'google_client_id'       => '',
-			'facebook_app_id'        => '',
-			'facebook_app_secret'    => '',
-			'uael_share_button'      => '',
+			'google_api'                           => '',
+			'developer_mode'                       => false,
+			'language'                             => '',
+			'google_places_api'                    => '',
+			'yelp_api'                             => '',
+			'recaptcha_v3_key'                     => '',
+			'recaptcha_v3_secretkey'               => '',
+			'recaptcha_v3_score'                   => '0.5',
+			'google_client_id'                     => '',
+			'facebook_app_id'                      => '',
+			'facebook_app_secret'                  => '',
+			'uael_share_button'                    => '',
+			'uael_maxmind_geolocation_license_key' => '',
+			'uael_maxmind_geolocation_db_path'     => '',
 		);
 
 		$integrations = self::get_admin_settings_option( '_uael_integration', array(), true );
@@ -1384,7 +1386,7 @@ class UAEL_Helper {
 
 			$block_name = str_replace( 'uael/', '', $key );
 
-			if ( isset( $saved_blocks[ $block_name ] ) && 'disabled' === $saved_blocks[ $block_name ] || 'DisplayConditions' === $block_name || 'Presets' === $block_name || 'SectionDivider' === $block_name ) {
+			if ( isset( $saved_blocks[ $block_name ] ) && ( 'disabled' === $saved_blocks[ $block_name ] && ! is_multisite() ) || 'DisplayConditions' === $block_name || 'Presets' === $block_name || 'SectionDivider' === $block_name ) {
 				continue;
 			}
 

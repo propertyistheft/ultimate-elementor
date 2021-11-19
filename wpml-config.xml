@@ -239,6 +239,12 @@
 				<field type="'Load More' Label - Creative Feeds : Text" editor_type="LINE">feed_load_more_text</field>
 				<field type="'Load More' Label - Business Card : Text" editor_type="LINE">business_load_more_text</field>
 				<field type="Author Info Text - Business Card : Text" editor_type="LINE">business_writtenby_text</field>
+				<field type="Filterable Tabs - All Label - Classic : Text" editor_type="LINE">classic_filters_all_text</field>
+				<field type="Filterable Tabs - All Label - Card : Text" editor_type="LINE">card_filters_all_text</field>
+				<field type="Filterable Tabs - All Label - Event : Text" editor_type="LINE">event_filters_all_text</field>
+				<field type="Filterable Tabs - All Label - Creative Feeds : Text" editor_type="LINE">feed_filters_all_text</field>
+				<field type="Filterable Tabs - All Label - News : Text" editor_type="LINE">news_filters_all_text</field>
+				<field type="Filterable Tabs - All Label - Business Card : Text" editor_type="LINE">business_filters_all_text</field>
 			</fields>
 		</widget>
 		<widget name="uael-hotspot">

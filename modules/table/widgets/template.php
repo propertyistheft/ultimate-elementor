@@ -41,6 +41,8 @@ if ( 'yes' === $settings['searchable'] ) {
 }
 if ( 'yes' === $settings['table_responsive'] ) {
 	$this->add_render_attribute( 'uael_table_id', 'data-responsive', $settings['table_responsive'] );
+} else {
+	$this->add_render_attribute( 'uael_table_id', 'data-responsive', 'no' );
 }
 $csv = $this->parse_csv();
 

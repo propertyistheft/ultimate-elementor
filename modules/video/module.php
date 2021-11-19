@@ -161,7 +161,6 @@ class Module extends Module_Base {
 				$video_link             = $this->get_video_link( $settings );
 				$is_custom_thumbnail    = 'yes' === $settings['show_image_overlay'] ? true : false;
 				$custom_thumbnail_url   = isset( $settings['image_overlay']['url'] ) ? $settings['image_overlay']['url'] : '';
-
 				if ( 'yes' === $enable_schema && ( ( '' === $settings['schema_title'] || '' === $settings['schema_description'] || ( ! $is_custom_thumbnail && '' === $settings['schema_thumbnail']['url'] ) || '' === $settings['schema_upload_date'] ) || ( $is_custom_thumbnail && '' === $custom_thumbnail_url ) ) ) {
 					$content_schema_warning = true;
 				}

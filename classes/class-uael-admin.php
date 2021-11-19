@@ -8,6 +8,7 @@
 namespace UltimateElementor\Classes;
 
 use UltimateElementor\Classes\UAEL_Helper;
+use UltimateElementor\Classes\UAEL_Maxmind_Database;
 
 if ( ! class_exists( 'UAEL_Admin' ) ) {
 
@@ -393,6 +394,10 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 
 			if ( isset( $_POST['uael-integration-nonce'] ) && wp_verify_nonce( $_POST['uael-integration-nonce'], 'uael-integration' ) ) {
 
+				$query = array(
+					'message' => 'saved',
+				);
+
 				$url            = $_SERVER['REQUEST_URI'];
 				$input_settings = array();
 				$new_settings   = array();
@@ -400,6 +405,15 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 				if ( isset( $_POST['uael_integration'] ) ) {
 
 					$input_settings = $_POST['uael_integration'];
+
+					$geolite_db = new UAEL_Maxmind_Database();
+					$result     = $geolite_db->verify_key_and_download_database( $input_settings['uael_maxmind_geolocation_license_key'] );
+					if ( isset( $result['error'] ) && $result['error'] ) {
+						$query = array(
+							'message' => 'error',
+							'error'   => $result['message'],
+						);
+					}
 
 					// Loop through the input and sanitize each of the values.
 					foreach ( $input_settings as $key => $val ) {
@@ -415,10 +429,6 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 				}
 
 				UAEL_Helper::update_admin_settings_option( '_uael_integration', $new_settings, true );
-
-				$query = array(
-					'message' => 'saved',
-				);
 
 				$redirect_to = add_query_arg( $query, $url );
 

@@ -494,25 +494,33 @@
 			return;
 		}
 
-		var id 				= $scope.data( 'id' );
-		var $this 			= $scope.find( '.uael-price-table-features-list' );
-		var side			= $this.data( 'side' );
-		var trigger			= $this.data( 'hotspottrigger' );
-		var arrow			= $this.data( 'arrow' );
-		var distance		= $this.data( 'distance' );
-		var delay 			= $this.data( 'delay' );
-		var animation		= $this.data( 'animation' );
-		var anim_duration 	= $this.data( 'animduration' );
-		var uaelclass		= 'uael-price-table-wrap-' + id;
-		var zindex			= $this.data( 'zindex' );
-		var length 			= $this.data( 'length' );
-		var tooltip_maxwidth	= $this.data( 'tooltip-maxwidth' );
-		var tooltip_minwidth	= $this.data( 'tooltip-minwidth' );
-		var responsive = $this.data( 'tooltip-responsive' );
-		var enable_tooltip = $this.data( 'enable-tooltip' );
+		var id 				        = $scope.data( 'id' );
+		var $this 			        = $scope.find( '.uael-price-table-features-list' );
+		var side			        = $this.data( 'side' );
+		var trigger			        = $this.data( 'hotspottrigger' );
+		var arrow			        = $this.data( 'arrow' );
+		var distance		        = $this.data( 'distance' );
+		var delay 			        = $this.data( 'delay' );
+		var animation		        = $this.data( 'animation' );
+		var anim_duration 	        = $this.data( 'animduration' );
+		var uaelclass		        = 'uael-price-table-wrap-' + id;
+		var uaelclassStrikeTooltip	= 'uael-price-table-wrap-' + id;
+		var zindex			        = $this.data( 'zindex' );
+		var length 			        = $this.data( 'length' );
+		var tooltip_maxwidth	    = $this.data( 'tooltip-maxwidth' );
+		var tooltip_minwidth	    = $this.data( 'tooltip-minwidth' );
+		var responsive              = $this.data( 'tooltip-responsive' );
+		var enable_tooltip          = $this.data( 'enable-tooltip' );
+		var pricing_container       = $scope.find( '.uael-pricing-container' );
+		var strike_tooltip          = pricing_container.data( 'strike-tooltip' );
+		var strike_tooltip_position = pricing_container.data( 'strike-tooltip-position' );
+		var strike_tooltip_hide     = pricing_container.data( 'strike-tooltip-hide' );
 
 		uaelclass += ' uael-price-table-tooltip uael-features-tooltip-hide-' + responsive;
 		$this.addClass( 'uael-features-tooltip-hide-' + responsive );
+
+		uaelclassStrikeTooltip += ' uael-strike-price-tooltip uael-strike-tooltip-hide-' + strike_tooltip_hide;
+		$this.addClass( 'uael-strike-tooltip-hide-' + strike_tooltip_hide );
 
 		// Declare & pass values to Tooltipster js function.
 		function tableTooltipsterCall( selector, triggerValue ) {
@@ -536,6 +544,24 @@
 		if( 'yes' === enable_tooltip ){
 			// Execute Tooltipster function
 			tableTooltipsterCall( '.uael-price-table-content-' + id, trigger );
+		}
+
+		if ( 'yes' === strike_tooltip ) {
+			$( '.uael-strike-tooltip' ).tooltipster(
+				{
+					theme: ['tooltipster-noir', 'tooltipster-noir-customized'],
+					side : strike_tooltip_position,
+					trigger : 'hover',
+					arrow : true,
+					distance : 6,
+					delay : 300,
+					animation : 'fade',
+					zIndex : 99,
+					interactive : true,
+					animationDuration : 350,
+					uaelclass: uaelclass
+				}
+			);
 		}
 	}
 

@@ -162,6 +162,11 @@ class Video_Gallery extends Common_Widget {
 
 			$repeater = new Repeater();
 
+			$repeater->start_controls_tabs( 'tabs_for_general_and_schema' );
+
+			// General tab starts.
+			$repeater->start_controls_tab( 'tab_video_gallery_general', array( 'label' => __( 'General', 'uael' ) ) );
+
 			$repeater->add_control(
 				'type',
 				array(
@@ -174,6 +179,7 @@ class Video_Gallery extends Common_Widget {
 						'wistia'  => __( 'Wistia Video', 'uael' ),
 						'hosted'  => __( 'Self Hosted', 'uael' ),
 					),
+
 				)
 			);
 
@@ -400,61 +406,148 @@ class Video_Gallery extends Common_Widget {
 				)
 			);
 
+			$repeater->end_controls_tab();
+
+			// Schema tab starts.
+			$repeater->start_controls_tab( 'tab_video_gallery_schema', array( 'label' => __( 'Schema', 'uael' ) ) );
+
+			$repeater->add_control(
+				'schema_title',
+				array(
+					'label'       => __( 'Title', 'uael' ),
+					'type'        => \Elementor\Controls_Manager::TEXT,
+					'label_block' => true,
+				)
+			);
+
+			$repeater->add_control(
+				'schema_description',
+				array(
+					'label' => __( 'Description', 'uael' ),
+					'type'  => Controls_Manager::TEXTAREA,
+					'rows'  => 10,
+				)
+			);
+
+			$repeater->add_control(
+				'schema_thumbnail',
+				array(
+					'label'     => __( 'Thumbnail', 'uael' ),
+					'type'      => Controls_Manager::MEDIA,
+					'default'   => array(
+						'url' => Utils::get_placeholder_image_src(),
+					),
+					'condition' => array(
+						'custom_placeholder!' => 'yes',
+					),
+				)
+			);
+
+			$repeater->add_control(
+				'schema_upload_date',
+				array(
+					'label'   => __( 'Upload Date & Time', 'uael' ),
+					'type'    => Controls_Manager::DATE_TIME,
+					'default' => gmdate( 'Y-m-d H:i' ),
+				)
+			);
+
+			$repeater->end_controls_tab();
+			$repeater->end_controls_tabs();
+
 			$this->add_control(
 				'gallery_items',
 				array(
-					'label'       => '',
 					'type'        => Controls_Manager::REPEATER,
 					'show_label'  => true,
 					'fields'      => $repeater->get_controls(),
 					'default'     => array(
 						array(
-							'type'              => 'youtube',
-							'video_url'         => $youtube,
-							'title'             => __( 'First Video', 'uael' ),
-							'tags'              => 'YouTube',
-							'placeholder_image' => '',
+							'type'               => 'youtube',
+							'video_url'          => $youtube,
+							'title'              => __( 'First Video', 'uael' ),
+							'schema_title'       => __( 'Title of the video.', 'uael' ),
+							'schema_description' => __( 'Description of the video.', 'uael' ),
+							'schema_thumbnail'   => '',
+							'schema_upload_date' => gmdate( 'Y-m-d H:i' ),
+							'tags'               => 'YouTube',
+							'placeholder_image'  => '',
 						),
 						array(
-							'type'              => 'vimeo',
-							'video_url'         => $vimeo,
-							'title'             => __( 'Second Video', 'uael' ),
-							'tags'              => 'Vimeo',
-							'placeholder_image' => '',
+							'type'               => 'vimeo',
+							'video_url'          => $vimeo,
+							'title'              => __( 'Second Video', 'uael' ),
+							'schema_title'       => __( 'Title of the video.', 'uael' ),
+							'schema_description' => __( 'Description of the video.', 'uael' ),
+							'schema_thumbnail'   => '',
+							'schema_upload_date' => gmdate( 'Y-m-d H:i' ),
+							'tags'               => 'Vimeo',
+							'placeholder_image'  => '',
 						),
 						array(
-							'type'              => 'wistia',
-							'wistia_url'        => $wistia,
-							'title'             => __( 'Third Video', 'uael' ),
-							'tags'              => 'Wistia',
-							'placeholder_image' => '',
+							'type'               => 'wistia',
+							'wistia_url'         => $wistia,
+							'title'              => __( 'Third Video', 'uael' ),
+							'schema_title'       => __( 'Title of the video.', 'uael' ),
+							'schema_description' => __( 'Description of the video.', 'uael' ),
+							'schema_thumbnail'   => '',
+							'schema_upload_date' => gmdate( 'Y-m-d H:i' ),
+							'tags'               => 'Wistia',
+							'placeholder_image'  => '',
 						),
 						array(
-							'type'              => 'youtube',
-							'video_url'         => $youtube,
-							'title'             => __( 'Fourth Video', 'uael' ),
-							'tags'              => 'YouTube',
-							'placeholder_image' => '',
+							'type'               => 'youtube',
+							'video_url'          => $youtube,
+							'title'              => __( 'Fourth Video', 'uael' ),
+							'schema_title'       => __( 'Title of the video.', 'uael' ),
+							'schema_description' => __( 'Description of the video.', 'uael' ),
+							'schema_thumbnail'   => '',
+							'schema_upload_date' => gmdate( 'Y-m-d H:i' ),
+							'tags'               => 'YouTube',
+							'placeholder_image'  => '',
 						),
 						array(
-							'type'              => 'vimeo',
-							'video_url'         => $vimeo,
-							'title'             => __( 'Fifth Video', 'uael' ),
-							'tags'              => 'Vimeo',
-							'placeholder_image' => '',
+							'type'               => 'vimeo',
+							'video_url'          => $vimeo,
+							'title'              => __( 'Fifth Video', 'uael' ),
+							'schema_title'       => __( 'Title of the video.', 'uael' ),
+							'schema_description' => __( 'Description of the video.', 'uael' ),
+							'schema_thumbnail'   => '',
+							'schema_upload_date' => gmdate( 'Y-m-d H:i' ),
+							'tags'               => 'Vimeo',
+							'placeholder_image'  => '',
 						),
 						array(
-							'type'              => 'wistia',
-							'wistia_url'        => $wistia,
-							'title'             => __( 'Sixth Video', 'uael' ),
-							'tags'              => 'Wistia',
-							'placeholder_image' => '',
+							'type'               => 'wistia',
+							'wistia_url'         => $wistia,
+							'title'              => __( 'Sixth Video', 'uael' ),
+							'schema_title'       => __( 'Title of the video.', 'uael' ),
+							'schema_description' => __( 'Description of the video.', 'uael' ),
+							'schema_thumbnail'   => '',
+							'schema_upload_date' => gmdate( 'Y-m-d H:i' ),
+							'tags'               => 'Wistia',
+							'placeholder_image'  => '',
 						),
 
 					),
 					'title_field' => '{{{ title }}}',
 				)
 			);
+
+			$this->add_control(
+				'schema_support',
+				array(
+					'label'       => __( 'Schema Support', 'uael' ),
+					'description' => __( 'Note: This option enables the VideoObject Schema.', 'uael' ),
+					'type'        => Controls_Manager::SWITCHER,
+					'label_on'    => __( 'Yes', 'uael' ),
+					'label_off'   => __( 'No', 'uael' ),
+					'default'     => 'no',
+					'separator'   => 'before',
+				)
+			);
+
+			$this->end_controls_tab();
 
 		$this->end_controls_section();
 	}
@@ -2259,10 +2352,11 @@ class Video_Gallery extends Common_Widget {
 	 */
 	public function render_gallery_inner_data() {
 
-		$settings    = $this->get_settings_for_display();
-		$new_gallery = array();
-		$gallery     = $settings['gallery_items'];
-		$vurl        = '';
+		$settings          = $this->get_settings_for_display();
+		$new_gallery       = array();
+		$gallery           = $settings['gallery_items'];
+		$vurl              = '';
+		static $videocount = 1;
 
 		if ( 'rand' === $settings['gallery_rand'] ) {
 
@@ -2275,7 +2369,6 @@ class Video_Gallery extends Common_Widget {
 		} else {
 			$new_gallery = $gallery;
 		}
-
 		foreach ( $new_gallery as $index => $item ) {
 
 			$url = $this->get_placeholder_image( $item );
@@ -2296,6 +2389,7 @@ class Video_Gallery extends Common_Widget {
 			}
 
 			$this->add_render_attribute( 'grid-item' . $index, 'class', 'uael-video__gallery-item' );
+			$this->add_render_attribute( 'grid-item' . $index, 'id', 'uael-video__gallery-item' . ( $videocount++ ) );
 
 			// Render filter / tags classes.
 			if ( 'yes' === $settings['show_filter'] && 'grid' === $settings['layout'] ) {
@@ -2367,7 +2461,6 @@ class Video_Gallery extends Common_Widget {
 					<?php
 						$url = empty( $url['url'] ) ? '' : esc_url( $url['url'] );
 					?>
-
 					<div class="uael-video__gallery-iframe" style="background-image:url('<?php echo $url; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>');">
 						<a <?php echo wp_kses_post( $this->get_render_attribute_string( 'video-container-link' . $index ) ); ?>>
 							<div class="uael-video__content-wrap">
@@ -2572,11 +2665,51 @@ class Video_Gallery extends Common_Widget {
 	 */
 	protected function render() {
 
-		$settings = $this->get_settings_for_display();
+		$settings               = $this->get_settings_for_display();
+		$enable_schema          = $settings['schema_support'];
+		$node_id                = $this->get_id();
+		$filters                = $this->get_filter_values();
+		$is_editor              = \Elementor\Plugin::instance()->editor->is_edit_mode();
+		$content_schema_warning = '';
+		$is_custom              = '';
+		$schema_thumbnail_url   = '';
+		$custom_thumbnail_url   = '';
+		foreach ( $settings['gallery_items'] as $key => $val ) {
 
-		$node_id = $this->get_id();
+			$is_custom = ( 'yes' === $val['custom_placeholder'] ? true : false );
 
-		$filters = $this->get_filter_values();
+			foreach ( $val as $image_url => $url_value ) {
+
+				if ( is_array( $url_value ) ) {
+
+					if ( 'placeholder_image' === $image_url ) {
+						$custom_image         = $url_value['url'];
+						$custom_thumbnail_url = isset( $custom_image ) ? $custom_image : '';
+					}
+
+					if ( 'schema_thumbnail' === $image_url ) {
+						$schema_image         = $url_value['url'];
+						$schema_thumbnail_url = isset( $schema_image ) ? $schema_image : '';
+					}
+
+					if ( 'yes' === $enable_schema && ( ( '' === $val['schema_title'] || '' === $val['schema_description'] || '' === $val['schema_upload_date'] || ( ! $is_custom && '' === $schema_thumbnail_url ) || ( $is_custom && '' === $custom_thumbnail_url ) ) ) ) {
+						$content_schema_warning = true;
+					}
+				}
+			}
+			if ( 'yes' === $enable_schema && true === $content_schema_warning && $is_editor ) {
+				?>
+				<div class="uael-builder-msg elementor-alert elementor-alert-warning">
+					<?php if ( $is_custom && '' === $custom_thumbnail_url ) { ?>
+						<span class="elementor-alert-description"><?php esc_attr_e( 'Please set a custom thumbnail to display video gallery schema properly.', 'uael' ); ?></span>
+					<?php } else { ?>
+						<span class="elementor-alert-description"><?php esc_attr_e( 'Some fields are empty under the video gallery schema section. Please fill in all required fields.', 'uael' ); ?></span>
+					<?php } ?>
+				</div>
+				<?php
+				break;
+			}
+		}
 
 		$this->add_render_attribute( 'wrap', 'class', 'uael-video-gallery-wrap' );
 		$this->add_render_attribute( 'wrap', 'class', 'uael-vg__layout-' . $settings['layout'] );
@@ -2606,4 +2739,3 @@ class Video_Gallery extends Common_Widget {
 	}
 
 }
-

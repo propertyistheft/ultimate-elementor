@@ -1866,7 +1866,7 @@ class Video extends Common_Widget {
 		$this->add_control(
 			'schema_support',
 			array(
-				'label'     => __( 'Enable Schema Support', 'uael' ),
+				'label'     => __( 'Schema Support', 'uael' ),
 				'type'      => Controls_Manager::SWITCHER,
 				'label_on'  => __( 'Yes', 'uael' ),
 				'label_off' => __( 'No', 'uael' ),

@@ -510,7 +510,7 @@ class Table extends Common_Widget {
 				'table_responsive',
 				array(
 					/* translators: 1: <b> 2: </b> */
-					'label'       => sprintf( __( '%1$sResponsive Support%2$s', 'uael' ), '<b>', '</b>' ),
+					'label'       => __( 'Responsive Support', 'uael' ),
 					'description' => __( 'Note: Advance settings will not work if Responsive Support is Enabled.', 'uael' ),
 					'type'        => Controls_Manager::SWITCHER,
 					'label_on'    => __( 'On', 'uael' ),
@@ -519,6 +519,31 @@ class Table extends Common_Widget {
 				)
 			);
 
+			// Sticky Heading.
+			$this->add_control(
+				'sticky_table_heading',
+				array(
+					'label'        => __( 'Sticky Header', 'uael' ),
+					'type'         => Controls_Manager::SWITCHER,
+					'label_on'     => __( 'ON', 'uael' ),
+					'label_off'    => __( 'OFF', 'uael' ),
+					'return_value' => 'yes',
+					'default'      => 'no',
+					'prefix_class' => 'uael-header-sticky-',
+				)
+			);
+
+			// Sticky Heading Note.
+			$this->add_control(
+				'sticky_table_heading_description',
+				array(
+					'type'      => Controls_Manager::RAW_HTML,
+					'raw'       => sprintf( '<p style="font-size: 11px;font-style: italic;line-height: 1.4;color: #a4afb7;">%s</p>', __( 'Note: Sticky Header will not work if "Responsive Support" option is enabled.', 'uael' ) ),
+					'condition' => array(
+						'table_responsive' => 'yes',
+					),
+				)
+			);
 		$this->end_controls_section();
 	}
 
@@ -767,7 +792,7 @@ class Table extends Common_Widget {
 					'label'     => __( 'Color', 'uael' ),
 					'type'      => Controls_Manager::COLOR,
 					'selectors' => array(
-						'{{WRAPPER}} table[data-responsive="horizontal"] .uael-table-row {{CURRENT_ITEM}} .uael-table__text,{{WRAPPER}} table[data-responsive="yes"] .uael-table-row {{CURRENT_ITEM}} div.uael-table-head + span.uael-table__text' => 'color: {{VALUE}};',
+						'{{WRAPPER}} table[data-responsive="horizontal"] .uael-table-row {{CURRENT_ITEM}} .uael-table__text,{{WRAPPER}} table[data-responsive="no"] .uael-table-row {{CURRENT_ITEM}} span.uael-table__text,{{WRAPPER}} table[data-responsive="yes"] .uael-table-row {{CURRENT_ITEM}} div.uael-table-head + span.uael-table__text' => 'color: {{VALUE}};',
 						'{{WRAPPER}} .uael-table-row {{CURRENT_ITEM}} .uael-table__text svg' => 'fill: {{VALUE}};',
 					),
 					'condition' => array(
@@ -1408,10 +1433,7 @@ class Table extends Common_Widget {
 							'default' => Global_Colors::COLOR_TEXT,
 						),
 						'selectors' => array(
-							'{{WRAPPER}} .uael-table:not([data-responsive="yes"]) tbody td.uael-table-col .uael-table__text,
-
-							{{WRAPPER}} tbody .uael-table__text:not(.uael-tbody-head-text)' => 'color: {{VALUE}};',
-
+							'{{WRAPPER}} tbody td.uael-table-col .uael-table__text' => 'color: {{VALUE}};',
 							'{{WRAPPER}} tbody td.uael-table-col .uael-table__text svg' => 'fill: {{VALUE}};',
 						),
 					)

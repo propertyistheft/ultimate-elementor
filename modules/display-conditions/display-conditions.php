@@ -67,6 +67,8 @@ class Display_Conditions {
 			'visitor_type',
 			'request_parameter',
 			'advanced_date',
+			'geolocation',
+			'acf_text',
 		);
 
 		foreach ( $conditions_list as $condition_name ) {
@@ -254,7 +256,13 @@ class Display_Conditions {
 						'display_condition_login_status' => 'subscriber',
 					),
 				),
-				'title_field' => '<# print(display_condition_key.replace(/_/i, " ").split(" ").map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(" ")) #>',
+				'title_field' => '<#
+						if ( display_condition_key == "acf_text" ) {
+							print("ACF Field");
+						} else {
+							print( display_condition_key.replace(/_/i, " ").split(" ").map( word => word.charAt(0).toUpperCase() + word.slice(1) ).join(" ") );
+						}
+					#>',
 				'condition'   => array(
 					'display_condition_enable' => 'yes',
 				),
@@ -283,7 +291,7 @@ class Display_Conditions {
 			'display-note',
 			array(
 				'type'            => Controls_Manager::RAW_HTML,
-				'raw'             => sprintf( 'Note: Display conditions feature will work on the frontend.', 'uael' ),
+				'raw'             => esc_html__( 'Note: Display conditions feature will work on the frontend.', 'uael' ),
 				'content_classes' => 'elementor-panel-alert elementor-panel-alert-warning',
 				'condition'       => array(
 					'display_condition_enable' => 'yes',
@@ -318,6 +326,16 @@ class Display_Conditions {
 				$repeater->add_control(
 					'display_condition_time_span_end',
 					$value->get_due_control( $condition[ $key_name ] )
+				);
+
+			} elseif ( 'display_condition_acf_text' === $repeater_field_id ) {
+				$repeater->add_control(
+					'display_condition_acf_text_key',
+					$value->get_acf_field( $condition[ $key_name ] )
+				);
+				$repeater->add_control(
+					'display_condition_acf_text_value',
+					$value->get_repeater_control( $condition[ $key_name ] )
 				);
 
 			} elseif ( 'display_condition_request_parameter' === $repeater_field_id ) {
@@ -383,6 +401,12 @@ class Display_Conditions {
 				$main_key   = $list[ $key ];
 				$main_value = $list[ $value ];
 				$check      = $class->compare_request_param( $settings, $operator, $main_key, $main_value );
+			} elseif ( 'acf_text' === $list['display_condition_key'] ) {
+				$key        = 'display_condition_' . $list['display_condition_key'] . '_key';
+				$value      = 'display_condition_' . $list['display_condition_key'] . '_value';
+				$main_key   = $list[ $key ];
+				$main_value = $list[ $value ];
+				$check      = $class->acf_compare_value( $settings, $operator, $main_key, $main_value );
 			} else {
 				$check = $class->compare_value( $settings, $operator, $value );
 			}

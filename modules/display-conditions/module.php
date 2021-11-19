@@ -98,6 +98,32 @@ class Module extends Module_Base {
 			add_action( 'elementor/element/column/section_advanced/after_section_end', array( __CLASS__, 'add_controls_sections' ), 1, 2 );
 			// Activate sections for sections.
 			add_action( 'elementor/element/section/section_advanced/after_section_end', array( __CLASS__, 'add_controls_sections' ), 1, 2 );
+
+			self::create_files();
+		}
+	}
+
+	/**
+	 * Creates required files/directories for maxmind DB.
+	 *
+	 * @since 1.35.1
+	 * @access private
+	 */
+	private static function create_files() {
+		// Allow us to easily interact with the filesystem.
+		require_once ABSPATH . 'wp-admin/includes/file.php';
+		WP_Filesystem();
+		global $wp_filesystem;
+
+		// Install files and folders for uploading files and prevent hotlinking.
+		$upload_dir = wp_upload_dir();
+		$files      = array(
+			'base'    => $upload_dir['basedir'] . '/uael_uploads',
+			'file'    => '.htaccess',
+			'content' => 'deny from all',
+		);
+		if ( wp_mkdir_p( $files['base'] ) && ! file_exists( trailingslashit( $files['base'] ) . $files['file'] ) ) {
+			$wp_filesystem->put_contents( $files['base'] . '/' . $files['file'], $files['content'], FS_CHMOD_FILE );
 		}
 	}
 

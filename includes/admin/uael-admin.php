@@ -49,6 +49,10 @@ $hide_tagline = UAEL_Helper::is_hide_tagline();
 				?>
 					<div id="message" class="notice notice-success is-dismissive uael-notice"><p> <?php esc_html_e( 'Settings saved successfully.', 'uael' ); ?> </p></div>
 				<?php
+			} elseif ( isset( $_REQUEST['message'] ) && 'error' === $_REQUEST['message'] ) {
+				?>
+				<div id="message" class="notice notice-error is-dismissive uael-notice"><p> <?php echo esc_html( $_REQUEST['error'] ); ?> </p></div>
+				<?php
 			}
 		}
 		do_action( 'uael_render_admin_content' );

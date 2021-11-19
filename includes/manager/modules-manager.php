@@ -36,6 +36,7 @@ class Module_Manager {
 		$all_modules = array(
 			/* Control */
 			'query-post',
+			'control-query',
 			'presets-select',
 			/* Widgets */
 			'headings',

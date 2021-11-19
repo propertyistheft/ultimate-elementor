@@ -14,6 +14,7 @@ use Elementor\Group_Control_Typography;
 use Elementor\Group_Control_Border;
 use Elementor\Group_Control_Box_Shadow;
 use UltimateElementor\Base\Common_Widget;
+use UltimateElementor\Classes\UAEL_Helper;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;   // Exit if accessed directly.
@@ -204,6 +205,55 @@ class Woo_Categories extends Common_Widget {
 				)
 			);
 
+		$this->add_control(
+			'cat_hide_count',
+			array(
+				'label'                => __( 'Hide Count', 'uael' ),
+				'type'                 => Controls_Manager::SWITCHER,
+				'label_on'             => __( 'Yes', 'uael' ),
+				'label_off'            => __( 'No', 'uael' ),
+				'return_value'         => 'yes',
+				'default'              => 'no',
+				'selectors_dictionary' => array(
+					'yes' => 'display: none',
+				),
+				'selectors'            => array(
+					'{{WRAPPER}} .uael-woo-categories .uael-category__title-wrap .uael-count' => '{{VALUE}}',
+				),
+			)
+		);
+
+		$this->add_control(
+			'cat_title_position',
+			array(
+				'label'        => __( 'Title/Count Position', 'uael' ),
+				'type'         => Controls_Manager::SELECT,
+				'default'      => 'default',
+				'options'      => array(
+					'default'     => __( 'Default', 'uael' ),
+					'below-image' => __( 'Below Image', 'uael' ),
+				),
+				'prefix_class' => 'uael-woo-cat-title-pos-',
+			)
+		);
+
+		$this->add_control(
+			'cat_title_style',
+			array(
+				'label'        => __( 'Title/Count Style', 'uael' ),
+				'type'         => Controls_Manager::SELECT,
+				'default'      => 'default',
+				'options'      => array(
+					'default' => __( 'Default', 'uael' ),
+					'inline'  => __( 'Inline', 'uael' ),
+				),
+				'prefix_class' => 'uael-woo-cat-title-style-',
+				'condition'    => array(
+					'cat_hide_count!' => 'yes',
+				),
+			)
+		);
+
 		$this->end_controls_section();
 	}
 
@@ -246,10 +296,11 @@ class Woo_Categories extends Common_Widget {
 		$this->add_control(
 			'slider_products_per_page',
 			array(
-				'label'     => __( 'Total Categories', 'uael' ),
-				'type'      => Controls_Manager::NUMBER,
-				'default'   => '8',
-				'condition' => array(
+				'label'       => __( 'Total Categories', 'uael' ),
+				'description' => __( 'Note: <b>Total Categories</b> should be greater than <b>Categories to Show</b>.', 'uael' ),
+				'type'        => Controls_Manager::NUMBER,
+				'default'     => '8',
+				'condition'   => array(
 					'products_layout_type' => 'slider',
 				),
 			)
@@ -346,6 +397,55 @@ class Woo_Categories extends Common_Widget {
 				'default'   => 500,
 				'condition' => array(
 					'products_layout_type' => 'slider',
+				),
+			)
+		);
+
+		$this->add_control(
+			'cat_slide_hide_count',
+			array(
+				'label'                => __( 'Hide Count', 'uael' ),
+				'type'                 => Controls_Manager::SWITCHER,
+				'label_on'             => __( 'Yes', 'uael' ),
+				'label_off'            => __( 'No', 'uael' ),
+				'return_value'         => 'yes',
+				'default'              => 'no',
+				'selectors_dictionary' => array(
+					'yes' => 'display: none',
+				),
+				'selectors'            => array(
+					'{{WRAPPER}} .uael-woo-categories .uael-category__title-wrap .uael-count' => '{{VALUE}}',
+				),
+			)
+		);
+
+		$this->add_control(
+			'cat_slide_title_position',
+			array(
+				'label'        => __( 'Title/Count Position', 'uael' ),
+				'type'         => Controls_Manager::SELECT,
+				'default'      => 'default',
+				'options'      => array(
+					'default'     => __( 'Default', 'uael' ),
+					'below-image' => __( 'Below Image', 'uael' ),
+				),
+				'prefix_class' => 'uael-woo-cat-title-pos-',
+			)
+		);
+
+		$this->add_control(
+			'cat_slide_title_style',
+			array(
+				'label'        => __( 'Title/Count Style', 'uael' ),
+				'type'         => Controls_Manager::SELECT,
+				'default'      => 'default',
+				'options'      => array(
+					'default' => __( 'Default', 'uael' ),
+					'inline'  => __( 'Inline', 'uael' ),
+				),
+				'prefix_class' => 'uael-woo-cat-title-style-',
+				'condition'    => array(
+					'cat_slide_hide_count!' => 'yes',
 				),
 			)
 		);
@@ -755,6 +855,24 @@ class Woo_Categories extends Common_Widget {
 				'tab'   => Controls_Manager::TAB_STYLE,
 			)
 		);
+
+		$this->add_control(
+			'category_name_tag',
+			array(
+				'label'   => __( 'HTML Tag', 'uael' ),
+				'type'    => Controls_Manager::SELECT,
+				'options' => array(
+					'h1' => __( 'H1', 'uael' ),
+					'h2' => __( 'H2', 'uael' ),
+					'h3' => __( 'H3', 'uael' ),
+					'h4' => __( 'H4', 'uael' ),
+					'h5' => __( 'H5', 'uael' ),
+					'h6' => __( 'H6', 'uael' ),
+				),
+				'default' => 'h2',
+			)
+		);
+
 			$this->add_control(
 				'cat_content_alignment',
 				array(
@@ -894,8 +1012,29 @@ class Woo_Categories extends Common_Widget {
 						'default' => Global_Typography::TYPOGRAPHY_ACCENT,
 					),
 					'separator' => 'after',
+					'condition' => array(
+						'products_layout_type' => 'grid',
+						'cat_hide_count!'      => 'yes',
+					),
 				)
 			);
+
+		$this->add_group_control(
+			Group_Control_Typography::get_type(),
+			array(
+				'name'      => 'cat_slider_content_count_typography',
+				'label'     => __( 'Count', 'uael' ),
+				'selector'  => '{{WRAPPER}} .uael-woo-categories li.product .uael-category__title-wrap .uael-count',
+				'global'    => array(
+					'default' => Global_Typography::TYPOGRAPHY_ACCENT,
+				),
+				'separator' => 'after',
+				'condition' => array(
+					'products_layout_type'  => 'slider',
+					'cat_slide_hide_count!' => 'yes',
+				),
+			)
+		);
 
 		$this->end_controls_section();
 	}
@@ -1403,13 +1542,16 @@ class Woo_Categories extends Common_Widget {
 	 * @param object $category Category object.
 	 */
 	public function template_loop_category_title( $category ) {
+		$settings              = $this->get_settings();
 		$single_product_string = apply_filters( 'uael_woo_cat_product_string', __( 'Product', 'uael' ) );
 		$product_string        = apply_filters( 'uael_woo_cat_products_string', __( 'Products', 'uael' ) );
 
+		$text_tag = UAEL_Helper::validate_html_tag( $settings['category_name_tag'] );
+
 		$output          = '<div class="uael-category__title-wrap">';
-			$output     .= '<h2 class="woocommerce-loop-category__title">';
+			$output     .= '<' . esc_attr( $text_tag ) . ' class="woocommerce-loop-category__title">';
 				$output .= esc_html( $category->name );
-			$output     .= '</h2>';
+			$output     .= '</' . esc_attr( $text_tag ) . '>';
 
 		if ( $category->count > 0 ) {
 				$output .= sprintf( // WPCS: XSS OK.
