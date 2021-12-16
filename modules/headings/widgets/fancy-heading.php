@@ -554,9 +554,9 @@ class Fancy_Heading extends Common_Widget {
 		$this->add_responsive_control(
 			'fancytext_align',
 			array(
-				'label'     => __( 'Alignment', 'uael' ),
-				'type'      => Controls_Manager::CHOOSE,
-				'options'   => array(
+				'label'              => __( 'Alignment', 'uael' ),
+				'type'               => Controls_Manager::CHOOSE,
+				'options'            => array(
 					'left'   => array(
 						'title' => __( 'Left', 'uael' ),
 						'icon'  => 'fa fa-align-left',
@@ -570,10 +570,11 @@ class Fancy_Heading extends Common_Widget {
 						'icon'  => 'fa fa-align-right',
 					),
 				),
-				'default'   => 'left',
-				'selectors' => array(
+				'default'            => 'left',
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-fancy-text-wrap ' => 'text-align: {{VALUE}};',
 				),
+				'frontend_available' => true,
 			)
 		);
 
@@ -592,70 +593,73 @@ class Fancy_Heading extends Common_Widget {
 		$this->add_responsive_control(
 			'fancytext_space_prefix',
 			array(
-				'label'      => __( 'Before Spacing', 'uael' ),
-				'type'       => Controls_Manager::SLIDER,
-				'size_units' => array( 'px' ),
-				'range'      => array(
+				'label'              => __( 'Before Spacing', 'uael' ),
+				'type'               => Controls_Manager::SLIDER,
+				'size_units'         => array( 'px' ),
+				'range'              => array(
 					'px' => array(
 						'min' => 0,
 						'max' => 200,
 					),
 				),
-				'default'    => array(
+				'default'            => array(
 					'size' => '0',
 					'unit' => 'px',
 				),
-				'selectors'  => array(
+				'selectors'          => array(
 					'{{WRAPPER}}.uael-fancytext-stack-yes .uael-fancy-stack ' => 'margin-top: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}}.uael-fancytext-stack-yes .uael-fancy-stack .uael-fancy-heading.uael-fancy-text-main' => ' margin-left: 0px;',
 					'{{WRAPPER}} .uael-fancy-text-main' => 'margin-left: {{SIZE}}{{UNIT}};',
 				),
+				'frontend_available' => true,
 			)
 		);
 		$this->add_responsive_control(
 			'fancytext_space_suffix',
 			array(
-				'label'      => __( 'After Spacing', 'uael' ),
-				'type'       => Controls_Manager::SLIDER,
-				'size_units' => array( 'px' ),
-				'range'      => array(
+				'label'              => __( 'After Spacing', 'uael' ),
+				'type'               => Controls_Manager::SLIDER,
+				'size_units'         => array( 'px' ),
+				'range'              => array(
 					'px' => array(
 						'min' => 0,
 						'max' => 200,
 					),
 				),
-				'default'    => array(
+				'default'            => array(
 					'size' => '0',
 					'unit' => 'px',
 				),
-				'condition'  => array(
+				'condition'          => array(
 					'fancytext_suffix!' => '',
 				),
-				'selectors'  => array(
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-fancy-text-main' => 'margin-right: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}}.uael-fancytext-stack-yes .uael-fancy-stack ' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}}.uael-fancytext-stack-yes .uael-fancy-stack .uael-fancy-heading.uael-fancy-text-main' => ' margin-right: 0px;',
 				),
+				'frontend_available' => true,
 			)
 		);
 		$this->add_responsive_control(
 			'fancytext_min_height',
 			array(
-				'label'      => __( 'Minimum Height', 'uael' ),
-				'type'       => Controls_Manager::SLIDER,
-				'size_units' => array( 'px' ),
-				'range'      => array(
+				'label'              => __( 'Minimum Height', 'uael' ),
+				'type'               => Controls_Manager::SLIDER,
+				'size_units'         => array( 'px' ),
+				'range'              => array(
 					'px' => array(
 						'min' => 0,
 						'max' => 1000,
 					),
 				),
-				'selectors'  => array(
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-fancy-text-wrap' => 'min-height: {{SIZE}}{{UNIT}};',
 				),
-				'condition'  => array(
+				'condition'          => array(
 					'fancytext_effect_type' => 'type',
 				),
+				'frontend_available' => true,
 			)
 		);
 
@@ -735,15 +739,16 @@ class Fancy_Heading extends Common_Widget {
 			$this->add_responsive_control(
 				'text_padding',
 				array(
-					'label'      => __( 'Padding', 'uael' ),
-					'type'       => Controls_Manager::DIMENSIONS,
-					'size_units' => array( 'px', '%' ),
-					'selectors'  => array(
+					'label'              => __( 'Padding', 'uael' ),
+					'type'               => Controls_Manager::DIMENSIONS,
+					'size_units'         => array( 'px', '%' ),
+					'selectors'          => array(
 						'{{WRAPPER}} .uael-fancy-heading' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					),
-					'condition'  => array(
+					'condition'          => array(
 						'text_adv_options' => 'yes',
 					),
+					'frontend_available' => true,
 				)
 			);
 			$this->add_group_control(
@@ -854,15 +859,16 @@ class Fancy_Heading extends Common_Widget {
 			$this->add_responsive_control(
 				'fancytext_padding',
 				array(
-					'label'      => __( 'Padding', 'uael' ),
-					'type'       => Controls_Manager::DIMENSIONS,
-					'size_units' => array( 'px', '%' ),
-					'selectors'  => array(
+					'label'              => __( 'Padding', 'uael' ),
+					'type'               => Controls_Manager::DIMENSIONS,
+					'size_units'         => array( 'px', '%' ),
+					'selectors'          => array(
 						'{{WRAPPER}} .uael-fancy-heading.uael-fancy-text-main' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					),
-					'condition'  => array(
+					'condition'          => array(
 						'fancy_adv_options' => 'yes',
 					),
+					'frontend_available' => true,
 				)
 			);
 			$this->add_group_control(
@@ -1064,7 +1070,7 @@ class Fancy_Heading extends Common_Widget {
 		$cursor_class = ( 'yes' === $settings['fancytext_type_show_cursor'] ) ? 'uael-clip-cursor-yes' : '';
 		?>
 		<div class="uael-module-content uael-fancy-text-node <?php echo esc_attr( $cursor_class ); ?>" <?php echo wp_kses_post( $this->get_render_attribute_string( 'fancy-text' ) ); ?>>
-			<?php if ( ! empty( $settings['fancytext_effect_type'] ) ) { ?> 
+			<?php if ( ! empty( $settings['fancytext_effect_type'] ) ) { ?>
 				<?php $fancytext_title_tag = UAEL_Helper::validate_html_tag( $settings['fancytext_title_tag'] ); ?>
 				<?php echo '<' . esc_attr( $fancytext_title_tag ); ?> class="uael-fancy-text-wrap uael-fancy-text-<?php echo esc_attr( $settings['fancytext_effect_type'] ); ?>">
 					<?php if ( '' !== $dynamic_settings['fancytext_prefix'] ) { ?>

@@ -206,24 +206,25 @@ class Skin_Bubble extends Skin_Base {
 		$this->add_responsive_control(
 			'bubble_block_border_size',
 			array(
-				'label'     => __( 'Border Width', 'uael' ),
-				'type'      => Controls_Manager::SLIDER,
-				'default'   => array(
+				'label'              => __( 'Border Width', 'uael' ),
+				'type'               => Controls_Manager::SLIDER,
+				'default'            => array(
 					'size' => 1,
 				),
-				'range'     => array(
+				'range'              => array(
 					'px' => array(
 						'min' => 1,
 						'max' => 10,
 					),
 				),
-				'condition' => array(
+				'condition'          => array(
 					$this->get_control_id( 'bubble_block_border_style' ) . '!'    => 'none',
 				),
-				'selectors' => array(
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-review-content' => 'border-width: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} .uael-review-arrow'   => 'top: -{{SIZE}}px; left: 0px; border-width: 16px;',
 				),
+				'frontend_available' => true,
 			)
 		);
 
@@ -286,20 +287,21 @@ class Skin_Bubble extends Skin_Base {
 		$this->add_responsive_control(
 			'content_block_spacing',
 			array(
-				'label'     => __( 'Content Block Bottom Spacing', 'uael' ),
-				'type'      => Controls_Manager::SLIDER,
-				'default'   => array(
+				'label'              => __( 'Content Block Bottom Spacing', 'uael' ),
+				'type'               => Controls_Manager::SLIDER,
+				'default'            => array(
 					'size' => 20,
 				),
-				'range'     => array(
+				'range'              => array(
 					'px' => array(
 						'min' => 0,
 						'max' => 100,
 					),
 				),
-				'selectors' => array(
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-review-content-wrap' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 				),
+				'frontend_available' => true,
 			)
 		);
 	}

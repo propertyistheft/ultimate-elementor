@@ -97,16 +97,6 @@ class Business_Reviews extends Common_Widget {
 	}
 
 	/**
-	 * Register Register Skins.
-	 *
-	 * @since 1.13.0
-	 * @access public
-	 */
-	public function _register_skins() { // phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
-		$this->register_skins();
-	}
-
-	/**
 	 * Register Skins.
 	 *
 	 * @since 1.29.0
@@ -487,53 +477,56 @@ class Business_Reviews extends Common_Widget {
 			$this->add_responsive_control(
 				'gallery_columns',
 				array(
-					'label'          => __( 'Columns', 'uael' ),
-					'type'           => Controls_Manager::SELECT,
-					'default'        => '3',
-					'tablet_default' => '2',
-					'mobile_default' => '1',
-					'options'        => array(
+					'label'              => __( 'Columns', 'uael' ),
+					'type'               => Controls_Manager::SELECT,
+					'default'            => '3',
+					'tablet_default'     => '2',
+					'mobile_default'     => '1',
+					'options'            => array(
 						'1' => '1',
 						'2' => '2',
 						'3' => '3',
 						'4' => '4',
 						'5' => '5',
 					),
-					'prefix_class'   => 'uael-reviews-grid%s__column-',
-					'condition'      => array(
+					'prefix_class'       => 'uael-reviews-grid%s__column-',
+					'condition'          => array(
 						'review_structure' => 'normal',
 					),
+					'frontend_available' => true,
 				)
 			);
 
 			$this->add_responsive_control(
 				'slides_to_show',
 				array(
-					'label'          => __( 'Reviews to Show', 'uael' ),
-					'description'    => __( 'Note: <b>Reviews to Show</b> should be less than <b>Number of Reviews</b>.', 'uael' ),
-					'type'           => Controls_Manager::NUMBER,
-					'default'        => 3,
-					'tablet_default' => 2,
-					'mobile_default' => 1,
-					'condition'      => array(
+					'label'              => __( 'Reviews to Show', 'uael' ),
+					'description'        => __( 'Note: <b>Reviews to Show</b> should be less than <b>Number of Reviews</b>.', 'uael' ),
+					'type'               => Controls_Manager::NUMBER,
+					'default'            => 3,
+					'tablet_default'     => 2,
+					'mobile_default'     => 1,
+					'condition'          => array(
 						'review_structure' => 'carousel',
 					),
+					'frontend_available' => true,
 				)
 			);
 
 			$this->add_responsive_control(
 				'slides_to_scroll',
 				array(
-					'label'          => __( 'Slides to Scroll', 'uael' ),
-					'type'           => Controls_Manager::NUMBER,
-					'default'        => 1,
-					'tablet_default' => 1,
-					'mobile_default' => 1,
-					'min'            => 1,
-					'max'            => 4,
-					'condition'      => array(
+					'label'              => __( 'Slides to Scroll', 'uael' ),
+					'type'               => Controls_Manager::NUMBER,
+					'default'            => 1,
+					'tablet_default'     => 1,
+					'mobile_default'     => 1,
+					'min'                => 1,
+					'max'                => 4,
+					'condition'          => array(
 						'review_structure' => 'carousel',
 					),
+					'frontend_available' => true,
 				)
 			);
 

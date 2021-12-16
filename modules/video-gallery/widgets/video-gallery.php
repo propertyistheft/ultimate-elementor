@@ -583,12 +583,12 @@ class Video_Gallery extends Common_Widget {
 			$this->add_responsive_control(
 				'gallery_columns',
 				array(
-					'label'          => __( 'Columns', 'uael' ),
-					'type'           => Controls_Manager::SELECT,
-					'default'        => '3',
-					'tablet_default' => '2',
-					'mobile_default' => '1',
-					'options'        => array(
+					'label'              => __( 'Columns', 'uael' ),
+					'type'               => Controls_Manager::SELECT,
+					'default'            => '3',
+					'tablet_default'     => '2',
+					'mobile_default'     => '1',
+					'options'            => array(
 						'1' => '1',
 						'2' => '2',
 						'3' => '3',
@@ -596,8 +596,9 @@ class Video_Gallery extends Common_Widget {
 						'5' => '5',
 						'6' => '6',
 					),
-					'prefix_class'   => 'uael-video-gallery%s__column-',
-					'render_type'    => 'template',
+					'prefix_class'       => 'uael-video-gallery%s__column-',
+					'render_type'        => 'template',
+					'frontend_available' => true,
 				)
 			);
 
@@ -1037,46 +1038,48 @@ class Video_Gallery extends Common_Widget {
 			$this->add_responsive_control(
 				'column_gap',
 				array(
-					'label'     => __( 'Columns Gap', 'uael' ),
-					'type'      => Controls_Manager::SLIDER,
-					'default'   => array(
+					'label'              => __( 'Columns Gap', 'uael' ),
+					'type'               => Controls_Manager::SLIDER,
+					'default'            => array(
 						'size' => 10,
 					),
-					'range'     => array(
+					'range'              => array(
 						'px' => array(
 							'min' => 0,
 							'max' => 50,
 						),
 					),
-					'selectors' => array(
+					'selectors'          => array(
 						'{{WRAPPER}} .uael-video__gallery-item' => 'padding-right: calc( {{SIZE}}{{UNIT}}/2 ); padding-left: calc( {{SIZE}}{{UNIT}}/2 );',
 						'{{WRAPPER}} .uael-video-gallery-wrap' => 'margin-left: calc( -{{SIZE}}{{UNIT}}/2 ); margin-right: calc( -{{SIZE}}{{UNIT}}/2 );',
 						'{{WRAPPER}} .uael-vg__overlay' => 'width: calc(100% - {{SIZE}}{{UNIT}}); left: calc({{SIZE}}{{UNIT}}/2);',
 					),
+					'frontend_available' => true,
 				)
 			);
 
 			$this->add_responsive_control(
 				'row_gap',
 				array(
-					'label'     => __( 'Rows Gap', 'uael' ),
-					'type'      => Controls_Manager::SLIDER,
-					'default'   => array(
+					'label'              => __( 'Rows Gap', 'uael' ),
+					'type'               => Controls_Manager::SLIDER,
+					'default'            => array(
 						'size' => 10,
 					),
-					'range'     => array(
+					'range'              => array(
 						'px' => array(
 							'min' => 0,
 							'max' => 50,
 						),
 					),
-					'condition' => array(
+					'condition'          => array(
 						'layout' => 'grid',
 					),
-					'selectors' => array(
+					'selectors'          => array(
 						'{{WRAPPER}} .uael-video__gallery-item' => 'padding-bottom: {{SIZE}}{{UNIT}};',
 						'{{WRAPPER}} .uael-vg__overlay' => 'height: calc( 100% - {{SIZE}}{{UNIT}} );',
 					),
+					'frontend_available' => true,
 				)
 			);
 
@@ -1208,9 +1211,9 @@ class Video_Gallery extends Common_Widget {
 			$this->add_responsive_control(
 				'cat_filter_align',
 				array(
-					'label'        => __( 'Tab Alignment', 'uael' ),
-					'type'         => Controls_Manager::CHOOSE,
-					'options'      => array(
+					'label'              => __( 'Tab Alignment', 'uael' ),
+					'type'               => Controls_Manager::CHOOSE,
+					'options'            => array(
 						'left'   => array(
 							'title' => __( 'Left', 'uael' ),
 							'icon'  => 'fa fa-align-left',
@@ -1224,17 +1227,18 @@ class Video_Gallery extends Common_Widget {
 							'icon'  => 'fa fa-align-right',
 						),
 					),
-					'default'      => 'center',
-					'toggle'       => false,
-					'render_type'  => 'template',
-					'prefix_class' => 'uael%s-vgallery-filter-align-',
-					'selectors'    => array(
+					'default'            => 'center',
+					'toggle'             => false,
+					'render_type'        => 'template',
+					'prefix_class'       => 'uael%s-vgallery-filter-align-',
+					'selectors'          => array(
 						'{{WRAPPER}} .uael-video__gallery-filters' => 'text-align: {{VALUE}};',
 						'(mobile){{WRAPPER}} .uael-vgallery-tabs-dropdown .uael-filters-dropdown' => 'text-align: {{VALUE}};',
 					),
-					'condition'    => array(
+					'condition'          => array(
 						'show_filter_title!' => 'yes',
 					),
+					'frontend_available' => true,
 				)
 			);
 
@@ -1251,46 +1255,49 @@ class Video_Gallery extends Common_Widget {
 			$this->add_responsive_control(
 				'cat_filter_padding',
 				array(
-					'label'      => __( 'Padding', 'uael' ),
-					'type'       => Controls_Manager::DIMENSIONS,
-					'size_units' => array( 'px', 'em', '%' ),
-					'selectors'  => array(
+					'label'              => __( 'Padding', 'uael' ),
+					'type'               => Controls_Manager::DIMENSIONS,
+					'size_units'         => array( 'px', 'em', '%' ),
+					'selectors'          => array(
 						'{{WRAPPER}} .uael-video__gallery-filter' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					),
+					'frontend_available' => true,
 				)
 			);
 
 			$this->add_responsive_control(
 				'cat_filter_bet_spacing',
 				array(
-					'label'     => __( 'Spacing Between Tabs', 'uael' ),
-					'type'      => Controls_Manager::SLIDER,
-					'range'     => array(
+					'label'              => __( 'Spacing Between Tabs', 'uael' ),
+					'type'               => Controls_Manager::SLIDER,
+					'range'              => array(
 						'px' => array(
 							'max' => 100,
 						),
 					),
-					'selectors' => array(
+					'selectors'          => array(
 						'{{WRAPPER}} .uael-video__gallery-filter' => 'margin-left: {{SIZE}}{{UNIT}}; margin-right: {{SIZE}}{{UNIT}};',
 						'(mobile){{WRAPPER}} .uael-vgallery-tabs-dropdown .uael-video__gallery-filter' => 'margin-left: 0px; margin-right: 0px;',
 					),
+					'frontend_available' => true,
 				)
 			);
 			$this->add_responsive_control(
 				'cat_filter_spacing',
 				array(
-					'label'     => __( 'Tabs Bottom Spacing', 'uael' ),
-					'type'      => Controls_Manager::SLIDER,
-					'range'     => array(
+					'label'              => __( 'Tabs Bottom Spacing', 'uael' ),
+					'type'               => Controls_Manager::SLIDER,
+					'range'              => array(
 						'px' => array(
 							'max' => 100,
 						),
 					),
-					'selectors' => array(
+					'selectors'          => array(
 						'{{WRAPPER}} .uael-video__gallery-filters' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 						'(mobile){{WRAPPER}} .uael-vgallery-tabs-dropdown .uael-filters-dropdown' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 					),
-					'separator' => 'after',
+					'separator'          => 'after',
+					'frontend_available' => true,
 				)
 			);
 
@@ -1480,32 +1487,33 @@ class Video_Gallery extends Common_Widget {
 			$this->add_responsive_control(
 				'play_icon_size',
 				array(
-					'label'          => __( 'Size', 'uael' ),
-					'type'           => Controls_Manager::SLIDER,
-					'default'        => array(
+					'label'              => __( 'Size', 'uael' ),
+					'type'               => Controls_Manager::SLIDER,
+					'default'            => array(
 						'size' => 60,
 					),
-					'tablet_default' => array(
+					'tablet_default'     => array(
 						'size' => 45,
 					),
-					'mobile_default' => array(
+					'mobile_default'     => array(
 						'size' => 35,
 					),
-					'range'          => array(
+					'range'              => array(
 						'size' => 30,
 					),
-					'range'          => array(
+					'range'              => array(
 						'px' => array(
 							'max' => 100,
 						),
 					),
-					'selectors'      => array(
+					'selectors'          => array(
 						'{{WRAPPER}} .uael-video__content i, {{WRAPPER}} .uael-video__content svg, {{WRAPPER}} .uael-video__content .uael-vg__play' => 'font-size: {{SIZE}}px;line-height: {{SIZE}}px;height: {{SIZE}}px;width: {{SIZE}}px;',
 						'{{WRAPPER}} .uael-video__content img.uael-vg__play-image, {{WRAPPER}} .uael-video__content .uael-vg__play' => 'width: {{SIZE}}px;',
 						'{{WRAPPER}} .uael-vg__play .uael-vg__play-icon i' => 'font-size: {{SIZE}}px;line-height: {{SIZE}}px;height: {{SIZE}}px;width: {{SIZE}}px;',
 						'{{WRAPPER}} .uael-vg__play img.uael-vg__play-image' => 'width: {{SIZE}}px;',
 						'{{WRAPPER}} .uael-vg__play' => 'width: {{SIZE}}px;',
 					),
+					'frontend_available' => true,
 				)
 			);
 

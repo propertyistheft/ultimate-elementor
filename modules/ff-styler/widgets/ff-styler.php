@@ -223,9 +223,9 @@ class FfStyler extends Common_Widget {
 		$this->add_responsive_control(
 			'form_title_desc_align',
 			array(
-				'label'     => __( 'Title & Description </br>Alignment', 'uael' ),
-				'type'      => Controls_Manager::CHOOSE,
-				'options'   => array(
+				'label'              => __( 'Title & Description </br>Alignment', 'uael' ),
+				'type'               => Controls_Manager::CHOOSE,
+				'options'            => array(
 					'left'   => array(
 						'title' => __( 'Left', 'uael' ),
 						'icon'  => 'fa fa-align-left',
@@ -239,15 +239,16 @@ class FfStyler extends Common_Widget {
 						'icon'  => 'fa fa-align-right',
 					),
 				),
-				'default'   => 'left',
-				'condition' => array(
+				'default'            => 'left',
+				'condition'          => array(
 					'form_title_option' => 'yes',
 				),
-				'selectors' => array(
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-ff-form-desc,
 					{{WRAPPER}} .uael-ff-form-title' => 'text-align: {{VALUE}};',
 				),
-				'toggle'    => false,
+				'toggle'             => false,
+				'frontend_available' => true,
 			)
 		);
 
@@ -302,17 +303,18 @@ class FfStyler extends Common_Widget {
 		$this->add_responsive_control(
 			'form_input_padding',
 			array(
-				'label'      => __( 'Padding', 'uael' ),
-				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => array( 'px' ),
-				'selectors'  => array(
+				'label'              => __( 'Padding', 'uael' ),
+				'type'               => Controls_Manager::DIMENSIONS,
+				'size_units'         => array( 'px' ),
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-ff-style .fluentform .ff-el-form-control,
 					{{WRAPPER}} .uael-ff-style .fluentform textarea' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					'{{WRAPPER}} .uael-ff-style .fluentform .ff-el-form-check-input' => 'height: {{BOTTOM}}{{UNIT}}; width: {{BOTTOM}}{{UNIT}}; font-size: calc( {{BOTTOM}}{{UNIT}} / 1.2 );',
 					'{{WRAPPER}} .uael-ff-style .fluentform select.ff-el-form-control,
 					{{WRAPPER}} .uael-ff-style .fluentform .select2-selection' => 'padding-top: calc( {{TOP}}{{UNIT}} - 2{{UNIT}} ); padding-right: {{RIGHT}}{{UNIT}}; padding-bottom: calc( {{BOTTOM}}{{UNIT}} - 2{{UNIT}} ); padding-left: {{LEFT}}{{UNIT}};',
 				),
-				'separator'  => 'after',
+				'separator'          => 'after',
+				'frontend_available' => true,
 			)
 		);
 
@@ -341,7 +343,7 @@ class FfStyler extends Common_Widget {
 				),
 				'default'   => '',
 				'selectors' => array(
-					'{{WRAPPER}} .uael-ff-style .fluentform .ff-el-form-control, 
+					'{{WRAPPER}} .uael-ff-style .fluentform .ff-el-form-control,
 					{{WRAPPER}} .uael-ff-style .fluentform .ff-el-input--label label,
 					{{WRAPPER}} .uael-ff-style .fluentform .ff-el-form-check-input + span,
 					{{WRAPPER}} .uael-ff-style .fluentform .ff-el-section-title,
@@ -457,28 +459,29 @@ class FfStyler extends Common_Widget {
 		$this->add_responsive_control(
 			'ff_border_bottom',
 			array(
-				'label'      => __( 'Border Size', 'uael' ),
-				'type'       => Controls_Manager::SLIDER,
-				'size_units' => array( 'px', 'em', 'rem' ),
-				'range'      => array(
+				'label'              => __( 'Border Size', 'uael' ),
+				'type'               => Controls_Manager::SLIDER,
+				'size_units'         => array( 'px', 'em', 'rem' ),
+				'range'              => array(
 					'px' => array(
 						'min' => 1,
 						'max' => 20,
 					),
 				),
-				'default'    => array(
+				'default'            => array(
 					'size' => '2',
 					'unit' => 'px',
 				),
-				'condition'  => array(
+				'condition'          => array(
 					'ff_style' => 'underline',
 				),
-				'selectors'  => array(
+				'selectors'          => array(
 					'{{WRAPPER}}.uael-ff-style-underline .fluentform .ff-el-form-control,
 					{{WRAPPER}} .uael-ff-style .fluentform .select2-selection' => 'border-width: 0 0 {{SIZE}}{{UNIT}} 0; border-style: solid;',
 					'{{WRAPPER}}.uael-ff-style-underline .fluentform .ff-el-form-check-input,
 					{{WRAPPER}} .uael-ff-style .fluentform .ff_net_table tbody tr td' => 'border-width: {{SIZE}}{{UNIT}}; border-style: solid; box-sizing: content-box;',
 				),
+				'frontend_available' => true,
 			)
 		);
 
@@ -537,23 +540,24 @@ class FfStyler extends Common_Widget {
 		$this->add_responsive_control(
 			'form_border_radius',
 			array(
-				'label'      => __( 'Rounded Corners', 'uael' ),
-				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => array( 'px' ),
-				'default'    => array(
+				'label'              => __( 'Rounded Corners', 'uael' ),
+				'type'               => Controls_Manager::DIMENSIONS,
+				'size_units'         => array( 'px' ),
+				'default'            => array(
 					'top'    => '0',
 					'bottom' => '0',
 					'left'   => '0',
 					'right'  => '0',
 					'unit'   => 'px',
 				),
-				'selectors'  => array(
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-ff-style .fluentform .ff-el-form-control,
 					{{WRAPPER}} .uael-ff-style .fluentform input[type=checkbox],
 					{{WRAPPER}} .uael-ff-style .fluentform .select2-selection' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					'{{WRAPPER}} .uael-ff-style .fluentform .ff_net_table tbody tr td:first-of-type' => 'border-radius: {{TOP}}{{UNIT}} 0 0 {{LEFT}}{{UNIT}};',
 					'{{WRAPPER}} .uael-ff-style .fluentform .ff_net_table tbody tr td:last-child' => 'border-radius: 0 {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} 0;',
 				),
+				'frontend_available' => true,
 			)
 		);
 
@@ -751,9 +755,9 @@ class FfStyler extends Common_Widget {
 		$this->add_responsive_control(
 			'button_align',
 			array(
-				'label'        => __( 'Submit Button Alignment', 'uael' ),
-				'type'         => Controls_Manager::CHOOSE,
-				'options'      => array(
+				'label'              => __( 'Submit Button Alignment', 'uael' ),
+				'type'               => Controls_Manager::CHOOSE,
+				'options'            => array(
 					'left'   => array(
 						'title' => __( 'Left', 'uael' ),
 						'icon'  => 'fa fa-align-left',
@@ -767,15 +771,16 @@ class FfStyler extends Common_Widget {
 						'icon'  => 'fa fa-align-right',
 					),
 				),
-				'default'      => 'left',
-				'condition'    => array(
+				'default'            => 'left',
+				'condition'          => array(
 					'form_title_option' => 'yes',
 				),
-				'prefix_class' => 'uael-ff-button-align-',
-				'selectors'    => array(
+				'prefix_class'       => 'uael-ff-button-align-',
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-ff-style .fluentform .ff_submit_btn_wrapper' => 'text-align: {{VALUE}};',
 				),
-				'toggle'       => false,
+				'toggle'             => false,
+				'frontend_available' => true,
 			)
 		);
 
@@ -799,13 +804,14 @@ class FfStyler extends Common_Widget {
 		$this->add_responsive_control(
 			'ff_button_padding',
 			array(
-				'label'      => __( 'Padding', 'uael' ),
-				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => array( 'px', 'em', '%' ),
-				'selectors'  => array(
+				'label'              => __( 'Padding', 'uael' ),
+				'type'               => Controls_Manager::DIMENSIONS,
+				'size_units'         => array( 'px', 'em', '%' ),
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-ff-style .fluentform .ff_submit_btn_wrapper button.ff-btn-submit,
 					{{WRAPPER}} .uael-ff-style .fluentform .step-nav button.ff-btn-secondary' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
+				'frontend_available' => true,
 			)
 		);
 
@@ -864,13 +870,14 @@ class FfStyler extends Common_Widget {
 		$this->add_responsive_control(
 			'btn_border_radius',
 			array(
-				'label'      => __( 'Border Radius', 'uael' ),
-				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => array( 'px', '%' ),
-				'selectors'  => array(
+				'label'              => __( 'Border Radius', 'uael' ),
+				'type'               => Controls_Manager::DIMENSIONS,
+				'size_units'         => array( 'px', '%' ),
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-ff-style .fluentform .ff_submit_btn_wrapper button.ff-btn-submit,
 					{{WRAPPER}} .uael-ff-style .fluentform .step-nav button.ff-btn-secondary' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
+				'frontend_available' => true,
 			)
 		);
 
@@ -958,12 +965,13 @@ class FfStyler extends Common_Widget {
 		$this->add_responsive_control(
 			'ff_secondary_button_padding',
 			array(
-				'label'      => __( 'Padding', 'uael' ),
-				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => array( 'px', 'em', '%' ),
-				'selectors'  => array(
+				'label'              => __( 'Padding', 'uael' ),
+				'type'               => Controls_Manager::DIMENSIONS,
+				'size_units'         => array( 'px', 'em', '%' ),
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-ff-style .fluentform .ff_upload_btn' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
+				'frontend_available' => true,
 			)
 		);
 

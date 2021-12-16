@@ -369,10 +369,10 @@ class SocialShare extends Common_Widget {
 		$this->add_responsive_control(
 			'columns',
 			array(
-				'label'        => __( 'Columns', 'uael' ),
-				'type'         => Controls_Manager::SELECT,
-				'default'      => '0',
-				'options'      => array(
+				'label'              => __( 'Columns', 'uael' ),
+				'type'               => Controls_Manager::SELECT,
+				'default'            => '0',
+				'options'            => array(
 					'0' => 'Auto',
 					'1' => '1',
 					'2' => '2',
@@ -381,11 +381,12 @@ class SocialShare extends Common_Widget {
 					'5' => '5',
 					'6' => '6',
 				),
-				'prefix_class' => 'elementor-grid%s-',
-				'condition'    => array(
+				'prefix_class'       => 'elementor-grid%s-',
+				'condition'          => array(
 					'display_position' => 'inline',
 				),
-				'render_type'  => 'template',
+				'render_type'        => 'template',
+				'frontend_available' => true,
 			)
 		);
 

@@ -324,9 +324,9 @@ if ( ! class_exists( 'Price_List' ) ) {
 				$this->add_responsive_control(
 					'pricelist_overall_align',
 					array(
-						'label'        => __( 'Overall Alignment', 'uael' ),
-						'type'         => Controls_Manager::CHOOSE,
-						'options'      => array(
+						'label'              => __( 'Overall Alignment', 'uael' ),
+						'type'               => Controls_Manager::CHOOSE,
+						'options'            => array(
 							'left'   => array(
 								'title' => __( 'Left', 'uael' ),
 								'icon'  => 'fa fa-align-left',
@@ -340,7 +340,8 @@ if ( ! class_exists( 'Price_List' ) ) {
 								'icon'  => 'fa fa-align-right',
 							),
 						),
-						'prefix_class' => 'uael-align-price-list%s-',
+						'prefix_class'       => 'uael-align-price-list%s-',
+						'frontend_available' => true,
 					)
 				);
 
@@ -396,21 +397,22 @@ if ( ! class_exists( 'Price_List' ) ) {
 				$this->add_responsive_control(
 					'pricelist_height',
 					array(
-						'label'      => __( 'Enter Height', 'uael' ),
-						'type'       => Controls_Manager::SLIDER,
-						'size_units' => array( 'px' ),
-						'range'      => array(
+						'label'              => __( 'Enter Height', 'uael' ),
+						'type'               => Controls_Manager::SLIDER,
+						'size_units'         => array( 'px' ),
+						'range'              => array(
 							'px' => array(
 								'min' => 1,
 								'max' => 2000,
 							),
 						),
-						'condition'  => array(
+						'condition'          => array(
 							'pricelist_min_height' => 'yes',
 						),
-						'selectors'  => array(
+						'selectors'          => array(
 							'{{WRAPPER}} .uael-price-list-item' => 'min-height: {{SIZE}}{{UNIT}};',
 						),
+						'frontend_available' => true,
 					)
 				);
 
@@ -509,19 +511,20 @@ if ( ! class_exists( 'Price_List' ) ) {
 				$this->add_responsive_control(
 					'pricelist_title_margin',
 					array(
-						'label'      => __( 'Title Margin', 'uael' ),
-						'type'       => Controls_Manager::DIMENSIONS,
-						'size_units' => array( 'px' ),
-						'default'    => array(
+						'label'              => __( 'Title Margin', 'uael' ),
+						'type'               => Controls_Manager::DIMENSIONS,
+						'size_units'         => array( 'px' ),
+						'default'            => array(
 							'top'    => '10',
 							'bottom' => '10',
 							'left'   => '10',
 							'right'  => '10',
 							'unit'   => 'px',
 						),
-						'selectors'  => array(
+						'selectors'          => array(
 							'{{WRAPPER}} .uael-price-list-title' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 						),
+						'frontend_available' => true,
 					)
 				);
 
@@ -573,19 +576,20 @@ if ( ! class_exists( 'Price_List' ) ) {
 				$this->add_responsive_control(
 					'pricelist_desc_margin',
 					array(
-						'label'      => __( 'Description Margin', 'uael' ),
-						'type'       => Controls_Manager::DIMENSIONS,
-						'size_units' => array( 'px' ),
-						'default'    => array(
+						'label'              => __( 'Description Margin', 'uael' ),
+						'type'               => Controls_Manager::DIMENSIONS,
+						'size_units'         => array( 'px' ),
+						'default'            => array(
 							'top'    => '10',
 							'bottom' => '10',
 							'left'   => '10',
 							'right'  => '10',
 							'unit'   => 'px',
 						),
-						'selectors'  => array(
+						'selectors'          => array(
 							'{{WRAPPER}} .uael-price-list-description' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 						),
+						'frontend_available' => true,
 					)
 				);
 
@@ -639,19 +643,20 @@ if ( ! class_exists( 'Price_List' ) ) {
 				$this->add_responsive_control(
 					'pricelist_price_margin',
 					array(
-						'label'      => __( 'Price Margin', 'uael' ),
-						'type'       => Controls_Manager::DIMENSIONS,
-						'size_units' => array( 'px' ),
-						'default'    => array(
+						'label'              => __( 'Price Margin', 'uael' ),
+						'type'               => Controls_Manager::DIMENSIONS,
+						'size_units'         => array( 'px' ),
+						'default'            => array(
 							'top'    => '10',
 							'bottom' => '10',
 							'left'   => '10',
 							'right'  => '10',
 							'unit'   => 'px',
 						),
-						'selectors'  => array(
+						'selectors'          => array(
 							'{{WRAPPER}} .uael-price-wrapper' => 'margin: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 						),
+						'frontend_available' => true,
 					)
 				);
 
@@ -777,9 +782,9 @@ if ( ! class_exists( 'Price_List' ) ) {
 				$this->add_responsive_control(
 					'image_width',
 					array(
-						'label'      => __( 'Width', 'uael' ),
-						'type'       => Controls_Manager::SLIDER,
-						'range'      => array(
+						'label'              => __( 'Width', 'uael' ),
+						'type'               => Controls_Manager::SLIDER,
+						'range'              => array(
 							'px' => array(
 								'min' => 0,
 								'max' => 500,
@@ -789,13 +794,14 @@ if ( ! class_exists( 'Price_List' ) ) {
 								'max' => 100,
 							),
 						),
-						'size_units' => array( 'px', '%' ),
-						'selectors'  => array(
+						'size_units'         => array( 'px', '%' ),
+						'selectors'          => array(
 							'{{WRAPPER}} .uael-price-list-image' => 'width: {{SIZE}}{{UNIT}}; min-width:{{SIZE}}{{UNIT}}',
 						),
-						'default'    => array(
+						'default'            => array(
 							'size' => 150,
 						),
+						'frontend_available' => true,
 					)
 				);
 
@@ -837,9 +843,9 @@ if ( ! class_exists( 'Price_List' ) ) {
 				$this->add_responsive_control(
 					'row_gap',
 					array(
-						'label'      => __( 'Spacing Between Price Items', 'uael' ),
-						'type'       => Controls_Manager::SLIDER,
-						'range'      => array(
+						'label'              => __( 'Spacing Between Price Items', 'uael' ),
+						'type'               => Controls_Manager::SLIDER,
+						'range'              => array(
 							'px' => array(
 								'max' => 100,
 							),
@@ -848,23 +854,24 @@ if ( ! class_exists( 'Price_List' ) ) {
 								'step' => 0.1,
 							),
 						),
-						'size_units' => array( 'px', 'em' ),
-						'selectors'  => array(
+						'size_units'         => array( 'px', 'em' ),
+						'selectors'          => array(
 							'{{WRAPPER}} .uael-price-list-item:not(:last-child)' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 							'{{WRAPPER}}.uael-price-list__link-complete-yes a.uael-price-link-box:not(:last-child) .uael-price-list-item' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 						),
-						'default'    => array(
+						'default'            => array(
 							'size' => 20,
 						),
+						'frontend_available' => true,
 					)
 				);
 
 				$this->add_responsive_control(
 					'pricelist_image_gap',
 					array(
-						'label'      => __( 'Spacing Between Image & Content', 'uael' ),
-						'type'       => Controls_Manager::SLIDER,
-						'range'      => array(
+						'label'              => __( 'Spacing Between Image & Content', 'uael' ),
+						'type'               => Controls_Manager::SLIDER,
+						'range'              => array(
 							'px' => array(
 								'min' => 0,
 								'max' => 500,
@@ -874,8 +881,8 @@ if ( ! class_exists( 'Price_List' ) ) {
 								'max' => 100,
 							),
 						),
-						'size_units' => array( 'px', '%' ),
-						'selectors'  => array(
+						'size_units'         => array( 'px', '%' ),
+						'selectors'          => array(
 							'(desktop){{WRAPPER}} .uael-price-list-left .uael-price-list-image' => 'margin-right: {{SIZE}}{{UNIT}};',
 							'(desktop){{WRAPPER}} .uael-price-list-right .uael-price-list-image' => 'margin-left: {{SIZE}}{{UNIT}};',
 							'(desktop){{WRAPPER}} .uael-price-list-above .uael-price-list-image' => 'margin-bottom: {{SIZE}}{{UNIT}};',
@@ -883,25 +890,27 @@ if ( ! class_exists( 'Price_List' ) ) {
 							'(tablet){{WRAPPER}} .uael-price-list-right .uael-price-list-image' => 'margin-left: {{SIZE}}{{UNIT}};',
 							'(tablet){{WRAPPER}} .uael-price-list-above .uael-price-list-image' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 						),
-						'default'    => array(
+						'default'            => array(
 							'size' => 0,
 							'unit' => 'px',
 						),
-						'condition'  => array(
+						'condition'          => array(
 							'image_position!' => 'none',
 						),
+						'frontend_available' => true,
 					)
 				);
 
 				$this->add_responsive_control(
 					'list_padding',
 					array(
-						'label'      => __( 'Padding', 'uael' ),
-						'type'       => Controls_Manager::DIMENSIONS,
-						'size_units' => array( 'px', '%', 'em' ),
-						'selectors'  => array(
+						'label'              => __( 'Padding', 'uael' ),
+						'type'               => Controls_Manager::DIMENSIONS,
+						'size_units'         => array( 'px', '%', 'em' ),
+						'selectors'          => array(
 							'{{WRAPPER}} .uael-price-list-item' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 						),
+						'frontend_available' => true,
 					)
 				);
 

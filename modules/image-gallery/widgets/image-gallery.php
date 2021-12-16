@@ -250,12 +250,12 @@ class Image_Gallery extends Common_Widget {
 			$this->add_responsive_control(
 				'gallery_columns',
 				array(
-					'label'          => __( 'Columns', 'uael' ),
-					'type'           => Controls_Manager::SELECT,
-					'default'        => '4',
-					'tablet_default' => '3',
-					'mobile_default' => '2',
-					'options'        => array(
+					'label'              => __( 'Columns', 'uael' ),
+					'type'               => Controls_Manager::SELECT,
+					'default'            => '4',
+					'tablet_default'     => '3',
+					'mobile_default'     => '2',
+					'options'            => array(
 						'1' => '1',
 						'2' => '2',
 						'3' => '3',
@@ -263,10 +263,11 @@ class Image_Gallery extends Common_Widget {
 						'5' => '5',
 						'6' => '6',
 					),
-					'prefix_class'   => 'uael-img-grid%s__column-',
-					'condition'      => array(
+					'prefix_class'       => 'uael-img-grid%s__column-',
+					'condition'          => array(
 						'gallery_style!' => array( 'justified', 'carousel' ),
 					),
+					'frontend_available' => true,
 				)
 			);
 
@@ -437,28 +438,30 @@ class Image_Gallery extends Common_Widget {
 		$this->add_responsive_control(
 			'slides_to_show',
 			array(
-				'label'          => __( 'Images to Show', 'uael' ),
-				'type'           => Controls_Manager::NUMBER,
-				'default'        => 4,
-				'tablet_default' => 3,
-				'mobile_default' => 2,
-				'condition'      => array(
+				'label'              => __( 'Images to Show', 'uael' ),
+				'type'               => Controls_Manager::NUMBER,
+				'default'            => 4,
+				'tablet_default'     => 3,
+				'mobile_default'     => 2,
+				'condition'          => array(
 					'gallery_style' => 'carousel',
 				),
+				'frontend_available' => true,
 			)
 		);
 
 		$this->add_responsive_control(
 			'slides_to_scroll',
 			array(
-				'label'          => __( 'Images to Scroll', 'uael' ),
-				'type'           => Controls_Manager::NUMBER,
-				'default'        => 1,
-				'tablet_default' => 1,
-				'mobile_default' => 1,
-				'condition'      => array(
+				'label'              => __( 'Images to Scroll', 'uael' ),
+				'type'               => Controls_Manager::NUMBER,
+				'default'            => 1,
+				'tablet_default'     => 1,
+				'mobile_default'     => 1,
+				'condition'          => array(
 					'gallery_style' => 'carousel',
 				),
+				'frontend_available' => true,
 			)
 		);
 
@@ -775,7 +778,7 @@ class Image_Gallery extends Common_Widget {
 					'type'      => Controls_Manager::COLOR,
 					'default'   => '',
 					'selectors' => array(
-						'.uael-fancybox-gallery-{{ID}} .fancybox-caption, 
+						'.uael-fancybox-gallery-{{ID}} .fancybox-caption,
 						.uael-fancybox-gallery-{{ID}} .fancybox-caption a' => 'color: {{VALUE}};',
 					),
 					'condition' => array(
@@ -787,20 +790,21 @@ class Image_Gallery extends Common_Widget {
 			$this->add_responsive_control(
 				'lightbox_margin_bottom',
 				array(
-					'label'     => __( 'Caption Bottom Spacing', 'uael' ),
-					'type'      => Controls_Manager::SLIDER,
-					'range'     => array(
+					'label'              => __( 'Caption Bottom Spacing', 'uael' ),
+					'type'               => Controls_Manager::SLIDER,
+					'range'              => array(
 						'px' => array(
 							'min' => 0,
 							'max' => 100,
 						),
 					),
-					'selectors' => array(
+					'selectors'          => array(
 						'.uael-fancybox-gallery-{{ID}} .fancybox-caption' => 'padding-bottom: {{SIZE}}{{UNIT}};',
 					),
-					'condition' => array(
+					'condition'          => array(
 						'show_caption_lightbox' => 'yes',
 					),
+					'frontend_available' => true,
 				)
 			);
 
@@ -843,80 +847,83 @@ class Image_Gallery extends Common_Widget {
 		$this->add_responsive_control(
 			'column_gap',
 			array(
-				'label'     => __( 'Columns Gap', 'uael' ),
-				'type'      => Controls_Manager::SLIDER,
-				'default'   => array(
+				'label'              => __( 'Columns Gap', 'uael' ),
+				'type'               => Controls_Manager::SLIDER,
+				'default'            => array(
 					'size' => 20,
 				),
-				'range'     => array(
+				'range'              => array(
 					'px' => array(
 						'min' => 0,
 						'max' => 100,
 					),
 				),
-				'condition' => array(
+				'condition'          => array(
 					'gallery_style!' => 'justified',
 				),
-				'selectors' => array(
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-img-gallery-wrap .uael-grid-item' => 'padding-right: calc( {{SIZE}}{{UNIT}}/2 ); padding-left: calc( {{SIZE}}{{UNIT}}/2 );',
 					'{{WRAPPER}} .uael-img-gallery-wrap' => 'margin-left: calc( -{{SIZE}}{{UNIT}}/2 ); margin-right: calc( -{{SIZE}}{{UNIT}}/2 );',
 				),
+				'frontend_available' => true,
 			)
 		);
 
 		$this->add_responsive_control(
 			'row_gap',
 			array(
-				'label'     => __( 'Rows Gap', 'uael' ),
-				'type'      => Controls_Manager::SLIDER,
-				'default'   => array(
+				'label'              => __( 'Rows Gap', 'uael' ),
+				'type'               => Controls_Manager::SLIDER,
+				'default'            => array(
 					'size' => 20,
 				),
-				'range'     => array(
+				'range'              => array(
 					'px' => array(
 						'min' => 0,
 						'max' => 100,
 					),
 				),
-				'selectors' => array(
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-img-gallery-wrap .uael-grid-item-content' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 				),
-				'condition' => array(
+				'condition'          => array(
 					'gallery_style' => array( 'grid', 'masonry' ),
 				),
+				'frontend_available' => true,
 			)
 		);
 
 		$this->add_responsive_control(
 			'justified_margin',
 			array(
-				'label'     => __( 'Image Spacing', 'uael' ),
-				'type'      => Controls_Manager::SLIDER,
-				'default'   => array(
+				'label'              => __( 'Image Spacing', 'uael' ),
+				'type'               => Controls_Manager::SLIDER,
+				'default'            => array(
 					'size' => 3,
 				),
-				'range'     => array(
+				'range'              => array(
 					'px' => array(
 						'min' => 0,
 						'max' => 50,
 					),
 				),
-				'condition' => array(
+				'condition'          => array(
 					'gallery_style' => 'justified',
 				),
-				'selectors' => array(
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-img-justified-wrap .uael-grid-item-content' => 'margin: {{SIZE}}{{UNIT}};',
 				),
+				'frontend_available' => true,
 			)
 		);
 
 		$this->add_responsive_control(
 			'images_valign',
 			array(
-				'label'     => __( 'Image Vertical</br>Alignment', 'uael' ),
-				'type'      => Controls_Manager::CHOOSE,
-				'default'   => 'flex-start',
-				'options'   => array(
+				'label'              => __( 'Image Vertical</br>Alignment', 'uael' ),
+				'type'               => Controls_Manager::CHOOSE,
+				'default'            => 'flex-start',
+				'options'            => array(
 					'flex-start' => array(
 						'title' => __( 'Top', 'uael' ),
 						'icon'  => 'eicon-v-align-top',
@@ -930,12 +937,13 @@ class Image_Gallery extends Common_Widget {
 						'icon'  => 'eicon-v-align-bottom',
 					),
 				),
-				'condition' => array(
+				'condition'          => array(
 					'gallery_style' => 'grid',
 				),
-				'selectors' => array(
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-img-gallery-wrap .uael-grid-item' => 'align-items: {{VALUE}}; display: inline-grid;',
 				),
+				'frontend_available' => true,
 			)
 		);
 
@@ -1177,20 +1185,20 @@ class Image_Gallery extends Common_Widget {
 					$this->add_responsive_control(
 						'overlay_icon_size_hover',
 						array(
-							'label'      => __( 'Overlay Icon Size', 'uael' ),
-							'type'       => Controls_Manager::SLIDER,
-							'size_units' => array( 'px', 'em', 'rem' ),
-							'range'      => array(
+							'label'              => __( 'Overlay Icon Size', 'uael' ),
+							'type'               => Controls_Manager::SLIDER,
+							'size_units'         => array( 'px', 'em', 'rem' ),
+							'range'              => array(
 								'px' => array(
 									'min' => 1,
 									'max' => 200,
 								),
 							),
-							'default'    => array(
+							'default'            => array(
 								'size' => 40,
 								'unit' => 'px',
 							),
-							'conditions' => array(
+							'conditions'         => array(
 								'relation' => 'and',
 								'terms'    => array(
 									array(
@@ -1205,10 +1213,11 @@ class Image_Gallery extends Common_Widget {
 									),
 								),
 							),
-							'selectors'  => array(
+							'selectors'          => array(
 								'{{WRAPPER}} .uael-grid-gallery-img .uael-grid-img-overlay i,
 								{{WRAPPER}} .uael-grid-gallery-img .uael-grid-img-overlay svg' => 'font-size: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}}; line-height: {{SIZE}}{{UNIT}};',
 							),
+							'frontend_available' => true,
 						)
 					);
 					$this->add_control(

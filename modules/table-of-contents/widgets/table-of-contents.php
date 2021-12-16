@@ -317,25 +317,26 @@ class Table_Of_Contents extends Common_Widget {
 		$this->add_responsive_control(
 			'toc_icon_size',
 			array(
-				'label'      => __( 'Icon Size', 'uael' ),
-				'type'       => Controls_Manager::SLIDER,
-				'size_units' => array( 'px', 'em', 'rem' ),
-				'range'      => array(
+				'label'              => __( 'Icon Size', 'uael' ),
+				'type'               => Controls_Manager::SLIDER,
+				'size_units'         => array( 'px', 'em', 'rem' ),
+				'range'              => array(
 					'px' => array(
 						'min' => 1,
 						'max' => 200,
 					),
 				),
-				'default'    => array(
+				'default'            => array(
 					'size' => 20,
 					'unit' => 'px',
 				),
-				'condition'  => array(
+				'condition'          => array(
 					'collapsible' => 'yes',
 				),
-				'selectors'  => array(
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-toc-switch .uael-icon:before' => 'font-size: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}}; width: {{SIZE}}{{UNIT}};line-height: {{SIZE}}{{UNIT}}; text-align: center;',
 				),
+				'frontend_available' => true,
 			)
 		);
 
@@ -387,17 +388,18 @@ class Table_Of_Contents extends Common_Widget {
 		$this->add_responsive_control(
 			'scroll_to_top_offset',
 			array(
-				'label'      => __( 'Scroll to Top Offset', 'uael' ),
-				'type'       => Controls_Manager::SLIDER,
-				'size_units' => array( 'px' ),
-				'range'      => array(
+				'label'              => __( 'Scroll to Top Offset', 'uael' ),
+				'type'               => Controls_Manager::SLIDER,
+				'size_units'         => array( 'px' ),
+				'range'              => array(
 					'px' => array(
 						'max' => 200,
 					),
 				),
-				'condition'  => array(
+				'condition'          => array(
 					'scroll_to_top' => 'yes',
 				),
+				'frontend_available' => true,
 			)
 		);
 
@@ -501,17 +503,18 @@ class Table_Of_Contents extends Common_Widget {
 		$this->add_responsive_control(
 			'scroll_offset',
 			array(
-				'label'      => __( 'Smooth Scroll Offset (px)', 'uael' ),
-				'type'       => Controls_Manager::SLIDER,
-				'size_units' => array( 'px' ),
-				'range'      => array(
+				'label'              => __( 'Smooth Scroll Offset (px)', 'uael' ),
+				'type'               => Controls_Manager::SLIDER,
+				'size_units'         => array( 'px' ),
+				'range'              => array(
 					'px' => array(
 						'max' => 100,
 					),
 				),
-				'condition'  => array(
+				'condition'          => array(
 					'scroll_toc' => 'yes',
 				),
+				'frontend_available' => true,
 			)
 		);
 
@@ -618,9 +621,9 @@ class Table_Of_Contents extends Common_Widget {
 		$this->add_responsive_control(
 			'heading_text_align',
 			array(
-				'label'        => __( 'Alignment', 'uael' ),
-				'type'         => Controls_Manager::CHOOSE,
-				'options'      => array(
+				'label'              => __( 'Alignment', 'uael' ),
+				'type'               => Controls_Manager::CHOOSE,
+				'options'            => array(
 					'left'   => array(
 						'title' => __( 'Left', 'uael' ),
 						'icon'  => 'fa fa-align-left',
@@ -634,11 +637,12 @@ class Table_Of_Contents extends Common_Widget {
 						'icon'  => 'fa fa-align-right',
 					),
 				),
-				'default'      => 'left',
-				'selectors'    => array(
+				'default'            => 'left',
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-toc-heading' => 'text-align: {{VALUE}};',
 				),
-				'prefix_class' => 'uael%s-heading-align-',
+				'prefix_class'       => 'uael%s-heading-align-',
+				'frontend_available' => true,
 			)
 		);
 
@@ -669,19 +673,20 @@ class Table_Of_Contents extends Common_Widget {
 		$this->add_responsive_control(
 			'heading_bottom_space',
 			array(
-				'label'     => __( 'Title Bottom Spacing', 'uael' ),
-				'type'      => Controls_Manager::SLIDER,
-				'range'     => array(
+				'label'              => __( 'Title Bottom Spacing', 'uael' ),
+				'type'               => Controls_Manager::SLIDER,
+				'range'              => array(
 					'px' => array(
 						'min' => 0,
 						'max' => 100,
 					),
 				),
-				'selectors' => array(
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-toc-header' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} .uael-toc-auto-collapse .uael-toc-header,
 					{{WRAPPER}} .uael-toc-hidden .uael-toc-header' => 'margin-bottom: 0px;',
 				),
+				'frontend_available' => true,
 			)
 		);
 
@@ -782,17 +787,18 @@ class Table_Of_Contents extends Common_Widget {
 		$this->add_responsive_control(
 			'separator_bottom_space',
 			array(
-				'label'     => __( 'Separator Bottom Spacing', 'uael' ),
-				'type'      => Controls_Manager::SLIDER,
-				'range'     => array(
+				'label'              => __( 'Separator Bottom Spacing', 'uael' ),
+				'type'               => Controls_Manager::SLIDER,
+				'range'              => array(
 					'px' => array(
 						'min' => 0,
 						'max' => 100,
 					),
 				),
-				'selectors' => array(
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-separator-parent' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 				),
+				'frontend_available' => true,
 			)
 		);
 
@@ -830,22 +836,23 @@ class Table_Of_Contents extends Common_Widget {
 			$this->add_responsive_control(
 				'content_between_space',
 				array(
-					'label'     => __( 'Spacing Between Content', 'uael' ),
-					'type'      => Controls_Manager::SLIDER,
-					'range'     => array(
+					'label'              => __( 'Spacing Between Content', 'uael' ),
+					'type'               => Controls_Manager::SLIDER,
+					'range'              => array(
 						'px' => array(
 							'min' => 0,
 							'max' => 100,
 						),
 					),
-					'default'   => array(
+					'default'            => array(
 						'size' => 15,
 						'unit' => 'px',
 					),
-					'selectors' => array(
+					'selectors'          => array(
 						'{{WRAPPER}} .uael-toc-list li' => 'margin-top: {{SIZE}}{{UNIT}};',
 						'{{WRAPPER}} .uael-toc-content-wrapper #toc-li-0' => 'margin-top: 0px;',
 					),
+					'frontend_available' => true,
 				)
 			);
 

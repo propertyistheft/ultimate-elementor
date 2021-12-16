@@ -100,16 +100,6 @@ class Woo_Products extends Common_Widget {
 	}
 
 	/**
-	 * Register Register Skins.
-	 *
-	 * @since 0.0.1
-	 * @access protected
-	 */
-	protected function _register_skins() { // phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
-		$this->register_skins();
-	}
-
-	/**
 	 * Register Woo-Products Skins.
 	 *
 	 * @since 1.29.0

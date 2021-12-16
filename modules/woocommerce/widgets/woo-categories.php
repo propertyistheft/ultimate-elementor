@@ -309,28 +309,30 @@ class Woo_Categories extends Common_Widget {
 		$this->add_responsive_control(
 			'slides_to_show',
 			array(
-				'label'          => __( 'Categories to Show', 'uael' ),
-				'type'           => Controls_Manager::NUMBER,
-				'default'        => 4,
-				'tablet_default' => 3,
-				'mobile_default' => 1,
-				'condition'      => array(
+				'label'              => __( 'Categories to Show', 'uael' ),
+				'type'               => Controls_Manager::NUMBER,
+				'default'            => 4,
+				'tablet_default'     => 3,
+				'mobile_default'     => 1,
+				'condition'          => array(
 					'products_layout_type' => 'slider',
 				),
+				'frontend_available' => true,
 			)
 		);
 
 		$this->add_responsive_control(
 			'slides_to_scroll',
 			array(
-				'label'          => __( 'Categories to Scroll', 'uael' ),
-				'type'           => Controls_Manager::NUMBER,
-				'default'        => 1,
-				'tablet_default' => 1,
-				'mobile_default' => 1,
-				'condition'      => array(
+				'label'              => __( 'Categories to Scroll', 'uael' ),
+				'type'               => Controls_Manager::NUMBER,
+				'default'            => 1,
+				'tablet_default'     => 1,
+				'mobile_default'     => 1,
+				'condition'          => array(
 					'products_layout_type' => 'slider',
 				),
+				'frontend_available' => true,
 			)
 		);
 

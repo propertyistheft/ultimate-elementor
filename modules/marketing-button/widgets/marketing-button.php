@@ -256,14 +256,14 @@ class Marketing_Button extends Common_Widget {
 			$this->add_responsive_control(
 				'icon_size',
 				array(
-					'label'      => __( 'Icon Size', 'uael' ),
-					'type'       => Controls_Manager::SLIDER,
-					'range'      => array(
+					'label'              => __( 'Icon Size', 'uael' ),
+					'type'               => Controls_Manager::SLIDER,
+					'range'              => array(
 						'px' => array(
 							'max' => 50,
 						),
 					),
-					'conditions' => array(
+					'conditions'         => array(
 						'relation' => 'or',
 						'terms'    => array(
 							array(
@@ -273,24 +273,25 @@ class Marketing_Button extends Common_Widget {
 							),
 						),
 					),
-					'selectors'  => array(
+					'selectors'          => array(
 						'{{WRAPPER}} .elementor-button .elementor-button-icon' => 'font-size: {{SIZE}}{{UNIT}};',
 						'{{WRAPPER}} .elementor-button .elementor-button-icon svg' => 'height: {{SIZE}}{{UNIT}}; width: {{SIZE}}{{UNIT}};',
 					),
+					'frontend_available' => true,
 				)
 			);
 
 			$this->add_responsive_control(
 				'icon_indent',
 				array(
-					'label'      => __( 'Icon Spacing', 'uael' ),
-					'type'       => Controls_Manager::SLIDER,
-					'range'      => array(
+					'label'              => __( 'Icon Spacing', 'uael' ),
+					'type'               => Controls_Manager::SLIDER,
+					'range'              => array(
 						'px' => array(
 							'max' => 50,
 						),
 					),
-					'conditions' => array(
+					'conditions'         => array(
 						'relation' => 'or',
 						'terms'    => array(
 							array(
@@ -300,12 +301,13 @@ class Marketing_Button extends Common_Widget {
 							),
 						),
 					),
-					'selectors'  => array(
+					'selectors'          => array(
 						'{{WRAPPER}} .elementor-align-icon-right,
 						{{WRAPPER}} .uael-marketing-buttons-all_right.elementor-button .elementor-button-icon' => 'margin-left: {{SIZE}}{{UNIT}};',
 						'{{WRAPPER}} .elementor-align-icon-left,
 						{{WRAPPER}} .uael-marketing-buttons-all_left.elementor-button .elementor-button-icon' => 'margin-right: {{SIZE}}{{UNIT}};',
 					),
+					'frontend_available' => true,
 				)
 			);
 
@@ -422,18 +424,19 @@ class Marketing_Button extends Common_Widget {
 			$this->add_responsive_control(
 				'title_margin_bottom',
 				array(
-					'label'      => __( 'Space between Title & Description', 'uael' ),
-					'type'       => Controls_Manager::SLIDER,
-					'size_units' => array( 'px', 'em', 'rem' ),
-					'range'      => array(
+					'label'              => __( 'Space between Title & Description', 'uael' ),
+					'type'               => Controls_Manager::SLIDER,
+					'size_units'         => array( 'px', 'em', 'rem' ),
+					'range'              => array(
 						'px' => array(
 							'min' => 1,
 							'max' => 50,
 						),
 					),
-					'selectors'  => array(
+					'selectors'          => array(
 						'{{WRAPPER}} .uael-marketing-button .elementor-button-content-wrapper' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 					),
+					'frontend_available' => true,
 				)
 			);
 
@@ -459,9 +462,9 @@ class Marketing_Button extends Common_Widget {
 			$this->add_responsive_control(
 				'align',
 				array(
-					'label'        => __( 'Alignment', 'uael' ),
-					'type'         => Controls_Manager::CHOOSE,
-					'options'      => array(
+					'label'              => __( 'Alignment', 'uael' ),
+					'type'               => Controls_Manager::CHOOSE,
+					'options'            => array(
 						'left'    => array(
 							'title' => __( 'Left', 'uael' ),
 							'icon'  => 'fa fa-align-left',
@@ -479,9 +482,10 @@ class Marketing_Button extends Common_Widget {
 							'icon'  => 'fa fa-align-justify',
 						),
 					),
-					'default'      => 'center',
-					'toggle'       => false,
-					'prefix_class' => 'elementor%s-align-',
+					'default'            => 'center',
+					'toggle'             => false,
+					'prefix_class'       => 'elementor%s-align-',
+					'frontend_available' => true,
 				)
 			);
 
@@ -498,12 +502,13 @@ class Marketing_Button extends Common_Widget {
 			$this->add_responsive_control(
 				'padding',
 				array(
-					'label'      => __( 'Padding', 'uael' ),
-					'type'       => Controls_Manager::DIMENSIONS,
-					'size_units' => array( 'px', 'em', '%' ),
-					'selectors'  => array(
+					'label'              => __( 'Padding', 'uael' ),
+					'type'               => Controls_Manager::DIMENSIONS,
+					'size_units'         => array( 'px', 'em', '%' ),
+					'selectors'          => array(
 						'{{WRAPPER}} .elementor-button' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					),
+					'frontend_available' => true,
 				)
 			);
 
@@ -757,7 +762,7 @@ class Marketing_Button extends Common_Widget {
 			</span>
 			<?php if ( '' !== $settings['desc_text'] ) { ?>
 				<span class="uael-marketing-button-desc elementor-inline-editing" data-elementor-setting-key="desc_text" data-elementor-inline-editing-toolbar="none"><?php echo wp_kses_post( $settings['desc_text'] ); ?></span>
-			<?php } ?> 
+			<?php } ?>
 		</span>
 		<?php
 	}
@@ -872,7 +877,7 @@ class Marketing_Button extends Common_Widget {
 
 			if ( settings.hover_animation ) {
 				view.addRenderAttribute( 'button', 'class', 'elementor-animation-' + settings.hover_animation );
-			} 
+			}
 
 			#>
 			<div {{{ view.getRenderAttributeString( 'wrapper' ) }}}>

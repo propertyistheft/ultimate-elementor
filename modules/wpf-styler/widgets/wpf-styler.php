@@ -226,9 +226,9 @@ class WpfStyler extends Common_Widget {
 			$this->add_responsive_control(
 				'form_title_desc_align',
 				array(
-					'label'     => __( 'Title & Description </br>Alignment', 'uael' ),
-					'type'      => Controls_Manager::CHOOSE,
-					'options'   => array(
+					'label'              => __( 'Title & Description </br>Alignment', 'uael' ),
+					'type'               => Controls_Manager::CHOOSE,
+					'options'            => array(
 						'left'   => array(
 							'title' => __( 'Left', 'uael' ),
 							'icon'  => 'fa fa-align-left',
@@ -242,14 +242,15 @@ class WpfStyler extends Common_Widget {
 							'icon'  => 'fa fa-align-right',
 						),
 					),
-					'default'   => 'left',
-					'condition' => array(
+					'default'            => 'left',
+					'condition'          => array(
 						'form_title_option!' => 'none',
 					),
-					'selectors' => array(
+					'selectors'          => array(
 						'{{WRAPPER}} .uael-wpf-style .wpforms-description, {{WRAPPER}} .uael-wpf-style .wpforms-title' => 'text-align: {{VALUE}};',
 					),
-					'toggle'    => false,
+					'toggle'             => false,
+					'frontend_available' => true,
 				)
 			);
 
@@ -304,19 +305,20 @@ class WpfStyler extends Common_Widget {
 			$this->add_responsive_control(
 				'wpf_input_padding',
 				array(
-					'label'      => __( 'Field Padding', 'uael' ),
-					'type'       => Controls_Manager::DIMENSIONS,
-					'size_units' => array( 'px', 'em', '%' ),
-					'selectors'  => array(
-						'{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input:not([type=submit]):not([type=image]):not([type=button]):not([type=file]):not([type=radio]):not([type=checkbox]), 
-						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field textarea, 
-						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field select, 
+					'label'              => __( 'Field Padding', 'uael' ),
+					'type'               => Controls_Manager::DIMENSIONS,
+					'size_units'         => array( 'px', 'em', '%' ),
+					'selectors'          => array(
+						'{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input:not([type=submit]):not([type=image]):not([type=button]):not([type=file]):not([type=radio]):not([type=checkbox]),
+						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field textarea,
+						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field select,
 						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field-description.wpforms-disclaimer-description,
 						{{WRAPPER}} .uael-wpf-style .wpforms-container-full .wpforms-form ul.wpforms-image-choices-modern label' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-						'{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input[type="checkbox"] + label:before, 
+						'{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input[type="checkbox"] + label:before,
 						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input[type="radio"] + label:before' => 'height: {{BOTTOM}}{{UNIT}}; width: {{BOTTOM}}{{UNIT}};',
 						'{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input[type="checkbox"]:checked + label:before' => 'font-size: calc( {{BOTTOM}}{{UNIT}} / 1.2 );',
 					),
+					'frontend_available' => true,
 				)
 			);
 
@@ -327,13 +329,13 @@ class WpfStyler extends Common_Widget {
 					'type'      => Controls_Manager::COLOR,
 					'default'   => '#fafafa',
 					'selectors' => array(
-						'{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input:not([type=submit]):not([type=image]):not([type=button]):not([type=file]):not([type=radio]):not([type=checkbox]), 
-						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field textarea, 
+						'{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input:not([type=submit]):not([type=image]):not([type=button]):not([type=file]):not([type=radio]):not([type=checkbox]),
+						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field textarea,
 						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field select,
 						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field-description.wpforms-disclaimer-description,
 						{{WRAPPER}} .uael-wpf-style .wpforms-container-full .wpforms-form ul.wpforms-image-choices-modern label,
 						{{WRAPPER}} .uael-wpf-container select option' => 'background-color: {{VALUE}};',
-						'{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input[type="checkbox"] + label:before, 
+						'{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input[type="checkbox"] + label:before,
 						{{WRAPPER}} .uael-wpf-style input[type="radio"] + label:before' => 'background-color: {{VALUE}};',
 						'{{WRAPPER}} .uael-wpf-style input[type="radio"]:checked + label:before' => 'background-color: #7a7a7a;',
 						'{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input[type="radio"]:checked + label:before' => 'box-shadow:inset 0px 0px 0px 4px {{VALUE}};',
@@ -351,11 +353,11 @@ class WpfStyler extends Common_Widget {
 					),
 					'default'   => '',
 					'selectors' => array(
-						'{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field-label, 
-						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-page-indicator-steps, 
+						'{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field-label,
+						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-page-indicator-steps,
 						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field-divider,
 						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field-divider h3,
-						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field-radio li label, 
+						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field-radio li label,
 						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field-payment-multiple li label,
 						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-single-item-price,
 						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field-checkbox li label,
@@ -377,11 +379,11 @@ class WpfStyler extends Common_Widget {
 						'default' => Global_Colors::COLOR_TEXT,
 					),
 					'selectors' => array(
-						'{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input:not([type=submit]):not([type=image]):not([type=button]):not([type=file]):not([type=radio]):not([type=checkbox]), 
-						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input::placeholder, 
-						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field textarea, 
-						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field textarea::placeholder, 
-						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field select, 
+						'{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input:not([type=submit]):not([type=image]):not([type=button]):not([type=file]):not([type=radio]):not([type=checkbox]),
+						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input::placeholder,
+						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field textarea,
+						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field textarea::placeholder,
+						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field select,
 						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input[type="checkbox"]:checked + label:before,
 						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field-description.wpforms-disclaimer-description,
 						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field-likert_scale tbody tr th' => 'color: {{VALUE}};',
@@ -438,8 +440,8 @@ class WpfStyler extends Common_Widget {
 						'wpf_style' => 'box',
 					),
 					'selectors'   => array(
-						'{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input:not([type=submit]):not([type=image]):not([type=button]):not([type=file]):not([type=radio]):not([type=checkbox]), 
-						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field textarea, 
+						'{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input:not([type=submit]):not([type=image]):not([type=button]):not([type=file]):not([type=radio]):not([type=checkbox]),
+						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field textarea,
 						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field select' => 'border-style: {{VALUE}};',
 						'{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input[type="checkbox"] + label:before,
 						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input[type="radio"] + label:before,
@@ -467,11 +469,11 @@ class WpfStyler extends Common_Widget {
 						'input_border_style!' => 'none',
 					),
 					'selectors'  => array(
-						'{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input:not([type=submit]):not([type=image]):not([type=button]):not([type=file]):not([type=radio]):not([type=checkbox]), 
-						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field textarea, 
+						'{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input:not([type=submit]):not([type=image]):not([type=button]):not([type=file]):not([type=radio]):not([type=checkbox]),
+						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field textarea,
 						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field select,
 						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field-description.wpforms-disclaimer-description' => 'border-width: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-						'{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input[type="checkbox"] + label:before, 
+						'{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input[type="checkbox"] + label:before,
 						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input[type="radio"] + label:before,
 						{{WRAPPER}} .uael-wpf-style .wpforms-form ul.wpforms-image-choices-modern label,
 						{{WRAPPER}} .uael-wpf-style .wpforms-form ul.wpforms-image-choices-modern label:hover,
@@ -491,11 +493,11 @@ class WpfStyler extends Common_Widget {
 					),
 					'default'   => '#eaeaea',
 					'selectors' => array(
-						'{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input:not([type=submit]):not([type=image]):not([type=button]):not([type=file]):not([type=radio]):not([type=checkbox]), 
-						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field textarea, 
+						'{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input:not([type=submit]):not([type=image]):not([type=button]):not([type=file]):not([type=radio]):not([type=checkbox]),
+						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field textarea,
 						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field select,
 						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field-description.wpforms-disclaimer-description' => 'border-color: {{VALUE}};',
-						'{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input[type="checkbox"] + label:before, 
+						'{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input[type="checkbox"] + label:before,
 						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input[type="radio"] + label:before,
 						{{WRAPPER}} .uael-wpf-style .wpforms-form ul.wpforms-image-choices-modern label,
 						{{WRAPPER}} .uael-wpf-style .wpforms-form ul.wpforms-image-choices-modern label:hover,
@@ -507,32 +509,33 @@ class WpfStyler extends Common_Widget {
 			$this->add_responsive_control(
 				'wpf_border_bottom',
 				array(
-					'label'      => __( 'Border Size', 'uael' ),
-					'type'       => Controls_Manager::SLIDER,
-					'size_units' => array( 'px', 'em', 'rem' ),
-					'range'      => array(
+					'label'              => __( 'Border Size', 'uael' ),
+					'type'               => Controls_Manager::SLIDER,
+					'size_units'         => array( 'px', 'em', 'rem' ),
+					'range'              => array(
 						'px' => array(
 							'min' => 1,
 							'max' => 20,
 						),
 					),
-					'default'    => array(
+					'default'            => array(
 						'size' => '2',
 						'unit' => 'px',
 					),
-					'condition'  => array(
+					'condition'          => array(
 						'wpf_style' => 'underline',
 					),
-					'selectors'  => array(
-						'{{WRAPPER}}.uael-wpf-style-underline .wpforms-form .wpforms-field input:not([type=submit]):not([type=image]):not([type=button]):not([type=file]):not([type=radio]):not([type=checkbox]), 
-						{{WRAPPER}}.uael-wpf-style-underline .wpforms-form .wpforms-field select, 
+					'selectors'          => array(
+						'{{WRAPPER}}.uael-wpf-style-underline .wpforms-form .wpforms-field input:not([type=submit]):not([type=image]):not([type=button]):not([type=file]):not([type=radio]):not([type=checkbox]),
+						{{WRAPPER}}.uael-wpf-style-underline .wpforms-form .wpforms-field select,
 						{{WRAPPER}}.uael-wpf-style-underline .wpforms-form .wpforms-field textarea,
 						{{WRAPPER}}.uael-wpf-style-underline .wpforms-form .wpforms-field-description.wpforms-disclaimer-description' => 'border-width: 0 0 {{SIZE}}{{UNIT}} 0; border-style: solid;',
-						'{{WRAPPER}}.uael-wpf-style-underline .wpforms-form .wpforms-field input[type="checkbox"] + label:before, 
+						'{{WRAPPER}}.uael-wpf-style-underline .wpforms-form .wpforms-field input[type="checkbox"] + label:before,
 						{{WRAPPER}}.uael-wpf-style-underline .wpforms-form .wpforms-field input[type="radio"] + label:before,
 						{{WRAPPER}}.uael-wpf-style-underline .wpforms-form ul.wpforms-image-choices-modern label,
 						{{WRAPPER}}.uael-wpf-style-underline .wpforms-form ul.wpforms-image-choices-modern label:hover' => 'border-width: {{SIZE}}{{UNIT}}; border-style: solid; box-sizing: content-box;',
 					),
+					'frontend_available' => true,
 				)
 			);
 
@@ -546,11 +549,11 @@ class WpfStyler extends Common_Widget {
 					),
 					'default'   => '#c4c4c4',
 					'selectors' => array(
-						'{{WRAPPER}}.uael-wpf-style-underline .wpforms-form .wpforms-field input:not([type=submit]):not([type=image]):not([type=button]):not([type=file]):not([type=radio]):not([type=checkbox]), 
-						{{WRAPPER}}.uael-wpf-style-underline .wpforms-form .wpforms-field select, 
+						'{{WRAPPER}}.uael-wpf-style-underline .wpforms-form .wpforms-field input:not([type=submit]):not([type=image]):not([type=button]):not([type=file]):not([type=radio]):not([type=checkbox]),
+						{{WRAPPER}}.uael-wpf-style-underline .wpforms-form .wpforms-field select,
 						{{WRAPPER}}.uael-wpf-style-underline .wpforms-form .wpforms-field textarea' => 'border-color: {{VALUE}};',
-						'{{WRAPPER}}.uael-wpf-style-underline .wpforms-form .wpforms-field input[type="checkbox"] + label:before, 
-						{{WRAPPER}}.uael-wpf-style-underline .wpforms-form .wpforms-field input[type="radio"] + label:before, 
+						'{{WRAPPER}}.uael-wpf-style-underline .wpforms-form .wpforms-field input[type="checkbox"] + label:before,
+						{{WRAPPER}}.uael-wpf-style-underline .wpforms-form .wpforms-field input[type="radio"] + label:before,
 						{{WRAPPER}}.uael-wpf-style-underline .wpforms-form .wpforms-field-description.wpforms-disclaimer-description,
 						{{WRAPPER}}.uael-wpf-style-underline .wpforms-container-full .wpforms-form ul.wpforms-image-choices-modern label,
 						{{WRAPPER}}.uael-wpf-style-underline .wpforms-form ul.wpforms-image-choices-modern label:hover' => 'border-color: {{VALUE}};',
@@ -564,10 +567,10 @@ class WpfStyler extends Common_Widget {
 					'label'     => __( 'Border Active Color', 'uael' ),
 					'type'      => Controls_Manager::COLOR,
 					'selectors' => array(
-						'{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input:not([type=submit]):not([type=image]):not([type=button]):not([type=file]):not([type=radio]):not([type=checkbox]):focus, 
-						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field select:focus, 
+						'{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input:not([type=submit]):not([type=image]):not([type=button]):not([type=file]):not([type=radio]):not([type=checkbox]):focus,
+						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field select:focus,
 						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field textarea:focus' => 'border-color: {{VALUE}};',
-						'{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input[type="checkbox"]:checked + label:before, 
+						'{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input[type="checkbox"]:checked + label:before,
 						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input[type="radio"]:checked + label:before,
 						{{WRAPPER}} .uael-wpf-style .wpforms-container-full .wpforms-form ul.wpforms-image-choices-modern .wpforms-selected label' => 'border-color: {{VALUE}};',
 					),
@@ -577,24 +580,25 @@ class WpfStyler extends Common_Widget {
 			$this->add_responsive_control(
 				'wpf_input_radius',
 				array(
-					'label'      => __( 'Rounded Corners', 'uael' ),
-					'type'       => Controls_Manager::DIMENSIONS,
-					'size_units' => array( 'px', 'em', '%' ),
-					'selectors'  => array(
-						'{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input:not([type=submit]):not([type=image]):not([type=button]):not([type=file]):not([type=radio]):not([type=checkbox]), 
-						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field textarea, 
+					'label'              => __( 'Rounded Corners', 'uael' ),
+					'type'               => Controls_Manager::DIMENSIONS,
+					'size_units'         => array( 'px', 'em', '%' ),
+					'selectors'          => array(
+						'{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input:not([type=submit]):not([type=image]):not([type=button]):not([type=file]):not([type=radio]):not([type=checkbox]),
+						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field textarea,
 						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field select,
-						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input[type="checkbox"] + label:before, 
+						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input[type="checkbox"] + label:before,
 						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field-description.wpforms-disclaimer-description,
 						{{WRAPPER}}.uael-wpf-style-underline .wpforms-container-full .wpforms-form ul.wpforms-image-choices-modern label' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					),
-					'default'    => array(
+					'default'            => array(
 						'top'    => '0',
 						'bottom' => '0',
 						'left'   => '0',
 						'right'  => '0',
 						'unit'   => 'px',
 					),
+					'frontend_available' => true,
 				)
 			);
 
@@ -606,8 +610,8 @@ class WpfStyler extends Common_Widget {
 					'condition' => array(
 						'wpf_style!' => 'underline',
 					),
-					'selector'  => '{{WRAPPER}} .wpforms-form .wpforms-field input:not([type=submit]):not([type=image]):not([type=button]):not([type=file]):not([type=radio]):not([type=checkbox]), 
-									{{WRAPPER}} .wpforms-form .wpforms-field select, 
+					'selector'  => '{{WRAPPER}} .wpforms-form .wpforms-field input:not([type=submit]):not([type=image]):not([type=button]):not([type=file]):not([type=radio]):not([type=checkbox]),
+									{{WRAPPER}} .wpforms-form .wpforms-field select,
 									{{WRAPPER}} .wpforms-form .wpforms-field textarea,
 									{{WRAPPER}} .wpforms-form .wpforms-field-description.wpforms-disclaimer-description,
 									{{WRAPPER}} .wpforms-form ul.wpforms-image-choices-modern label',
@@ -714,7 +718,7 @@ class WpfStyler extends Common_Widget {
 					),
 					'selectors' => array(
 						'{{WRAPPER}}.uael-wpf-check-yes .uael-wpf-style .wpforms-form .wpforms-field-checkbox li label,
-						{{WRAPPER}}.uael-wpf-check-yes .uael-wpf-style .wpforms-form .wpforms-field-radio li label, 
+						{{WRAPPER}}.uael-wpf-check-yes .uael-wpf-style .wpforms-form .wpforms-field-radio li label,
 						{{WRAPPER}}.uael-wpf-check-yes .uael-wpf-style .wpforms-form .wpforms-field-payment-multiple li label' => 'color: {{VALUE}};',
 					),
 				)
@@ -802,9 +806,9 @@ class WpfStyler extends Common_Widget {
 			$this->add_responsive_control(
 				'wpf_button_align',
 				array(
-					'label'        => __( 'Button Alignment', 'uael' ),
-					'type'         => Controls_Manager::CHOOSE,
-					'options'      => array(
+					'label'              => __( 'Button Alignment', 'uael' ),
+					'type'               => Controls_Manager::CHOOSE,
+					'options'            => array(
 						'left'    => array(
 							'title' => __( 'Left', 'uael' ),
 							'icon'  => 'fa fa-align-left',
@@ -822,9 +826,10 @@ class WpfStyler extends Common_Widget {
 							'icon'  => 'fa fa-align-justify',
 						),
 					),
-					'default'      => 'left',
-					'prefix_class' => 'uael%s-wpf-button-',
-					'toggle'       => false,
+					'default'            => 'left',
+					'prefix_class'       => 'uael%s-wpf-button-',
+					'toggle'             => false,
+					'frontend_available' => true,
 				)
 			);
 
@@ -848,14 +853,15 @@ class WpfStyler extends Common_Widget {
 			$this->add_responsive_control(
 				'wpf_button_padding',
 				array(
-					'label'      => __( 'Padding', 'uael' ),
-					'type'       => Controls_Manager::DIMENSIONS,
-					'size_units' => array( 'px', 'em', '%' ),
-					'selectors'  => array(
+					'label'              => __( 'Padding', 'uael' ),
+					'type'               => Controls_Manager::DIMENSIONS,
+					'size_units'         => array( 'px', 'em', '%' ),
+					'selectors'          => array(
 						'{{WRAPPER}} .uael-wpf-style .wpforms-form button[type=submit],
 						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-page-button' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					),
-					'separator'  => 'after',
+					'separator'          => 'after',
+					'frontend_available' => true,
 				)
 			);
 
@@ -911,12 +917,13 @@ class WpfStyler extends Common_Widget {
 					$this->add_responsive_control(
 						'btn_border_radius',
 						array(
-							'label'      => __( 'Border Radius', 'uael' ),
-							'type'       => Controls_Manager::DIMENSIONS,
-							'size_units' => array( 'px', '%' ),
-							'selectors'  => array(
+							'label'              => __( 'Border Radius', 'uael' ),
+							'type'               => Controls_Manager::DIMENSIONS,
+							'size_units'         => array( 'px', '%' ),
+							'selectors'          => array(
 								'{{WRAPPER}} .uael-wpf-style .wpforms-form button[type=submit], {{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-page-button' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 							),
+							'frontend_available' => true,
 						)
 					);
 
@@ -1161,43 +1168,45 @@ class WpfStyler extends Common_Widget {
 			$this->add_responsive_control(
 				'form_title_margin_bottom',
 				array(
-					'label'      => __( 'Form Title Bottom Margin', 'uael' ),
-					'type'       => Controls_Manager::SLIDER,
-					'size_units' => array( 'px', 'em', 'rem' ),
-					'range'      => array(
+					'label'              => __( 'Form Title Bottom Margin', 'uael' ),
+					'type'               => Controls_Manager::SLIDER,
+					'size_units'         => array( 'px', 'em', 'rem' ),
+					'range'              => array(
 						'px' => array(
 							'min' => 0,
 							'max' => 200,
 						),
 					),
-					'condition'  => array(
+					'condition'          => array(
 						'form_title_option!' => 'none',
 					),
-					'selectors'  => array(
+					'selectors'          => array(
 						'{{WRAPPER}} .uael-wpf-style .wpforms-title' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 					),
+					'frontend_available' => true,
 				)
 			);
 
 			$this->add_responsive_control(
 				'form_desc_margin_bottom',
 				array(
-					'label'      => __( 'Form Description Bottom Margin', 'uael' ),
-					'type'       => Controls_Manager::SLIDER,
-					'size_units' => array( 'px', 'em', 'rem' ),
-					'range'      => array(
+					'label'              => __( 'Form Description Bottom Margin', 'uael' ),
+					'type'               => Controls_Manager::SLIDER,
+					'size_units'         => array( 'px', 'em', 'rem' ),
+					'range'              => array(
 						'px' => array(
 							'min' => 0,
 							'max' => 200,
 						),
 					),
-					'selectors'  => array(
+					'selectors'          => array(
 						'{{WRAPPER}} .uael-wpf-style .wpforms-description' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 					),
-					'condition'  => array(
+					'condition'          => array(
 						'form_title_option!' => 'none',
 					),
-					'separator'  => 'after',
+					'separator'          => 'after',
+					'frontend_available' => true,
 				)
 			);
 
@@ -1212,105 +1221,110 @@ class WpfStyler extends Common_Widget {
 			$this->add_responsive_control(
 				'form_fields_margin',
 				array(
-					'label'      => __( 'Space Between Two Fields', 'uael' ),
-					'type'       => Controls_Manager::SLIDER,
-					'size_units' => array( 'px', 'em', 'rem' ),
-					'range'      => array(
+					'label'              => __( 'Space Between Two Fields', 'uael' ),
+					'type'               => Controls_Manager::SLIDER,
+					'size_units'         => array( 'px', 'em', 'rem' ),
+					'range'              => array(
 						'px' => array(
 							'min' => 0,
 							'max' => 100,
 						),
 					),
-					'selectors'  => array(
+					'selectors'          => array(
 						'{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field,
 						{{WRAPPER}} .uael-wpf-style .wpforms-field-address .wpforms-field-row' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 						'{{WRAPPER}} .uael-wpf-style .wpforms-container.inline-fields .wpforms-field-container .wpforms-field' => 'padding-right: {{SIZE}}{{UNIT}};',
 					),
+					'frontend_available' => true,
 				)
 			);
 
 			$this->add_responsive_control(
 				'form_label_margin_bottom',
 				array(
-					'label'      => __( 'Label Bottom Spacing', 'uael' ),
-					'type'       => Controls_Manager::SLIDER,
-					'size_units' => array( 'px', 'em', 'rem' ),
-					'range'      => array(
+					'label'              => __( 'Label Bottom Spacing', 'uael' ),
+					'type'               => Controls_Manager::SLIDER,
+					'size_units'         => array( 'px', 'em', 'rem' ),
+					'range'              => array(
 						'px' => array(
 							'min' => 0,
 							'max' => 100,
 						),
 					),
-					'selectors'  => array(
-						'{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field-label, 
+					'selectors'          => array(
+						'{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field-label,
 						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-page-indicator-steps,
 						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field-divider h3' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 						'{{WRAPPER}} .uael-wpf-style div.wpforms-container-full .wpforms-form .wpforms-page-indicator.progress .wpforms-page-indicator-page-progress-wrap' => 'margin-top: {{SIZE}}{{UNIT}};',
 					),
+					'frontend_available' => true,
 				)
 			);
 
 			$this->add_responsive_control(
 				'form_desc_margin_top',
 				array(
-					'label'      => __( 'Sublabel / Description Top Spacing', 'uael' ),
-					'type'       => Controls_Manager::SLIDER,
-					'size_units' => array( 'px', 'em', 'rem' ),
-					'range'      => array(
+					'label'              => __( 'Sublabel / Description Top Spacing', 'uael' ),
+					'type'               => Controls_Manager::SLIDER,
+					'size_units'         => array( 'px', 'em', 'rem' ),
+					'range'              => array(
 						'px' => array(
 							'min' => 0,
 							'max' => 100,
 						),
 					),
-					'selectors'  => array(
+					'selectors'          => array(
 						'{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field-description,
 						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field-sublabel' => 'margin-top: {{SIZE}}{{UNIT}};',
 					),
+					'frontend_available' => true,
 				)
 			);
 
 			$this->add_responsive_control(
 				'check_radio_items_spacing',
 				array(
-					'label'      => __( 'Radio & Checkbox Items Spacing', 'uael' ),
-					'type'       => Controls_Manager::SLIDER,
-					'size_units' => array( 'px', 'em', 'rem' ),
-					'range'      => array(
+					'label'              => __( 'Radio & Checkbox Items Spacing', 'uael' ),
+					'type'               => Controls_Manager::SLIDER,
+					'size_units'         => array( 'px', 'em', 'rem' ),
+					'range'              => array(
 						'px' => array(
 							'min' => 0,
 							'max' => 50,
 						),
 					),
-					'selectors'  => array(
-						'{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field-radio li:not(:last-child), 
+					'selectors'          => array(
+						'{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field-radio li:not(:last-child),
 						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field-checkbox ul li:not(:last-child),
 						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field-payment-multiple li:not(:last-child)' => 'margin-bottom: {{SIZE}}{{UNIT}} !important; margin-right: 0{{UNIT}};',
 						'{{WRAPPER}} .uael-wpf-style .wpforms-field-radio.wpforms-list-inline ul li:not(:last-child),
 						{{WRAPPER}} .uael-wpf-style .wpforms-field-checkbox.wpforms-list-inline ul li:not(:last-child),
 						{{WRAPPER}} .uael-wpf-style .wpforms-field-payment-multiple.wpforms-list-inline li:not(:last-child)' => 'margin-right: {{SIZE}}{{UNIT}} !important; margin-bottom: 0{{UNIT}} !important;',
 					),
+					'frontend_available' => true,
 				)
 			);
 
 			$this->add_responsive_control(
 				'submit_spacing',
 				array(
-					'label'      => __( 'Submit Button Top Spacing', 'uael' ),
-					'type'       => Controls_Manager::SLIDER,
-					'size_units' => array( 'px', 'em', 'rem' ),
-					'range'      => array(
+					'label'              => __( 'Submit Button Top Spacing', 'uael' ),
+					'type'               => Controls_Manager::SLIDER,
+					'size_units'         => array( 'px', 'em', 'rem' ),
+					'range'              => array(
 						'px' => array(
 							'min' => 0,
 							'max' => 150,
 						),
 					),
-					'selectors'  => array(
+					'selectors'          => array(
 						'{{WRAPPER}} .uael-wpf-style .wpforms-form button[type=submit],
 						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field-pagebreak' => 'margin-top: {{SIZE}}{{UNIT}};',
 						'{{WRAPPER}}.elementor-widget-uael-wpf-styler .uael-wpf-style .wpforms-container.inline-fields button[type=submit]' => 'margin-top: 0px;',
 						'(mobile){{WRAPPER}}.elementor-widget-uael-wpf-styler .uael-wpf-style .wpforms-container.inline-fields button[type=submit]' => 'margin-top: {{SIZE}}{{UNIT}};',
 					),
-					'separator'  => 'before',
+					'separator'          => 'before',
+					'frontend_available' => true,
 				)
 			);
 
@@ -1461,7 +1475,7 @@ class WpfStyler extends Common_Widget {
 						'default' => Global_Typography::TYPOGRAPHY_TEXT,
 					),
 					'selector' => '{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field-label,
-									{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field-radio li label, 
+									{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field-radio li label,
 									{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field-checkbox li label,
 									{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-page-indicator-steps,
 									{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field-payment-multiple li label,
@@ -1486,10 +1500,10 @@ class WpfStyler extends Common_Widget {
 					'global'   => array(
 						'default' => Global_Typography::TYPOGRAPHY_TEXT,
 					),
-					'selector' => '{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input:not([type=submit]):not([type=image]):not([type=button]):not([type=file]):not([type=radio]):not([type=checkbox]), 
-						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input::placeholder, 
-						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field textarea, 
-						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field textarea::placeholder, 
+					'selector' => '{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input:not([type=submit]):not([type=image]):not([type=button]):not([type=file]):not([type=radio]):not([type=checkbox]),
+						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field input::placeholder,
+						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field textarea,
+						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field textarea::placeholder,
 						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field select,
 						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field-description.wpforms-disclaimer-description,
 						{{WRAPPER}} .uael-wpf-style .wpforms-form .wpforms-field-likert_scale tbody tr th',

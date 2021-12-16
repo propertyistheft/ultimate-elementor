@@ -132,20 +132,21 @@ class Skin_Card extends Skin_Base {
 		$this->add_responsive_control(
 			'reviewer_content_spacing',
 			array(
-				'label'     => __( 'Content Bottom Spacing', 'uael' ),
-				'type'      => Controls_Manager::SLIDER,
-				'default'   => array(
+				'label'              => __( 'Content Bottom Spacing', 'uael' ),
+				'type'               => Controls_Manager::SLIDER,
+				'default'            => array(
 					'size' => 15,
 				),
-				'range'     => array(
+				'range'              => array(
 					'px' => array(
 						'min' => 0,
 						'max' => 100,
 					),
 				),
-				'selectors' => array(
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-review-content' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 				),
+				'frontend_available' => true,
 			)
 		);
 	}

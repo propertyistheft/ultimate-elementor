@@ -100,23 +100,24 @@ abstract class Skin_Base extends Elementor_Skin_Base {
 			$this->add_responsive_control(
 				'image_size',
 				array(
-					'label'     => __( 'Image Size', 'uael' ),
-					'type'      => Controls_Manager::SLIDER,
-					'default'   => array(
+					'label'              => __( 'Image Size', 'uael' ),
+					'type'               => Controls_Manager::SLIDER,
+					'default'            => array(
 						'size' => 60,
 					),
-					'range'     => array(
+					'range'              => array(
 						'px' => array(
 							'min' => 0,
 							'max' => 130,
 						),
 					),
-					'condition' => array(
+					'condition'          => array(
 						$this->get_control_id( 'reviewer_image' ) => 'yes',
 					),
-					'selectors' => array(
+					'selectors'          => array(
 						'{{WRAPPER}} .uael-review-image' => 'width: {{SIZE}}{{UNIT}}; height: {{SIZE}}{{UNIT}};',
 					),
+					'frontend_available' => true,
 				)
 			);
 
@@ -362,21 +363,22 @@ abstract class Skin_Base extends Elementor_Skin_Base {
 			$this->add_responsive_control(
 				'icon_size',
 				array(
-					'label'     => __( 'Icon Size', 'uael' ),
-					'type'      => Controls_Manager::SLIDER,
-					'range'     => array(
+					'label'              => __( 'Icon Size', 'uael' ),
+					'type'               => Controls_Manager::SLIDER,
+					'range'              => array(
 						'px' => array(
 							'min' => 0,
 							'max' => 50,
 						),
 					),
-					'selectors' => array(
+					'selectors'          => array(
 						'{{WRAPPER}} .uael-review .uael-star-full, {{WRAPPER}} .uael-review .uael-star-empty' => 'font-size: {{SIZE}}{{UNIT}};',
 					),
-					'condition' => array(
+					'condition'          => array(
 						$this->get_control_id( 'review_rating' ) => 'yes',
 						$this->get_control_id( 'select_star_style' ) => 'custom',
 					),
+					'frontend_available' => true,
 				)
 			);
 
@@ -543,119 +545,125 @@ abstract class Skin_Base extends Elementor_Skin_Base {
 			$this->add_responsive_control(
 				'column_gap',
 				array(
-					'label'     => __( 'Columns Gap', 'uael' ),
-					'type'      => Controls_Manager::SLIDER,
-					'default'   => array(
+					'label'              => __( 'Columns Gap', 'uael' ),
+					'type'               => Controls_Manager::SLIDER,
+					'default'            => array(
 						'size' => 25,
 					),
-					'range'     => array(
+					'range'              => array(
 						'px' => array(
 							'min' => 0,
 							'max' => 100,
 						),
 					),
-					'selectors' => array(
+					'selectors'          => array(
 						'{{WRAPPER}} .uael-review-wrap' => 'padding-right: calc( {{SIZE}}{{UNIT}}/2 ); padding-left: calc( {{SIZE}}{{UNIT}}/2 );',
 					),
+					'frontend_available' => true,
 				)
 			);
 
 			$this->add_responsive_control(
 				'row_gap',
 				array(
-					'label'     => __( 'Rows Gap', 'uael' ),
-					'type'      => Controls_Manager::SLIDER,
-					'default'   => array(
+					'label'              => __( 'Rows Gap', 'uael' ),
+					'type'               => Controls_Manager::SLIDER,
+					'default'            => array(
 						'size' => 25,
 					),
-					'range'     => array(
+					'range'              => array(
 						'px' => array(
 							'min' => 0,
 							'max' => 100,
 						),
 					),
-					'selectors' => array(
+					'selectors'          => array(
 						'{{WRAPPER}} .uael-review-wrap' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 					),
-					'condition' => array(
+					'condition'          => array(
 						'review_structure!' => 'carousel',
 					),
+					'frontend_available' => true,
 				)
 			);
 
 			$this->add_responsive_control(
 				'reviewer_image_spacing',
 				array(
-					'label'     => __( 'Image Spacing', 'uael' ),
-					'type'      => Controls_Manager::SLIDER,
-					'range'     => array(
+					'label'              => __( 'Image Spacing', 'uael' ),
+					'type'               => Controls_Manager::SLIDER,
+					'range'              => array(
 						'px' => array(
 							'min' => 0,
 							'max' => 50,
 						),
 					),
-					'separator' => 'before',
-					'selectors' => array(
+					'separator'          => 'before',
+					'selectors'          => array(
 						'{{WRAPPER}} .uael-review-image' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 						'{{WRAPPER}} .uael-review-image-left .uael-review-image, {{WRAPPER}} .uael-review-image-all_left .uael-review-image' => 'margin-right: {{SIZE}}{{UNIT}}; margin-bottom: 0px;',
 					),
-					'condition' => array(
+					'condition'          => array(
 						$this->get_control_id( 'reviewer_image' ) => 'yes',
 					),
+					'frontend_available' => true,
 				)
 			);
 
 			$this->add_responsive_control(
 				'reviewer_name_spacing',
 				array(
-					'label'     => __( 'Name Bottom Spacing', 'uael' ),
-					'type'      => Controls_Manager::SLIDER,
-					'range'     => array(
+					'label'              => __( 'Name Bottom Spacing', 'uael' ),
+					'type'               => Controls_Manager::SLIDER,
+					'range'              => array(
 						'px' => array(
 							'min' => 0,
 							'max' => 50,
 						),
 					),
-					'selectors' => array(
+					'selectors'          => array(
 						'{{WRAPPER}} .uael-reviewer-name' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 					),
+					'frontend_available' => true,
 				)
 			);
 
 			$this->add_responsive_control(
 				'star_spacing',
 				array(
-					'label'     => __( 'Star Rating Bottom Spacing', 'uael' ),
-					'type'      => Controls_Manager::SLIDER,
-					'range'     => array(
+					'label'              => __( 'Star Rating Bottom Spacing', 'uael' ),
+					'type'               => Controls_Manager::SLIDER,
+					'range'              => array(
 						'px' => array(
 							'min' => 0,
 							'max' => 50,
 						),
 					),
-					'selectors' => array(
+					'selectors'          => array(
 						'{{WRAPPER}} .elementor-star-rating__wrapper' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 					),
+					'frontend_available' => true,
 				)
 			);
 
 			$this->add_responsive_control(
 				'date_spacing',
 				array(
-					'label'     => __( 'Review Date Bottom Spacing', 'uael' ),
-					'type'      => Controls_Manager::SLIDER,
-					'range'     => array(
+					'label'              => __( 'Review Date Bottom Spacing', 'uael' ),
+					'type'               => Controls_Manager::SLIDER,
+					'range'              => array(
 						'px' => array(
 							'min' => 0,
 							'max' => 50,
 						),
 					),
-					'selectors' => array(
+					'selectors'          => array(
 						'{{WRAPPER}} .uael-review-time' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 					),
-					'condition' => array(
+					'condition'          => array(
 						$this->get_control_id( 'review_date' ) => 'yes',
 					),
+					'frontend_available' => true,
 				)
 			);
 

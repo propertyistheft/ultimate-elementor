@@ -523,12 +523,21 @@ class Woo_Checkout extends Common_Widget {
 					'default' => Global_Colors::COLOR_TEXT,
 				),
 				'selectors' => array(
-					'{{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-billing-form h3, {{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-shipping-form h3, {{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-login .woocommerce-info,
-					{{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-login p:not(.form-row), {{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-coupon .woocommerce-info,
-					{{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-coupon p:not(.form-row), {{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-payment label, {{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-login .form-row label, {{WRAPPER}} .uael-woo-checkout .customer_details label:not(.woocommerce-form__label.woocommerce-form__label-for-checkbox.checkbox), {{WRAPPER}} .uael-woo-checkout #customer_details label:not(.woocommerce-form__label.woocommerce-form__label-for-checkbox.checkbox), {{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-payment label,
-					{{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-payment label a.about_paypal,
-					{{WRAPPER}} .uael-woo-checkout .woocommerce-terms-and-conditions-wrapper, {{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-order-review .uael-order-review-table-footer,
-					{{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-order-review .uael-order-review-table' => 'color: {{VALUE}};',
+					'.uael-woocommerce-checkout {{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-billing-form h3,
+					.uael-woocommerce-checkout {{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-shipping-form h3,
+					.uael-woocommerce-checkout {{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-login .woocommerce-info,
+					.uael-woocommerce-checkout {{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-login p:not(.form-row),
+					.uael-woocommerce-checkout {{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-coupon .woocommerce-info,
+					.uael-woocommerce-checkout {{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-coupon p:not(.form-row),
+					.uael-woocommerce-checkout {{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-payment label,
+					.uael-woocommerce-checkout {{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-login .form-row label,
+					.uael-woocommerce-checkout {{WRAPPER}} .uael-woo-checkout .customer_details label:not(.woocommerce-form__label.woocommerce-form__label-for-checkbox.checkbox),
+					.uael-woocommerce-checkout {{WRAPPER}} .uael-woo-checkout #customer_details label:not(.woocommerce-form__label.woocommerce-form__label-for-checkbox.checkbox),
+					.uael-woocommerce-checkout {{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-payment label,
+					.uael-woocommerce-checkout {{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-payment label a.about_paypal,
+					.uael-woocommerce-checkout {{WRAPPER}} .uael-woo-checkout .woocommerce-terms-and-conditions-wrapper,
+					.uael-woocommerce-checkout {{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-order-review .uael-order-review-table-footer,
+					.uael-woocommerce-checkout {{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-order-review .uael-order-review-table' => 'color: {{VALUE}};',
 				),
 			)
 		);
@@ -861,7 +870,10 @@ class Woo_Checkout extends Common_Widget {
 					'default' => Global_Colors::COLOR_TEXT,
 				),
 				'selectors' => array(
-					'{{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-coupon .form-row label, {{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-login .form-row label, {{WRAPPER}} .uael-woo-checkout .customer_details label:not(.woocommerce-form__label.woocommerce-form__label-for-checkbox.checkbox), {{WRAPPER}} .uael-woo-checkout #customer_details label:not(.woocommerce-form__label.woocommerce-form__label-for-checkbox.checkbox)' => 'color: {{VALUE}};',
+					'.uael-woocommerce-checkout {{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-coupon .form-row label,
+					.uael-woocommerce-checkout {{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-login .form-row label,
+					.uael-woocommerce-checkout {{WRAPPER}} .uael-woo-checkout .customer_details label:not(.woocommerce-form__label.woocommerce-form__label-for-checkbox.checkbox),
+					.uael-woocommerce-checkout {{WRAPPER}} .uael-woo-checkout #customer_details label:not(.woocommerce-form__label.woocommerce-form__label-for-checkbox.checkbox)' => 'color: {{VALUE}};',
 				),
 			)
 		);
@@ -1179,12 +1191,12 @@ class Woo_Checkout extends Common_Widget {
 					'default' => Global_Colors::COLOR_ACCENT,
 				),
 				'selectors' => array(
-					'{{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-login button[name="login"], 
-					{{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-coupon button[name="apply_coupon"], 
-					{{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-payment button#place_order, 
+					'{{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-login button[name="login"],
+					{{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-coupon button[name="apply_coupon"],
+					{{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-payment button#place_order,
 					{{WRAPPER}} .uael-woo-checkout .uael_multistep_container .uael-buttons .button-prev,
 					{{WRAPPER}} .uael-woo-checkout .uael_multistep_container .uael-buttons .button-next' => 'background-color: {{VALUE}};',
-					'{{WRAPPER}} .uael-woo-checkout a.showlogin, {{WRAPPER}} .uael-woo-checkout a.showcoupon, {{WRAPPER}} .uael-woo-checkout a.about_paypal, {{WRAPPER}} .uael-woo-checkout .woocommerce-terms-and-conditions-wrapper a.woocommerce-privacy-policy-link, 
+					'{{WRAPPER}} .uael-woo-checkout a.showlogin, {{WRAPPER}} .uael-woo-checkout a.showcoupon, {{WRAPPER}} .uael-woo-checkout a.about_paypal, {{WRAPPER}} .uael-woo-checkout .woocommerce-terms-and-conditions-wrapper a.woocommerce-privacy-policy-link,
 					{{WRAPPER}} .uael-woo-checkout .woocommerce-info:before' => 'color: {{VALUE}};',
 				),
 			)
@@ -1207,9 +1219,9 @@ class Woo_Checkout extends Common_Widget {
 					'default' => Global_Colors::COLOR_TEXT,
 				),
 				'selectors' => array(
-					'{{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-login button[name="login"]:hover, 
-					{{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-coupon button[name="apply_coupon"]:hover, 
-					{{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-payment button#place_order:hover, 
+					'{{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-login button[name="login"]:hover,
+					{{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-coupon button[name="apply_coupon"]:hover,
+					{{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-payment button#place_order:hover,
 					{{WRAPPER}} .uael-woo-checkout .uael_multistep_container .uael-buttons .button-prev:hover,
 					{{WRAPPER}} .uael-woo-checkout .uael_multistep_container .uael-buttons .button-next:hover' => 'color: {{VALUE}};',
 				),
@@ -1230,9 +1242,9 @@ class Woo_Checkout extends Common_Widget {
 					{{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-payment button#place_order:hover,
 					{{WRAPPER}} .uael-woo-checkout .uael_multistep_container .uael-buttons .button-prev:hover,
 					{{WRAPPER}} .uael-woo-checkout .uael_multistep_container .uael-buttons .button-next:hover' => 'background-color: {{VALUE}};',
-					'{{WRAPPER}} .uael-woo-checkout a.showlogin:hover, 
-					{{WRAPPER}} .uael-woo-checkout a.showcoupon:hover, 
-					{{WRAPPER}} .uael-woo-checkout a.about_paypal:hover, 
+					'{{WRAPPER}} .uael-woo-checkout a.showlogin:hover,
+					{{WRAPPER}} .uael-woo-checkout a.showcoupon:hover,
+					{{WRAPPER}} .uael-woo-checkout a.about_paypal:hover,
 					{{WRAPPER}} .uael-woo-checkout .woocommerce-terms-and-conditions-wrapper a.woocommerce-privacy-policy-link:hover,
 					{{WRAPPER}} .uael-woo-checkout .woocommerce-info:hover:before' => 'color: {{VALUE}};',
 				),
@@ -1295,7 +1307,7 @@ class Woo_Checkout extends Common_Widget {
 				'selectors'  => array(
 					'{{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-login button[name="login"],
 					{{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-coupon button[name="apply_coupon"],
-					{{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-payment button#place_order, 
+					{{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-payment button#place_order,
 					{{WRAPPER}} .uael-woo-checkout .uael_multistep_container .uael-buttons .button-prev, {{WRAPPER}} .uael-woo-checkout .uael_multistep_container .uael-buttons .button-next' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
 			)
@@ -1686,7 +1698,8 @@ class Woo_Checkout extends Common_Widget {
 					'default' => Global_Colors::COLOR_TEXT,
 				),
 				'selectors' => array(
-					'{{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-order-review .uael-order-review-table-footer, {{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-order-review .uael-order-review-table' => 'color: {{VALUE}};',
+					'.uael-woocommerce-checkout {{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-order-review .uael-order-review-table-footer,
+					.uael-woocommerce-checkout {{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-order-review .uael-order-review-table' => 'color: {{VALUE}};',
 				),
 			)
 		);

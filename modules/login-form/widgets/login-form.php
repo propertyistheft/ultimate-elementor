@@ -794,31 +794,32 @@ class LoginForm extends Common_Widget {
 			$this->add_responsive_control(
 				'heading_line_width',
 				array(
-					'label'          => __( 'Width', 'uael' ),
-					'type'           => Controls_Manager::SLIDER,
-					'size_units'     => array( '%', 'px' ),
-					'range'          => array(
+					'label'              => __( 'Width', 'uael' ),
+					'type'               => Controls_Manager::SLIDER,
+					'size_units'         => array( '%', 'px' ),
+					'range'              => array(
 						'px' => array(
 							'max' => 1000,
 						),
 					),
-					'default'        => array(
+					'default'            => array(
 						'size' => 30,
 						'unit' => '%',
 					),
-					'tablet_default' => array(
+					'tablet_default'     => array(
 						'unit' => '%',
 					),
-					'mobile_default' => array(
+					'mobile_default'     => array(
 						'unit' => '%',
 					),
-					'label_block'    => true,
-					'condition'      => array(
+					'label_block'        => true,
+					'condition'          => array(
 						'enable_separator' => 'yes',
 					),
-					'selectors'      => array(
+					'selectors'          => array(
 						'{{WRAPPER}} .uael-separator, {{WRAPPER}} .uael-separator-wrap' => 'width: {{SIZE}}{{UNIT}};',
 					),
+					'frontend_available' => true,
 				)
 			);
 
@@ -930,9 +931,9 @@ class LoginForm extends Common_Widget {
 			$this->add_responsive_control(
 				'align',
 				array(
-					'label'        => __( 'Alignment', 'uael' ),
-					'type'         => Controls_Manager::CHOOSE,
-					'options'      => array(
+					'label'              => __( 'Alignment', 'uael' ),
+					'type'               => Controls_Manager::CHOOSE,
+					'options'            => array(
 						'start'   => array(
 							'title' => __( 'Left', 'uael' ),
 							'icon'  => 'eicon-text-align-left',
@@ -950,8 +951,9 @@ class LoginForm extends Common_Widget {
 							'icon'  => 'eicon-text-align-justify',
 						),
 					),
-					'prefix_class' => 'elementor%s-button-align-',
-					'default'      => '',
+					'prefix_class'       => 'elementor%s-button-align-',
+					'default'            => '',
+					'frontend_available' => true,
 				)
 			);
 
@@ -1261,9 +1263,9 @@ class LoginForm extends Common_Widget {
 			$this->add_responsive_control(
 				'footer_text_align',
 				array(
-					'label'      => __( 'Alignment', 'uael' ),
-					'type'       => Controls_Manager::CHOOSE,
-					'options'    => array(
+					'label'              => __( 'Alignment', 'uael' ),
+					'type'               => Controls_Manager::CHOOSE,
+					'options'            => array(
 						'flex-start' => array(
 							'title' => __( 'Left', 'uael' ),
 							'icon'  => 'eicon-text-align-left',
@@ -1277,12 +1279,13 @@ class LoginForm extends Common_Widget {
 							'icon'  => 'eicon-text-align-right',
 						),
 					),
-					'separator'  => 'before',
-					'default'    => 'flex-start',
-					'selectors'  => array(
+					'separator'          => 'before',
+					'default'            => 'flex-start',
+					'selectors'          => array(
 						'{{WRAPPER}} .uael-login-form-footer' => 'justify-content: {{VALUE}};',
 					),
-					'conditions' => $show_reg_condition,
+					'conditions'         => $show_reg_condition,
+					'frontend_available' => true,
 				)
 			);
 
@@ -1394,42 +1397,44 @@ class LoginForm extends Common_Widget {
 			$this->add_responsive_control(
 				'row_gap',
 				array(
-					'label'     => __( 'Rows Gap', 'uael' ),
-					'type'      => Controls_Manager::SLIDER,
-					'default'   => array(
+					'label'              => __( 'Rows Gap', 'uael' ),
+					'type'               => Controls_Manager::SLIDER,
+					'default'            => array(
 						'size' => 20,
 					),
-					'range'     => array(
+					'range'              => array(
 						'px' => array(
 							'min' => 0,
 							'max' => 100,
 						),
 					),
-					'selectors' => array(
+					'selectors'          => array(
 						'{{WRAPPER}} .uael-login-form .elementor-field-group:not( :first-child ),
 						{{WRAPPER}}.uael-login-form-social-stack .elementor-field-group:not(:first-child)' => 'margin-top: {{SIZE}}{{UNIT}};',
 					),
+					'frontend_available' => true,
 				)
 			);
 
 			$this->add_responsive_control(
 				'label_spacing',
 				array(
-					'label'     => __( 'Label Bottom Spacing', 'uael' ),
-					'type'      => Controls_Manager::SLIDER,
-					'range'     => array(
+					'label'              => __( 'Label Bottom Spacing', 'uael' ),
+					'type'               => Controls_Manager::SLIDER,
+					'range'              => array(
 						'px' => array(
 							'min' => 0,
 							'max' => 100,
 						),
 					),
-					'selectors' => array(
+					'selectors'          => array(
 						'{{WRAPPER}} .elementor-field-label' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 					),
-					'condition' => array(
+					'condition'          => array(
 						'show_labels!'      => 'none',
 						'hide_custom_form!' => 'yes',
 					),
+					'frontend_available' => true,
 				)
 			);
 
@@ -1448,8 +1453,8 @@ class LoginForm extends Common_Widget {
 						'{{WRAPPER}} .uael-separator-parent' => 'margin-top: {{SIZE}}{{UNIT}}; margin-bottom: 0{{UNIT}};',
 					),
 					'conditions' => array(
-						'relation' => 'and',
-						'terms'    => array(
+						'relation'           => 'and',
+						'terms'              => array(
 							array(
 								'terms' => array(
 									array(
@@ -1493,6 +1498,7 @@ class LoginForm extends Common_Widget {
 								),
 							),
 						),
+						'frontend_available' => true,
 					),
 				)
 			);
@@ -1500,18 +1506,18 @@ class LoginForm extends Common_Widget {
 			$this->add_responsive_control(
 				'separator_bottom_spacing',
 				array(
-					'label'      => __( 'Separator Bottom Spacing', 'uael' ),
-					'type'       => Controls_Manager::SLIDER,
-					'range'      => array(
+					'label'              => __( 'Separator Bottom Spacing', 'uael' ),
+					'type'               => Controls_Manager::SLIDER,
+					'range'              => array(
 						'px' => array(
 							'min' => 0,
 							'max' => 100,
 						),
 					),
-					'selectors'  => array(
+					'selectors'          => array(
 						'{{WRAPPER}} .uael-separator-parent' => 'margin-bottom: {{SIZE}}{{UNIT}}; margin-top: 0{{UNIT}};',
 					),
-					'conditions' => array(
+					'conditions'         => array(
 						'relation' => 'and',
 						'terms'    => array(
 							array(
@@ -1558,26 +1564,27 @@ class LoginForm extends Common_Widget {
 							),
 						),
 					),
+					'frontend_available' => true,
 				)
 			);
 
 			$this->add_responsive_control(
 				'social_login_top_spacing',
 				array(
-					'label'      => __( 'Social Login Top Spacing', 'uael' ),
-					'type'       => Controls_Manager::SLIDER,
-					'range'      => array(
+					'label'              => __( 'Social Login Top Spacing', 'uael' ),
+					'type'               => Controls_Manager::SLIDER,
+					'range'              => array(
 						'px' => array(
 							'min' => 0,
 							'max' => 100,
 						),
 					),
-					'selectors'  => array(
+					'selectors'          => array(
 						'{{WRAPPER}} .uael-lf-custom-form-show.uael-login-form-social,
 						{{WRAPPER}}.uael-login-form-social-stack .uael-lf-custom-form-show.uael-login-form-social' => 'margin-top: {{SIZE}}{{UNIT}};  margin-bottom: 0{{UNIT}};',
 
 					),
-					'conditions' => array(
+					'conditions'         => array(
 						'relation' => 'and',
 						'terms'    => array(
 							array(
@@ -1615,26 +1622,27 @@ class LoginForm extends Common_Widget {
 							),
 						),
 					),
+					'frontend_available' => true,
 				)
 			);
 
 			$this->add_responsive_control(
 				'social_login_bottom_spacing',
 				array(
-					'label'      => __( 'Social Login Bottom Spacing', 'uael' ),
-					'type'       => Controls_Manager::SLIDER,
-					'range'      => array(
+					'label'              => __( 'Social Login Bottom Spacing', 'uael' ),
+					'type'               => Controls_Manager::SLIDER,
+					'range'              => array(
 						'px' => array(
 							'min' => 0,
 							'max' => 100,
 						),
 					),
-					'selectors'  => array(
+					'selectors'          => array(
 						'{{WRAPPER}} .uael-lf-custom-form-show.uael-login-form-social,
 						{{WRAPPER}}.uael-login-form-social-stack .uael-lf-custom-form-show.uael-login-form-social' => 'margin-bottom: {{SIZE}}{{UNIT}}; margin-top: 0{{UNIT}};',
 
 					),
-					'conditions' => array(
+					'conditions'         => array(
 						'relation' => 'and',
 						'terms'    => array(
 							array(
@@ -1672,29 +1680,30 @@ class LoginForm extends Common_Widget {
 							),
 						),
 					),
+					'frontend_available' => true,
 				)
 			);
 
 			$this->add_responsive_control(
 				'social_buttons_spacing',
 				array(
-					'label'      => __( 'Spacing between Social Login', 'uael' ),
-					'type'       => Controls_Manager::SLIDER,
-					'default'    => array(
+					'label'              => __( 'Spacing between Social Login', 'uael' ),
+					'type'               => Controls_Manager::SLIDER,
+					'default'            => array(
 						'size' => 10,
 					),
-					'range'      => array(
+					'range'              => array(
 						'px' => array(
 							'min' => 0,
 							'max' => 60,
 						),
 					),
-					'selectors'  => array(
+					'selectors'          => array(
 						'{{WRAPPER}}.uael-login-form-social-inline .uael-login-form-social .elementor-field-group:first-child' => 'padding-right: {{SIZE}}{{UNIT}};',
 						'(mobile){{WRAPPER}}.uael-lf-responsive-yes.uael-login-form-social-inline .elementor-field-group:not(:first-child)' => 'margin-top: {{SIZE}}{{UNIT}};',
 						'(mobile){{WRAPPER}}.uael-lf-responsive-yes.uael-login-form-social-inline .uael-login-form-social .elementor-field-group:first-child' => 'padding-right: 0px;',
 					),
-					'conditions' => array(
+					'conditions'         => array(
 						'relation' => 'and',
 						'terms'    => array(
 							array(
@@ -1714,6 +1723,7 @@ class LoginForm extends Common_Widget {
 							),
 						),
 					),
+					'frontend_available' => true,
 				)
 			);
 
@@ -1873,7 +1883,7 @@ class LoginForm extends Common_Widget {
 					),
 					'default'   => '',
 					'selectors' => array(
-						'{{WRAPPER}} .elementor-field, {{WRAPPER}} .elementor-field::placeholder, 
+						'{{WRAPPER}} .elementor-field, {{WRAPPER}} .elementor-field::placeholder,
 						{{WRAPPER}} .uael-login-form input[type="checkbox"]:checked + span:before' => 'color: {{VALUE}};',
 					),
 				)
@@ -1906,24 +1916,26 @@ class LoginForm extends Common_Widget {
 			$this->add_responsive_control(
 				'input_padding',
 				array(
-					'label'      => __( 'Padding', 'uael' ),
-					'type'       => Controls_Manager::DIMENSIONS,
-					'size_units' => array( 'px', 'em', '%' ),
-					'selectors'  => array(
+					'label'              => __( 'Padding', 'uael' ),
+					'type'               => Controls_Manager::DIMENSIONS,
+					'size_units'         => array( 'px', 'em', '%' ),
+					'selectors'          => array(
 						'{{WRAPPER}} .elementor-field' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					),
+					'frontend_available' => true,
 				)
 			);
 
 			$this->add_responsive_control(
 				'input_border',
 				array(
-					'label'      => __( 'Border Width', 'uael' ),
-					'type'       => Controls_Manager::DIMENSIONS,
-					'size_units' => array( 'px', 'em', '%' ),
-					'selectors'  => array(
+					'label'              => __( 'Border Width', 'uael' ),
+					'type'               => Controls_Manager::DIMENSIONS,
+					'size_units'         => array( 'px', 'em', '%' ),
+					'selectors'          => array(
 						'{{WRAPPER}} .elementor-field' => 'border-width: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					),
+					'frontend_available' => true,
 				)
 			);
 
@@ -1934,7 +1946,7 @@ class LoginForm extends Common_Widget {
 					'type'      => Controls_Manager::COLOR,
 					'default'   => '',
 					'selectors' => array(
-						'{{WRAPPER}} .elementor-field, 
+						'{{WRAPPER}} .elementor-field,
 						{{WRAPPER}} .uael-login-form input[type="checkbox"] + span:before' => 'border-color: {{VALUE}};',
 					),
 				)
@@ -2760,7 +2772,7 @@ class LoginForm extends Common_Widget {
 												\Elementor\Icons_Manager::render_icon( $settings['button_icon'], array( 'aria-hidden' => 'true' ) );
 											} elseif ( ! empty( $settings['button_icon'] ) && ! UAEL_Helper::is_elementor_updated() ) {
 												?>
-												<i class="<?php echo esc_attr( $settings['button_icon'] ); ?>" aria-hidden="true"></i>	
+												<i class="<?php echo esc_attr( $settings['button_icon'] ); ?>" aria-hidden="true"></i>
 											<?php } ?>
 										</span>
 								<?php } ?>
@@ -2912,7 +2924,7 @@ class LoginForm extends Common_Widget {
 
 		<# function render_social_login() { #>
 			<# if ( is_google_valid || is_fb_valid ) { #>
-				<# 
+				<#
 				if( ! is_hidden && 'bottom' === position ) {
 					render_separator();
 				}
@@ -2967,7 +2979,7 @@ class LoginForm extends Common_Widget {
 					</div>
 				<# } #>
 
-				<# 
+				<#
 				if( ! is_hidden && 'top' === position ) {
 					render_separator();
 				}
@@ -3078,8 +3090,8 @@ class LoginForm extends Common_Widget {
 									<# if ( settings.button_icon || settings.button_icon ) { #>
 										<span class="elementor-button-content-wrapper">
 											<span class="elementor-button-icon elementor-align-icon-{{ settings.button_icon_align }}">
-												<# var iconHTML = elementor.helpers.renderIcon( view, settings.button_icon, { 'aria-hidden': true }, 'i' , 'object' ); 
-												migrated = elementor.helpers.isIconMigrated( settings, 'button_icon' ); 
+												<# var iconHTML = elementor.helpers.renderIcon( view, settings.button_icon, { 'aria-hidden': true }, 'i' , 'object' );
+												migrated = elementor.helpers.isIconMigrated( settings, 'button_icon' );
 												#>
 												<# if ( iconHTML && iconHTML.rendered && ( settings.button_icon || migrated ) ) { #>
 													{{{ iconHTML.value }}}
@@ -3088,7 +3100,7 @@ class LoginForm extends Common_Widget {
 												<# } #>
 											</span>
 									<# } #>
-								<?php } ?>	
+								<?php } ?>
 									<# if ( settings.button_text ) { #>
 										<span class="elementor-button-text">{{ settings.button_text }}</span>
 									<# } #>

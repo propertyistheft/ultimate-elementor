@@ -299,9 +299,9 @@ class RegistrationForm extends Common_Widget {
 			$repeater->add_responsive_control(
 				'width',
 				array(
-					'label'     => __( 'Column Width', 'uael' ),
-					'type'      => Controls_Manager::SELECT,
-					'options'   => array(
+					'label'              => __( 'Column Width', 'uael' ),
+					'type'               => Controls_Manager::SELECT,
+					'options'            => array(
 						''    => __( 'Default', 'uael' ),
 						'100' => '100%',
 						'80'  => '80%',
@@ -314,10 +314,11 @@ class RegistrationForm extends Common_Widget {
 						'25'  => '25%',
 						'20'  => '20%',
 					),
-					'default'   => '100',
-					'condition' => array(
+					'default'            => '100',
+					'condition'          => array(
 						'field_type!' => array( 'honeypot', 'recaptcha_v3' ),
 					),
+					'frontend_available' => true,
 				)
 			);
 
@@ -702,9 +703,9 @@ class RegistrationForm extends Common_Widget {
 			$this->add_responsive_control(
 				'footer_text_align',
 				array(
-					'label'        => __( 'Alignment', 'uael' ),
-					'type'         => Controls_Manager::CHOOSE,
-					'options'      => array(
+					'label'              => __( 'Alignment', 'uael' ),
+					'type'               => Controls_Manager::CHOOSE,
+					'options'            => array(
 						'left'   => array(
 							'title' => __( 'Left', 'uael' ),
 							'icon'  => 'eicon-text-align-left',
@@ -718,12 +719,12 @@ class RegistrationForm extends Common_Widget {
 							'icon'  => 'eicon-text-align-right',
 						),
 					),
-					'separator'    => 'before',
-					'default'      => 'left',
-					'selectors'    => array(
+					'separator'          => 'before',
+					'default'            => 'left',
+					'selectors'          => array(
 						'{{WRAPPER}} .uael-rform-footer' => 'text-align: {{VALUE}};',
 					),
-					'conditions'   => array(
+					'conditions'         => array(
 						'relation' => 'or',
 						'terms'    => array(
 							array(
@@ -738,7 +739,8 @@ class RegistrationForm extends Common_Widget {
 							),
 						),
 					),
-					'prefix_class' => 'uael-rform-footer-text-align-',
+					'prefix_class'       => 'uael-rform-footer-text-align-',
+					'frontend_available' => true,
 				)
 			);
 
@@ -1026,9 +1028,9 @@ class RegistrationForm extends Common_Widget {
 			$this->add_responsive_control(
 				'button_width',
 				array(
-					'label'   => __( 'Column Width', 'uael' ),
-					'type'    => Controls_Manager::SELECT,
-					'options' => array(
+					'label'              => __( 'Column Width', 'uael' ),
+					'type'               => Controls_Manager::SELECT,
+					'options'            => array(
 						''    => __( 'Default', 'uael' ),
 						'100' => '100%',
 						'80'  => '80%',
@@ -1041,16 +1043,17 @@ class RegistrationForm extends Common_Widget {
 						'25'  => '25%',
 						'20'  => '20%',
 					),
-					'default' => '100',
+					'default'            => '100',
+					'frontend_available' => true,
 				)
 			);
 
 			$this->add_responsive_control(
 				'button_align',
 				array(
-					'label'        => __( 'Alignment', 'uael' ),
-					'type'         => Controls_Manager::CHOOSE,
-					'options'      => array(
+					'label'              => __( 'Alignment', 'uael' ),
+					'type'               => Controls_Manager::CHOOSE,
+					'options'            => array(
 						'start'   => array(
 							'title' => __( 'Left', 'uael' ),
 							'icon'  => 'eicon-text-align-left',
@@ -1068,8 +1071,9 @@ class RegistrationForm extends Common_Widget {
 							'icon'  => 'eicon-text-align-justify',
 						),
 					),
-					'default'      => 'stretch',
-					'prefix_class' => 'elementor%s-button-align-',
+					'default'            => 'stretch',
+					'prefix_class'       => 'elementor%s-button-align-',
+					'frontend_available' => true,
 				)
 			);
 
@@ -1707,38 +1711,40 @@ class RegistrationForm extends Common_Widget {
 			$this->add_responsive_control(
 				'field_border_width_box',
 				array(
-					'label'       => __( 'Border Width', 'uael' ),
-					'type'        => Controls_Manager::DIMENSIONS,
-					'placeholder' => '1',
-					'selectors'   => array(
+					'label'              => __( 'Border Width', 'uael' ),
+					'type'               => Controls_Manager::DIMENSIONS,
+					'placeholder'        => '1',
+					'selectors'          => array(
 						'{{WRAPPER}} .elementor-field-group .elementor-field' => 'border-width: {{TOP}}px {{RIGHT}}px {{BOTTOM}}px {{LEFT}}px;',
 					),
-					'condition'   => array(
+					'condition'          => array(
 						'input_style' => 'box',
 					),
+					'frontend_available' => true,
 				)
 			);
 
 			$this->add_responsive_control(
 				'field_border_width_underline',
 				array(
-					'label'     => __( 'Border Width', 'uael' ),
-					'type'      => Controls_Manager::SLIDER,
-					'range'     => array(
+					'label'              => __( 'Border Width', 'uael' ),
+					'type'               => Controls_Manager::SLIDER,
+					'range'              => array(
 						'px' => array(
 							'max' => 25,
 						),
 					),
-					'default'   => array(
+					'default'            => array(
 						'size' => '2',
 						'unit' => 'px',
 					),
-					'selectors' => array(
+					'selectors'          => array(
 						'{{WRAPPER}} .elementor-field-group .elementor-field' => 'border-width: 0px 0px {{SIZE}}px 0px; border-style: solid; box-shadow: none;',
 					),
-					'condition' => array(
+					'condition'          => array(
 						'input_style' => 'underline',
 					),
+					'frontend_available' => true,
 				)
 			);
 
@@ -1791,20 +1797,21 @@ class RegistrationForm extends Common_Widget {
 			$this->add_responsive_control(
 				'fields_icon_size',
 				array(
-					'label'     => __( 'Size', 'uael' ),
-					'type'      => Controls_Manager::SLIDER,
-					'range'     => array(
+					'label'              => __( 'Size', 'uael' ),
+					'type'               => Controls_Manager::SLIDER,
+					'range'              => array(
 						'px' => array(
 							'min' => 15,
 							'max' => 100,
 						),
 					),
-					'selectors' => array(
+					'selectors'          => array(
 						'{{WRAPPER}} .uael-fields-icon i' => 'font-size: calc( {{SIZE}}{{UNIT}} / 4 );',
 					),
-					'condition' => array(
+					'condition'          => array(
 						'fields_icon' => 'yes',
 					),
+					'frontend_available' => true,
 				)
 			);
 

@@ -525,7 +525,7 @@ class UAEL_Core_Plugin {
 		$this->cdn_url = apply_filters( 'uael_cross_domain_cdn', 'https://brainstormforce.github.io/uae-cdcp/updated-index.html' );
 
 		// Check for required Compatible Elementor version.
-		if ( ! version_compare( ELEMENTOR_VERSION, '3.0.0', '>=' ) ) {
+		if ( ! version_compare( ELEMENTOR_VERSION, '3.1.0', '>=' ) ) {
 			$elementor_old_compatibility = true;
 		} else {
 			$elementor_old_compatibility = false;
