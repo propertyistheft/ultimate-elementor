@@ -658,7 +658,7 @@ abstract class Skin_Style {
 		}
 
 		foreach ( $terms as $term ) {
-			$term_name = $term->name;
+			$term_name = $term->slug;
 			$result   .= sprintf( $format, $term->name, get_term_link( (int) $term->term_id ), strtolower( $term_name ) );
 		}
 
@@ -743,7 +743,7 @@ abstract class Skin_Style {
 		}
 
 		foreach ( $terms as $term ) {
-			$term_name = $term->name;
+			$term_name = $term->slug;
 			$result   .= sprintf( $format, $term->name, get_term_link( (int) $term->term_id ), strtolower( $term_name ) );
 		}
 		do_action( 'uael_single_post_before_terms', get_the_ID(), $settings );
@@ -878,7 +878,7 @@ abstract class Skin_Style {
 						<?php } elseif ( ! empty( $icon ) ) { ?>
 							<span <?php echo wp_kses_post( $this->get_render_attribute_string( 'icon' . get_the_ID() ) ); ?>>
 								<i class="<?php echo esc_attr( $icon ); ?>" aria-hidden="true"></i>
-							</span>						
+							</span>
 						<?php } ?>
 
 						<span class="elementor-button-text" id=<?php echo esc_attr( 'uael-post-' . get_the_ID() ); ?>><?php echo wp_kses_post( apply_filters( 'uael_post_cta_text', $this->get_instance_value( 'cta_text' ), get_the_ID(), $settings ) ); ?></span>
@@ -1477,9 +1477,7 @@ abstract class Skin_Style {
 		self::$skin      = $style;
 		self::$node_id   = $node_id;
 		self::$query_obj = new Build_Post_Query( $style, $settings, '' );
-
 		self::$query_obj->query_posts();
-
 		self::$query = self::$query_obj->get_query();
 
 		// Get search box.

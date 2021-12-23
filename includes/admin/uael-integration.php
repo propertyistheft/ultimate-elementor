@@ -375,7 +375,7 @@ if ( isset( $settings['yelp_api'] ) && ! empty( $settings['yelp_api'] ) ) {
 
 												if ( UAEL_Helper::is_internal_links() ) {
 
-													$a_tag_open  = '<a target="_blank" rel="noopener" href="' . esc_url( UAEL_DOMAIN . '#' ) . '">';
+													$a_tag_open  = '<a target="_blank" rel="noopener" href="' . esc_url( UAEL_DOMAIN . 'docs/display-conditions-geolocation/?utm_source=uael-pro-dashboard&utm_medium=uael-menu-page&utm_campaign=uael-pro-plugin' ) . '">';
 													$a_tag_close = '</a>';
 
 													printf(

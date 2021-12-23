@@ -56,6 +56,34 @@ if ( ! class_exists( 'Brainstorm_Update_UAEL' ) ) :
 			// Add popup license form on plugin list page.
 			add_filter( 'plugin_action_links_' . UAEL_BASE, array( $this, 'plugin_slug_license_form_and_links' ) );
 			add_filter( 'network_admin_plugin_action_links_' . UAEL_BASE, array( $this, 'plugin_slug_license_form_and_links' ) );
+			add_filter( 'bsf_is_product_bundled', array( $this, 'remove_uae_pro_bundled_products' ), 20, 3 );
+		}
+
+		/**
+		 * Remove bundled products.
+		 * License Validation and product updates are managed separately for all the products.
+		 *
+		 * @since 1.35.3
+		 *
+		 * @param  array  $product_parent  Array of parent product ids.
+		 * @param  String $bsf_product    Product ID or  Product init or Product name based on $search_by.
+		 * @param  String $search_by      Reference to search by id | init | name of the product.
+		 *
+		 * @return array                 Array of parent product ids.
+		 */
+		public function remove_uae_pro_bundled_products( $product_parent, $bsf_product, $search_by ) {
+
+			// Bundled plugins are installed when the demo is imported on Ajax request and bundled products should be unchanged in the ajax.
+			if ( ! defined( 'DOING_AJAX' ) && ! defined( 'WP_CLI' ) ) {
+
+				$key = array_search( 'astra-pro-sites', $product_parent, true );
+
+				if ( false !== $key ) {
+					unset( $product_parent[ $key ] );
+				}
+			}
+
+			return $product_parent;
 		}
 
 		/**

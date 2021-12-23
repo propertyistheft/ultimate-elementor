@@ -1,3 +1,7 @@
+Version 1.35.3 - Wednesday, 22nd December 2021
+- Improvement: Posts - Improved ARIA attribute accessibility of categories in taxonomy badge.
+- Fix: Display Conditions - Updated document link on integrations setting page.
+
 Version 1.35.2 - Wednesday, 15th December 2021
 - Improvement: Added compatibility to Elementor core version 3.5.0. Elementor has hard deprecated few functions with its v3.5.0. Following Elementor, our plugin too deprecates similar functions. Now to work with UAE, Elementor minimum version 3.1.0 or higher will be required.
 - Fix: Woo - Checkout - Fixed section text color not applying in the editor.
