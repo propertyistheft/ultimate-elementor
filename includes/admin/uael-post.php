@@ -22,7 +22,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 			<!-- All WordPress Notices below header -->
 			<h1 class="screen-reader-text"> <?php esc_attr_e( 'Post', 'uael' ); ?> </h1>
 				<div class="widgets postbox">
-					<h2 class="hndle uael-flex uael-widgets-heading"><span><?php esc_html_e( 'Post Widget Skins', 'uael' ); ?></span>
+					<h2 class="hndle uael-flex uael-settings-widgets-heading"><span><?php esc_html_e( 'Post Widget Skins', 'uael' ); ?></span>
 						<div class="uael-bulk-actions-wrap">
 							<a class="bulk-action uael-activate-skins-all button"> <?php esc_html_e( 'Activate All', 'uael' ); ?> </a>
 							<a class="bulk-action uael-deactivate-skins-all button"> <?php esc_html_e( 'Deactivate All', 'uael' ); ?> </a>
@@ -51,10 +51,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 										echo '<li id="' . esc_attr( $skin ) . '"  class="' . esc_attr( $class ) . '"><a class="uael-widget-title">' . esc_html( $info['title'] ) . '</a><div class="uael-widget-link-wrapper">';
 
 										printf(
-											'<a href="%1$s" class="%2$s"> %3$s </a>',
-											( isset( $skin_link['link_url'] ) && ! empty( $skin_link['link_url'] ) ) ? esc_url( $skin_link['link_url'] ) : '#',
+											'<label class="uael-switch"><input type="checkbox" class="%1$s" %2$s><span class="uael-slider uael-round"/></label>',
 											esc_attr( $skin_link['link_class'] ),
-											esc_html( $skin_link['link_text'] )
+											$info['is_activate'] ? esc_attr( 'checked' ) : '',
 										);
 
 										if ( $info['is_activate'] && isset( $info['setting_url'] ) ) {

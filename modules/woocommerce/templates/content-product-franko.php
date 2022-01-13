@@ -21,12 +21,12 @@ if ( empty( $product ) || ! $product->is_visible() ) {
 
 <?php
 
-$wp_post_id = $product->get_id();
-$class      = array();
-$classes    = array();
-$classes[]  = 'post-' . $wp_post_id;
-$wc_classes = esc_attr( implode( ' ', wc_product_post_class( $classes, $class, $wp_post_id ) ) );
-
+$wp_post_id      = $product->get_id();
+$class           = array();
+$classes         = array();
+$product_cat     = str_replace( ',', '', wp_strip_all_tags( wc_get_product_category_list( $product->get_id() ) ) );
+$classes[]       = strtolower( $product_cat ) . ' post-' . $wp_post_id;
+$wc_classes      = esc_attr( implode( ' ', wc_product_post_class( $classes, $class, $wp_post_id ) ) );
 $sale_flash      = $this->get_instance_value( 'show_sale' );
 $featured_flash  = $this->get_instance_value( 'show_featured' );
 $quick_view_type = $this->get_instance_value( 'quick_view_type' );

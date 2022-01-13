@@ -109,6 +109,7 @@ class Skin_News extends Skin_Base {
 		$this->register_style_meta_controls();
 		$this->register_style_excerpt_controls();
 		$this->register_style_cta_controls();
+		$this->register_posts_schema();
 		$this->register_style_navigation_controls();
 	}
 

@@ -18,6 +18,7 @@ use Elementor\Group_Control_Border;
 
 use UltimateElementor\Classes\UAEL_Helper;
 use UltimateElementor\Classes\UAEL_Posts_Helper;
+use Elementor\Utils;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -81,6 +82,7 @@ abstract class Skin_Base extends Elementor_Skin_Base {
 		$this->register_style_term_controls();
 		$this->register_style_excerpt_controls();
 		$this->register_style_cta_controls();
+		$this->register_posts_schema();
 		$this->register_style_navigation_controls();
 	}
 
@@ -188,6 +190,37 @@ abstract class Skin_Base extends Elementor_Skin_Base {
 					),
 					'condition'   => array(
 						$this->get_control_id( 'post_structure' ) => array( 'normal', 'featured', 'masonry' ),
+					),
+				)
+			);
+
+			$this->add_control(
+				'pagination_type',
+				array(
+					'label'              => __( 'Pagination Type', 'uael' ),
+					'type'               => Controls_Manager::SELECT,
+					'default'            => 'ajax',
+					'options'            => array(
+						'ajax'   => __( 'Ajax', 'uael' ),
+						'normal' => __( 'Normal', 'uael' ),
+					),
+					'condition'          => array(
+						$this->get_control_id( 'pagination' ) => array( 'numbers' ),
+					),
+					'description'        => __( 'Pagination is prevented in the editor, and it will work on the frontend.', 'uael' ),
+					'frontend_available' => true,
+				)
+			);
+
+			$this->add_control(
+				'schema_support_note-2',
+				array(
+					'type'            => Controls_Manager::RAW_HTML,
+					'raw'             => __( 'Note: If pagination is enabled, the schema will be generated for only those posts loaded on the initial page load.', 'uael' ),
+					'content_classes' => 'elementor-descriptor',
+					'condition'       => array(
+						$this->get_control_id( 'schema_support' ) => 'yes',
+						$this->get_control_id( 'pagination' ) => array( 'numbers', 'infinite' ),
 					),
 				)
 			);
@@ -3433,6 +3466,102 @@ abstract class Skin_Base extends Elementor_Skin_Base {
 				),
 				'condition' => array(
 					$this->get_control_id( 'show_cta' ) => 'yes',
+				),
+			)
+		);
+
+		$this->end_controls_section();
+	}
+
+	/**
+	 * Register Posts Schema Controls.
+	 *
+	 * @since 1.36.0
+	 * @access public
+	 */
+	public function register_posts_schema() {
+
+		$this->start_controls_section(
+			'section_posts_schema',
+			array(
+				'label' => __( 'Article Schema', 'uael' ),
+				'tab'   => Controls_Manager::TAB_CONTENT,
+			)
+		);
+
+		$this->add_control(
+			'schema_support',
+			array(
+				'label'     => __( 'Schema Support', 'uael' ),
+				'type'      => Controls_Manager::SWITCHER,
+				'label_on'  => __( 'Yes', 'uael' ),
+				'label_off' => __( 'No', 'uael' ),
+				'default'   => 'no',
+			)
+		);
+
+		$this->add_control(
+			'schema_support_note',
+			array(
+				'type'            => Controls_Manager::RAW_HTML,
+				'raw'             => __( 'Note: If pagination is enabled, the schema will be generated for only those posts loaded on the initial page load.', 'uael' ),
+				'content_classes' => 'elementor-descriptor',
+				'condition'       => array(
+					$this->get_control_id( 'schema_support' ) => 'yes',
+				),
+			)
+		);
+
+		$this->add_control(
+			'select_article',
+			array(
+				'label'     => __( 'Article Type', 'uael' ),
+				'type'      => Controls_Manager::SELECT,
+				'default'   => 'BlogPosting',
+				'condition' => array(
+					$this->get_control_id( 'schema_support' ) => 'yes',
+				),
+				'options'   => array(
+					'Article'                  => __( 'Article (General)', 'uael' ),
+					'AdvertiserContentArticle' => __( 'Advertiser Content Article', 'uael' ),
+					'BlogPosting'              => __( 'Blog Posting', 'uael' ),
+					'NewsArticle'              => __( 'News Article', 'uael' ),
+					'SatiricalArticle'         => __( 'Satirical Article', 'uael' ),
+					'ScholarlyArticle'         => __( 'Scholarly Article', 'uael' ),
+				),
+			)
+		);
+
+		$this->add_control(
+			'publisher_name',
+			array(
+				'label'       => __( 'Publisher Name', 'uael' ),
+				'default'     => __( 'Name of the publisher', 'uael' ),
+				'type'        => Controls_Manager::TEXT,
+				'label_block' => true,
+				'dynamic'     => array(
+					'active' => true,
+				),
+				'condition'   => array(
+					$this->get_control_id( 'schema_support' ) => 'yes',
+				),
+			)
+		);
+
+		$this->add_control(
+			'publisher_logo',
+			array(
+				'label'       => __( 'Publisher Logo', 'uael' ),
+				'type'        => Controls_Manager::MEDIA,
+				'label_block' => true,
+				'default'     => array(
+					'url' => Utils::get_placeholder_image_src(),
+				),
+				'dynamic'     => array(
+					'active' => true,
+				),
+				'condition'   => array(
+					$this->get_control_id( 'schema_support' ) => 'yes',
 				),
 			)
 		);

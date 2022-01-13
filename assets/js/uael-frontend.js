@@ -10,6 +10,32 @@
 	var sanitize_input = pattern.test( id );
 
 	/**
+	 * Function to fetch widget settings.
+	 */
+	var getWidgetSettings = function ($element) {
+		var widgetSettings = {},
+			modelCID       = $element.data( 'model-cid' );
+
+		if ( isElEditMode && modelCID ) {
+			var settings     = elementorFrontend.config.elements.data[ modelCID ],
+				settingsKeys = elementorFrontend.config.elements.keys[ settings.attributes.widgetType || settings.attributes.elType ];
+
+			jQuery.each(
+				settings.getActiveControls(),
+				function( controlKey ) {
+					if ( -1 !== settingsKeys.indexOf( controlKey ) ) {
+						widgetSettings[ controlKey ] = settings.attributes[ controlKey ];
+					}
+				}
+			);
+		} else {
+			widgetSettings = $element.data( 'settings' ) || {};
+		}
+
+		return widgetSettings;
+	};
+
+	/**
 	 * Function for Before After Slider animation.
 	 *
 	 */
@@ -1213,7 +1239,6 @@
 
 		/* Carousel */
 		var slider_selector	= $scope.find('.uael-img-carousel-wrap');
-
 		if ( slider_selector.length > 0 ) {
 
 			var adaptiveImageHeight = function( e, obj ) {
@@ -1358,9 +1383,18 @@
 				else{
 					var def_filter = '.' + $scope.find('.uael-img-gallery-wrap').data( 'filter-default' );
 				}
-				var str_img_text = $scope.find('.uael-current').text();
-				str_img_text = str_img_text.substring( def_filter.length - 1, str_img_text.length );
-				$scope.find( '.uael-filters-dropdown-button' ).text( str_img_text );
+				var ajax_str_img_text = $scope.find( '.uael-masonry-filters-wrapper .uael-current' ).text(),
+				ajax_str_filter_text  = $scope.find( '.uael-filters-dropdown-list .uael-current' ).text(),
+				url                   = window.location.hash.replace( '#', '' ),
+				str_replace_text      = ajax_str_img_text.replace( ajax_str_filter_text,'' ),
+				str_cat_text          = ajax_str_img_text.replace( str_replace_text,'' );
+				if( ( !url && ( window.screen.availWidth > 768 ) ) || url ){
+					str_cat_text = ajax_str_img_text.replace( ajax_str_filter_text,'' );
+				}
+				if( url && ( window.screen.availWidth < 768 ) ){
+					str_cat_text = ajax_str_img_text.replace( str_replace_text,'' );
+				}
+				$scope.find( '.uael-filters-dropdown-button' ).text( str_cat_text );
 
 				if ( $justified_selector.length > 0 ) {
 					$justified_selector.justifiedGallery({
@@ -1380,8 +1414,7 @@
 				var def_filter = '.' + $scope.find('.uael-img-gallery-wrap').data( 'filter-default' );
 			}
 
-			var str_img_text = $scope.find('.uael-current').text();
-			str_img_text = str_img_text.substring( def_filter.length - 1, str_img_text.length );
+			var str_img_text = $scope.find( '.uael-filters-dropdown-list .uael-current' ).text();
 			$scope.find( '.uael-filters-dropdown-button' ).text( str_img_text );
 		}
 	};
@@ -2134,6 +2167,75 @@
 
 	}
 
+	/**
+	 * Instagram Feed handler Function.
+	 */
+	var WidgetUAELInstagramFeedHandler = function ( $scope, $ ) {
+		var widgetId		= $scope.data( 'id' ),
+			elementSettings = getWidgetSettings( $scope ),
+			feed            = $scope.find( '.uael-instagram-feed' ).eq( 0 ),
+			layout          = elementSettings.uae_insta_layout_type;
+
+		if ( ! feed.length ) {
+			return;
+		}
+
+		if ( layout === 'masonry' ) {
+			var grid = $( '#uael-instafeed-' + widgetId ).imagesLoaded( function() {
+				grid.masonry(
+					{
+					itemSelector:    '.uael-feed-item',
+					percentPosition: true
+				});
+			});
+		}
+	}
+
+	/**
+	 * Twitter Feed handler Function.
+	 */
+	var WidgetUAELTwitterFeedHandler = function ($scope, $){
+		/* Carousel */
+		var slider_selector	= $scope.find('.uael-twitter-feed-carousel');
+		if ( slider_selector.length > 0 ) {
+
+			var adaptiveImageHeight = function( e, obj ) {
+				var node = obj.$slider,
+				post_active = node.find('.slick-slide.slick-active'),
+				max_height = -1;
+
+				post_active.each(function( i ) {
+					var $this = $( this ),
+					this_height = $this.innerHeight();
+					if( max_height < this_height ) {
+						max_height = this_height + 50;
+					}
+				});
+
+				node.find('.slick-list.draggable').animate({ height: max_height }, { duration: 200, easing: 'linear' });
+				max_height = -1;
+			};
+
+			var slider_options 	= JSON.parse( slider_selector.attr('data-twitter_carousel_settings') );
+			/* Execute when slick initialize */
+			slider_selector.on('init', adaptiveImageHeight );
+			$scope.imagesLoaded( function(e) {
+
+				slider_selector.slick(slider_options);
+
+				/* After slick slide change */
+				slider_selector.on('afterChange', adaptiveImageHeight );
+				var slider_items = slider_selector.find( '.uael-twitter-feed-item' );
+				slider_items.on( 'resize', function() {
+					// Manually refresh positioning of slick
+					setTimeout(function() {
+						slider_selector.slick( 'setPosition' );
+					}, 300);
+				});
+			});
+		}
+	}
+
 	$( window ).on( 'elementor/frontend/init', function () {
 
 		if ( elementorFrontend.isEditMode() ) {
@@ -2175,6 +2277,10 @@
 		elementorFrontend.hooks.addAction( 'frontend/element_ready/uael-price-table.default', WidgetUAELPriceTableHandler );
 
 		elementorFrontend.hooks.addAction( 'frontend/element_ready/uael-welcome-music.default', WidgetUAELWelcomeMusicHandler );
+
+		elementorFrontend.hooks.addAction( 'frontend/element_ready/uael-instagram-feed.default', WidgetUAELInstagramFeedHandler );
+
+		elementorFrontend.hooks.addAction( 'frontend/element_ready/uael-twitter.default', WidgetUAELTwitterFeedHandler );
 
 		if( isElEditMode ) {
 

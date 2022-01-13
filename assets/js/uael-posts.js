@@ -4,6 +4,34 @@
 	var count = 1;
 	var loader = '';
 	var total = 0;
+	var isElEditMode = false;
+
+	/**
+	 * Function to fetch widget settings.
+	 */
+	 var getWidgetSettings = function ($element) {
+		var widgetSettings = {},
+			modelCID       = $element.data( 'model-cid' );
+
+		if ( isElEditMode && modelCID ) {
+			var settings     = elementorFrontend.config.elements.data[ modelCID ],
+				settingsKeys = elementorFrontend.config.elements.keys[ settings.attributes.widgetType || settings.attributes.elType ];
+
+			jQuery.each(
+				settings.getActiveControls(),
+				function( controlKey ) {
+					if ( -1 !== settingsKeys.indexOf( controlKey ) ) {
+						widgetSettings[ controlKey ] = settings.attributes[ controlKey ];
+					}
+				}
+			);
+		} else {
+			widgetSettings = $element.data( 'settings' ) || {};
+		}
+
+		return widgetSettings;
+	};
+
 
 	function _equal_height( slider_wrapper ) {
 
@@ -86,9 +114,9 @@
 		});
 
 		var post_grid = $scope.find( '.uael-post-grid' );
-			layout = post_grid.data( 'layout' ),
+		var	layout = post_grid.data( 'layout' ),
 			structure = post_grid.data( 'structure' );
-
+		
 		var filter_cat;
 
 		if ( 'masonry' == structure ) {
@@ -258,11 +286,10 @@
 		}
 
 	}
-
+	
 	$( document ).on( 'click', '.uael-post__load-more', function( e ) {
 
 		$scope = $( this ).closest( '.elementor-widget-uael-posts' );
-
 		if ( 'main' == $scope.find( '.uael-post-grid' ).data( 'query-type' ) ) {
 			return;
 		}
@@ -300,8 +327,15 @@
 	$( 'body' ).on( 'click', '.uael-grid-pagination .page-numbers', function( e ) {
 
 		$scope = $( this ).closest( '.elementor-widget-uael-posts' );
-		var post_grid = $scope.find( '.uael-post-grid' );
+		var elementSettings = getWidgetSettings( $scope );
+		var found = Object.keys(elementSettings).filter(function(key) {
+		  return elementSettings[key] === 'ajax';
+		});
+		if (!found.length) {
+   			return;
+		}
 
+		var post_grid = $scope.find( '.uael-post-grid' );
 		if ( 'main' == post_grid.data( 'query-type' ) ) {
 			return;
 		}

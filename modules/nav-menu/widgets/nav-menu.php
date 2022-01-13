@@ -2501,9 +2501,10 @@ class Nav_Menu extends Common_Widget {
 		}
 
 		if ( 'wordpress_menu' === $settings['menu_type'] ) {
-			$args = array(
+			$menu_name = isset( $settings['menu'] ) ? $settings['menu'] : '';
+			$args      = array(
 				'echo'        => false,
-				'menu'        => $settings['menu'],
+				'menu'        => $menu_name,
 				'menu_class'  => 'uael-nav-menu',
 				'menu_id'     => 'menu-' . $this->get_nav_menu_index() . '-' . $this->get_id(),
 				'fallback_cb' => '__return_empty_string',

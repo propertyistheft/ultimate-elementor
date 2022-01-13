@@ -1047,6 +1047,9 @@ class Modal_Popup extends Common_Widget {
 					'label'       => __( 'Custom ID', 'uael' ),
 					'type'        => Controls_Manager::TEXT,
 					'description' => __( 'Add your custom id without the Pound key. e.g: my-id', 'uael' ),
+					'dynamic'     => array(
+						'active' => true,
+					),
 					'condition'   => array(
 						'modal_on' => 'custom_id',
 					),
@@ -2730,7 +2733,7 @@ class Modal_Popup extends Common_Widget {
 				'data-cookies-days'     => $settings['close_cookie_days']['size'],
 				'data-cookies-type'     => $settings['set_cookie_on'],
 				'data-custom'           => $settings['modal_custom'],
-				'data-custom-id'        => $settings['modal_custom_id'],
+				'data-custom-id'        => $this->get_settings_for_display( 'modal_custom_id' ),
 				'data-content'          => $settings['content_type'],
 				'data-autoplay'         => $settings['video_autoplay'],
 				'data-device'           => ( false !== ( stripos( $_SERVER['HTTP_USER_AGENT'], 'iPhone' ) ) ? 'true' : 'false' ),
@@ -2870,7 +2873,6 @@ class Modal_Popup extends Common_Widget {
 		$this->add_inline_editing_attributes( 'title', 'basic' );
 		$this->add_inline_editing_attributes( 'modal_text', 'basic' );
 		$this->add_inline_editing_attributes( 'btn_text', 'none' );
-
 		$title_tag = UAEL_Helper::validate_html_tag( $settings['title_tag'] );
 
 		ob_start();

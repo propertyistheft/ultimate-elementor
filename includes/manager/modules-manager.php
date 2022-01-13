@@ -81,6 +81,8 @@ class Module_Manager {
 			'welcome-music',
 			'party-propz-extension',
 			'section-divider',
+			'instagram-feed',
+			'twitter',
 		);
 
 		foreach ( $all_modules as $module_name ) {

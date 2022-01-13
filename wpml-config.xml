@@ -473,5 +473,21 @@
 				<field type="Welcome Music: Music Link" editor_type="LINK" key_of="music_link">url</field>
 			</fields>
 		</widget>
+		<widget name="uael-twitter">
+			<conditions>
+				<condition key="widgetType">uael-twitter</condition>
+			</conditions>
+			<fields>
+				<field type="Twitter Feed : Read More Text" editor_type="LINE">uael_twitter_feed_read_more_text</field>
+			</fields>
+		</widget>
+		<widget name="uael-instagram-feed">
+			<conditions>
+				<condition key="widgetType">uael-instagram-feed</condition>
+			</conditions>
+			<fields>
+				<field type="Instagram Feed: Profile Link Title" editor_type="LINE">uae_insta_profile_link_title</field>
+			</fields>
+		</widget>
 	</elementor-widgets>
 </wpml-config>

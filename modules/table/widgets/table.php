@@ -2245,7 +2245,7 @@ class Table extends Common_Widget {
 			while ( $row = fgetcsv( $_file ) ) {
 
 				foreach ( $header as $i => $key ) {
-					$file_data[ $key ] = $row[ $i ];
+					$file_data[ $i ] = $row[ $i ];
 				}
 
 				$data[] = $file_data;
@@ -2267,7 +2267,6 @@ class Table extends Common_Widget {
 				$rows_count[ $key ] = count( $value );
 			}
 		}
-		$header_val = array_keys( $rows[0] );
 
 		$return['rows'] = $rows_count;
 
@@ -2285,11 +2284,11 @@ class Table extends Common_Widget {
 				$header_text    = array();
 				$data_entry     = 0;
 
-				if ( $header_val ) {
+				if ( $header ) {
 					?>
 					<tr <?php echo wp_kses_post( $this->get_render_attribute_string( 'uael_table_row' ) ); ?>>
 					<?php
-					foreach ( $header_val as $hkey => $head ) {
+					foreach ( $header as $hkey => $head ) {
 
 						$repeater_heading_text = $this->get_repeater_setting_key( 'heading_text', 'table_headings', $inline_count );
 						$this->add_render_attribute( $repeater_heading_text, 'class', 'uael-table__text-inner' );

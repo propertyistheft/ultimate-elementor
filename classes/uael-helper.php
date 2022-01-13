@@ -678,6 +678,11 @@ class UAEL_Helper {
 			'uael_share_button'                    => '',
 			'uael_maxmind_geolocation_license_key' => '',
 			'uael_maxmind_geolocation_db_path'     => '',
+			'uael_twitter_feed_consumer_key'       => '',
+			'uael_twitter_feed_consumer_secret'    => '',
+			'instagram_app_id'                     => '',
+			'instagram_app_secret'                 => '',
+			'instagram_app_token'                  => '',
 		);
 
 		$integrations = self::get_admin_settings_option( '_uael_integration', array(), true );
@@ -727,12 +732,24 @@ class UAEL_Helper {
 			}
 
 			if ( false === self::is_hide_branding() ) {
+				$options_url  = admin_url( 'options-general.php' );
+				$branding_url = add_query_arg(
+					array(
+						'page'   => UAEL_SLUG,
+						'action' => 'branding',
+					),
+					$options_url
+				);
+
 				$widgets['White_Label'] = array(
-					'slug'        => 'uael-white-label',
-					'title'       => __( 'White Label', 'uael' ),
-					'icon'        => '',
-					'title_url'   => '#',
-					'is_activate' => true,
+					'slug'         => 'uael-white-label',
+					'title'        => __( 'White Label', 'uael' ),
+					'icon'         => '',
+					'title_url'    => '#',
+					'is_activate'  => true,
+					'setting_text' => __( 'Settings', 'uael' ),
+					'setting_url'  => $branding_url,
+					'category'     => 'feature',
 				);
 			}
 

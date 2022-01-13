@@ -82,6 +82,11 @@ $csv = $this->parse_csv();
 
 					$this->add_render_attribute( 'current_' . $head['_id'], 'class', 'uael-table-col' );
 
+					if ( 'yes' === $head['show_head_id_class'] ) {
+						$this->add_render_attribute( 'current_' . $head['_id'], 'id', $head['table_head_cell_id'] );
+						$this->add_render_attribute( 'current_' . $head['_id'], 'class', $head['table_head_cell_class'] );
+					}
+
 					$this->add_render_attribute( 'current_' . $head['_id'], 'class', 'uael-table-head-cell-text' );
 
 					if ( 1 < $head['heading_col_span'] ) {
@@ -179,6 +184,11 @@ $csv = $this->parse_csv();
 					$this->add_inline_editing_attributes( $repeater_cell_text );
 					$this->add_render_attribute( 'uael_cell_icon_align' . $row['_id'], 'class', 'uael-align-icon--' . $settings['all_icon_align'] );
 					$this->add_render_attribute( 'uael_table_col' . $row['_id'], 'class', 'uael-table-col' );
+
+					if ( 'yes' === $row['show_content_id_class'] ) {
+						$this->add_render_attribute( 'uael_table_col' . $row['_id'], 'id', $row['table_content_cell_id'] );
+						$this->add_render_attribute( 'uael_table_col' . $row['_id'], 'class', $row['table_content_cell_class'] );
+					}
 
 					$this->add_render_attribute( 'uael_table_col' . $row['_id'], 'class', 'uael-table-body-cell-text' );
 

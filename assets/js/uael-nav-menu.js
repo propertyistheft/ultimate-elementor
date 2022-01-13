@@ -198,8 +198,8 @@
 		  		$parent_div.prev().find( 'div.uael-has-submenu-container' ).removeClass( 'sub-menu-active' );
 			}else {
 
-				$parent_div.next().find('ul').css( { 'visibility': 'hidden', 'opacity': '0', 'height': '0' } );
-		  		$parent_div.prev().find('ul').css( { 'visibility': 'hidden', 'opacity': '0', 'height': '0' } );
+				$parent_div.next().find('ul').css( { 'height': '0' } );
+		  		$parent_div.prev().find('ul').css( { 'height': '0' } );
 
 		  		$parent_div.next().find( 'div.uael-has-submenu-container' ).removeClass( 'sub-menu-active' );
 		  		$parent_div.prev().find( 'div.uael-has-submenu-container' ).removeClass( 'sub-menu-active' );
@@ -223,7 +223,7 @@
 
 				$this.find( 'a' ).attr( 'aria-expanded', 'true' );
 
-				$this.next().css( { 'visibility': 'visible', 'opacity': '1', 'height': 'auto' } );
+				$this.next().css( { 'visibility': 'visible', 'height': 'auto' } );
 
 				if ( 'horizontal' !== layout ) {
 
@@ -253,8 +253,6 @@
 	 		$this.next().find( 'a' ).attr( 'aria-expanded', 'false' );
 	 		$this.prev().find( 'a' ).attr( 'aria-expanded', 'false' );
 
-	  		$this.next().find('ul').css( { 'visibility': 'hidden', 'opacity': '0', 'height': '0' } );
-	  		$this.prev().find('ul').css( { 'visibility': 'hidden', 'opacity': '0', 'height': '0' } );
 
 	  		$this.siblings().removeClass( 'menu-active' );
 	  		$this.next().find( 'div.uael-has-submenu-container' ).removeClass( 'sub-menu-active' );

@@ -399,6 +399,83 @@ if ( isset( $settings['yelp_api'] ) && ! empty( $settings['yelp_api'] ) ) {
 								</div>
 							</div>
 
+							<div class="widgets postbox">
+								<div class="inside">
+									<div class="form-wrap">
+										<div class="form-field">
+											<label class="uael-integration-heading"><?php esc_attr_e( 'Instagram Feed - Instagram Basic Display API Details', 'uael' ); ?></label>
+											<p class="install-help uael-p"><strong><?php esc_attr_e( 'Note:', 'uael' ); ?></strong>
+												<?php
+												esc_attr_e( 'This setting is required if you wish to use Instagram Feed in your website.', 'uael' );
+
+												if ( UAEL_Helper::is_internal_links() ) {
+
+													$a_tag_open  = '<a target="_blank" rel="noopener" href="' . esc_url( UAEL_DOMAIN . 'docs/instagram-feed-widget/?utm_source=uael-pro-dashboard&utm_medium=uael-editor-screen&utm_campaign=uael-pro-plugin' ) . '">';
+													$a_tag_close = '</a>';
+
+													printf(
+													/* translators: %1$s: a tag open. */
+														esc_attr__( ' Need help to get Instagram App Details? Read %1$s this article %2$s.', 'uael' ),
+														wp_kses_post( $a_tag_open ),
+														wp_kses_post( $a_tag_close )
+													);
+												}
+												?>
+											</p>
+											<label for="uael-instagram-app-id" class="uael-integration-heading"><?php esc_attr_e( 'Instagram App ID', 'uael' ); ?></label>
+											<input type="text" name="uael_integration[instagram_app_id]" id="uael-instagram-app-id" class="placeholder placeholder-active" value="<?php echo esc_attr( $settings['instagram_app_id'] ); ?>">
+											<br/>
+											<br/>
+											<label for="uael-instagram-secret-key" class="uael-integration-heading"><?php esc_attr_e( 'Instagram App Secret', 'uael' ); ?></label>
+											<input type="text" name="uael_integration[instagram_app_secret]" id="uael-instagram-secret-key" class="placeholder placeholder-active" value="<?php echo esc_attr( $settings['instagram_app_secret'] ); ?>">
+											<br/>
+											<br/>
+											<label for="uael-instagram-access-token" class="uael-integration-heading"><?php esc_attr_e( 'Instagram Access Token', 'uael' ); ?></label>
+											<input type="text" name="uael_integration[instagram_app_token]" id="uael-instagram-access-token" class="placeholder placeholder-active" value="<?php echo esc_attr( $settings['instagram_app_token'] ); ?>">
+											<br/>
+											<br/>
+											<button type="button" class="uael-instagram-access-token-generator"><?php esc_html_e( 'Refresh Access Token', 'uael' ); ?></button>
+											<br/>
+											<span class="uael-insta-response-msg uael-response-success uael-insta-hide-response-msg"><?php esc_html_e( 'Your access token refreshed successfully.', 'uael' ); ?></span>
+											<span class="uael-insta-response-msg uael-response-warning uael-insta-hide-response-msg"><?php esc_html_e( 'Error while refreshing token from instagram or may be the existing token in not valid.', 'uael' ); ?></span>
+										</div>
+									</div>
+								</div>
+							</div>
+
+						</div>
+						<div class="widgets postbox">
+							<div class="inside">
+								<div class="form-wrap">
+									<div class="form-field">
+										<label class="uael-integration-heading"><?php esc_attr_e( 'Twitter Feed', 'uael' ); ?></label>
+										<p class="install-help uael-p"><strong><?php esc_attr_e( 'Note:', 'uael' ); ?></strong>
+											<?php
+											esc_attr_e( 'This setting is required if you want to show the Twitter Feed in your website.', 'uael' );
+
+											if ( UAEL_Helper::is_internal_links() ) {
+
+												$a_tag_open  = '<a target="_blank" rel="noopener" href="' . esc_url( UAEL_DOMAIN . 'docs/twitter-feed-widget/?utm_source=uael-pro-dashboard&utm_medium=uael-editor-screen&utm_campaign=uael-pro-plugin' ) . '">';
+												$a_tag_close = '</a>';
+
+												printf(
+												/* translators: %1$s: a tag open. */
+													esc_attr__( '  Need help to get Twitter Consumer key and Consumer Secret Key? Read %1$s this article %2$s.', 'uael' ),
+													wp_kses_post( $a_tag_open ),
+													wp_kses_post( $a_tag_close )
+												);
+											}
+											?>
+										</p>
+										<label for="uael_twitter_feed_consumer_key" class="uael-integration-heading"><?php esc_attr_e( 'Consumer Key', 'uael' ); ?></label>
+										<input type="text" name="uael_integration[uael_twitter_feed_consumer_key]" id="uael_twitter_feed_consumer_key" class="placeholder placeholder-active" value="<?php echo esc_attr( $settings['uael_twitter_feed_consumer_key'] ); ?>">
+										<br/>
+										<br/>
+										<label for="uael_twitter_feed_consumer_secret" class="uael-integration-heading"><?php esc_attr_e( 'Consumer Secret', 'uael' ); ?></label>
+										<input type="text" name="uael_integration[uael_twitter_feed_consumer_secret]" id="uael_twitter_feed_consumer_secret" class="placeholder placeholder-active" value="<?php echo esc_attr( $settings['uael_twitter_feed_consumer_secret'] ); ?>">
+									</div>
+								</div>
+							</div>
 						</div>
 						<?php submit_button( __( 'Save Changes', 'uael' ), 'uael-save-integration-options button-primary button button-hero' ); ?>
 						<?php wp_nonce_field( 'uael-integration', 'uael-integration-nonce' ); ?>

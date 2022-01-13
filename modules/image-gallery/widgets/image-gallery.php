@@ -2218,8 +2218,7 @@ class Image_Gallery extends Common_Widget {
 				$output         .= '<div class="uael-grid-item ' . implode( ' ', $image_cat ) . '">';
 					$output     .= '<div class="uael-grid-item-content">';
 						$output .= '<' . $img_wrap_tag . ' ' . $this->get_render_attribute_string( 'grid-media-' . $index ) . '>';
-
-							$output .= $this->render_image_thumbnail( $image );
+						$output .= $this->render_image_thumbnail( $image );
 
 							$output .= $this->render_image_overlay();
 

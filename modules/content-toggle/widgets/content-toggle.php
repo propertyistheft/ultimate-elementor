@@ -379,7 +379,7 @@ class ContentToggle extends Common_Widget {
 				'selectors' => array(
 					'{{WRAPPER}} .uael-rbs-slider' => 'background-color: {{VALUE}};',
 					'{{WRAPPER}} .uael-toggle input[type="checkbox"] + label:before' => 'background-color: {{VALUE}};',
-					'{{WRAPPER}} .uael-toggle input[type="checkbox"] + label:after' => 'border: 0.3em solid {{VALUE}};',
+					'{{WRAPPER}} .uael-toggle input[type="checkbox"] + label:after' => 'border-color: {{VALUE}};',
 					'{{WRAPPER}} .uael-label-box-active .uael-label-box-switch' => 'background: {{VALUE}};',
 
 				),
@@ -400,7 +400,7 @@ class ContentToggle extends Common_Widget {
 					'{{WRAPPER}} .uael-rbs-switch:checked + .uael-rbs-slider' => 'background-color: {{VALUE}};',
 					'{{WRAPPER}} .uael-rbs-switch:focus + .uael-rbs-slider'     => '-webkit-box-shadow: 0 0 1px {{VALUE}};box-shadow: 0 0 1px {{VALUE}};',
 					'{{WRAPPER}} .uael-toggle input[type="checkbox"]:checked + label:before'     => 'background-color: {{VALUE}};',
-					'{{WRAPPER}} .uael-toggle input[type="checkbox"]:checked + label:after'     => '-webkit-transform: translateX(2.5em);-ms-transform: translateX(2.5em);transform: translateX(2.5em);border: 0.3em solid {{VALUE}};',
+					'{{WRAPPER}} .uael-toggle input[type="checkbox"]:checked + label:after'     => 'border-color: {{VALUE}};',
 					'{{WRAPPER}} .uael-label-box-inactive .uael-label-box-switch' => 'background: {{VALUE}};',
 				),
 			)

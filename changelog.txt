@@ -1,3 +1,29 @@
+Version 1.36.1 - Wednesday, 12th January 2022
+- Improvement: Twitter Feed - Renamed Sort By option labels and changed the date format.
+- Fix: Instagram Feed - Fixed PHP Parse error when using the widget.
+
+Version 1.36.0 - Tuesday, 11th January 2022
+- New: Instagram Feed - Introducing a widget to showcase your Instagram photos.
+- New: Twitter Feed - Introducing a widget to showcase your Twitter tweets.
+- Improvement: Modal Popup - Added dynamic tag support to the Custom ID field of display modal on.
+- Improvement: Posts - Added Article Schema Support.
+- Improvement: Posts - Added option to select pagination type.
+- Improvement: Settings Page - New grid design for widget list with filterable tabs.
+- Improvement: Woo - Products - Added product categories as a class in product list HTML.
+- Fix: Content Toggle -  Switch button "Round 2" style not working.
+- Fix: Gravity Forms Styler - Close icon position misplacement when field errors appear.
+- Fix: Image Gallery - Extra text appears on filterable tabs when viewing on responsive mode.
+- Fix: Image Gallery - Last image overlaps on the first image when the last row is hidden in the justified layout.
+- Fix: Image Gallery - Carousel dots and arrows get black background when using the 2021 theme.
+- Fix: Image Gallery - Extra space on the left of the carousel dots.
+- Fix: Navigation Menu - When opening a sub-menu by pressing the ctrl/cmd + click, then the adjacent sub-menus does not open.
+- Fix: Posts - Console error when widget with different skins used multiple times on the same page.
+- Fix: Posts - Extra space on the left of the Filterable Tabs.
+- Fix: Table - Cell background color not working in responsive mode.
+- Fix: Table - Columns do not appear if the headings have the same content.
+- Fix: Table - Cell CSS ID and CSS Class not applying.
+- Fix: Woo Categories –  Carousel layout breaks when the "Categories to show" option is set to 3.
+
 Version 1.35.3 - Wednesday, 22nd December 2021
 - Improvement: Posts - Improved ARIA attribute accessibility of categories in taxonomy badge.
 - Fix: Display Conditions - Updated document link on integrations setting page.

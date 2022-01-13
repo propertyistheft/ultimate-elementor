@@ -1695,8 +1695,7 @@ class Advanced_Heading extends Common_Widget {
 		?>
 
 		<div <?php echo wp_kses_post( $this->get_render_attribute_string( 'uael-heading-wrapper' ) ); ?>>
-			<?php $this->render_separator( 'top', $settings ); ?>
-
+			<?php $this->render_separator( 'top', $settings ); ?>	
 			<?php $this->render_subheading( 'top', $settings, $dynamic_settings ); ?>
 
 			<<?php echo esc_attr( $heading_size_tag ); ?> class="uael-heading">

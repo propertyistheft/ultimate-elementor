@@ -1473,12 +1473,47 @@ abstract class Skin_Style {
 	 */
 	public function render( $style, $settings, $node_id ) {
 
-		self::$settings  = $settings;
-		self::$skin      = $style;
-		self::$node_id   = $node_id;
-		self::$query_obj = new Build_Post_Query( $style, $settings, '' );
+		self::$settings         = $settings;
+		$schema_support         = $settings[ $style . '_schema_support' ];
+		$publisher_name         = $settings[ $style . '_publisher_name' ];
+		$publisher_logo         = isset( $settings[ $style . '_publisher_logo' ]['url'] ) ? ( $settings[ $style . '_publisher_logo' ]['url'] ) : 0;
+		$content_schema_warning = false;
+		self::$skin             = $style;
+		self::$node_id          = $node_id;
+		self::$query_obj        = new Build_Post_Query( $style, $settings, '' );
 		self::$query_obj->query_posts();
+
 		self::$query = self::$query_obj->get_query();
+
+		$query     = self::$query;
+		$is_editor = \Elementor\Plugin::instance()->editor->is_edit_mode();
+
+		if ( $query->have_posts() ) {
+			while ( $query->have_posts() ) {
+				$query->the_post();
+				$headline     = get_the_title();
+				$image        = get_the_post_thumbnail_url();
+				$publishdate  = get_the_date( 'Y-m-d' );
+				$modifieddate = get_the_modified_date( 'Y-m-d' );
+				if ( 'yes' === $schema_support && ( ( '' === $headline || '' === $publishdate || '' === $publisher_name || '' === $publisher_logo || '' === $modifieddate ) || ( ! $image ) ) ) {
+					$content_schema_warning = true;
+				}
+			}
+			if ( 'yes' === $schema_support && true === $content_schema_warning && $is_editor ) {
+				?>
+				<div class="uael-builder-msg elementor-alert elementor-alert-warning">
+					<?php if ( ! $image ) { ?>
+						<span class="elementor-alert-description"><?php esc_attr_e( 'Some posts do not have featured images. Please fill in all required fields to display posts schema properly.', 'uael' ); ?></span>
+					<?php } else { ?>
+						<span class="elementor-alert-description">
+							<?php esc_attr_e( 'Some fields are empty under the posts schema section. Please fill in all required fields.', 'uael' ); ?><br/>
+							<?php esc_attr_e( 'Make sure all your posts do have a featured image.', 'uael' ); ?>
+						</span>
+					<?php } ?>
+				</div>
+				<?php
+			}
+		}
 
 		// Get search box.
 		if ( ! self::$query->have_posts() ) {

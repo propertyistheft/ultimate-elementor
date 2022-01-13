@@ -1,10 +1,10 @@
 @font-face {
 	font-family: 'uael';
-	src:  url('../fonts/uael.eot?iwggsu');
-	src:  url('../fonts/uael.eot?iwggsu#iefix') format('embedded-opentype'),
-	url('../fonts/uael.ttf?iwggsu') format('truetype'),
-	url('../fonts/uael.woff?iwggsu') format('woff'),
-	url('../fonts/uael.svg?iwggsu#uael') format('svg');
+	src:  url('../fonts/uael.eot?aa491i');
+	src:  url('../fonts/uael.eot?aa491i#iefix') format('embedded-opentype'),
+	url('../fonts/uael.ttf?aa491i') format('truetype'),
+	url('../fonts/uael.woff?aa491i') format('woff'),
+	url('../fonts/uael.svg?aa491i#uael') format('svg');
 	font-weight: normal;
 	font-style: normal;
 }
@@ -102,7 +102,7 @@
   content: "\e917";
 }
 .uael-icon-social-share:before {
-  content: "\e900";
+	content: "\e902";
 }
 .uael-icon-gravity-form-styler:before {
   content: "\e919";
@@ -210,8 +210,15 @@
   content: "\e93b";
 }
 .uael-icon-welcome-music:before {
+	content: "\e903";
+}
+.uael-icon-instagram-feed:before {
+	content: "\e900";
+}
+.uael-icon-twitter-feed-icon:before {
 	content: "\e901";
 }
+
 .uael-editor-doc {
   font-size: 11px;
   font-style: italic;

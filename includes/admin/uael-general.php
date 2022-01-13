@@ -33,7 +33,42 @@ $post_skins = UAEL_Helper::get_post_skin_options();
 			<!-- All WordPress Notices below header -->
 			<h1 class="screen-reader-text"> <?php esc_attr_e( 'General', 'uael' ); ?> </h1>
 				<div class="widgets postbox">
-					<h2 class="hndle uael-flex uael-widgets-heading"><span><?php esc_html_e( 'Widgets', 'uael' ); ?></span>
+					<h2 class="hndle uael-flex uael-settings-widgets-heading">
+						<span><?php esc_html_e( 'Filters: ', 'uael' ); ?></span>
+						<ul class="uael-widget-filters">
+							<li class="filter-active">
+								<label for="uael-filter-1"><?php esc_html_e( 'All', 'uael' ); ?></label>
+								<input type="radio" id="uael-filter-1" class="uael-filter-tab " data-category="all"/>
+							</li>
+							<li>
+								<label for="uael-filter-2"><?php esc_html_e( 'Features', 'uael' ); ?></label>
+								<input type="radio" id="uael-filter-2" class="uael-filter-tab" data-category="feature"/>
+							</li>
+							<li>
+								<label for="uael-filter-3"><?php esc_html_e( 'Content', 'uael' ); ?></label>
+								<input type="radio" id="uael-filter-3" class="uael-filter-tab" data-category="content"/>
+							</li>
+							<li>
+								<label for="uael-filter-4"><?php esc_html_e( 'Creative', 'uael' ); ?></label>
+								<input type="radio" id="uael-filter-4" class="uael-filter-tab" data-category="creative"/>
+							</li>
+							<li>
+								<label for="uael-filter-5"><?php esc_html_e( 'Form', 'uael' ); ?></label>
+								<input type="radio" id="uael-filter-5" class="uael-filter-tab" data-category="form"/>
+							</li>
+							<li>
+								<label for="uael-filter-6"><?php esc_html_e( 'SEO', 'uael' ); ?></label>
+								<input type="radio" id="uael-filter-6" class="uael-filter-tab" data-category="seo"/>
+							</li>
+							<li>
+								<label for="uael-filter-7"><?php esc_html_e( 'Woo', 'uael' ); ?></label>
+								<input type="radio" id="uael-filter-7" class="uael-filter-tab" data-category="woo"/>
+							</li>
+							<li>
+								<label for="uael-filter-8"><?php esc_html_e( 'Extensions', 'uael' ); ?></label>
+								<input type="radio" id="uael-filter-8" class="uael-filter-tab" data-category="extension"/>
+							</li>
+						</ul>
 						<div class="uael-bulk-actions-wrap">
 							<a class="bulk-action uael-activate-all button"> <?php esc_html_e( 'Activate All', 'uael' ); ?> </a>
 							<a class="bulk-action uael-deactivate-all button"> <?php esc_html_e( 'Deactivate All', 'uael' ); ?> </a>
@@ -47,7 +82,7 @@ $post_skins = UAEL_Helper::get_post_skin_options();
 									<?php
 									foreach ( $widgets as $addon => $info ) {
 										$doc_url       = ( isset( $info['doc_url'] ) && ! empty( $info['doc_url'] ) ) ? ' href="' . esc_url( $info['doc_url'] ) . '"' : '';
-										$anchor_target = ( isset( $info['doc_url'] ) && ! empty( $info['doc_url'] ) ) ? " target='_blank' rel='noopener'" : '';
+										$anchor_target = ( isset( $info['doc_url'] ) && ! empty( $info['doc_url'] ) ) ? ' target=_blank rel=noopener' : '';
 										$class         = 'deactivate';
 										$widget_link   = array(
 											'link_class' => 'uael-activate-widget',
@@ -82,18 +117,28 @@ $post_skins = UAEL_Helper::get_post_skin_options();
 												break;
 										}
 
-										$widget_name_html = '<li id="' . esc_attr( $addon ) . '"  class="' . esc_attr( $class ) . '"><a class="uael-widget-title"' . $doc_url . $anchor_target . ' >' . esc_html( $info['title'] ) . '</a><div class="uael-widget-link-wrapper">';
+										$category = isset( $info['category'] ) ? $info['category'] : '';
+
+										$widget_name_html = '<li id="' . esc_attr( $addon ) . '"  class="filter-item-active ' . esc_attr( $class ) . '" data-category="' . esc_attr( $category ) . '"><div class="uael-widget-title">' . esc_html( $info['title'] ) . '</div>';
 
 										echo wp_kses_post( $widget_name_html );
 
+										if ( 'White_Label' !== $addon ) {
+											printf(
+												'<label class="uael-switch"><input type="checkbox" class="%1$s" %2$s><span class="uael-slider uael-round"/></label>',
+												esc_attr( $widget_link['link_class'] ),
+												$info['is_activate'] ? esc_attr( 'checked' ) : ''
+											);
+										}
+
 										printf(
-											'<a href="%1$s" class="%2$s"> %3$s </a>',
-											( isset( $widget_link['link_url'] ) && ! empty( $widget_link['link_url'] ) ) ? esc_url( $widget_link['link_url'] ) : '#',
-											esc_attr( $widget_link['link_class'] ),
-											esc_html( $widget_link['link_text'] )
+											'<div class="uael-widget-link-wrapper"><a class="uael-widget-doc-link" href="%1$s" %2$s>%3$s</a>',
+											( isset( $info['doc_url'] ) && ! empty( $info['doc_url'] ) ) ? esc_url( $info['doc_url'] ) : '',
+											esc_attr( $anchor_target ),
+											esc_html__( 'Docs', 'uael' )
 										);
 
-										if ( $info['is_activate'] && isset( $info['setting_url'] ) ) {
+										if ( isset( $info['setting_url'] ) ) {
 
 											printf(
 												'<a href="%1$s" class="%2$s"> %3$s </a>',

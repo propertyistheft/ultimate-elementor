@@ -8,6 +8,8 @@
 namespace UltimateElementor\Modules\Posts;
 
 use UltimateElementor\Base\Module_Base;
+use UltimateElementor\Classes\UAEL_Helper;
+use UltimateElementor\Modules\Posts\TemplateBlocks\Build_Post_Query;
 use Elementor;
 
 if ( ! defined( 'ABSPATH' ) ) {
@@ -44,6 +46,22 @@ class Module extends Module_Base {
 	}
 
 	/**
+	 * All sections.
+	 *
+	 * @since 1.36.0
+	 * @var all_sections
+	 */
+	private static $all_sections = array();
+
+	/**
+	 * Video Widgets.
+	 *
+	 * @since 1.36.0
+	 * @var all_posts_widgets
+	 */
+	private static $all_posts_widgets = array();
+
+	/**
 	 * Get Widgets.
 	 *
 	 * @since 1.7.0
@@ -73,6 +91,110 @@ class Module extends Module_Base {
 
 		add_action( 'wp_ajax_uael_get_post', array( $this, 'get_post_data' ) );
 		add_action( 'wp_ajax_nopriv_uael_get_post', array( $this, 'get_post_data' ) );
+
+		if ( UAEL_Helper::is_widget_active( 'Posts' ) ) {
+
+			add_action( 'elementor/frontend/before_render', array( $this, 'get_widget_name' ) );
+			add_action( 'wp_footer', array( $this, 'render_posts_schema' ) );
+		}
+	}
+
+	/**
+	 * Render the Posts Schema.
+	 *
+	 * @since 1.36.0
+	 *
+	 * @access public
+	 */
+	public function render_posts_schema() {
+		if ( ! empty( self::$all_posts_widgets ) ) {
+			$elementor  = \Elementor\Plugin::$instance;
+			$data       = self::$all_sections;
+			$widget_ids = self::$all_posts_widgets;
+
+			foreach ( $widget_ids as $widget_id ) {
+
+				$widget_data    = $this->find_element_recursive( $data, $widget_id );
+				$widget         = $elementor->elements_manager->create_element_instance( $widget_data );
+				$settings       = $widget->get_settings();
+				$skin           = $widget->get_current_skin_id();
+				$select_article = $settings[ $skin . '_select_article' ];
+				$schema_support = $settings[ $skin . '_schema_support' ];
+				$publisher_name = $settings[ $skin . '_publisher_name' ];
+				$publisher_logo = isset( $settings[ $skin . '_publisher_logo' ]['url'] ) ? $settings[ $skin . '_publisher_logo' ]['url'] : 0;
+				$query_obj      = new Build_Post_Query( $skin, $settings, '' );
+				$query_obj->query_posts();
+				$query = $query_obj->get_query();
+
+				if ( $query->have_posts() ) {
+						$this->schema_generation( $query, $select_article, $schema_support, $publisher_logo, $publisher_name );
+				}
+			}
+		}
+	}
+
+	/**
+	 * Render the Posts Schema.
+	 *
+	 * @since 1.36.0
+	 *
+	 * @param object $query object.
+	 * @param string $select_article string.
+	 * @param string $schema_support string.
+	 * @param string $publisher_logo string.
+	 * @param string $publisher_name string.
+	 * @access public
+	 */
+	public function schema_generation( $query, $select_article, $schema_support, $publisher_logo, $publisher_name ) {
+		$object_data            = array();
+		$content_schema_warning = false;
+		while ( $query->have_posts() ) {
+			$query->the_post();
+			$headline     = get_the_title();
+			$image        = get_the_post_thumbnail_url();
+			$publishdate  = get_the_date( 'Y-m-d' );
+			$modifieddate = get_the_modified_date( 'Y-m-d' );
+			$text         = get_the_excerpt();
+			$description  = wp_strip_all_tags( $text );
+			$author_id    = get_the_author_meta( 'ID' );
+			$author_name  = get_the_author_meta( 'display_name' );
+			$author_url   = get_author_posts_url( $author_id );
+
+			if ( 'yes' === $schema_support && ( ( '' === $headline || '' === $publishdate || '' === $modifieddate ) || ( ! $image ) ) ) {
+				$content_schema_warning = true;
+			}
+			if ( 'yes' === $schema_support && false === $content_schema_warning ) {
+				$new_data = array(
+					'@type'         => $select_article,
+					'headline'      => $headline,
+					'image'         => $image,
+					'datePublished' => $publishdate,
+					'dateModified'  => $modifieddate,
+					'description'   => $description,
+					'author'        => array(
+						'@type' => 'Person',
+						'name'  => $author_name,
+						'url'   => $author_url,
+					),
+					'publisher'     => array(
+						'@type' => 'Organization',
+						'name'  => $publisher_name,
+						'logo'  => array(
+							'@type' => 'ImageObject',
+							'url'   => $publisher_logo,
+						),
+					),
+				);
+				array_push( $object_data, $new_data );
+			}
+		}
+		if ( $object_data ) {
+			$schema_data = array(
+				'@context' => 'https://schema.org',
+				$object_data,
+			);
+			UAEL_Helper::print_json_schema( $schema_data );
+		}
 	}
 
 	/**
@@ -186,5 +308,26 @@ class Module extends Module_Base {
 		}
 
 		return $found_posts;
+	}
+
+	/**
+	 * Get widget name.
+	 *
+	 * @since 1.36.0
+	 * @access public
+	 * @param object $obj widget data.
+	 */
+	public function get_widget_name( $obj ) {
+		$current_widget = $obj->get_data();
+		// If multiple times widget used on a page add all the video elements on a page in a single array.
+		if ( isset( $current_widget['elType'] ) && 'section' === $current_widget['elType'] ) {
+			array_push( self::$all_sections, $current_widget );
+		}
+		// If multiple times widget used on a page add all the main widget elements on a page in a single array.
+		if ( isset( $current_widget['widgetType'] ) && 'uael-posts' === $current_widget['widgetType'] ) {
+			if ( ! in_array( $current_widget['id'], self::$all_posts_widgets, true ) ) {
+				array_push( self::$all_posts_widgets, $current_widget['id'] );
+			}
+		}
 	}
 }
