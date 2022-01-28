@@ -1127,12 +1127,19 @@
 					var def_filter = $scope.find('.uael-video-gallery-wrap').data('filter-default');
 					var def_filter_length = def_filter.length;
 				}
-
-				var str_vid_text = $scope.find( '.uael-filter__current' ).text();
-				str_vid_text = str_vid_text.substring( def_filter_length, str_vid_text.length );
-				$scope.find( '.uael-filters-dropdown-button' ).text( str_vid_text );
-
-
+				var ajax_str_img_text = $scope.find( '.uael-filter__current' ).text(),
+				ajax_str_filter_text  = $scope.find( '.uael-filters-dropdown-list .uael-filter__current' ).text(),
+				url                   = window.location.hash.replace( '#', '' ),
+				str_replace_text      = ajax_str_img_text.replace( ajax_str_filter_text,'' ),
+				str_cat_text          = ajax_str_img_text.replace( str_replace_text,'' );
+				if( ( !url && ( window.screen.availWidth > 768 ) ) || url ){
+					str_cat_text = ajax_str_img_text.replace( ajax_str_filter_text,'' );
+				}
+				if( url && ( window.screen.availWidth < 768 ) ){
+					str_cat_text = ajax_str_img_text.replace( str_replace_text,'' );
+				}
+				
+				$scope.find( '.uael-filters-dropdown-button' ).text( str_cat_text );
 				selector.isotope( { filter: value } );
 			});
 

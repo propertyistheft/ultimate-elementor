@@ -205,7 +205,7 @@ class Skin_News extends Skin_Style {
 	 */
 	public function get_body() {
 
-		global $post;
+		global $wp_query;
 
 		$settings            = self::$settings;
 		$query               = self::$query;
@@ -216,7 +216,7 @@ class Skin_News extends Skin_Style {
 		$outer_wrapper       = $this->get_outer_wrapper_classes();
 		$structure           = 'featured';
 		$layout              = '';
-		$page_id             = $post->ID;
+		$page_id             = $wp_query->get_queried_object_id();
 		$filter_default_text = $this->get_instance_value( 'filters_all_text' );
 
 		if ( in_array( $structure, array( 'masonry', 'normal' ), true ) ) {

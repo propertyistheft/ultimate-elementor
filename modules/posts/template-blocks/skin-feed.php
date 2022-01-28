@@ -180,6 +180,7 @@ class Skin_Feed extends Skin_Style {
 		}
 
 		$filters = $this->get_filter_values();
+		$filters = apply_filters( 'uael_posts_filterable_tabs', $filters, $settings );
 		$all     = $this->get_instance_value( 'filters_all_text' );
 
 		$all_text = ( 'All' === $all || '' === $all ) ? esc_attr__( 'All', 'uael' ) : $all;

@@ -278,7 +278,7 @@
 						// Change button classes & text.
 						$('#' + id).find('.uael-activate-widget')
 							.addClass('uael-deactivate-widget')
-							.attr('checked', '')
+							.prop('checked', true)
 							.removeClass('uael-activate-widget')
 							.removeClass('updating-message');
 					}
@@ -322,7 +322,7 @@
 						$('#' + id).find('.uael-deactivate-widget')
 							.addClass('uael-activate-widget')
 							.removeClass('uael-deactivate-widget')
-							.removeAttr('checked')
+							.prop('checked', false)
 							.removeClass('updating-message');
 					}
 				});

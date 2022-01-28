@@ -46,14 +46,6 @@ class Module extends Module_Base {
 	}
 
 	/**
-	 * All sections.
-	 *
-	 * @since 1.36.0
-	 * @var all_sections
-	 */
-	private static $all_sections = array();
-
-	/**
 	 * Video Widgets.
 	 *
 	 * @since 1.36.0
@@ -94,7 +86,7 @@ class Module extends Module_Base {
 
 		if ( UAEL_Helper::is_widget_active( 'Posts' ) ) {
 
-			add_action( 'elementor/frontend/before_render', array( $this, 'get_widget_name' ) );
+			add_filter( 'elementor/frontend/builder_content_data', array( $this, 'get_widget_data' ), 10, 2 );
 			add_action( 'wp_footer', array( $this, 'render_posts_schema' ) );
 		}
 	}
@@ -108,14 +100,20 @@ class Module extends Module_Base {
 	 */
 	public function render_posts_schema() {
 		if ( ! empty( self::$all_posts_widgets ) ) {
-			$elementor  = \Elementor\Plugin::$instance;
-			$data       = self::$all_sections;
-			$widget_ids = self::$all_posts_widgets;
+			$elementor    = \Elementor\Plugin::$instance;
+			$widgets_data = self::$all_posts_widgets;
 
-			foreach ( $widget_ids as $widget_id ) {
-
-				$widget_data    = $this->find_element_recursive( $data, $widget_id );
-				$widget         = $elementor->elements_manager->create_element_instance( $widget_data );
+			foreach ( $widgets_data as $_widget ) {
+				$widget = $elementor->elements_manager->create_element_instance( $_widget );
+				if ( isset( $_widget['templateID'] ) ) {
+					$type          = $this->get_global_widget_type( $_widget['templateID'], 1 );
+					$element_class = $type->get_class_name();
+					try {
+						$widget = new $element_class( $_widget, array() );
+					} catch ( \Exception $e ) {
+						return null;
+					}
+				}
 				$settings       = $widget->get_settings();
 				$skin           = $widget->get_current_skin_id();
 				$select_article = $settings[ $skin . '_select_article' ];
@@ -127,7 +125,7 @@ class Module extends Module_Base {
 				$query = $query_obj->get_query();
 
 				if ( $query->have_posts() ) {
-						$this->schema_generation( $query, $select_article, $schema_support, $publisher_logo, $publisher_name );
+					$this->schema_generation( $query, $select_article, $schema_support, $publisher_logo, $publisher_name );
 				}
 			}
 		}
@@ -311,23 +309,81 @@ class Module extends Module_Base {
 	}
 
 	/**
+	 * Returns the type of elementor element.
+	 *
+	 * @param array $element The Element.
+	 *
+	 * @return Elementor\Widget_Base|Elementor\Widget_Base[]|mixed|string|null
+	 */
+	public function get_widget_type( $element ) {
+		$type = '';
+		if ( empty( $element['widgetType'] ) ) {
+			$type = $element['elType'];
+		} else {
+			$type = $element['widgetType'];
+		}
+
+		if ( 'global' === $type && ! empty( $element['templateID'] ) ) {
+			$type = $this->get_global_widget_type( $element['templateID'] );
+		}
+
+		return $type;
+	}
+
+	/**
+	 * Returns the type of elementor element if global.
+	 *
+	 * @param int|string $template_id Template ID.
+	 * @param bool       $return_type Return type.
+	 *
+	 * @return Elementor\Widget_Base|Elementor\Widget_Base[]|mixed|string|null
+	 */
+	public function get_global_widget_type( $template_id, $return_type = false ) {
+		$template_data = Elementor\Plugin::$instance->templates_manager->get_template_data(
+			array(
+				'source'      => 'local',
+				'template_id' => $template_id,
+			)
+		);
+
+		if ( is_wp_error( $template_data ) ) {
+			return '';
+		}
+
+		if ( empty( $template_data['content'] ) ) {
+			return '';
+		}
+
+		$original_widget_type = Elementor\Plugin::$instance->widgets_manager->get_widget_types( $template_data['content'][0]['widgetType'] );
+
+		if ( $return_type ) {
+			return $original_widget_type;
+		}
+
+		return $original_widget_type ? $template_data['content'][0]['widgetType'] : '';
+	}
+
+	/**
 	 * Get widget name.
 	 *
 	 * @since 1.36.0
 	 * @access public
-	 * @param object $obj widget data.
+	 * @param array $data The builder content.
+	 * @param int   $post_id The post ID.
 	 */
-	public function get_widget_name( $obj ) {
-		$current_widget = $obj->get_data();
-		// If multiple times widget used on a page add all the video elements on a page in a single array.
-		if ( isset( $current_widget['elType'] ) && 'section' === $current_widget['elType'] ) {
-			array_push( self::$all_sections, $current_widget );
-		}
-		// If multiple times widget used on a page add all the main widget elements on a page in a single array.
-		if ( isset( $current_widget['widgetType'] ) && 'uael-posts' === $current_widget['widgetType'] ) {
-			if ( ! in_array( $current_widget['id'], self::$all_posts_widgets, true ) ) {
-				array_push( self::$all_posts_widgets, $current_widget['id'] );
+	public function get_widget_data( $data, $post_id ) {
+
+		Elementor\Plugin::$instance->db->iterate_data(
+			$data,
+			function ( $element ) use ( &$widgets ) {
+				$type = $this->get_widget_type( $element );
+				if ( 'uael-posts' === $type ) {
+					self::$all_posts_widgets[] = $element;
+				}
+				return $element;
 			}
-		}
+		);
+
+		return $data;
 	}
 }

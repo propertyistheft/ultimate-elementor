@@ -1,3 +1,16 @@
+Version 1.36.2 - Tuesday, 25th January 2022
+- Fix: Before After Slider - Before After labels are shown even if they are empty.
+- Fix: Display Conditions - ACF boolean field not working.
+- Fix: Navigation Menu - Double hamburger icon and menu appear when Elementor's sticky feature is enabled.
+- Fix: Posts - 'uael_posts_filterable_tabs' filter hook not working for creative feed skin.
+- Fix: Posts - Carousel dots get black background when using the 2021 theme.
+- Fix: Posts - PHP fatal error while using pagination in some cases.
+- Fix: Table - Table width is not 100% when using the 2022 theme.
+- Fix: Video Gallery - Carousel dots get black background when using the 2021 theme.
+- Fix: Video Gallery - Extra text appears on filterable tabs when viewing on responsive mode.
+- Fix: Woo - Category - Carousel dots get black background when using the 2021 theme.
+- Fix: Woo - Product - Carousel dots get black background when using the 2021 theme.
+
 Version 1.36.1 - Wednesday, 12th January 2022
 - Improvement: Twitter Feed - Renamed Sort By option labels and changed the date format.
 - Fix: Instagram Feed - Fixed PHP Parse error when using the widget.

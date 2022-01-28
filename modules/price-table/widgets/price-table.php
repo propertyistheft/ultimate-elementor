@@ -231,6 +231,9 @@ class Price_Table extends Common_Widget {
 				'label_off'    => __( 'No', 'uael' ),
 				'return_value' => 'yes',
 				'default'      => 'yes',
+				'condition'    => array(
+					'pricetable_style!' => '2',
+				),
 			)
 		);
 

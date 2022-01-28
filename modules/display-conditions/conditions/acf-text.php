@@ -136,6 +136,10 @@ class Acf_Text extends Condition {
 	public function acf_compare_value( $settings, $operator, $key, $value ) {
 
 		$show = false;
+
+		// Handle string value for correct comparison boolean (true_false) acf field.
+		$value = ( 'true_false' === get_field_object( $key )['type'] && 'true' === $value ) ? true : false;
+
 		global $post;
 
 		$field_value = get_field( $key );
