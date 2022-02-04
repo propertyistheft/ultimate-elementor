@@ -301,7 +301,6 @@ class Module extends Module_Base {
 	 */
 	protected function add_actions() {
 		add_action( 'elementor/ajax/register_actions', array( $this, 'register_ajax_actions' ) );
-		add_action( 'elementor/controls/controls_registered', array( $this, 'register_controls' ) );
 
 	}
 

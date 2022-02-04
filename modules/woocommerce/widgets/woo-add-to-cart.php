@@ -252,9 +252,9 @@ class Woo_Add_To_Cart extends Common_Widget {
 			$this->add_responsive_control(
 				'align',
 				array(
-					'label'        => __( 'Alignment', 'uael' ),
-					'type'         => Controls_Manager::CHOOSE,
-					'options'      => array(
+					'label'              => __( 'Alignment', 'uael' ),
+					'type'               => Controls_Manager::CHOOSE,
+					'options'            => array(
 						'left'    => array(
 							'title' => __( 'Left', 'uael' ),
 							'icon'  => 'fa fa-align-left',
@@ -272,8 +272,9 @@ class Woo_Add_To_Cart extends Common_Widget {
 							'icon'  => 'fa fa-align-justify',
 						),
 					),
-					'prefix_class' => 'uael-add-to-cart%s-align-',
-					'default'      => 'left',
+					'prefix_class'       => 'uael-add-to-cart%s-align-',
+					'default'            => 'left',
+					'frontend_available' => true,
 				)
 			);
 			$this->add_control(
@@ -297,15 +298,16 @@ class Woo_Add_To_Cart extends Common_Widget {
 			$this->add_responsive_control(
 				'btn_padding',
 				array(
-					'label'      => __( 'Padding', 'uael' ),
-					'type'       => Controls_Manager::DIMENSIONS,
-					'size_units' => array( 'px', 'em', '%' ),
-					'selectors'  => array(
+					'label'              => __( 'Padding', 'uael' ),
+					'type'               => Controls_Manager::DIMENSIONS,
+					'size_units'         => array( 'px', 'em', '%' ),
+					'selectors'          => array(
 						'{{WRAPPER}} .elementor-button' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					),
-					'condition'  => array(
+					'condition'          => array(
 						'enable_single_product_page!' => 'yes',
 					),
+					'frontend_available' => true,
 				)
 			);
 
@@ -490,15 +492,16 @@ class Woo_Add_To_Cart extends Common_Widget {
 				$this->add_responsive_control(
 					'btn_atc_padding',
 					array(
-						'label'      => __( 'Padding', 'uael' ),
-						'type'       => Controls_Manager::DIMENSIONS,
-						'size_units' => array( 'px', 'em', '%' ),
-						'selectors'  => array(
+						'label'              => __( 'Padding', 'uael' ),
+						'type'               => Controls_Manager::DIMENSIONS,
+						'size_units'         => array( 'px', 'em', '%' ),
+						'selectors'          => array(
 							'.woocommerce {{WRAPPER}} .uael-add-to-cart form.cart .button.single_add_to_cart_button' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 						),
-						'condition'  => array(
+						'condition'          => array(
 							'enable_single_product_page' => 'yes',
 						),
+						'frontend_available' => true,
 					)
 				);
 

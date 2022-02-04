@@ -393,9 +393,9 @@ class SocialShare extends Common_Widget {
 		$this->add_responsive_control(
 			'alignment',
 			array(
-				'label'        => __( 'Alignment', 'uael' ),
-				'type'         => Controls_Manager::CHOOSE,
-				'options'      => array(
+				'label'              => __( 'Alignment', 'uael' ),
+				'type'               => Controls_Manager::CHOOSE,
+				'options'            => array(
 					'left'   => array(
 						'title' => __( 'Left', 'uael' ),
 						'icon'  => 'eicon-text-align-left',
@@ -409,11 +409,12 @@ class SocialShare extends Common_Widget {
 						'icon'  => 'eicon-text-align-right',
 					),
 				),
-				'prefix_class' => 'elementor-share-buttons%s--align-',
-				'condition'    => array(
+				'prefix_class'       => 'elementor-share-buttons%s--align-',
+				'condition'          => array(
 					'columns'          => '0',
 					'display_position' => 'inline',
 				),
+				'frontend_available' => true,
 			)
 		);
 
@@ -446,67 +447,69 @@ class SocialShare extends Common_Widget {
 		$this->add_responsive_control(
 			'display_floating_position',
 			array(
-				'label'          => __( 'Vertical Position', 'uael' ),
-				'type'           => Controls_Manager::SLIDER,
-				'size_units'     => '%',
-				'default'        => array(
+				'label'              => __( 'Vertical Position', 'uael' ),
+				'type'               => Controls_Manager::SLIDER,
+				'size_units'         => '%',
+				'default'            => array(
 					'size' => '25',
 					'unit' => '%',
 				),
-				'tablet_default' => array(
+				'tablet_default'     => array(
 					'size' => '25',
 					'unit' => '%',
 				),
-				'mobile_default' => array(
+				'mobile_default'     => array(
 					'size' => '25',
 					'unit' => '%',
 				),
-				'range'          => array(
+				'range'              => array(
 					'%' => array(
 						'min' => 0,
 						'max' => 80,
 					),
 				),
-				'selectors'      => array(
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-style-floating .elementor-grid' => 'top: {{SIZE}}{{UNIT}};',
 				),
-				'condition'      => array(
+				'condition'          => array(
 					'display_position' => 'floating',
 				),
+				'frontend_available' => true,
 			)
 		);
 
 		$this->add_responsive_control(
 			'display_floating_horizontal_position',
 			array(
-				'label'          => __( 'Horizontal Position', 'uael' ),
-				'type'           => Controls_Manager::SLIDER,
-				'size_units'     => '%',
-				'default'        => array(
+				'label'              => __( 'Horizontal Position', 'uael' ),
+				'type'               => Controls_Manager::SLIDER,
+				'size_units'         => '%',
+				'default'            => array(
 					'size' => '0',
 					'unit' => '%',
 				),
-				'tablet_default' => array(
+				'tablet_default'     => array(
 					'size' => '0',
 					'unit' => '%',
 				),
-				'mobile_default' => array(
+				'mobile_default'     => array(
 					'size' => '0',
 					'unit' => '%',
 				),
-				'range'          => array(
+				'range'              => array(
 					'%' => array(
 						'min' => 0,
 						'max' => 50,
 					),
 				),
-				'selectors'      => array(
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-style-floating .elementor-grid.uael-floating-align-right' => 'right: {{SIZE}}{{UNIT}}; left: unset;',
 					'{{WRAPPER}} .uael-style-floating .elementor-grid.uael-floating-align-left' => 'left: {{SIZE}}{{UNIT}}; right: unset;',
 				),
-				'condition'      => array(
+				'condition'          => array(
 					'display_position' => 'floating',
 				),
+				'frontend_available' => true,
 			)
 		);
 
@@ -552,9 +555,9 @@ class SocialShare extends Common_Widget {
 		$this->add_responsive_control(
 			'column_gap',
 			array(
-				'label'          => __( 'Columns Gap', 'uael' ),
-				'type'           => Controls_Manager::SLIDER,
-				'range'          => array(
+				'label'              => __( 'Columns Gap', 'uael' ),
+				'type'               => Controls_Manager::SLIDER,
+				'range'              => array(
 					'em' => array(
 						'min'  => 0.5,
 						'max'  => 4,
@@ -565,20 +568,20 @@ class SocialShare extends Common_Widget {
 						'max' => 100,
 					),
 				),
-				'default'        => array(
+				'default'            => array(
 					'size' => 10,
 					'unit' => 'px',
 				),
-				'tablet_default' => array(
+				'tablet_default'     => array(
 					'size' => 10,
 					'unit' => 'px',
 				),
-				'mobile_default' => array(
+				'mobile_default'     => array(
 					'size' => 10,
 					'unit' => 'px',
 				),
-				'size_units'     => array( 'px', 'em' ),
-				'selectors'      => array(
+				'size_units'         => array( 'px', 'em' ),
+				'selectors'          => array(
 					'{{WRAPPER}}:not(.elementor-grid-0) .elementor-grid' => 'grid-column-gap: {{SIZE}}{{UNIT}}',
 					'{{WRAPPER}}.elementor-grid-0 .uael-share-btn' => 'margin-right: calc({{SIZE}}{{UNIT}} / 2); margin-left: calc({{SIZE}}{{UNIT}} / 2)',
 					'{{WRAPPER}}.elementor-grid-0 .uael-share-btn:last-child' => 'margin-left: calc({{SIZE}}{{UNIT}} / 2)',
@@ -593,18 +596,19 @@ class SocialShare extends Common_Widget {
 					'(mobile) {{WRAPPER}}.elementor-grid-mobile-0 .elementor-grid' => 'margin-right: calc(-{{SIZE}}{{UNIT}} / 2); margin-left: calc(-{{SIZE}}{{UNIT}} / 2)',
 					'(mobile) {{WRAPPER}}.elementor-grid-mobile-0 .elementor-grid:last-child' => 'margin-left: calc(-{{SIZE}}{{UNIT}} / 2)',
 				),
-				'condition'      => array(
+				'condition'          => array(
 					'display_position' => 'inline',
 				),
+				'frontend_available' => true,
 			)
 		);
 
 		$this->add_responsive_control(
 			'row_gap',
 			array(
-				'label'          => __( 'Rows Gap', 'uael' ),
-				'type'           => Controls_Manager::SLIDER,
-				'range'          => array(
+				'label'              => __( 'Rows Gap', 'uael' ),
+				'type'               => Controls_Manager::SLIDER,
+				'range'              => array(
 					'em' => array(
 						'min'  => 0.5,
 						'max'  => 4,
@@ -615,70 +619,72 @@ class SocialShare extends Common_Widget {
 						'max' => 50,
 					),
 				),
-				'default'        => array(
+				'default'            => array(
 					'size' => 0,
 					'unit' => 'px',
 				),
-				'tablet_default' => array(
+				'tablet_default'     => array(
 					'size' => 0,
 					'unit' => 'px',
 				),
-				'mobile_default' => array(
+				'mobile_default'     => array(
 					'size' => 10,
 					'unit' => 'px',
 				),
-				'size_units'     => array( 'px', 'em' ),
-				'selectors'      => array(
+				'size_units'         => array( 'px', 'em' ),
+				'selectors'          => array(
 					'{{WRAPPER}}:not(.elementor-grid-0) .elementor-grid' => 'grid-row-gap: {{SIZE}}{{UNIT}}',
 					'{{WRAPPER}}.elementor-grid-0 .uael-share-btn' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 					'{{WRAPPER}}.uael-stylex-floating .elementor-grid .uael-share-btn' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 					'(tablet) {{WRAPPER}}.elementor-grid-tablet-0 .uael-share-btn' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 					'(mobile) {{WRAPPER}}.elementor-grid-mobile-0 .uael-share-btn' => 'margin-bottom: {{SIZE}}{{UNIT}}',
 				),
-				'condition'      => array(
+				'condition'          => array(
 					'display_position' => array( 'inline', 'floating' ),
 				),
+				'frontend_available' => true,
 			)
 		);
 
 		$this->add_responsive_control(
 			'button_size',
 			array(
-				'label'          => __( 'Button Size', 'uael' ),
-				'type'           => Controls_Manager::SLIDER,
-				'range'          => array(
+				'label'              => __( 'Button Size', 'uael' ),
+				'type'               => Controls_Manager::SLIDER,
+				'range'              => array(
 					'px' => array(
 						'min'  => 0.5,
 						'max'  => 2,
 						'step' => 0.05,
 					),
 				),
-				'default'        => array(
+				'default'            => array(
 					'unit' => 'px',
 				),
-				'tablet_default' => array(
+				'tablet_default'     => array(
 					'unit' => 'px',
 				),
-				'mobile_default' => array(
+				'mobile_default'     => array(
 					'unit' => 'px',
 				),
-				'size_units'     => array( 'em', 'px' ),
-				'selectors'      => array(
+				'size_units'         => array( 'em', 'px' ),
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-share-btn'       => 'font-size: calc({{SIZE}}{{UNIT}} * 10);',
 					'{{WRAPPER}} .uael-total-share-btn' => 'font-size: calc({{SIZE}}{{UNIT}} * 10);',
 				),
-				'condition'      => array(
+				'condition'          => array(
 					'display_position' => array( 'inline', 'floating' ),
 				),
+				'frontend_available' => true,
 			)
 		);
 
 		$this->add_responsive_control(
 			'button_height',
 			array(
-				'label'          => __( 'Button Height', 'uael' ),
-				'type'           => Controls_Manager::SLIDER,
-				'range'          => array(
+				'label'              => __( 'Button Height', 'uael' ),
+				'type'               => Controls_Manager::SLIDER,
+				'range'              => array(
 					'em' => array(
 						'min'  => 1,
 						'max'  => 7,
@@ -689,30 +695,31 @@ class SocialShare extends Common_Widget {
 						'max' => 100,
 					),
 				),
-				'default'        => array(
+				'default'            => array(
 					'unit' => 'em',
 				),
-				'tablet_default' => array(
+				'tablet_default'     => array(
 					'unit' => 'em',
 				),
-				'mobile_default' => array(
+				'mobile_default'     => array(
 					'unit' => 'em',
 				),
-				'size_units'     => array( 'em', 'px' ),
-				'selectors'      => array(
+				'size_units'         => array( 'em', 'px' ),
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-share-btn'       => 'height: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} .uael-share-btn__icon' => 'height: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} .uael-total-share-btn' => 'height: {{SIZE}}{{UNIT}};',
 				),
+				'frontend_available' => true,
 			)
 		);
 
 		$this->add_responsive_control(
 			'icon_size',
 			array(
-				'label'          => __( 'Icon Size', 'uael' ),
-				'type'           => Controls_Manager::SLIDER,
-				'range'          => array(
+				'label'              => __( 'Icon Size', 'uael' ),
+				'type'               => Controls_Manager::SLIDER,
+				'range'              => array(
 					'em' => array(
 						'min'  => 0.5,
 						'max'  => 4,
@@ -723,37 +730,38 @@ class SocialShare extends Common_Widget {
 						'max' => 100,
 					),
 				),
-				'default'        => array(
+				'default'            => array(
 					'unit' => 'em',
 				),
-				'tablet_default' => array(
+				'tablet_default'     => array(
 					'unit' => 'em',
 				),
-				'mobile_default' => array(
+				'mobile_default'     => array(
 					'unit' => 'em',
 				),
-				'size_units'     => array( 'em', 'px' ),
-				'selectors'      => array(
+				'size_units'         => array( 'em', 'px' ),
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-share-btn__icon i' => 'font-size: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} .uael-share-btn__icon i' => 'font-size: {{SIZE}}{{UNIT}};',
 				),
-				'condition'      => array(
+				'condition'          => array(
 					'view!'            => array( 'text' ),
 					'display_position' => array( 'floating', 'inline' ),
 				),
+				'frontend_available' => true,
 			)
 		);
 
 		$this->add_responsive_control(
 			'border_size',
 			array(
-				'label'      => __( 'Border Size', 'uael' ),
-				'type'       => Controls_Manager::SLIDER,
-				'size_units' => array( 'px', 'em' ),
-				'default'    => array(
+				'label'              => __( 'Border Size', 'uael' ),
+				'type'               => Controls_Manager::SLIDER,
+				'size_units'         => array( 'px', 'em' ),
+				'default'            => array(
 					'size' => 2,
 				),
-				'range'      => array(
+				'range'              => array(
 					'px' => array(
 						'min' => 2,
 						'max' => 20,
@@ -763,7 +771,7 @@ class SocialShare extends Common_Widget {
 						'step' => 0.1,
 					),
 				),
-				'selectors'  => array(
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-style-inline .elementor-grid .elementor-grid-item div.uael-share-btn.uaelbtn--skin-framed' => 'border-width: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} .uael-style-inline .elementor-grid .elementor-grid-item div.uael-share-btn.uaelbtn--skin-boxed' => 'border-width: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} .uael-style-floating .elementor-grid .elementor-grid-item div.uael-share-btn.uaelbtn--skin-framed' => 'border-width: {{SIZE}}{{UNIT}};',
@@ -774,9 +782,10 @@ class SocialShare extends Common_Widget {
 					'{{WRAPPER}} .uael-style-floating .elementor-grid .elementor-grid-item div.uael-share-btn.uaelbtn--skin-boxed' => 'border-width: {{SIZE}}{{UNIT}};',
 
 				),
-				'condition'  => array(
+				'condition'          => array(
 					'skin' => array( 'framed', 'boxed' ),
 				),
+				'frontend_available' => true,
 			)
 		);
 
@@ -1342,33 +1351,34 @@ class SocialShare extends Common_Widget {
 		$this->add_responsive_control(
 			'share_size',
 			array(
-				'label'          => __( 'Size', 'uael' ),
-				'type'           => Controls_Manager::SLIDER,
-				'range'          => array(
+				'label'              => __( 'Size', 'uael' ),
+				'type'               => Controls_Manager::SLIDER,
+				'range'              => array(
 					'px' => array(
 						'min'  => 0.5,
 						'max'  => 5,
 						'step' => 0.05,
 					),
 				),
-				'default'        => array(
+				'default'            => array(
 					'unit' => 'px',
 				),
-				'tablet_default' => array(
+				'tablet_default'     => array(
 					'unit' => 'px',
 				),
-				'mobile_default' => array(
+				'mobile_default'     => array(
 					'unit' => 'px',
 				),
-				'size_units'     => array( 'px' ),
-				'selectors'      => array(
+				'size_units'         => array( 'px' ),
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-style-floating .uael-total-share-btn__iconx,{{WRAPPER}} .uael-style-inline .uael-total-share-btn__iconx' => 'font-size: calc({{SIZE}}{{UNIT}} * 10);',
 					'{{WRAPPER}} .uael-style-floating .uael-total-share-btn__titlex,{{WRAPPER}} .uael-style-inline .uael-total-share-btn__titlex' => 'font-size: calc({{SIZE}}{{UNIT}} * 10);',
 				),
-				'condition'      => array(
+				'condition'          => array(
 					'display_position' => array( 'inline', 'floating' ),
 					'show_count'       => 'yes',
 				),
+				'frontend_available' => true,
 			)
 		);
 
@@ -1412,9 +1422,9 @@ class SocialShare extends Common_Widget {
 		$this->add_responsive_control(
 			'count_alignment',
 			array(
-				'label'     => __( 'Alignment', 'uael' ),
-				'type'      => Controls_Manager::CHOOSE,
-				'options'   => array(
+				'label'              => __( 'Alignment', 'uael' ),
+				'type'               => Controls_Manager::CHOOSE,
+				'options'            => array(
 					'flex-start' => array(
 						'title' => __( 'Left', 'uael' ),
 						'icon'  => 'fa fa-align-left',
@@ -1428,15 +1438,16 @@ class SocialShare extends Common_Widget {
 						'icon'  => 'fa fa-align-right',
 					),
 				),
-				'default'   => 'flex-start',
-				'selectors' => array(
+				'default'            => 'flex-start',
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-style-floating .uael-total-share-btn' => 'justify-content: {{VALUE}};',
 				),
-				'condition' => array(
+				'condition'          => array(
 					'display_position' => 'floating',
 					'show_count'       => 'yes',
 					'view!'            => 'icon',
 				),
+				'frontend_available' => true,
 			)
 		);
 

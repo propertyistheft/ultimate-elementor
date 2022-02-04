@@ -1,3 +1,8 @@
+Version 1.36.3 - Tuesday, 1st February 2022
+- Compatibility with Elementor Pro version 3.6
+- Fix: Display Conditions - ACF field conditions not working.
+- Fix: Woo - Checkout - Shipping method not updating when zip code is changed.
+
 Version 1.36.2 - Tuesday, 25th January 2022
 - Fix: Before After Slider - Before After labels are shown even if they are empty.
 - Fix: Display Conditions - ACF boolean field not working.

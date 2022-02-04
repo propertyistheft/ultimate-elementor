@@ -1236,25 +1236,26 @@ class Image_Gallery extends Common_Widget {
 					$this->add_responsive_control(
 						'overlay_image_size_hover',
 						array(
-							'label'      => __( 'Overlay Image Width', 'uael' ),
-							'type'       => Controls_Manager::SLIDER,
-							'size_units' => array( 'px', 'em', 'rem' ),
-							'range'      => array(
+							'label'              => __( 'Overlay Image Width', 'uael' ),
+							'type'               => Controls_Manager::SLIDER,
+							'size_units'         => array( 'px', 'em', 'rem' ),
+							'range'              => array(
 								'px' => array(
 									'min' => 1,
 									'max' => 2000,
 								),
 							),
-							'default'    => array(
+							'default'            => array(
 								'size' => 50,
 								'unit' => 'px',
 							),
-							'condition'  => array(
+							'condition'          => array(
 								'overlay_image_type' => 'photo',
 							),
-							'selectors'  => array(
+							'selectors'          => array(
 								'{{WRAPPER}} .uael-grid-gallery-img .uael-grid-img-overlay img' => 'width: {{SIZE}}{{UNIT}};',
 							),
+							'frontend_available' => true,
 						)
 					);
 
@@ -1403,15 +1404,16 @@ class Image_Gallery extends Common_Widget {
 			$this->add_responsive_control(
 				'caption_padding',
 				array(
-					'label'      => __( 'Padding', 'uael' ),
-					'type'       => Controls_Manager::DIMENSIONS,
-					'size_units' => array( 'px', '%' ),
-					'selectors'  => array(
+					'label'              => __( 'Padding', 'uael' ),
+					'type'               => Controls_Manager::DIMENSIONS,
+					'size_units'         => array( 'px', '%' ),
+					'selectors'          => array(
 						'{{WRAPPER}} .uael-grid-img-caption'   => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					),
-					'condition'  => array(
+					'condition'          => array(
 						'gallery_caption!' => '',
 					),
+					'frontend_available' => true,
 				)
 			);
 		$this->end_controls_section();
@@ -1577,9 +1579,9 @@ class Image_Gallery extends Common_Widget {
 			$this->add_responsive_control(
 				'cat_filter_align',
 				array(
-					'label'        => __( 'Tab Alignment', 'uael' ),
-					'type'         => Controls_Manager::CHOOSE,
-					'options'      => array(
+					'label'              => __( 'Tab Alignment', 'uael' ),
+					'type'               => Controls_Manager::CHOOSE,
+					'options'            => array(
 						'left'   => array(
 							'title' => __( 'Left', 'uael' ),
 							'icon'  => 'fa fa-align-left',
@@ -1593,17 +1595,18 @@ class Image_Gallery extends Common_Widget {
 							'icon'  => 'fa fa-align-right',
 						),
 					),
-					'default'      => 'center',
-					'toggle'       => false,
-					'render_type'  => 'template',
-					'prefix_class' => 'uael%s-gallery-filter-align-',
-					'selectors'    => array(
+					'default'            => 'center',
+					'toggle'             => false,
+					'render_type'        => 'template',
+					'prefix_class'       => 'uael%s-gallery-filter-align-',
+					'selectors'          => array(
 						'{{WRAPPER}} .uael-gallery-parent .uael-masonry-filters' => 'text-align: {{VALUE}};',
 					),
-					'condition'    => array(
+					'condition'          => array(
 						'gallery_style'          => array( 'grid', 'masonry', 'justified' ),
 						'masonry_filters_enable' => 'yes',
 					),
+					'frontend_available' => true,
 				)
 			);
 
@@ -1624,57 +1627,60 @@ class Image_Gallery extends Common_Widget {
 			$this->add_responsive_control(
 				'cat_filter_padding',
 				array(
-					'label'      => __( 'Padding', 'uael' ),
-					'type'       => Controls_Manager::DIMENSIONS,
-					'size_units' => array( 'px', 'em', '%' ),
-					'selectors'  => array(
+					'label'              => __( 'Padding', 'uael' ),
+					'type'               => Controls_Manager::DIMENSIONS,
+					'size_units'         => array( 'px', 'em', '%' ),
+					'selectors'          => array(
 						'{{WRAPPER}} .uael-gallery-parent .uael-masonry-filters .uael-masonry-filter' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 					),
-					'condition'  => array(
+					'condition'          => array(
 						'gallery_style'          => array( 'grid', 'masonry', 'justified' ),
 						'masonry_filters_enable' => 'yes',
 					),
+					'frontend_available' => true,
 				)
 			);
 
 			$this->add_responsive_control(
 				'cat_filter_bet_spacing',
 				array(
-					'label'     => __( 'Spacing Between Tabs', 'uael' ),
-					'type'      => Controls_Manager::SLIDER,
-					'range'     => array(
+					'label'              => __( 'Spacing Between Tabs', 'uael' ),
+					'type'               => Controls_Manager::SLIDER,
+					'range'              => array(
 						'px' => array(
 							'max' => 100,
 						),
 					),
-					'selectors' => array(
+					'selectors'          => array(
 						'{{WRAPPER}} .uael-gallery-parent .uael-masonry-filters .uael-masonry-filter' => 'margin-left: {{SIZE}}{{UNIT}}; margin-right: {{SIZE}}{{UNIT}};',
 						'(mobile){{WRAPPER}} .uael-gallery-parent .uael-img-gallery-tabs-dropdown .uael-masonry-filters .uael-masonry-filter' => 'margin-left: 0px; margin-right: 0px;',
 					),
-					'condition' => array(
+					'condition'          => array(
 						'gallery_style'          => array( 'grid', 'masonry', 'justified' ),
 						'masonry_filters_enable' => 'yes',
 					),
+					'frontend_available' => true,
 				)
 			);
 			$this->add_responsive_control(
 				'cat_filter_spacing',
 				array(
-					'label'     => __( 'Tabs Bottom Spacing', 'uael' ),
-					'type'      => Controls_Manager::SLIDER,
-					'range'     => array(
+					'label'              => __( 'Tabs Bottom Spacing', 'uael' ),
+					'type'               => Controls_Manager::SLIDER,
+					'range'              => array(
 						'px' => array(
 							'max' => 100,
 						),
 					),
-					'selectors' => array(
+					'selectors'          => array(
 						'{{WRAPPER}} .uael-gallery-parent .uael-masonry-filters' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 					),
-					'condition' => array(
+					'condition'          => array(
 						'gallery_style'          => array( 'grid', 'masonry', 'justified' ),
 						'masonry_filters_enable' => 'yes',
 					),
-					'separator' => 'after',
+					'separator'          => 'after',
+					'frontend_available' => true,
 				)
 			);
 

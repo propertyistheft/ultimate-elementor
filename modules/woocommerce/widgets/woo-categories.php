@@ -799,44 +799,46 @@ class Woo_Categories extends Common_Widget {
 		$this->add_responsive_control(
 			'column_gap',
 			array(
-				'label'     => __( 'Columns Gap', 'uael' ),
-				'type'      => Controls_Manager::SLIDER,
-				'default'   => array(
+				'label'              => __( 'Columns Gap', 'uael' ),
+				'type'               => Controls_Manager::SLIDER,
+				'default'            => array(
 					'size' => 20,
 				),
-				'range'     => array(
+				'range'              => array(
 					'px' => array(
 						'min' => 0,
 						'max' => 100,
 					),
 				),
-				'selectors' => array(
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-woo-categories li.product' => 'padding-right: calc( {{SIZE}}{{UNIT}}/2 ); padding-left: calc( {{SIZE}}{{UNIT}}/2 );',
 					'{{WRAPPER}} .uael-woo-categories ul.products' => 'margin-left: calc( -{{SIZE}}{{UNIT}}/2 ); margin-right: calc( -{{SIZE}}{{UNIT}}/2 );',
 				),
+				'frontend_available' => true,
 			)
 		);
 
 		$this->add_responsive_control(
 			'row_gap',
 			array(
-				'label'     => __( 'Rows Gap', 'uael' ),
-				'type'      => Controls_Manager::SLIDER,
-				'default'   => array(
+				'label'              => __( 'Rows Gap', 'uael' ),
+				'type'               => Controls_Manager::SLIDER,
+				'default'            => array(
 					'size' => 35,
 				),
-				'range'     => array(
+				'range'              => array(
 					'px' => array(
 						'min' => 0,
 						'max' => 100,
 					),
 				),
-				'selectors' => array(
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-woo-categories li.product' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 				),
-				'condition' => array(
+				'condition'          => array(
 					'products_layout_type' => 'grid',
 				),
+				'frontend_available' => true,
 			)
 		);
 

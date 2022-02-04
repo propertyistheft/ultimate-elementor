@@ -1045,8 +1045,8 @@
 			},
 			
 			_order_review_ajax: function() {
-		 		woo_checkout.on('change', 'select.shipping_method, input[name^="shipping_method"], #ship-to-different-address input, .update_totals_on_change select, .update_totals_on_change input[type="radio"], .update_totals_on_change input[type="checkbox"]', function () {
-			    	
+		 		woo_checkout.on('change', 'select.shipping_method, input[name^="shipping_method"], #ship-to-different-address input, .update_totals_on_change select, .update_totals_on_change input[type="radio"], .update_totals_on_change input[type="checkbox"], input[name^="billing_postcode"], input[name^="shipping_postcode"]', function () {
+
 			    	$(document.body).trigger('update_checkout');
 					render_order_review();
 

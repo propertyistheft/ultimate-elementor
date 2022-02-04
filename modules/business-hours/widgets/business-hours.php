@@ -275,12 +275,13 @@ class Business_Hours extends Common_Widget {
 		$this->add_responsive_control(
 			'section_bs_list_padding',
 			array(
-				'label'      => __( 'Row Spacing', 'uael' ),
-				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => array( 'px', 'em', '%' ),
-				'selectors'  => array(
+				'label'              => __( 'Row Spacing', 'uael' ),
+				'type'               => Controls_Manager::DIMENSIONS,
+				'size_units'         => array( 'px', 'em', '%' ),
+				'selectors'          => array(
 					'{{WRAPPER}} div.uael-days div' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
+				'frontend_available' => true,
 			)
 		);
 
@@ -385,9 +386,9 @@ class Business_Hours extends Common_Widget {
 		$this->add_responsive_control(
 			'business_hours_day_align',
 			array(
-				'label'     => __( 'Day Alignment', 'uael' ),
-				'type'      => Controls_Manager::CHOOSE,
-				'options'   => array(
+				'label'              => __( 'Day Alignment', 'uael' ),
+				'type'               => Controls_Manager::CHOOSE,
+				'options'            => array(
 					'left'   => array(
 						'title' => __( 'Left', 'uael' ),
 						'icon'  => 'fa fa-align-left',
@@ -401,9 +402,10 @@ class Business_Hours extends Common_Widget {
 						'icon'  => 'fa fa-align-right',
 					),
 				),
-				'selectors' => array(
+				'selectors'          => array(
 					'{{WRAPPER}} div.uael-days .heading-date' => 'text-align: {{VALUE}};',
 				),
+				'frontend_available' => true,
 			)
 		);
 
@@ -411,9 +413,9 @@ class Business_Hours extends Common_Widget {
 		$this->add_responsive_control(
 			'business_hours_time_align',
 			array(
-				'label'     => __( 'Time Alignment', 'uael' ),
-				'type'      => Controls_Manager::CHOOSE,
-				'options'   => array(
+				'label'              => __( 'Time Alignment', 'uael' ),
+				'type'               => Controls_Manager::CHOOSE,
+				'options'            => array(
 					'left'   => array(
 						'title' => __( 'Left', 'uael' ),
 						'icon'  => 'fa fa-align-left',
@@ -427,9 +429,10 @@ class Business_Hours extends Common_Widget {
 						'icon'  => 'fa fa-align-right',
 					),
 				),
-				'selectors' => array(
+				'selectors'          => array(
 					'{{WRAPPER}} div.uael-days .heading-time' => 'text-align: {{VALUE}};',
 				),
+				'frontend_available' => true,
 			)
 		);
 

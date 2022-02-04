@@ -111,7 +111,5 @@ class Module extends Module_Base {
 	protected function add_actions() {
 
 		add_action( 'wp_ajax_uael_widget_presets', array( $this, 'apply_preset' ) );
-
-		add_action( 'elementor/controls/controls_registered', array( $this, 'register_controls' ) );
 	}
 }

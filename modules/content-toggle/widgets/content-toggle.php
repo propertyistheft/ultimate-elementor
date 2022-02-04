@@ -428,22 +428,23 @@ class ContentToggle extends Common_Widget {
 		$this->add_responsive_control(
 			'rds_switch_size',
 			array(
-				'label'     => __( 'Switch Size', 'uael' ),
-				'type'      => Controls_Manager::SLIDER,
-				'default'   => array(
+				'label'              => __( 'Switch Size', 'uael' ),
+				'type'               => Controls_Manager::SLIDER,
+				'default'            => array(
 					'size' => 15,
 				),
-				'range'     => array(
+				'range'              => array(
 					'px' => array(
 						'min'  => 10,
 						'max'  => 35,
 						'step' => 1,
 					),
 				),
-				'selectors' => array(
+				'selectors'          => array(
 					// General.
 					'{{WRAPPER}} .uael-main-btn' => 'font-size: {{SIZE}}px;',
 				),
+				'frontend_available' => true,
 			)
 		);
 
@@ -557,10 +558,10 @@ class ContentToggle extends Common_Widget {
 		$this->add_responsive_control(
 			'rds_heading_alignment',
 			array(
-				'label'     => __( 'Alignment', 'uael' ),
-				'type'      => Controls_Manager::CHOOSE,
-				'default'   => 'center',
-				'options'   => array(
+				'label'              => __( 'Alignment', 'uael' ),
+				'type'               => Controls_Manager::CHOOSE,
+				'default'            => 'center',
+				'options'            => array(
 					'flex-start' => array(
 						'title' => __( 'Left', 'uael' ),
 						'icon'  => 'fa fa-align-left',
@@ -574,10 +575,11 @@ class ContentToggle extends Common_Widget {
 						'icon'  => 'fa fa-align-right',
 					),
 				),
-				'selectors' => array(
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-rbs-toggle' => 'justify-content: {{VALUE}};',
 					'{{WRAPPER}} .uael-ct-desktop-stack--yes .uael-rbs-toggle' => 'align-items: {{VALUE}};',
 				),
+				'frontend_available' => true,
 			)
 		);
 
@@ -671,15 +673,16 @@ class ContentToggle extends Common_Widget {
 		$this->add_responsive_control(
 			'rbs_heading_padding',
 			array(
-				'label'      => __( 'Padding', 'uael' ),
-				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => array( 'px' ),
-				'selectors'  => array(
+				'label'              => __( 'Padding', 'uael' ),
+				'type'               => Controls_Manager::DIMENSIONS,
+				'size_units'         => array( 'px' ),
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-rbs-toggle' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
-				'condition'  => array(
+				'condition'          => array(
 					'rbs_advance_setting' => 'yes',
 				),
+				'frontend_available' => true,
 			)
 		);
 
@@ -846,15 +849,16 @@ class ContentToggle extends Common_Widget {
 		$this->add_responsive_control(
 			'rbs_content_padding',
 			array(
-				'label'      => __( 'Padding', 'uael' ),
-				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => array( 'px' ),
-				'selectors'  => array(
+				'label'              => __( 'Padding', 'uael' ),
+				'type'               => Controls_Manager::DIMENSIONS,
+				'size_units'         => array( 'px' ),
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-rbs-toggle-sections' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
-				'condition'  => array(
+				'condition'          => array(
 					'rbs_content_advance_setting' => 'yes',
 				),
+				'frontend_available' => true,
 			)
 		);
 
@@ -874,19 +878,20 @@ class ContentToggle extends Common_Widget {
 		$this->add_responsive_control(
 			'rds_button_headings_spacing',
 			array(
-				'label'     => __( 'Button & Headings', 'uael' ),
-				'type'      => Controls_Manager::SLIDER,
-				'range'     => array(
+				'label'              => __( 'Button & Headings', 'uael' ),
+				'type'               => Controls_Manager::SLIDER,
+				'range'              => array(
 					'%' => array(
 						'min'  => 0,
 						'max'  => 100,
 						'step' => 1,
 					),
 				),
-				'default'   => array(
+				'default'            => array(
 					'size' => 5,
 				),
-				'selectors' => array(
+				'frontend_available' => true,
+				'selectors'          => array(
 					// General.
 					'{{WRAPPER}} .uael-ct-desktop-stack--no .uael-sec-1'         => 'margin-right: {{SIZE}}%;',
 					'{{WRAPPER}} .uael-ct-desktop-stack--no .uael-sec-2'         => 'margin-left: {{SIZE}}%;',
@@ -914,22 +919,23 @@ class ContentToggle extends Common_Widget {
 		$this->add_responsive_control(
 			'rds_headings_content_spacing',
 			array(
-				'label'     => __( 'Content & Headings', 'uael' ),
-				'type'      => Controls_Manager::SLIDER,
-				'default'   => array(
+				'label'              => __( 'Content & Headings', 'uael' ),
+				'type'               => Controls_Manager::SLIDER,
+				'default'            => array(
 					'size' => 10,
 				),
-				'range'     => array(
+				'range'              => array(
 					'px' => array(
 						'min'  => 0,
 						'max'  => 100,
 						'step' => 1,
 					),
 				),
-				'selectors' => array(
+				'selectors'          => array(
 					// General.
 					'{{WRAPPER}} .uael-rbs-toggle' => 'margin-bottom: {{SIZE}}px;',
 				),
+				'frontend_available' => true,
 			)
 		);
 

@@ -584,29 +584,30 @@ class Woo_Checkout extends Common_Widget {
 		$this->add_responsive_control(
 			'section_border_radius',
 			array(
-				'label'      => __( 'Rounded Corners', 'uael' ),
-				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => array( 'px', '%' ),
-				'default'    => array(
+				'label'              => __( 'Rounded Corners', 'uael' ),
+				'type'               => Controls_Manager::DIMENSIONS,
+				'size_units'         => array( 'px', '%' ),
+				'default'            => array(
 					'top'    => '2',
 					'bottom' => '2',
 					'left'   => '2',
 					'right'  => '2',
 					'unit'   => 'px',
 				),
-				'selectors'  => array(
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-login, {{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-coupon, {{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-billing-form,
 					{{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-shipping-form, {{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-order-review, {{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-payment, {{WRAPPER}} .uael-woo-checkout #customer_details .col-2 .woocommerce-additional-fields:only-child, {{WRAPPER}} .uael_multistep_container .woocommerce-additional-fields' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
+				'frontend_available' => true,
 			)
 		);
 
 		$this->add_responsive_control(
 			'section_padding',
 			array(
-				'label'      => __( 'Padding', 'uael' ),
-				'type'       => Controls_Manager::DIMENSIONS,
-				'default'    => array(
+				'label'              => __( 'Padding', 'uael' ),
+				'type'               => Controls_Manager::DIMENSIONS,
+				'default'            => array(
 					'top'      => '0',
 					'right'    => '24',
 					'bottom'   => '24',
@@ -614,11 +615,12 @@ class Woo_Checkout extends Common_Widget {
 					'unit'     => 'px',
 					'isLinked' => true,
 				),
-				'size_units' => array( 'px', 'em', '%' ),
-				'selectors'  => array(
+				'size_units'         => array( 'px', 'em', '%' ),
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-login, {{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-login-msg, {{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-coupon, {{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-billing-form,
 					{{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-shipping-form, {{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-order-review, {{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-payment, {{WRAPPER}} .uael-woo-checkout #customer_details .col-2 .woocommerce-additional-fields:only-child, {{WRAPPER}} .uael_multistep_container .woocommerce-additional-fields, {{WRAPPER}} .uael_multistep_container .uael-buttons' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
+				'frontend_available' => true,
 			)
 		);
 
@@ -892,21 +894,22 @@ class Woo_Checkout extends Common_Widget {
 		$this->add_responsive_control(
 			'labels_spacing',
 			array(
-				'label'     => __( 'Bottom Spacing', 'uael' ),
-				'type'      => Controls_Manager::SLIDER,
-				'range'     => array(
+				'label'              => __( 'Bottom Spacing', 'uael' ),
+				'type'               => Controls_Manager::SLIDER,
+				'range'              => array(
 					'px' => array(
 						'min' => 0,
 						'max' => 60,
 					),
 				),
-				'default'   => array(
+				'default'            => array(
 					'unit' => 'px',
 					'size' => 10,
 				),
-				'selectors' => array(
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-coupon .form-row label, {{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-login .form-row label, {{WRAPPER}} .uael-woo-checkout .customer_details label:not(.woocommerce-form__label.woocommerce-form__label-for-checkbox.checkbox), {{WRAPPER}} .uael-woo-checkout #customer_details label:not(.woocommerce-form__label.woocommerce-form__label-for-checkbox.checkbox)' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 				),
+				'frontend_available' => true,
 			)
 		);
 
@@ -1014,12 +1017,13 @@ class Woo_Checkout extends Common_Widget {
 		$this->add_responsive_control(
 			'inputs_border_radius',
 			array(
-				'label'      => __( 'Border Radius', 'uael' ),
-				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => array( 'px', '%' ),
-				'selectors'  => array(
+				'label'              => __( 'Border Radius', 'uael' ),
+				'type'               => Controls_Manager::DIMENSIONS,
+				'size_units'         => array( 'px', '%' ),
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-woo-checkout form .input-text, {{WRAPPER}} .uael-woo-checkout form select' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
+				'frontend_available' => true,
 			)
 		);
 
@@ -1046,17 +1050,18 @@ class Woo_Checkout extends Common_Widget {
 		$this->add_responsive_control(
 			'inputs_bottom_spacing',
 			array(
-				'label'     => __( 'Bottom Spacing', 'uael' ),
-				'type'      => Controls_Manager::SLIDER,
-				'range'     => array(
+				'label'              => __( 'Bottom Spacing', 'uael' ),
+				'type'               => Controls_Manager::SLIDER,
+				'range'              => array(
 					'px' => array(
 						'min' => 0,
 						'max' => 60,
 					),
 				),
-				'selectors' => array(
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-woo-checkout .customer_details .form-row, {{WRAPPER}} .uael-woo-checkout #customer_details .form-row' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 				),
+				'frontend_available' => true,
 			)
 		);
 
@@ -1280,23 +1285,24 @@ class Woo_Checkout extends Common_Widget {
 		$this->add_responsive_control(
 			'button_border_radius',
 			array(
-				'label'      => __( 'Border Radius', 'uael' ),
-				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => array( 'px', '%' ),
-				'selectors'  => array(
+				'label'              => __( 'Border Radius', 'uael' ),
+				'type'               => Controls_Manager::DIMENSIONS,
+				'size_units'         => array( 'px', '%' ),
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-woo-checkout .woocommerce-checkout #place_order,
 					{{WRAPPER}} .uael-woo-checkout .checkout_coupon.woocommerce-form-coupon .form-row-last button, {{WRAPPER}} .uael-woo-checkout .uael_multistep_container .uael-buttons .button-prev, {{WRAPPER}} .uael-woo-checkout .uael_multistep_container .uael-buttons .button-next' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
+				'frontend_available' => true,
 			)
 		);
 
 		$this->add_responsive_control(
 			'button_padding',
 			array(
-				'label'      => __( 'Padding', 'uael' ),
-				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => array( 'px', 'em', '%' ),
-				'default'    => array(
+				'label'              => __( 'Padding', 'uael' ),
+				'type'               => Controls_Manager::DIMENSIONS,
+				'size_units'         => array( 'px', 'em', '%' ),
+				'default'            => array(
 					'top'      => '12',
 					'right'    => '12',
 					'bottom'   => '12',
@@ -1304,12 +1310,13 @@ class Woo_Checkout extends Common_Widget {
 					'unit'     => 'px',
 					'isLinked' => true,
 				),
-				'selectors'  => array(
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-login button[name="login"],
 					{{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-coupon button[name="apply_coupon"],
 					{{WRAPPER}} .uael-woo-checkout .uael-woo-checkout-payment button#place_order,
 					{{WRAPPER}} .uael-woo-checkout .uael_multistep_container .uael-buttons .button-prev, {{WRAPPER}} .uael-woo-checkout .uael_multistep_container .uael-buttons .button-next' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
+				'frontend_available' => true,
 			)
 		);
 
@@ -1658,16 +1665,17 @@ class Woo_Checkout extends Common_Widget {
 		$this->add_responsive_control(
 			'section_tabs_padding',
 			array(
-				'label'      => __( 'Padding', 'uael' ),
-				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => array( 'px', 'em', '%' ),
-				'selectors'  => array(
+				'label'              => __( 'Padding', 'uael' ),
+				'type'               => Controls_Manager::DIMENSIONS,
+				'size_units'         => array( 'px', 'em', '%' ),
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-woo-checkout .uael_multistep_container .uael-tabs' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
-				'condition'  => array(
+				'condition'          => array(
 					'layout'          => '3',
 					'multistep_style' => array( 'default', 'icons' ),
 				),
+				'frontend_available' => true,
 			)
 		);
 

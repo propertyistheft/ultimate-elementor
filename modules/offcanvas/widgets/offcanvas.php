@@ -469,9 +469,9 @@ class Offcanvas extends Common_Widget {
 		$this->add_responsive_control(
 			'uael_display_inline_button_align',
 			array(
-				'label'     => __( 'Alignment', 'uael' ),
-				'type'      => Controls_Manager::CHOOSE,
-				'options'   => array(
+				'label'              => __( 'Alignment', 'uael' ),
+				'type'               => Controls_Manager::CHOOSE,
+				'options'            => array(
 					'left'    => array(
 						'title' => __( 'Left', 'uael' ),
 						'icon'  => 'fa fa-align-left',
@@ -489,12 +489,13 @@ class Offcanvas extends Common_Widget {
 						'icon'  => 'fa fa-align-justify',
 					),
 				),
-				'default'   => 'left',
-				'condition' => array(
+				'default'            => 'left',
+				'condition'          => array(
 					'uael_display_position' => 'inline',
 					'offcanvas_on'          => 'button',
 				),
-				'toggle'    => false,
+				'toggle'             => false,
+				'frontend_available' => true,
 			)
 		);
 

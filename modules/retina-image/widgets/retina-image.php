@@ -169,9 +169,9 @@ class Retina_Image extends Common_Widget {
 		$this->add_responsive_control(
 			'align',
 			array(
-				'label'     => __( 'Alignment', 'uael' ),
-				'type'      => Controls_Manager::CHOOSE,
-				'options'   => array(
+				'label'              => __( 'Alignment', 'uael' ),
+				'type'               => Controls_Manager::CHOOSE,
+				'options'            => array(
 					'left'   => array(
 						'title' => __( 'Left', 'uael' ),
 						'icon'  => 'fa fa-align-left',
@@ -185,10 +185,11 @@ class Retina_Image extends Common_Widget {
 						'icon'  => 'fa fa-align-right',
 					),
 				),
-				'default'   => 'center',
-				'selectors' => array(
+				'default'            => 'center',
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-retina-image-container, {{WRAPPER}} .uael-caption-width' => 'text-align: {{VALUE}};',
 				),
+				'frontend_available' => true,
 			)
 		);
 
@@ -272,19 +273,19 @@ class Retina_Image extends Common_Widget {
 		$this->add_responsive_control(
 			'width',
 			array(
-				'label'          => __( 'Width', 'uael' ),
-				'type'           => Controls_Manager::SLIDER,
-				'default'        => array(
+				'label'              => __( 'Width', 'uael' ),
+				'type'               => Controls_Manager::SLIDER,
+				'default'            => array(
 					'unit' => '%',
 				),
-				'tablet_default' => array(
+				'tablet_default'     => array(
 					'unit' => '%',
 				),
-				'mobile_default' => array(
+				'mobile_default'     => array(
 					'unit' => '%',
 				),
-				'size_units'     => array( '%', 'px', 'vw' ),
-				'range'          => array(
+				'size_units'         => array( '%', 'px', 'vw' ),
+				'range'              => array(
 					'%'  => array(
 						'min' => 1,
 						'max' => 100,
@@ -298,38 +299,40 @@ class Retina_Image extends Common_Widget {
 						'max' => 100,
 					),
 				),
-				'selectors'      => array(
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-retina-image img' => 'width: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} .uael-retina-image .wp-caption .widget-image-caption' => 'width: {{SIZE}}{{UNIT}}; display: inline-block;',
 				),
+				'frontend_available' => true,
 			)
 		);
 
 		$this->add_responsive_control(
 			'space',
 			array(
-				'label'          => __( 'Max Width', 'uael' ) . ' (%)',
-				'type'           => Controls_Manager::SLIDER,
-				'default'        => array(
+				'label'              => __( 'Max Width', 'uael' ) . ' (%)',
+				'type'               => Controls_Manager::SLIDER,
+				'default'            => array(
 					'unit' => '%',
 				),
-				'tablet_default' => array(
+				'tablet_default'     => array(
 					'unit' => '%',
 				),
-				'mobile_default' => array(
+				'mobile_default'     => array(
 					'unit' => '%',
 				),
-				'size_units'     => array( '%' ),
-				'range'          => array(
+				'size_units'         => array( '%' ),
+				'range'              => array(
 					'%' => array(
 						'min' => 1,
 						'max' => 100,
 					),
 				),
-				'selectors'      => array(
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-retina-image img' => 'max-width: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} .wp-caption-text'       => 'max-width: {{SIZE}}{{UNIT}}; display: inline-block; width: 100%;',
 				),
+				'frontend_available' => true,
 			)
 		);
 
@@ -403,12 +406,13 @@ class Retina_Image extends Common_Widget {
 		$this->add_responsive_control(
 			'image_border_radius',
 			array(
-				'label'      => __( 'Border Radius', 'uael' ),
-				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => array( 'px', '%' ),
-				'selectors'  => array(
+				'label'              => __( 'Border Radius', 'uael' ),
+				'type'               => Controls_Manager::DIMENSIONS,
+				'size_units'         => array( 'px', '%' ),
+				'selectors'          => array(
 					'{{WRAPPER}} .uael-retina-image-container .uael-retina-img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
+				'frontend_available' => true,
 			)
 		);
 
@@ -591,33 +595,35 @@ class Retina_Image extends Common_Widget {
 		$this->add_responsive_control(
 			'caption_padding',
 			array(
-				'label'      => __( 'Padding', 'uael' ),
-				'type'       => Controls_Manager::DIMENSIONS,
-				'size_units' => array( 'px', 'em', '%' ),
-				'selectors'  => array(
+				'label'              => __( 'Padding', 'uael' ),
+				'type'               => Controls_Manager::DIMENSIONS,
+				'size_units'         => array( 'px', 'em', '%' ),
+				'selectors'          => array(
 					'{{WRAPPER}} .widget-image-caption' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
+				'frontend_available' => true,
 			)
 		);
 
 		$this->add_responsive_control(
 			'caption_space',
 			array(
-				'label'     => __( 'Caption Top Spacing', 'uael' ),
-				'type'      => Controls_Manager::SLIDER,
-				'range'     => array(
+				'label'              => __( 'Caption Top Spacing', 'uael' ),
+				'type'               => Controls_Manager::SLIDER,
+				'range'              => array(
 					'px' => array(
 						'min' => 0,
 						'max' => 100,
 					),
 				),
-				'default'   => array(
+				'default'            => array(
 					'size' => 0,
 					'unit' => 'px',
 				),
-				'selectors' => array(
+				'selectors'          => array(
 					'{{WRAPPER}} .widget-image-caption' => 'margin-top: {{SIZE}}{{UNIT}}; margin-bottom: 0px;',
 				),
+				'frontend_available' => true,
 			)
 		);
 
@@ -823,14 +829,14 @@ class Retina_Image extends Common_Widget {
 			<?php endif; ?>
 			<?php if ( $has_caption ) : ?>
 				<?php $retina_caption = $this->get_caption( $settings ); ?>
-					<?php if ( ! empty( $retina_caption ) ) : ?> 
+					<?php if ( ! empty( $retina_caption ) ) : ?>
 						<div class="uael-caption-width">
 							<figcaption class="widget-image-caption wp-caption-text"><?php echo wp_kses_post( $this->get_caption( $settings ) ); ?></figcaption>
 						</div>
 				<?php endif; ?>
 				</figure>
 			<?php endif; ?>
-		</div> 
+		</div>
 		<?php
 	}
 

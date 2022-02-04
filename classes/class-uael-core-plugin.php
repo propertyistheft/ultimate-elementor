@@ -8,6 +8,9 @@
 namespace UltimateElementor;
 
 use UltimateElementor\Classes\UAEL_Helper;
+use UltimateElementor\Modules\ControlQuery\Types\Uae_Control_Query;
+use UltimateElementor\Modules\PresetsSelect\Controls\Presets_Select;
+use UltimateElementor\Modules\QueryPost\Controls\Query;
 
 if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
@@ -135,6 +138,8 @@ class UAEL_Core_Plugin {
 
 		add_action( 'elementor/widgets/widgets_registered', array( $this, 'register_widgets_helper_script' ) );
 
+		add_action( 'elementor/controls/controls_registered', array( $this, 'register_controls' ) );
+
 		add_action( 'elementor/frontend/after_enqueue_styles', array( $this, 'enqueue_widget_styles' ) );
 
 		// Active widgets data to analytics.
@@ -156,6 +161,19 @@ class UAEL_Core_Plugin {
 
 			add_filter( 'bsf_white_label_options', array( $this, 'uae_bsf_analytics_white_label' ) );
 		}
+	}
+
+	/**
+	 * Register custom controls.
+	 *
+	 * @return void
+	 */
+	public function register_controls() {
+		$controls_manager = \Elementor\Plugin::instance()->controls_manager;
+
+		$controls_manager->register_control( 'uael-query-posts', new Query() );
+		$controls_manager->register_control( 'uael-presets-select', new Presets_Select() );
+		$controls_manager->register_control( 'uael-control-query', new Uae_Control_Query() );
 	}
 
 	/**

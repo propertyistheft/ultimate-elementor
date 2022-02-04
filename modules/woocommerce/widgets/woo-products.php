@@ -511,9 +511,9 @@ class Woo_Products extends Common_Widget {
 			$this->add_responsive_control(
 				'pagination_align',
 				array(
-					'label'        => __( 'Alignment', 'uael' ),
-					'type'         => Controls_Manager::CHOOSE,
-					'options'      => array(
+					'label'              => __( 'Alignment', 'uael' ),
+					'type'               => Controls_Manager::CHOOSE,
+					'options'            => array(
 						'left'   => array(
 							'title' => __( 'Left', 'uael' ),
 							'icon'  => 'fa fa-align-left',
@@ -527,13 +527,14 @@ class Woo_Products extends Common_Widget {
 							'icon'  => 'fa fa-align-right',
 						),
 					),
-					'default'      => 'center',
-					'prefix_class' => 'uael-woo-pagination%s-align-',
-					'condition'    => array(
+					'default'            => 'center',
+					'prefix_class'       => 'uael-woo-pagination%s-align-',
+					'condition'          => array(
 						'_skin'                => array( 'grid-default', 'grid-franko' ),
 						'products_layout_type' => 'grid',
 						'pagination_type!'     => '',
 					),
+					'frontend_available' => true,
 				)
 			);
 

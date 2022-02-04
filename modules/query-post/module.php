@@ -216,7 +216,5 @@ class Module extends Module_Base {
 		add_action( 'wp_ajax_uael_get_posts_by_query', array( $this, 'get_posts_by_query' ) );
 		add_action( 'wp_ajax_uael_get_posts_title_by_id', array( $this, 'get_posts_title_by_id' ) );
 
-		add_action( 'elementor/controls/controls_registered', array( $this, 'register_controls' ) );
-
 	}
 }
