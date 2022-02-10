@@ -4,8 +4,8 @@
  * Plugin URI: https://ultimateelementor.com/
  * Author: Brainstorm Force
  * Author URI: https://www.brainstormforce.com
- * Version: 1.36.3
- * Elementor tested up to: 3.5.4
+ * Version: 1.36.4
+ * Elementor tested up to: 3.5.5
  * Elementor Pro tested up to: 3.6.0
  * Description: Ultimate Addons is a premium extension for Elementor that adds 40+ widgets and works on top of any Elementor Package (Free, Pro). You can use it with any WordPress theme.
  * Text Domain: uael

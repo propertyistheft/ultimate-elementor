@@ -109,7 +109,7 @@ class Acf_Text extends Condition {
 	 * @since  1.35.1
 	 * @return array
 	 */
-	public function get_repeater_control( $condition ) {
+	public function get_repeater_control( array $condition ) {
 		return array(
 			$this->get_acf_field_value(),
 			'type'        => Controls_Manager::TEXT,

@@ -1,3 +1,7 @@
+Version 1.36.4 - Tuesday, 8th February 2022
+- Fix: Display Conditions - PHP warning when using the older versions of PHP.
+- Fix: Image Gallery - Image caption not translated using WPML.
+
 Version 1.36.3 - Tuesday, 1st February 2022
 - Compatibility with Elementor Pro version 3.6
 - Fix: Display Conditions - ACF field conditions not working.

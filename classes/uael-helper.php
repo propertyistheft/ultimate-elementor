@@ -1024,7 +1024,7 @@ class UAEL_Helper {
 				$data['id']          = $image_id;
 				$data['url']         = $image_url;
 				$data['image']       = wp_get_attachment_image( $attachment->ID, $image_size, true );
-				$data['caption']     = $attachment->post_excerpt;
+				$data['caption']     = wp_get_attachment_caption( $image_id );
 				$data['title']       = $attachment->post_title;
 				$data['description'] = $attachment->post_content;
 
