@@ -90,16 +90,6 @@ class Welcome_Music extends Common_Widget {
 	 * @since 1.35.0
 	 * @access protected
 	 */
-	protected function _register_controls() { //phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
-		$this->register_controls();
-	}
-
-	/**
-	 * Register Welcome Music controls.
-	 *
-	 * @since 1.35.0
-	 * @access protected
-	 */
 	protected function register_controls() {
 		$this->start_controls_section(
 			'music_section',

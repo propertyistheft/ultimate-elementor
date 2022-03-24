@@ -140,18 +140,6 @@ class Nav_Menu extends Common_Widget {
 		return $options;
 	}
 
-
-	/**
-	 * Register Nav Menu controls.
-	 *
-	 * @since 1.21.0
-	 * @access protected
-	 */
-	protected function _register_controls() { // phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
-
-		$this->register_controls();
-	}
-
 	/**
 	 * Register Nav Menu controls.
 	 *

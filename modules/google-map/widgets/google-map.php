@@ -115,18 +115,6 @@ class GoogleMap extends Common_Widget {
 		);
 	}
 
-
-	/**
-	 * Register GoogleMap controls.
-	 *
-	 * @since 0.0.1
-	 * @access protected
-	 */
-	protected function _register_controls() { // phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
-
-		$this->register_controls();
-	}
-
 	/**
 	 * Register GoogleMap controls.
 	 *

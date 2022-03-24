@@ -123,16 +123,6 @@ class Timeline extends Common_Widget {
 	/**
 	 * Register General Content controls.
 	 *
-	 * @since 1.5.2
-	 * @access protected
-	 */
-	protected function _register_controls() { // phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
-		$this->register_controls();
-	}
-
-	/**
-	 * Register General Content controls.
-	 *
 	 * @since 1.29.2
 	 * @access protected
 	 */

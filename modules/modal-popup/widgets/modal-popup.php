@@ -94,18 +94,6 @@ class Modal_Popup extends Common_Widget {
 		return array( 'uael-cookie-lib', 'uael-modal-popup', 'uael-element-resize' );
 	}
 
-
-	/**
-	 * Register Modal Popup controls.
-	 *
-	 * @since 0.0.1
-	 * @access protected
-	 */
-	protected function _register_controls() { // phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
-
-		$this->register_controls();
-	}
-
 	/**
 	 * Register Modal Popup controls.
 	 *

@@ -116,9 +116,15 @@ class Module extends Module_Base {
 				}
 				$settings       = $widget->get_settings();
 				$skin           = $widget->get_current_skin_id();
-				$select_article = $settings[ $skin . '_select_article' ];
-				$schema_support = $settings[ $skin . '_schema_support' ];
-				$publisher_name = $settings[ $skin . '_publisher_name' ];
+				$skin_style     = isset( $settings[ $skin . '_select_article' ] ) ? $settings[ $skin . '_select_article' ] : false;
+				$skin_schema    = isset( $settings[ $skin . '_schema_support' ] ) ? $settings[ $skin . '_schema_support' ] : false;
+				$skin_publisher = isset( $settings[ $skin . '_publisher_name' ] ) ? $settings[ $skin . '_publisher_name' ] : false;
+				if ( ( $skin_style || $skin_schema || $skin_publisher ) === false ) {
+					return;
+				}
+				$select_article = $skin_style;
+				$schema_support = $skin_schema;
+				$publisher_name = $skin_publisher;
 				$publisher_logo = isset( $settings[ $skin . '_publisher_logo' ]['url'] ) ? $settings[ $skin . '_publisher_logo' ]['url'] : 0;
 				$query_obj      = new Build_Post_Query( $skin, $settings, '' );
 				$query_obj->query_posts();

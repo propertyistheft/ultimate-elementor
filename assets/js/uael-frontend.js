@@ -858,6 +858,9 @@
 		window.addEventListener("load", uaelTimelineFunc);
 		window.addEventListener("resize", uaelTimelineFunc);
 		window.addEventListener("scroll", uaelTimelineFunc);
+		window.addEventListener("click", function() {
+			uaelTimelineFunc();
+		});
 
 		var post_selector = $scope.find( '.uael-days' );
 
@@ -1138,7 +1141,7 @@
 				if( url && ( window.screen.availWidth < 768 ) ){
 					str_cat_text = ajax_str_img_text.replace( str_replace_text,'' );
 				}
-				
+
 				$scope.find( '.uael-filters-dropdown-button' ).text( str_cat_text );
 				selector.isotope( { filter: value } );
 			});
@@ -1667,6 +1670,17 @@
 					}
 				}
 			}
+		});
+
+		// Fix the black border around video on safari.
+		$(window).on('load', function (){
+			setTimeout(function () {
+				var videoFrame = $('.uael-video__outer-wrap iframe');
+				if( videoFrame.length ){
+					var bodyInFrame = videoFrame.contents().find('body');
+					bodyInFrame.css('margin', '0');
+				}
+			}, 1000);
 		});
 	};
 

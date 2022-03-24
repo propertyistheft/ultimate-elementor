@@ -104,16 +104,6 @@ class FAQ extends Common_Widget {
 	/**
 	 * Register controls.
 	 *
-	 * @since 1.22.0
-	 * @access protected
-	 */
-	protected function _register_controls() { // phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
-		$this->register_controls();
-	}
-
-	/**
-	 * Register controls.
-	 *
 	 * @since 1.29.2
 	 * @access protected
 	 */
@@ -1189,6 +1179,10 @@ class FAQ extends Common_Widget {
 			array(
 				'label'     => __( 'Icon Size', 'uael' ),
 				'type'      => Controls_Manager::SLIDER,
+				'default'   => array(
+					'size' => 16,
+					'unit' => 'px',
+				),
 				'range'     => array(
 					'px' => array(
 						'min' => 1,
@@ -1197,6 +1191,7 @@ class FAQ extends Common_Widget {
 				),
 				'selectors' => array(
 					'{{WRAPPER}} .uael-faq-wrapper .uael-accordion-title .uael-accordion-icon' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .uael-faq-wrapper .uael-accordion-title .uael-accordion-icon svg' => 'height: {{SIZE}}{{UNIT}};width: {{SIZE}}{{UNIT}};',
 				),
 			)
 		);
@@ -1364,7 +1359,7 @@ class FAQ extends Common_Widget {
 		}
 		?>
 
-			<div id='uael-faq-wrapper-<?php echo esc_attr( $id_int ); ?>' class="uael-faq-wrapper"> 
+			<div id='uael-faq-wrapper-<?php echo esc_attr( $id_int ); ?>' class="uael-faq-wrapper">
 				<div <?php echo wp_kses_post( $this->get_render_attribute_string( 'uael-faq-container' ) ); ?> >
 					<?php
 
@@ -1402,7 +1397,7 @@ class FAQ extends Common_Widget {
 							$heading_size_tag = UAEL_Helper::validate_html_tag( $settings['heading_tag'] );
 							?>
 							<div <?php echo wp_kses_post( $this->get_render_attribute_string( 'uael_faq_accordion_' . $key['_id'] ) ); ?> role="tablist">
-								<div class= "uael-accordion-title" aria-expanded="false" role="tab">                    
+								<div class= "uael-accordion-title" aria-expanded="false" role="tab">
 									<span class="uael-accordion-icon uael-accordion-icon-<?php echo esc_attr( $settings['icon_align'] ); ?>">
 										<span class="uael-accordion-icon-closed"><?php Icons_Manager::render_icon( $settings['selected_icon'] ); ?></span>
 										<span class="uael-accordion-icon-opened"><?php Icons_Manager::render_icon( $settings['selected_active_icon'] ); ?></span>

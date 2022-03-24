@@ -88,17 +88,6 @@ class BaSlider extends Common_Widget {
 		return array( 'uael-frontend-script', 'uael-twenty-twenty', 'uael-move', 'imagesloaded' );
 	}
 
-
-	/**
-	 * Register Before After controls.
-	 *
-	 * @since 0.0.1
-	 * @access protected
-	 */
-	protected function _register_controls() { // phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
-		$this->register_controls();
-	}
-
 	/**
 	 * Register Before After controls.
 	 *

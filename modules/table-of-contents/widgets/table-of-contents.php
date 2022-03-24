@@ -99,18 +99,6 @@ class Table_Of_Contents extends Common_Widget {
 	/**
 	 * Register controls.
 	 *
-	 * @since 1.19.0
-	 * @access protected
-	 */
-	protected function _register_controls() { // phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
-
-		$this->register_controls();
-
-	}
-
-	/**
-	 * Register controls.
-	 *
 	 * @since 1.29.2
 	 * @access protected
 	 */

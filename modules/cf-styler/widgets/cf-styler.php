@@ -145,18 +145,6 @@ class CfStyler extends Common_Widget {
 		return -1;
 	}
 
-
-	/**
-	 * Register CF7 Styler controls.
-	 *
-	 * @since 0.0.1
-	 * @access protected
-	 */
-	protected function _register_controls() { // phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
-
-		$this->register_controls();
-	}
-
 	/**
 	 * Register CF7 Styler controls.
 	 *

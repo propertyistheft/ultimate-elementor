@@ -136,7 +136,7 @@ class UAEL_Core_Plugin {
 
 		add_action( 'elementor/frontend/after_register_scripts', array( $this, 'register_widget_scripts' ) );
 
-		add_action( 'elementor/widgets/widgets_registered', array( $this, 'register_widgets_helper_script' ) );
+		add_action( 'elementor/editor/after_enqueue_scripts', array( $this, 'register_widgets_helper_script' ) );
 
 		add_action( 'elementor/controls/controls_registered', array( $this, 'register_controls' ) );
 
@@ -171,9 +171,9 @@ class UAEL_Core_Plugin {
 	public function register_controls() {
 		$controls_manager = \Elementor\Plugin::instance()->controls_manager;
 
-		$controls_manager->register_control( 'uael-query-posts', new Query() );
-		$controls_manager->register_control( 'uael-presets-select', new Presets_Select() );
-		$controls_manager->register_control( 'uael-control-query', new Uae_Control_Query() );
+		$controls_manager->register( new Query() );
+		$controls_manager->register( new Presets_Select() );
+		$controls_manager->register( new Uae_Control_Query() );
 	}
 
 	/**
@@ -543,7 +543,7 @@ class UAEL_Core_Plugin {
 		$this->cdn_url = apply_filters( 'uael_cross_domain_cdn', 'https://brainstormforce.github.io/uae-cdcp/updated-index.html' );
 
 		// Check for required Compatible Elementor version.
-		if ( ! version_compare( ELEMENTOR_VERSION, '3.1.0', '>=' ) ) {
+		if ( ! version_compare( ELEMENTOR_VERSION, '3.5.0', '>=' ) ) {
 			$elementor_old_compatibility = true;
 		} else {
 			$elementor_old_compatibility = false;

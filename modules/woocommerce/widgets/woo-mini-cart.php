@@ -93,16 +93,6 @@ class Woo_Mini_Cart extends Common_Widget {
 	/**
 	 * Register Mini Cart controls.
 	 *
-	 * @since 1.29.0
-	 * @access protected
-	 */
-	protected function _register_controls() { //phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
-		$this->register_controls();
-	}
-
-	/**
-	 * Register Mini Cart controls.
-	 *
 	 * @since 1.29.2
 	 * @access protected
 	 */

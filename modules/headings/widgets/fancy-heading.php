@@ -94,17 +94,6 @@ class Fancy_Heading extends Common_Widget {
 	/**
 	 * Register Fancy Heading controls.
 	 *
-	 * @since 0.0.1
-	 * @access protected
-	 */
-	protected function _register_controls() { // phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
-
-		$this->register_controls();
-	}
-
-	/**
-	 * Register Fancy Heading controls.
-	 *
 	 * @since 1.29.2
 	 * @access protected
 	 */

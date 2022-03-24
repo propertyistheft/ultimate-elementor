@@ -140,18 +140,6 @@ class GfStyler extends Common_Widget {
 		return -1;
 	}
 
-
-	/**
-	 * Register GForms Styler controls.
-	 *
-	 * @since 0.0.1
-	 * @access protected
-	 */
-	protected function _register_controls() { // phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
-
-		$this->register_controls();
-	}
-
 	/**
 	 * Register GForms Styler controls.
 	 *
@@ -380,11 +368,11 @@ class GfStyler extends Common_Widget {
 				'type'       => Controls_Manager::DIMENSIONS,
 				'size_units' => array( 'px' ),
 				'selectors'  => array(
-					'{{WRAPPER}} .uael-gf-style .gform_wrapper form .gform_body input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]), 
+					'{{WRAPPER}} .uael-gf-style .gform_wrapper form .gform_body input:not([type="radio"]):not([type="checkbox"]):not([type="submit"]):not([type="button"]):not([type="image"]):not([type="file"]),
 					{{WRAPPER}} .uael-gf-style .gform_wrapper textarea' => 'padding: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-					'{{WRAPPER}} .uael-gf-style .ginput_container select, 
+					'{{WRAPPER}} .uael-gf-style .ginput_container select,
 					{{WRAPPER}} .uael-gf-style .ginput_container .chosen-single' => 'padding-top: calc( {{TOP}}{{UNIT}} - 2{{UNIT}} ); padding-right: {{RIGHT}}{{UNIT}}; padding-bottom: calc( {{BOTTOM}}{{UNIT}} - 2{{UNIT}} ); padding-left: {{LEFT}}{{UNIT}};',
-					'{{WRAPPER}} .uael-gf-check-style .gfield_checkbox input[type="checkbox"] + label:before, 
+					'{{WRAPPER}} .uael-gf-check-style .gfield_checkbox input[type="checkbox"] + label:before,
 					{{WRAPPER}} .uael-gf-check-style .gfield_radio input[type="radio"] + label:before,
 					{{WRAPPER}}:not(.uael-gf-check-default-yes)  .uael-gf-check-style .gfield_radio .gchoice_label label:before,
 					{{WRAPPER}} .uael-gf-check-style .ginput_container_consent input[type="checkbox"] + label:before' => 'height: {{BOTTOM}}{{UNIT}}; width: {{BOTTOM}}{{UNIT}};',
@@ -408,12 +396,12 @@ class GfStyler extends Common_Widget {
 					{{WRAPPER}} .uael-gf-style .gform_wrapper input[type=tel],
 					{{WRAPPER}} .uael-gf-style .gform_wrapper input[type=number],
 					{{WRAPPER}} .uael-gf-style .gform_wrapper input[type=date],
-					{{WRAPPER}} .uael-gf-style .gform_wrapper select, 
-					{{WRAPPER}} .uael-gf-style .gform_wrapper .chosen-container-single .chosen-single, 
-					{{WRAPPER}} .uael-gf-style .gform_wrapper .chosen-container-multi .chosen-choices, 
-					{{WRAPPER}} .uael-gf-style .gform_wrapper textarea, 
+					{{WRAPPER}} .uael-gf-style .gform_wrapper select,
+					{{WRAPPER}} .uael-gf-style .gform_wrapper .chosen-container-single .chosen-single,
+					{{WRAPPER}} .uael-gf-style .gform_wrapper .chosen-container-multi .chosen-choices,
+					{{WRAPPER}} .uael-gf-style .gform_wrapper textarea,
 					{{WRAPPER}} .uael-gf-style .gfield_checkbox input[type="checkbox"] + label:before,
-					{{WRAPPER}} .uael-gf-style .gfield_radio input[type="radio"] + label:before, 
+					{{WRAPPER}} .uael-gf-style .gfield_radio input[type="radio"] + label:before,
 					{{WRAPPER}}:not(.uael-gf-check-default-yes)  .uael-gf-style .gfield_radio .gchoice_label label:before,
 					{{WRAPPER}} .uael-gf-style .gform_wrapper .gf_progressbar,
 					{{WRAPPER}} .uael-gf-style .ginput_container_consent input[type="checkbox"] + label:before' => 'background-color: {{VALUE}};',
@@ -497,9 +485,9 @@ class GfStyler extends Common_Widget {
 				'default'   => '',
 				'selectors' => array(
 					'{{WRAPPER}} .uael-gf-style .gform_wrapper .gfield .gfield_description,
-					{{WRAPPER}} .uael-gf-style .ginput_container .gfield_post_tags_hint, 
+					{{WRAPPER}} .uael-gf-style .ginput_container .gfield_post_tags_hint,
 					{{WRAPPER}} .uael-gf-style .ginput_container .gform_fileupload_rules,
-					{{WRAPPER}} .uael-gf-style .ginput_container_name input + label, 
+					{{WRAPPER}} .uael-gf-style .ginput_container_name input + label,
 					{{WRAPPER}} .uael-gf-style .ginput_container_creditcard input + span + label,
 					{{WRAPPER}} .uael-gf-style .ginput_container input + label,
 					{{WRAPPER}} .uael-gf-style .ginput_container select + label,
@@ -589,7 +577,7 @@ class GfStyler extends Common_Widget {
 					{{WRAPPER}} .uael-gf-style .gform_wrapper input[type=number],
 					{{WRAPPER}} .uael-gf-style .gform_wrapper input[type=date],
 					{{WRAPPER}} .uael-gf-style .gform_wrapper select,
-					{{WRAPPER}} .uael-gf-style .gform_wrapper .chosen-single, 
+					{{WRAPPER}} .uael-gf-style .gform_wrapper .chosen-single,
 					{{WRAPPER}} .uael-gf-style .gform_wrapper .chosen-choices,
 					{{WRAPPER}} .uael-gf-style .gform_wrapper .chosen-container .chosen-drop,
 					{{WRAPPER}} .uael-gf-style .gform_wrapper textarea,
@@ -666,7 +654,7 @@ class GfStyler extends Common_Widget {
 					 {{WRAPPER}}.uael-gf-style-underline .gform_wrapper textarea' => 'border-width: 0 0 {{SIZE}}{{UNIT}} 0; border-style: solid;',
 					'{{WRAPPER}}.uael-gf-style-underline .gform_wrapper .chosen-container .chosen-drop' => 'border-width: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}}; border-style: solid;',
 					'{{WRAPPER}}.uael-gf-style-underline .gfield_checkbox input[type="checkbox"] + label:before,
-					{{WRAPPER}}.uael-gf-style-underline .ginput_container_consent input[type="checkbox"] + label:before, 
+					{{WRAPPER}}.uael-gf-style-underline .ginput_container_consent input[type="checkbox"] + label:before,
 					{{WRAPPER}}.uael-gf-style-underline .gfield_radio input[type="radio"] + label:before,
 					{{WRAPPER}}:not(.uael-gf-check-default-yes).uael-gf-style-underline .gfield_radio .gchoice_label label:before' => 'border-width: {{SIZE}}{{UNIT}}; border-style: solid; box-sizing: content-box;',
 				),
@@ -716,7 +704,7 @@ class GfStyler extends Common_Widget {
 					'{{WRAPPER}} .uael-gf-style .gfield input:focus,
 					 {{WRAPPER}} .uael-gf-style .gfield textarea:focus,
 					 {{WRAPPER}} .uael-gf-style .gfield select:focus,
-					 {{WRAPPER}} .uael-gf-style .gform_wrapper .chosen-container-active.chosen-with-drop .chosen-single, 
+					 {{WRAPPER}} .uael-gf-style .gform_wrapper .chosen-container-active.chosen-with-drop .chosen-single,
 					 {{WRAPPER}} .uael-gf-style .gform_wrapper .chosen-container-active.chosen-container-multi .chosen-choices,
 					 {{WRAPPER}} .uael-gf-style .gfield_checkbox input[type="checkbox"]:checked + label:before,
 					 {{WRAPPER}} .uael-gf-style .ginput_container_consent input[type="checkbox"]:checked + label:before,
@@ -769,7 +757,7 @@ class GfStyler extends Common_Widget {
 					{{WRAPPER}} .uael-gf-style .gform_wrapper input[type=number],
 					{{WRAPPER}} .uael-gf-style .gform_wrapper input[type=date],
 					{{WRAPPER}} .uael-gf-style .gform_wrapper select,
-					{{WRAPPER}} .uael-gf-style .gform_wrapper .chosen-single, 
+					{{WRAPPER}} .uael-gf-style .gform_wrapper .chosen-single,
 					{{WRAPPER}} .uael-gf-style .gform_wrapper .chosen-choices,
 					{{WRAPPER}} .uael-gf-style .gform_wrapper .chosen-container .chosen-drop,
 					{{WRAPPER}} .uael-gf-style .gform_wrapper textarea,
@@ -951,11 +939,11 @@ class GfStyler extends Common_Widget {
 				),
 				'selectors' => array(
 					'{{WRAPPER}}.uael-gf-check-yes .uael-gf-style .gfield_checkbox input[type="checkbox"] + label:before,
-					{{WRAPPER}}.uael-gf-check-yes .uael-gf-style .gfield_radio input[type="radio"] + label:before, 
+					{{WRAPPER}}.uael-gf-check-yes .uael-gf-style .gfield_radio input[type="radio"] + label:before,
 					{{WRAPPER}}:not(.uael-gf-check-default-yes).uael-gf-check-yes .uael-gf-style .gfield_radio .gchoice_label label:before,
 					{{WRAPPER}}.uael-gf-check-yes .uael-gf-style .ginput_container_consent input[type="checkbox"] + label:before,
 					{{WRAPPER}}.uael-gf-check-default-yes.uael-gf-check-yes .uael-gf-style .gfield_checkbox input[type="checkbox"],
-					{{WRAPPER}}.uael-gf-check-default-yes.uael-gf-check-yes .uael-gf-style .gfield_radio input[type="radio"], 
+					{{WRAPPER}}.uael-gf-check-default-yes.uael-gf-check-yes .uael-gf-style .gfield_radio input[type="radio"],
 					{{WRAPPER}}.uael-gf-check-default-yes.uael-gf-check-yes .uael-gf-style .ginput_container_consent input[type="checkbox"]' => 'border-color: {{VALUE}};',
 				),
 			)
@@ -981,11 +969,11 @@ class GfStyler extends Common_Widget {
 				),
 				'selectors'  => array(
 					'{{WRAPPER}}.uael-gf-check-yes .uael-gf-style .gfield_checkbox input[type="checkbox"] + label:before,
-					{{WRAPPER}}.uael-gf-check-yes .uael-gf-style .gfield_radio input[type="radio"] + label:before, 
+					{{WRAPPER}}.uael-gf-check-yes .uael-gf-style .gfield_radio input[type="radio"] + label:before,
 					{{WRAPPER}}:not(.uael-gf-check-default-yes).uael-gf-check-yes .uael-gf-style .gfield_radio .gfield_radio .gchoice_label label:before,
 					{{WRAPPER}}.uael-gf-check-yes .uael-gf-style .ginput_container_consent input[type="checkbox"] + label:before,
 					{{WRAPPER}}.uael-gf-check-default-yes.uael-gf-check-yes .uael-gf-style .gfield_checkbox input[type="checkbox"],
-					{{WRAPPER}}.uael-gf-check-default-yes.uael-gf-check-yes .uael-gf-style .gfield_radio input[type="radio"], 
+					{{WRAPPER}}.uael-gf-check-default-yes.uael-gf-check-yes .uael-gf-style .gfield_radio input[type="radio"],
 					{{WRAPPER}}.uael-gf-check-default-yes.uael-gf-check-yes .uael-gf-style .ginput_container_consent input[type="checkbox"]' => 'border-width: {{SIZE}}{{UNIT}}; border-style: solid;',
 				),
 			)
@@ -1001,9 +989,9 @@ class GfStyler extends Common_Widget {
 					'gf_radio_check_custom!' => '',
 				),
 				'selectors'  => array(
-					'{{WRAPPER}}.uael-gf-check-yes .uael-gf-style .gfield_checkbox input[type="checkbox"] + label:before, 
+					'{{WRAPPER}}.uael-gf-check-yes .uael-gf-style .gfield_checkbox input[type="checkbox"] + label:before,
 					{{WRAPPER}}.uael-gf-check-yes .uael-gf-style .ginput_container_consent input[type="checkbox"] + label:before,
-					{{WRAPPER}}.uael-gf-check-default-yes.uael-gf-check-yes .uael-gf-style .gfield_checkbox input[type="checkbox"], 
+					{{WRAPPER}}.uael-gf-check-default-yes.uael-gf-check-yes .uael-gf-style .gfield_checkbox input[type="checkbox"],
 					{{WRAPPER}}.uael-gf-check-default-yes.uael-gf-check-yes .uael-gf-style .ginput_container_consent input[type="checkbox"]' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
 				),
 				'default'    => array(
@@ -1669,7 +1657,7 @@ class GfStyler extends Common_Widget {
 					),
 					'selectors'  => array(
 						'{{WRAPPER}} .uael-gf-style .gform_wrapper li.gfield,
-						{{WRAPPER}} .uael-gf-style .gform_wrapper div.gfield, 
+						{{WRAPPER}} .uael-gf-style .gform_wrapper div.gfield,
 						{{WRAPPER}} .uael-gf-style .gform_wrapper .gf_progressbar_wrapper,
 						{{WRAPPER}} .uael-gf-style .gform_wrapper fieldset.gfield' => 'margin-bottom: {{SIZE}}{{UNIT}};',
 					),
@@ -1874,10 +1862,10 @@ class GfStyler extends Common_Widget {
 				),
 				'selector' => '{{WRAPPER}} .uael-gf-style .gfield_label,
 				{{WRAPPER}} .uael-gf-style .gfield_checkbox li label,
-				{{WRAPPER}} .uael-gf-style .gfield_radio li label, 
-				{{WRAPPER}} .uael-gf-style .gsection_title, 
+				{{WRAPPER}} .uael-gf-style .gfield_radio li label,
+				{{WRAPPER}} .uael-gf-style .gsection_title,
 				{{WRAPPER}} .uael-gf-style .ginput_product_price,
-				{{WRAPPER}} .uael-gf-style .ginput_product_price_label, 
+				{{WRAPPER}} .uael-gf-style .ginput_product_price_label,
 				{{WRAPPER}} .uael-gf-style .gf_progressbar_title,
 				{{WRAPPER}} .uael-gf-style .ginput_container_consent label,
 				{{WRAPPER}} .uael-gf-style .gf_page_steps,
@@ -1910,19 +1898,19 @@ class GfStyler extends Common_Widget {
 					'default' => Global_Typography::TYPOGRAPHY_TEXT,
 				),
 				'selector' => '{{WRAPPER}} .uael-gf-style .gform_wrapper .gfield .gfield_description,
-				{{WRAPPER}} .uael-gf-style .ginput_container .gfield_post_tags_hint, 
+				{{WRAPPER}} .uael-gf-style .ginput_container .gfield_post_tags_hint,
 				{{WRAPPER}} .uael-gf-style .ginput_container .gform_fileupload_rules,
 				{{WRAPPER}} .uael-gf-style .ginput_container_name input + label,
 				{{WRAPPER}} .uael-gf-style .ginput_container_creditcard input + span + label,
 				{{WRAPPER}} .uael-gf-style .ginput_container input + label,
-				{{WRAPPER}} .uael-gf-style .ginput_container select + label, 
+				{{WRAPPER}} .uael-gf-style .ginput_container select + label,
 				{{WRAPPER}} .uael-gf-style .ginput_container .chosen-single + label,
 				{{WRAPPER}} .uael-gf-style .gfield_time_hour label,
 				{{WRAPPER}} .uael-gf-style .gfield_time_minute label,
 				{{WRAPPER}} .uael-gf-style .ginput_container_address label,
 				{{WRAPPER}} .uael-gf-style .ginput_container_total span,
 				{{WRAPPER}} .uael-gf-style .ginput_shipping_price,
-				{{WRAPPER}} .uael-gf-select-custom + label, 
+				{{WRAPPER}} .uael-gf-select-custom + label,
 				{{WRAPPER}} .uael-gf-style .gsection_description',
 			)
 		);

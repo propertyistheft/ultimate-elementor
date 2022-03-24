@@ -78,19 +78,6 @@ class Team_Member extends Common_Widget {
 		return parent::get_widget_keywords( 'Team_Member' );
 	}
 
-
-	/**
-	 * Register Team Member widget controls.
-	 *
-	 * Adds different input fields to allow the user to change and customize the widget settings.
-	 *
-	 * @since 1.16.0
-	 * @access protected
-	 */
-	protected function _register_controls() { // phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
-		$this->register_controls();
-	}
-
 	/**
 	 * Register Team Member widget controls.
 	 *
@@ -1569,7 +1556,7 @@ class Team_Member extends Common_Widget {
 		);
 
 		?>
-		<div <?php echo wp_kses_post( $this->get_render_attribute_string( 'member-classname' ) ); ?>>	
+		<div <?php echo wp_kses_post( $this->get_render_attribute_string( 'member-classname' ) ); ?>>
 			<div class = "uael-team-member-wrap" >
 				<div class="uael-member-wrap" >
 					<?php
@@ -1789,16 +1776,16 @@ class Team_Member extends Common_Widget {
 
 								var nameSizeTag = settings.name_size;
 
-								if ( typeof elementor.helpers.validateHTMLTag === "function" ) { 
+								if ( typeof elementor.helpers.validateHTMLTag === "function" ) {
 									nameSizeTag = elementor.helpers.validateHTMLTag( nameSizeTag );
 								} else if( UAEWidgetsData.allowed_tags ) {
 									nameSizeTag = UAEWidgetsData.allowed_tags.includes( nameSizeTag.toLowerCase() ) ? nameSizeTag : 'div';
-								}					
+								}
 								#>
 								<{{{ nameSizeTag }}} {{{ view.getRenderAttributeString( 'team_member_name' )}}}>{{{settings.team_member_name}}}</{{{ nameSizeTag }}}>
 							<# } #>
 						</div>
-						<# 
+						<#
 						if( 'yes' == settings.separator_settings) {
 							if( 'below_name' == settings.separator_position ) { #>
 								<div class="uael-separator-wrapper">

@@ -103,18 +103,6 @@ class Countdown extends Common_Widget {
 		return array( 'uael-cookie-lib', 'uael-countdown' );
 	}
 
-
-	/**
-	 * Register Countdown controls.
-	 *
-	 * @since 1.14.0
-	 * @access protected
-	 */
-	protected function _register_controls() { // phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
-
-		$this->register_controls();
-	}
-
 	/**
 	 * Register Countdown controls.
 	 *
@@ -1447,7 +1435,7 @@ class Countdown extends Common_Widget {
 			$this->add_render_attribute( 'countdown', 'class', 'uael-countdown-show-seconds-no' );
 		}
 
-		?>		
+		?>
 		<div <?php echo wp_kses_post( $this->get_render_attribute_string( 'countdown' ) ); ?>>
 			<div <?php echo wp_kses_post( $this->get_render_attribute_string( 'countdown-wrapper' ) ); ?> >
 					<?php for ( $i = 0; $i < $length; $i++ ) { ?>
@@ -1455,7 +1443,7 @@ class Countdown extends Common_Widget {
 							<span id="<?php echo esc_attr( $labels[ $i ] ); ?>-wrapper-<?php echo esc_attr( $id ); ?>"<?php echo wp_kses_post( $this->get_render_attribute_string( 'digits' ) ); ?> >
 								<?php if ( true === $edit_mode ) { ?>
 									<?php echo esc_html_e( '00', 'uael' ); ?>
-								<?php } ?> 
+								<?php } ?>
 							</span>
 							<?php if ( 'none' !== $settings['display_timer_labels'] ) { ?>
 								<span id="<?php echo esc_attr( $labels[ $i ] ); ?>-label-wrapper-<?php echo esc_attr( $id ); ?>" class='uael-countdown-<?php echo esc_attr( $labels[ $i ] ); ?>-label-<?php echo esc_attr( $id ); ?> uael-item-label'>
@@ -1465,10 +1453,10 @@ class Countdown extends Common_Widget {
 						<?php if ( 'yes' === $settings['countdown_separator'] && $i < $length - 1 ) { ?>
 							<div class="uael-countdown-separator uael-countdown-<?php echo esc_attr( $labels[ $i ] ); ?>-separator"> : </div>
 						<?php } ?>
-					<?php } ?>				
+					<?php } ?>
 					<div class="uael-expire-message-wrapper">
 						<div class='uael-expire-show-message'><?php echo wp_kses_post( $settings['message_after_expire'] ); ?></div>
-					</div>				
+					</div>
 			</div>
 		</div>
 		<?php

@@ -111,16 +111,6 @@ class CafStyler extends Common_Widget {
 	/**
 	 * Register Caldera Form Styler controls.
 	 *
-	 * @since 0.0.1
-	 * @access protected
-	 */
-	protected function _register_controls() { // phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
-		$this->register_controls();
-	}
-
-	/**
-	 * Register Caldera Form Styler controls.
-	 *
 	 * @since 1.29.2
 	 * @access protected
 	 */
@@ -558,7 +548,7 @@ class CafStyler extends Common_Widget {
 				'selectors'  => array(
 					'{{WRAPPER}} .uael-caf-form .caldera-grid .checkbox input[type=checkbox],
 					{{WRAPPER}} .uael-caf-form .caldera-grid .checkbox-inline input[type=checkbox],
-					{{WRAPPER}} .uael-caf-form .caldera-grid .radio input[type=radio] + span:before, 
+					{{WRAPPER}} .uael-caf-form .caldera-grid .radio input[type=radio] + span:before,
 					{{WRAPPER}} .uael-caf-form .caldera-grid .radio-inline input[type=radio] + span:before' => 'height: {{SIZE}}{{UNIT}}; width: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} .uael-caf-form .caldera-grid form input[type=checkbox]:checked:after' => 'font-size: calc( {{SIZE}}{{UNIT}} / 1.2 );',
 				),
@@ -616,7 +606,7 @@ class CafStyler extends Common_Widget {
 				'selectors' => array(
 					'{{WRAPPER}} .uael-caldera-form-wrapper .uael-caf-form .checkbox label,
 					{{WRAPPER}} .uael-caldera-form-wrapper .uael-caf-form .radio label,
-					{{WRAPPER}} .uael-caldera-form-wrapper .uael-caf-form .checkbox-inline label, 
+					{{WRAPPER}} .uael-caldera-form-wrapper .uael-caf-form .checkbox-inline label,
 					{{WRAPPER}} .uael-caldera-form-wrapper .uael-caf-form .radio-inline label' => 'color: {{VALUE}};',
 				),
 			)
@@ -635,9 +625,9 @@ class CafStyler extends Common_Widget {
 					'caf_radio_check_custom!' => '',
 				),
 				'selectors' => array(
-					'{{WRAPPER}} .uael-caldera-form-wrapper .uael-caf-form .caldera-grid form .checkbox input[type=checkbox], 
+					'{{WRAPPER}} .uael-caldera-form-wrapper .uael-caf-form .caldera-grid form .checkbox input[type=checkbox],
 					{{WRAPPER}} .uael-caldera-form-wrapper .uael-caf-form .caldera-grid form .radio input[type=radio] + span:before,
-					{{WRAPPER}} .uael-caldera-form-wrapper .uael-caf-form .caldera-grid form .checkbox-inline input[type=checkbox], 
+					{{WRAPPER}} .uael-caldera-form-wrapper .uael-caf-form .caldera-grid form .checkbox-inline input[type=checkbox],
 					{{WRAPPER}} .uael-caldera-form-wrapper .uael-caf-form .caldera-grid form .radio-inline input[type=radio] + span:before' => 'border-color: {{VALUE}};',
 				),
 			)

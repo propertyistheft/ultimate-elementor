@@ -111,17 +111,6 @@ class Hotspot extends Common_Widget {
 	/**
 	 * Register Hotspot controls.
 	 *
-	 * @since 1.9.0
-	 * @access protected
-	 */
-	protected function _register_controls() { // phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
-
-		$this->register_controls();
-	}
-
-	/**
-	 * Register Hotspot controls.
-	 *
 	 * @since 1.29.2
 	 * @access protected
 	 */
@@ -421,7 +410,7 @@ class Hotspot extends Common_Widget {
 							'type'      => Controls_Manager::COLOR,
 							'default'   => '',
 							'selectors' => array(
-								'{{WRAPPER}} {{CURRENT_ITEM}} .uael-hotspot-content, 
+								'{{WRAPPER}} {{CURRENT_ITEM}} .uael-hotspot-content,
 								{{WRAPPER}} {{CURRENT_ITEM}} .uael-hotspot-content.uael-hotspot-anim:before' => 'color: {{VALUE}};',
 								'{{WRAPPER}} {{CURRENT_ITEM}} .uael-hotspot-content svg' => 'fill: {{VALUE}};',
 							),
@@ -442,7 +431,7 @@ class Hotspot extends Common_Widget {
 								'hotspot_marker_options' => 'yes',
 							),
 							'selectors' => array(
-								'{{WRAPPER}} {{CURRENT_ITEM}} .uael-hotspot-content, 
+								'{{WRAPPER}} {{CURRENT_ITEM}} .uael-hotspot-content,
 								{{WRAPPER}} {{CURRENT_ITEM}} .uael-hotspot-content.uael-hotspot-anim:before' => 'background-color: {{VALUE}};',
 							),
 						)
@@ -1103,7 +1092,7 @@ class Hotspot extends Common_Widget {
 						'unit' => 'em',
 					),
 					'selectors'  => array(
-						'{{WRAPPER}} .uael-hotspot-content, 
+						'{{WRAPPER}} .uael-hotspot-content,
 						{{WRAPPER}} .uael-hotspot-content.uael-hotspot-anim:before' => 'min-width: {{SIZE}}{{UNIT}}; min-height: {{SIZE}}{{UNIT}}; line-height: {{SIZE}}{{UNIT}};',
 					),
 				)
@@ -1135,7 +1124,7 @@ class Hotspot extends Common_Widget {
 							'type'      => Controls_Manager::COLOR,
 							'default'   => '',
 							'selectors' => array(
-								'{{WRAPPER}} .uael-hotspot-content, 
+								'{{WRAPPER}} .uael-hotspot-content,
 								{{WRAPPER}} .uael-hotspot-content.uael-hotspot-anim:before' => 'color: {{VALUE}};',
 								'{{WRAPPER}} .uael-hotspot-content svg' => 'fill: {{VALUE}};',
 							),
@@ -1151,7 +1140,7 @@ class Hotspot extends Common_Widget {
 								'default' => Global_Colors::COLOR_PRIMARY,
 							),
 							'selectors' => array(
-								'{{WRAPPER}} .uael-hotspot-content, 
+								'{{WRAPPER}} .uael-hotspot-content,
 								{{WRAPPER}} .uael-hotspot-content.uael-hotspot-anim:before' => 'background-color: {{VALUE}};',
 							),
 						)
@@ -1232,7 +1221,7 @@ class Hotspot extends Common_Widget {
 								),
 							),
 							'selectors' => array(
-								'{{WRAPPER}} .uael-hotspot-content, 
+								'{{WRAPPER}} .uael-hotspot-content,
 								{{WRAPPER}} .uael-hotspot-content.uael-hotspot-anim:before' => 'border-radius: {{SIZE}}px;',
 							),
 						)
@@ -1276,9 +1265,9 @@ class Hotspot extends Common_Widget {
 								'default' => Global_Colors::COLOR_PRIMARY,
 							),
 							'selectors' => array(
-								'{{WRAPPER}} .uael-hotspot-content:hover, 
-								{{WRAPPER}} .uael-hotspot-content.uael-hotspot-anim:hover:before, 
-								{{WRAPPER}} .uael-hotspot-tour .uael-hotspot-content.open, 
+								'{{WRAPPER}} .uael-hotspot-content:hover,
+								{{WRAPPER}} .uael-hotspot-content.uael-hotspot-anim:hover:before,
+								{{WRAPPER}} .uael-hotspot-tour .uael-hotspot-content.open,
 								{{WRAPPER}} .uael-hotspot-tour .open.uael-hotspot-anim:before' => 'background-color: {{VALUE}};',
 							),
 						)
@@ -1839,7 +1828,7 @@ class Hotspot extends Common_Widget {
 		?>
 
 		<div class="uael-hotspot <?php echo esc_attr( $tour_enable ) . ' ' . esc_attr( $tooltip_enable ); ?> ">
-			<?php echo wp_kses_post( Group_Control_Image_Size::get_attachment_image_html( $settings ) ); ?>		
+			<?php echo wp_kses_post( Group_Control_Image_Size::get_attachment_image_html( $settings ) ); ?>
 			<?php
 			if ( $settings['hotspots_list'] ) :
 				$counter = 1;
@@ -1943,7 +1932,7 @@ class Hotspot extends Common_Widget {
 						$end            = apply_filters( 'uael_hotspot_endtour_label', $endtour_label, $settings );
 					?>
 					<?php if ( 'yes' === $settings['hotspot_tooltip_data'] ) { ?>
-						<span class="uael-tooltip-container">							
+						<span class="uael-tooltip-container">
 							<span <?php echo wp_kses_post( $this->get_render_attribute_string( $tooltip_data ) ); ?>><?php echo wp_kses_post( $this->parse_text_editor( $item['content'] ) ); ?>
 								<span class="uael-tour"><span class="uael-actual-step"><?php echo esc_attr( $counter ); ?> <?php echo esc_attr_e( 'of', 'uael' ); ?> <?php echo count( $settings['hotspots_list'] ); ?></span><ul><li><a href="#0" class="uael-prev-<?php echo esc_attr( $node_id ); ?>" data-tooltipid="<?php echo esc_attr( $counter ); ?>">&#171; <?php echo esc_attr( $previous ); ?></a></li><li><a href="#0" class="uael-next-<?php echo esc_attr( $node_id ); ?>" data-tooltipid="<?php echo esc_attr( $counter ); ?>"><?php echo esc_attr( $next ); ?> &#187;</a></li></ul></span>
 								<?php
@@ -2122,7 +2111,7 @@ class Hotspot extends Common_Widget {
 								<span class="uael-hotspot-main-{{ node_id }} uael-hotspot-content{{ hotspot_glow }} {{ hide_nonactive }}" id="uael-tooltip-id-{{ node_id }}-{{ counter }}" data-uaeltour="{{ counter }}" data-tooltip-content="#uael-tooltip-content-{{ item._id }}">
 									<# if ( 'icon' === item.hotspot ) { #>
 										<?php if ( UAEL_Helper::is_elementor_updated() ) { ?>
-											<# 
+											<#
 											iconsHTML[ index ] = elementor.helpers.renderIcon( view, item.new_icon, { 'aria-hidden': true }, 'i' , 'object' );
 											migrated = elementor.helpers.isIconMigrated( item, 'new_icon' ); #>
 											<# if ( ( ! item.icon || migrated ) && iconsHTML[ index ] && iconsHTML[ index ].rendered ) { #>
@@ -2151,7 +2140,7 @@ class Hotspot extends Common_Widget {
 								<# } #>
 							<# } #>
 							<# if ( 'yes' == settings.hotspot_tooltip_data ) { #>
-								<span class="uael-tooltip-container">							
+								<span class="uael-tooltip-container">
 									<span class="uael-tooltip-text {{ hotspot_tour }}" id="uael-tooltip-content-{{ item._id }}">{{{ item.content }}}
 										<span class="uael-tour"><span class="uael-actual-step">{{ counter }} of {{ length }}</span><ul><li><a href="#0" class="uael-prev-{{ node_id }}" data-tooltipid="{{ counter }}">&#171; <?php esc_attr_e( 'Previous', 'uael' ); ?></a></li><li><a href="#0" class="uael-next-{{ node_id }}" data-tooltipid="{{ counter }}"><?php esc_attr_e( 'Next', 'uael' ); ?> &#187;</a></li></ul></span>
 									</span>

@@ -89,16 +89,6 @@ class Woo_Checkout extends Common_Widget {
 	 * @since 1.31.0
 	 * @access protected
 	 */
-	protected function _register_controls() { //phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
-		$this->register_controls();
-	}
-
-	/**
-	 * Register Woo_Checkout controls.
-	 *
-	 * @since 1.31.0
-	 * @access protected
-	 */
 	protected function register_controls() {
 		$this->register_content_general_controls();
 		$this->register_content_labels_controls();

@@ -99,16 +99,6 @@ class Price_Table extends Common_Widget {
 	/**
 	 * Register Price Table controls.
 	 *
-	 * @since 0.0.1
-	 * @access protected
-	 */
-	protected function _register_controls() { // phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
-		$this->register_controls();
-	}
-
-	/**
-	 * Register Price Table controls.
-	 *
 	 * @since 1.29.2
 	 * @access protected
 	 */
@@ -2494,7 +2484,7 @@ class Price_Table extends Common_Widget {
 				'label'     => __( 'Icon Size', 'uael' ),
 				'type'      => Controls_Manager::SLIDER,
 				'default'   => array(
-					'size' => '',
+					'size' => '16',
 					'unit' => 'px',
 				),
 				'range'     => array(
@@ -2505,6 +2495,7 @@ class Price_Table extends Common_Widget {
 				),
 				'selectors' => array(
 					'{{WRAPPER}} .uael-price-table .uael-price-table-features-list i' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .uael-price-table .uael-price-table-features-list svg' => 'height: {{SIZE}}{{UNIT}}; width: {{SIZE}}{{UNIT}};',
 				),
 			)
 		);

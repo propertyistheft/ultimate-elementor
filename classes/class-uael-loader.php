@@ -54,7 +54,7 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 			define( 'UAEL_BASE', plugin_basename( UAEL_FILE ) );
 			define( 'UAEL_DIR', plugin_dir_path( UAEL_FILE ) );
 			define( 'UAEL_URL', plugins_url( '/', UAEL_FILE ) );
-			define( 'UAEL_VER', '1.36.4' );
+			define( 'UAEL_VER', '1.36.5' );
 			define( 'UAEL_MODULES_DIR', UAEL_DIR . 'modules/' );
 			define( 'UAEL_MODULES_URL', UAEL_URL . 'modules/' );
 			define( 'UAEL_SLUG', 'uae' );
@@ -79,7 +79,7 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 				return;
 			}
 
-			$required_elementor_version = '3.1.0';
+			$required_elementor_version = '3.5.0';
 
 			if ( defined( 'ELEMENTOR_VERSION' ) && ( ! version_compare( ELEMENTOR_VERSION, $required_elementor_version, '>=' ) ) ) {
 				add_action( 'admin_notices', array( $this, 'elementor_outdated' ) );

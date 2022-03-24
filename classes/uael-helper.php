@@ -11,7 +11,9 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit; // Exit if accessed directly.
 }
 
+use Elementor\Plugin;
 use Elementor\Utils;
+use Elementor\Widget_Base;
 use UltimateElementor\Classes\UAEL_Config;
 
 /**
@@ -1609,5 +1611,64 @@ class UAEL_Helper {
 			$schema_output .= '<script type="application/ld+json">' . $encoded_data . '</script>';
 		}
 		echo $schema_output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+	}
+
+	/**
+	 * Returns the type of elementor element.
+	 *
+	 * @since  1.36.5
+	 *
+	 * @param array $element The Element.
+	 *
+	 * @return Widget_Base|Widget_Base[]|mixed|string|null
+	 */
+	public static function get_widget_type( $element ) {
+		$type = '';
+		if ( empty( $element['widgetType'] ) ) {
+			$type = $element['elType'];
+		} else {
+			$type = $element['widgetType'];
+		}
+
+		if ( 'global' === $type && ! empty( $element['templateID'] ) ) {
+			$type = self::get_global_widget_type( $element['templateID'] );
+		}
+
+		return $type;
+	}
+
+	/**
+	 * Returns the type of elementor element if global.
+	 *
+	 * @since  1.36.5
+	 *
+	 * @param int|string $template_id Template ID.
+	 * @param bool       $return_type Return type.
+	 *
+	 * @return Widget_Base|Widget_Base[]|mixed|string|null
+	 */
+	public static function get_global_widget_type( $template_id, $return_type = false ) {
+		$template_data = Plugin::$instance->templates_manager->get_template_data(
+			array(
+				'source'      => 'local',
+				'template_id' => $template_id,
+			)
+		);
+
+		if ( is_wp_error( $template_data ) ) {
+			return '';
+		}
+
+		if ( empty( $template_data['content'] ) ) {
+			return '';
+		}
+
+		$original_widget_type = Plugin::$instance->widgets_manager->get_widget_types( $template_data['content'][0]['widgetType'] );
+
+		if ( $return_type ) {
+			return $original_widget_type;
+		}
+
+		return $original_widget_type ? $template_data['content'][0]['widgetType'] : '';
 	}
 }

@@ -245,9 +245,10 @@
 
 			var current_cookie = Cookies.get( 'uael-modal-popup-' + popup_id );
 			var cookies_days  = parseInt( $( '.uamodal-' + popup_id ).data( 'cookies-days' ) );
+			var url_condition = window.location.protocol === 'https:' ? true : '';
 
 			if( 'undefined' === typeof current_cookie && 'undefined' !== typeof cookies_days ) {
-				Cookies.set( 'uael-modal-popup-' + popup_id, true, { expires: cookies_days } );
+				Cookies.set( 'uael-modal-popup-' + popup_id, true, { expires: cookies_days, secure: url_condition } );
 			}
 		},
 	}

@@ -66,7 +66,7 @@ class Module extends Module_Base {
 	public function register_controls() {
 		$controls_manager = \Elementor\Plugin::$instance->controls_manager;
 
-		$controls_manager->register_control( self::QUERY_CONTROL_ID, new Query() );
+		$controls_manager->register( new Query() );
 
 	}
 

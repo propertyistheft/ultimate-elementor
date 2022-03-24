@@ -4,9 +4,9 @@
  * Plugin URI: https://ultimateelementor.com/
  * Author: Brainstorm Force
  * Author URI: https://www.brainstormforce.com
- * Version: 1.36.4
- * Elementor tested up to: 3.5.5
- * Elementor Pro tested up to: 3.6.0
+ * Version: 1.36.5
+ * Elementor tested up to: 3.6.1
+ * Elementor Pro tested up to: 3.6.4
  * Description: Ultimate Addons is a premium extension for Elementor that adds 40+ widgets and works on top of any Elementor Package (Free, Pro). You can use it with any WordPress theme.
  * Text Domain: uael
  *
@@ -27,7 +27,7 @@ if ( is_file( $bsf_core_version_file ) ) {
 	global $bsf_core_version, $bsf_core_path;
 	$bsf_core_dir = realpath( dirname( __FILE__ ) . '/admin/bsf-core/' );
 	$version      = file_get_contents( realpath( plugin_dir_path( __FILE__ ) . '/admin/bsf-core/version.yml' ) );
-	if ( version_compare( $version, $bsf_core_version, '>' ) ) {
+	if ( version_compare( $version, $bsf_core_version ? $bsf_core_version : '0.0.0', '>' ) ) {
 		$bsf_core_version = $version;
 		$bsf_core_path    = $bsf_core_dir;
 	}

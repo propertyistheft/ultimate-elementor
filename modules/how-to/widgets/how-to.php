@@ -82,17 +82,6 @@ class HowTo extends Common_Widget {
 	/**
 	 * Register HowTo controls.
 	 *
-	 * @since 1.23.0
-	 * @access protected
-	 */
-	protected function _register_controls() { // phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
-
-		$this->register_controls();
-	}
-
-	/**
-	 * Register HowTo controls.
-	 *
 	 * @since 1.29.2
 	 * @access protected
 	 */
@@ -1867,10 +1856,10 @@ class HowTo extends Common_Widget {
 			</div>
 			<div class="uael-howto-description">
 				<span class="uael-howto-desc-text"><?php echo wp_kses_post( $settings['description'] ); ?></span>
-			</div>		
+			</div>
 			<?php if ( ! empty( $settings['image']['url'] ) ) { ?>
 				<div class="uael-howto-image">
-					<?php echo wp_kses_post( Group_Control_Image_Size::get_attachment_image_html( $settings ) ); ?>	
+					<?php echo wp_kses_post( Group_Control_Image_Size::get_attachment_image_html( $settings ) ); ?>
 				</div>
 			<?php } ?>
 			<?php if ( 'yes' === $settings['show_time'] || 'yes' === $settings['show_cost'] ) { ?>
@@ -1982,7 +1971,7 @@ class HowTo extends Common_Widget {
 					},
 				<?php } ?>
 				<?php if ( ! empty( $settings['supply'][0] ) && 'yes' === $settings['show_supply'] ) { ?>
-				"supply": 
+				"supply":
 					<?php
 					if ( isset( $supply ) && ! empty( $supply ) ) {
 						echo $supply;
@@ -1991,7 +1980,7 @@ class HowTo extends Common_Widget {
 					,
 				<?php } ?>
 				<?php if ( ! empty( $settings['tool'][0] ) && 'yes' === $settings['show_tools'] ) { ?>
-				"tool": 
+				"tool":
 					<?php
 					if ( isset( $tool ) && ! empty( $tool ) ) {
 						echo $tool;
@@ -2000,7 +1989,7 @@ class HowTo extends Common_Widget {
 					,
 				<?php } ?>
 				<?php if ( ! empty( $settings['steps'][0] ) ) { ?>
-				"step": 
+				"step":
 					<?php
 					if ( isset( $steps ) && ! empty( $steps ) ) {
 						echo $steps;
@@ -2009,7 +1998,7 @@ class HowTo extends Common_Widget {
 				<?php } ?>
 
 				<?php if ( ! empty( $calculate_total_time ) && 'yes' === $settings['show_time'] ) { ?>
-					, "totalTime": 
+					, "totalTime":
 					<?php if ( isset( $calculate_total_time ) ) { ?>
 						"PT<?php echo $calculate_total_time; ?>M"
 					<?php } ?>

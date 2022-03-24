@@ -124,16 +124,6 @@ class Twitter extends Common_Widget {
 	 * @since 1.36.0
 	 * @access protected
 	 */
-	protected function _register_controls() { // phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
-		$this->register_controls();
-	}
-
-	/**
-	 * Register Twitter Feed controls.
-	 *
-	 * @since 1.36.0
-	 * @access protected
-	 */
 	protected function register_controls() {
 		$this->register_account_controls();
 		$this->register_layout_controls();
@@ -2256,10 +2246,10 @@ class Twitter extends Common_Widget {
 						$this->twitter_feed_header_avatar( $item, $settings );
 				}
 				?>
-				<?php $this->twitter_feed_header_name( $item, $settings ); ?>		
+				<?php $this->twitter_feed_header_name( $item, $settings ); ?>
 			</div>
 			<?php if ( 'yes' === $settings['uael_twitter_feed_twitter_logo'] ) { ?>
-				<?php $this->twitter_feed_header_logo(); ?>	
+				<?php $this->twitter_feed_header_logo(); ?>
 			<?php } ?>
 		</div>
 		<?php
@@ -2289,20 +2279,20 @@ class Twitter extends Common_Widget {
 						<span class="uael-twitter-feed-header-user-info-name-verified-container" title="Verified account">
 							<svg class="uael-twitter-feed-header-user-info-name-verified" width="16" height="16" viewBox="0 0 20 20">
 							<path style="fill:#1da1f2;fill-opacity:1" d="m 14.5436,18.0924 c -0.160467,0 -0.3878,-0.03 -0.682,-0.09 -0.2942,-0.06 -0.488133,-0.1102 -0.5818,-0.1506 -0.33428,0.669333 -0.78895,1.194767 -1.36401,1.5763 -0.57506,0.381533 -1.216987,0.5723 -1.92578,0.5723 -0.7087933,0 -1.3674367,-0.210833 -1.97593,-0.6325 -0.6084933,-0.421733 -1.0331,-0.9271 -1.27382,-1.5161 -0.4145733,0.160667 -0.8425233,0.241 -1.28385,0.241 -1.0030067,0 -1.8589067,-0.3782 -2.5677,-1.1346 -0.7087933,-0.756333 -1.0565033,-1.6499 -1.04313,-2.6807 -0.0134,-0.04 -0.0134,-0.08017 0,-0.1205 l 0,-0.1205 c -0.0134,-0.04013 -0.0134,-0.08028 0,-0.12044 0.0134,-0.04013 0.0134,-0.08029 0,-0.12048 C 1.27052,13.420747 0.81916333,12.942167 0.49151,12.35984 0.16383667,11.77724 0,11.147923 0,10.47189 0,9.79585 0.17719667,9.1398933 0.53159,8.50402 0.88599,7.86814 1.39084,7.3828633 2.04614,7.04819 L 1.96594,6.72691 C 1.8857,6.5261033 1.84558,6.2985267 1.84558,6.04418 1.8188467,5.93708 1.8188467,5.82329 1.84558,5.70281 1.83218,4.68541 2.1732033,3.7951833 2.86865,3.03213 3.56407,2.2690767 4.4266567,1.88755 5.45641,1.88755 c 0.4413267,0 0.8692767,0.08032 1.28385,0.24096 C 6.9943533,1.5261033 7.4156167,1.02075 8.00405,0.61245 8.5924567,0.20415 9.25443,0 9.98997,0 c 1.47108,0 2.56769,0.70950333 3.28983,2.12851 0.3544,-0.16064 0.775667,-0.24096 1.2638,-0.24096 1.003,0 1.855567,0.3748333 2.5577,1.1245 0.702133,0.7496667 1.066567,1.6465867 1.0933,2.69076 -0.01333,0.08032 -0.02,0.19411 -0.02,0.34137 l -0.1203,0.68273 c -0.02667,0.12048 -0.0668,0.2275733 -0.1204,0.32128 0.6018,0.2811267 1.089933,0.7195467 1.4644,1.31526 0.374467,0.59572 0.575067,1.2951867 0.6018,2.0984 -0.02667,0.749667 -0.2072,1.41901 -0.5416,2.00803 -0.334333,0.58902 -0.775667,1.030787 -1.324,1.3253 0.02667,0.05353 0.04,0.09369 0.04,0.12048 l 0.02,0.24094 c -0.02667,0.04 -0.02667,0.08017 0,0.1205 -0.02667,1.070933 -0.394433,1.974567 -1.1033,2.7109 -0.7088,0.736267 -1.558033,1.1044 -2.5477,1.1044"></path>
-							<path style="fill:#ffffff;fill-opacity:1;" d="M 13.2598,6.58635 8.42528,11.40562 6.76028,9.71888 C 6.51956,9.5180733 6.28218,9.41767 6.04814,9.41767 5.8141067,9.41767 5.5633567,9.5180733 5.29589,9.71888 5.0952833,10 4.9983267,10.271083 5.00502,10.53213 c 0.00667,0.26104 0.11031,0.471883 0.31093,0.63253 l 2.38716,2.40964 c 0.24072,0.2008 0.5015033,0.3012 0.78235,0.3012 0.28084,0 0.5015,-0.1004 0.66198,-0.3012 l 0.0201,0 5.524341,-5.6675353 C 15.199662,7.3478056 14.827995,6.7252711 14.674931,6.5787563 14.521867,6.4322415 13.835901,6.0147732 13.2598,6.58635 z"></path>    
+							<path style="fill:#ffffff;fill-opacity:1;" d="M 13.2598,6.58635 8.42528,11.40562 6.76028,9.71888 C 6.51956,9.5180733 6.28218,9.41767 6.04814,9.41767 5.8141067,9.41767 5.5633567,9.5180733 5.29589,9.71888 5.0952833,10 4.9983267,10.271083 5.00502,10.53213 c 0.00667,0.26104 0.11031,0.471883 0.31093,0.63253 l 2.38716,2.40964 c 0.24072,0.2008 0.5015033,0.3012 0.78235,0.3012 0.28084,0 0.5015,-0.1004 0.66198,-0.3012 l 0.0201,0 5.524341,-5.6675353 C 15.199662,7.3478056 14.827995,6.7252711 14.674931,6.5787563 14.521867,6.4322415 13.835901,6.0147732 13.2598,6.58635 z"></path>
 							</svg>
 						</span>
 						<?php
 					}
 				}
 				?>
-			</div> 
+			</div>
 			<?php if ( 'yes' === $settings['uael_twitter_feed_show_username'] ) { ?>
-				<div class="uael-twitter-feed-username"> 
+				<div class="uael-twitter-feed-username">
 					<?php
 					echo esc_html( '@' . $tweet_username );
 					?>
-				</div>   
+				</div>
 			<?php } ?>
 		</div>
 		<?php
@@ -2327,13 +2317,13 @@ class Twitter extends Common_Widget {
 		$str          = ( isset( $item['id_str'] ) ) ? $item['id_str'] : '';
 		$delimeter    = strlen( $content_text ) > $settings['uael_twitter_feed_content_length'] ? '...' : '';
 		?>
-		<div class="uael-twitter-feed__title">            
+		<div class="uael-twitter-feed__title">
 			<?php
 			if ( 'yes' === $settings['uael_twitter_feed_tweet_content'] ) {
 				$link_free_text = isset( $item['entities']['urls'][0]['url'] ) ? str_replace( $item['entities']['urls'][0]['url'], '', $content_text ) : $content_text;
 				$text           = substr( $link_free_text, 0, $settings['uael_twitter_feed_content_length'] ) . $delimeter;
 				?>
-					<p> 
+					<p>
 						<?php echo esc_html( $text ); ?>
 					</p>
 				<?php
@@ -2366,7 +2356,7 @@ class Twitter extends Common_Widget {
 			if ( isset( $item['extended_entities']['media'][0] ) && 'yes' === $settings['uael_twitter_feed_show_media'] ) {
 				if ( 'photo' === $item['extended_entities']['media'][0]['type'] ) {
 					?>
-						<img src="<?php echo esc_url( $image_url ); ?>"> 
+						<img src="<?php echo esc_url( $image_url ); ?>">
 					<?php
 				} elseif ( 'video' === $item['extended_entities']['media'][0]['type'] ) {
 					?>
@@ -2394,7 +2384,7 @@ class Twitter extends Common_Widget {
 		$likes_count   = ( isset( $item['favorite_count'] ) ) ? $item['favorite_count'] : '';
 
 		?>
-			<div class="uael-twitter-feed_inner-content">    
+			<div class="uael-twitter-feed_inner-content">
 				<div class="uael-twitter-feed-date">
 					<?php
 					if ( 'yes' === $settings['uael_twitter_feed_date'] ) {
@@ -2720,13 +2710,13 @@ class Twitter extends Common_Widget {
 			if ( isset( $items ) && is_array( $items ) ) {
 				foreach ( $items as $item ) {
 					?>
-					<div class="uael-twitter-user-cover">	
-						<?php if ( 'yes' === $settings['header_enable'] ) { ?>	
+					<div class="uael-twitter-user-cover">
+						<?php if ( 'yes' === $settings['header_enable'] ) { ?>
 							<div class="uael-twitter-feed-profile-body">
 								<div class="uael-twitter-header-banner">
 									<img src="<?php echo wp_kses_post( $item['user']['profile_banner_url'] ); ?>"  alt="<?php echo esc_html( $item['user']['name'] ); ?>">
 								</div>
-								<div class="uael-twitter-feed-header-user">	
+								<div class="uael-twitter-feed-header-user">
 									<a rel="nofollow" href="https://twitter.com/<?php echo esc_url( $item['user']['profile_banner_url'] ); ?>" target="_blank" class="uael-twitter-feed-header-user-image-container">
 										<img class="uael-twitter-feed-header-user-image" src="
 											<?php
@@ -2738,19 +2728,19 @@ class Twitter extends Common_Widget {
 									<div class="uael-twitter-feed-header-user-info">
 										<div class="uael-twitter-feed-header-user-info-name-wrapper">
 											<div class="uael-twitter-feed-header-user-info-name">
-												<a class="uael-twitter-header-link" rel="nofollow" href="https://twitter.com/<?php $item['user']['screen_name']; ?>" title="<?php echo esc_html( $item['user']['name'] ); ?>" target="_blank">    
-														<?php echo esc_html( $item['user']['name'] ); ?> 
-														<?php if ( true === $item['user']['verified'] ) { ?>              
+												<a class="uael-twitter-header-link" rel="nofollow" href="https://twitter.com/<?php $item['user']['screen_name']; ?>" title="<?php echo esc_html( $item['user']['name'] ); ?>" target="_blank">
+														<?php echo esc_html( $item['user']['name'] ); ?>
+														<?php if ( true === $item['user']['verified'] ) { ?>
 															<span class="uael-twitter-feed-header-user-info-name-verified-container" title="Verified account">
 																<svg class="uael-twitter-feed-header-user-info-name-verified" width="16" height="16" viewBox="0 0 20 20">
 																<path style="fill:#1da1f2;fill-opacity:1" d="m 14.5436,18.0924 c -0.160467,0 -0.3878,-0.03 -0.682,-0.09 -0.2942,-0.06 -0.488133,-0.1102 -0.5818,-0.1506 -0.33428,0.669333 -0.78895,1.194767 -1.36401,1.5763 -0.57506,0.381533 -1.216987,0.5723 -1.92578,0.5723 -0.7087933,0 -1.3674367,-0.210833 -1.97593,-0.6325 -0.6084933,-0.421733 -1.0331,-0.9271 -1.27382,-1.5161 -0.4145733,0.160667 -0.8425233,0.241 -1.28385,0.241 -1.0030067,0 -1.8589067,-0.3782 -2.5677,-1.1346 -0.7087933,-0.756333 -1.0565033,-1.6499 -1.04313,-2.6807 -0.0134,-0.04 -0.0134,-0.08017 0,-0.1205 l 0,-0.1205 c -0.0134,-0.04013 -0.0134,-0.08028 0,-0.12044 0.0134,-0.04013 0.0134,-0.08029 0,-0.12048 C 1.27052,13.420747 0.81916333,12.942167 0.49151,12.35984 0.16383667,11.77724 0,11.147923 0,10.47189 0,9.79585 0.17719667,9.1398933 0.53159,8.50402 0.88599,7.86814 1.39084,7.3828633 2.04614,7.04819 L 1.96594,6.72691 C 1.8857,6.5261033 1.84558,6.2985267 1.84558,6.04418 1.8188467,5.93708 1.8188467,5.82329 1.84558,5.70281 1.83218,4.68541 2.1732033,3.7951833 2.86865,3.03213 3.56407,2.2690767 4.4266567,1.88755 5.45641,1.88755 c 0.4413267,0 0.8692767,0.08032 1.28385,0.24096 C 6.9943533,1.5261033 7.4156167,1.02075 8.00405,0.61245 8.5924567,0.20415 9.25443,0 9.98997,0 c 1.47108,0 2.56769,0.70950333 3.28983,2.12851 0.3544,-0.16064 0.775667,-0.24096 1.2638,-0.24096 1.003,0 1.855567,0.3748333 2.5577,1.1245 0.702133,0.7496667 1.066567,1.6465867 1.0933,2.69076 -0.01333,0.08032 -0.02,0.19411 -0.02,0.34137 l -0.1203,0.68273 c -0.02667,0.12048 -0.0668,0.2275733 -0.1204,0.32128 0.6018,0.2811267 1.089933,0.7195467 1.4644,1.31526 0.374467,0.59572 0.575067,1.2951867 0.6018,2.0984 -0.02667,0.749667 -0.2072,1.41901 -0.5416,2.00803 -0.334333,0.58902 -0.775667,1.030787 -1.324,1.3253 0.02667,0.05353 0.04,0.09369 0.04,0.12048 l 0.02,0.24094 c -0.02667,0.04 -0.02667,0.08017 0,0.1205 -0.02667,1.070933 -0.394433,1.974567 -1.1033,2.7109 -0.7088,0.736267 -1.558033,1.1044 -2.5477,1.1044"></path>
-																<path style="fill:#ffffff;fill-opacity:1;" d="M 13.2598,6.58635 8.42528,11.40562 6.76028,9.71888 C 6.51956,9.5180733 6.28218,9.41767 6.04814,9.41767 5.8141067,9.41767 5.5633567,9.5180733 5.29589,9.71888 5.0952833,10 4.9983267,10.271083 5.00502,10.53213 c 0.00667,0.26104 0.11031,0.471883 0.31093,0.63253 l 2.38716,2.40964 c 0.24072,0.2008 0.5015033,0.3012 0.78235,0.3012 0.28084,0 0.5015,-0.1004 0.66198,-0.3012 l 0.0201,0 5.524341,-5.6675353 C 15.199662,7.3478056 14.827995,6.7252711 14.674931,6.5787563 14.521867,6.4322415 13.835901,6.0147732 13.2598,6.58635 z"></path>    
+																<path style="fill:#ffffff;fill-opacity:1;" d="M 13.2598,6.58635 8.42528,11.40562 6.76028,9.71888 C 6.51956,9.5180733 6.28218,9.41767 6.04814,9.41767 5.8141067,9.41767 5.5633567,9.5180733 5.29589,9.71888 5.0952833,10 4.9983267,10.271083 5.00502,10.53213 c 0.00667,0.26104 0.11031,0.471883 0.31093,0.63253 l 2.38716,2.40964 c 0.24072,0.2008 0.5015033,0.3012 0.78235,0.3012 0.28084,0 0.5015,-0.1004 0.66198,-0.3012 l 0.0201,0 5.524341,-5.6675353 C 15.199662,7.3478056 14.827995,6.7252711 14.674931,6.5787563 14.521867,6.4322415 13.835901,6.0147732 13.2598,6.58635 z"></path>
 															</svg>
 															</span>
 														<?php } ?>
 													</span>
 												</a>
-											</div>		
+											</div>
 											<div class="uael-twitter-feed-header-user-info-screen-name">
 												<span class="uael-twitter-screen-name">
 													<a rel="nofollow" href="https://twitter.com/<?php echo esc_html( $item['user']['screen_name'] ); ?>" target="_blank">
@@ -2758,7 +2748,7 @@ class Twitter extends Common_Widget {
 													</a>
 												</span>
 											</div>
-										</div>				
+										</div>
 										<a rel="nofollow" href="https://twitter.com/intent/follow?screen_name=Eminem" target="_blank" class="uael-twitter-feed-header-user-info-follow">
 											<svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 18 18">
 												<path d="M16.07 5.388c.219 4.83-3.395 10.216-9.79 10.216A9.765 9.765 0 0 1 1 14.06a6.94 6.94 0 0 0 5.1-1.421 3.446 3.446 0 0 1-3.218-2.385c.54.103 1.07.073 1.555-.06-1.656-.33-2.8-1.82-2.763-3.41.465.258.996.412 1.56.43A3.432 3.432 0 0 1 2.17 2.628a9.788 9.788 0 0 0 7.1 3.589C8.766 4.068 10.4 2 12.624 2c.99 0 1.885.417 2.513 1.084a6.925 6.925 0 0 0 2.188-.833 3.452 3.452 0 0 1-1.515 1.9 6.9 6.9 0 0 0 1.978-.54 6.96 6.96 0 0 1-1.718 1.777z"></path>
@@ -2813,20 +2803,20 @@ class Twitter extends Common_Widget {
 									<span class="description">
 										<?php echo esc_html( $item['user']['description'] ); ?>
 									</span>
-										<div class="uael-twitter-feed-icon">    
+										<div class="uael-twitter-feed-icon">
 											<span>
 												<svg viewBox="3 0 18 22" aria-hidden="true" class="r-14j79pv r-4qtqp9 r-yyyyoo r-1xvli5t r-1d4mawv r-dnmrzs r-bnwqim r-1plcrui r-lrvibr"><g><path d="M12 14.315c-2.088 0-3.787-1.698-3.787-3.786S9.913 6.74 12 6.74s3.787 1.7 3.787 3.787-1.7 3.785-3.787 3.785zm0-6.073c-1.26 0-2.287 1.026-2.287 2.287S10.74 12.814 12 12.814s2.287-1.025 2.287-2.286S13.26 8.24 12 8.24z"></path><path d="M20.692 10.69C20.692 5.9 16.792 2 12 2s-8.692 3.9-8.692 8.69c0 1.902.603 3.708 1.743 5.223l.003-.002.007.015c1.628 2.07 6.278 5.757 6.475 5.912.138.11.302.163.465.163.163 0 .327-.053.465-.162.197-.155 4.847-3.84 6.475-5.912l.007-.014.002.002c1.14-1.516 1.742-3.32 1.742-5.223zM12 20.29c-1.224-.99-4.52-3.715-5.756-5.285-.94-1.25-1.436-2.742-1.436-4.312C4.808 6.727 8.035 3.5 12 3.5s7.192 3.226 7.192 7.19c0 1.57-.497 3.062-1.436 4.313-1.236 1.57-4.532 4.294-5.756 5.285z"></path></g>
 												</svg>
 												<span>
-													<?php echo esc_html( $item['user']['location'] ); ?> 
+													<?php echo esc_html( $item['user']['location'] ); ?>
 												</span>
 											</span>
 											<span>
-												<span>    
+												<span>
 													<svg viewBox="2 0 24 22" aria-hidden="true" class="r-14j79pv r-4qtqp9 r-yyyyoo r-1xvli5t r-1d4mawv r-dnmrzs r-bnwqim r-1plcrui r-lrvibr"><g><path d="M19.708 2H4.292C3.028 2 2 3.028 2 4.292v15.416C2 20.972 3.028 22 4.292 22h15.416C20.972 22 22 20.972 22 19.708V4.292C22 3.028 20.972 2 19.708 2zm.792 17.708c0 .437-.355.792-.792.792H4.292c-.437 0-.792-.355-.792-.792V6.418c0-.437.354-.79.79-.792h15.42c.436 0 .79.355.79.79V19.71z"></path><circle cx="7.032" cy="8.75" r="1.285"></circle><circle cx="7.032" cy="13.156" r="1.285"></circle><circle cx="16.968" cy="8.75" r="1.285"></circle><circle cx="16.968" cy="13.156" r="1.285"></circle><circle cx="12" cy="8.75" r="1.285"></circle><circle cx="12" cy="13.156" r="1.285"></circle><circle cx="7.032" cy="17.486" r="1.285"></circle><circle cx="12" cy="17.486" r="1.285"></circle></g>
 													</svg>
 													<span>
-														<?php esc_html_e( 'Joined', 'uael' ); ?> 
+														<?php esc_html_e( 'Joined', 'uael' ); ?>
 														<?php
 														$joined             = $item['user']['created_at'];
 														$returned_timestamp = strtotime( $joined );
@@ -2886,7 +2876,7 @@ class Twitter extends Common_Widget {
 				<span class="elementor-alert-title">
 					<?php esc_html_e( 'Twitter Feed - ID ', 'uael' ); ?><?php echo esc_html( $page_id ); ?>
 				</span>
-				<span class="elementor-alert-description">			
+				<span class="elementor-alert-description">
 					<?php
 						/* translators: %s Twitter name */
 						echo esc_html( sprintf( __( 'To show Twitter Feed widget, please set the %s from widget settings.', 'uael' ), $twitter_name ) );// phpcs:ignore WordPress.WP.I18n.NonSingularStringLiteralText

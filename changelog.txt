@@ -1,3 +1,17 @@
+Version 1.36.5 Thursday, 24th March 2022
+- Improvement: Modal Popup - Added secure attribute to the cookies.
+- Fix: Console error while editing pages with elementor when using Workreap-Core plugin.
+- Fix: FAQ - Accordion tab icon size issue.
+- Fix: FAQ - Fixed PHP fatal error.
+- Fix: Posts - PHP errors when using PHP 8.1.
+- Fix: Price box - Feature list icon size issue.
+- Fix: Timeline - Items already highlighted when used in tabs.
+- Fix: Video - Fixed PHP fatal error.
+- Fix: Video - Removed extra space around self hosted video on safari browser.
+- Fix: Video Gallery - Fixed PHP fatal error.
+- Deprecated: Removed elementor deprecated functions and replaced with latest functions.
+  Now to work with UAE, Elementor minimum version 3.5.0 or higher will be required.
+
 Version 1.36.4 - Tuesday, 8th February 2022
 - Fix: Display Conditions - PHP warning when using the older versions of PHP.
 - Fix: Image Gallery - Image caption not translated using WPML.

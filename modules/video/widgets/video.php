@@ -92,18 +92,6 @@ class Video extends Common_Widget {
 		return array( 'elementor-waypoints', 'uael-frontend-script', 'uael-video-subscribe', 'jquery-ui-draggable' );
 	}
 
-
-	/**
-	 * Register Video controls.
-	 *
-	 * @since 1.3.2
-	 * @access protected
-	 */
-	protected function _register_controls() { // phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
-
-		$this->register_controls();
-	}
-
 	/**
 	 * Register Video controls.
 	 *

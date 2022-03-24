@@ -184,22 +184,11 @@ class RegistrationForm extends Common_Widget {
 	/**
 	 * Register RegistrationForm controls.
 	 *
-	 * @since 1.18.0
-	 * @access protected
-	 */
-	protected function _register_controls() { // phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
-
-		$this->register_presets_control( 'RegistrationForm', $this );
-		$this->register_controls();
-	}
-
-	/**
-	 * Register RegistrationForm controls.
-	 *
 	 * @since 1.29.2
 	 * @access protected
 	 */
 	protected function register_controls() {
+		$this->register_presets_control( 'RegistrationForm', $this );
 
 		$this->register_general_controls();
 		$this->register_button_controls();

@@ -119,17 +119,6 @@ class Instagram_Feed extends Common_Widget {
 	 * @access protected
 	 * @return void
 	 */
-	protected function _register_controls() { // phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
-		$this->register_controls();
-	}
-
-	/**
-	 * Register widget controls.
-	 *
-	 * @since 1.36.0
-	 * @access protected
-	 * @return void
-	 */
 	protected function register_controls() {
 		// Content tab.
 		$this->register_layout_controls();

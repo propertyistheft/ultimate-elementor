@@ -88,18 +88,6 @@ class Woo_Categories extends Common_Widget {
 	/**
 	 * Register controls.
 	 *
-	 * @since 0.0.1
-	 * @access protected
-	 */
-	protected function _register_controls() { // phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
-
-		$this->register_controls();
-
-	}
-
-	/**
-	 * Register controls.
-	 *
 	 * @since 1.29.2
 	 * @access protected
 	 */

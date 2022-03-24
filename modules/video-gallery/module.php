@@ -7,6 +7,8 @@
 
 namespace UltimateElementor\Modules\VideoGallery;
 
+use Elementor\Plugin;
+use Elementor\Widget_Base;
 use UltimateElementor\Classes\UAEL_Helper;
 use UltimateElementor\Base\Module_Base;
 
@@ -30,14 +32,6 @@ class Module extends Module_Base {
 	public static function is_enable() {
 		return true;
 	}
-
-	/**
-	 * All sections.
-	 *
-	 * @since 1.35.1
-	 * @var all_sections
-	 */
-	private static $all_sections = array();
 
 	/**
 	 * VideoGalleryWidget.
@@ -81,24 +75,7 @@ class Module extends Module_Base {
 		parent::__construct();
 		if ( UAEL_Helper::is_widget_active( 'Video_Gallery' ) ) {
 
-			add_action(
-				'elementor/frontend/before_render',
-				function( $obj ) {
-
-					$current_widget = $obj->get_data();
-					// If multiple times widget used on a page add all the video elements on a page in a single array.
-					if ( isset( $current_widget['elType'] ) && 'section' === $current_widget['elType'] ) {
-
-						array_push( self::$all_sections, $current_widget );
-					}
-					// If multiple times widget used on a page add all the main widget elements on a page in a single array.
-					if ( isset( $current_widget['widgetType'] ) && 'uael-video-gallery' === $current_widget['widgetType'] ) {
-						if ( ! in_array( $current_widget['id'], self::$all_video_gallery_widgets, true ) ) {
-							array_push( self::$all_video_gallery_widgets, $current_widget['id'] );
-						}
-					}
-				}
-			);
+			add_filter( 'elementor/frontend/builder_content_data', array( $this, 'get_widget_data' ), 10, 2 );
 			add_action( 'wp_footer', array( $this, 'render_video_gallery_schema' ) );
 		}
 	}
@@ -116,17 +93,23 @@ class Module extends Module_Base {
 		if ( ! empty( self::$all_video_gallery_widgets ) ) {
 
 			$elementor     = \Elementor\Plugin::$instance;
-			$data          = self::$all_sections;
-			$widget_ids    = self::$all_video_gallery_widgets;
+			$widgets_data  = self::$all_video_gallery_widgets;
 			$object_data   = array();
 			$positioncount = 1;
 			$videocount    = 1;
 
-			foreach ( $widget_ids as $widget_id ) {
-
+			foreach ( $widgets_data as $_widget ) {
+				$widget = $elementor->elements_manager->create_element_instance( $_widget );
+				if ( isset( $_widget['templateID'] ) ) {
+					$type          = UAEL_Helper::get_global_widget_type( $_widget['templateID'], 1 );
+					$element_class = $type->get_class_name();
+					try {
+						$widget = new $element_class( $_widget, array() );
+					} catch ( \Exception $e ) {
+						return null;
+					}
+				}
 				$actual_link          = ( 'on' === isset( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] ) ? 'https' : 'http' . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
-				$widget_data          = $this->find_element_recursive( $data, $widget_id );
-				$widget               = $elementor->elements_manager->create_element_instance( $widget_data );
 				$settings             = $widget->get_settings();
 				$enable_schema        = $settings['schema_support'];
 				$video_link           = array();
@@ -212,30 +195,26 @@ class Module extends Module_Base {
 	}
 
 	/**
-	 * Get Widget Setting data.
+	 * Get widget name.
 	 *
-	 * @since 1.35.1
+	 * @since 1.36.5
 	 * @access public
-	 * @param array  $elements Element array.
-	 * @param string $form_id Element ID.
-	 * @return Boolean True/False.
+	 * @param array $data The builder content.
+	 * @param int   $post_id The post ID.
 	 */
-	public function find_element_recursive( $elements, $form_id ) {
+	public function get_widget_data( $data, $post_id ) {
 
-		foreach ( $elements as $element ) {
-			if ( $form_id === $element['id'] ) {
+		Plugin::$instance->db->iterate_data(
+			$data,
+			function ( $element ) use ( &$widgets ) {
+				$type = UAEL_Helper::get_widget_type( $element );
+				if ( 'uael-video-gallery' === $type ) {
+					self::$all_video_gallery_widgets[] = $element;
+				}
 				return $element;
 			}
+		);
 
-			if ( ! empty( $element['elements'] ) ) {
-				$element = $this->find_element_recursive( $element['elements'], $form_id );
-
-				if ( $element ) {
-					return $element;
-				}
-			}
-		}
-
-		return false;
+		return $data;
 	}
 }

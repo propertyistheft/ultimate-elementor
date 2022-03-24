@@ -84,16 +84,6 @@ class Infobox extends Common_Widget {
 	/**
 	 * Register Infobox controls.
 	 *
-	 * @since 0.0.1
-	 * @access protected
-	 */
-	protected function _register_controls() { // phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
-		$this->register_controls();
-	}
-
-	/**
-	 * Register Infobox controls.
-	 *
 	 * @since 1.29.2
 	 * @access protected
 	 */
@@ -2311,7 +2301,7 @@ class Infobox extends Common_Widget {
 								$migrated = isset( $settings['__fa4_migrated']['new_infobox_button_icon'] );
 								$is_new   = ! isset( $settings['infobox_button_icon'] );
 								?>
-								<span class="uael-infobox-link-icon uael-infobox-link-icon-after"> 
+								<span class="uael-infobox-link-icon uael-infobox-link-icon-after">
 									<?php
 									if ( $is_new || $migrated ) :
 										\Elementor\Icons_Manager::render_icon( $settings['new_infobox_button_icon'], array( 'aria-hidden' => 'true' ) );
@@ -2415,7 +2405,7 @@ class Infobox extends Common_Widget {
 		if ( 'yes' === $settings['infobox_separator'] ) {
 			?>
 			<div class="uael-separator-parent">
-				<div class="uael-separator"></div>      
+				<div class="uael-separator"></div>
 			</div>
 			<?php
 		}
@@ -2467,7 +2457,7 @@ class Infobox extends Common_Widget {
 			} #>
 			<# render_image( 'left-title' ); #>
 			<div class='uael-infobox-title-wrap'>
-				<# if ( '' != settings.infobox_title_prefix ) { 
+				<# if ( '' != settings.infobox_title_prefix ) {
 					var prefixSizeTag = render_html_tag( settings.infobox_prefix_tag ); #>
 
 					<{{ prefixSizeTag }} class="uael-infobox-title-prefix elementor-inline-editing" data-elementor-setting-key="infobox_title_prefix" data-elementor-inline-editing-toolbar="basic" >
@@ -2475,7 +2465,7 @@ class Infobox extends Common_Widget {
 					</{{ prefixSizeTag }}>
 				<# } #>
 				<# if( 'after_prefix' == settings.infobox_separator_position ) {
-					render_separator(); 
+					render_separator();
 				} #>
 				<{{ headingSizeTag }} class="uael-infobox-title elementor-inline-editing" data-elementor-setting-key="infobox_title" data-elementor-inline-editing-toolbar="basic" >
 					{{{ settings.infobox_title }}}
@@ -2488,7 +2478,7 @@ class Infobox extends Common_Widget {
 		} #>
 		<#
 		function render_html_tag( htmlSizeTag ) {
-			if ( typeof elementor.helpers.validateHTMLTag === "function" ) { 
+			if ( typeof elementor.helpers.validateHTMLTag === "function" ) {
 				htmlSizeTag = elementor.helpers.validateHTMLTag( htmlSizeTag );
 			} else if( UAEWidgetsData.allowed_tags ) {
 				htmlSizeTag = UAEWidgetsData.allowed_tags.includes( htmlSizeTag.toLowerCase() ) ? htmlSizeTag : 'div';
@@ -2588,7 +2578,7 @@ class Infobox extends Common_Widget {
 						#>
 							<span class="uael-infobox-link-icon uael-infobox-link-icon-before">
 								<?php if ( UAEL_Helper::is_elementor_updated() ) { ?>
-									<# 
+									<#
 									var buttoniconHTML = elementor.helpers.renderIcon( view, settings.new_infobox_button_icon, { 'aria-hidden': true }, 'i' , 'object' );
 
 									var buttonMigrated = elementor.helpers.isIconMigrated( settings, 'new_infobox_button_icon' );
@@ -2606,10 +2596,10 @@ class Infobox extends Common_Widget {
 						<span class="elementor-inline-editing" data-elementor-setting-key="infobox_link_text" data-elementor-inline-editing-toolbar="basic">{{ settings.infobox_link_text }}</span>
 
 						<# if ( 'right' == settings.infobox_button_icon_position ) {
-						#>  
+						#>
 							<span class="uael-infobox-link-icon uael-infobox-link-icon-after">
 								<?php if ( UAEL_Helper::is_elementor_updated() ) { ?>
-									<# 
+									<#
 									var buttoniconHTML = elementor.helpers.renderIcon( view, settings.new_infobox_button_icon, { 'aria-hidden': true }, 'i' , 'object' );
 
 									var buttonMigrated = elementor.helpers.isIconMigrated( settings, 'new_infobox_button_icon' );
@@ -2659,7 +2649,7 @@ class Infobox extends Common_Widget {
 						#>
 						<span {{{ view.getRenderAttributeString( 'content-wrapper' ) }}}>
 							<?php if ( UAEL_Helper::is_elementor_updated() ) { ?>
-								<# if ( settings.infobox_button_icon || settings.new_infobox_button_icon ) { 
+								<# if ( settings.infobox_button_icon || settings.new_infobox_button_icon ) {
 									var buttoniconHTML = elementor.helpers.renderIcon( view, settings.new_infobox_button_icon, { 'aria-hidden': true }, 'i' , 'object' );
 									var buttonMigrated = elementor.helpers.isIconMigrated( settings, 'new_infobox_button_icon' );
 									#>
@@ -2686,10 +2676,10 @@ class Infobox extends Common_Widget {
 		#>
 
 		<# function render_separator() {
-			if ( 'yes' == settings.infobox_separator ) { #> 
+			if ( 'yes' == settings.infobox_separator ) { #>
 				<div class="uael-separator-parent">
-					<div class="uael-separator"></div>      
-				</div>              
+					<div class="uael-separator"></div>
+				</div>
 			<# }
 		} #>
 
@@ -2759,7 +2749,7 @@ class Infobox extends Common_Widget {
 						<# render_image( 'above-title' ); #>
 						<# render_title(); #>
 						<# if( 'after_heading' == settings.infobox_separator_position ) {
-							render_separator(); 
+							render_separator();
 						} #>
 						<# render_image( 'below-title' ); #>
 						<div class="uael-infobox-text-wrap">
@@ -2767,7 +2757,7 @@ class Infobox extends Common_Widget {
 								{{{ settings.infobox_description }}}
 							</div>
 							<# if( 'after_description' == settings.infobox_separator_position ) {
-								render_separator(); 
+								render_separator();
 							} #>
 							<# render_link(); #>
 						</div>

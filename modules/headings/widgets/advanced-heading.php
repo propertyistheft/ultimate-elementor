@@ -81,17 +81,6 @@ class Advanced_Heading extends Common_Widget {
 	/**
 	 * Register Advanced Heading controls.
 	 *
-	 * @since 0.0.1
-	 * @access protected
-	 */
-	protected function _register_controls() { // phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
-
-		$this->register_controls();
-	}
-
-	/**
-	 * Register Advanced Heading controls.
-	 *
 	 * @since 1.29.2
 	 * @access protected
 	 */
@@ -1647,7 +1636,10 @@ class Advanced_Heading extends Common_Widget {
 					?>
 					<div class="uael-image" itemscope itemtype="http://schema.org/ImageObject">
 						<div class="uael-image-content">
-							<?php echo wp_kses_post( $image_html ); ?>
+							<?php
+							$image_html = isset( $image_html ) ? esc_attr( $image_html ) : '';
+							echo wp_kses_post( $image_html );
+							?>
 						</div>
 					</div>
 				<?php } // Photo Html End. ?>
@@ -1695,7 +1687,7 @@ class Advanced_Heading extends Common_Widget {
 		?>
 
 		<div <?php echo wp_kses_post( $this->get_render_attribute_string( 'uael-heading-wrapper' ) ); ?>>
-			<?php $this->render_separator( 'top', $settings ); ?>	
+			<?php $this->render_separator( 'top', $settings ); ?>
 			<?php $this->render_subheading( 'top', $settings, $dynamic_settings ); ?>
 
 			<<?php echo esc_attr( $heading_size_tag ); ?> class="uael-heading">
@@ -1879,7 +1871,7 @@ class Advanced_Heading extends Common_Widget {
 		<div {{{ view.getRenderAttributeString( 'uael-heading-wrapper') }}}>
 			<# render_separator( 'top' ); #>
 
-			<# render_subheading( 'top' ); #> 
+			<# render_subheading( 'top' ); #>
 
 			<{{{ headingSizeTag }}} class="uael-heading">
 				<# if ( '' != settings.heading_link.url ) { #>
@@ -1891,7 +1883,7 @@ class Advanced_Heading extends Common_Widget {
 				<# } #>
 			</{{{ headingSizeTag }}}>
 
-			<# render_subheading( 'bottom' ); #> 
+			<# render_subheading( 'bottom' ); #>
 
 			<# render_separator( 'center' ); #>
 
