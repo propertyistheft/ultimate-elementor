@@ -1637,7 +1637,7 @@ class Advanced_Heading extends Common_Widget {
 					<div class="uael-image" itemscope itemtype="http://schema.org/ImageObject">
 						<div class="uael-image-content">
 							<?php
-							$image_html = isset( $image_html ) ? esc_attr( $image_html ) : '';
+							$image_html = isset( $image_html ) ? $image_html : '';
 							echo wp_kses_post( $image_html );
 							?>
 						</div>

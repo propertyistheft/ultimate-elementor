@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the Ultimate Addons for Elementor package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ultimate Addons for Elementor 1.36.5\n"
+"Project-Id-Version: Ultimate Addons for Elementor 1.36.6\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/ultimate-elementor\n"
-"POT-Creation-Date: 2022-03-24 10:42:40+00:00\n"
+"POT-Creation-Date: 2022-04-29 05:45:53+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1549,7 +1549,7 @@ msgstr ""
 #: modules/ba-slider/widgets/ba-slider.php:669
 #: modules/business-hours/widgets/business-hours.php:547
 #: modules/business-reviews/widgets/business-reviews.php:706
-#: modules/buttons/widgets/buttons.php:495
+#: modules/buttons/widgets/buttons.php:537
 #: modules/caf-styler/widgets/caf-styler.php:1104
 #: modules/cf-styler/widgets/cf-styler.php:1295
 #: modules/content-toggle/widgets/content-toggle.php:952
@@ -2209,7 +2209,7 @@ msgstr ""
 #: modules/ba-slider/widgets/ba-slider.php:302
 #: modules/ba-slider/widgets/ba-slider.php:592
 #: modules/ba-slider/widgets/ba-slider.php:623
-#: modules/buttons/widgets/buttons.php:717
+#: modules/buttons/widgets/buttons.php:759
 #: modules/content-toggle/widgets/content-toggle.php:551
 #: modules/countdown/widgets/countdown.php:1180 modules/faq/widgets/faq.php:338
 #: modules/faq/widgets/faq.php:504 modules/ff-styler/widgets/ff-styler.php:1206
@@ -2272,7 +2272,7 @@ msgstr ""
 #: modules/business-hours/widgets/business-hours.php:409
 #: modules/business-reviews/skins/skin-base.php:132
 #: modules/business-reviews/skins/skin-base.php:161
-#: modules/buttons/widgets/buttons.php:721
+#: modules/buttons/widgets/buttons.php:763
 #: modules/caf-styler/widgets/caf-styler.php:468
 #: modules/caf-styler/widgets/caf-styler.php:716
 #: modules/cf-styler/widgets/cf-styler.php:447
@@ -2383,7 +2383,7 @@ msgstr ""
 #: modules/business-hours/widgets/business-hours.php:413
 #: modules/business-reviews/skins/skin-base.php:136
 #: modules/business-reviews/skins/skin-base.php:165
-#: modules/buttons/widgets/buttons.php:725
+#: modules/buttons/widgets/buttons.php:767
 #: modules/caf-styler/widgets/caf-styler.php:472
 #: modules/caf-styler/widgets/caf-styler.php:720
 #: modules/cf-styler/widgets/cf-styler.php:451
@@ -2475,7 +2475,7 @@ msgstr ""
 #: modules/business-hours/widgets/business-hours.php:417
 #: modules/business-reviews/skins/skin-base.php:140
 #: modules/business-reviews/skins/skin-base.php:169
-#: modules/buttons/widgets/buttons.php:729
+#: modules/buttons/widgets/buttons.php:771
 #: modules/caf-styler/widgets/caf-styler.php:476
 #: modules/caf-styler/widgets/caf-styler.php:724
 #: modules/cf-styler/widgets/cf-styler.php:455
@@ -3163,10 +3163,10 @@ msgstr ""
 #: modules/ba-slider/widgets/ba-slider.php:567
 #: modules/business-hours/widgets/business-hours.php:198
 #: modules/business-reviews/skins/skin-base.php:695
-#: modules/buttons/widgets/buttons.php:306
-#: modules/buttons/widgets/buttons.php:358
-#: modules/buttons/widgets/buttons.php:563
-#: modules/buttons/widgets/buttons.php:626
+#: modules/buttons/widgets/buttons.php:348
+#: modules/buttons/widgets/buttons.php:400
+#: modules/buttons/widgets/buttons.php:605
+#: modules/buttons/widgets/buttons.php:668
 #: modules/caf-styler/widgets/caf-styler.php:562
 #: modules/caf-styler/widgets/caf-styler.php:798
 #: modules/caf-styler/widgets/caf-styler.php:891
@@ -3329,7 +3329,7 @@ msgstr ""
 
 #: modules/ba-slider/widgets/ba-slider.php:579
 #: modules/business-reviews/skins/skin-base.php:707
-#: modules/buttons/widgets/buttons.php:694
+#: modules/buttons/widgets/buttons.php:736
 #: modules/caf-styler/widgets/caf-styler.php:760
 #: modules/cf-styler/widgets/cf-styler.php:716
 #: modules/content-toggle/widgets/content-toggle.php:666
@@ -3484,7 +3484,7 @@ msgstr ""
 
 #: modules/ba-slider/widgets/ba-slider.php:678
 #: modules/business-hours/widgets/business-hours.php:556
-#: modules/buttons/widgets/buttons.php:514
+#: modules/buttons/widgets/buttons.php:556
 #: modules/cf-styler/widgets/cf-styler.php:1304
 #: modules/content-toggle/widgets/content-toggle.php:961
 #: modules/gf-styler/widgets/gf-styler.php:1962
@@ -3509,7 +3509,7 @@ msgstr ""
 #: modules/ba-slider/widgets/ba-slider.php:688
 #: modules/business-hours/widgets/business-hours.php:566
 #: modules/business-reviews/widgets/business-reviews.php:715
-#: modules/buttons/widgets/buttons.php:504
+#: modules/buttons/widgets/buttons.php:546
 #: modules/caf-styler/widgets/caf-styler.php:1113
 #: modules/content-toggle/widgets/content-toggle.php:971
 #: modules/countdown/widgets/countdown.php:1279
@@ -3595,7 +3595,7 @@ msgid "Enter Time"
 msgstr ""
 
 #: modules/business-hours/widgets/business-hours.php:140
-#: modules/buttons/widgets/buttons.php:534
+#: modules/buttons/widgets/buttons.php:576
 msgid "Styling"
 msgstr ""
 
@@ -4189,10 +4189,10 @@ msgstr ""
 
 #: modules/business-reviews/skins/skin-base.php:451
 #: modules/business-reviews/skins/skin-bubble.php:155
-#: modules/buttons/widgets/buttons.php:295
-#: modules/buttons/widgets/buttons.php:347
-#: modules/buttons/widgets/buttons.php:551
-#: modules/buttons/widgets/buttons.php:615
+#: modules/buttons/widgets/buttons.php:337
+#: modules/buttons/widgets/buttons.php:389
+#: modules/buttons/widgets/buttons.php:593
+#: modules/buttons/widgets/buttons.php:657
 #: modules/caf-styler/widgets/caf-styler.php:784
 #: modules/caf-styler/widgets/caf-styler.php:866
 #: modules/cf-styler/widgets/cf-styler.php:737
@@ -4314,7 +4314,7 @@ msgid "Read More Text Color"
 msgstr ""
 
 #: modules/business-reviews/skins/skin-base.php:540
-#: modules/buttons/widgets/buttons.php:424
+#: modules/buttons/widgets/buttons.php:466
 #: modules/caf-styler/widgets/caf-styler.php:1143
 #: modules/cf-styler/widgets/cf-styler.php:1120
 #: modules/content-toggle/widgets/content-toggle.php:862
@@ -4415,8 +4415,8 @@ msgid "Box"
 msgstr ""
 
 #: modules/business-reviews/skins/skin-base.php:726
-#: modules/buttons/widgets/buttons.php:327
-#: modules/buttons/widgets/buttons.php:586
+#: modules/buttons/widgets/buttons.php:369
+#: modules/buttons/widgets/buttons.php:628
 #: modules/caf-styler/widgets/caf-styler.php:827
 #: modules/cf-styler/widgets/cf-styler.php:777
 #: modules/content-toggle/widgets/content-toggle.php:650
@@ -4670,7 +4670,7 @@ msgstr ""
 
 #: modules/business-reviews/skins/skin-bubble.php:197
 #: modules/business-reviews/widgets/business-reviews.php:532
-#: modules/buttons/widgets/buttons.php:469
+#: modules/buttons/widgets/buttons.php:511
 #: modules/caf-styler/widgets/caf-styler.php:311
 #: modules/cf-styler/widgets/cf-styler.php:308
 #: modules/content-toggle/widgets/content-toggle.php:596
@@ -4844,8 +4844,8 @@ msgstr ""
 
 #: modules/business-reviews/skins/skin-card.php:166
 #: modules/business-reviews/skins/skin-default.php:103
-#: modules/buttons/widgets/buttons.php:318
-#: modules/buttons/widgets/buttons.php:578
+#: modules/buttons/widgets/buttons.php:360
+#: modules/buttons/widgets/buttons.php:620
 #: modules/caf-styler/widgets/caf-styler.php:816
 #: modules/cf-styler/widgets/cf-styler.php:767
 #: modules/content-toggle/widgets/content-toggle.php:639
@@ -5506,36 +5506,40 @@ msgid "Icon Spacing"
 msgstr ""
 
 #: modules/buttons/widgets/buttons.php:246
+msgid "Icon size"
+msgstr ""
+
+#: modules/buttons/widgets/buttons.php:288
 #: modules/marketing-button/widgets/marketing-button.php:306
 #: modules/table/widgets/table.php:432 modules/table/widgets/table.php:823
 msgid "CSS ID"
 msgstr ""
 
-#: modules/buttons/widgets/buttons.php:250
+#: modules/buttons/widgets/buttons.php:292
 #: modules/marketing-button/widgets/marketing-button.php:309
 msgid "Add your custom id WITHOUT the # key."
 msgstr ""
 
-#: modules/buttons/widgets/buttons.php:257 modules/table/widgets/table.php:449
+#: modules/buttons/widgets/buttons.php:299 modules/table/widgets/table.php:449
 #: modules/table/widgets/table.php:840
 msgid "CSS Classes"
 msgstr ""
 
-#: modules/buttons/widgets/buttons.php:261
+#: modules/buttons/widgets/buttons.php:303
 msgid "Add space separated custom classes WITHOUT the dot."
 msgstr ""
 
-#: modules/buttons/widgets/buttons.php:270
-#: modules/buttons/widgets/buttons.php:675
+#: modules/buttons/widgets/buttons.php:312
+#: modules/buttons/widgets/buttons.php:717
 msgid "Design"
 msgstr ""
 
-#: modules/buttons/widgets/buttons.php:278
+#: modules/buttons/widgets/buttons.php:320
 msgid "Set custom styles that will only affect this specific button."
 msgstr ""
 
-#: modules/buttons/widgets/buttons.php:286
-#: modules/buttons/widgets/buttons.php:544
+#: modules/buttons/widgets/buttons.php:328
+#: modules/buttons/widgets/buttons.php:586
 #: modules/caf-styler/widgets/caf-styler.php:777
 #: modules/cf-styler/widgets/cf-styler.php:730 modules/faq/widgets/faq.php:881
 #: modules/faq/widgets/faq.php:1071 modules/ff-styler/widgets/ff-styler.php:813
@@ -5606,8 +5610,8 @@ msgstr ""
 msgid "Normal"
 msgstr ""
 
-#: modules/buttons/widgets/buttons.php:339
-#: modules/buttons/widgets/buttons.php:608
+#: modules/buttons/widgets/buttons.php:381
+#: modules/buttons/widgets/buttons.php:650
 #: modules/caf-styler/widgets/caf-styler.php:858
 #: modules/cf-styler/widgets/cf-styler.php:799 modules/faq/widgets/faq.php:949
 #: modules/faq/widgets/faq.php:1106 modules/ff-styler/widgets/ff-styler.php:888
@@ -5673,8 +5677,8 @@ msgstr ""
 msgid "Hover"
 msgstr ""
 
-#: modules/buttons/widgets/buttons.php:369
-#: modules/buttons/widgets/buttons.php:640
+#: modules/buttons/widgets/buttons.php:411
+#: modules/buttons/widgets/buttons.php:682
 #: modules/caf-styler/widgets/caf-styler.php:878
 #: modules/cf-styler/widgets/cf-styler.php:817
 #: modules/ff-styler/widgets/ff-styler.php:907
@@ -5701,52 +5705,52 @@ msgstr ""
 msgid "Border Hover Color"
 msgstr ""
 
-#: modules/buttons/widgets/buttons.php:395
+#: modules/buttons/widgets/buttons.php:437
 #: modules/woocommerce/widgets/woo-checkout.php:1081
 msgid "Buttons"
 msgstr ""
 
-#: modules/buttons/widgets/buttons.php:402
+#: modules/buttons/widgets/buttons.php:444
 msgid "Enroll Today"
 msgstr ""
 
-#: modules/buttons/widgets/buttons.php:405
+#: modules/buttons/widgets/buttons.php:447
 msgid "Learn More"
 msgstr ""
 
-#: modules/buttons/widgets/buttons.php:432
+#: modules/buttons/widgets/buttons.php:474
 msgid "Space between buttons"
 msgstr ""
 
-#: modules/buttons/widgets/buttons.php:464
+#: modules/buttons/widgets/buttons.php:506
 #: modules/content-toggle/widgets/content-toggle.php:591
 #: modules/price-list/widgets/price-list.php:425
 #: modules/video/widgets/video.php:1792
 msgid "Stack on"
 msgstr ""
 
-#: modules/buttons/widgets/buttons.php:465
+#: modules/buttons/widgets/buttons.php:507
 msgid "Choose on what breakpoint where the buttons will stack."
 msgstr ""
 
-#: modules/buttons/widgets/buttons.php:470 modules/video/widgets/video.php:1408
+#: modules/buttons/widgets/buttons.php:512 modules/video/widgets/video.php:1408
 #: modules/video/widgets/video.php:1798
 msgid "Desktop"
 msgstr ""
 
-#: modules/buttons/widgets/buttons.php:471 modules/video/widgets/video.php:1409
+#: modules/buttons/widgets/buttons.php:513 modules/video/widgets/video.php:1409
 #: modules/video/widgets/video.php:1799
 msgid "Tablet"
 msgstr ""
 
-#: modules/buttons/widgets/buttons.php:472
+#: modules/buttons/widgets/buttons.php:514
 #: modules/price-table/widgets/price-table.php:461
 #: modules/price-table/widgets/price-table.php:909
 #: modules/video/widgets/video.php:1410 modules/video/widgets/video.php:1800
 msgid "Mobile"
 msgstr ""
 
-#: modules/buttons/widgets/buttons.php:683
+#: modules/buttons/widgets/buttons.php:725
 #: modules/caf-styler/widgets/caf-styler.php:742
 #: modules/cf-styler/widgets/cf-styler.php:699
 #: modules/ff-styler/widgets/ff-styler.php:279
@@ -5799,7 +5803,7 @@ msgstr ""
 msgid "Size"
 msgstr ""
 
-#: modules/buttons/widgets/buttons.php:733
+#: modules/buttons/widgets/buttons.php:775
 #: modules/image-gallery/widgets/image-gallery.php:291
 #: modules/marketing-button/widgets/marketing-button.php:470
 #: modules/nav-menu/widgets/nav-menu.php:524
@@ -5807,7 +5811,7 @@ msgstr ""
 msgid "Justify"
 msgstr ""
 
-#: modules/buttons/widgets/buttons.php:746
+#: modules/buttons/widgets/buttons.php:788
 #: modules/headings/widgets/advanced-heading.php:1211
 #: modules/headings/widgets/advanced-heading.php:1446
 #: modules/infobox/widgets/infobox.php:924

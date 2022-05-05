@@ -1,4 +1,10 @@
-Version 1.36.5 Thursday, 24th March 2022
+Version 1.36.6 - Tuesday, 3rd May 2022
+- Improvement - Compatibility with Elementor Pro v3.7
+- Fix: Advanced Heading - Line with image separator not working on frontend.
+- Fix: Multi-Buttons - Fixed icon render issue due to typography control inside the repeater.
+- Fix: Woo - Products - Fixed The products on the frontend are different from what seen on the editor.
+
+Version 1.36.5 - Thursday, 24th March 2022
 - Improvement: Modal Popup - Added secure attribute to the cookies.
 - Fix: Console error while editing pages with elementor when using Workreap-Core plugin.
 - Fix: FAQ - Accordion tab icon size issue.

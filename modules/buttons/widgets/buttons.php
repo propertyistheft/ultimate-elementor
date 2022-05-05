@@ -241,6 +241,48 @@ class Buttons extends Common_Widget {
 					);
 
 					$repeater->add_control(
+						'icon_size',
+						array(
+							'label'      => __( 'Icon size', 'uael' ),
+							'type'       => Controls_Manager::SLIDER,
+							'size_units' => array( 'px', '%', 'em' ),
+							'range'      => array(
+								'px' => array(
+									'min'  => 0,
+									'max'  => 100,
+									'step' => 1,
+								),
+								'%'  => array(
+									'min' => 0,
+									'max' => 100,
+								),
+								'em' => array(
+									'min' => 0,
+									'max' => 100,
+								),
+							),
+							'default'    => array(
+								'unit' => 'em',
+								'size' => 1,
+							),
+							'conditions' => array(
+								'relation' => 'or',
+								'terms'    => array(
+									array(
+										'name'     => UAEL_Helper::get_new_icon_name( 'icon' ),
+										'operator' => '!=',
+										'value'    => '',
+									),
+								),
+							),
+							'selectors'  => array(
+								'{{WRAPPER}} {{CURRENT_ITEM}} .elementor-button .elementor-button-icon i' => 'font-size: {{SIZE}}{{UNIT}};',
+								'{{WRAPPER}} {{CURRENT_ITEM}} .elementor-button .elementor-button-icon svg' => 'height: {{SIZE}}{{UNIT}}; width: {{SIZE}}{{UNIT}};',
+							),
+						)
+					);
+
+					$repeater->add_control(
 						'css_id',
 						array(
 							'label'       => __( 'CSS ID', 'uael' ),
@@ -381,7 +423,7 @@ class Buttons extends Common_Widget {
 							'global'   => array(
 								'default' => Global_Typography::TYPOGRAPHY_ACCENT,
 							),
-							'selector' => '{{WRAPPER}} {{CURRENT_ITEM}} a.elementor-button, {{WRAPPER}} {{CURRENT_ITEM}} a.elementor-button .elementor-button-icon i,{{WRAPPER}} {{CURRENT_ITEM}} a.elementor-button .elementor-button-icon svg',
+							'selector' => '{{WRAPPER}} {{CURRENT_ITEM}} a.elementor-button .elementor-button-text',
 						)
 					);
 

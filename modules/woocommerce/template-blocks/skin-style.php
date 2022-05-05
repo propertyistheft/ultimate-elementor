@@ -342,6 +342,8 @@ abstract class Skin_Style {
 				'posts_per_page' => -1,
 				'paged'          => 1,
 				'post__not_in'   => array(),
+				'orderby'        => $settings['orderby'],
+				'order'          => strtoupper( $settings['order'] ),
 			);
 
 			if ( 'grid' === $settings['products_layout_type'] ) {
@@ -368,16 +370,6 @@ abstract class Skin_Style {
 				if ( $settings['slider_products_per_page'] > 0 ) {
 					$query_args['posts_per_page'] = $settings['slider_products_per_page'];
 				}
-			}
-
-			// Default ordering args.
-			$ordering_args = WC()->query->get_catalog_ordering_args( $settings['orderby'], $settings['order'] );
-
-			$query_args['orderby'] = $ordering_args['orderby'];
-			$query_args['order']   = $ordering_args['order'];
-
-			if ( $ordering_args['meta_key'] ) {
-				$query_args['meta_key'] = $ordering_args['meta_key'];
 			}
 
 			if ( 'sale' === $settings['filter_by'] ) {
