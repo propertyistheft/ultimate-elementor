@@ -126,6 +126,9 @@ class ContentToggle extends Common_Widget {
 				case 'saved_rows':
 					$output = \Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $settings['section_saved_rows_1'] );
 					break;
+				case 'saved_container':
+						$output = \Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $settings['section_saved_container_1'] );
+					break;
 				case 'saved_page_templates':
 					$output = \Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $settings['section_saved_pages_1'] );
 					break;
@@ -140,6 +143,9 @@ class ContentToggle extends Common_Widget {
 					break;
 				case 'saved_rows':
 					$output = \Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $settings['section_saved_rows_2'] );
+					break;
+				case 'saved_container':
+					$output = \Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $settings['section_saved_container_2'] );
 					break;
 				case 'saved_page_templates':
 					$output = \Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $settings['section_saved_pages_2'] );
@@ -223,6 +229,20 @@ class ContentToggle extends Common_Widget {
 			)
 		);
 
+		// Rbs content section 1 - saved rows.
+		$this->add_control(
+			'section_saved_container_1',
+			array(
+				'label'     => __( 'Select Container', 'uael' ),
+				'type'      => Controls_Manager::SELECT,
+				'options'   => UAEL_Helper::get_saved_data( 'container' ),
+				'default'   => '-1',
+				'condition' => array(
+					'rbs_select_section_1' => 'saved_container',
+				),
+			)
+		);
+
 		// Rbs content section 1 - saved pages.
 		$this->add_control(
 			'section_saved_pages_1',
@@ -300,6 +320,20 @@ class ContentToggle extends Common_Widget {
 				'default'   => '-1',
 				'condition' => array(
 					'rbs_select_section_2' => 'saved_rows',
+				),
+			)
+		);
+
+		// Rbs content section 2 - saved rows.
+		$this->add_control(
+			'section_saved_container_2',
+			array(
+				'label'     => __( 'Select Container', 'uael' ),
+				'type'      => Controls_Manager::SELECT,
+				'options'   => UAEL_Helper::get_saved_data( 'container' ),
+				'default'   => '-1',
+				'condition' => array(
+					'rbs_select_section_2' => 'saved_container',
 				),
 			)
 		);
@@ -1009,6 +1043,7 @@ class ContentToggle extends Common_Widget {
 		$content_type = array(
 			'content'              => __( 'Content', 'uael' ),
 			'saved_rows'           => __( 'Saved Section', 'uael' ),
+			'saved_container'      => __( 'Saved Container', 'uael' ),
 			'saved_page_templates' => __( 'Saved Page', 'uael' ),
 		);
 
@@ -1048,7 +1083,7 @@ class ContentToggle extends Common_Widget {
 		$node_id   = $this->get_id();
 		$is_editor = \Elementor\Plugin::instance()->editor->is_edit_mode();
 		ob_start();
-		include 'template.php';
+		include UAEL_MODULES_DIR . 'content-toggle/widgets/template.php';
 		$html = ob_get_clean();
 		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}

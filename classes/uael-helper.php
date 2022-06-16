@@ -132,6 +132,13 @@ class UAEL_Helper {
 	private static $section_templates = null;
 
 	/**
+	 * Elementor saved container templates list
+	 *
+	 * @var container_templates
+	 */
+	private static $container_templates = null;
+
+	/**
 	 * Elementor saved widget templates list
 	 *
 	 * @var widget_templates
@@ -1273,7 +1280,7 @@ class UAEL_Helper {
 
 		$templates_list = array();
 
-		if ( ( null === self::$page_templates && 'page' === $type ) || ( null === self::$section_templates && 'section' === $type ) || ( null === self::$widget_templates && 'widget' === $type ) ) {
+		if ( ( null === self::$page_templates && 'page' === $type ) || ( null === self::$section_templates && 'section' === $type ) || ( null === self::$container_templates && 'container' === $type ) || ( null === self::$widget_templates && 'widget' === $type ) ) {
 
 			$posts = get_posts(
 				array(

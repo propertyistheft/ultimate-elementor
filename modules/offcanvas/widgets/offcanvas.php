@@ -236,6 +236,19 @@ class Offcanvas extends Common_Widget {
 		);
 
 		$this->add_control(
+			'ct_saved_container',
+			array(
+				'label'     => __( 'Select container', 'uael' ),
+				'type'      => Controls_Manager::SELECT,
+				'options'   => UAEL_Helper::get_saved_data( 'container' ),
+				'default'   => '-1',
+				'condition' => array(
+					'content_type' => 'saved_container',
+				),
+			)
+		);
+
+		$this->add_control(
 			'ct_page_templates',
 			array(
 				'label'     => __( 'Select Page', 'uael' ),
@@ -1897,6 +1910,7 @@ class Offcanvas extends Common_Widget {
 			'content'              => __( 'Content', 'uael' ),
 			'menu'                 => __( 'Menu', 'uael' ),
 			'saved_rows'           => __( 'Saved Section', 'uael' ),
+			'saved_container'      => __( 'Saved container', 'uael' ),
 			'saved_page_templates' => __( 'Saved Page', 'uael' ),
 		);
 
@@ -1987,6 +2001,10 @@ class Offcanvas extends Common_Widget {
 
 			case 'saved_rows':
 				$output_html = \Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $settings['ct_saved_rows'] );
+				break;
+
+			case 'saved_container':
+				$output_html = \Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $settings['ct_saved_container'] );
 				break;
 
 			case 'saved_modules':

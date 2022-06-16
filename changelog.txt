@@ -1,3 +1,13 @@
+Version 1.36.7 - Tuesday, 14th June 2022
+- Improvement: Content Toggle - Flex container template support.
+- Improvement: Cross-Site Copy Paste - Flex container support.
+- Improvement: FAQ - Flex container template support.
+- Improvement: Modal Popup - Flex container template support.
+- Improvement: Nav Menu - Flex container template support.
+- Improvement: Off-canvas - Flex container template support.
+- Fix: Included template file with the full path to fix the fatal error.
+- Fix: Woo - Products - Order by functionality not working properly
+
 Version 1.36.6 - Tuesday, 3rd May 2022
 - Improvement - Compatibility with Elementor Pro v3.7
 - Fix: Advanced Heading - Line with image separator not working on frontend.

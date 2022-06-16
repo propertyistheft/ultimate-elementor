@@ -1228,7 +1228,7 @@ if ( ! class_exists( 'Price_List' ) ) {
 			$settings = $this->get_settings_for_display();
 			$node_id  = $this->get_id();
 			ob_start();
-			include 'template.php';
+			include UAEL_MODULES_DIR . 'price-list/widgets/template.php';
 			$html = ob_get_clean();
 			echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		}

@@ -326,6 +326,19 @@ class Modal_Popup extends Common_Widget {
 			);
 
 			$this->add_control(
+				'ct_saved_container',
+				array(
+					'label'     => __( 'Select Container', 'uael' ),
+					'type'      => Controls_Manager::SELECT,
+					'options'   => UAEL_Helper::get_saved_data( 'container' ),
+					'default'   => '-1',
+					'condition' => array(
+						'content_type' => 'saved_container',
+					),
+				)
+			);
+
+			$this->add_control(
 				'ct_saved_modules',
 				array(
 					'label'     => __( 'Select Widget', 'uael' ),
@@ -2283,6 +2296,7 @@ class Modal_Popup extends Common_Widget {
 			'photo'                => __( 'Photo', 'uael' ),
 			'video'                => __( 'Video Embed Code', 'uael' ),
 			'saved_rows'           => __( 'Saved Section', 'uael' ),
+			'saved_container'      => __( 'Saved Container', 'uael' ),
 			'saved_page_templates' => __( 'Saved Page', 'uael' ),
 			'youtube'              => __( 'YouTube', 'uael' ),
 			'vimeo'                => __( 'Vimeo', 'uael' ),
@@ -2339,6 +2353,9 @@ class Modal_Popup extends Common_Widget {
 				break;
 			case 'saved_rows':
 				$output_html = \Elementor\Plugin::$instance->frontend->get_builder_content_for_display( apply_filters( 'wpml_object_id', $settings['ct_saved_rows'], 'page' ) );
+				break;
+			case 'saved_container':
+				$output_html = \Elementor\Plugin::$instance->frontend->get_builder_content_for_display( apply_filters( 'wpml_object_id', $settings['ct_saved_container'], 'page' ) );
 				break;
 			case 'saved_modules':
 				$output_html = \Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $settings['ct_saved_modules'] );
@@ -2864,7 +2881,7 @@ class Modal_Popup extends Common_Widget {
 		$title_tag = UAEL_Helper::validate_html_tag( $settings['title_tag'] );
 
 		ob_start();
-		include 'template.php';
+		include UAEL_MODULES_DIR . 'modal-popup/widgets/template.php';
 		$html = ob_get_clean();
 		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}

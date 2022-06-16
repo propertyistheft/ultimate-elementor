@@ -332,6 +332,20 @@ class Nav_Menu extends Common_Widget {
 		);
 
 		$repeater->add_control(
+			'content_saved_container',
+			array(
+				'label'     => __( 'Select Container', 'uael' ),
+				'type'      => Controls_Manager::SELECT,
+				'options'   => UAEL_Helper::get_saved_data( 'container' ),
+				'default'   => '-1',
+				'condition' => array(
+					'menu_content_type' => 'saved_container',
+					'item_type'         => 'item_submenu',
+				),
+			)
+		);
+
+		$repeater->add_control(
 			'dropdown_width',
 			array(
 				'label'     => __( 'Dropdown Width', 'uael' ),
@@ -2269,8 +2283,9 @@ class Nav_Menu extends Common_Widget {
 	public function get_content_type() {
 
 		$content_type = array(
-			'sub_menu'   => __( 'Text', 'uael' ),
-			'saved_rows' => __( 'Saved Section', 'uael' ),
+			'sub_menu'        => __( 'Text', 'uael' ),
+			'saved_rows'      => __( 'Saved Section', 'uael' ),
+			'saved_container' => __( 'Saved Container', 'uael' ),
 		);
 
 		if ( defined( 'ELEMENTOR_PRO_VERSION' ) ) {
@@ -2350,6 +2365,9 @@ class Nav_Menu extends Common_Widget {
 						} elseif ( 'saved_modules' === $item['menu_content_type'] ) {
 							$saved_widget_shortcode = \Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $item['content_saved_widgets'] );
 							$output                .= do_shortcode( $saved_widget_shortcode );
+						} elseif ( 'saved_container' === $item['menu_content_type'] ) {
+							$saved_container_shortcode = \Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $item['content_saved_container'] );
+							$output                   .= do_shortcode( $saved_container_shortcode );
 						}
 							$output .= '</div>';
 					}

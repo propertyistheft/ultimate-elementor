@@ -1990,7 +1990,7 @@ class GfStyler extends Common_Widget {
 
 		$settings = $this->get_settings();
 		ob_start();
-		include 'template.php';
+		include UAEL_MODULES_DIR . 'gf-styler/widgets/template.php';
 		$html = ob_get_clean();
 		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}

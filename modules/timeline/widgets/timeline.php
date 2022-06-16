@@ -2334,7 +2334,7 @@ class Timeline extends Common_Widget {
 
 		if ( 'content' === $settings['timeline_type'] ) {
 			ob_start();
-			include 'template.php';
+			include UAEL_MODULES_DIR . 'timeline/widgets/template.php';
 			$html = ob_get_clean();
 			echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 		} elseif ( 'posts' === $settings['timeline_type'] ) {

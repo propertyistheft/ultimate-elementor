@@ -133,6 +133,7 @@ class FAQ extends Common_Widget {
 		$content_type = array(
 			'content'              => __( 'Content', 'uael' ),
 			'saved_rows'           => __( 'Saved Section', 'uael' ),
+			'saved_container'      => __( 'Saved Container', 'uael' ),
 			'saved_page_templates' => __( 'Saved Page', 'uael' ),
 		);
 
@@ -190,6 +191,19 @@ class FAQ extends Common_Widget {
 					'default'   => '-1',
 					'condition' => array(
 						'faq_content_type' => 'saved_rows',
+					),
+				)
+			);
+
+			$repeater->add_control(
+				'ct_saved_container',
+				array(
+					'label'     => __( 'Select Container', 'uael' ),
+					'type'      => Controls_Manager::SELECT,
+					'options'   => UAEL_Helper::get_saved_data( 'container' ),
+					'default'   => '-1',
+					'condition' => array(
+						'faq_content_type' => 'saved_container',
 					),
 				)
 			);
@@ -1301,6 +1315,9 @@ class FAQ extends Common_Widget {
 				break;
 			case 'saved_rows':
 				$output = \Elementor\Plugin::$instance->frontend->get_builder_content_for_display( apply_filters( 'wpml_object_id', $key['ct_saved_rows'], 'page' ) );
+				break;
+			case 'saved_container':
+				$output = \Elementor\Plugin::$instance->frontend->get_builder_content_for_display( apply_filters( 'wpml_object_id', $key['ct_saved_container'], 'page' ) );
 				break;
 			case 'saved_modules':
 				$output = \Elementor\Plugin::$instance->frontend->get_builder_content_for_display( $key['ct_saved_modules'] );

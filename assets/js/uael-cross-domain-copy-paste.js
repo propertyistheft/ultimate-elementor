@@ -1,7 +1,7 @@
 ( function ( $ ) {
 
-var item_type = [ 'uael', 'uael_section', 'uael_column' ];
-var item_type_elementor_hook = [ 'widget', 'column', 'section' ];
+var item_type = [ 'uael', 'uael_section', 'uael_column', 'uael_container' ];
+var item_type_elementor_hook = [ 'widget', 'column', 'section', 'container' ];
 
 xsLocalStorage.init(
     {
@@ -30,6 +30,7 @@ UAE_Cross_Domain_Handler = {
 
             switch( copied_widget_type ){
                 case 'section':
+                case "container":
                     copied_widget.elements = UAE_Cross_Domain_Handler.generateUniqueID( copied_widget_details.elements );
                     container = elementor.getPreviewContainer();
                     switch( current_element_type ){

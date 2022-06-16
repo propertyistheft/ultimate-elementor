@@ -4130,7 +4130,7 @@ class Price_Table extends Common_Widget {
 	protected function render() {
 		$settings = $this->get_settings_for_display();
 		ob_start();
-		include 'template.php';
+		include UAEL_MODULES_DIR . 'price-table/widgets/template.php';
 		$html = ob_get_clean();
 		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}

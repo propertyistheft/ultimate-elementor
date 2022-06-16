@@ -313,6 +313,12 @@ abstract class Skin_Style {
 					);
 				}
 
+				// Default ordering args.
+				$ordering_args = WC()->query->get_catalog_ordering_args( $settings['orderby'], $settings['order'] );
+
+				$query_args['orderby'] = $ordering_args['orderby'];
+				$query_args['order']   = $ordering_args['order'];
+
 				$query_args = apply_filters( 'uael_woo_product_query_args', $query_args, $settings );
 
 				self::$query = new \WP_Query( $query_args );
@@ -342,8 +348,6 @@ abstract class Skin_Style {
 				'posts_per_page' => -1,
 				'paged'          => 1,
 				'post__not_in'   => array(),
-				'orderby'        => $settings['orderby'],
-				'order'          => strtoupper( $settings['order'] ),
 			);
 
 			if ( 'grid' === $settings['products_layout_type'] ) {
@@ -370,6 +374,24 @@ abstract class Skin_Style {
 				if ( $settings['slider_products_per_page'] > 0 ) {
 					$query_args['posts_per_page'] = $settings['slider_products_per_page'];
 				}
+			}
+
+			if ( 'price' === $settings['orderby'] || 'popularity' === $settings['orderby'] || 'rating' === $settings['orderby'] ) {
+				if ( 'price' === $settings['orderby'] ) {
+					$query_args['meta_key'] = '_price';
+				} elseif ( 'popularity' === $settings['orderby'] ) {
+					$query_args['meta_key'] = 'total_sales';
+				} elseif ( 'rating' === $settings['orderby'] ) {
+					$query_args['meta_key'] = '_wc_average_rating';
+				}
+
+				$query_args['orderby'] = 'meta_value_num';
+				$query_args['order']   = $settings['order'];
+			} else {
+				$ordering_args = WC()->query->get_catalog_ordering_args( $settings['orderby'], $settings['order'] );
+
+				$query_args['orderby'] = $ordering_args['orderby'];
+				$query_args['order']   = $ordering_args['order'];
 			}
 
 			if ( 'sale' === $settings['filter_by'] ) {
