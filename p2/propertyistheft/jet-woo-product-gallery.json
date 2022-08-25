@@ -1,0 +1,29 @@
+{
+    "packages": {
+        "propertyistheft/jet-woo-product-gallery": [
+            {
+                "name": "propertyistheft/jet-woo-product-gallery",
+                "version": "2.0.4",
+                "version_normalized": "2.0.4.0",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/propertyistheft/jet-woo-product-gallery.git",
+                    "reference": "859a77b3c87546b44ba601e0bbd8cccbce8ab39b"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/propertyistheft/jet-woo-product-gallery/zipball/859a77b3c87546b44ba601e0bbd8cccbce8ab39b",
+                    "reference": "859a77b3c87546b44ba601e0bbd8cccbce8ab39b",
+                    "shasum": ""
+                },
+                "time": "2021-10-25T16:46:27+00:00",
+                "type": "wordpress-plugin",
+                "description": "A WordPress Product Gallery Plugin",
+                "support": {
+                    "source": "https://github.com/propertyistheft/jet-woo-product-gallery/tree/2.0.4",
+                    "issues": "https://github.com/propertyistheft/jet-woo-product-gallery/issues"
+                }
+            }
+        ]
+    }
+}

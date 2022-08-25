@@ -1,0 +1,15 @@
+{
+    "packages": [],
+    "includes": {
+        "include/all$0fe3a83429177f85b0b22e5cfb212b71a6d45209.json": {
+            "sha1": "0fe3a83429177f85b0b22e5cfb212b71a6d45209"
+        }
+    },
+    "metadata-url": "/p2/%package%.json",
+    "available-packages": [
+        "propertyistheft/astra-addon",
+        "propertyistheft/bb-ultimate-addon",
+        "propertyistheft/jet-woo-product-gallery",
+        "propertyistheft/ultimate-elementor"
+    ]
+}
