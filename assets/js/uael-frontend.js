@@ -2259,13 +2259,11 @@
 
 	$( window ).on( 'elementor/frontend/init', function () {
 
+		var elementor_elements = ['widget', 'section', 'column', 'container'];
+
 		if ( elementorFrontend.isEditMode() ) {
 			isElEditMode = true;
 		}
-
-		var GetLocalTimeZone = new Date().toString().match(/([A-Z]+[\+-][0-9]+.*)/)[1];
-		var uael_secure = ( document.location.protocol === 'https:' ) ? 'secure' : '';
-		document.cookie = "GetLocalTimeZone=" + GetLocalTimeZone + ";SameSite=Strict;" + uael_secure;
 
 		elementorFrontend.hooks.addAction( 'frontend/element_ready/uael-fancy-heading.default', WidgetUAELFancyTextHandler );
 
@@ -2310,6 +2308,23 @@
 					WidgetUAELBASliderHandler( $( this ), $ );
 				} );
 			} );
+
+			elementor_elements.forEach(element => {
+				elementor.hooks.addAction( 'panel/open_editor/' + element, function( panel, model, view ) {
+					var settings_panel = panel.$el;
+					settings_panel.on( 'change', '[data-setting="display_condition_enable"]', function( event ) {
+	
+						if ( $( this ).is( ':checked' ) ) {
+							var GetLocalTimeZone = new Date().toString().match(/([A-Z]+[\+-][0-9]+.*)/)[1];
+							var uael_secure = ( document.location.protocol === 'https:' ) ? 'secure' : '';
+							document.cookie = "GetLocalTimeZone=" + GetLocalTimeZone + ";SameSite=Strict;" + uael_secure;
+						} else {
+							document.cookie = "GetLocalTimeZone= ; expires = Thu, 01 Jan 1970 00:00:00 GMT"
+						}
+	
+					} );
+				} );
+			});
 		}
 
 	});

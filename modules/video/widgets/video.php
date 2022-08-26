@@ -2072,8 +2072,9 @@ class Video extends Common_Widget {
 			}
 		} elseif ( 'vimeo' === $settings['video_type'] ) {
 
-			$id = preg_replace( '/[^\/]+[^0-9]|(\/)/', '', rtrim( $url, '/' ) );
-
+			if ( preg_match( '%^https?:\/\/(?:www\.|player\.)?vimeo.com\/(?:channels\/(?:\w+\/)?|groups\/([^\/]*)\/videos\/|album\/(\d+)\/video\/|video\/|)(\d+)(?:$|\/|\?)(?:[?]?.*)$%im', $url, $regs ) ) {
+				$id = $regs[3];
+			}
 		} elseif ( 'wistia' === $settings['video_type'] ) {
 
 			$id = $this->getStringBetween( $url, 'wvideo=', '"' );

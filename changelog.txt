@@ -1,3 +1,16 @@
+Version 1.36.10, Thursday, 25th August 2022
+- Fix: Fancy Heading - Module not visible on frontend after latest update.
+- Fix: Video - Private videos from Vimeo don't work.
+- Fix: Video Gallery - Console error when Filterable Tabs is enabled after latest update.
+
+Version 1.36.9 - Tuesday, 23rd August 2022
+- Improvement: Display Conditions - Creating cookies only when the feature is enabled.
+- Improvement: Nav Menu - Added WPML translation support for toggle button.
+- Fix: Cross-Site Copy Paste - Error while saving after using copy/paste styling and presets feature with Elementor
+- Fix: Party Propz - Alignment not working properly with the Section/Column.
+- Fix: Posts - Console error in the editor when used in templates.
+- Fix: Posts - Taxonomy Badge is not showing when Query Type set to Main Query.
+
 Version 1.36.8 - Thursday, 7th July 2022
 - Compatibility with latest Elementor and Elementor Pro version.
 

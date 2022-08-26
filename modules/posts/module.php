@@ -152,17 +152,17 @@ class Module extends Module_Base {
 	public function schema_generation( $query, $select_article, $schema_support, $publisher_logo, $publisher_name ) {
 		$object_data            = array();
 		$content_schema_warning = false;
-		while ( $query->have_posts() ) {
-			$query->the_post();
-			$headline     = get_the_title();
-			$image        = get_the_post_thumbnail_url();
-			$publishdate  = get_the_date( 'Y-m-d' );
-			$modifieddate = get_the_modified_date( 'Y-m-d' );
-			$text         = get_the_excerpt();
-			$description  = wp_strip_all_tags( $text );
-			$author_id    = get_the_author_meta( 'ID' );
-			$author_name  = get_the_author_meta( 'display_name' );
-			$author_url   = get_author_posts_url( $author_id );
+		$post_data              = $query->posts;
+
+		foreach ( $post_data as $posts_data ) {
+			$headline     = $posts_data->post_title;
+			$image        = get_the_post_thumbnail_url( $posts_data->ID, 'full' );
+			$publishdate  = $posts_data->post_date_gmt;
+			$modifieddate = $posts_data->post_modified_gmt;
+			$description  = $posts_data->post_excerpt;
+			$author_id    = $posts_data->post_author;
+			$author_name  = get_the_author_meta( 'display_name', $posts_data->post_author );
+			$author_url   = get_author_posts_url( $author_id, $author_name );
 
 			if ( 'yes' === $schema_support && ( ( '' === $headline || '' === $publishdate || '' === $modifieddate ) || ( ! $image ) ) ) {
 				$content_schema_warning = true;

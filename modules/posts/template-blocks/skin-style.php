@@ -691,7 +691,7 @@ abstract class Skin_Style {
 			}
 		}
 
-		if ( 'main' === $settings['query_type'] || 'post' === $settings['post_type_filter'] ) {
+		if ( 'post' === $settings['post_type_filter'] ) {
 			$terms_show = $this->get_instance_value( 'terms_to_show' );
 		} else {
 			$terms_show = get_taxonomies( '', 'names' );

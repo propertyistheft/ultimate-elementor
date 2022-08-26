@@ -395,14 +395,17 @@
 			</fields>
 		</widget>
 		<widget name="uael-nav-menu">
-			<conditions>
-				<condition key="widgetType">uael-nav-menu</condition>
-			</conditions>
-			<fields-in-item items_of="menu_items">
-				<field type="Navigation Menu: Text" editor_type="LINE">text</field>
-				<field type="Navigation Menu: Link" editor_type="LINK" key_of="link">url</field>
-			</fields-in-item>
-		</widget>
+            <conditions>
+                <condition key="widgetType">uael-nav-menu</condition>
+            </conditions>
+            <fields>
+                <field type="Navigation Menu: Label Text" editor_type="LINE">toggle_label_text</field>
+            </fields>
+            <fields-in-item items_of="menu_items">
+                <field type="Navigation Menu: Text" editor_type="LINE">text</field>
+                <field type="Navigation Menu: Link" editor_type="LINK" key_of="link">url</field>
+            </fields-in-item>
+        </widget>
 		<widget name="uael-ff-styler">
 			<conditions>
 				<condition key="widgetType">uael-ff-styler</condition>
