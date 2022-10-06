@@ -248,7 +248,7 @@ class Display_Conditions {
 			array(
 				'label'       => __( 'Conditions', 'uael' ),
 				'type'        => Controls_Manager::REPEATER,
-				'fields'      => array_values( $repeater->get_controls() ),
+				'fields'      => $repeater->get_controls(),
 				'default'     => array(
 					array(
 						'display_condition_key'          => 'role',

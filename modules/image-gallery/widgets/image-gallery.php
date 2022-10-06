@@ -2186,7 +2186,7 @@ class Image_Gallery extends Common_Widget {
 					$this->add_render_attribute( 'grid-media-' . $index, 'target', $link_target );
 
 					if ( '_blank' === $link_target ) {
-						$this->add_render_attribute( 'grid-media-' . $index, 'rel', 'nofollow' );
+						$this->add_render_attribute( 'grid-media-' . $index, 'rel', 'dofollow' );
 					}
 				}
 				$img_wrap_tag = ( ! empty( $item_link ) ) ? 'a' : 'span';

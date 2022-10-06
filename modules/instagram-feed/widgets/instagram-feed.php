@@ -1880,11 +1880,12 @@ class Instagram_Feed extends Common_Widget {
 	 * @return void
 	 */
 	protected function render_api_images() {
-		$settings = $this->get_settings_for_display();
+		$settings  = $this->get_settings_for_display();
+		$is_editor = \Elementor\Plugin::instance()->editor->is_edit_mode();
 
 		$gallery = $this->uae_get_insta_posts( $settings );
 
-		if ( empty( $gallery ) || is_wp_error( $gallery ) ) {
+		if ( ( empty( $gallery ) || is_wp_error( $gallery ) ) && $is_editor ) {
 			$message = is_wp_error( $gallery ) ? $gallery->get_error_message() : esc_html__( 'No Posts Found', 'uael' );
 
 			echo wp_kses_post( $message );
@@ -2010,8 +2011,8 @@ class Instagram_Feed extends Common_Widget {
 	protected function render_image_thumbnail( $item, $index ) {
 		$settings        = $this->get_settings_for_display();
 		$thumbnail_url   = $this->get_insta_image_url( $item, $this->uae_get_insta_image_size() );
-		$thumbnail_alt   = $item['caption'];
-		$thumbnail_title = $item['caption'];
+		$thumbnail_alt   = isset( $item['caption'] ) ? $item['caption'] : '';
+		$thumbnail_title = isset( $item['caption'] ) ? $item['caption'] : '';
 		$image_key       = $this->get_repeater_setting_key( 'image', 'insta', $index );
 		$link_key        = $this->get_repeater_setting_key( 'link', 'image', $index );
 		$item_link       = '';
@@ -2074,7 +2075,7 @@ class Instagram_Feed extends Common_Widget {
 	 * @return string
 	 */
 	protected function get_insta_image_url( $item, $size = 'high' ) {
-		$thumbnail = $item['thumbnail'];
+		$thumbnail = isset( $item['thumbnail'] ) ? $item['thumbnail'] : '';
 		$image_url = '';
 
 		if ( ! empty( $thumbnail[ $size ] ) ) {

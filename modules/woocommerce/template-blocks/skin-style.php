@@ -607,7 +607,7 @@ abstract class Skin_Style {
 			)
 		);
 
-		echo '<div ' . wp_kses_post( $this->get_render_attribute_string( 'wrapper' ) ) . '">';
+		echo '<div ' . wp_kses_post( $this->get_render_attribute_string( 'wrapper' ) ) . '>';
 	}
 
 	/**

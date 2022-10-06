@@ -243,6 +243,21 @@ $post_skins = UAEL_Helper::get_post_skin_options();
 							</div>
 						</div>
 					<?php } ?>
+					<?php
+					if ( bsf_display_rollback_version_form( 'uael' ) ) {
+						?>
+						<div class="postbox">
+							<h2 class="hndle uael-normal-cusror">
+								<span><?php esc_html_e( 'Version Control', 'uael' ); ?></span>
+							</h2>
+							<div class="inside">
+							<?php
+								$product_id = 'uael';
+								bsf_get_version_rollback_form( $product_id );
+							?>
+							</div>
+						</div>
+					<?php } ?>
 				</div>
 			</div>
 		<?php } ?>

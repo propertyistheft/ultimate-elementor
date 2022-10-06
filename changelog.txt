@@ -1,3 +1,18 @@
+Version 1.36.11, Wednesday, 5th October 2022
+- New: Rollback to previous versions feature.
+- Improvement: Navigation Menu - Added accessibility support to the submenu.
+- Fix: Countdown Timer - Spacing, padding between digits and labels not working.
+- Fix: Display Conditions - Console error after enabling the switcher.
+- Fix: Image Gallery - Breaks editor UI when Filterable Tabs is enabled.
+- Fix: Image Gallery - Images appear larger after page refresh.
+- Fix: Image Gallery - Updated accessibility rel attribute for links.
+- Fix: Instagram Feed - Invalid App error showing on frontend.
+- Fix: Navigation Menu - Slide up animation not working.
+- Fix: Video Gallery - Breaks editor UI when Filterable Tabs is enabled.
+- Fix: Welcome Music - Play, pause buttons appear at the same time when a new SVG is uploaded.
+- Fix: Woo - Add To Cart - Able to add a variable product to the cart even if the variation is not selected.
+- Fix: Woo - Products - Removed extra double quotes in HTML attributes.
+
 Version 1.36.10, Thursday, 25th August 2022
 - Fix: Fancy Heading - Module not visible on frontend after latest update.
 - Fix: Video - Private videos from Vimeo don't work.

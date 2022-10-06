@@ -929,6 +929,7 @@ class Countdown extends Common_Widget {
 				),
 				'selectors'  => array(
 					'{{WRAPPER}}.uael-countdown-label-block .uael-countdown-wrapper .uael-countdown-item' => 'margin-bottom:{{SIZE}}{{UNIT}}; margin-right:0px; margin-top: 0px;',
+					'{{WRAPPER}}.uael-countdown-shape-circle .uael-countdown-wrapper .uael-countdown-item' => 'margin-bottom:{{SIZE}}{{UNIT}}; margin-right:0px; margin-top: 0px;',
 					'{{WRAPPER}}.uael-countdown-label-inline .uael-countdown-wrapper .uael-countdown-item' => 'margin-right:{{SIZE}}{{UNIT}}; margin-bottom:0px; margin-top: 0px;',
 					'{{WRAPPER}}.uael-countdown-label-top .uael-countdown-wrapper .uael-countdown-item' => 'margin-top:{{SIZE}}{{UNIT}}; margin-bottom:0px; margin-right:0px;',
 				),

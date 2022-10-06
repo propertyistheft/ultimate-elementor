@@ -198,8 +198,8 @@
 		  		$parent_div.prev().find( 'div.uael-has-submenu-container' ).removeClass( 'sub-menu-active' );
 			}else {
 
-				$parent_div.next().find('ul').css( { 'height': '0' } );
-		  		$parent_div.prev().find('ul').css( { 'height': '0' } );
+				$parent_div.next().find('ul').css( { 'height': '0', 'opacity': '0', 'visibility': 'hidden' } );
+		  		$parent_div.prev().find('ul').css( { 'height': '0', 'opacity': '0', 'visibility': 'hidden' } );
 
 		  		$parent_div.next().find( 'div.uael-has-submenu-container' ).removeClass( 'sub-menu-active' );
 		  		$parent_div.prev().find( 'div.uael-has-submenu-container' ).removeClass( 'sub-menu-active' );
@@ -223,7 +223,7 @@
 
 				$this.find( 'a' ).attr( 'aria-expanded', 'true' );
 
-				$this.next().css( { 'visibility': 'visible', 'height': 'auto' } );
+				$this.next().css( { 'visibility': 'visible', 'height': 'auto', 'opacity': '1' } );
 
 				if ( 'horizontal' !== layout ) {
 

@@ -511,23 +511,25 @@
 			}
 
 			var cartFormData = $form.serialize();
+			var variation_id = $('input[name="variation_id"]').val() || '';
 
 			if ( $thisbutton.is( '.single_add_to_cart_button' ) ) {
 
-				$thisbutton.removeClass( 'added' );
-				$thisbutton.addClass( 'loading' );
-
-				// Ajax action.
-				jQuery.ajax ({
-					url: uael_wc_script.ajax_url,
-					type:'POST',
-					data:'action=uael_add_cart_single_product&product_id=' + product_id  + '&nonce=' + uael_wc_script.add_cart_nonce + '&'+ cartFormData,
-					success:function( results ) {
-						// Trigger event so themes can refresh other areas.
-						$( document.body ).trigger( 'wc_fragment_refresh' );
-						uael_atc_call.trigger( 'uael_woo_added_to_cart', [ $thisbutton ] );
-					}
-				});
+				if(variation_id != 0){
+					$thisbutton.removeClass( 'added' );
+					$thisbutton.addClass( 'loading' );
+					// Ajax action.
+					jQuery.ajax ({
+						url: uael_wc_script.ajax_url,
+						type:'POST',
+						data:'action=uael_add_cart_single_product&product_id=' + product_id  + '&nonce=' + uael_wc_script.add_cart_nonce + '&'+ cartFormData,
+						success:function( results ) {
+							// Trigger event so themes can refresh other areas.
+							$( document.body ).trigger( 'wc_fragment_refresh' );
+							uael_atc_call.trigger( 'uael_woo_added_to_cart', [ $thisbutton ] );
+						}
+					});
+				}
 			}
 		};
 
