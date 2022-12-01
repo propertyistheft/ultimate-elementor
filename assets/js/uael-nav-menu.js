@@ -604,7 +604,7 @@
 				sub_menu.css('width', width + 'px' );
 			}else if ('container' == dropdown_width) {
 
-				var container = $( '.elementor-element-' + id).closest('.elementor-container');
+				var container = $( '.elementor-element-' + id).closest('.e-con');
 				var width = container.outerWidth();
 
 				if( $( 'body' ).hasClass( 'rtl' ) ) {
@@ -754,6 +754,9 @@
 
 					$this.addClass( 'uael-active-menu-full-width' );
 					var $element_section = $element.closest('.elementor-section');
+					if (0 == $element_section.length){
+						$element_section = $element.closest('.e-con');
+					}
 
 					var width = $element_section.outerWidth();
 					var sec_pos = $element_section.offset().left - $selector.offset().left;

@@ -1,3 +1,14 @@
+Version 1.36.13, Thursday, 24th November 2022
+- Improvement: Table - Sticky header functionality conflicts with the sticky header of the Astra theme.
+- Fix: Before-After Slider - Widget disappears on window resize when inserted in flex-container.
+- Fix: Gravity Form Styler - Dropdown field icon not showing properly.
+- Fix: Navigation Menu - Mobile menu is not working when widget is inserted in Container.
+- Fix: Video - Enable Mute option is not working for self-hosted videos when external URL is used.
+- Fix: Video - Fatal error when using private Vimeo videos.
+- Fix: Video - PHP error when unable to fetch Vimeo video thumbnail data.
+- Fix: Display Conditions - PHP fatal error with specific timezone.
+- Fix: Posts - Grey overlay appearing on click of filterable tabs.
+
 Version 1.36.12, Friday, 21st October 2022
 - Compatibility with latest Elementor and Elementor Pro 3.8 version.
 

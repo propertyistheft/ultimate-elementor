@@ -872,7 +872,8 @@ class UAEL_Helper {
 	 * @since 1.32.0
 	 */
 	public static function get_local_time( $format = 'Y-m-d h:i:s A' ) {
-		$local_time_zone = isset( $_COOKIE['GetLocalTimeZone'] ) && ! empty( $_COOKIE['GetLocalTimeZone'] ) ? str_replace( 'GMT ', 'GMT+', $_COOKIE['GetLocalTimeZone'] ) : date_default_timezone_get();
+		$timezone_name   = timezone_name_from_abbr( '', (int) $_COOKIE['GetLocalTimeZone'] * 60, false );
+		$local_time_zone = isset( $timezone_name ) && ! empty( $timezone_name ) ? str_replace( 'GMT ', 'GMT+', $timezone_name ) : date_default_timezone_get();
 		$now_date        = new \DateTime( 'now', new \DateTimeZone( $local_time_zone ) );
 		$today           = $now_date->format( $format );
 		return $today;

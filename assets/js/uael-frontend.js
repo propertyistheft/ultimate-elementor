@@ -40,9 +40,9 @@
 	 *
 	 */
 	var UAELBASlider = function( $element ) {
-
-		$element.css( 'width', '' );
-		$element.css( 'height', '' );
+		
+		$element.css( 'width', '100%' );
+		$element.css( 'height', '100%' );
 
 		max = -1;
 
@@ -1443,7 +1443,9 @@
 
 	        if ( 0 == selector.find( 'iframe' ).length ) {
 
-				iframe.attr( 'src', vurl );
+				if( outer_wrap.hasClass( 'uael-video-type-vimeo' ) || outer_wrap.hasClass( 'uael-video-type-youtube' ) || outer_wrap.hasClass( 'uael-video-type-wistia' ) ){
+					iframe.attr( 'src', vurl );
+				}
 				iframe.attr( 'frameborder', '0' );
 				iframe.attr( 'allowfullscreen', '1' );
 				iframe.attr( 'allow', 'autoplay;encrypted-media;' );
@@ -1451,7 +1453,7 @@
 				if( outer_wrap.hasClass( 'uael-video-type-hosted' ) ) {
 					var hosted_video_html = JSON.parse( outer_wrap.data( 'hosted-html' ) );
 					iframe.on( 'load', function() {
-						var hosted_video_iframe = iframe.contents().find( 'body' );
+						var hosted_video_iframe = iframe.contents().find( 'body' ).css( {"margin":"0px"} );
 						hosted_video_iframe.html( hosted_video_html );
 						iframe.contents().find( 'video' ).css( {"width":"100%", "height":"100%"} );
 						iframe.contents().find( 'video' ).attr( 'autoplay','autoplay' );
@@ -2313,15 +2315,16 @@
 				elementor.hooks.addAction( 'panel/open_editor/' + element, function( panel, model, view ) {
 					var settings_panel = panel.$el;
 					settings_panel.on( 'change', '[data-setting="display_condition_enable"]', function( event ) {
-	
+
 						if ( $( this ).is( ':checked' ) ) {
-							var GetLocalTimeZone = new Date().toString().match(/([A-Z]+[\+-][0-9]+.*)/)[1];
+							var GetLocalTimeZone = new Date().getTimezoneOffset();
+							GetLocalTimeZone = GetLocalTimeZone == 0 ? 0 : -GetLocalTimeZone;
 							var uael_secure = ( document.location.protocol === 'https:' ) ? 'secure' : '';
 							document.cookie = "GetLocalTimeZone=" + GetLocalTimeZone + ";SameSite=Strict;" + uael_secure;
 						} else {
 							document.cookie = "GetLocalTimeZone= ; expires = Thu, 01 Jan 1970 00:00:00 GMT"
 						}
-	
+
 					} );
 				} );
 			});

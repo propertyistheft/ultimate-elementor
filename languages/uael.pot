@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the Ultimate Addons for Elementor package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ultimate Addons for Elementor 1.36.12\n"
+"Project-Id-Version: Ultimate Addons for Elementor 1.36.13\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/ultimate-elementor\n"
-"POT-Creation-Date: 2022-10-21 08:01:04+00:00\n"
+"POT-Creation-Date: 2022-11-24 06:10:03+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -579,225 +579,225 @@ msgstr ""
 msgid "White Label"
 msgstr ""
 
-#: classes/uael-helper.php:951
+#: classes/uael-helper.php:952
 msgid "ARABIC"
 msgstr ""
 
-#: classes/uael-helper.php:952
+#: classes/uael-helper.php:953
 msgid "BASQUE"
 msgstr ""
 
-#: classes/uael-helper.php:953
+#: classes/uael-helper.php:954
 msgid "BULGARIAN"
 msgstr ""
 
-#: classes/uael-helper.php:954
+#: classes/uael-helper.php:955
 msgid "BENGALI"
 msgstr ""
 
-#: classes/uael-helper.php:955
+#: classes/uael-helper.php:956
 msgid "CATALAN"
 msgstr ""
 
-#: classes/uael-helper.php:956
+#: classes/uael-helper.php:957
 msgid "CZECH"
 msgstr ""
 
-#: classes/uael-helper.php:957
+#: classes/uael-helper.php:958
 msgid "DANISH"
 msgstr ""
 
-#: classes/uael-helper.php:958
+#: classes/uael-helper.php:959
 msgid "GERMAN"
 msgstr ""
 
-#: classes/uael-helper.php:959
+#: classes/uael-helper.php:960
 msgid "GREEK"
 msgstr ""
 
-#: classes/uael-helper.php:960
+#: classes/uael-helper.php:961
 msgid "ENGLISH"
 msgstr ""
 
-#: classes/uael-helper.php:961
+#: classes/uael-helper.php:962
 msgid "ENGLISH (AUSTRALIAN)"
 msgstr ""
 
-#: classes/uael-helper.php:962
+#: classes/uael-helper.php:963
 msgid "ENGLISH (GREAT BRITAIN)"
 msgstr ""
 
-#: classes/uael-helper.php:963
+#: classes/uael-helper.php:964
 msgid "SPANISH"
 msgstr ""
 
-#: classes/uael-helper.php:964
+#: classes/uael-helper.php:965
 msgid "FARSI"
 msgstr ""
 
-#: classes/uael-helper.php:965
+#: classes/uael-helper.php:966
 msgid "FINNISH"
 msgstr ""
 
-#: classes/uael-helper.php:966
+#: classes/uael-helper.php:967
 msgid "FILIPINO"
 msgstr ""
 
-#: classes/uael-helper.php:967
+#: classes/uael-helper.php:968
 msgid "FRENCH"
 msgstr ""
 
-#: classes/uael-helper.php:968
+#: classes/uael-helper.php:969
 msgid "GALICIAN"
 msgstr ""
 
-#: classes/uael-helper.php:969
+#: classes/uael-helper.php:970
 msgid "GUJARATI"
 msgstr ""
 
-#: classes/uael-helper.php:970
+#: classes/uael-helper.php:971
 msgid "HINDI"
 msgstr ""
 
-#: classes/uael-helper.php:971
+#: classes/uael-helper.php:972
 msgid "CROATIAN"
 msgstr ""
 
-#: classes/uael-helper.php:972
+#: classes/uael-helper.php:973
 msgid "HUNGARIAN"
 msgstr ""
 
-#: classes/uael-helper.php:973
+#: classes/uael-helper.php:974
 msgid "INDONESIAN"
 msgstr ""
 
-#: classes/uael-helper.php:974
+#: classes/uael-helper.php:975
 msgid "ITALIAN"
 msgstr ""
 
-#: classes/uael-helper.php:975
+#: classes/uael-helper.php:976
 msgid "HEBREW"
 msgstr ""
 
-#: classes/uael-helper.php:976
+#: classes/uael-helper.php:977
 msgid "JAPANESE"
 msgstr ""
 
-#: classes/uael-helper.php:977
+#: classes/uael-helper.php:978
 msgid "KANNADA"
 msgstr ""
 
-#: classes/uael-helper.php:978
+#: classes/uael-helper.php:979
 msgid "KOREAN"
 msgstr ""
 
-#: classes/uael-helper.php:979
+#: classes/uael-helper.php:980
 msgid "LITHUANIAN"
 msgstr ""
 
-#: classes/uael-helper.php:980
+#: classes/uael-helper.php:981
 msgid "LATVIAN"
 msgstr ""
 
-#: classes/uael-helper.php:981
+#: classes/uael-helper.php:982
 msgid "MALAYALAM"
 msgstr ""
 
-#: classes/uael-helper.php:982
+#: classes/uael-helper.php:983
 msgid "MARATHI"
 msgstr ""
 
-#: classes/uael-helper.php:983
+#: classes/uael-helper.php:984
 msgid "DUTCH"
 msgstr ""
 
-#: classes/uael-helper.php:984
+#: classes/uael-helper.php:985
 msgid "NORWEGIAN"
 msgstr ""
 
-#: classes/uael-helper.php:985
+#: classes/uael-helper.php:986
 msgid "POLISH"
 msgstr ""
 
-#: classes/uael-helper.php:986
+#: classes/uael-helper.php:987
 msgid "PORTUGUESE"
 msgstr ""
 
-#: classes/uael-helper.php:987
+#: classes/uael-helper.php:988
 msgid "PORTUGUESE (BRAZIL)"
 msgstr ""
 
-#: classes/uael-helper.php:988
+#: classes/uael-helper.php:989
 msgid "PORTUGUESE (PORTUGAL)"
 msgstr ""
 
-#: classes/uael-helper.php:989
+#: classes/uael-helper.php:990
 msgid "ROMANIAN"
 msgstr ""
 
-#: classes/uael-helper.php:990
+#: classes/uael-helper.php:991
 msgid "RUSSIAN"
 msgstr ""
 
-#: classes/uael-helper.php:991
+#: classes/uael-helper.php:992
 msgid "SLOVAK"
 msgstr ""
 
-#: classes/uael-helper.php:992
+#: classes/uael-helper.php:993
 msgid "SLOVENIAN"
 msgstr ""
 
-#: classes/uael-helper.php:993
+#: classes/uael-helper.php:994
 msgid "SERBIAN"
 msgstr ""
 
-#: classes/uael-helper.php:994
+#: classes/uael-helper.php:995
 msgid "SWEDISH"
 msgstr ""
 
-#: classes/uael-helper.php:995
+#: classes/uael-helper.php:996
 msgid "TAGALOG"
 msgstr ""
 
-#: classes/uael-helper.php:996
+#: classes/uael-helper.php:997
 msgid "TAMIL"
 msgstr ""
 
-#: classes/uael-helper.php:997
+#: classes/uael-helper.php:998
 msgid "TELUGU"
 msgstr ""
 
-#: classes/uael-helper.php:998
+#: classes/uael-helper.php:999
 msgid "THAI"
 msgstr ""
 
-#: classes/uael-helper.php:999
+#: classes/uael-helper.php:1000
 msgid "TURKISH"
 msgstr ""
 
-#: classes/uael-helper.php:1000
+#: classes/uael-helper.php:1001
 msgid "UKRAINIAN"
 msgstr ""
 
-#: classes/uael-helper.php:1001
+#: classes/uael-helper.php:1002
 msgid "VIETNAMESE"
 msgstr ""
 
-#: classes/uael-helper.php:1002
+#: classes/uael-helper.php:1003
 msgid "CHINESE (SIMPLIFIED)"
 msgstr ""
 
-#: classes/uael-helper.php:1003
+#: classes/uael-helper.php:1004
 msgid "CHINESE (TRADITIONAL)"
 msgstr ""
 
-#: classes/uael-helper.php:1309 modules/ff-styler/widgets/ff-styler.php:111
+#: classes/uael-helper.php:1310 modules/ff-styler/widgets/ff-styler.php:111
 #: modules/table/widgets/table.php:252 modules/table/widgets/table.php:653
 #: modules/video/widgets/video.php:1620
 msgid "Select"
 msgstr ""
 
-#: classes/uael-helper.php:1320
+#: classes/uael-helper.php:1321
 msgid "It seems that, you have not saved any template yet."
 msgstr ""
 
@@ -16021,19 +16021,19 @@ msgstr ""
 msgid "%1$s Get Wistia Link and Thumbnail text » %2$s"
 msgstr ""
 
-#: modules/video/widgets/video.php:2202
+#: modules/video/widgets/video.php:2208
 msgid "from "
 msgstr ""
 
-#: modules/video/widgets/video.php:2461
+#: modules/video/widgets/video.php:2467
 msgid "Please choose a file."
 msgstr ""
 
-#: modules/video/widgets/video.php:2541
+#: modules/video/widgets/video.php:2547
 msgid "Please set a custom thumbnail to display video schema properly."
 msgstr ""
 
-#: modules/video/widgets/video.php:2543
+#: modules/video/widgets/video.php:2549
 msgid ""
 "Some fields are empty under the video schema section. Please fill in all "
 "required fields."
