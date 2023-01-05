@@ -1,3 +1,10 @@
+Version 1.36.14, Tuesday, 3rd January 2023
+- Improvement: Off-Canvas - Trigger available on keyboard.
+- Improvement: Navigation Menu - Accessibility error corrected [aria-hidden=true].
+- Fix: Navigation Menu - Console error when dropdown width equals Container.
+- Fix: Video Gallery - Default tab on page loading setting does not work when category name has special character.
+- Fix: Woo - Mini Cart - Quantity Plus and Minus layout problem with Astra theme.
+
 Version 1.36.13, Thursday, 24th November 2022
 - Improvement: Table - Sticky header functionality conflicts with the sticky header of the Astra theme.
 - Fix: Before-After Slider - Widget disappears on window resize when inserted in flex-container.

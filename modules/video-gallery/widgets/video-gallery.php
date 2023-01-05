@@ -2394,8 +2394,11 @@ class Video_Gallery extends Common_Widget {
 				if ( '' !== $item['tags'] ) {
 
 					$tags = $this->get_tag_class( $item );
-
-					$this->add_render_attribute( 'grid-item' . $index, 'class', array_keys( $tags ) );
+					foreach ( $tags as $key => &$value ) {
+						$value = strtolower( htmlentities( $value ) );
+						$value = 'filter-' . $value;
+					}
+					$this->add_render_attribute( 'grid-item' . $index, 'class', ( array_values( $tags ) ) );
 				}
 			}
 
@@ -2611,7 +2614,7 @@ class Video_Gallery extends Common_Widget {
 
 		if ( 'yes' === $settings['default_filter_switch'] && '' !== $settings['default_filter'] ) {
 			$default = '.filter-' . trim( $settings['default_filter'] );
-			$default = strtolower( str_replace( ' ', '-', $default ) );
+			$default = strtolower( str_replace( ' ', '-', ( htmlentities( $default ) ) ) );
 		}
 
 		?>
@@ -2628,7 +2631,7 @@ class Video_Gallery extends Common_Widget {
 					<ul class="uael-video__gallery-filters" data-default="<?php echo esc_attr( $default ); ?>">
 						<li class="uael-video__gallery-filter uael-filter__current" data-filter="*"><?php echo wp_kses_post( $settings['filters_all_text'] ); ?></li>
 						<?php foreach ( $filters as $key => $value ) { ?>
-							<li class="uael-video__gallery-filter" data-filter="<?php echo '.' . esc_attr( $key ); ?>"><?php echo esc_attr( $value ); ?></li>
+							<li class="uael-video__gallery-filter" data-filter="<?php echo '.filter-' . esc_attr( strtolower( ( htmlentities( $value ) ) ) ); ?>"><?php echo esc_attr( $value ); ?></li>
 						<?php } ?>
 					</ul>
 
@@ -2715,7 +2718,10 @@ class Video_Gallery extends Common_Widget {
 		$this->add_render_attribute( 'wrap', 'data-layout', $settings['layout'] );
 		$this->add_render_attribute( 'wrap', 'class', 'uael-aspect-ratio-' . $settings['video_ratio'] );
 
-		$this->add_render_attribute( 'wrap', 'data-all-filters', wp_json_encode( array_keys( $filters ) ) );
+		foreach ( $filters as $key => &$value ) {
+			$value = 'filter-' . strtolower( esc_attr( htmlentities( $value ) ) );
+		}
+		$this->add_render_attribute( 'wrap', 'data-all-filters', array_values( $filters ) );
 
 		if ( 'yes' === $settings['show_filter'] && 'grid' === $settings['layout'] ) {
 

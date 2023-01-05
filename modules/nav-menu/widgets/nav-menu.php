@@ -2624,7 +2624,8 @@ class Nav_Menu extends Common_Widget {
 
 			?>
 		<div <?php echo wp_kses_post( $this->get_render_attribute_string( 'uael-main-menu' ) ); ?>>
-				<div class="uael-nav-menu__toggle elementor-clickable">
+				<div role="button" class="uael-nav-menu__toggle elementor-clickable">
+					<span class="screen-reader-text">Main Menu</span>
 					<div class="uael-nav-menu-icon">
 						<?php echo isset( $menu_close_icons[0] ) ? $menu_close_icons[0] : ''; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 					</div>
