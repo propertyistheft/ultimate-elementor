@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the Ultimate Addons for Elementor package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ultimate Addons for Elementor 1.36.14\n"
+"Project-Id-Version: Ultimate Addons for Elementor 1.36.15\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/ultimate-elementor\n"
-"POT-Creation-Date: 2023-01-03 07:48:00+00:00\n"
+"POT-Creation-Date: 2023-04-05 03:46:18+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -16214,11 +16214,11 @@ msgstr ""
 msgid "Category Color"
 msgstr ""
 
-#: modules/video-gallery/widgets/video-gallery.php:2704
+#: modules/video-gallery/widgets/video-gallery.php:2709
 msgid "Please set a custom thumbnail to display video gallery schema properly."
 msgstr ""
 
-#: modules/video-gallery/widgets/video-gallery.php:2706
+#: modules/video-gallery/widgets/video-gallery.php:2711
 msgid ""
 "Some fields are empty under the video gallery schema section. Please fill "
 "in all required fields."

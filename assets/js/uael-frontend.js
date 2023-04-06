@@ -42,7 +42,15 @@
 	var UAELBASlider = function( $element ) {
 		
 		$element.css( 'width', '100%' );
-		$element.css( 'height', '100%' );
+		
+		var closest_section = $element.closest('.elementor-section');
+			if ( 0 != closest_section.length ) {
+				$element.css( 'height', ' ' );
+			}
+		var closest_container = $element.closest('.e-con');
+			if ( 0 != closest_container.length ) {
+				$element.css( 'height', '100%' );
+			}
 
 		max = -1;
 
@@ -1155,8 +1163,7 @@
 				var def_filter_length = def_filter.length;
 			}
 
-			var str_vid_text = $scope.find( '.uael-filter__current' ).text();
-			str_vid_text = str_vid_text.substring( def_filter_length, str_vid_text.length );
+			var str_vid_text = $scope.find( '.uael-filter__current' ).first().text();
 			$scope.find( '.uael-filters-dropdown-button' ).text( str_vid_text );
 		}
 	}

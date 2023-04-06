@@ -151,8 +151,7 @@
 				def_filter = post_grid.data( 'filter-default' );
 			}
 
-			var str_text = $scope.find( '.uael-filter__current' ).text();
-			str_text = str_text.substring( def_filter.length, str_text.length );
+			var str_text = $scope.find( '.uael-filter__current' ).first().text();
 			$scope.find( '.uael-filters-dropdown-button' ).text( str_text );
 
 			count = 1;

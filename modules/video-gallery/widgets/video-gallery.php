@@ -2265,11 +2265,12 @@ class Video_Gallery extends Common_Widget {
 
 					$response = wp_remote_get( "https://vimeo.com/api/v2/video/$vid_id.php" );
 
-					if ( is_wp_error( $response ) ) {
+					if ( is_wp_error( $response ) || 200 !== $response['response']['code'] ) {
 						return;
 					}
 					$vimeo = maybe_unserialize( $response['body'] );
-					$url   = $vimeo[0]['thumbnail_large'];
+					// privacy enabled videos don't return thumbnail data in url.
+					$url = ( isset( $vimeo[0]['thumbnail_large'] ) && ! empty( $vimeo[0]['thumbnail_large'] ) ) ? str_replace( '_640', '_840', $vimeo[0]['thumbnail_large'] ) : '';
 				}
 			} elseif ( 'wistia' === $item['type'] ) {
 				$url = 'https://embedwistia-a.akamaihd.net/deliveries/' . $this->getStringBetween( $video_url, 'deliveries/', '?' );
@@ -2395,7 +2396,7 @@ class Video_Gallery extends Common_Widget {
 
 					$tags = $this->get_tag_class( $item );
 					foreach ( $tags as $key => &$value ) {
-						$value = strtolower( htmlentities( $value ) );
+						$value = preg_replace( '/[^a-zA-Z0-9]/', '-', strtolower( $value ) );
 						$value = 'filter-' . $value;
 					}
 					$this->add_render_attribute( 'grid-item' . $index, 'class', ( array_values( $tags ) ) );
@@ -2613,8 +2614,9 @@ class Video_Gallery extends Common_Widget {
 		$tab_responsive = ( 'yes' === $settings['tabs_dropdown'] ) ? ' uael-vgallery-tabs-dropdown' : '';
 
 		if ( 'yes' === $settings['default_filter_switch'] && '' !== $settings['default_filter'] ) {
-			$default = '.filter-' . trim( $settings['default_filter'] );
-			$default = strtolower( str_replace( ' ', '-', ( htmlentities( $default ) ) ) );
+			$default = trim( $settings['default_filter'] );
+			$default = preg_replace( '/[^a-zA-Z0-9]/', '-', strtolower( $default ) );
+			$default = '.filter-' . $default;
 		}
 
 		?>
@@ -2630,8 +2632,11 @@ class Video_Gallery extends Common_Widget {
 			<?php } ?>
 					<ul class="uael-video__gallery-filters" data-default="<?php echo esc_attr( $default ); ?>">
 						<li class="uael-video__gallery-filter uael-filter__current" data-filter="*"><?php echo wp_kses_post( $settings['filters_all_text'] ); ?></li>
-						<?php foreach ( $filters as $key => $value ) { ?>
-							<li class="uael-video__gallery-filter" data-filter="<?php echo '.filter-' . esc_attr( strtolower( ( htmlentities( $value ) ) ) ); ?>"><?php echo esc_attr( $value ); ?></li>
+						<?php
+						foreach ( $filters as $key => $value ) {
+							$special_char = preg_replace( '/[^a-zA-Z0-9]/', '-', strtolower( $value ) );
+							?>
+							<li class="uael-video__gallery-filter" data-filter="<?php echo '.filter-' . esc_attr( $special_char ); ?>"><?php echo esc_attr( $value ); ?></li>
 						<?php } ?>
 					</ul>
 
@@ -2719,7 +2724,8 @@ class Video_Gallery extends Common_Widget {
 		$this->add_render_attribute( 'wrap', 'class', 'uael-aspect-ratio-' . $settings['video_ratio'] );
 
 		foreach ( $filters as $key => &$value ) {
-			$value = 'filter-' . strtolower( esc_attr( htmlentities( $value ) ) );
+			$value = preg_replace( '/[^a-zA-Z0-9]/', '-', strtolower( $value ) );
+			$value = 'filter-' . esc_attr( $value );
 		}
 		$this->add_render_attribute( 'wrap', 'data-all-filters', array_values( $filters ) );
 

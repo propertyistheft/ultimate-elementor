@@ -138,7 +138,7 @@ class UAEL_Core_Plugin {
 
 		add_action( 'elementor/editor/after_enqueue_scripts', array( $this, 'register_widgets_helper_script' ) );
 
-		add_action( 'elementor/controls/controls_registered', array( $this, 'register_controls' ) );
+		add_action( 'elementor/controls/register', array( $this, 'register_controls' ) );
 
 		add_action( 'elementor/frontend/after_enqueue_styles', array( $this, 'enqueue_widget_styles' ) );
 

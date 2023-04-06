@@ -1,3 +1,12 @@
+Version 1.36.15, Wednesday, 5th April 2023
+- Improvement: Compatibility with latest Elementor and Elementor Pro 3.12 version.
+- Fix: Before-After Slider - Fixed a large gap problem between sliders for sections.
+- Fix: Posts - Filterable tabs category names are broken in responsive mode.
+- Fix: Video Gallery - Fixed the broken filterable tabs category names in responsive mode.
+- Fix: Video Gallery - Filterable Tabs do not work properly when there is space or a special character in the category name.
+- Fix: Video Gallery - Fatal PHP error while using private Vimeo videos.
+- Fix: Removed Elementor deprecated functions and replaced with latest functions.
+
 Version 1.36.14, Tuesday, 3rd January 2023
 - Improvement: Off-Canvas - Trigger available on keyboard.
 - Improvement: Navigation Menu - Accessibility error corrected [aria-hidden=true].
