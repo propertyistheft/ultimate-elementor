@@ -1,3 +1,14 @@
+Version 1.36.17, Thursday, 15th June 2023
+- Improvement: Compatibility with latest Elementor and Elementor Pro 3.14 version.
+- Fix: Contact Form 7 Styler -  Functionality to make multiple column layout not working.
+- Fix: Particle Backgrounds - Particles stopped appearing when the website first loaded.
+- Fix: Social Share - Alignment setting not working on responsive devices.
+- Fix: Table - Sticky header functionality not working properly.
+- Fix: Navigation Menu - Sub-menu content type container and section not going full width within the Flex-box container.
+- Fix: Video Gallery - Responsive support for Filterable Tabs does not work properly when there is a special character in the category name.
+- Fix: Video - Self Hosted videos not playing in private browser.
+- Fix: Woo Products - An undefined array key warning occurs for mobile devices and tablets.
+
 Version 1.36.16, Wednesday, 10th May 2023
 - Improvement: Compatibility with latest Elementor and Elementor Pro 3.13 version.
 

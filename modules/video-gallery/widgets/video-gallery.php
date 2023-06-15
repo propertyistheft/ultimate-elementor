@@ -2646,8 +2646,11 @@ class Video_Gallery extends Common_Widget {
 
 							<ul class="uael-filters-dropdown-list uael-video__gallery-filters" data-default="<?php echo esc_attr( $default ); ?>">
 								<li class="uael-filters-dropdown-item uael-video__gallery-filter uael-filter__current" data-filter="*"><?php echo wp_kses_post( $settings['filters_all_text'] ); ?></li>
-								<?php foreach ( $filters as $key => $value ) { ?>
-									<li class="uael-filters-dropdown-item uael-video__gallery-filter" data-filter="<?php echo '.' . esc_attr( $key ); ?>"><?php echo esc_attr( $value ); ?></li>
+								<?php
+								foreach ( $filters as $key => $value ) {
+									$special_char = preg_replace( '/[^a-zA-Z0-9]/', '-', strtolower( $value ) );
+									?>
+									<li class="uael-filters-dropdown-item uael-video__gallery-filter " data-filter="<?php echo '.filter-' . esc_attr( $special_char ); ?>"><?php echo esc_attr( $value ); ?></li>
 								<?php } ?>
 							</ul>
 						</div>

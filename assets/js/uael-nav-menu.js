@@ -584,7 +584,8 @@
 
 				var closest_section = $( '.elementor-element-' + id).closest('.elementor-section');
 				if ( 0 == closest_section.length ) {
-					var closest_section = $( '.elementor-element-' + id).closest('.e-con');
+					$('div[data-elementor-type="header"] > div[data-element_type="container"]:first-child').addClass('elementor-section');
+					var closest_section = $( '.elementor-element-' + id).closest('.elementor-section');
 				}
 				var width = closest_section.outerWidth();
 
@@ -623,7 +624,8 @@
 
 				var container = $( '.elementor-element-' + id).closest('.elementor-container');
 				if ( 0 == container.length ) {
-					var container = $( '.elementor-element-' + id).closest('.e-con');
+					$('div[data-elementor-type="header"] > div[data-element_type="container"]:first-child').addClass('elementor-container');
+					var container = $( '.elementor-element-' + id).closest('.elementor-container');
 				}
 				var width = container.outerWidth();
 

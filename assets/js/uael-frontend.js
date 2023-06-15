@@ -1459,7 +1459,7 @@
 				selector.html( iframe );
 				if( outer_wrap.hasClass( 'uael-video-type-hosted' ) ) {
 					var hosted_video_html = JSON.parse( outer_wrap.data( 'hosted-html' ) );
-					iframe.on( 'load', function() {
+					iframe.ready( function() {
 						var hosted_video_iframe = iframe.contents().find( 'body' ).css( {"margin":"0px"} );
 						hosted_video_iframe.html( hosted_video_html );
 						iframe.contents().find( 'video' ).css( {"width":"100%", "height":"100%"} );

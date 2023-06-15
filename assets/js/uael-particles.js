@@ -11274,15 +11274,16 @@ const {
 /******/ })()
 ;
 });
-
-if ( $( '.uael-particle-yes' ).length ) {
+$(document).ready(function(){
+  if ( $( '.uael-particle-yes' ).length ) {
 	
-	Object.keys( window.scope_array ).forEach( function ( i ) {
-		$scope = window.scope_array[i];
-		particles_background_script( $scope );
-	});
+	  Object.keys( window.scope_array ).forEach( function ( i ) {
+		  $scope = window.scope_array[i];
+		  particles_background_script( $scope );
+	  });
 
-}
+  }
+});
 
 function particles_background_script( $scope ) {
 
