@@ -563,7 +563,7 @@
 
 		$( 'body' ).off( 'added_to_cart.uael_cart' ).on( 'added_to_cart.uael_cart', function( e, fragments, cart_hash, btn ) {
 
-			if ( btn.closest( '.elementor-widget-uael-woo-add-to-cart' ).length > 0 ) {
+			if ( btn && btn.closest( '.elementor-widget-uael-woo-add-to-cart' ).length > 0 ) {
 
 				if ( btn.hasClass( 'uael-redirect' ) ) {
 

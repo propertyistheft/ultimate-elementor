@@ -2245,7 +2245,9 @@ class Video_Gallery extends Common_Widget {
 				$vid_id = $matches[1];
 			}
 		} elseif ( 'vimeo' === $item['type'] ) {
-			$vid_id = preg_replace( '/[^\/]+[^0-9]|(\/)/', '', rtrim( $video_url, '/' ) );
+			if ( preg_match( '%^https?:\/\/(?:www\.|player\.)?vimeo.com\/(?:channels\/(?:\w+\/)?|groups\/([^\/]*)\/videos\/|album\/(\d+)\/video\/|video\/|)(\d+)(?:$|\/|\?)(?:[?]?.*)$%im', $video_url, $regs ) ) {
+				$vid_id = $regs[3];
+			}
 		} elseif ( 'wistia' === $item['type'] ) {
 			$vid_id = $this->getStringBetween( $video_url, 'wvideo=', '"' );
 		}
@@ -2261,9 +2263,11 @@ class Video_Gallery extends Common_Widget {
 
 			} elseif ( 'vimeo' === $item['type'] ) {
 
-				if ( '' !== $vid_id && 0 !== $vid_id ) {
+				$vid_id_image = preg_replace( '/[^\/]+[^0-9]|(\/)/', '', rtrim( $video_url, '/' ) );
 
-					$response = wp_remote_get( "https://vimeo.com/api/v2/video/$vid_id.php" );
+				if ( '' !== $vid_id_image && 0 !== $vid_id_image ) {
+
+					$response = wp_remote_get( "https://vimeo.com/api/v2/video/$vid_id_image.php" );
 
 					if ( is_wp_error( $response ) || 200 !== $response['response']['code'] ) {
 						return;
@@ -2443,6 +2447,18 @@ class Video_Gallery extends Common_Widget {
 
 					case 'vimeo':
 						$vurl = 'https://player.vimeo.com/video/' . $url['video_id'] . '?autoplay=1&version=3&enablejsapi=1';
+
+						/**
+						 * Support Vimeo unlisted and private videos
+						 */
+						$h_param   = array();
+						$video_url = $item['video_url'];
+						preg_match( '/(?|(?:[\?|\&]h={1})([\w]+)|\d\/([\w]+))/', $video_url, $h_param );
+
+						if ( ! empty( $h_param ) ) {
+							$vurl .= '&h=' . $h_param[1];
+						}
+
 						break;
 
 					case 'wistia':

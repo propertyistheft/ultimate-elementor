@@ -1359,11 +1359,11 @@ class Module extends Module_Base {
 
 								<# if ( settings.party_propz_select_icon || settings.new_party_propz_select_icon ) {
 
-									var iconHTML = elementor.helpers.renderIcon( view, settings.new_party_propz_select_icon, { 'aria-hidden': true }, 'i' , 'object' );
+									var selectedIconHTML = elementor.helpers.renderIcon( view, settings.new_party_propz_select_icon, { 'aria-hidden': true }, 'i' , 'object' );
 
 									var iconMigrated = elementor.helpers.isIconMigrated( settings, 'new_party_propz_select_icon' );
-									if ( iconHTML && iconHTML.rendered && ( ! settings.party_propz_select_icon || iconMigrated ) ) { #>
-										{{{ iconHTML.value }}}
+									if ( selectedIconHTML && selectedIconHTML.rendered && ( ! settings.party_propz_select_icon || iconMigrated ) ) { #>
+										{{{ selectedIconHTML.value }}}
 									<# } else { #>
 										<i class= "{{ settings.party_propz_select_icon }}" aria-hidden="true"></i>
 									<# }
@@ -1469,11 +1469,11 @@ class Module extends Module_Base {
 
 			<# if ( settings.party_propz_widget_select_icon || settings.new_party_propz_widget_select_icon ) {
 
-			var iconHTML = elementor.helpers.renderIcon( view, settings.new_party_propz_widget_select_icon, { 'aria-hidden': true }, 'i' , 'object' );
+			var selectedIconHTML = elementor.helpers.renderIcon( view, settings.new_party_propz_widget_select_icon, { 'aria-hidden': true }, 'i' , 'object' );
 
 			var iconMigrated = elementor.helpers.isIconMigrated( settings, 'new_party_propz_widget_select_icon' );
-			if ( iconHTML && iconHTML.rendered && ( ! settings.party_propz_widget_select_icon || iconMigrated ) ) { #>
-			{{{ iconHTML.value }}}
+			if ( selectedIconHTML && selectedIconHTML.rendered && ( ! settings.party_propz_widget_select_icon || iconMigrated ) ) { #>
+			{{{ selectedIconHTML.value }}}
 			<# } else { #>
 			<i class= "{{ settings.party_propz_widget_select_icon }}" aria-hidden="true"></i>
 			<# }

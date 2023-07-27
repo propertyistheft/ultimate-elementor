@@ -2392,6 +2392,7 @@ class Modal_Popup extends Common_Widget {
 		$url    = apply_filters( 'uael_modal_video_url', $settings['video_url'], $settings );
 		$vid_id = '';
 		$html   = '<div class="uael-video-wrap">';
+		$thumb  = '';
 
 		$embed_param = $this->get_embed_params();
 		$video_data  = $this->get_url( $embed_param, $node_id );
@@ -2442,18 +2443,24 @@ class Modal_Popup extends Common_Widget {
 
 		} elseif ( 'vimeo' === $settings['content_type'] ) {
 
-			$vid_id = preg_replace( '/[^\/]+[^0-9]|(\/)/', '', rtrim( $url, '/' ) );
+			if ( preg_match( '%^https?:\/\/(?:www\.|player\.)?vimeo.com\/(?:channels\/(?:\w+\/)?|groups\/([^\/]*)\/videos\/|album\/(\d+)\/video\/|video\/|)(\d+)(?:$|\/|\?)(?:[?]?.*)$%im', $url, $regs ) ) {
+				$vid_id = $regs[3];
+			}
 
-			if ( '' !== $vid_id && 0 !== $vid_id ) {
+			$vid_id_image = preg_replace( '/[^\/]+[^0-9]|(\/)/', '', rtrim( $url, '/' ) );
 
-				$response = wp_remote_get( "https://vimeo.com/api/v2/video/$vid_id.php" );
+			if ( '' !== $vid_id_image && 0 !== $vid_id_image ) {
+
+				$response = wp_remote_get( "https://vimeo.com/api/v2/video/$vid_id_image.php" );
 
 				if ( is_wp_error( $response ) ) {
 					return;
 				}
 				$vimeo = maybe_unserialize( $response['body'] );
 				$thumb = $vimeo[0]['thumbnail_large'];
+			}
 
+			if ( '' !== $vid_id && 0 !== $vid_id ) {
 				$html .= '<div class="uael-modal-iframe uael-video-player" data-src="vimeo" data-id="' . $vid_id . '" data-thumb="' . $thumb . '" data-sourcelink="https://player.vimeo.com/video/' . $vid_id . $video_data . '" data-play-icon="' . $play_icon . '" ></div>';
 			}
 		}
@@ -2824,6 +2831,17 @@ class Modal_Popup extends Common_Widget {
 				$params['muted']    = 1;
 			} else {
 				$params['autoplay'] = 0;
+			}
+
+			/**
+			 * Support Vimeo unlisted and private videos
+			 */
+			$h_param   = array();
+			$video_url = $settings['video_url'];
+			preg_match( '/(?|(?:[\?|\&]h={1})([\w]+)|\d\/([\w]+))/', $video_url, $h_param );
+
+			if ( ! empty( $h_param ) ) {
+				$params['h'] = $h_param[1];
 			}
 		}
 		return $params;

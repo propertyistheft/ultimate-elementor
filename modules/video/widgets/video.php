@@ -2143,7 +2143,9 @@ class Video extends Common_Widget {
 		if ( 'vimeo' === $settings['video_type'] && '' !== $settings['start'] ) {
 
 			$time = gmdate( 'H\hi\ms\s', $settings['start'] );
+
 			$url .= '#t=' . $time;
+
 		} elseif ( 'vimeo' === $settings['video_type'] ) {
 
 			$url .= '#t=';
@@ -2717,6 +2719,27 @@ class Video extends Common_Widget {
 
 			$params['color']     = str_replace( '#', '', $settings['vimeo_color'] );
 			$params['autopause'] = '0';
+
+			/**
+			 * Support Vimeo unlisted and private videos
+			 *
+			 * Vimeo requires an additional parameter when displaying private/unlisted videos. It has two ways of
+			 * passing that parameter:
+			 * * as an endpoint - vimeo.com/{video_id}/{privacy_token}
+			 * OR
+			 * * as a GET parameter named `h` - vimeo.com/{video_id}?h={privacy_token}
+			 *
+			 * The following regex match looks for either of these methods in the Vimeo URL, and if it finds a privacy
+			 * token, it adds it to the embed params array as the `h` parameter (which is how Vimeo can receive it when
+			 * using Oembed).
+			 */
+			$h_param   = array();
+			$video_url = $settings['vimeo_link'];
+			preg_match( '/(?|(?:[\?|\&]h={1})([\w]+)|\d\/([\w]+))/', $video_url, $h_param );
+
+			if ( ! empty( $h_param ) ) {
+				$params['h'] = $h_param[1];
+			}
 		}
 
 		if ( 'wistia' === $settings['video_type'] ) {

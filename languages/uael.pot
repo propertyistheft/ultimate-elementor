@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the Ultimate Addons for Elementor package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ultimate Addons for Elementor 1.36.17\n"
+"Project-Id-Version: Ultimate Addons for Elementor 1.36.18\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/ultimate-elementor\n"
-"POT-Creation-Date: 2023-06-14 13:08:03+00:00\n"
+"POT-Creation-Date: 2023-07-27 07:05:37+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -12045,11 +12045,11 @@ msgstr ""
 msgid "Iframe"
 msgstr ""
 
-#: modules/modal-popup/widgets/modal-popup.php:2634
+#: modules/modal-popup/widgets/modal-popup.php:2641
 msgid "Modal Popup - ID "
 msgstr ""
 
-#: modules/modal-popup/widgets/modal-popup.php:2635
+#: modules/modal-popup/widgets/modal-popup.php:2642
 msgid ""
 "Click here to edit the \"Modal Popup\" settings. This text will not be "
 "visible on frontend."
@@ -16021,19 +16021,19 @@ msgstr ""
 msgid "%1$s Get Wistia Link and Thumbnail text » %2$s"
 msgstr ""
 
-#: modules/video/widgets/video.php:2208
+#: modules/video/widgets/video.php:2210
 msgid "from "
 msgstr ""
 
-#: modules/video/widgets/video.php:2467
+#: modules/video/widgets/video.php:2469
 msgid "Please choose a file."
 msgstr ""
 
-#: modules/video/widgets/video.php:2547
+#: modules/video/widgets/video.php:2549
 msgid "Please set a custom thumbnail to display video schema properly."
 msgstr ""
 
-#: modules/video/widgets/video.php:2549
+#: modules/video/widgets/video.php:2551
 msgid ""
 "Some fields are empty under the video schema section. Please fill in all "
 "required fields."
@@ -16214,11 +16214,11 @@ msgstr ""
 msgid "Category Color"
 msgstr ""
 
-#: modules/video-gallery/widgets/video-gallery.php:2712
+#: modules/video-gallery/widgets/video-gallery.php:2728
 msgid "Please set a custom thumbnail to display video gallery schema properly."
 msgstr ""
 
-#: modules/video-gallery/widgets/video-gallery.php:2714
+#: modules/video-gallery/widgets/video-gallery.php:2730
 msgid ""
 "Some fields are empty under the video gallery schema section. Please fill "
 "in all required fields."
