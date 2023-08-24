@@ -2757,7 +2757,7 @@ class Video_Gallery extends Common_Widget {
 			$this->render_gallery_filters();
 		}
 
-		echo '<div ' . wp_kses_post( $this->get_render_attribute_string( 'wrap' ) ) . ' ' . wp_kses_post( $this->get_slider_attr() ) . '>';
+		echo '<div ' . wp_kses_post( sanitize_text_field( $this->get_render_attribute_string( 'wrap' ) ) ) . ' ' . wp_kses_post( sanitize_text_field( $this->get_slider_attr() ) ) . '>';
 
 			$this->render_gallery_inner_data();
 

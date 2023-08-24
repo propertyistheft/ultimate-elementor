@@ -71,5 +71,8 @@ $this->add_render_attribute(
 </div>
 
 <div class="uael-modal-action-wrap">
-	<?php echo wp_kses_post( $this->render_action_html() ); ?>
+	<?php
+		$action_html = $this->render_action_html();
+		echo wp_kses_post( sanitize_text_field( $action_html ) );
+	?>
 </div>

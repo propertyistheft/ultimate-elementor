@@ -691,10 +691,12 @@ abstract class Skin_Style {
 			}
 		}
 
+		$taxonomies_to_exclude = array( 'optional', 'translation_priority' );
+
 		if ( 'post' === $settings['post_type_filter'] ) {
 			$terms_show = $this->get_instance_value( 'terms_to_show' );
 		} else {
-			$terms_show = get_taxonomies( '', 'names' );
+			$terms_show = array_diff( get_taxonomies( '', 'names' ), $taxonomies_to_exclude );
 		}
 
 		$terms = wp_get_post_terms( get_the_ID(), $terms_show );
@@ -1421,7 +1423,7 @@ abstract class Skin_Style {
 
 		<?php do_action( 'uael_posts_before_outer_wrap', $settings ); ?>
 
-		<div <?php echo wp_kses_post( $this->get_render_attribute_string( 'outer_wrapper' ) ); ?> <?php echo wp_kses_post( $this->get_slider_attr() ); ?>>
+		<div <?php echo wp_kses_post( sanitize_text_field( $this->get_render_attribute_string( 'outer_wrapper' ) ) ); ?> <?php echo wp_kses_post( sanitize_text_field( $this->get_slider_attr() ) ); ?>>
 
 			<?php do_action( 'uael_posts_before_wrap', $settings ); ?>
 				<div <?php echo wp_kses_post( $this->get_render_attribute_string( 'wrapper' ) ); ?>>

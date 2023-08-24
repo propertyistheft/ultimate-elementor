@@ -46,6 +46,8 @@ class Skin_Grid_Franko extends Skin_Style {
 
 		$settings = self::$settings;
 
+		wp_enqueue_script( 'wc-cart-fragments' );
+
 		include UAEL_MODULES_DIR . 'woocommerce/templates/content-product-franko.php';
 	}
 }

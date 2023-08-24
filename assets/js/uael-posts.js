@@ -327,10 +327,16 @@
 
 		$scope = $( this ).closest( '.elementor-widget-uael-posts' );
 		var elementSettings = getWidgetSettings( $scope );
+		var searchString = "show_filters";
+		
 		var found = Object.keys(elementSettings).filter(function(key) {
-		  return elementSettings[key] === 'ajax';
+			return elementSettings[key] === 'ajax';
 		});
-		if (!found.length) {
+		var is_filters = Object.keys(elementSettings).filter(function(key) {
+			return key.includes( searchString );
+		});
+
+		if ( ! found.length && ! is_filters.length ) {
    			return;
 		}
 

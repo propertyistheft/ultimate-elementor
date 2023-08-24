@@ -238,7 +238,7 @@ class Skin_News extends Skin_Style {
 		$this->add_render_attribute( 'outer_wrapper', 'data-offset-top', $offset_top );
 		?>
 
-		<div <?php echo wp_kses_post( $this->get_render_attribute_string( 'outer_wrapper' ) ); ?> <?php echo wp_kses_post( $this->get_slider_attr() ); ?>>
+		<div <?php echo wp_kses_post( sanitize_text_field( $this->get_render_attribute_string( 'outer_wrapper' ) ) ); ?> <?php echo wp_kses_post( sanitize_text_field( $this->get_slider_attr() ) ); ?>>
 
 			<?php
 			if ( 0 === $count ) {

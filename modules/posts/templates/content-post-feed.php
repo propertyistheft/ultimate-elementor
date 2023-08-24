@@ -20,7 +20,7 @@ if ( empty( $post ) ) {
 
 <?php do_action( 'uael_single_post_before_wrap', get_the_ID(), $settings ); ?>
 
-<div class="uael-post-wrapper <?php echo ( $is_featured ) ? 'uael-post-wrapper-featured' : ''; ?> <?php echo wp_kses_post( $this->get_category_name() ); ?>">
+<div class="uael-post-wrapper <?php echo ( $is_featured ) ? 'uael-post-wrapper-featured' : ''; ?> <?php echo wp_kses_post( sanitize_text_field( $this->get_category_name() ) ); ?>">
 
 	<div class="uael-post__bg-wrap">
 		<?php if ( 'yes' === $this->get_instance_value( 'link_complete_box' ) ) { ?>

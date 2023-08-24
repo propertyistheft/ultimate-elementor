@@ -2348,7 +2348,7 @@ class Timeline extends Common_Widget {
 				<?php
 				$skin = Skin_Init::get_instance( $node_id );
 
-				echo wp_kses_post( $skin->render( $settings, $node_id, $dynamic ) );
+				echo wp_kses_post( sanitize_text_field( $skin->render( $settings, $node_id, $dynamic ) ) );
 				?>
 			</div>
 			<?php

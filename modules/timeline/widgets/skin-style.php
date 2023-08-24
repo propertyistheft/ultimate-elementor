@@ -383,13 +383,13 @@ class Skin_Style {
 
 											<?php if ( 'yes' === $settings['post_thumbnail'] && '' !== get_the_post_thumbnail_url( $post_id ) ) { ?>
 												<div class="uael-timeline-featured-img">
-													<?php echo wp_kses_post( $this->render_featured_image( $settings ) ); ?>
+													<?php echo wp_kses_post( sanitize_text_field( $this->render_featured_image( $settings ) ) ); ?>
 												</div>
 											<?php } ?>
 											<div class="uael-timeline-date-hide uael-date-inner">
 												<div class="inner-date-new">
 													<?php if ( '' === $settings['post_timeline_date_type'] ) { ?>
-														<p><?php echo wp_kses_post( $this->render_date( $settings ) ); ?></p>
+														<p><?php echo wp_kses_post( sanitize_text_field( $this->render_date( $settings ) ) ); ?></p>
 													<?php } elseif ( 'updated' === $settings['post_timeline_date_type'] ) { ?>
 														<p><?php echo wp_kses_post( get_the_modified_date( '', $post_id ) ); ?></p>
 													<?php } elseif ( 'custom' === $settings['post_timeline_date_type'] ) { ?>
@@ -412,11 +412,11 @@ class Skin_Style {
 													$heading_size_tag = UAEL_Helper::validate_html_tag( $settings['timeline_heading_tag'] );
 													?>
 													<div class="uael-timeline-heading-text">
-														<<?php echo esc_attr( $heading_size_tag ); ?> <?php echo wp_kses_post( $this->get_render_attribute_string( 'heading_setting_key' ) ); ?>><?php echo wp_kses_post( $this->render_title() ); ?></<?php echo esc_attr( $heading_size_tag ); ?>>
+														<<?php echo esc_attr( $heading_size_tag ); ?> <?php echo wp_kses_post( sanitize_text_field( $this->get_render_attribute_string( 'heading_setting_key' ) ) ); ?>><?php echo wp_kses_post( sanitize_text_field( $this->render_title() ) ); ?></<?php echo esc_attr( $heading_size_tag ); ?>>
 													</div>
 												<?php } ?>
 												<?php if ( 'yes' === $settings['post_excerpt'] ) { ?>
-													<div class="uael-timeline-desc-content"><?php echo wp_kses_post( $this->render_excerpt( $settings ) ); ?></div>
+													<div class="uael-timeline-desc-content"><?php echo wp_kses_post( sanitize_text_field( $this->render_excerpt( $settings ) ) ); ?></div>
 												<?php } ?>
 
 												<?php if ( 'link' === $settings['post_timeline_cta_type'] ) { ?>
@@ -441,7 +441,7 @@ class Skin_Style {
 									<div class="uael-date-new">
 										<div class="inner-date-new">
 											<?php if ( '' === $settings['post_timeline_date_type'] ) { ?>
-												<p><?php echo wp_kses_post( $this->render_date( $settings ) ); ?></p>
+												<p><?php echo wp_kses_post( sanitize_text_field( $this->render_date( $settings ) ) ); ?></p>
 											<?php } elseif ( 'updated' === $settings['post_timeline_date_type'] ) { ?>
 												<p><?php echo wp_kses_post( get_the_modified_date( '', $post_id ) ); ?></p>
 											<?php } elseif ( 'custom' === $settings['post_timeline_date_type'] ) { ?>

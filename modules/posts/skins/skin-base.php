@@ -206,8 +206,9 @@ abstract class Skin_Base extends Elementor_Skin_Base {
 					),
 					'condition'          => array(
 						$this->get_control_id( 'pagination' ) => array( 'numbers' ),
+						$this->get_control_id( 'show_filters!' ) => 'yes',
 					),
-					'description'        => __( 'Pagination is prevented in the editor, and it will work on the frontend.', 'uael' ),
+					'description'        => __( 'When Filterable Tabs option is enabled, AJAX pagination will be applied by default.', 'uael' ),
 					'frontend_available' => true,
 				)
 			);
@@ -765,16 +766,17 @@ abstract class Skin_Base extends Elementor_Skin_Base {
 			$this->add_control(
 				'show_filters',
 				array(
-					'label'        => __( 'Show Filters', 'uael' ),
-					'type'         => Controls_Manager::SWITCHER,
-					'label_on'     => __( 'Yes', 'uael' ),
-					'label_off'    => __( 'No', 'uael' ),
-					'return_value' => 'yes',
-					'default'      => 'no',
-					'condition'    => array(
+					'label'              => __( 'Show Filters', 'uael' ),
+					'type'               => Controls_Manager::SWITCHER,
+					'label_on'           => __( 'Yes', 'uael' ),
+					'label_off'          => __( 'No', 'uael' ),
+					'return_value'       => 'yes',
+					'default'            => 'no',
+					'condition'          => array(
 						$this->get_control_id( 'post_structure' ) => array( 'masonry', 'normal' ),
 						'query_type' => 'custom',
 					),
+					'frontend_available' => true,
 				)
 			);
 

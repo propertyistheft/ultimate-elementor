@@ -2386,7 +2386,7 @@ class Offcanvas extends Common_Widget {
 			<div <?php echo wp_kses_post( $this->get_render_attribute_string( 'inner-wrapper' ) ); ?>>
 				<div class="uael-offcanvas-content">
 					<div class="uael-offcanvas-action-wrap">
-						<?php echo wp_kses_post( $this->close_render_action_html() ); ?>
+						<?php echo wp_kses_post( sanitize_text_field( $this->close_render_action_html() ) ); ?>
 					</div>
 					<div class="uael-offcanvas-text uael-offcanvas-content-data">
 						<?php echo do_shortcode( $this->get_offcanvas_content( $settings, $node_id ) ); ?>
@@ -2396,7 +2396,7 @@ class Offcanvas extends Common_Widget {
 			<div class="uael-offcanvas-overlay elementor-clickable"></div>
 		</div>
 			<div class="uael-offcanvas-action-wrap">
-				<?php echo wp_kses_post( $this->render_action_html() ); ?>
+				<?php echo wp_kses_post( sanitize_text_field( $this->render_action_html() ) ); ?>
 			</div>
 		<?php
 	}

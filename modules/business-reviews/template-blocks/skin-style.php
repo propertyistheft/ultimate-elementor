@@ -838,7 +838,7 @@ abstract class Skin_Style {
 		?>
 
 		<div class="uael-business-reviews-widget">
-			<div <?php echo wp_kses_post( $this->get_render_attribute_string( 'uael-reviews-parent-data' ) ); ?> <?php echo wp_kses_post( $this->get_carousel_attr() ); ?>>
+			<div <?php echo wp_kses_post( sanitize_text_field( $this->get_render_attribute_string( 'uael-reviews-parent-data' ) ) ); ?> <?php echo wp_kses_post( sanitize_text_field( $this->get_carousel_attr() ) ); ?>>
 				<?php
 				if ( 'rating' === $settings['reviews_filter_by'] ) {
 					usort( $reviews, array( $this, 'filter_by_rating' ) );

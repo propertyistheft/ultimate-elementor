@@ -1456,7 +1456,7 @@ class Countdown extends Common_Widget {
 						<?php } ?>
 					<?php } ?>
 					<div class="uael-expire-message-wrapper">
-						<div class='uael-expire-show-message'><?php echo wp_kses_post( $settings['message_after_expire'] ); ?></div>
+						<div class='uael-expire-show-message'><?php echo wp_kses_post( sanitize_text_field( $settings['message_after_expire'] ) ); ?></div>
 					</div>
 			</div>
 		</div>
