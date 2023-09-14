@@ -138,7 +138,7 @@ class ContentToggle extends Common_Widget {
 		} else {
 			switch ( $content_type ) {
 				case 'content':
-					global $wp_embed;
+					global $wp_embed; // phpcs:ignore VariableAnalysis.CodeAnalysis.VariableAnalysis.VariableRedeclaration
 					$output = '<div>' . wpautop( $wp_embed->autoembed( $normal_content_2 ) ) . '</div>';
 					break;
 				case 'saved_rows':

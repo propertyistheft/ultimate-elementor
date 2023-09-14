@@ -82,7 +82,7 @@ class UAEL_Posts_Helper {
 
 		global $_wp_additional_image_sizes;
 
-		$sizes  = get_intermediate_image_sizes();
+		$sizes  = get_intermediate_image_sizes(); // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.get_intermediate_image_sizes_get_intermediate_image_sizes
 		$result = array();
 
 		foreach ( $sizes as $size ) {

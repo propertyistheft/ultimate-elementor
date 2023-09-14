@@ -234,7 +234,7 @@ if ( ! class_exists( 'Price_List' ) ) {
 								'link'             => array( 'url' => '#' ),
 							),
 						),
-						'title_field' => '{{{ title }}}',
+						'title_field' => '{{ title }}',
 					)
 				);
 
@@ -1317,7 +1317,7 @@ if ( ! class_exists( 'Price_List' ) ) {
 										<div class="uael-price-list-title">
 								<# } #>
 										<span class="elementor-inline-editing" data-elementor-setting-key="price_list.{{ i }}.title" data-elementor-inline-editing-toolbar="basic">
-										{{{ item.title }}}
+										{{ item.title }}
 										</span>
 								<# if ( '' === settings.link_complete_box || 'no' === settings.link_complete_box ) { #>
 									<# if ( item.link.url ) { #>
@@ -1340,16 +1340,16 @@ if ( ! class_exists( 'Price_List' ) ) {
 										original_price = item.price;
 									} #>
 									<span class="uael-price-wrapper uael-pl-price-inner">
-										<span class="elementor-inline-editing uael-price-list-price {{{ price_item_cls }}}" data-elementor-setting-key="price_list.{{ i }}.price" data-elementor-inline-editing-toolbar="basic">{{{ original_price }}}
+										<span class="elementor-inline-editing uael-price-list-price {{ price_item_cls }}" data-elementor-setting-key="price_list.{{ i }}.price" data-elementor-inline-editing-toolbar="basic">{{ original_price }}
 										</span>
 										<# if( 'yes' == item.has_discount ) { #>
-											<span class="uael-price-list-discount-price elementor-inline-editing" data-elementor-setting-key="price_list.{{ i }}.price" data-elementor-inline-editing-toolbar="basic" >{{{ item.price }}}</span>
+											<span class="uael-price-list-discount-price elementor-inline-editing" data-elementor-setting-key="price_list.{{ i }}.price" data-elementor-inline-editing-toolbar="basic" >{{ item.price }}</span>
 										<# } #>
 									</span>
 								<# } #>
 							</div>
 							<# if( '' != item.item_description ) { #>
-							<p class="uael-price-list-description elementor-inline-editing" data-elementor-setting-key="price_list.{{ i }}.item_description" data-elementor-inline-editing-toolbar="basic">{{{ item.item_description }}}</p>
+							<p class="uael-price-list-description elementor-inline-editing" data-elementor-setting-key="price_list.{{ i }}.item_description" data-elementor-inline-editing-toolbar="basic">{{ item.item_description }}</p>
 							<# }
 								if ( 'yes' == item.has_discount ) {
 									original_price = item.original_price;
@@ -1357,11 +1357,11 @@ if ( ! class_exists( 'Price_List' ) ) {
 									original_price = item.price;
 								} #>
 								<span class="uael-price-wrapper uael-pl-price-outer">
-									<span class="elementor-inline-editing uael-price-list-price {{{ price_item_cls }}}" data-elementor-setting-key="price_list.{{ i }}.price" data-elementor-inline-editing-toolbar="basic">{{{ original_price }}}
+									<span class="elementor-inline-editing uael-price-list-price {{ price_item_cls }}" data-elementor-setting-key="price_list.{{ i }}.price" data-elementor-inline-editing-toolbar="basic">{{ original_price }}
 									</span>
 									<# if( 'yes' == item.has_discount ) { #>
 
-										<span class="uael-price-list-discount-price elementor-inline-editing" data-elementor-setting-key="price_list.{{ i }}.price" data-elementor-inline-editing-toolbar="basic" >{{{ item.price }}}
+										<span class="uael-price-list-discount-price elementor-inline-editing" data-elementor-setting-key="price_list.{{ i }}.price" data-elementor-inline-editing-toolbar="basic" >{{ item.price }}
 										</span>
 									<# } #>
 								</span>

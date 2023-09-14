@@ -77,8 +77,8 @@ class Module extends Module_Base {
 	 */
 	public function get_posts_title_by_id() {
 
-		if ( isset( $_POST['nonce'] ) && wp_verify_nonce( $_POST['nonce'], 'uael-post-nonce' ) ) {
-			$ids = isset( $_POST['id'] ) ? $_POST['id'] : array();
+		if ( isset( $_POST['nonce'] ) && wp_verify_nonce( sanitize_text_field( $_POST['nonce'] ), 'uael-post-nonce' ) ) {
+			$ids = isset( $_POST['id'] ) ? sanitize_text_field( $_POST['id'] ) : array();
 		}
 
 		$results = array();
@@ -106,7 +106,7 @@ class Module extends Module_Base {
 	 */
 	public function get_posts_by_query() {
 
-		if ( isset( $_POST['nonce'] ) && wp_verify_nonce( $_POST['nonce'], 'uael-post-query' ) ) {
+		if ( isset( $_POST['nonce'] ) && wp_verify_nonce( sanitize_text_field( $_POST['nonce'] ), 'uael-post-query' ) ) {
 			$search_string = isset( $_POST['q'] ) ? sanitize_text_field( $_POST['q'] ) : '';
 			$req_post_type = isset( $_POST['post_type'] ) ? sanitize_text_field( $_POST['post_type'] ) : 'all';
 		}

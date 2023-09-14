@@ -742,8 +742,8 @@ class BaSlider extends Common_Widget {
 		?>
 		<div class="uael-before-after-slider">
 			<div class="uael-ba-container" data-move-on-hover="<?php echo esc_attr( $settings['move_on_hover'] ); ?>" data-orientation="<?php echo esc_attr( $settings['orientation'] ); ?>" data-offset="<?php echo esc_attr( ( $settings['initial_offset']['size'] / 100 ) ); ?>">
-				<img class="uael-before-img" style="position: absolute;" src="<?php echo esc_attr( $before_img ); ?>" alt="<?php echo esc_attr( $settings['before_text'] ); ?>"/>
-				<img class="uael-after-img" src="<?php echo esc_attr( $after_img ); ?>" alt="<?php echo esc_attr( $settings['after_text'] ); ?>"/>
+				<img class="uael-before-img" style="position: absolute;" src="<?php echo esc_url( $before_img ); ?>" alt="<?php echo esc_attr( $settings['before_text'] ); ?>"/>
+				<img class="uael-after-img" src="<?php echo esc_url( $after_img ); ?>" alt="<?php echo esc_attr( $settings['after_text'] ); ?>"/>
 			</div>
 		</div>
 		<?php

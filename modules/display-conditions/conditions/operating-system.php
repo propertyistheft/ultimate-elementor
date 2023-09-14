@@ -104,7 +104,7 @@ class Operating_System extends Condition {
 
 		if ( is_array( $value ) && ! empty( $value ) ) {
 			foreach ( $value as $key => $name ) {
-				$match = preg_match( '/' . $os[ $name ] . '/i', $_SERVER['HTTP_USER_AGENT'] );
+				$match = isset( $_SERVER['HTTP_USER_AGENT'] ) ? preg_match( '/' . $os[ $name ] . '/i', sanitize_text_field( $_SERVER['HTTP_USER_AGENT'] ) ) : ''; // phpcs:ignore WordPressVIPMinimum.Variables.RestrictedVariables.cache_constraints___SERVER__HTTP_USER_AGENT__
 
 				if ( $match ) {
 					if ( 'not' !== $operator ) {

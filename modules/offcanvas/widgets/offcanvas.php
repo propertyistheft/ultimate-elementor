@@ -2202,8 +2202,8 @@ class Offcanvas extends Common_Widget {
 			if ( ( 'floating' === $settings['uael_display_position'] ) && $is_editor ) {
 				?>
 				<div class="uael-builder-msg" style="text-align: center;">
-					<h5><?php esc_attr_e( 'Off - Canvas - ID ', 'uael' ); ?><?php echo esc_attr( $id ); ?></h5>
-					<p><?php esc_attr_e( 'Click here to edit the "Off- Canvas" settings. This text will not be visible on frontend.', 'uael' ); ?></p>
+					<h5><?php esc_html_e( 'Off - Canvas - ID ', 'uael' ); ?><?php echo esc_html( $id ); ?></h5>
+					<p><?php esc_html_e( 'Click here to edit the "Off- Canvas" settings. This text will not be visible on frontend.', 'uael' ); ?></p>
 				</div>
 
 				<?php
@@ -2215,8 +2215,8 @@ class Offcanvas extends Common_Widget {
 		) {
 			?>
 			<div class="uael-builder-msg" style="text-align: center;">
-				<h5><?php esc_attr_e( 'Off - Canvas - ID ', 'uael' ); ?><?php echo esc_attr( $id ); ?></h5>
-				<p><?php esc_attr_e( 'Click here to edit the "Off- Canvas" settings. This text will not be visible on frontend.', 'uael' ); ?></p>
+				<h5><?php esc_html_e( 'Off - Canvas - ID ', 'uael' ); ?><?php echo esc_html( $id ); ?></h5>
+				<p><?php esc_html_e( 'Click here to edit the "Off- Canvas" settings. This text will not be visible on frontend.', 'uael' ); ?></p>
 			</div>
 			<?php
 		} else {
@@ -2245,8 +2245,8 @@ class Offcanvas extends Common_Widget {
 					if ( ( 'floating' === $settings['uael_display_position'] ) && $is_editor ) {
 						?>
 						<div class="uael-builder-msg" style="text-align: center;">
-								<h5><?php esc_attr_e( 'Off - Canvas - ID ', 'uael' ); ?><?php echo esc_attr( $id ); ?></h5>
-								<p><?php esc_attr_e( 'Click here to edit the "Off- Canvas" settings. This text will not be visible on frontend.', 'uael' ); ?></p>
+								<h5><?php esc_html_e( 'Off - Canvas - ID ', 'uael' ); ?><?php echo esc_html( $id ); ?></h5>
+								<p><?php esc_html_e( 'Click here to edit the "Off- Canvas" settings. This text will not be visible on frontend.', 'uael' ); ?></p>
 						</div>
 						<?php
 					}
@@ -2313,7 +2313,7 @@ class Offcanvas extends Common_Widget {
 
 				'data-content'          => $settings['content_type'],
 
-				'data-device'           => ( false !== ( stripos( $_SERVER['HTTP_USER_AGENT'], 'iPhone' ) ) ? 'true' : 'false' ),
+				'data-device'           => ( isset( $_SERVER['HTTP_USER_AGENT'] ) && false !== ( stripos( sanitize_text_field( $_SERVER['HTTP_USER_AGENT'] ), 'iPhone' ) ) ? 'true' : 'false' ), // phpcs:ignore WordPressVIPMinimum.Variables.RestrictedVariables.cache_constraints___SERVER__HTTP_USER_AGENT__
 
 				'data-custom'           => $settings['offcanvas_custom'],
 

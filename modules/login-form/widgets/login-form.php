@@ -2515,8 +2515,8 @@ class LoginForm extends Common_Widget {
 
 		$invalid_username = '';
 		$invalid_password = '';
-		$session_error    = isset( $_SESSION['uael_error'] ) ? $_SESSION['uael_error'] : '';
-		$session_id       = session_id();
+		$session_error    = isset( $_SESSION['uael_error'] ) ? $_SESSION['uael_error'] : ''; // phpcs:ignore WordPressVIPMinimum.Variables.RestrictedVariables.session___SESSION
+		$session_id       = session_id(); // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.session_session_id
 
 		if ( ! empty( $session_id ) ) {
 			if ( isset( $_SESSION['uael_error'] ) ) {
@@ -2528,7 +2528,7 @@ class LoginForm extends Common_Widget {
 					} elseif ( 'incorrect_password' === $session_error ) {
 						$invalid_password = __( 'Error: The Password you have entered is incorrect.', 'uael' );
 					}
-					unset( $_SESSION['uael_error'] );
+					unset( $_SESSION['uael_error'] ); // phpcs:ignore WordPressVIPMinimum.Variables.RestrictedVariables.session___SESSION
 				}
 			}
 		}
@@ -2899,7 +2899,7 @@ class LoginForm extends Common_Widget {
 						</div>
 						<div class="uael-divider-content">
 							<# if ( '' !== settings.separator_line_text ) { #>
-								<span class="uael-divider-text elementor-inline-editing" data-elementor-setting-key="separator_line_text" data-elementor-inline-editing-toolbar="basic">{{{ settings.separator_line_text }}}</span>
+								<span class="uael-divider-text elementor-inline-editing" data-elementor-setting-key="separator_line_text" data-elementor-inline-editing-toolbar="basic">{{ settings.separator_line_text }}</span>
 							<# } #>
 						</div>
 						<div class="uael-separator-line uael-side-right">
@@ -2992,7 +2992,7 @@ class LoginForm extends Common_Widget {
 
 						<div class="{{ fieldGroupClasses }}">
 							<# if ( 'custom' === settings.show_labels && '' !== settings.user_label ) { #>
-								<label class="elementor-field-label" for="user"> {{{ settings.user_label }}} </label>
+								<label class="elementor-field-label" for="user"> {{ settings.user_label }} </label>
 							<# } else if ( 'default' === settings.show_labels ) { #>
 								<label class="elementor-field-label" for="user">
 									<?php echo esc_attr_e( 'Username or Email Address', 'uael' ); ?>
@@ -3032,7 +3032,7 @@ class LoginForm extends Common_Widget {
 
 						<div class="{{ fieldGroupClasses }}">
 							<# if ( 'custom' === settings.show_labels && '' !== settings.password_label ) { #>
-								<label class="elementor-field-label" for="password"> {{{ settings.password_label }}} </label>
+								<label class="elementor-field-label" for="password"> {{ settings.password_label }} </label>
 							<# } else if ( 'default' === settings.show_labels ) { #>
 								<label class="elementor-field-label" for="password">
 									<?php echo esc_attr_e( 'Password', 'uael' ); ?>
@@ -3069,7 +3069,7 @@ class LoginForm extends Common_Widget {
 							<div class="elementor-field-type-checkbox elementor-field-group elementor-column elementor-col-100 elementor-remember-me">
 								<label for="uael-login-remember-me">
 									<input type="checkbox" id="uael-login-remember-me" class="uael-login-form-remember" name="rememberme" value="forever">
-									<span class="uael-login-form-remember"><?php echo esc_attr__( 'Remember Me', 'uael' ); ?></span>
+									<span class="uael-login-form-remember"><?php echo esc_html__( 'Remember Me', 'uael' ); ?></span>
 								</label>
 							</div>
 						<# } #>
@@ -3084,7 +3084,7 @@ class LoginForm extends Common_Widget {
 												migrated = elementor.helpers.isIconMigrated( settings, 'button_icon' );
 												#>
 												<# if ( iconHTML && iconHTML.rendered && ( settings.button_icon || migrated ) ) { #>
-													{{{ iconHTML.value }}}
+													{{{ iconHTML.value }}} <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 												<# } else if( ! settings.button_icon ) { #>
 													<i class="{{ settings.button_icon }}" aria-hidden="true"></i>
 												<# } #>
@@ -3109,7 +3109,7 @@ class LoginForm extends Common_Widget {
 										<# } else { #>
 											<a class="uael-login-form-footer-link" href="<?php echo esc_url( wp_registration_url() ); ?>">
 										<# } #>
-											<span class="elementor-inline-editing" data-elementor-setting-key="show_register_text" data-elementor-inline-editing-toolbar="basic">{{{ settings.show_register_text }}}</span>
+											<span class="elementor-inline-editing" data-elementor-setting-key="show_register_text" data-elementor-inline-editing-toolbar="basic">{{ settings.show_register_text }}</span>
 										</a>
 									<# } #>
 								<?php } ?>
@@ -3120,7 +3120,7 @@ class LoginForm extends Common_Widget {
 									<# } else { #>
 										<a class="uael-login-form-footer-link" href="<?php echo esc_url( wp_lostpassword_url() ); ?>">
 									<# } #>
-										<span class="elementor-inline-editing" data-elementor-setting-key="show_lost_password_text" data-elementor-inline-editing-toolbar="basic">{{{ settings.show_lost_password_text }}}</span>
+										<span class="elementor-inline-editing" data-elementor-setting-key="show_lost_password_text" data-elementor-inline-editing-toolbar="basic">{{ settings.show_lost_password_text }}</span>
 									</a>
 								<# } #>
 

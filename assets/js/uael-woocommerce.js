@@ -445,7 +445,7 @@
 
 		slider_selector.slick( slider_options );
 
-		window.addEventListener( "resize", function( event ) {			
+		window.addEventListener( "resize", function( event ) {
 			slider_selector.slick( 'resize' );
 		});
 
@@ -818,6 +818,7 @@
 			        data: {
 			          action: "uae_woo_checkout_update_order_review",
 					  content: widget_data,
+					  nonce: uael_wc_script.checkout_update_nonce,
 			        },
 				    success: function success(data) {
 
@@ -835,7 +836,7 @@
 		});
 
  		$( '.uael-woo-checkout-coupon form.checkout_coupon' ).submit( function ( event ) {
-		    render_order_review();	  
+		    render_order_review();
 		});
 
 		UaelCheckout = {
@@ -1045,17 +1046,17 @@
 					scrollTop: tabs_wrapper.offset().top - 100
 				}, 800 );
 			},
-			
+
 			_order_review_ajax: function() {
 		 		woo_checkout.on('change', 'select.shipping_method, input[name^="shipping_method"], #ship-to-different-address input, .update_totals_on_change select, .update_totals_on_change input[type="radio"], .update_totals_on_change input[type="checkbox"], input[name^="billing_postcode"], input[name^="shipping_postcode"]', function () {
 
 			    	$(document.body).trigger('update_checkout');
 					render_order_review();
 
-				}); 
+				});
 			},
 		}
-			
+
 		$.fn.getType = function() {
 			try {
 				return this[0].tagName == "INPUT" ? this[0].type.toLowerCase() : this[0].tagName.toLowerCase();

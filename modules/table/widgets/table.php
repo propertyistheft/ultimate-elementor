@@ -471,7 +471,7 @@ class Table extends Common_Widget {
 					'type'        => Controls_Manager::REPEATER,
 					'show_label'  => true,
 					'fields'      => $repeater->get_controls(),
-					'title_field' => '{{ header_content_type }}: {{{ heading_text }}}',
+					'title_field' => '{{ header_content_type }}: {{ heading_text }}',
 					'default'     => array(
 						array(
 							'header_content_type' => 'row',
@@ -910,7 +910,7 @@ class Table extends Common_Widget {
 					),
 				),
 				'fields'      => $repeater_content->get_controls(),
-				'title_field' => '{{ content_type }}: {{{ cell_text }}}',
+				'title_field' => '{{ content_type }}: {{ cell_text }}',
 			)
 		);
 
@@ -2208,7 +2208,7 @@ class Table extends Common_Widget {
 
 		// Attempt to change permissions if not readable.
 		if ( ! is_readable( $file ) ) {
-			chmod( $file, 0744 );
+			chmod( $file, 0744 ); // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.chmod_chmod
 		}
 
 		// Check if file is writable, then open it in 'read only' mode.

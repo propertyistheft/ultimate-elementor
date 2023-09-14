@@ -1014,7 +1014,6 @@ class Woo_Add_To_Cart extends Common_Widget {
 				</span>
 				<?php
 			} else {
-				global $product;
 				$product = wc_get_product();
 
 				if ( empty( $product ) ) {

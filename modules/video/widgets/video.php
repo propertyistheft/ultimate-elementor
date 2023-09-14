@@ -2202,12 +2202,12 @@ class Video extends Common_Widget {
 			<div class="uael-vimeo-headers">
 				<?php if ( 'yes' === $settings['vimeo_title'] ) { ?>
 				<div class="uael-vimeo-title">
-					<a href="<?php $settings['vimeo_link']; ?>"><?php echo esc_attr( $vimeo[0]['title'] ); ?></a>
+					<a href="<?php $settings['vimeo_link']; ?>"><?php echo esc_html( $vimeo[0]['title'] ); ?></a>
 				</div>
 				<?php } ?>
 				<?php if ( 'yes' === $settings['vimeo_byline'] ) { ?>
 				<div class="uael-vimeo-byline">
-					<?php esc_attr_e( 'from ', 'uael' ); ?> <a href="<?php $settings['vimeo_link']; ?>"><?php echo esc_attr( $vimeo[0]['user_name'] ); ?></a>
+					<?php esc_attr_e( 'from ', 'uael' ); ?> <a href="<?php $settings['vimeo_link']; ?>"><?php echo esc_html( $vimeo[0]['user_name'] ); ?></a>
 				</div>
 				<?php } ?>
 			</div>
@@ -2267,7 +2267,7 @@ class Video extends Common_Widget {
 		if ( 'yes' === $settings['video_double_click'] ) {
 			$device = 'false';
 		} else {
-			$device = ( false !== ( stripos( $_SERVER['HTTP_USER_AGENT'], 'iPhone' ) ) ? 'true' : 'false' );
+			$device = ( isset( $_SERVER['HTTP_USER_AGENT'] ) && false !== ( stripos( sanitize_text_field( $_SERVER['HTTP_USER_AGENT'] ), 'iPhone' ) ) ? 'true' : 'false' ); // phpcs:ignore WordPressVIPMinimum.Variables.RestrictedVariables.cache_constraints___SERVER__HTTP_USER_AGENT__
 		}
 
 		switch ( $settings['video_type'] ) {
@@ -2546,9 +2546,9 @@ class Video extends Common_Widget {
 			?>
 			<div class="uael-builder-msg elementor-alert elementor-alert-warning">
 				<?php if ( $is_custom_thumbnail && '' === $custom_thumbnail_url ) { ?>
-					<span class="elementor-alert-description"><?php esc_attr_e( 'Please set a custom thumbnail to display video schema properly.', 'uael' ); ?></span>
+					<span class="elementor-alert-description"><?php esc_html_e( 'Please set a custom thumbnail to display video schema properly.', 'uael' ); ?></span>
 				<?php } else { ?>
-					<span class="elementor-alert-description"><?php esc_attr_e( 'Some fields are empty under the video schema section. Please fill in all required fields.', 'uael' ); ?></span>
+					<span class="elementor-alert-description"><?php esc_html_e( 'Some fields are empty under the video schema section. Please fill in all required fields.', 'uael' ); ?></span>
 				<?php } ?>
 			</div>
 			<?php

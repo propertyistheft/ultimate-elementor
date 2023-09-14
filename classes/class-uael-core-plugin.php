@@ -374,10 +374,11 @@ class UAEL_Core_Plugin {
 		$wc_localize = apply_filters(
 			'uael_js_localize',
 			array(
-				'ajax_url'          => admin_url( 'admin-ajax.php' ),
-				'get_product_nonce' => wp_create_nonce( 'uael-product-nonce' ),
-				'quick_view_nonce'  => wp_create_nonce( 'uael-qv-nonce' ),
-				'add_cart_nonce'    => wp_create_nonce( 'uael-ac-nonce' ),
+				'ajax_url'              => admin_url( 'admin-ajax.php' ),
+				'get_product_nonce'     => wp_create_nonce( 'uael-product-nonce' ),
+				'quick_view_nonce'      => wp_create_nonce( 'uael-qv-nonce' ),
+				'add_cart_nonce'        => wp_create_nonce( 'uael-ac-nonce' ),
+				'checkout_update_nonce' => wp_create_nonce( 'uael-checkout-nonce' ),
 			)
 		);
 

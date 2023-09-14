@@ -106,12 +106,12 @@ class UAEL_Geolocation {
 		$get_ip_address = '';
 		if ( isset( $_SERVER['HTTP_X_REAL_IP'] ) ) { // WPCS: input var ok, CSRF ok.
 			$get_ip_address = sanitize_text_field( wp_unslash( $_SERVER['HTTP_X_REAL_IP'] ) ); // WPCS: input var ok, CSRF ok.
-		} elseif ( isset( $_SERVER['HTTP_X_FORWARDED_FOR'] ) ) { // WPCS: input var ok, CSRF ok.
+		} elseif ( isset( $_SERVER['HTTP_X_FORWARDED_FOR'] ) ) { // phpcs:ignore WordPressVIPMinimum.Variables.ServerVariables.UserControlledHeaders
 			// Proxy servers can send through this header like this: X-Forwarded-For: client1, proxy1, proxy2
 			// Make sure we always only send through the first IP in the list which should always be the client IP.
-			$get_ip_address = (string) rest_is_ip_address( trim( current( preg_split( '/[,:]/', sanitize_text_field( wp_unslash( $_SERVER['HTTP_X_FORWARDED_FOR'] ) ) ) ) ) ); // WPCS: input var ok, CSRF ok.
-		} elseif ( isset( $_SERVER['REMOTE_ADDR'] ) ) {
-			$get_ip_address = sanitize_text_field( wp_unslash( $_SERVER['REMOTE_ADDR'] ) );
+			$get_ip_address = (string) rest_is_ip_address( trim( current( preg_split( '/[,:]/', sanitize_text_field( wp_unslash( $_SERVER['HTTP_X_FORWARDED_FOR'] ) ) ) ) ) ); // phpcs:ignore WordPressVIPMinimum.Variables.ServerVariables.UserControlledHeaders
+		} elseif ( isset( $_SERVER['REMOTE_ADDR'] ) ) { // phpcs:ignore WordPressVIPMinimum.Variables.ServerVariables.UserControlledHeaders
+			$get_ip_address = sanitize_text_field( wp_unslash( $_SERVER['REMOTE_ADDR'] ) ); // phpcs:ignore WordPressVIPMinimum.Variables.ServerVariables.UserControlledHeaders, WordPressVIPMinimum.Variables.RestrictedVariables.cache_constraints___SERVER__REMOTE_ADDR__
 		}
 		return $get_ip_address;
 	}

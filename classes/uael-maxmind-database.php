@@ -165,7 +165,7 @@ class UAEL_Maxmind_Database {
 			);
 		}
 		// Remove the archive since we only care about a single file in it.
-		unlink( $tmp_archive_path );
+		unlink( $tmp_archive_path ); // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.file_ops_unlink
 
 		return array(
 			'error'   => false,

@@ -1488,7 +1488,7 @@ class Woo_Categories extends Common_Widget {
 	 * @param object $category Category object.
 	 */
 	public function template_loop_category_link_open( $category ) {
-		$link = apply_filters( 'uael_woo_category_link', esc_url( get_term_link( $category, 'product_cat' ) ) );
+		$link = apply_filters( 'uael_woo_category_link', get_term_link( $category, 'product_cat' ) );
 
 		echo '<a href="' . esc_url( $link ) . '">';
 	}

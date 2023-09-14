@@ -592,7 +592,7 @@ class Team_Member extends Common_Widget {
 				'condition'   => array(
 					'social_icons_settings' => 'yes',
 				),
-				'title_field' => '<# var migrated = "undefined" !== typeof __fa4_migrated, social = ( "undefined" === typeof social ) ? false : social; #>{{{ elementor.helpers.getSocialNetworkNameFromIcon( new_social, social, true, migrated, true ) }}}',
+				'title_field' => '<# var migrated = "undefined" !== typeof __fa4_migrated, social = ( "undefined" === typeof social ) ? false : social; #>{{{ elementor.helpers.getSocialNetworkNameFromIcon( new_social, social, true, migrated, true ) }}}', //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation
 			)
 		);
 
@@ -1682,7 +1682,7 @@ class Team_Member extends Common_Widget {
 
 									?>
 									<a <?php echo wp_kses_post( $this->get_render_attribute_string( $link_key ) ); ?>>
-										<span class="elementor-screen-only"><?php echo esc_attr( ucwords( $social ) ); ?></span>
+										<span class="elementor-screen-only"><?php echo esc_html( ucwords( $social ) ); ?></span>
 										<?php
 										if ( $is_new || $migrated ) {
 											\Elementor\Icons_Manager::render_icon( $item['new_social'] );
@@ -1705,7 +1705,7 @@ class Team_Member extends Common_Widget {
 									$class_animation = ' elementor-animation-' . $settings['icon_hover_animation'];
 									?>
 									<a class="elementor-icon elementor-social-icon elementor-social-icon-<?php echo esc_attr( $social ) . esc_attr( $class_animation ); ?>" <?php echo wp_kses_post( $this->get_render_attribute_string( $link_key ) ); ?>>
-										<span class="elementor-screen-only"><?php echo esc_attr( ucwords( $social ) ); ?></span>
+										<span class="elementor-screen-only"><?php echo esc_html( ucwords( $social ) ); ?></span>
 										<i class="<?php echo esc_attr( $item['social'] ); ?>"></i>
 									</a>
 								<?php } ?>
@@ -1748,7 +1748,7 @@ class Team_Member extends Common_Widget {
 			}
 			view.addRenderAttribute( 'member-classname', 'class', 'uael-team-member' );
 		#>
-		<div {{{ view.getRenderAttributeString( 'member-classname' ) }}} >
+		<div {{{ view.getRenderAttributeString( 'member-classname' ) }}} > <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 			<div class="uael-team-member-wrap">
 				<div class="uael-member-wrap">
 					<#
@@ -1763,11 +1763,11 @@ class Team_Member extends Common_Widget {
 					var image_url = elementor.imagesManager.getImageUrl( image );
 					if( image_url !== '' ) {
 					#>
-						<div class="uael-team-member-image"><img src="{{{ image_url }}}" class="elementor-animation-{{{settings.hover_animation}}}" ></div>
+						<div class="uael-team-member-image"><img src="{{ image_url }}" class="elementor-animation-{{settings.hover_animation}}" ></div>
 						<#
 					}
 					view.addRenderAttribute( 'member_content', 'class', 'uael-team-member-content' ); #>
-					<div {{{ view.getRenderAttributeString( 'member_content' )}}} >
+					<div {{{ view.getRenderAttributeString( 'member_content' )}}} > <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 						<div class="uael-team-member-name">
 							<# if ( '' !== settings.team_member_name ) {
 								view.addRenderAttribute( 'team_member_name', 'class', 'uael-team-name' );
@@ -1782,7 +1782,7 @@ class Team_Member extends Common_Widget {
 									nameSizeTag = UAEWidgetsData.allowed_tags.includes( nameSizeTag.toLowerCase() ) ? nameSizeTag : 'div';
 								}
 								#>
-								<{{{ nameSizeTag }}} {{{ view.getRenderAttributeString( 'team_member_name' )}}}>{{{settings.team_member_name}}}</{{{ nameSizeTag }}}>
+								<{{ nameSizeTag }} {{{ view.getRenderAttributeString( 'team_member_name' )}}}>{{settings.team_member_name}}</{{ nameSizeTag }}> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 							<# } #>
 						</div>
 						<#
@@ -1801,7 +1801,7 @@ class Team_Member extends Common_Widget {
 
 								var memberDesignHtml = settings.team_member_desig;
 								#>
-								<div {{{ view.getRenderAttributeString( 'team_member_desig' ) }}}>{{{ memberDesignHtml }}}</div>
+								<div {{ view.getRenderAttributeString( 'team_member_desig' ) }}>{{ memberDesignHtml }}</div>
 							<# } #>
 						</div>
 						<# if( 'yes' == settings.separator_settings) {
@@ -1819,7 +1819,7 @@ class Team_Member extends Common_Widget {
 
 								var memberDescHtml = settings.team_member_desc;
 								#>
-								<div {{{ view.getRenderAttributeString( 'team_member_desc' ) }}}>{{{ memberDescHtml }}}</div>
+								<div {{ view.getRenderAttributeString( 'team_member_desc' ) }}>{{ memberDescHtml }}</div>
 							<# } #>
 						</div>
 						<# if( 'yes' == settings.separator_settings) {
@@ -1841,12 +1841,12 @@ class Team_Member extends Common_Widget {
 												#>
 												<a class="elementor-icon elementor-social-icon elementor-social-icon-{{ social }} elementor-animation-{{ settings.icon_hover_animation }} elementor-repeater-item-{{item._id}}" href="{{ link }}">
 
-												<span class="elementor-screen-only">{{{ social }}}</span>
+												<span class="elementor-screen-only">{{ social }}</span>
 
 												<#
 													iconsHTML[ index ] = elementor.helpers.renderIcon( view, item.new_social, {}, 'i', 'object' );
 													if ( ( ! item.social || migrated ) && iconsHTML[ index ] && iconsHTML[ index ].rendered ) { #>
-														{{{ iconsHTML[ index ].value }}}
+														{{{ iconsHTML[ index ].value }}} <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 													<# } else { #>
 														<i class="{{ item.social }}"></i>
 													<# }
@@ -1856,7 +1856,7 @@ class Team_Member extends Common_Widget {
 											<# var link = item.link ? item.link.url : '',
 											social = item.social.replace( 'fa fa-', '' ); #>
 											<a class="elementor-icon elementor-social-icon elementor-social-icon-{{ social }} elementor-animation-{{ settings.icon_hover_animation }}" href="{{ link }}">
-												<span class="elementor-screen-only">{{{ social }}}</span>
+												<span class="elementor-screen-only">{{ social }}</span>
 												<i class="{{ item.social }}"></i>
 											</a>
 										<?php } ?>

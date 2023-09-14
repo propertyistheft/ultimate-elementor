@@ -2648,8 +2648,8 @@ class Woo_Mini_Cart extends Common_Widget {
 		if ( ( 'floating' === $settings['cart_button_display_position'] ) && $is_editor ) {
 			?>
 			<div class="uael-builder-msg" style="text-align: center;">
-				<h5><?php esc_attr_e( 'Woo - Mini Cart - ID ', 'uael' ); ?><?php echo esc_attr( $id ); ?></h5>
-				<p><?php esc_attr_e( 'Click here to edit the "Woo - Mini Cart" settings. This text will not be visible on frontend.', 'uael' ); ?></p>
+				<h5><?php esc_html_e( 'Woo - Mini Cart - ID ', 'uael' ); ?><?php echo esc_attr( $id ); ?></h5>
+				<p><?php esc_html_e( 'Click here to edit the "Woo - Mini Cart" settings. This text will not be visible on frontend.', 'uael' ); ?></p>
 			</div>
 			<?php
 		}

@@ -157,9 +157,9 @@ class Module extends Module_Base {
 										}else{
 											return;
 										}
-										if(elementorFrontend.isEditMode() && $scope.find(".uael-particle-wrapper").hasClass("js-is-enabled") && window.backend == 0 ){		
+										if(elementorFrontend.isEditMode() && $scope.find(".uael-particle-wrapper").hasClass("js-is-enabled") && window.backend == 0 ){
 											var uael_url = uael_particles_script.uael_particles_url;
-											
+
 											jQuery.cachedScript( uael_url );
 											window.backend = 1;
 										}else if(elementorFrontend.isEditMode()){
@@ -574,7 +574,7 @@ class Module extends Module_Base {
 				view.addRenderAttribute( 'particle_data', 'data-uael-partdata', settings.uae_particle_json );
 			}
 			#>
-			<div {{{ view.getRenderAttributeString( 'particle_data' ) }}}></div>
+			<div {{{ view.getRenderAttributeString( 'particle_data' ) }}}></div> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 		<# } #>
 		<?php
 		$slider_content = ob_get_contents();

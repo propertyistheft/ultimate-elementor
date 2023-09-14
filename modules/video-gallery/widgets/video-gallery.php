@@ -519,7 +519,7 @@ class Video_Gallery extends Common_Widget {
 						),
 
 					),
-					'title_field' => '{{{ title }}}',
+					'title_field' => '{{ title }}',
 				)
 			);
 
@@ -2340,7 +2340,7 @@ class Video_Gallery extends Common_Widget {
 			<?php } ?>
 		<?php } else { ?>
 			<img class="uael-vg__dummy-image" alt="" />
-			<img class="uael-vg__play-image <?php echo 'elementor-animation-' . esc_attr( $settings['hover_animation_img'] ); ?>" src="<?php echo esc_attr( $settings['play_img']['url'] ); ?>" alt="<?php echo wp_kses_post( Control_Media::get_image_alt( $settings['play_img'] ) ); ?>"/>
+			<img class="uael-vg__play-image <?php echo 'elementor-animation-' . esc_attr( $settings['hover_animation_img'] ); ?>" src="<?php echo esc_url( $settings['play_img']['url'] ); ?>" alt="<?php echo wp_kses_post( Control_Media::get_image_alt( $settings['play_img'] ) ); ?>"/>
 
 			<?php
 		}
@@ -2652,7 +2652,7 @@ class Video_Gallery extends Common_Widget {
 						foreach ( $filters as $key => $value ) {
 							$special_char = preg_replace( '/[^a-zA-Z0-9]/', '-', strtolower( $value ) );
 							?>
-							<li class="uael-video__gallery-filter" data-filter="<?php echo '.filter-' . esc_attr( $special_char ); ?>"><?php echo esc_attr( $value ); ?></li>
+							<li class="uael-video__gallery-filter" data-filter="<?php echo '.filter-' . esc_attr( $special_char ); ?>"><?php echo esc_html( $value ); ?></li>
 						<?php } ?>
 					</ul>
 
@@ -2666,7 +2666,7 @@ class Video_Gallery extends Common_Widget {
 								foreach ( $filters as $key => $value ) {
 									$special_char = preg_replace( '/[^a-zA-Z0-9]/', '-', strtolower( $value ) );
 									?>
-									<li class="uael-filters-dropdown-item uael-video__gallery-filter " data-filter="<?php echo '.filter-' . esc_attr( $special_char ); ?>"><?php echo esc_attr( $value ); ?></li>
+									<li class="uael-filters-dropdown-item uael-video__gallery-filter " data-filter="<?php echo '.filter-' . esc_attr( $special_char ); ?>"><?php echo esc_html( $value ); ?></li>
 								<?php } ?>
 							</ul>
 						</div>
@@ -2725,9 +2725,9 @@ class Video_Gallery extends Common_Widget {
 				?>
 				<div class="uael-builder-msg elementor-alert elementor-alert-warning">
 					<?php if ( $is_custom && '' === $custom_thumbnail_url ) { ?>
-						<span class="elementor-alert-description"><?php esc_attr_e( 'Please set a custom thumbnail to display video gallery schema properly.', 'uael' ); ?></span>
+						<span class="elementor-alert-description"><?php esc_html_e( 'Please set a custom thumbnail to display video gallery schema properly.', 'uael' ); ?></span>
 					<?php } else { ?>
-						<span class="elementor-alert-description"><?php esc_attr_e( 'Some fields are empty under the video gallery schema section. Please fill in all required fields.', 'uael' ); ?></span>
+						<span class="elementor-alert-description"><?php esc_html_e( 'Some fields are empty under the video gallery schema section. Please fill in all required fields.', 'uael' ); ?></span>
 					<?php } ?>
 				</div>
 				<?php

@@ -433,7 +433,7 @@ class Nav_Menu extends Common_Widget {
 						'text'      => __( 'Sub Menu', 'uael' ),
 					),
 				),
-				'title_field' => '{{{ text }}}',
+				'title_field' => '{{ text }}',
 				'separator'   => 'before',
 				'condition'   => array(
 					'menu_type' => 'custom',

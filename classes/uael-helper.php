@@ -872,7 +872,7 @@ class UAEL_Helper {
 	 * @since 1.32.0
 	 */
 	public static function get_local_time( $format = 'Y-m-d h:i:s A' ) {
-		$timezone_name   = timezone_name_from_abbr( '', (int) $_COOKIE['GetLocalTimeZone'] * 60, false );
+		$timezone_name   = isset( $_COOKIE['GetLocalTimeZone'] ) ? timezone_name_from_abbr( '', (int) $_COOKIE['GetLocalTimeZone'] * 60, false ) : ''; // phpcs:ignore WordPressVIPMinimum.Variables.RestrictedVariables.cache_constraints___COOKIE
 		$local_time_zone = isset( $timezone_name ) && ! empty( $timezone_name ) ? str_replace( 'GMT ', 'GMT+', $timezone_name ) : date_default_timezone_get();
 		$now_date        = new \DateTime( 'now', new \DateTimeZone( $local_time_zone ) );
 		$today           = $now_date->format( $format );
@@ -1151,7 +1151,7 @@ class UAEL_Helper {
 		$param1     = '%\_transient\_%';
 		$param2     = '%_uael_reviews_%';
 		$param3     = '%\_transient\_timeout%';
-		$transients = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM {$wpdb->options} WHERE option_name LIKE %s AND option_name LIKE %s AND option_name NOT LIKE %s", $param1, $param2, $param3 ) );
+		$transients = $wpdb->get_results( $wpdb->prepare( "SELECT * FROM {$wpdb->options} WHERE option_name LIKE %s AND option_name LIKE %s AND option_name NOT LIKE %s", $param1, $param2, $param3 ) ); // phpcs:ignore WordPress.DB.DirectDatabaseQuery.DirectQuery, WordPress.DB.DirectDatabaseQuery.NoCaching
 
 		foreach ( $transients as $transient ) {
 			$transient_name = $transient->option_name;
@@ -1260,7 +1260,7 @@ class UAEL_Helper {
 
 		foreach ( $server_ip_keys as $key ) {
 			if ( isset( $_SERVER[ $key ] ) && filter_var( $_SERVER[ $key ], FILTER_VALIDATE_IP ) ) {
-				return $_SERVER[ $key ];
+				return sanitize_text_field( $_SERVER[ $key ] );
 			}
 		}
 
@@ -1289,7 +1289,7 @@ class UAEL_Helper {
 					'orderby'        => 'title',
 					'order'          => 'ASC',
 					'posts_per_page' => '-1',
-					'tax_query'      => array(
+					'tax_query'      => array( // phpcs:ignore WordPress.DB.SlowDBQuery.slow_db_query_tax_query
 						array(
 							'taxonomy' => 'elementor_library_type',
 							'field'    => 'slug',

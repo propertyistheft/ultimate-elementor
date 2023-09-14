@@ -16,7 +16,7 @@ $settings = UAEL_Helper::get_white_labels();
 <div class="uael-container uael-branding-wrapper">
 <form method="post" class="wrap clear" action="" >
 <div class="wrap uael-addon-wrap clear">
-	<h1 class="screen-reader-text"><?php esc_attr_e( 'White Label', 'uael' ); ?></h1>
+	<h1 class="screen-reader-text"><?php esc_html_e( 'White Label', 'uael' ); ?></h1>
 	<div id="poststuff">
 		<div id="post-body" class="columns-2">
 			<div id="post-body-content">
@@ -24,16 +24,16 @@ $settings = UAEL_Helper::get_white_labels();
 					<li>
 						<div class="branding-form postbox">
 							<h2 class="hndle ui-sortable-handle">
-								<span><?php esc_attr_e( 'Author Details', 'uael' ); ?></span>
+								<span><?php esc_html_e( 'Author Details', 'uael' ); ?></span>
 							</h2>
 							<div class="inside">
 								<div class="form-wrap">
 									<div class="form-field">
-										<label for="uael-wl-agency-author"><?php esc_attr_e( 'Author:', 'uael' ); ?></label>
+										<label for="uael-wl-agency-author"><?php esc_html_e( 'Author:', 'uael' ); ?></label>
 										<input type="text" name="uael_white_label[agency][author]" id="uael-wl-agency-author" placeholder="Brainstorm Force" class="placeholder placeholder-active" value="<?php echo esc_attr( $settings['agency']['author'] ); ?>">
 									</div>
 									<div class="form-field">
-										<label for="uael-wl-agency-author-url"><?php esc_attr_e( 'Author URL:', 'uael' ); ?></label>
+										<label for="uael-wl-agency-author-url"><?php esc_html_e( 'Author URL:', 'uael' ); ?></label>
 										<input type="url" placeholder="https://www.brainstormforce.com" name="uael_white_label[agency][author_url]" id="uael-wl-agency-author-url" class="placeholder placeholder-active" value="<?php echo esc_url( $settings['agency']['author_url'] ); ?>">
 									</div>
 									<div class="clear"></div>
@@ -44,22 +44,22 @@ $settings = UAEL_Helper::get_white_labels();
 					<li>
 						<div class="branding-form postbox">
 							<h2 class="hndle ui-sortable-handle">
-								<span><?php esc_attr_e( 'Plugin Details', 'uael' ); ?></span>
+								<span><?php esc_html_e( 'Plugin Details', 'uael' ); ?></span>
 							</h2>
 
 							<div class="inside">
 								<div class="form-wrap">
 									<div class="form-field">
-										<label for="uael-wl-plugin-name"><?php esc_attr_e( 'Plugin Name:', 'uael' ); ?></label>
+										<label for="uael-wl-plugin-name"><?php esc_html_e( 'Plugin Name:', 'uael' ); ?></label>
 										<input type="text" placeholder="<?php echo esc_attr( UAEL_PLUGIN_NAME ); ?>" name="uael_white_label[plugin][name]" id="uael-wl-plugin-name" class="placeholder placeholder-active" value="<?php echo esc_attr( $settings['plugin']['name'] ); ?>">
 									</div>
 									<div class="form-field">
-										<label for="uael-wl-plugin-short_name"><?php esc_attr_e( 'Plugin Short Name:', 'uael' ); ?></label>
+										<label for="uael-wl-plugin-short_name"><?php esc_html_e( 'Plugin Short Name:', 'uael' ); ?></label>
 										<input type="text" name="uael_white_label[plugin][short_name]" id="uael-wl-plugin-short_name" placeholder="<?php echo esc_attr( UAEL_PLUGIN_SHORT_NAME ); ?>" class="placeholder placeholder-active" value="<?php echo esc_attr( $settings['plugin']['short_name'] ); ?>">
 									</div>
 									<div class="form-field">
-										<label for="uael-wl-plugin-desc"><?php esc_attr_e( 'Plugin Description:', 'uael' ); ?></label>
-										<textarea name="uael_white_label[plugin][description]" id="uael-wl-plugin-desc" placeholder="Ultimate Addons is a premium extension for Elementor that adds 35+ widgets and works on top of any Elementor Package (Free, Pro). You can use it with any WordPress theme." class="placeholder placeholder-active" rows="2"><?php echo esc_attr( $settings['plugin']['description'] ); ?></textarea>
+										<label for="uael-wl-plugin-desc"><?php esc_html_e( 'Plugin Description:', 'uael' ); ?></label>
+										<textarea name="uael_white_label[plugin][description]" id="uael-wl-plugin-desc" placeholder="Ultimate Addons is a premium extension for Elementor that adds 35+ widgets and works on top of any Elementor Package (Free, Pro). You can use it with any WordPress theme." class="placeholder placeholder-active" rows="2"><?php echo esc_html( $settings['plugin']['description'] ); ?></textarea>
 									</div>
 									<div class="clear"></div>
 								</div>
@@ -69,7 +69,7 @@ $settings = UAEL_Helper::get_white_labels();
 					<li>
 						<div class="branding-form postbox">
 							<h2 class="hndle ui-sortable-handle">
-								<span><?php esc_attr_e( 'White Label Settings', 'uael' ); ?></span>
+								<span><?php esc_html_e( 'White Label Settings', 'uael' ); ?></span>
 							</h2>
 							<div class="inside">
 								<div class="form-wrap">
@@ -80,7 +80,7 @@ $settings = UAEL_Helper::get_white_labels();
 											<?php esc_attr_e( 'Hide White Label', 'uael' ); ?>
 										</label>
 										</p>
-										<p class="admin-help"><?php esc_attr_e( 'Enable this option to hide White Label settings. Re-activate the Ultimate Addons for Elementor to enable this settings tab again.', 'uael' ); ?></p>
+										<p class="admin-help"><?php esc_html_e( 'Enable this option to hide White Label settings. Re-activate the Ultimate Addons for Elementor to enable this settings tab again.', 'uael' ); ?></p>
 									</div>
 									<div class="clear"></div>
 								</div>
@@ -96,13 +96,13 @@ $settings = UAEL_Helper::get_white_labels();
 			<div class="postbox-container" id="postbox-container-1">
 				<div id="side-sortables">
 					<div class="postbox">
-						<h2 class="hndle"><span><?php esc_attr_e( 'Helpful Information', 'uael' ); ?></span>
+						<h2 class="hndle"><span><?php esc_html_e( 'Helpful Information', 'uael' ); ?></span>
 						</h2>
 						<div class="inside">
 							<div class="form-wrap">
 								<div class="form-field uael-p">
-									<p class="admin-help uael-p"><?php esc_attr_e( 'Not sure how White Label works? Take a look at below article and learn.', 'uael' ); ?></p>
-									<a href='<?php echo esc_url( UAEL_DOMAIN . 'docs/how-to-white-label-uael/?utm_source=uael-pro-dashboard&utm_medium=uael-menu-page&utm_campaign=uael-pro-plugin' ); ?> ' target="_blank" rel="noopener"><?php esc_attr_e( 'How to White Label UAE? »', 'uael' ); ?></a>
+									<p class="admin-help uael-p"><?php esc_html_e( 'Not sure how White Label works? Take a look at below article and learn.', 'uael' ); ?></p>
+									<a href='<?php echo esc_url( UAEL_DOMAIN . 'docs/how-to-white-label-uael/?utm_source=uael-pro-dashboard&utm_medium=uael-menu-page&utm_campaign=uael-pro-plugin' ); ?> ' target="_blank" rel="noopener"><?php esc_html_e( 'How to White Label UAE? »', 'uael' ); ?></a>
 								</div>
 							</div>
 						</div>
@@ -119,8 +119,8 @@ $settings = UAEL_Helper::get_white_labels();
 										<?php esc_attr_e( 'Replace Logo', 'uael' ); ?>
 									</label>
 									</p>
-									<p class="admin-help"><?php esc_attr_e( 'Replace the header logo with your plugin name.', 'uael' ); ?></p>
-								</div>	
+									<p class="admin-help"><?php esc_html_e( 'Replace the header logo with your plugin name.', 'uael' ); ?></p>
+								</div>
 								<hr>
 								<div class="form-field">
 									<p>
@@ -129,7 +129,7 @@ $settings = UAEL_Helper::get_white_labels();
 										<?php esc_attr_e( 'Hide Tagline', 'uael' ); ?>
 									</label>
 									</p>
-									<p class="admin-help"><?php esc_attr_e( 'Hide "Take Elementor to The Next Level!" tagline in the header.', 'uael' ); ?></p>
+									<p class="admin-help"><?php esc_html_e( 'Hide "Take Elementor to The Next Level!" tagline in the header.', 'uael' ); ?></p>
 								</div>
 								<hr>
 								<div class="form-field">
@@ -140,7 +140,7 @@ $settings = UAEL_Helper::get_white_labels();
 									</label>
 									</p>
 									<p class="uael-knowledgebase-url">
-									<label for="uael-wl-knowledgebase-url"><?php esc_attr_e( 'Knowledge Base URL', 'uael' ); ?></label>
+									<label for="uael-wl-knowledgebase-url"><?php esc_html_e( 'Knowledge Base URL', 'uael' ); ?></label>
 									<input type="text" placeholder='<?php echo esc_url( UAEL_DOMAIN . 'docs/' ); ?>' name="uael_white_label[knowledgebase_url]" id="uael-wl-knowledgebase-url" class="placeholder placeholder-active" value="<?php echo esc_url( $settings['knowledgebase_url'] ); ?>">
 									</p>
 								</div>
@@ -153,7 +153,7 @@ $settings = UAEL_Helper::get_white_labels();
 									</label>
 									</p>
 									<p class="uael-support-url">
-									<label for="uael-wl-support-url"><?php esc_attr_e( 'Support URL', 'uael' ); ?></label>
+									<label for="uael-wl-support-url"><?php esc_html_e( 'Support URL', 'uael' ); ?></label>
 									<input type="text" placeholder='<?php echo esc_url( UAEL_DOMAIN . 'support/' ); ?>' name="uael_white_label[support_url]" id="uael-wl-support-url" class="placeholder placeholder-active" value="<?php echo esc_url( $settings['support_url'] ); ?>">
 									</p>
 								</div>
@@ -181,7 +181,7 @@ $settings = UAEL_Helper::get_white_labels();
 										<?php esc_attr_e( 'Display Help Links', 'uael' ); ?>
 									</label>
 									</p>
-									<p class="admin-help"><?php esc_attr_e( 'Display internal help links in widget editor area.', 'uael' ); ?></p>
+									<p class="admin-help"><?php esc_html_e( 'Display internal help links in widget editor area.', 'uael' ); ?></p>
 								</div>
 							</div>
 						</div>
@@ -190,7 +190,7 @@ $settings = UAEL_Helper::get_white_labels();
 			</div>
 			<?php submit_button( __( 'Save Changes', 'uael' ), 'uael-save-wl-options button-primary button button-hero' ); ?>
 			<?php if ( is_multisite() ) : ?>
-				<p class="install-help"><strong><?php esc_attr_e( 'Note:', 'uael' ); ?></strong>  <?php esc_attr_e( 'Whitelabel settings are applied to all the sites in the Network.', 'uael' ); ?></p>
+				<p class="install-help"><strong><?php esc_html_e( 'Note:', 'uael' ); ?></strong>  <?php esc_html_e( 'Whitelabel settings are applied to all the sites in the Network.', 'uael' ); ?></p>
 			<?php endif; ?>
 			<?php wp_nonce_field( 'white-label', 'uael-white-label-nonce' ); ?>
 		</div>

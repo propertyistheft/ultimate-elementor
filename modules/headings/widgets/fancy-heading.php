@@ -1087,10 +1087,10 @@ class Fancy_Heading extends Common_Widget {
 											$count++;
 											$dummy_class = ( 1 === $count && 'slide' !== $settings['fancytext_effect_type'] ) ? 'uael-active-heading' : '';
 										?>
-											<span <?php echo wp_kses_post( 'class="uael-slide-block ' . $dummy_class . '"' ); ?>><span class="uael-slide_text"><?php echo esc_attr( wp_strip_all_tags( $line ) ); ?></span>
+											<span <?php echo wp_kses_post( 'class="uael-slide-block ' . $dummy_class . '"' ); ?>><span class="uael-slide_text"><?php echo esc_html( wp_strip_all_tags( $line ) ); ?></span>
 											</span>
 											<?php if ( 1 === $count_lines ) { ?>
-												<span class="uael-slide-block"><span class="uael-slide_text"><?php echo esc_attr( wp_strip_all_tags( $line ) ); ?></span></span>
+												<span class="uael-slide-block"><span class="uael-slide_text"><?php echo esc_html( wp_strip_all_tags( $line ) ); ?></span></span>
 											<?php } ?>
 										<?php } ?>
 								</span>
@@ -1210,12 +1210,12 @@ class Fancy_Heading extends Common_Widget {
 		}
 
 		#>
-			<div class="uael-module-content uael-fancy-text-node {{{ cursor_class }}}" {{{ view.getRenderAttributeString( 'fancy-text' ) }}}>
+			<div class="uael-module-content uael-fancy-text-node {{{ cursor_class }}}" {{{ view.getRenderAttributeString( 'fancy-text' ) }}}> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 				<# if ( '' != settings.fancytext_effect_type ) { #>
-					<{{{ fancy_text_title_tag }}} class="uael-fancy-text-wrap uael-fancy-text-{{{ settings.fancytext_effect_type }}}" >
+					<{{ fancy_text_title_tag }} class="uael-fancy-text-wrap uael-fancy-text-{{ settings.fancytext_effect_type }}" >
 
 						<# if ( '' != settings.fancytext_prefix ) { #>
-							<span class="uael-fancy-heading uael-fancy-text-prefix">{{{ settings.fancytext_prefix }}}</span>
+							<span class="uael-fancy-heading uael-fancy-text-prefix">{{ settings.fancytext_prefix }}</span>
 						<# } #>
 						<span class="uael-fancy-stack">
 							<# if ( 'type' == settings.fancytext_effect_type ) { #>
@@ -1250,10 +1250,10 @@ class Fancy_Heading extends Common_Widget {
 							<# } #>
 						</span>
 						<# if ( '' != settings.fancytext_suffix ) { #>
-							<span class="uael-fancy-heading uael-fancy-text-suffix">{{{ settings.fancytext_suffix }}}</span>
+							<span class="uael-fancy-heading uael-fancy-text-suffix">{{ settings.fancytext_suffix }}</span>
 						<# } #>
 
-					</{{{ fancy_text_title_tag }}}>
+					</{{ fancy_text_title_tag }}>
 				<# } #>
 			</div>
 			<# elementorFrontend.hooks.doAction( 'frontend/element_ready/uael-fancy-heading.default' ); #>

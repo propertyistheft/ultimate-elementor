@@ -240,9 +240,9 @@ class Build_Post_Query {
 
 		global $wp_the_query, $paged;
 
-		if ( isset( $_POST['nonce'] ) && wp_verify_nonce( $_POST['nonce'], 'uael-posts-widget-nonce' ) ) {
+		if ( isset( $_POST['nonce'] ) && wp_verify_nonce( sanitize_text_field( $_POST['nonce'] ), 'uael-posts-widget-nonce' ) ) {
 			if ( isset( $_POST['page_number'] ) && '' !== $_POST['page_number'] ) {
-				return $_POST['page_number'];
+				return sanitize_text_field( $_POST['page_number'] );
 			}
 		}
 

@@ -271,7 +271,7 @@ class FAQ extends Common_Widget {
 								'answer'   => __( 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.', 'uael' ),
 							),
 						),
-						'title_field' => '{{{ question }}}',
+						'title_field' => '{{ question }}',
 					)
 				);
 

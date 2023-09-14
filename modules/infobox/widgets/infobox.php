@@ -2461,14 +2461,14 @@ class Infobox extends Common_Widget {
 					var prefixSizeTag = render_html_tag( settings.infobox_prefix_tag ); #>
 
 					<{{ prefixSizeTag }} class="uael-infobox-title-prefix elementor-inline-editing" data-elementor-setting-key="infobox_title_prefix" data-elementor-inline-editing-toolbar="basic" >
-						{{{ settings.infobox_title_prefix }}}
+						{{ settings.infobox_title_prefix }}
 					</{{ prefixSizeTag }}>
 				<# } #>
 				<# if( 'after_prefix' == settings.infobox_separator_position ) {
 					render_separator();
 				} #>
 				<{{ headingSizeTag }} class="uael-infobox-title elementor-inline-editing" data-elementor-setting-key="infobox_title" data-elementor-inline-editing-toolbar="basic" >
-					{{{ settings.infobox_title }}}
+					{{ settings.infobox_title }}
 				</{{ headingSizeTag }}>
 			</div>
 			<# render_image( 'right-title' ); #>
@@ -2514,7 +2514,7 @@ class Infobox extends Common_Widget {
 									<span class="uael-icon">
 										<# if ( iconHTML && iconHTML.rendered && ( ! settings.infobox_select_icon || migrated ) ) {
 										#>
-											{{{ iconHTML.value }}}
+											{{{ iconHTML.value }}} <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 										<# } else { #>
 											<i class="{{ settings.infobox_select_icon }}" aria-hidden="true"></i>
 										<# } #>
@@ -2546,7 +2546,7 @@ class Infobox extends Common_Widget {
 										};
 										media_img = elementor.imagesManager.getImageUrl( media_image );
 										#>
-										<img src="{{{ media_img }}}" >
+										<img src="{{ media_img }}" >
 										<#
 									}
 								}
@@ -2554,7 +2554,7 @@ class Infobox extends Common_Widget {
 									if ( '' != settings.infobox_image_link ) {
 										view.addRenderAttribute( 'infobox_image_link', 'src', settings.infobox_image_link.url );
 										#>
-										<img {{{ view.getRenderAttributeString( 'infobox_image_link' ) }}}>
+										<img {{ view.getRenderAttributeString( 'infobox_image_link' ) }}>
 										<#
 									}
 								} #>
@@ -2584,7 +2584,7 @@ class Infobox extends Common_Widget {
 									var buttonMigrated = elementor.helpers.isIconMigrated( settings, 'new_infobox_button_icon' );
 									#>
 									<# if ( buttoniconHTML && buttoniconHTML.rendered && ( ! settings.infobox_button_icon || buttonMigrated ) ) { #>
-										{{{ buttoniconHTML.value }}}
+										{{{ buttoniconHTML.value }}} <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 									<# } else { #>
 										<i class="{{ settings.infobox_button_icon }}"></i>
 									<# } #>
@@ -2605,7 +2605,7 @@ class Infobox extends Common_Widget {
 									var buttonMigrated = elementor.helpers.isIconMigrated( settings, 'new_infobox_button_icon' );
 									#>
 									<# if ( buttoniconHTML && buttoniconHTML.rendered && ( ! settings.infobox_button_icon || buttonMigrated ) ) { #>
-										{{{ buttoniconHTML.value }}}
+										{{{ buttoniconHTML.value }}} <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 									<# } else { #>
 										<i class="{{ settings.infobox_button_icon }}"></i>
 									<# } #>
@@ -2633,8 +2633,8 @@ class Infobox extends Common_Widget {
 				if ( settings.infobox_button_animation ) {
 					view.addRenderAttribute( 'button', 'class', 'elementor-animation-' + settings.infobox_button_animation );
 				} #>
-				<div {{{ view.getRenderAttributeString( 'wrapper' ) }}}>
-					<a  {{{ view.getRenderAttributeString( 'button' ) }}}>
+				<div {{{ view.getRenderAttributeString( 'wrapper' ) }}}> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
+					<a  {{{ view.getRenderAttributeString( 'button' ) }}}> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 						<#
 						view.addRenderAttribute( 'content-wrapper', 'class', 'elementor-button-content-wrapper' );
 
@@ -2647,26 +2647,26 @@ class Infobox extends Common_Widget {
 						view.addRenderAttribute( 'text', 'class', 'elementor-inline-editing' );
 
 						#>
-						<span {{{ view.getRenderAttributeString( 'content-wrapper' ) }}}>
+						<span {{{ view.getRenderAttributeString( 'content-wrapper' ) }}}> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 							<?php if ( UAEL_Helper::is_elementor_updated() ) { ?>
 								<# if ( settings.infobox_button_icon || settings.new_infobox_button_icon ) {
 									var buttoniconHTML = elementor.helpers.renderIcon( view, settings.new_infobox_button_icon, { 'aria-hidden': true }, 'i' , 'object' );
 									var buttonMigrated = elementor.helpers.isIconMigrated( settings, 'new_infobox_button_icon' );
 									#>
-									<span {{{ view.getRenderAttributeString( 'icon-align' ) }}}>
+									<span {{{ view.getRenderAttributeString( 'icon-align' ) }}}> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 										<# if ( buttoniconHTML && buttoniconHTML.rendered && ( ! settings.infobox_button_icon || buttonMigrated ) ) { #>
-											{{{ buttoniconHTML.value }}}
+											{{{ buttoniconHTML.value }}} <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 										<# } else { #>
 											<i class= "{{ settings.infobox_button_icon }}" aria-hidden="true"></i>
 										<# } #>
 									</span>
 								<# } #>
 							<?php } else { ?>
-								<span {{{ view.getRenderAttributeString( 'icon-align' ) }}}>
+								<span {{{ view.getRenderAttributeString( 'icon-align' ) }}}> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 									<i class="{{ settings.infobox_button_icon }}"></i>
 								</span>
 							<?php } ?>
-							<span {{{ view.getRenderAttributeString( 'text' ) }}} data-elementor-setting-key="infobox_button_text" data-elementor-inline-editing-toolbar="none">{{ settings.infobox_button_text }}</span>
+							<span {{{ view.getRenderAttributeString( 'text' ) }}} data-elementor-setting-key="infobox_button_text" data-elementor-inline-editing-toolbar="none">{{ settings.infobox_button_text }}</span> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 						</span>
 					</a>
 				</div>
@@ -2737,7 +2737,7 @@ class Infobox extends Common_Widget {
 
 			view.addRenderAttribute( 'classname', 'class', 'uael-infobox-link-type-' + settings.infobox_cta_type );
 		#>
-			<div {{{ view.getRenderAttributeString( 'classname' ) }}}>
+			<div {{{ view.getRenderAttributeString( 'classname' ) }}}> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 				<div class="uael-infobox-left-right-wrap">
 					<#
 					if ( 'module' == settings.infobox_cta_type && '' != settings.infobox_text_link ) {
@@ -2754,7 +2754,7 @@ class Infobox extends Common_Widget {
 						<# render_image( 'below-title' ); #>
 						<div class="uael-infobox-text-wrap">
 							<div class="uael-infobox-text elementor-inline-editing" data-elementor-setting-key="infobox_description" data-elementor-inline-editing-toolbar="advanced">
-								{{{ settings.infobox_description }}}
+								{{ settings.infobox_description }}
 							</div>
 							<# if( 'after_description' == settings.infobox_separator_position ) {
 								render_separator();

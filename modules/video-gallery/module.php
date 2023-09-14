@@ -109,7 +109,9 @@ class Module extends Module_Base {
 						return null;
 					}
 				}
-				$actual_link          = ( 'on' === isset( $_SERVER['HTTPS'] ) && $_SERVER['HTTPS'] ) ? 'https' : 'http' . "://$_SERVER[HTTP_HOST]$_SERVER[REQUEST_URI]";
+				if ( isset( $_SERVER['HTTP_HOST'] ) && isset( $_SERVER['REQUEST_URI'] ) ) {
+					$actual_link = ( 'on' === isset( $_SERVER['HTTPS'] ) && sanitize_text_field( $_SERVER['HTTPS'] ) ) ? 'https' : 'http://' . sanitize_text_field( $_SERVER['HTTP_HOST'] ) . esc_url_raw( $_SERVER['REQUEST_URI'] );
+				}
 				$settings             = $widget->get_settings();
 				$enable_schema        = $settings['schema_support'];
 				$video_link           = array();

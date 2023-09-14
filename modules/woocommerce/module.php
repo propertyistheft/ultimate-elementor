@@ -79,7 +79,7 @@ class Module extends Module_Base {
 	 * @param object $query query object.
 	 */
 	public function fix_query_offset( &$query ) {
-		if ( ! empty( $query->query_vars['offset_to_fix'] ) ) {
+		if ( ! empty( $query->query_vars['offset_to_fix'] ) && $query->is_main_query() ) {
 			if ( $query->is_paged ) {
 				$query->query_vars['offset'] = $query->query_vars['offset_to_fix'] + ( ( $query->query_vars['paged'] - 1 ) * $query->query_vars['posts_per_page'] );
 			} else {
@@ -402,7 +402,8 @@ class Module extends Module_Base {
 	 * @access public
 	 */
 	public function uae_woo_checkout_update_order_review() {
-		$data        = isset( $_POST['content'] ) ? $_POST['content'] : ''; //phpcs:ignore WordPress.Security.NonceVerification.Missing
+		check_ajax_referer( 'uael-checkout-nonce', 'nonce' );
+		$data        = isset( $_POST['content'] ) ? array_map( 'sanitize_text_field', $_POST['content'] ) : '';
 		$page_id     = $data['page_id'];
 		$widget_id   = $data['widget_id'];
 		$elementor   = \Elementor\Plugin::$instance;
@@ -432,9 +433,9 @@ class Module extends Module_Base {
 
 		check_ajax_referer( 'uael-product-nonce', 'nonce' );
 
-		$post_id   = $_POST['page_id'];
-		$widget_id = $_POST['widget_id'];
-		$style_id  = $_POST['skin'];
+		$post_id   = isset( $_POST['page_id'] ) ? sanitize_text_field( $_POST['page_id'] ) : '';
+		$widget_id = isset( $_POST['widget_id'] ) ? sanitize_text_field( $_POST['widget_id'] ) : '';
+		$style_id  = isset( $_POST['skin'] ) ? sanitize_text_field( $_POST['skin'] ) : '';
 
 		$elementor = \Elementor\Plugin::$instance;
 		$meta      = $elementor->documents->get( $post_id )->get_elements_data();

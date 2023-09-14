@@ -316,33 +316,33 @@ abstract class Skin_Style {
 				// @codingStandardsIgnoreStart.
 				case 'OVER_QUERY_LIMIT':
 					/* translators: %1$s doc link */
-					echo sprintf( __( '<span class="uael-reviews-notice-message elementor-clickable"><span class="uael-reviews-error-message">Google Error Message: </span>OVER_QUERY_LIMIT</br>You have exceeded your daily request quota for this API. If you did not set a custom daily request quota, verify your project has an active billing account. Visit your %1$s Google API console %2$s to activate billing. </span>', 'uael' ), '<a href="http://g.co/dev/maps-no-account">', '</a>' ); 
+					echo sprintf( __( '<span class="uael-reviews-notice-message elementor-clickable"><span class="uael-reviews-error-message">Google Error Message: </span>OVER_QUERY_LIMIT</br>You have exceeded your daily request quota for this API. If you did not set a custom daily request quota, verify your project has an active billing account. Visit your %1$s Google API console %2$s to activate billing. </span>', 'uael' ), '<a href="http://g.co/dev/maps-no-account">', '</a>' );
 					delete_transient( $transient_name );
 					return false;
 					break;
 
 				case 'REQUEST_DENIED':
-					echo __( '<span class="uael-reviews-notice-message"><span class="uael-reviews-error-message">Google Error Message: </span>REQUEST_DENIED</br>Invalid Google API key! Please verify your API key from UAE settings.</span>', 'uael' ); 
+					echo __( '<span class="uael-reviews-notice-message"><span class="uael-reviews-error-message">Google Error Message: </span>REQUEST_DENIED</br>Invalid Google API key! Please verify your API key from UAE settings.</span>', 'uael' );
 					delete_transient( $transient_name );
 					return false;
 					break;
 
 				case 'UNKNOWN_ERROR':
-					echo __( '<span class="uael-reviews-notice-message"><span class="uael-reviews-error-message">Google Error Message: </span>UNKNOWN_ERROR </br>Seems like a server-side error; Please try again later.</span>', 'uael' ); 
+					echo __( '<span class="uael-reviews-notice-message"><span class="uael-reviews-error-message">Google Error Message: </span>UNKNOWN_ERROR </br>Seems like a server-side error; Please try again later.</span>', 'uael' );
 					delete_transient( $transient_name );
 					return false;
 					break;
 
 				case 'ZERO_RESULTS':
 				case 'INVALID_REQUEST':
-					echo __( '<span class="uael-reviews-notice-message"><span class="uael-reviews-error-message">Google Error Message: </span>INVALID_REQUEST </br>Please check if the entered Place ID is invalid.</span>', 'uael' ); 
+					echo __( '<span class="uael-reviews-notice-message"><span class="uael-reviews-error-message">Google Error Message: </span>INVALID_REQUEST </br>Please check if the entered Place ID is invalid.</span>', 'uael' );
 					delete_transient( $transient_name );
 					return false;
 					break;
 
 				case 'OK':
 					if ( ! property_exists( $result->result, 'reviews' ) ) {
-						echo __( '<span class="uael-reviews-notice-message"><span class="uael-reviews-error-message">Google Error Message:</span> It seems like the Google place you have selected does not have any reviews.</span>', 'uael' ); 
+						echo __( '<span class="uael-reviews-notice-message"><span class="uael-reviews-error-message">Google Error Message:</span> It seems like the Google place you have selected does not have any reviews.</span>', 'uael' );
 						delete_transient( $transient_name );
 						return false;
 					}
@@ -765,7 +765,7 @@ abstract class Skin_Style {
 						$via_source = '';
 					}
 					?>
-					<span class="uael-review-time"><?php echo esc_attr( $date_value ) . esc_attr( $via_source ); ?></span>
+					<span class="uael-review-time"><?php echo esc_html( $date_value ) . esc_html( $via_source ); ?></span>
 				<?php } ?>
 				<?php
 				if ( 'bubble' === $settings['_skin'] || 'card' === $settings['_skin'] ) {

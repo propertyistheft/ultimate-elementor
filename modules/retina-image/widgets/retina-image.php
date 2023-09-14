@@ -799,7 +799,7 @@ class Retina_Image extends Common_Widget {
 				$image_url = $placeholder_img_url;
 			}
 
-			if ( strpos( $_SERVER['HTTP_USER_AGENT'], 'Chrome' ) !== false ) {
+			if ( isset( $_SERVER['HTTP_USER_AGENT'] ) && strpos( sanitize_text_field( $_SERVER['HTTP_USER_AGENT'] ), 'Chrome' ) !== false ) { // phpcs:ignore WordPressVIPMinimum.Variables.RestrictedVariables.cache_constraints___SERVER__HTTP_USER_AGENT__
 
 				$date             = new \DateTime();
 				$timestam         = $date->getTimestamp();

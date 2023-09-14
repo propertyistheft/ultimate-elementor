@@ -316,7 +316,7 @@ class GoogleMap extends Common_Widget {
 						),
 					),
 					'fields'      => $repeater->get_controls(),
-					'title_field' => '<i class="fa fa-map-marker"></i> {{{ map_title }}}',
+					'title_field' => '<i class="fa fa-map-marker"></i> {{ map_title }}',
 				)
 			);
 
@@ -1025,7 +1025,7 @@ class GoogleMap extends Common_Widget {
 
 		#>
 		<div class="uael-google-map-wrap">
-			<div {{{ view.getRenderAttributeString( 'google-map' ) }}}></div>
+			<div {{{ view.getRenderAttributeString( 'google-map' ) }}}></div> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 		</div>
 
 		<# elementorFrontend.hooks.doAction( 'frontend/element_ready/uael-google-map.default' ); #>

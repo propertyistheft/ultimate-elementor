@@ -1751,7 +1751,7 @@ class Advanced_Heading extends Common_Widget {
 								if ( 'line_text' == settings.heading_separator_style ) {
 								var text_tag = render_html_tag( settings.text_tag );
 								#>
-									<{{{text_tag}}} class="uael-divider-text elementor-inline-editing" data-elementor-setting-key="heading_line_text" data-elementor-inline-editing-toolbar="basic">{{{ settings.heading_line_text }}}</{{{text_tag}}}>
+									<{{text_tag}} class="uael-divider-text elementor-inline-editing" data-elementor-setting-key="heading_line_text" data-elementor-inline-editing-toolbar="basic">{{ settings.heading_line_text }}</{{text_tag}}>
 								<# } #>
 							</div>
 							<div class="uael-separator-line uael-side-right">
@@ -1772,7 +1772,7 @@ class Advanced_Heading extends Common_Widget {
 		function render_subheading( pos ) {
 			if ( 'yes' == settings.show_sub_heading && '' != settings.sub_heading && pos == settings.subheading_position ) {
 			#>
-				<div class="uael-sub-heading elementor-inline-editing" data-elementor-setting-key="sub_heading" data-elementor-inline-editing-toolbar="advanced" >{{{ settings.sub_heading }}}</div>
+				<div class="uael-sub-heading elementor-inline-editing" data-elementor-setting-key="sub_heading" data-elementor-inline-editing-toolbar="advanced" >{{ settings.sub_heading }}</div>
 			<#
 			}
 		}
@@ -1792,7 +1792,7 @@ class Advanced_Heading extends Common_Widget {
 				}
 
 				#>
-				<div {{{ view.getRenderAttributeString( 'anim_class' ) }}} >
+				<div {{{ view.getRenderAttributeString( 'anim_class' ) }}} > <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 					<# if ( 'line_icon' == settings.heading_separator_style ) { #>
 						<div class="uael-icon-wrap">
 							<span class="uael-icon">
@@ -1803,7 +1803,7 @@ class Advanced_Heading extends Common_Widget {
 
 									if ( iconHTML && iconHTML.rendered && ( ! settings.heading_icon || migrated ) ) {
 									#>
-										{{{ iconHTML.value }}}
+										{{{ iconHTML.value }}} <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 									<# } else { #>
 										<i class="{{ settings.heading_icon }}" aria-hidden="true"></i>
 									<# } #>
@@ -1821,7 +1821,7 @@ class Advanced_Heading extends Common_Widget {
 									if ( '' != settings.heading_image.url ) {
 										view.addRenderAttribute( 'heading_image', 'src', settings.heading_image.url );
 										#>
-										<img class="uael-photo-img" {{{ view.getRenderAttributeString( 'heading_image' ) }}}>
+										<img class="uael-photo-img" {{{ view.getRenderAttributeString( 'heading_image' ) }}}> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 										<#
 									}
 								}
@@ -1829,7 +1829,7 @@ class Advanced_Heading extends Common_Widget {
 									if ( '' != settings.heading_image_link ) {
 										view.addRenderAttribute( 'heading_image_link', 'src', settings.heading_image_link.url );
 										#>
-										<img class="uael-photo-img" {{{ view.getRenderAttributeString( 'heading_image_link' ) }}}>
+										<img class="uael-photo-img" {{{ view.getRenderAttributeString( 'heading_image_link' ) }}}> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 										<#
 									}
 								} #>
@@ -1868,20 +1868,20 @@ class Advanced_Heading extends Common_Widget {
 		var headingSizeTag = render_html_tag( settings.heading_tag );
 
 		#>
-		<div {{{ view.getRenderAttributeString( 'uael-heading-wrapper') }}}>
+		<div {{{ view.getRenderAttributeString( 'uael-heading-wrapper') }}}> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 			<# render_separator( 'top' ); #>
 
 			<# render_subheading( 'top' ); #>
 
-			<{{{ headingSizeTag }}} class="uael-heading">
+			<{{ headingSizeTag }} class="uael-heading">
 				<# if ( '' != settings.heading_link.url ) { #>
-					<a {{{ view.getRenderAttributeString( 'url' ) }}} >
+					<a {{ view.getRenderAttributeString( 'url' ) }} >
 				<# } #>
-				<span class="uael-heading-text elementor-inline-editing uael-size--{{{ settings.size }}}" data-elementor-setting-key="heading_title" data-elementor-inline-editing-toolbar="basic">{{{ settings.heading_title }}}</span>
+				<span class="uael-heading-text elementor-inline-editing uael-size--{{ settings.size }}" data-elementor-setting-key="heading_title" data-elementor-inline-editing-toolbar="basic">{{ settings.heading_title }}</span>
 				<# if ( '' != settings.heading_link.url ) { #>
 					</a>
 				<# } #>
-			</{{{ headingSizeTag }}}>
+			</{{ headingSizeTag }}>
 
 			<# render_subheading( 'bottom' ); #>
 
@@ -1889,7 +1889,7 @@ class Advanced_Heading extends Common_Widget {
 
 			<# if ( 'yes' == settings.show_description && '' != settings.heading_description ) { #>
 				<div class="uael-subheading elementor-inline-editing" data-elementor-setting-key="heading_description" data-elementor-inline-editing-toolbar="basic" >
-					{{{ settings.heading_description }}}
+					{{ settings.heading_description }}
 				</div>
 			<# } #>
 			<# render_separator( 'bottom' ); #>

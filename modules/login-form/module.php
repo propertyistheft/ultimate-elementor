@@ -83,11 +83,11 @@ class Module extends Module_Base {
 	 */
 	public function uael_login_submission() {
 
-		if ( isset( $_POST['uael-login-nonce'] ) && wp_verify_nonce( $_POST['uael-login-nonce'], 'uael-login' ) ) {
+		if ( isset( $_POST['uael-login-nonce'] ) && wp_verify_nonce( sanitize_text_field( $_POST['uael-login-nonce'] ), 'uael-login' ) ) {
 			if ( isset( $_POST['uael-login-submit'] ) ) {
 
-				if ( ! session_id() && ! headers_sent() ) {
-					session_start();
+				if ( ! session_id() && ! headers_sent() ) { // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.session_session_id
+					session_start(); // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.session_session_start
 				}
 
 				$data = $_POST;
@@ -108,15 +108,15 @@ class Module extends Module_Base {
 
 					if ( isset( $user_data->errors['invalid_email'][0] ) ) {
 
-						$_SESSION['uael_error'] = 'invalid_email';
+						$_SESSION['uael_error'] = 'invalid_email'; // phpcs:ignore WordPressVIPMinimum.Variables.RestrictedVariables.session___SESSION
 
 					} elseif ( isset( $user_data->errors['invalid_username'][0] ) ) {
 
-						$_SESSION['uael_error'] = 'invalid_username';
+						$_SESSION['uael_error'] = 'invalid_username';  // phpcs:ignore WordPressVIPMinimum.Variables.RestrictedVariables.session___SESSION
 
 					} elseif ( isset( $user_data->errors['incorrect_password'][0] ) ) {
 
-						$_SESSION['uael_error'] = 'incorrect_password';
+						$_SESSION['uael_error'] = 'incorrect_password';  // phpcs:ignore WordPressVIPMinimum.Variables.RestrictedVariables.session___SESSION
 					}
 				} else {
 					wp_set_current_user( $user_data->ID, $username );
@@ -146,7 +146,7 @@ class Module extends Module_Base {
 
 		if ( isset( $_POST['data'] ) ) {
 
-			$data = $_POST['data'];
+			$data = array_map( 'sanitize_text_field', $_POST['data'] );
 
 			$username   = ! empty( $data['username'] ) ? sanitize_user( $data['username'] ) : '';
 			$password   = ! empty( $data['password'] ) ? $data['password'] : '';
@@ -200,7 +200,7 @@ class Module extends Module_Base {
 
 		if ( isset( $_POST['data'] ) ) {
 
-			$data = $_POST['data'];
+			$data = array_map( 'sanitize_text_field', $_POST['data'] );
 
 			$fb_user_id   = filter_input( INPUT_POST, 'userID', FILTER_SANITIZE_STRING );
 			$access_token = filter_input( INPUT_POST, 'security_string', FILTER_SANITIZE_STRING );
@@ -320,7 +320,7 @@ class Module extends Module_Base {
 
 			$verified_data = $this->verify_user_data( $id_token, $integration_options['google_client_id'] );
 
-			$data       = $_POST['data'];
+			$data       = array_map( 'sanitize_text_field', $_POST['data'] );
 			$name       = isset( $verified_data['name'] ) ? $verified_data['name'] : '';
 			$email      = isset( $verified_data['email'] ) ? $verified_data['email'] : '';
 			$send_email = $data['send_email'];

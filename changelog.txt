@@ -1,3 +1,9 @@
+Version 1.36.20, Monday, 11th September 2023
+- Improvement: Compatibility with latest Elementor and Elementor Pro 3.16 version.
+- Improvement: Compatibility with WordPress VIP Go rules.
+- Improvement: Resloved compatibility with PHP 8.2 dynamic property creation deprecation notice.
+- Fix: Posts - Featured post image broken in skin "News" on responsive devices.
+
 Version 1.36.19, Tuesday, 22nd August 2023
 - Improvement: Compatibility with latest WordPress version 6.3.
 - Improvement: Compatibility with PHP 8.1.

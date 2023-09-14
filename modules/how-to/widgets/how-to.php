@@ -462,7 +462,7 @@ class HowTo extends Common_Widget {
 					'type'        => Controls_Manager::REPEATER,
 					'show_label'  => true,
 					'fields'      => $repeater->get_controls(),
-					'title_field' => '{{{ tool_item_text }}}',
+					'title_field' => '{{ tool_item_text }}',
 					'default'     => array(
 						array(
 							'tool_item_text' => __( '- A Computer.', 'uael' ),
@@ -565,7 +565,7 @@ class HowTo extends Common_Widget {
 					'type'        => Controls_Manager::REPEATER,
 					'show_label'  => true,
 					'fields'      => $repeater->get_controls(),
-					'title_field' => '{{{ supply_item_text }}}',
+					'title_field' => '{{ supply_item_text }}',
 					'default'     => array(
 						array(
 							'supply_item_text' => __( '- A WordPress Website.', 'uael' ),
@@ -680,7 +680,7 @@ class HowTo extends Common_Widget {
 					'type'        => Controls_Manager::REPEATER,
 					'show_label'  => true,
 					'fields'      => $repeater->get_controls(),
-					'title_field' => '{{{ steps_item_title }}}',
+					'title_field' => '{{ steps_item_title }}',
 					'default'     => array(
 						array(
 							'steps_item_title' => __( 'Step 1 : Enter the HowTo Schema title you want', 'uael' ),

@@ -317,7 +317,7 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 		 * @return void
 		 */
 		public static function render_styles() {
-			if ( isset( $_REQUEST['uael_admin_nonce'] ) && wp_verify_nonce( $_REQUEST['uael_admin_nonce'], 'uael_admin_nonce' ) ) {
+			if ( isset( $_REQUEST['uael_admin_nonce'] ) && wp_verify_nonce( sanitize_text_field( $_REQUEST['uael_admin_nonce'] ), 'uael_admin_nonce' ) ) {
 				if ( isset( $_REQUEST['page'] ) && UAEL_SLUG === $_REQUEST['page'] ) {
 
 					add_action( 'admin_enqueue_scripts', __CLASS__ . '::styles_scripts' );
@@ -336,7 +336,7 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 		 */
 		public static function render() {
 
-			if ( isset( $_REQUEST['uael_admin_nonce'] ) && wp_verify_nonce( $_REQUEST['uael_admin_nonce'], 'uael_admin_nonce' ) ) {
+			if ( isset( $_REQUEST['uael_admin_nonce'] ) && wp_verify_nonce( sanitize_text_field( $_REQUEST['uael_admin_nonce'] ), 'uael_admin_nonce' ) ) {
 				$action = ( isset( $_GET['action'] ) ) ? sanitize_text_field( $_GET['action'] ) : '';
 			}
 				$action = ( ! empty( $action ) && '' !== $action ) ? $action : 'general';
@@ -369,7 +369,7 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 				return;
 			}
 
-			if ( isset( $_REQUEST['uael_admin_nonce'] ) && wp_verify_nonce( $_REQUEST['uael_admin_nonce'], 'uael_admin_nonce' ) ) {
+			if ( isset( $_REQUEST['uael_admin_nonce'] ) && wp_verify_nonce( sanitize_text_field( $_REQUEST['uael_admin_nonce'] ), 'uael_admin_nonce' ) ) {
 				$action = ( isset( $_GET['action'] ) ) ? sanitize_text_field( $_GET['action'] ) : 'general';
 			}
 			$action = str_replace( '_', '-', $action );
@@ -392,19 +392,19 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 		 */
 		public static function save_integration_option() {
 
-			if ( isset( $_POST['uael-integration-nonce'] ) && wp_verify_nonce( $_POST['uael-integration-nonce'], 'uael-integration' ) ) {
+			if ( isset( $_POST['uael-integration-nonce'] ) && wp_verify_nonce( sanitize_text_field( $_POST['uael-integration-nonce'] ), 'uael-integration' ) ) {
 
 				$query = array(
 					'message' => 'saved',
 				);
 
-				$url            = $_SERVER['REQUEST_URI'];
+				$url            = isset( $_SERVER['REQUEST_URI'] ) ? esc_url_raw( $_SERVER['REQUEST_URI'] ) : '';
 				$input_settings = array();
 				$new_settings   = array();
 
 				if ( isset( $_POST['uael_integration'] ) ) {
 
-					$input_settings = $_POST['uael_integration'];
+					$input_settings = array_map( 'sanitize_text_field', $_POST['uael_integration'] );
 
 					$geolite_db = new UAEL_Maxmind_Database();
 					$result     = $geolite_db->verify_key_and_download_database( $input_settings['uael_maxmind_geolocation_license_key'] );
@@ -444,26 +444,28 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 		 */
 		public static function save_branding_option() {
 
-			if ( isset( $_POST['uael-white-label-nonce'] ) && wp_verify_nonce( $_POST['uael-white-label-nonce'], 'white-label' ) ) {
+			if ( isset( $_POST['uael-white-label-nonce'] ) && wp_verify_nonce( sanitize_text_field( $_POST['uael-white-label-nonce'] ), 'white-label' ) ) {
 
-				$url             = $_SERVER['REQUEST_URI'];
+				$url             = isset( $_SERVER['REQUEST_URI'] ) ? esc_url_raw( $_SERVER['REQUEST_URI'] ) : '';
 				$stored_settings = UAEL_Helper::get_white_labels();
 				$input_settings  = array();
 				$new_settings    = array();
 
 				if ( isset( $_POST['uael_white_label'] ) ) {
 
-					$input_settings = $_POST['uael_white_label'];
+					$input_settings = $_POST['uael_white_label']; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 
 					// Loop through the input and sanitize each of the values.
-					foreach ( $input_settings as $key => $val ) {
+					if ( is_array( $input_settings ) ) {
+						foreach ( $input_settings as $key => $val ) {
 
-						if ( is_array( $val ) ) {
-							foreach ( $val as $k => $v ) {
-								$new_settings[ $key ][ $k ] = ( isset( $val[ $k ] ) ) ? sanitize_text_field( $v ) : '';
+							if ( is_array( $val ) ) {
+								foreach ( $val as $k => $v ) {
+									$new_settings[ $key ][ $k ] = ( isset( $val[ $k ] ) ) ? sanitize_text_field( $v ) : '';
+								}
+							} else {
+								$new_settings[ $key ] = ( isset( $input_settings[ $key ] ) ) ? sanitize_text_field( $val ) : '';
 							}
-						} else {
-							$new_settings[ $key ] = ( isset( $input_settings[ $key ] ) ) ? sanitize_text_field( $val ) : '';
 						}
 					}
 				}
@@ -620,7 +622,7 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 
 			check_ajax_referer( 'uael-widget-nonce', 'nonce' );
 
-			$module_id             = sanitize_text_field( $_POST['module_id'] );
+			$module_id             = isset( $_POST['module_id'] ) ? sanitize_text_field( $_POST['module_id'] ) : '';
 			$widgets               = UAEL_Helper::get_admin_settings_option( '_uael_widgets', array() );
 			$widgets[ $module_id ] = $module_id;
 			$widgets               = array_map( 'esc_attr', $widgets );
@@ -639,7 +641,7 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 
 			check_ajax_referer( 'uael-widget-nonce', 'nonce' );
 
-			$module_id             = sanitize_text_field( $_POST['module_id'] );
+			$module_id             = isset( $_POST['module_id'] ) ? sanitize_text_field( $_POST['module_id'] ) : '';
 			$widgets               = UAEL_Helper::get_admin_settings_option( '_uael_widgets', array() );
 			$widgets[ $module_id ] = 'disabled';
 			$widgets               = array_map( 'esc_attr', $widgets );
@@ -776,7 +778,7 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 
 			check_ajax_referer( 'uael-widget-nonce', 'nonce' );
 
-			$beta_update = sanitize_text_field( $_POST['allow_beta'] );
+			$beta_update = isset( $_POST['allow_beta'] ) ? sanitize_text_field( $_POST['allow_beta'] ) : '';
 
 			// Update new_extensions.
 			UAEL_Helper::update_admin_settings_option( '_uael_beta', $beta_update );

@@ -2714,7 +2714,7 @@ class Twitter extends Common_Widget {
 						<?php if ( 'yes' === $settings['header_enable'] ) { ?>
 							<div class="uael-twitter-feed-profile-body">
 								<div class="uael-twitter-header-banner">
-									<img src="<?php echo wp_kses_post( $item['user']['profile_banner_url'] ); ?>"  alt="<?php echo esc_html( $item['user']['name'] ); ?>">
+									<img src="<?php echo wp_kses_post( $item['user']['profile_banner_url'] ); ?>"  alt="<?php echo esc_attr( $item['user']['name'] ); ?>">
 								</div>
 								<div class="uael-twitter-feed-header-user">
 									<a rel="nofollow" href="https://twitter.com/<?php echo esc_url( $item['user']['profile_banner_url'] ); ?>" target="_blank" class="uael-twitter-feed-header-user-image-container">
@@ -2723,12 +2723,12 @@ class Twitter extends Common_Widget {
 											$profile_banner_logo = str_ireplace( '_normal', '_200x200', esc_url( $item['user']['profile_image_url_https'] ) );
 											echo wp_kses_post( $profile_banner_logo );
 											?>
-										" alt="<?php echo esc_html( $item['user']['name'] ); ?>" />
+										" alt="<?php echo esc_attr( $item['user']['name'] ); ?>" />
 									</a>
 									<div class="uael-twitter-feed-header-user-info">
 										<div class="uael-twitter-feed-header-user-info-name-wrapper">
 											<div class="uael-twitter-feed-header-user-info-name">
-												<a class="uael-twitter-header-link" rel="nofollow" href="https://twitter.com/<?php $item['user']['screen_name']; ?>" title="<?php echo esc_html( $item['user']['name'] ); ?>" target="_blank">
+												<a class="uael-twitter-header-link" rel="nofollow" href="https://twitter.com/<?php $item['user']['screen_name']; ?>" title="<?php echo esc_attr( $item['user']['name'] ); ?>" target="_blank">
 														<?php echo esc_html( $item['user']['name'] ); ?>
 														<?php if ( true === $item['user']['verified'] ) { ?>
 															<span class="uael-twitter-feed-header-user-info-name-verified-container" title="Verified account">

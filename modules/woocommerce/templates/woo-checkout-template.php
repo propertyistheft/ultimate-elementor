@@ -146,11 +146,11 @@ trait Woo_Checkout_Template {
 					<div class="uael-custom-coupon-field">
 
 						<p class="form-row form-row-first">
-							<input type="text" name="coupon_code" class="input-text" placeholder="<?php echo esc_html( $setting['coupon_field_placeholder'] ); ?>" id="coupon_code" value="" />
+							<input type="text" name="coupon_code" class="input-text" placeholder="<?php echo esc_attr( $setting['coupon_field_placeholder'] ); ?>" id="coupon_code" value="" />
 						</p>
 
 						<p class="form-row form-row-last">
-							<button type="submit" class="button" name="apply_coupon" value="<?php echo esc_html( $setting['coupon_button_text'] ); ?>"><?php echo esc_html( $setting['coupon_button_text'] ); ?></button>
+							<button type="submit" class="button" name="apply_coupon" value="<?php echo esc_attr( $setting['coupon_button_text'] ); ?>"><?php echo esc_html( $setting['coupon_button_text'] ); ?></button>
 						</p>
 					</div>
 					<div class="clear"></div>
@@ -1030,8 +1030,8 @@ trait Woo_Checkout_Template {
 				</form>
 			</div>
 			<div class="uael-buttons">
-				<input type="button" id="action-prev" class="button-prev" value="<?php echo esc_html( $setting['labels_previous_btn'] ); ?>">
-				<input type="button" id="action-next" class="button-next" value="<?php echo esc_html( $setting['labels_next_btn'] ); ?>">
+				<input type="button" id="action-prev" class="button-prev" value="<?php echo esc_attr( $setting['labels_previous_btn'] ); ?>">
+				<input type="button" id="action-next" class="button-next" value="<?php echo esc_attr( $setting['labels_next_btn'] ); ?>">
 			</div>
 		</div>
 

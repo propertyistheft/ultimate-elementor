@@ -149,7 +149,7 @@ $this->add_render_attribute( 'line-inner', 'class', 'uael-timeline__line__inner'
 										<?php
 										if ( '' !== $item['timeline_single_date'] ) {
 											?>
-											<div class="uael-timeline-date-hide uael-date-inner"><div class="inner-date-new"><p <?php echo wp_kses_post( $this->get_render_attribute_string( $date_setting_key ) ); ?>><?php echo esc_attr( $item['timeline_single_date'] ); ?></p></div>
+											<div class="uael-timeline-date-hide uael-date-inner"><div class="inner-date-new"><p <?php echo wp_kses_post( $this->get_render_attribute_string( $date_setting_key ) ); ?>><?php echo esc_html( $item['timeline_single_date'] ); ?></p></div>
 											</div>
 										<?php } ?>
 										<div <?php echo wp_kses_post( $this->get_render_attribute_string( 'timeline_content' . esc_attr( $item['_id'] ) ) ); ?>>
@@ -182,7 +182,7 @@ $this->add_render_attribute( 'line-inner', 'class', 'uael-timeline__line__inner'
 							</div>
 							<?php if ( 'center' === $settings['timeline_align'] ) { ?>
 								<div class="uael-timeline-date-new">
-									<div class="uael-date-new"><div class="inner-date-new"><div <?php echo wp_kses_post( $this->get_render_attribute_string( $date_setting_key ) ); ?>><?php echo esc_attr( $item['timeline_single_date'] ); ?></div></div>
+									<div class="uael-date-new"><div class="inner-date-new"><div <?php echo wp_kses_post( $this->get_render_attribute_string( $date_setting_key ) ); ?>><?php echo esc_html( $item['timeline_single_date'] ); ?></div></div>
 									</div>
 								</div>
 							<?php } ?>
@@ -193,7 +193,7 @@ $this->add_render_attribute( 'line-inner', 'class', 'uael-timeline__line__inner'
 				++$count;
 				?>
 			<?php } ?>
-		</div>		
+		</div>
 		<div <?php echo wp_kses_post( $this->get_render_attribute_string( 'line' ) ); ?>>
 			<div <?php echo wp_kses_post( $this->get_render_attribute_string( 'line-inner' ) ); ?>></div>
 		</div>

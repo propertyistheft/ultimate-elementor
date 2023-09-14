@@ -889,12 +889,12 @@ class Dual_Heading extends Common_Widget {
 
 
 		#>
-		<div {{{ view.getRenderAttributeString( 'uael-dual-heading') }}} >
+		<div {{{ view.getRenderAttributeString( 'uael-dual-heading') }}} > <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 			<{{ dual_html_tag }}>
 				<# if ( '' != settings.heading_link.url ) { #>
 					<a href= {{ settings.heading_link.url }}>
 				<# } #>
-				<span class="uael-before-heading"><span class="elementor-inline-editing uael-dual-heading-text uael-first-text" data-elementor-setting-key="before_heading_text" data-elementor-inline-editing-toolbar="basic">{{ settings.before_heading_text }}</span></span><span class="uael-adv-heading-stack"><span {{{ view.getRenderAttributeString( 'uael-dual-heading-highlight-text') }}} data-elementor-setting-key="second_heading_text" data-elementor-inline-editing-toolbar="basic">{{ settings.second_heading_text }}</span></span><# if ( '' != settings.after_heading_text ) { #><span class="uael-after-heading"><span class="elementor-inline-editing uael-dual-heading-text uael-third-text" data-elementor-setting-key="after_heading_text" data-elementor-inline-editing-toolbar="basic">{{ settings.after_heading_text }}</span></span>
+				<span class="uael-before-heading"><span class="elementor-inline-editing uael-dual-heading-text uael-first-text" data-elementor-setting-key="before_heading_text" data-elementor-inline-editing-toolbar="basic">{{ settings.before_heading_text }}</span></span><span class="uael-adv-heading-stack"><span {{{ view.getRenderAttributeString( 'uael-dual-heading-highlight-text') }}} data-elementor-setting-key="second_heading_text" data-elementor-inline-editing-toolbar="basic">{{ settings.second_heading_text }}</span></span><# if ( '' != settings.after_heading_text ) { #><span class="uael-after-heading"><span class="elementor-inline-editing uael-dual-heading-text uael-third-text" data-elementor-setting-key="after_heading_text" data-elementor-inline-editing-toolbar="basic">{{ settings.after_heading_text }}</span></span> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 				<# } #>
 				<# if ( '' !== settings.heading_link.url ) { #>
 					</a>

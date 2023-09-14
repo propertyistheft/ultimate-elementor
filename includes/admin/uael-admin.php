@@ -24,7 +24,7 @@ $hide_tagline = UAEL_Helper::is_hide_tagline();
 						<?php if ( $uael_icon ) { ?>
 							<img src="<?php echo esc_url( UAEL_URL . 'admin/assets/images/uael_logo.svg' ); ?>" class="uael-header-icon" alt="<?php echo esc_attr( UAEL_PLUGIN_NAME ); ?> " >
 						<?php } ?>
-						<span class="uael-plugin-version"><?php echo esc_attr( UAEL_VER ); ?></span>
+						<span class="uael-plugin-version"><?php echo esc_html( UAEL_VER ); ?></span>
 						<?php do_action( 'uael_header_title' ); ?>
 						</a>
 					<?php } ?>
@@ -44,14 +44,14 @@ $hide_tagline = UAEL_Helper::is_hide_tagline();
 		</div>
 
 		<?php
-		if ( isset( $_REQUEST['uael_admin_nonce'] ) && wp_verify_nonce( $_REQUEST['uael_admin_nonce'], 'uael_admin_nonce' ) ) {
+		if ( isset( $_REQUEST['uael_admin_nonce'] ) && wp_verify_nonce( sanitize_text_field( $_REQUEST['uael_admin_nonce'] ), 'uael_admin_nonce' ) ) {
 			if ( isset( $_REQUEST['message'] ) && ( 'saved' === $_REQUEST['message'] || 'saved_ext' === $_REQUEST['message'] ) ) {
 				?>
 					<div id="message" class="notice notice-success is-dismissive uael-notice"><p> <?php esc_html_e( 'Settings saved successfully.', 'uael' ); ?> </p></div>
 				<?php
 			} elseif ( isset( $_REQUEST['message'] ) && 'error' === $_REQUEST['message'] ) {
 				?>
-				<div id="message" class="notice notice-error is-dismissive uael-notice"><p> <?php echo esc_html( $_REQUEST['error'] ); ?> </p></div>
+				<div id="message" class="notice notice-error is-dismissive uael-notice"><p> <?php echo isset( $_REQUEST['error'] ) ? esc_html( sanitize_text_field( $_REQUEST['error'] ) ) : ''; ?> </p></div>
 				<?php
 			}
 		}

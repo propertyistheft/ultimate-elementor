@@ -92,7 +92,7 @@ $out_of_stock_string = apply_filters( 'uael_woo_out_of_stock_string', __( 'Out o
 
 			echo '<div class="uael-quick-view-btn" data-product_id="' . esc_attr( $wp_post_id ) . '">';
 				echo '<span class="uael-qv-icon fa fa-eye"></span>';
-				echo '<span class="uael-qv-text">' . esc_attr__( 'Quick View', 'uael' ) . '</span>';
+				echo '<span class="uael-qv-text">' . esc_html__( 'Quick View', 'uael' ) . '</span>';
 			echo '</div>';
 
 		} elseif ( 'image' === $quick_view_type && 'yes' === $this->get_instance_value( 'show_image' ) ) {

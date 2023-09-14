@@ -252,9 +252,9 @@ abstract class Skin_Style {
 
 						$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : '1';
 
-						if ( isset( $_POST['nonce'] ) && wp_verify_nonce( $_POST['nonce'], 'uael-product-nonce' ) ) {
+						if ( isset( $_POST['nonce'] ) && wp_verify_nonce( sanitize_text_field( $_POST['nonce'] ), 'uael-product-nonce' ) ) {
 							if ( isset( $_POST['page_number'] ) && '' !== $_POST['page_number'] ) {
-								$paged = $_POST['page_number'];
+								$paged = sanitize_text_field( $_POST['page_number'] );
 							}
 						}
 
@@ -360,10 +360,10 @@ abstract class Skin_Style {
 
 					$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : '1';
 
-					if ( isset( $_POST['nonce'] ) && wp_verify_nonce( $_POST['nonce'], 'uael-product-nonce' ) ) {
+					if ( isset( $_POST['nonce'] ) && wp_verify_nonce( sanitize_text_field( $_POST['nonce'] ), 'uael-product-nonce' ) ) {
 
 						if ( isset( $_POST['page_number'] ) && '' !== $_POST['page_number'] ) {
-							$paged = $_POST['page_number'];
+							$paged = sanitize_text_field( $_POST['page_number'] );
 						}
 					}
 
@@ -518,9 +518,9 @@ abstract class Skin_Style {
 					/* Pagination */
 					$paged = ( get_query_var( 'paged' ) ) ? get_query_var( 'paged' ) : 1;
 
-					if ( isset( $_POST['nonce'] ) && wp_verify_nonce( $_POST['nonce'], 'uael-product-nonce' ) ) {
+					if ( isset( $_POST['nonce'] ) && wp_verify_nonce( sanitize_text_field( $_POST['nonce'] ), 'uael-product-nonce' ) ) {
 						if ( isset( $_POST['page_number'] ) && '' !== $_POST['page_number'] ) {
-							$paged = $_POST['page_number'];
+							$paged = sanitize_text_field( $_POST['page_number'] );
 						}
 					}
 
@@ -923,8 +923,8 @@ abstract class Skin_Style {
 
 		ob_start();
 
-		if ( isset( $_POST['nonce'] ) && wp_verify_nonce( $_POST['nonce'], 'uael-product-nonce' ) ) {
-			$category = ( isset( $_POST['category'] ) ) ? $_POST['category'] : '';
+		if ( isset( $_POST['nonce'] ) && wp_verify_nonce( sanitize_text_field( $_POST['nonce'] ), 'uael-product-nonce' ) ) {
+			$category = ( isset( $_POST['category'] ) ) ? sanitize_text_field( $_POST['category'] ) : '';
 		}
 
 		self::$settings = $widget->get_settings();
@@ -954,8 +954,8 @@ abstract class Skin_Style {
 
 		ob_start();
 
-		if ( isset( $_POST['nonce'] ) && wp_verify_nonce( $_POST['nonce'], 'uael-product-nonce' ) ) {
-			$category = ( isset( $_POST['category'] ) ) ? $_POST['category'] : '';
+		if ( isset( $_POST['nonce'] ) && wp_verify_nonce( sanitize_text_field( $_POST['nonce'] ), 'uael-product-nonce' ) ) {
+			$category = ( isset( $_POST['category'] ) ) ? sanitize_text_field( $_POST['category'] ) : '';
 		}
 
 		self::$settings = $widget->get_settings();

@@ -112,7 +112,7 @@ class Request_Parameter extends Condition {
 
 		$show = false;
 
-		$current_url = basename( $_SERVER['REQUEST_URI'] );
+		$current_url = isset( $_SERVER['REQUEST_URI'] ) ? basename( esc_url_raw( $_SERVER['REQUEST_URI'] ) ) : '';
 
 		$url_components = wp_parse_url( $current_url );
 

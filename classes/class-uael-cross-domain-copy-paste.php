@@ -42,13 +42,13 @@ class UAEL_Cross_Domain_Copy_Paste {
 			);
 		}
 
-		$media = isset( $_POST['content'] ) ? wp_unslash( $_POST['content'] ) : '';
+		$media = isset( $_POST['content'] ) ? sanitize_text_field( wp_unslash( $_POST['content'] ) ) : '';
 
 		if ( empty( $media ) ) {
 			wp_send_json_error( __( 'Looks like content is empty. Cannot be processed.', 'uael' ) );
 		}
 
-		$media = array( json_decode( $media, true ) ); // PHPCS:ignore:Generic.Arrays.DisallowShortArraySyntax.Found
+		$media = array( json_decode( $media, true ) );
 		$media = self::replace_elements_ids( $media );
 		$media = self::import_media_content( $media );
 

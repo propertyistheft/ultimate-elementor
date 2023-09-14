@@ -74,7 +74,7 @@ class Module extends Module_Base {
 		if ( ! is_readable( $design ) ) {
 			return false;
 		}
-		return file_get_contents( $design ); // phpcs:ignore WordPress.WP.AlternativeFunctions.file_get_contents_file_get_contents
+		return file_get_contents( $design ); // phpcs:ignore WordPressVIPMinimum.Performance.FetchingRemoteData.FileGetContentsUnknown -- Reading local file is OK.
 	}
 
 	/**
@@ -86,7 +86,7 @@ class Module extends Module_Base {
 
 		check_ajax_referer( 'uael-presets-nonce', 'nonce' );
 
-		$presets = self::get_presets( substr( $_POST['widget'], 5 ) );
+		$presets = isset( $_POST['widget'] ) ? self::get_presets( substr( sanitize_text_field( $_POST['widget'] ), 5 ) ) : '';
 
 		wp_send_json_success( $presets, 200 );
 	}

@@ -1036,7 +1036,7 @@ class Table_Of_Contents extends Common_Widget {
 					</div>
 				</div>
 				<div class="uael-toc-empty-note">
-					<span><?php echo esc_attr__( 'Add a header to begin generating the table of contents', 'uael' ); ?></span>
+					<span><?php echo esc_html__( 'Add a header to begin generating the table of contents', 'uael' ); ?></span>
 				</div>
 			</div>
 			<?php if ( 'yes' === $settings['scroll_to_top'] ) { ?>
@@ -1103,12 +1103,12 @@ class Table_Of_Contents extends Common_Widget {
 
 		#>
 
-		<div {{{ view.getRenderAttributeString( 'parent-wrapper' ) }}} >
+		<div {{{ view.getRenderAttributeString( 'parent-wrapper' ) }}} > <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 			<div class="uael-toc-wrapper">
 				<div class="uael-toc-header">
-					<span class="uael-toc-heading elementor-inline-editing" data-elementor-setting-key="heading_title" data-elementor-inline-editing-toolbar="basic" >{{{ settings.heading_title }}}</span>
+					<span class="uael-toc-heading elementor-inline-editing" data-elementor-setting-key="heading_title" data-elementor-inline-editing-toolbar="basic" >{{ settings.heading_title }}</span>
 					<# if ( 'yes' === settings.collapsible ) { #>
-						<div class="uael-toc-switch" {{{ view.getRenderAttributeString( 'hide-show-wrapper' ) }}} >
+						<div class="uael-toc-switch" {{{ view.getRenderAttributeString( 'hide-show-wrapper' ) }}} > <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 							<span class="uael-icon fa"></span>
 						</div>
 					<# } #>
@@ -1119,19 +1119,19 @@ class Table_Of_Contents extends Common_Widget {
 				<div class="uael-toc-toggle-content">
 					<div class="uael-toc-content-wrapper">
 						<# if ( 'unordered_list' === settings.bullet_icon ) { #>
-							<ul data-toc-headings="headings" class="uael-toc-list uael-toc-list-disc" {{{ view.getRenderAttributeString( 'list-parent-wrapper' ) }}} ></ul>
+							<ul data-toc-headings="headings" class="uael-toc-list uael-toc-list-disc" {{{ view.getRenderAttributeString( 'list-parent-wrapper' ) }}} ></ul> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 						<# } else if ( 'ordered_list' === settings.bullet_icon ) { #>
 
-							<ol data-toc-headings="headings" class="uael-toc-list"{{{ view.getRenderAttributeString( 'list-parent-wrapper' ) }}} ></ol>
+							<ol data-toc-headings="headings" class="uael-toc-list"{{{ view.getRenderAttributeString( 'list-parent-wrapper' ) }}} ></ol> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 
 						<# } else { #>
-							<ul data-toc-headings="headings" class="uael-toc-list uael-toc-list-none" {{{ view.getRenderAttributeString( 'list-parent-wrapper' ) }}} ></ul>
+							<ul data-toc-headings="headings" class="uael-toc-list uael-toc-list-none" {{{ view.getRenderAttributeString( 'list-parent-wrapper' ) }}} ></ul> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 						<# } #>
 					</div>
 				</div>
 
 				<div class="uael-toc-empty-note">
-					<span><?php echo esc_attr__( 'Add a header to begin generating the table of contents', 'uael' ); ?></span>
+					<span><?php echo esc_html__( 'Add a header to begin generating the table of contents', 'uael' ); ?></span>
 				</div>
 
 			</div>

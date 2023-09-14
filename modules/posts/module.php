@@ -211,9 +211,9 @@ class Module extends Module_Base {
 
 		check_ajax_referer( 'uael-posts-widget-nonce', 'nonce' );
 
-		$post_id   = $_POST['page_id'];
-		$widget_id = $_POST['widget_id'];
-		$style_id  = $_POST['skin'];
+		$post_id   = isset( $_POST['page_id'] ) ? sanitize_text_field( $_POST['page_id'] ) : '';
+		$widget_id = isset( $_POST['widget_id'] ) ? sanitize_text_field( $_POST['widget_id'] ) : '';
+		$style_id  = isset( $_POST['skin'] ) ? sanitize_text_field( $_POST['skin'] ) : '';
 
 		$elementor = \Elementor\Plugin::$instance;
 		$meta      = $elementor->documents->get( $post_id )->get_elements_data();
@@ -287,7 +287,7 @@ class Module extends Module_Base {
 	 */
 	public function fix_query_offset( &$query ) {
 		if ( ! empty( $query->query_vars['offset_to_fix'] ) ) {
-			if ( $query->is_paged ) {
+			if ( $query->is_paged && $query->is_main_query() ) {
 				$query->query_vars['offset'] = $query->query_vars['offset_to_fix'] + ( ( $query->query_vars['paged'] - 1 ) * $query->query_vars['posts_per_page'] );
 			} else {
 				$query->query_vars['offset'] = $query->query_vars['offset_to_fix'];

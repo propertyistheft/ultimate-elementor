@@ -457,7 +457,7 @@ class Hotspot extends Common_Widget {
 						),
 					),
 					'fields'      => $repeater->get_controls(),
-					'title_field' => '{{{ text }}}',
+					'title_field' => '{{ text }}',
 					'condition'   => array(
 						'image[url]!' => '',
 					),
@@ -1798,9 +1798,9 @@ class Hotspot extends Common_Widget {
 		$node_id  = $this->get_id();
 		$device   = false;
 
-		$iphone  = ( false !== ( stripos( $_SERVER['HTTP_USER_AGENT'], 'iPhone' ) ) ? true : false );
-		$ipad    = ( false !== ( stripos( $_SERVER['HTTP_USER_AGENT'], 'iPad' ) ) ? true : false );
-		$android = ( false !== ( stripos( $_SERVER['HTTP_USER_AGENT'], 'Android' ) ) ? true : false );
+		$iphone  = ( isset( $_SERVER['HTTP_USER_AGENT'] ) && false !== ( stripos( sanitize_text_field( $_SERVER['HTTP_USER_AGENT'] ), 'iPhone' ) ) ? true : false ); // phpcs:ignore WordPressVIPMinimum.Variables.RestrictedVariables.cache_constraints___SERVER__HTTP_USER_AGENT__
+		$ipad    = ( isset( $_SERVER['HTTP_USER_AGENT'] ) && false !== ( stripos( sanitize_text_field( $_SERVER['HTTP_USER_AGENT'] ), 'iPad' ) ) ? true : false ); // phpcs:ignore WordPressVIPMinimum.Variables.RestrictedVariables.cache_constraints___SERVER__HTTP_USER_AGENT__
+		$android = ( isset( $_SERVER['HTTP_USER_AGENT'] ) && false !== ( stripos( sanitize_text_field( $_SERVER['HTTP_USER_AGENT'] ), 'Android' ) ) ? true : false ); // phpcs:ignore WordPressVIPMinimum.Variables.RestrictedVariables.cache_constraints___SERVER__HTTP_USER_AGENT__
 
 		if ( $iphone || $ipad || $android ) {
 			$device = true;
@@ -1934,11 +1934,11 @@ class Hotspot extends Common_Widget {
 					<?php if ( 'yes' === $settings['hotspot_tooltip_data'] ) { ?>
 						<span class="uael-tooltip-container">
 							<span <?php echo wp_kses_post( $this->get_render_attribute_string( $tooltip_data ) ); ?>><?php echo wp_kses_post( $this->parse_text_editor( $item['content'] ) ); ?>
-								<span class="uael-tour"><span class="uael-actual-step"><?php echo esc_attr( $counter ); ?> <?php echo esc_attr_e( 'of', 'uael' ); ?> <?php echo count( $settings['hotspots_list'] ); ?></span><ul><li><a href="#0" class="uael-prev-<?php echo esc_attr( $node_id ); ?>" data-tooltipid="<?php echo esc_attr( $counter ); ?>">&#171; <?php echo esc_attr( $previous ); ?></a></li><li><a href="#0" class="uael-next-<?php echo esc_attr( $node_id ); ?>" data-tooltipid="<?php echo esc_attr( $counter ); ?>"><?php echo esc_attr( $next ); ?> &#187;</a></li></ul></span>
+								<span class="uael-tour"><span class="uael-actual-step"><?php echo esc_html( $counter ); ?> <?php echo esc_attr_e( 'of', 'uael' ); ?> <?php echo count( $settings['hotspots_list'] ); ?></span><ul><li><a href="#0" class="uael-prev-<?php echo esc_attr( $node_id ); ?>" data-tooltipid="<?php echo esc_attr( $counter ); ?>">&#171; <?php echo esc_html( $previous ); ?></a></li><li><a href="#0" class="uael-next-<?php echo esc_attr( $node_id ); ?>" data-tooltipid="<?php echo esc_attr( $counter ); ?>"><?php echo esc_html( $next ); ?> &#187;</a></li></ul></span>
 								<?php
 								if ( 'yes' === $settings['hotspot_tour_autoplay'] && 'yes' === $settings['hotspot_tour_repeat'] ) {
 									?>
-									<span class="uael-hotspot-end"><a href="#" class="uael-tour-end-<?php echo esc_attr( $node_id ); ?>"><?php echo esc_attr( $end ); ?></a></span><?php } ?>
+									<span class="uael-hotspot-end"><a href="#" class="uael-tour-end-<?php echo esc_attr( $node_id ); ?>"><?php echo esc_html( $end ); ?></a></span><?php } ?>
 							</span>
 						</span>
 					<?php } ?>
@@ -2085,7 +2085,7 @@ class Hotspot extends Common_Widget {
 				<#
 				if ( settings.hotspots_list ) {
 					var counter = 1; #>
-					<div class="uael-hotspot-container" {{{ param }}}>
+					<div class="uael-hotspot-container" {{{ param }}}> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 						<# _.each( settings.hotspots_list, function( item, index ) {
 							var hotspot_glow = '';
 							if ( 'yes' == settings.hotspot_anim ) {
@@ -2100,10 +2100,10 @@ class Hotspot extends Common_Widget {
 							<# if ( '' != item.marker_link.url ) { #>
 								<# if ( 'yes' == settings.hotspot_tooltip_data ) { #>
 									<# if ( 'yes' != settings.hotspot_tour && 'hover' == settings.trigger ) { #>
-										<a {{{ view.getRenderAttributeString( 'url-' + item._id ) }}}>
+										<a {{{ view.getRenderAttributeString( 'url-' + item._id ) }}}> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 									<# } #>
 								<# } else { #>
-									<a {{{ view.getRenderAttributeString( 'url-' + item._id ) }}}>
+									<a {{{ view.getRenderAttributeString( 'url-' + item._id ) }}}> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 								<# } #>
 							<# } #>
 
@@ -2115,7 +2115,7 @@ class Hotspot extends Common_Widget {
 											iconsHTML[ index ] = elementor.helpers.renderIcon( view, item.new_icon, { 'aria-hidden': true }, 'i' , 'object' );
 											migrated = elementor.helpers.isIconMigrated( item, 'new_icon' ); #>
 											<# if ( ( ! item.icon || migrated ) && iconsHTML[ index ] && iconsHTML[ index ].rendered ) { #>
-												{{{ iconsHTML[ index ].value }}}
+												{{{ iconsHTML[ index ].value }}} <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 											<# } else { #>
 												<i class="{{ item.icon }}" aria-hidden="true"></i>
 											<# } #>
@@ -2141,8 +2141,8 @@ class Hotspot extends Common_Widget {
 							<# } #>
 							<# if ( 'yes' == settings.hotspot_tooltip_data ) { #>
 								<span class="uael-tooltip-container">
-									<span class="uael-tooltip-text {{ hotspot_tour }}" id="uael-tooltip-content-{{ item._id }}">{{{ item.content }}}
-										<span class="uael-tour"><span class="uael-actual-step">{{ counter }} of {{ length }}</span><ul><li><a href="#0" class="uael-prev-{{ node_id }}" data-tooltipid="{{ counter }}">&#171; <?php esc_attr_e( 'Previous', 'uael' ); ?></a></li><li><a href="#0" class="uael-next-{{ node_id }}" data-tooltipid="{{ counter }}"><?php esc_attr_e( 'Next', 'uael' ); ?> &#187;</a></li></ul></span>
+									<span class="uael-tooltip-text {{ hotspot_tour }}" id="uael-tooltip-content-{{ item._id }}">{{ item.content }}
+										<span class="uael-tour"><span class="uael-actual-step">{{ counter }} of {{ length }}</span><ul><li><a href="#0" class="uael-prev-{{ node_id }}" data-tooltipid="{{ counter }}">&#171; <?php esc_html_e( 'Previous', 'uael' ); ?></a></li><li><a href="#0" class="uael-next-{{ node_id }}" data-tooltipid="{{ counter }}"><?php esc_html_e( 'Next', 'uael' ); ?> &#187;</a></li></ul></span>
 									</span>
 								</span>
 							<# } #>
@@ -2159,7 +2159,7 @@ class Hotspot extends Common_Widget {
 					#>
 					<div class="uael-hotspot-overlay">
 						<div class="uael-overlay-button">
-							<a {{{ view.getRenderAttributeString( 'button' ) }}}>
+							<a {{{ view.getRenderAttributeString( 'button' ) }}}> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 								<span class="elementor-button-text elementor-inline-editing" data-elementor-setting-key="overlay_button_text" data-elementor-inline-editing-toolbar="none">{{ settings.overlay_button_text }}</span>
 							</a>
 						</div>

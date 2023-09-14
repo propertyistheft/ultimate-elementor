@@ -281,7 +281,7 @@ class SocialShare extends Common_Widget {
 					networkClass = "fa " + networkClass;
 			    }
 			    #>
-			    <i class="{{{ networkClass }}}" aria-hidden="true"></i>{{{text.charAt(0).toUpperCase() + text.slice(1)}}}',
+			    <i class="{{ networkClass }}" aria-hidden="true"></i>{{text.charAt(0).toUpperCase() + text.slice(1)}}',
 				'render_type' => 'template',
 			)
 		);
@@ -1579,7 +1579,7 @@ class SocialShare extends Common_Widget {
 		$share_url = isset( $settings['share_url']['url'] ) ? $settings['share_url']['url'] : '';
 		?>
 
-		<div class="uael-style-<?php echo esc_attr( $settings['display_position'] ); ?> uael-container uael-floating-align-<?php echo esc_attr( $settings['display_floating_align'] ); ?>" data-pin_data_url="<?php echo esc_attr( $pin_image_url ); ?>" data-share_url_type="<?php echo esc_attr( $settings['share_url_type'] ); ?>" data-share_url="<?php echo esc_attr( $share_url ); ?>">
+		<div class="uael-style-<?php echo esc_attr( $settings['display_position'] ); ?> uael-container uael-floating-align-<?php echo esc_attr( $settings['display_floating_align'] ); ?>" data-pin_data_url="<?php echo esc_url( $pin_image_url ); ?>" data-share_url_type="<?php echo esc_attr( $settings['share_url_type'] ); ?>" data-share_url="<?php echo esc_url( $share_url ); ?>">
 			<div class="elementor-grid uael-floating-align-<?php echo esc_attr( $settings['display_floating_align'] ); ?>">
 				<?php
 

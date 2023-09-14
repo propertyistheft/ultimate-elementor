@@ -82,7 +82,7 @@ class Browser extends Condition {
 	public function compare_value( $settings, $operator, $value ) {
 
 		$show       = false;
-		$user_agent = UAEL_Helper::get_browser_name( $_SERVER['HTTP_USER_AGENT'] );
+		$user_agent = isset( $_SERVER['HTTP_USER_AGENT'] ) ? UAEL_Helper::get_browser_name( sanitize_text_field( $_SERVER['HTTP_USER_AGENT'] ) ) : ''; // phpcs:ignore WordPressVIPMinimum.Variables.RestrictedVariables.cache_constraints___SERVER__HTTP_USER_AGENT__
 
 		$show = is_array( $value ) && ! empty( $value ) ? in_array( $user_agent, $value, true ) : $value === $user_agent;
 

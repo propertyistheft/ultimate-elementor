@@ -769,7 +769,7 @@ class Price_Table extends Common_Widget {
 						),
 					),
 				),
-				'title_field' => '{{{ item_text }}}',
+				'title_field' => '{{ item_text }}',
 			)
 		);
 
@@ -3883,7 +3883,7 @@ class Price_Table extends Common_Widget {
 			<div class="uael-price-table-pricing">
 				<div class="uael-pricing-container" <?php echo wp_kses_post( $this->get_render_attribute_string( 'strike_tooltip_data_attr' ) ); ?>>
 					<?php if ( 'top' === $settings['original_price_position'] && 'yes' === $settings['sale'] && ! empty( $settings['original_price'] ) ) : ?>
-						<span class="uael-price-table-original-price uael-price-typo-excluded"><?php echo esc_attr( $symbol ) . wp_kses_post( $settings['original_price'] ); ?></span>
+						<span class="uael-price-table-original-price uael-price-typo-excluded"><?php echo esc_attr( $symbol ) . wp_kses_post( $settings['original_price'] ); ?></span> <?php // phpcs:ignore WordPressVIPMinimum.Security.ProperEscapingFunction.notAttrEscAttr ?>
 					<?php endif; ?>
 					<?php if ( 'yes' === $settings['original_price_tooltip'] && 'top' === $settings['original_price_position'] && 'yes' === $settings['sale'] && ! empty( $settings['original_price'] ) ) : ?>
 					<span>
@@ -3906,16 +3906,16 @@ class Price_Table extends Common_Widget {
 					<?php endif; ?>
 					<div class="uael-pricing-value">
 						<?php if ( 'top' !== $settings['original_price_position'] && 'yes' === $settings['sale'] && ! empty( $settings['original_price'] ) ) : ?>
-							<span class="uael-price-table-original-price uael-price-typo-excluded"><?php echo esc_attr( $symbol ) . wp_kses_post( $settings['original_price'] ); ?></span>
+							<span class="uael-price-table-original-price uael-price-typo-excluded"><?php echo esc_attr( $symbol ) . wp_kses_post( $settings['original_price'] ); ?></span> <?php // phpcs:ignore WordPressVIPMinimum.Security.ProperEscapingFunction.notAttrEscAttr ?>
 						<?php endif; ?>
 
 						<?php if ( ! empty( $symbol ) && ',' !== $settings['currency_format'] ) : ?>
-							<span class="uael-price-table-currency"><?php echo esc_attr( $symbol ); ?></span>
+							<span class="uael-price-table-currency"><?php echo esc_attr( $symbol ); ?></span> <?php // phpcs:ignore WordPressVIPMinimum.Security.ProperEscapingFunction.notAttrEscAttr ?>
 						<?php endif; ?>
 
 						<?php if ( ! empty( $intvalue ) || 0 <= $intvalue ) : ?>
 							<?php if ( ! empty( $symbol ) && ',' === $settings['currency_format'] ) : ?>
-									<span class="uael-price-currency-normal"><?php echo esc_attr( $symbol ); ?></span>
+									<span class="uael-price-currency-normal"><?php echo esc_attr( $symbol ); ?></span> <?php // phpcs:ignore WordPressVIPMinimum.Security.ProperEscapingFunction.notAttrEscAttr ?>
 							<?php endif; ?>
 							<span class="uael-price-table-integer-part"><?php echo wp_kses_post( $intvalue ); ?></span>
 						<?php endif; ?>
@@ -3956,9 +3956,9 @@ class Price_Table extends Common_Widget {
 
 			$device = false;
 
-			$iphone  = ( false !== ( stripos( $_SERVER['HTTP_USER_AGENT'], 'iPhone' ) ) ? true : false );
-			$ipad    = ( false !== ( stripos( $_SERVER['HTTP_USER_AGENT'], 'iPad' ) ) ? true : false );
-			$android = ( false !== ( stripos( $_SERVER['HTTP_USER_AGENT'], 'Android' ) ) ? true : false );
+			$iphone  = ( isset( $_SERVER['HTTP_USER_AGENT'] ) && false !== ( stripos( sanitize_text_field( $_SERVER['HTTP_USER_AGENT'] ), 'iPhone' ) ) ? true : false ); // phpcs:ignore WordPressVIPMinimum.Variables.RestrictedVariables.cache_constraints___SERVER__HTTP_USER_AGENT__
+			$ipad    = ( isset( $_SERVER['HTTP_USER_AGENT'] ) && false !== ( stripos( sanitize_text_field( $_SERVER['HTTP_USER_AGENT'] ), 'iPad' ) ) ? true : false ); // phpcs:ignore WordPressVIPMinimum.Variables.RestrictedVariables.cache_constraints___SERVER__HTTP_USER_AGENT__
+			$android = ( isset( $_SERVER['HTTP_USER_AGENT'] ) && false !== ( stripos( sanitize_text_field( $_SERVER['HTTP_USER_AGENT'] ), 'Android' ) ) ? true : false ); // phpcs:ignore WordPressVIPMinimum.Variables.RestrictedVariables.cache_constraints___SERVER__HTTP_USER_AGENT__
 
 			if ( $iphone || $ipad || $android ) {
 				$device = true;
@@ -4184,7 +4184,7 @@ class Price_Table extends Common_Widget {
 
 				#>
 					<div class="uael-price-heading-icon">
-						{{{ headingIconsHTML.value }}}
+						{{{ headingIconsHTML.value }}} <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 					</div>
 				<#
 			}
@@ -4205,7 +4205,7 @@ class Price_Table extends Common_Widget {
 					var headingSizeTag = render_heading_tag( settings.heading_tag );
 					#>
 					<div class="uael-price-heading-text">
-						<{{ headingSizeTag }} class="uael-price-table-heading elementor-inline-editing" data-elementor-setting-key="heading" data-elementor-inline-editing-toolbar="basic"> {{{ settings.heading }}}
+						<{{ headingSizeTag }} class="uael-price-table-heading elementor-inline-editing" data-elementor-setting-key="heading" data-elementor-inline-editing-toolbar="basic"> {{ settings.heading }}
 						</{{ headingSizeTag }}>
 					</div>
 					<#
@@ -4221,13 +4221,13 @@ class Price_Table extends Common_Widget {
 						var subHeadingSizeTag2 = render_heading_tag( settings.sub_heading_tag_style2 );
 						#>
 						<{{ subHeadingSizeTag2 }} class="uael-price-table-subheading elementor-inline-editing" data-elementor-setting-key="sub_heading_style2" data-elementor-inline-editing-toolbar="basic">
-							{{{ settings.sub_heading_style2 }}}
+							{{ settings.sub_heading_style2 }}
 						</{{ subHeadingSizeTag2 }}>
 					<# } else {
 						var subHeadingSizeTag = render_heading_tag( settings.sub_heading_tag );
 						#>
 						<{{ subHeadingSizeTag }} class="uael-price-table-subheading elementor-inline-editing" data-elementor-setting-key="sub_heading" data-elementor-inline-editing-toolbar="basic">
-							{{{ settings.sub_heading }}}
+							{{ settings.sub_heading }}
 						</{{ subHeadingSizeTag }}>
 					<# } #>
 				</div>
@@ -4243,7 +4243,7 @@ class Price_Table extends Common_Widget {
 					#>
 					<div class="uael-price-table-header">
 						<# render_heading_icon(); #>
-						<{{{ headingSizeTag }}} class="uael-price-table-heading elementor-inline-editing" data-elementor-setting-key="heading" data-elementor-inline-editing-toolbar="basic">{{{ settings.heading }}}</{{{ headingSizeTag }}}>
+						<{{ headingSizeTag }} class="uael-price-table-heading elementor-inline-editing" data-elementor-setting-key="heading" data-elementor-inline-editing-toolbar="basic">{{ settings.heading }}</{{ headingSizeTag }}>
 					</div>
 					<#
 				}
@@ -4313,50 +4313,50 @@ class Price_Table extends Common_Widget {
 			#>
 			<div class="uael-price-table-price-wrap">
 				<div class="uael-price-table-pricing">
-					<div class="uael-pricing-container" {{{ view.getRenderAttributeString( 'strike_tooltip_data_attr' ) }}}>
+					<div class="uael-pricing-container" {{{ view.getRenderAttributeString( 'strike_tooltip_data_attr' ) }}}> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 						<# if( 'top' === settings.original_price_position && settings.sale && settings.original_price) { #>
-							<div class="uael-price-table-original-price uael-price-typo-excluded">{{{ symbol + settings.original_price }}}</div>
+							<div class="uael-price-table-original-price uael-price-typo-excluded">{{{ symbol + settings.original_price }}}</div> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 						<# } #>
 						<# if ( 'yes' === settings.original_price_tooltip && 'top' === settings.original_price_position && settings.sale && settings.original_price ) { #>
 							<span>
 								<# var strikeTooltipIconHTML = elementor.helpers.renderIcon( view, settings.original_price_tooltip_icon, { 'aria-hidden': true, 'data-tooltip-content': '#uael-strike-tooltip-content-' + view.$el.data('id') + '', 'class': 'uael-strike-tooltip' }, 'i' , 'object' ); #>
-								{{{ strikeTooltipIconHTML.value }}}
+								{{{ strikeTooltipIconHTML.value }}} <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 								<div class="uael-strike-tooltip-template">
 									<span id="uael-strike-tooltip-content-{{view.$el.data('id')}}">
-									{{{ settings.original_price_tooltip_content }}}
+									{{ settings.original_price_tooltip_content }}
 								</span>
 								</div>
 							</span>
 						<# } #>
 						<div class="uael-pricing-value">
 							<# if ( 'top' !== settings.original_price_position && settings.sale && settings.original_price ) { #>
-								<div class="uael-price-table-original-price uael-price-typo-excluded">{{{ symbol + settings.original_price }}}</div>
+								<div class="uael-price-table-original-price uael-price-typo-excluded">{{{ symbol + settings.original_price }}}</div> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 							<# } #>
 
 							<# if ( '' != symbol && ',' != settings.currency_format) { #>
-								<span class="uael-price-table-currency">{{{ symbol }}}</span>
+								<span class="uael-price-table-currency">{{{ symbol }}}</span> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 							<# } #>
 
 							<# if ( '' != intvalue ) { #>
 								<# if ( '' != symbol && ',' == settings.currency_format) { #>
-									<span class="uael-price-currency-normal">{{{ symbol }}}</span>
+									<span class="uael-price-currency-normal">{{{ symbol }}}</span> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 								<# } #>
-								<span class="uael-price-table-integer-part">{{{ intvalue }}}</span>
+								<span class="uael-price-table-integer-part">{{ intvalue }}</span>
 							<# } #>
 
 							<span class="uael-price-table-beside-price">
 								<# if ( '' != fraction ) { #>
-									<span class="uael-price-table-fractional-part">{{{ fraction }}}</span>
+									<span class="uael-price-table-fractional-part">{{ fraction }}</span>
 								<# } #>
 								<# if ( settings.duration && 'beside' === settings.duration_position && '3' != settings.pricetable_style ) { #>
-									{{{ durationText }}}
+									{{{ durationText }}} <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 								<# } #>
 							</span>
 						</div>
 						<# if ( settings.duration ) { #>
 							<# if ( '3' === settings.pricetable_style || 'below' === settings.duration_position ) { #>
 								<div class="uael-pricing-duration">
-									{{{ durationText }}}
+									{{{ durationText }}} <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 								</div>
 							<# } #>
 						<# } #>
@@ -4372,7 +4372,7 @@ class Price_Table extends Common_Widget {
 			var node_id = view.$el.data('id');
 
 			if ( settings.features_list ) { #>
-				<ul class="uael-price-table-features-list" {{{ param }}}>
+				<ul class="uael-price-table-features-list" {{{ param }}}> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 					<# _.each( settings.features_list, function( item, index ) {
 						var node_class = ( '' != item.tooltip_content ) ? 'uael-price-table-feature-content uael-price-table-content-' +  node_id : 'uael-price-table-feature-content';
 					#>
@@ -4385,7 +4385,7 @@ class Price_Table extends Common_Widget {
 										migrated = elementor.helpers.isIconMigrated( item, 'new_item_icon' ); #>
 
 										<# if ( ( ! item.item_icon || migrated ) && iconsHTML[ index ] && iconsHTML[ index ].rendered ) { #>
-											{{{ iconsHTML[ index ].value }}}
+											{{{ iconsHTML[ index ].value }}} <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 										<# } else if( '' !== item.item_icon ) { #>
 											<i class="{{ item.item_icon }}" aria-hidden="true"></i>
 										<# } #>
@@ -4395,7 +4395,7 @@ class Price_Table extends Common_Widget {
 								<?php } ?>
 
 								<# if ( ! _.isEmpty( item.item_text.trim() ) ) { #>
-									<span>{{{ item.item_text }}}</span>
+									<span>{{ item.item_text }}</span>
 								<# } else { #>
 									&nbsp;
 								<# } #>
@@ -4403,7 +4403,7 @@ class Price_Table extends Common_Widget {
 						</li>
 						<# if ( 'yes' == settings.features_tooltip_data && '' != item.tooltip_content ) { #>
 							<span class="uael-tooltip-container">
-								<span class="uael-features-text" id="uael-tooltip-content-{{ item._id }}">{{{ item.tooltip_content }}}</span>
+								<span class="uael-features-text" id="uael-tooltip-content-{{ item._id }}">{{ item.tooltip_content }}</span>
 							</span>
 							<# } #>
 					<# } ); #>
@@ -4419,17 +4419,17 @@ class Price_Table extends Common_Widget {
 				var cta_iconHTML = elementor.helpers.renderIcon( view, settings.new_cta_icon, { 'aria-hidden': true }, 'i' , 'object' );
 				var cta_migrated = elementor.helpers.isIconMigrated( settings, 'new_cta_icon' );
 				#>
-					<span {{{ view.getRenderAttributeString( 'button_icon' ) }}}>
+					<span {{{ view.getRenderAttributeString( 'button_icon' ) }}}> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 						<# if ( cta_iconHTML && cta_iconHTML.rendered && ( ! settings.cta_icon || cta_migrated ) ) {
 						#>
-							{{{ cta_iconHTML.value }}}
+							{{{ cta_iconHTML.value }}} <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 						<# } else { #>
 							<i class="{{ settings.cta_icon }}" aria-hidden="true"></i>
 						<# } #>
 					</span>
 				<# } #>
 			<?php } else { ?>
-				<span {{{ view.getRenderAttributeString( 'button_icon' ) }}}>
+				<span {{{ view.getRenderAttributeString( 'button_icon' ) }}}> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 					<i class="{{ settings.cta_icon }}" aria-hidden="true"></i>
 				</span>
 			<?php } ?>
@@ -4448,7 +4448,7 @@ class Price_Table extends Common_Widget {
 								}
 
 								#>
-								<a {{{ view.getRenderAttributeString( 'cta_link' ) }}}>
+								<a {{{ view.getRenderAttributeString( 'cta_link' ) }}}> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 									<#
 									if ( 'left' == settings.cta_icon_position ) {
 									#>
@@ -4487,8 +4487,8 @@ class Price_Table extends Common_Widget {
 								}
 
 								#>
-								<div {{{ view.getRenderAttributeString( 'wrapper' ) }}}>
-									<a {{{ view.getRenderAttributeString( 'button' ) }}}>
+								<div {{{ view.getRenderAttributeString( 'wrapper' ) }}}> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
+									<a {{{ view.getRenderAttributeString( 'button' ) }}}> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 										<#
 										view.addRenderAttribute( 'text', 'class', 'elementor-button-text' );
 
@@ -4502,7 +4502,7 @@ class Price_Table extends Common_Widget {
 										<#
 											if ( '' != settings.cta_text ) {
 										#>
-										<span {{{ view.getRenderAttributeString( 'text' ) }}} data-elementor-setting-key="cta_text" data-elementor-inline-editing-toolbar="none">{{{ settings.cta_text }}}</span>
+										<span {{{ view.getRenderAttributeString( 'text' ) }}} data-elementor-setting-key="cta_text" data-elementor-inline-editing-toolbar="none">{{ settings.cta_text }}</span> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 										<# } #>
 										<#
 										if ( 'right' == settings.cta_icon_position ) {
@@ -4514,7 +4514,7 @@ class Price_Table extends Common_Widget {
 							<# } #>
 						<# } #>
 						<# if ( 'yes' == settings.show_footer_additional_info && settings.footer_additional_info ) { #>
-							<div class="uael-price-table-disclaimer elementor-inline-editing" data-elementor-setting-key="footer_additional_info" data-elementor-inline-editing-toolbar="basic">{{{ settings.footer_additional_info }}}</div>
+							<div class="uael-price-table-disclaimer elementor-inline-editing" data-elementor-setting-key="footer_additional_info" data-elementor-inline-editing-toolbar="basic">{{ settings.footer_additional_info }}</div>
 						<# } #>
 					</div>
 				<# }
@@ -4550,7 +4550,7 @@ class Price_Table extends Common_Widget {
 					ribbonClass = 'uael-ribbon-' + settings.ribbon_horizontal_position;
 				} #>
 				<div class="uael-price-table-ribbon-{{ ribbon_style }} {{ ribbonClass }}">
-					<div class="uael-price-table-ribbon-content elementor-inline-editing" data-elementor-setting-key="ribbon_title" data-elementor-inline-editing-toolbar="none">{{{ settings.ribbon_title }}}</div>
+					<div class="uael-price-table-ribbon-content elementor-inline-editing" data-elementor-setting-key="ribbon_title" data-elementor-inline-editing-toolbar="none">{{ settings.ribbon_title }}</div>
 				</div>
 			<# }
 			}

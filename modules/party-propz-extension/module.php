@@ -1347,13 +1347,13 @@ class Module extends Module_Base {
 				}
 
 				if( 'yes' == settings.enable_party_propz ) { #>
-					<div {{{ view.getRenderAttributeString( 'party_propz_wrap' ) }}}>
+					<div {{{ view.getRenderAttributeString( 'party_propz_wrap' ) }}}> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 						<# if( '' != settings.party_propz_link.url ) { #>
-							<a {{{ view.getRenderAttributeString( 'image_link' ) }}}>
+							<a {{{ view.getRenderAttributeString( 'image_link' ) }}}> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 						<# }
 
 						if( 'image' === settings.party_propz_image_type ) { #>
-							<img {{{ view.getRenderAttributeString( 'party_propz_image_class' ) }}}>
+							<img {{{ view.getRenderAttributeString( 'party_propz_image_class' ) }}}> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 						<# } else if ( 'icon' === settings.party_propz_image_type ) { #>
 							<?php if ( UAEL_Helper::is_elementor_updated() ) { ?>
 
@@ -1363,7 +1363,7 @@ class Module extends Module_Base {
 
 									var iconMigrated = elementor.helpers.isIconMigrated( settings, 'new_party_propz_select_icon' );
 									if ( selectedIconHTML && selectedIconHTML.rendered && ( ! settings.party_propz_select_icon || iconMigrated ) ) { #>
-										{{{ selectedIconHTML.value }}}
+										{{{ selectedIconHTML.value }}} <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 									<# } else { #>
 										<i class= "{{ settings.party_propz_select_icon }}" aria-hidden="true"></i>
 									<# }
@@ -1461,9 +1461,9 @@ class Module extends Module_Base {
 		}
 
 		if( 'yes' == settings.enable_party_propz_widget ) { #>
-		<div {{{ view.getRenderAttributeString( 'uael_party_propz_widget_wrap' ) }}}>
+		<div {{{ view.getRenderAttributeString( 'uael_party_propz_widget_wrap' ) }}}> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 		<# if( 'image' === settings.party_propz_widget_image_type ) { #>
-		<img {{{ view.getRenderAttributeString( 'uael_party_propz_widget_img_cls' ) }}}>
+		<img {{{ view.getRenderAttributeString( 'uael_party_propz_widget_img_cls' ) }}}> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 		<# } else if ( 'icon' === settings.party_propz_widget_image_type ) { #>
 		<?php if ( UAEL_Helper::is_elementor_updated() ) { ?>
 
@@ -1473,7 +1473,7 @@ class Module extends Module_Base {
 
 			var iconMigrated = elementor.helpers.isIconMigrated( settings, 'new_party_propz_widget_select_icon' );
 			if ( selectedIconHTML && selectedIconHTML.rendered && ( ! settings.party_propz_widget_select_icon || iconMigrated ) ) { #>
-			{{{ selectedIconHTML.value }}}
+			{{{ selectedIconHTML.value }}} <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 			<# } else { #>
 			<i class= "{{ settings.party_propz_widget_select_icon }}" aria-hidden="true"></i>
 			<# }

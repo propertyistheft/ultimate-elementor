@@ -175,7 +175,7 @@ class Module extends Module_Base {
 
 		if ( isset( $_POST['data'] ) && $allow_register && true === $is_widget_active ) {
 
-			$data = $_POST['data'];
+			$data = array_map( 'sanitize_text_field', $_POST['data'] );
 
 			if ( isset( $data['is_recaptcha_enabled'] ) ) {
 				if ( 'yes' === sanitize_text_field( $data['is_recaptcha_enabled'] ) ) {

@@ -1411,7 +1411,7 @@ class Countdown extends Common_Widget {
 		}
 
 		if ( isset( $_COOKIE[ 'uael-timer-distance-' . $id ] ) ) {
-			if ( 'hide' === $settings['expire_actions'] && 0 > $_COOKIE[ 'uael-timer-distance-' . $id ] && false === $edit_mode ) {
+			if ( 'hide' === $settings['expire_actions'] && 0 > $_COOKIE[ 'uael-timer-distance-' . $id ] && false === $edit_mode ) { // phpcs:ignore WordPressVIPMinimum.Variables.RestrictedVariables.cache_constraints___COOKIE
 				$this->add_render_attribute( 'countdown', 'class', 'uael-countdown-hide' );
 			}
 		}

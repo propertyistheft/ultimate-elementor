@@ -31,7 +31,7 @@ $post_skins = UAEL_Helper::get_post_skin_options();
 	<div id="post-body" class="columns-2">
 		<div id="post-body-content">
 			<!-- All WordPress Notices below header -->
-			<h1 class="screen-reader-text"> <?php esc_attr_e( 'General', 'uael' ); ?> </h1>
+			<h1 class="screen-reader-text"> <?php esc_html_e( 'General', 'uael' ); ?> </h1>
 				<div class="widgets postbox">
 					<h2 class="hndle uael-flex uael-settings-widgets-heading">
 						<span><?php esc_html_e( 'Filters: ', 'uael' ); ?></span>
@@ -169,7 +169,7 @@ $post_skins = UAEL_Helper::get_post_skin_options();
 								<p>
 									<?php esc_html_e( 'Not sure how something works? Take a peek at the knowledge base and learn.', 'uael' ); ?>
 								</p>
-								<a href='<?php echo esc_url( $kb_url ); ?> ' target="_blank" rel="noopener"><?php esc_attr_e( 'Visit Knowledge Base »', 'uael' ); ?></a>
+								<a href='<?php echo esc_url( $kb_url ); ?> ' target="_blank" rel="noopener"><?php esc_html_e( 'Visit Knowledge Base »', 'uael' ); ?></a>
 							</div>
 						</div>
 					<?php } ?>
@@ -237,7 +237,7 @@ $post_skins = UAEL_Helper::get_post_skin_options();
 										$beta_string = __( 'Disable Beta Updates', 'uael' );
 									}
 									?>
-									<button class="button uael-button-spinner" id="uael-gen-enable-beta-update" data-value="<?php echo esc_attr( $allow_beta ); ?>"><?php echo esc_attr( $beta_string ); ?></button>
+									<button class="button uael-button-spinner" id="uael-gen-enable-beta-update" data-value="<?php echo esc_attr( $allow_beta ); ?>"><?php echo esc_html( $beta_string ); ?></button>
 								</label>
 								</p>
 							</div>

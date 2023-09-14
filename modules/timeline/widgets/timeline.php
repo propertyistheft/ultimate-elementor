@@ -1058,7 +1058,7 @@ class Timeline extends Common_Widget {
 				'type'        => Controls_Manager::REPEATER,
 				'show_label'  => true,
 				'fields'      => $repeater->get_controls(),
-				'title_field' => '{{{ timeline_single_date }}}',
+				'title_field' => '{{ timeline_single_date }}',
 				'default'     => array(
 					array(
 						'timeline_single_date'    => __( 'January 1, 2014', 'uael' ),

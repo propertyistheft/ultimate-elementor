@@ -61,7 +61,7 @@ class Module extends Module_Base {
 	 */
 	public function __construct() {
 		parent::__construct();
-		add_filter( 'upload_mimes', array( $this, 'uae_svg_mime_types' ) );
+		add_filter( 'upload_mimes', array( $this, 'uae_svg_mime_types' ) ); // phpcs:ignore WordPressVIPMinimum.Hooks.RestrictedHooks.upload_mimes -- Added this filter to allow upload of SVGs as feature requirement.
 	}
 	/**
 	 * Provide the SVG support for Retina Image widget.

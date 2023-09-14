@@ -426,8 +426,8 @@ class Welcome_Music extends Common_Widget {
 		if ( $is_editor ) {
 			?>
 			<div class="uael-builder-msg">
-				<h5><?php esc_attr_e( 'Welcome Music - ID ', 'uael' ); ?><?php echo esc_attr( $id ); ?></h5>
-				<p><?php esc_attr_e( 'Click here to edit the "Welcome Music" settings. This text will not be visible on frontend.', 'uael' ); ?></p>
+				<h5><?php esc_html_e( 'Welcome Music - ID ', 'uael' ); ?><?php echo esc_attr( $id ); ?></h5>
+				<p><?php esc_html_e( 'Click here to edit the "Welcome Music" settings. This text will not be visible on frontend.', 'uael' ); ?></p>
 			</div>
 			<?php
 		}

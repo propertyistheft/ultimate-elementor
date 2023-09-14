@@ -438,7 +438,7 @@ class Buttons extends Common_Widget {
 					'type'        => Controls_Manager::REPEATER,
 					'show_label'  => true,
 					'fields'      => $repeater->get_controls(),
-					'title_field' => '{{{ text }}}',
+					'title_field' => '{{ text }}',
 					'default'     => array(
 						array(
 							'text' => __( 'Enroll Today', 'uael' ),
@@ -956,7 +956,7 @@ class Buttons extends Common_Widget {
 										<#
 											if ( ( ! item.icon || migrated ) && iconsHTML[ index ] && iconsHTML[ index ].rendered ) {
 										#>
-												{{{ iconsHTML[ index ].value }}}
+												{{{ iconsHTML[ index ].value }}} <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 											<# } else { #>
 
 												<i class="{{ item.icon }}" aria-hidden="true"></i>
@@ -972,7 +972,7 @@ class Buttons extends Common_Widget {
 									</span>
 								<# } #>
 							<?php } ?>
-							<span {{{ view.getRenderAttributeString( buttonContentKey ) }}} >{{ item.text }}</span>
+							<span {{ view.getRenderAttributeString( buttonContentKey ) }} >{{ item.text }}</span>
 						</span>
 					</a>
 				</div>

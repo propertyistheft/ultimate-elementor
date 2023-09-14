@@ -829,7 +829,7 @@ class Marketing_Button extends Common_Widget {
 					<span class="elementor-button-icon {{ icon_align }}">
 						<# if ( iconHTML && iconHTML.rendered && ( ! settings.icon || migrated ) ) {
 						#>
-							{{{ iconHTML.value }}}
+							{{{ iconHTML.value }}} <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 						<# } else { #>
 							<i class="{{ settings.icon }}" aria-hidden="true"></i>
 						<# } #>
@@ -869,8 +869,8 @@ class Marketing_Button extends Common_Widget {
 			}
 
 			#>
-			<div {{{ view.getRenderAttributeString( 'wrapper' ) }}}>
-				<a id="{{ settings.css_id }}" {{{ view.getRenderAttributeString( 'button' ) }}}>
+			<div {{{ view.getRenderAttributeString( 'wrapper' ) }}}> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
+				<a id="{{ settings.css_id }}" {{{ view.getRenderAttributeString( 'button' ) }}}> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 					<# if ( 'yes' === settings.blink_effect ) {
 					#>
 					<span class="uael_btn__blink"></span>

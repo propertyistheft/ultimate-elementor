@@ -86,14 +86,14 @@ class Presets_Select extends Base_Data_Control {
 		?>
 		<div class="elementor-control-field">
 			<# if ( data.label ) {#>
-				<label for="<?php echo esc_attr( $control_uid ); ?>" class="elementor-control-title">{{{ data.label }}}</label>
+				<label for="<?php echo esc_attr( $control_uid ); ?>" class="elementor-control-title">{{ data.label }}</label>
 			<# } #>
 			<div class="elementor-control-input-wrapper elementor-control-unit-5">
 				<select id="<?php echo esc_attr( $control_uid ); ?>" data-setting="{{ data.name }}">
 				<#
 					var printOptions = function( options ) {
 						_.each( options, function( option_title, option_value ) { #>
-								<option value="{{ option_value }}">{{{ option_title }}}</option>
+								<option value="{{ option_value }}">{{ option_title }}</option>
 						<# } );
 					};
 
@@ -105,7 +105,7 @@ class Presets_Select extends Base_Data_Control {
 										<# printOptions( groupArgs.options ) #>
 									</optgroup>
 								<# } else if ( _.isString( groupArgs ) ) { #>
-									<option value="{{ groupIndex }}">{{{ groupArgs }}}</option>
+									<option value="{{ groupIndex }}">{{ groupArgs }}</option>
 								<# }
 						}
 					} else {
@@ -116,7 +116,7 @@ class Presets_Select extends Base_Data_Control {
 			</div>
 		</div>
 		<# if ( data.description ) { #>
-			<div class="elementor-control-field-description">{{{ data.description }}}</div>
+			<div class="elementor-control-field-description">{{ data.description }}</div>
 		<# } #>
 		<?php
 	}

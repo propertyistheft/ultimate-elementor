@@ -20,7 +20,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 	<div id="post-body" class="columns-2">
 		<div id="post-body-content">
 			<!-- All WordPress Notices below header -->
-			<h1 class="screen-reader-text"> <?php esc_attr_e( 'Post', 'uael' ); ?> </h1>
+			<h1 class="screen-reader-text"> <?php esc_html_e( 'Post', 'uael' ); ?> </h1>
 				<div class="widgets postbox">
 					<h2 class="hndle uael-flex uael-settings-widgets-heading"><span><?php esc_html_e( 'Post Widget Skins', 'uael' ); ?></span>
 						<div class="uael-bulk-actions-wrap">
@@ -66,7 +66,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 											);
 										}
 
-										echo '</div><div class="uael-post-skin-image"><img src="' . esc_html( $info['image'] ) . '""></div></li>';
+										echo '</div><div class="uael-post-skin-image"><img src="' . esc_url( $info['image'] ) . '""></div></li>';
 									}
 									?>
 								</ul>

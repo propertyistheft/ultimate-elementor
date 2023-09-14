@@ -16,6 +16,8 @@ if ( ! defined( 'ABSPATH' ) ) {
 /**
  * Class Module_Manager.
  */
+
+#[\AllowDynamicProperties]
 class Module_Manager {
 
 

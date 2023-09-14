@@ -80,7 +80,7 @@ class Uae_Control_Query extends Control_Select2 {
 		$control_uid = $this->get_control_uid();
 		?>
 		<div class="elementor-control-field">
-			<label for="<?php echo esc_attr( $control_uid ); ?>" class="elementor-control-title">{{{ data.label }}}</label>
+			<label for="<?php echo esc_attr( $control_uid ); ?>" class="elementor-control-title">{{ data.label }}</label>
 			<div class="elementor-control-input-wrapper">
 				<# var multiple = ( data.multiple ) ? 'multiple' : ''; #>
 				<select id="<?php echo esc_attr( $control_uid ); ?>" class="elementor-select2" type="select2" {{ multiple }} data-setting="{{ data.name }}">
@@ -93,13 +93,13 @@ class Uae_Control_Query extends Control_Select2 {
 							var selected = ( -1 !== value.indexOf( option_value ) ) ? 'selected' : '';
 						}
 						#>
-					<option {{ selected }} value="{{ option_value }}">{{{ option_title }}}</option>
+					<option {{ selected }} value="{{ option_value }}">{{ option_title }}</option>
 					<# } ); #>
 				</select>
 			</div>
 		</div>
 		<# if ( data.description ) { #>
-			<div class="elementor-control-field-description">{{{ data.description }}}</div>
+			<div class="elementor-control-field-description">{{ data.description }}</div>
 		<# } #>
 		<?php
 	}

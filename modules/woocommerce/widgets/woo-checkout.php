@@ -2222,8 +2222,8 @@ class Woo_Checkout extends Common_Widget {
 		if ( $is_editor && $page_id !== $wc_checkout_page_id ) {
 			?>
 			<div class="uael-builder-msg elementor-alert elementor-alert-warning">
-				<span class="elementor-alert-title"><?php esc_attr_e( 'Woo - Checkout - ID ', 'uael' ); ?><?php echo esc_attr( $page_id ); ?></span>
-				<span class="elementor-alert-description"><?php esc_attr_e( 'Before editing checkout widget, please set this page as your Checkout page in WooCommerce settings.', 'uael' ); ?><br>
+				<span class="elementor-alert-title"><?php esc_html_e( 'Woo - Checkout - ID ', 'uael' ); ?><?php echo esc_attr( $page_id ); ?></span>
+				<span class="elementor-alert-description"><?php esc_html_e( 'Before editing checkout widget, please set this page as your Checkout page in WooCommerce settings.', 'uael' ); ?><br>
 					<?php esc_attr_e( 'Navigate to WooCommerce -> Settings -> Advanced Tab -> Page setup -> Checkout page.', 'uael' ); ?>
 				</span>
 			</div>
@@ -2236,7 +2236,7 @@ class Woo_Checkout extends Common_Widget {
 		if ( $is_editor && ( is_null( WC()->cart ) || WC()->cart->is_empty() ) ) {
 			?>
 			<div class="uael-builder-msg elementor-alert elementor-alert-warning uael-builder-no-cart">
-				<span class="elementor-alert-description"><?php esc_attr_e( 'There are no products in the cart. To display Checkout form at frontend add some product in the cart', 'uael' ); ?>
+				<span class="elementor-alert-description"><?php esc_html_e( 'There are no products in the cart. To display Checkout form at frontend add some product in the cart', 'uael' ); ?>
 				</span>
 			</div>
 			<?php

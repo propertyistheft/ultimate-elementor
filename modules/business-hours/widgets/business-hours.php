@@ -245,7 +245,7 @@ class Business_Hours extends Common_Widget {
 						'highlight_this' => __( 'yes', 'uael' ),
 					),
 				),
-				'title_field' => '{{{ enter_day }}}',
+				'title_field' => '{{ enter_day }}',
 			)
 		);
 
@@ -631,11 +631,11 @@ class Business_Hours extends Common_Widget {
 					<div class="{{ uael_current_item_wrap }} {{ uael_bs_background }} top-border-divider">
 						<div class="uael-inner">
 							<span class="{{ uael_highlight_day }} heading-date">
-								<span class="elementor-inline-editing" data-elementor-setting-key="business_days_timings.{{ count }}.enter_day" data-elementor-inline-editing-toolbar="basic">{{{ item.enter_day }}}</span>
+								<span class="elementor-inline-editing" data-elementor-setting-key="business_days_timings.{{ count }}.enter_day" data-elementor-inline-editing-toolbar="basic">{{ item.enter_day }}</span>
 							</span>
 							<span class="{{ uael_highlight_time }} heading-time">
 							<span class="inner-heading-time">
-								<span class="elementor-inline-editing" data-elementor-setting-key="business_days_timings.{{ count }}.enter_time" data-elementor-inline-editing-toolbar="basic">{{{ item.enter_time }}}</span>
+								<span class="elementor-inline-editing" data-elementor-setting-key="business_days_timings.{{ count }}.enter_time" data-elementor-inline-editing-toolbar="basic">{{ item.enter_time }}</span>
 							</span>
 							</span>
 						</div>

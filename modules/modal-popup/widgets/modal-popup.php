@@ -2340,7 +2340,7 @@ class Modal_Popup extends Common_Widget {
 				break;
 
 			case 'video':
-				global $wp_embed;
+				global $wp_embed; // phpcs:ignore VariableAnalysis.CodeAnalysis.VariableAnalysis.VariableRedeclaration
 				$output_html = $wp_embed->autoembed( $dynamic_settings['ct_video'] );
 				break;
 			case 'iframe':
@@ -2638,8 +2638,8 @@ class Modal_Popup extends Common_Widget {
 
 			?>
 			<div class="uael-builder-msg" style="text-align: center;">
-				<h5><?php esc_attr_e( 'Modal Popup - ID ', 'uael' ); ?><?php echo esc_attr( $this->get_id() ); ?></h5>
-				<p><?php esc_attr_e( 'Click here to edit the "Modal Popup" settings. This text will not be visible on frontend.', 'uael' ); ?></p>
+				<h5><?php esc_html_e( 'Modal Popup - ID ', 'uael' ); ?><?php echo esc_html( $this->get_id() ); ?></h5>
+				<p><?php esc_html_e( 'Click here to edit the "Modal Popup" settings. This text will not be visible on frontend.', 'uael' ); ?></p>
 			</div>
 			<?php
 
@@ -2748,7 +2748,7 @@ class Modal_Popup extends Common_Widget {
 				'data-custom-id'        => $this->get_settings_for_display( 'modal_custom_id' ),
 				'data-content'          => $settings['content_type'],
 				'data-autoplay'         => $settings['video_autoplay'],
-				'data-device'           => ( false !== ( stripos( $_SERVER['HTTP_USER_AGENT'], 'iPhone' ) ) ? 'true' : 'false' ),
+				'data-device'           => ( isset( $_SERVER['HTTP_USER_AGENT'] ) && false !== ( stripos( sanitize_text_field( $_SERVER['HTTP_USER_AGENT'] ), 'iPhone' ) ) ? 'true' : 'false' ), // phpcs:ignore WordPressVIPMinimum.Variables.RestrictedVariables.cache_constraints___SERVER__HTTP_USER_AGENT__
 				'data-async'            => ( 'yes' === $settings['async_iframe'] ) ? true : false,
 			)
 		);
