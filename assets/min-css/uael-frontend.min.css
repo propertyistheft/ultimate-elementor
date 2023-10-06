@@ -9593,14 +9593,25 @@ div.uael-nav-menu,
 	}
 
 	.elementor-element[data-widget_type="uael-posts.news"] .uael-post__inner-wrap{
-		display: block;
+		-js-display: flex;
+		display: -webkit-box;
+		display: -webkit-flex;
+		display: -moz-box;
+		display: -ms-flexbox;
+		display: flex;
 	}
-	.elementor-element[data-widget_type="uael-posts.news"] .uael-post__body .uael-post__thumbnail{
+	.elementor-element[data-widget_type="uael-posts.news"] .uael-post__body .image-ratio-set .uael-post__thumbnail{
 		position: relative;
 		width: 100%;
 	}
 	.elementor-element[data-widget_type="uael-posts.news"] .uael-post__body .uael-post__content-wrap{
 		width: 100%;
+	}
+	.elementor-element[data-widget_type="uael-posts.news"] .uael-post-wrapper-featured .uael-post__noimage.uael-post__content-wrap {
+        position: relative;
+    }
+	.elementor-element[data-widget_type="uael-posts.news"] .uael-post-wrapper.uael-post-wrapper-featured:not(.image-ratio-set) .uael-post__content-wrap {
+		position: relative;
 	}
 }
 .elementor-element[data-widget_type="uael-posts.news"] .uael-post__thumbnail span {

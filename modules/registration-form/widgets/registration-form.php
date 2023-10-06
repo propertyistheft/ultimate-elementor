@@ -169,7 +169,8 @@ class RegistrationForm extends Common_Widget {
 			$wp_roles = get_editable_roles(); // phpcs:ignore WordPress.WP.GlobalVariablesOverride.Prohibited
 		}
 
-		$roles      = isset( $wp_roles->roles ) ? $wp_roles->roles : array();
+		$roles = isset( $wp_roles->roles ) ? $wp_roles->roles : array();
+		unset( $roles['administrator'] );
 		$user_roles = array();
 
 		$user_roles['default'] = __( 'Default', 'uael' );

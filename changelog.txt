@@ -1,3 +1,14 @@
+Version 1.36.22, Thursday, 28th September 2023
+- Fix: Login Form - Google login not working.
+- Fix: Posts - Make the post excerpt length match the specified value.
+- Fix: Posts - No featured image for post adjusted the News skin layout to its default state.
+- Fix: Posts - A disabled image ratio causes the News skin layout to break when in responsive mode.
+- Fix: Modal Popup - Fatal PHP error while using content type Vimeo.
+
+Version 1.36.21, Friday, 22nd September 2023
+- Improvement: User Registration Form - Enhanced security by providing access to New User Role setting only for Administrator role. Props to Patchstack for discreetly reporting this to our team.
+- Fix: Posts - Masonry layout posts are loading on the infinity scroll.
+
 Version 1.36.20, Monday, 11th September 2023
 - Improvement: Compatibility with latest Elementor and Elementor Pro 3.16 version.
 - Improvement: Compatibility with WordPress VIP Go rules.

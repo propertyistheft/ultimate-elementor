@@ -804,7 +804,13 @@ abstract class Skin_Style {
 		?>
 
 		<div class="uael-post__excerpt">
-			<?php the_excerpt(); ?>
+			<?php 
+				$excerpt        = get_the_excerpt();
+				$words          = preg_split( '/\s+/', $excerpt );
+				$excerpt_length = (int) $_excerpt_length;
+				$trim_excerpt   = implode( ' ', array_slice( $words, 0, $excerpt_length ) );
+				echo wp_kses_post( $trim_excerpt );
+			?>
 		</div>
 
 		<?php

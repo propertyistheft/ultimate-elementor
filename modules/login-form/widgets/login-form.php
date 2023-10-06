@@ -90,7 +90,7 @@ class LoginForm extends Common_Widget {
 	 * @return array Widget scripts dependencies.
 	 */
 	public function get_script_depends() {
-		return array( 'uael-frontend-script', 'uael-google-login' );
+		return array( 'uael-frontend-script', 'uael-video-subscribe' );
 	}
 
 	/**

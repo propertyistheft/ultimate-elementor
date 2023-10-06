@@ -19,8 +19,15 @@ if ( empty( $post ) ) {
 ?>
 
 <?php do_action( 'uael_single_post_before_wrap', get_the_ID(), $settings ); ?>
+<?php 
+	$thumbnail_img_ratio = $this->get_instance_value( 'thumbnail_img_ratio_size' );
+	$image_ratio_class   = '';
+if ( isset( $thumbnail_img_ratio ) ) {
+	$image_ratio_class = 'image-ratio-set';
+}
+?>
 
-<div class="uael-post-wrapper <?php echo wp_kses_post( sanitize_text_field( $this->get_masonry_classes() ) ); ?> <?php echo ( $is_featured && 1 < $query->post_count ) ? 'uael-post-wrapper-featured' : ''; ?> <?php echo wp_kses_post( sanitize_text_field( $this->get_category_name() ) ); ?>">
+<div class="uael-post-wrapper <?php echo wp_kses_post( sanitize_text_field( $this->get_masonry_classes() ) ); ?> <?php echo ( $is_featured && 1 < $query->post_count ) ? esc_attr( $image_ratio_class ) . ' uael-post-wrapper-featured' : ''; ?> <?php echo wp_kses_post( sanitize_text_field( $this->get_category_name() ) ); ?>">
 	<div class="uael-post__bg-wrap">
 		<?php if ( 'yes' === $this->get_instance_value( 'link_complete_box' ) ) { ?>
 			<a href="<?php the_permalink(); ?>" target="<?php echo ( 'yes' === $this->get_instance_value( 'link_complete_box_tab' ) ) ? '_blank' : '_self'; ?>" class="uael-post__complete-box-overlay" aria-label="<?php esc_attr_e( 'Link Complete Box', 'uael' ); ?>"></a>

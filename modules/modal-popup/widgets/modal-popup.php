@@ -2456,8 +2456,12 @@ class Modal_Popup extends Common_Widget {
 				if ( is_wp_error( $response ) ) {
 					return;
 				}
-				$vimeo = maybe_unserialize( $response['body'] );
-				$thumb = $vimeo[0]['thumbnail_large'];
+				$body  = wp_remote_retrieve_body( $response );
+				$vimeo = json_decode( $body, true );
+
+				if ( is_array( $vimeo ) && isset( $vimeo[0]['thumbnail_large'] ) ) {
+					$thumb = $vimeo[0]['thumbnail_large'];
+				}
 			}
 
 			if ( '' !== $vid_id && 0 !== $vid_id ) {

@@ -1993,68 +1993,65 @@
 				gapi.load( 'auth2', function() {
 					// Retrieve the singleton for the GoogleAuth library and set up the client.
 					auth2 = gapi.auth2.init({
-						client_id: client_id,
-						cookiepolicy: 'single_host_origin',
+					  client_id: client_id,
+					  cookiepolicy: 'single_host_origin',
 					});
-
-					auth2.attachClickHandler( google_scope_id, {},
-
-						function( googleUser ) {
-
+				
+					auth2.attachClickHandler(google_scope_id, {},
+						function(googleUser) {
 							var google_data = {
-								'send_email' : send_email,
+								'send_email': send_email,
 							};
-
-							if( window.is_google_loggedin ) {
-
+					
+							if (window.is_google_loggedin) {
 								var id_token = googleUser.getAuthResponse().id_token;
 								var google_text = google_button.find('.uael-google-text');
-
-								$.ajax({
-									url: ajaxurl,
-									method: 'post',
-									dataType: 'json',
-									data: {
-										nonce: nonce,
-										action: 'uael_login_form_google',
-										data: google_data,
-										id_token: id_token,
-									},
-									beforeSend: function () {
-										form_wrapper.animate({
-											opacity: '0.45'
-										}, 500 ).addClass( 'uael-form-waiting' );
-
-										if( ! google_text.hasClass( 'disabled' ) ) {
-											google_text.addClass( 'disabled' );
-											google_text.append( '<span class="uael-form-loader"></span>' );
-										}
-									},
-									success: function( data ) {
-										if( data.success === true ) {
-
+						
+									$.ajax({
+										url: ajaxurl,
+										method: 'post',
+										dataType: 'json',
+										data: {
+											nonce: nonce,
+											action: 'uael_login_form_google',
+											data: google_data,
+											id_token: id_token,
+										},
+										beforeSend: function() {
 											form_wrapper.animate({
-												opacity: '1'
-											}, 100 ).removeClass( 'uael-form-waiting' );
-
-											google_text.find( '.uael-form-loader' ).remove();
-											google_text.removeClass( 'disabled' );
-
-											$scope.find( '.status' ).addClass( 'success' ).text( uael_login_form_script.logged_in_message + data.username + '!' );
-											if( undefined === redirect_url ) {
-												location.reload();
-											} else {
-												window.location = redirect_url;
+												opacity: '0.45'
+											}, 500).addClass('uael-form-waiting');
+							
+											if (!google_text.hasClass('disabled')) {
+												google_text.addClass('disabled');
+												google_text.append('<span class="uael-form-loader"></span>');
+											}
+										},
+										success: function(data) {
+											if (data.success === true) {
+												form_wrapper.animate({
+													opacity: '1'
+												}, 100).removeClass('uael-form-waiting');
+											
+												google_text.find('.uael-form-loader').remove();
+												google_text.removeClass('disabled');
+											
+												$scope.find('.status').addClass('success').text(uael_login_form_script.logged_in_message + data.username + '!');
+												
+												if (typeof redirect_url === 'undefined') {
+													location.reload();
+												} else {
+													window.location = redirect_url;
+												}
 											}
 										}
-									}
 								});
 							}
-
-						}, function( error ) {
-						}
+					  },
+					  function(error) {
+						// Handle any errors here
+					  }
 					);
-
 				});
 
 			}

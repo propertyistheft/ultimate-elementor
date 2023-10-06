@@ -120,15 +120,16 @@
 		var filter_cat;
 
 		if ( 'masonry' == structure ) {
+			if (typeof $scope.imagesLoaded !== 'undefined' && typeof $scope.imagesLoaded === 'function') {
+				$scope.imagesLoaded( function(e) {
 
-			$scope.imagesLoaded( function(e) {
+					selector.isotope({
+						layoutMode: layout,
+						itemSelector: '.uael-post-wrapper',
+					});
 
-				selector.isotope({
-					layoutMode: layout,
-					itemSelector: '.uael-post-wrapper',
 				});
-
-			});
+			}
 		}
 
 		$scope.find( '.uael-post__header-filter' ).off( 'click' ).on( 'click', function(e) {
@@ -442,14 +443,16 @@
 					( 'normal' == structure || 'masonry' == structure ) &&
 					'' != layout
 				) {
-					$scope.imagesLoaded( function(e) {
-						selector.isotope( 'reloadItems' );
-						selector.isotope({
-							layoutMode: layout,
-							itemSelector: '.uael-post-wrapper',
-							animate: false
+					if (typeof $scope.imagesLoaded !== 'undefined' && typeof $scope.imagesLoaded === 'function') {
+						$scope.imagesLoaded( function(e) {
+							selector.isotope( 'reloadItems' );
+							selector.isotope({
+								layoutMode: layout,
+								itemSelector: '.uael-post-wrapper',
+								animate: false
+							});
 						});
-					});
+					}
 				}
 
 				//	Complete the process 'loadStatus'

@@ -346,8 +346,6 @@ class UAEL_Core_Plugin {
 
 		wp_register_script( 'uael-video-subscribe', 'https://apis.google.com/js/platform.js', array( 'jquery' ), UAEL_VER, true );
 
-		wp_register_script( 'uael-google-login', 'https://apis.google.com/js/api:client.js', array( 'jquery' ), UAEL_VER, true );
-
 		wp_register_script( 'uael-google-recaptcha', 'https://www.google.com/recaptcha/api.js?onload=onLoadUAEReCaptcha&render=explicit', array( 'jquery', 'uael-registration' ), UAEL_VER, true );
 
 		foreach ( $js_files as $handle => $data ) {
