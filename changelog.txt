@@ -1,3 +1,8 @@
+Version 1.36.23, Monday, 9th October 2023
+Fix: Posts - Creative Feed Skin Layout pagination not working for filtered tabs.
+Fix: Navigation Menu - The submenu container opens without hovering over the parent menu item.
+Fix: Navigation Menu - The Dropdown Submenu no longer disappears when you add a top distance.
+
 Version 1.36.22, Thursday, 28th September 2023
 - Fix: Login Form - Google login not working.
 - Fix: Posts - Make the post excerpt length match the specified value.

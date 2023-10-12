@@ -1721,24 +1721,25 @@ class Nav_Menu extends Common_Widget {
 			$this->add_responsive_control(
 				'distance_from_menu',
 				array(
-					'label'       => __( 'Top Distance', 'uael' ),
-					'type'        => Controls_Manager::SLIDER,
-					'range'       => array(
+					'label'              => __( 'Top Distance', 'uael' ),
+					'type'               => Controls_Manager::SLIDER,
+					'range'              => array(
 						'px' => array(
 							'min' => -100,
 							'max' => 100,
 						),
 					),
-					'selectors'   => array(
+					'selectors'          => array(
 						'{{WRAPPER}} nav.uael-nav-menu__layout-horizontal ul.sub-menu, {{WRAPPER}} nav.uael-nav-menu__layout-expandible.menu-is-active,
 						{{WRAPPER}} .uael-dropdown.menu-is-active' => 'margin-top: {{SIZE}}px;',
 						'(tablet){{WRAPPER}}.uael-nav-menu__breakpoint-tablet nav.uael-nav-menu__layout-horizontal ul.sub-menu' => 'margin-top: 0px',
 						'(mobile){{WRAPPER}}.uael-nav-menu__breakpoint-mobile nav.uael-nav-menu__layout-horizontal ul.sub-menu' => 'margin-top: 0px',
 					),
-					'condition'   => array(
+					'condition'          => array(
 						'layout' => array( 'horizontal', 'expandible' ),
 					),
-					'render_type' => 'template',
+					'render_type'        => 'template',
+					'frontend_available' => true,
 				)
 			);
 

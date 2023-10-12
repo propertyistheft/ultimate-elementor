@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the Ultimate Addons for Elementor package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ultimate Addons for Elementor 1.36.22\n"
+"Project-Id-Version: Ultimate Addons for Elementor 1.36.23\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/ultimate-elementor\n"
-"POT-Creation-Date: 2023-09-28 04:44:08+00:00\n"
+"POT-Creation-Date: 2023-10-09 06:48:46+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -829,7 +829,7 @@ msgstr ""
 #: modules/party-propz-extension/module.php:279
 #: modules/party-propz-extension/module.php:320
 #: modules/party-propz-extension/module.php:723
-#: modules/posts/skins/skin-base.php:844 modules/posts/skins/skin-feed.php:211
+#: modules/posts/skins/skin-base.php:844 modules/posts/skins/skin-feed.php:212
 #: modules/price-list/widgets/price-list.php:757
 #: modules/price-table/widgets/price-table.php:499
 #: modules/registration-form/widgets/registration-form.php:1169
@@ -1569,7 +1569,7 @@ msgstr ""
 #: modules/login-form/widgets/login-form.php:1324
 #: modules/marketing-button/widgets/marketing-button.php:330
 #: modules/modal-popup/widgets/modal-popup.php:2228
-#: modules/nav-menu/widgets/nav-menu.php:2238
+#: modules/nav-menu/widgets/nav-menu.php:2239
 #: modules/offcanvas/widgets/offcanvas.php:1853
 #: modules/posts/widgets/posts-base.php:434
 #: modules/price-list/widgets/price-list.php:1029
@@ -1713,7 +1713,7 @@ msgstr ""
 
 #: includes/admin/uael-general.php:40
 #: modules/image-gallery/widgets/image-gallery.php:336
-#: modules/posts/skins/skin-base.php:824 modules/posts/skins/skin-feed.php:192
+#: modules/posts/skins/skin-base.php:824 modules/posts/skins/skin-feed.php:193
 #: modules/posts/template-blocks/skin-feed.php:186
 #: modules/posts/template-blocks/skin-style.php:1276
 #: modules/video-gallery/widgets/video-gallery.php:691
@@ -2242,8 +2242,8 @@ msgstr ""
 #: modules/posts/skins/skin-base.php:2064
 #: modules/posts/skins/skin-base.php:2093
 #: modules/posts/skins/skin-base.php:3057
-#: modules/posts/skins/skin-base.php:3087 modules/posts/skins/skin-feed.php:252
-#: modules/posts/skins/skin-feed.php:587 modules/posts/skins/skin-feed.php:616
+#: modules/posts/skins/skin-base.php:3087 modules/posts/skins/skin-feed.php:253
+#: modules/posts/skins/skin-feed.php:588 modules/posts/skins/skin-feed.php:617
 #: modules/posts/skins/skin-news.php:202 modules/posts/skins/skin-news.php:348
 #: modules/posts/skins/skin-news.php:377
 #: modules/price-table/widgets/price-table.php:2555
@@ -2331,9 +2331,9 @@ msgstr ""
 #: modules/posts/skins/skin-base.php:2097
 #: modules/posts/skins/skin-base.php:3062
 #: modules/posts/skins/skin-base.php:3092 modules/posts/skins/skin-card.php:272
-#: modules/posts/skins/skin-feed.php:259 modules/posts/skins/skin-feed.php:592
-#: modules/posts/skins/skin-feed.php:620 modules/posts/skins/skin-feed.php:1506
-#: modules/posts/skins/skin-feed.php:1700 modules/posts/skins/skin-news.php:207
+#: modules/posts/skins/skin-feed.php:260 modules/posts/skins/skin-feed.php:593
+#: modules/posts/skins/skin-feed.php:621 modules/posts/skins/skin-feed.php:1507
+#: modules/posts/skins/skin-feed.php:1701 modules/posts/skins/skin-news.php:207
 #: modules/posts/skins/skin-news.php:353 modules/posts/skins/skin-news.php:381
 #: modules/posts/skins/skin-news.php:1201
 #: modules/price-list/widgets/price-list.php:266
@@ -2435,8 +2435,8 @@ msgstr ""
 #: modules/posts/skins/skin-base.php:2073
 #: modules/posts/skins/skin-base.php:2101
 #: modules/posts/skins/skin-base.php:3066 modules/posts/skins/skin-card.php:276
-#: modules/posts/skins/skin-feed.php:263 modules/posts/skins/skin-feed.php:596
-#: modules/posts/skins/skin-feed.php:624 modules/posts/skins/skin-feed.php:1704
+#: modules/posts/skins/skin-feed.php:264 modules/posts/skins/skin-feed.php:597
+#: modules/posts/skins/skin-feed.php:625 modules/posts/skins/skin-feed.php:1705
 #: modules/posts/skins/skin-news.php:211 modules/posts/skins/skin-news.php:357
 #: modules/posts/skins/skin-news.php:385
 #: modules/price-list/widgets/price-list.php:325
@@ -2534,8 +2534,8 @@ msgstr ""
 #: modules/posts/skins/skin-base.php:2105
 #: modules/posts/skins/skin-base.php:3070
 #: modules/posts/skins/skin-base.php:3096 modules/posts/skins/skin-card.php:280
-#: modules/posts/skins/skin-feed.php:267 modules/posts/skins/skin-feed.php:600
-#: modules/posts/skins/skin-feed.php:628 modules/posts/skins/skin-feed.php:1708
+#: modules/posts/skins/skin-feed.php:268 modules/posts/skins/skin-feed.php:601
+#: modules/posts/skins/skin-feed.php:629 modules/posts/skins/skin-feed.php:1709
 #: modules/posts/skins/skin-news.php:215 modules/posts/skins/skin-news.php:361
 #: modules/posts/skins/skin-news.php:389 modules/posts/skins/skin-news.php:1202
 #: modules/price-list/widgets/price-list.php:267
@@ -2683,7 +2683,7 @@ msgstr ""
 #: modules/posts/skins/skin-business.php:568
 #: modules/posts/skins/skin-classic.php:105
 #: modules/posts/skins/skin-event.php:128 modules/posts/skins/skin-feed.php:139
-#: modules/posts/skins/skin-feed.php:240 modules/posts/skins/skin-feed.php:1235
+#: modules/posts/skins/skin-feed.php:241 modules/posts/skins/skin-feed.php:1236
 #: modules/posts/skins/skin-news.php:926 modules/posts/skins/skin-news.php:1223
 #: modules/posts/widgets/posts-base.php:302
 #: modules/posts/widgets/posts-base.php:330
@@ -2844,7 +2844,7 @@ msgstr ""
 #: modules/posts/skins/skin-business.php:569
 #: modules/posts/skins/skin-classic.php:104
 #: modules/posts/skins/skin-event.php:127 modules/posts/skins/skin-feed.php:140
-#: modules/posts/skins/skin-feed.php:241 modules/posts/skins/skin-feed.php:1236
+#: modules/posts/skins/skin-feed.php:242 modules/posts/skins/skin-feed.php:1237
 #: modules/posts/skins/skin-news.php:927 modules/posts/skins/skin-news.php:1224
 #: modules/posts/widgets/posts-base.php:303
 #: modules/posts/widgets/posts-base.php:331
@@ -3061,8 +3061,8 @@ msgstr ""
 #: modules/modal-popup/widgets/modal-popup.php:774
 #: modules/modal-popup/widgets/modal-popup.php:1462
 #: modules/modal-popup/widgets/modal-popup.php:1542
-#: modules/nav-menu/widgets/nav-menu.php:1839
-#: modules/nav-menu/widgets/nav-menu.php:1871
+#: modules/nav-menu/widgets/nav-menu.php:1840
+#: modules/nav-menu/widgets/nav-menu.php:1872
 #: modules/offcanvas/widgets/offcanvas.php:1683
 #: modules/posts/skins/skin-base.php:2816
 #: modules/posts/skins/skin-base.php:2910
@@ -3070,7 +3070,7 @@ msgstr ""
 #: modules/posts/skins/skin-base.php:3220
 #: modules/posts/skins/skin-business.php:475
 #: modules/posts/skins/skin-event.php:326
-#: modules/posts/skins/skin-feed.php:1374 modules/posts/skins/skin-news.php:228
+#: modules/posts/skins/skin-feed.php:1375 modules/posts/skins/skin-news.php:228
 #: modules/price-list/widgets/price-list.php:468
 #: modules/price-list/widgets/price-list.php:533
 #: modules/price-list/widgets/price-list.php:598
@@ -3225,10 +3225,10 @@ msgstr ""
 #: modules/nav-menu/widgets/nav-menu.php:1475
 #: modules/nav-menu/widgets/nav-menu.php:1520
 #: modules/nav-menu/widgets/nav-menu.php:1565
-#: modules/nav-menu/widgets/nav-menu.php:1851
-#: modules/nav-menu/widgets/nav-menu.php:1883
-#: modules/nav-menu/widgets/nav-menu.php:2119
-#: modules/nav-menu/widgets/nav-menu.php:2187
+#: modules/nav-menu/widgets/nav-menu.php:1852
+#: modules/nav-menu/widgets/nav-menu.php:1884
+#: modules/nav-menu/widgets/nav-menu.php:2120
+#: modules/nav-menu/widgets/nav-menu.php:2188
 #: modules/offcanvas/widgets/offcanvas.php:1001
 #: modules/offcanvas/widgets/offcanvas.php:1085
 #: modules/offcanvas/widgets/offcanvas.php:1187
@@ -3244,10 +3244,10 @@ msgstr ""
 #: modules/posts/skins/skin-base.php:3323
 #: modules/posts/skins/skin-base.php:3674
 #: modules/posts/skins/skin-business.php:503
-#: modules/posts/skins/skin-event.php:338 modules/posts/skins/skin-feed.php:311
-#: modules/posts/skins/skin-feed.php:694 modules/posts/skins/skin-feed.php:928
-#: modules/posts/skins/skin-feed.php:1404
-#: modules/posts/skins/skin-feed.php:1739 modules/posts/skins/skin-news.php:253
+#: modules/posts/skins/skin-event.php:338 modules/posts/skins/skin-feed.php:312
+#: modules/posts/skins/skin-feed.php:695 modules/posts/skins/skin-feed.php:929
+#: modules/posts/skins/skin-feed.php:1405
+#: modules/posts/skins/skin-feed.php:1740 modules/posts/skins/skin-news.php:253
 #: modules/posts/skins/skin-news.php:455 modules/posts/skins/skin-news.php:689
 #: modules/price-list/widgets/price-list.php:919
 #: modules/price-list/widgets/price-list.php:967
@@ -3365,7 +3365,7 @@ msgstr ""
 #: modules/marketing-button/widgets/marketing-button.php:494
 #: modules/modal-popup/widgets/modal-popup.php:1260
 #: modules/modal-popup/widgets/modal-popup.php:1443
-#: modules/nav-menu/widgets/nav-menu.php:2085
+#: modules/nav-menu/widgets/nav-menu.php:2086
 #: modules/offcanvas/widgets/offcanvas.php:959
 #: modules/offcanvas/widgets/offcanvas.php:1145
 #: modules/offcanvas/widgets/offcanvas.php:1326
@@ -3378,9 +3378,9 @@ msgstr ""
 #: modules/posts/skins/skin-base.php:3020
 #: modules/posts/skins/skin-base.php:3429
 #: modules/posts/skins/skin-business.php:444
-#: modules/posts/skins/skin-feed.php:860 modules/posts/skins/skin-feed.php:1037
-#: modules/posts/skins/skin-feed.php:1336
-#: modules/posts/skins/skin-feed.php:1765 modules/posts/skins/skin-news.php:164
+#: modules/posts/skins/skin-feed.php:861 modules/posts/skins/skin-feed.php:1038
+#: modules/posts/skins/skin-feed.php:1337
+#: modules/posts/skins/skin-feed.php:1766 modules/posts/skins/skin-news.php:164
 #: modules/posts/skins/skin-news.php:621 modules/posts/skins/skin-news.php:798
 #: modules/posts/skins/skin-news.php:1169
 #: modules/price-list/widgets/price-list.php:897
@@ -3529,7 +3529,7 @@ msgstr ""
 #: modules/instagram-feed/widgets/instagram-feed.php:1348
 #: modules/login-form/widgets/login-form.php:1333
 #: modules/marketing-button/widgets/marketing-button.php:339
-#: modules/nav-menu/widgets/nav-menu.php:2247
+#: modules/nav-menu/widgets/nav-menu.php:2248
 #: modules/offcanvas/widgets/offcanvas.php:1862
 #: modules/posts/widgets/posts-base.php:443
 #: modules/price-list/widgets/price-list.php:1038
@@ -3702,7 +3702,7 @@ msgstr ""
 #: modules/business-hours/widgets/business-hours.php:292
 #: modules/login-form/widgets/login-form.php:321
 #: modules/login-form/widgets/login-form.php:1216
-#: modules/nav-menu/widgets/nav-menu.php:1748
+#: modules/nav-menu/widgets/nav-menu.php:1749
 #: modules/price-table/widgets/price-table.php:2581
 #: modules/registration-form/widgets/registration-form.php:795
 #: modules/woocommerce/widgets/woo-mini-cart.php:2431
@@ -3753,7 +3753,7 @@ msgstr ""
 #: modules/infobox/widgets/infobox.php:1076
 #: modules/infobox/widgets/infobox.php:1411
 #: modules/login-form/widgets/login-form.php:340
-#: modules/nav-menu/widgets/nav-menu.php:1763
+#: modules/nav-menu/widgets/nav-menu.php:1764
 #: modules/price-list/widgets/price-list.php:296
 #: modules/price-table/widgets/price-table.php:2266
 #: modules/price-table/widgets/price-table.php:2608
@@ -3783,7 +3783,7 @@ msgstr ""
 #: modules/infobox/widgets/infobox.php:1078
 #: modules/infobox/widgets/infobox.php:1413
 #: modules/login-form/widgets/login-form.php:341
-#: modules/nav-menu/widgets/nav-menu.php:1765
+#: modules/nav-menu/widgets/nav-menu.php:1766
 #: modules/price-list/widgets/price-list.php:297
 #: modules/price-table/widgets/price-table.php:2268
 #: modules/price-table/widgets/price-table.php:2610
@@ -3813,7 +3813,7 @@ msgstr ""
 #: modules/infobox/widgets/infobox.php:1077
 #: modules/infobox/widgets/infobox.php:1414
 #: modules/login-form/widgets/login-form.php:342
-#: modules/nav-menu/widgets/nav-menu.php:1766
+#: modules/nav-menu/widgets/nav-menu.php:1767
 #: modules/price-list/widgets/price-list.php:298
 #: modules/price-table/widgets/price-table.php:2267
 #: modules/price-table/widgets/price-table.php:2611
@@ -4141,7 +4141,7 @@ msgstr ""
 #: modules/marketing-button/widgets/marketing-button.php:248
 #: modules/modal-popup/widgets/modal-popup.php:1672
 #: modules/modal-popup/widgets/modal-popup.php:1816
-#: modules/nav-menu/widgets/nav-menu.php:1898
+#: modules/nav-menu/widgets/nav-menu.php:1899
 #: modules/party-propz-extension/module.php:506
 #: modules/party-propz-extension/module.php:886
 #: modules/price-table/widgets/price-table.php:2484
@@ -4234,9 +4234,9 @@ msgstr ""
 #: modules/nav-menu/widgets/nav-menu.php:1458
 #: modules/nav-menu/widgets/nav-menu.php:1503
 #: modules/nav-menu/widgets/nav-menu.php:1546
-#: modules/nav-menu/widgets/nav-menu.php:2004
-#: modules/nav-menu/widgets/nav-menu.php:2106
-#: modules/nav-menu/widgets/nav-menu.php:2175
+#: modules/nav-menu/widgets/nav-menu.php:2005
+#: modules/nav-menu/widgets/nav-menu.php:2107
+#: modules/nav-menu/widgets/nav-menu.php:2176
 #: modules/offcanvas/widgets/offcanvas.php:986
 #: modules/offcanvas/widgets/offcanvas.php:1071
 #: modules/offcanvas/widgets/offcanvas.php:1470
@@ -4245,8 +4245,8 @@ msgstr ""
 #: modules/offcanvas/widgets/offcanvas.php:1625
 #: modules/posts/skins/skin-base.php:935 modules/posts/skins/skin-base.php:2153
 #: modules/posts/skins/skin-base.php:2386
-#: modules/posts/skins/skin-base.php:3305 modules/posts/skins/skin-feed.php:297
-#: modules/posts/skins/skin-feed.php:676 modules/posts/skins/skin-feed.php:909
+#: modules/posts/skins/skin-base.php:3305 modules/posts/skins/skin-feed.php:298
+#: modules/posts/skins/skin-feed.php:677 modules/posts/skins/skin-feed.php:910
 #: modules/posts/skins/skin-news.php:437 modules/posts/skins/skin-news.php:670
 #: modules/price-table/widgets/price-table.php:719
 #: modules/price-table/widgets/price-table.php:2518
@@ -4328,7 +4328,7 @@ msgstr ""
 #: modules/how-to/widgets/how-to.php:763
 #: modules/instagram-feed/widgets/instagram-feed.php:1146
 #: modules/login-form/widgets/login-form.php:1382
-#: modules/nav-menu/widgets/nav-menu.php:2021
+#: modules/nav-menu/widgets/nav-menu.php:2022
 #: modules/registration-form/widgets/registration-form.php:443
 #: modules/registration-form/widgets/registration-form.php:1445
 #: modules/team-member/widgets/team-member.php:1176
@@ -4444,8 +4444,8 @@ msgstr ""
 #: modules/marketing-button/widgets/marketing-button.php:565
 #: modules/modal-popup/widgets/modal-popup.php:2107
 #: modules/nav-menu/widgets/nav-menu.php:1618
-#: modules/nav-menu/widgets/nav-menu.php:1932
-#: modules/nav-menu/widgets/nav-menu.php:2145
+#: modules/nav-menu/widgets/nav-menu.php:1933
+#: modules/nav-menu/widgets/nav-menu.php:2146
 #: modules/offcanvas/widgets/offcanvas.php:1033
 #: modules/offcanvas/widgets/offcanvas.php:1730
 #: modules/posts/skins/skin-base.php:1043
@@ -4455,9 +4455,9 @@ msgstr ""
 #: modules/posts/skins/skin-base.php:3413
 #: modules/posts/skins/skin-base.php:3750
 #: modules/posts/skins/skin-business.php:463
-#: modules/posts/skins/skin-feed.php:398 modules/posts/skins/skin-feed.php:844
-#: modules/posts/skins/skin-feed.php:1021
-#: modules/posts/skins/skin-feed.php:1355 modules/posts/skins/skin-news.php:183
+#: modules/posts/skins/skin-feed.php:399 modules/posts/skins/skin-feed.php:845
+#: modules/posts/skins/skin-feed.php:1022
+#: modules/posts/skins/skin-feed.php:1356 modules/posts/skins/skin-news.php:183
 #: modules/posts/skins/skin-news.php:605 modules/posts/skins/skin-news.php:782
 #: modules/price-list/widgets/price-list.php:801
 #: modules/price-list/widgets/price-list.php:946
@@ -4611,8 +4611,8 @@ msgstr ""
 #: modules/instagram-feed/widgets/instagram-feed.php:958
 #: modules/modal-popup/widgets/modal-popup.php:1955
 #: modules/modal-popup/widgets/modal-popup.php:2202
-#: modules/nav-menu/widgets/nav-menu.php:1993
-#: modules/nav-menu/widgets/nav-menu.php:2074
+#: modules/nav-menu/widgets/nav-menu.php:1994
+#: modules/nav-menu/widgets/nav-menu.php:2075
 #: modules/offcanvas/widgets/offcanvas.php:945
 #: modules/price-table/widgets/price-table.php:2857
 #: modules/table/widgets/table.php:1038 modules/table/widgets/table.php:1314
@@ -4662,7 +4662,7 @@ msgstr ""
 #: modules/hotspot/widgets/hotspot.php:1152
 #: modules/infobox/widgets/infobox.php:657
 #: modules/infobox/widgets/infobox.php:1404
-#: modules/nav-menu/widgets/nav-menu.php:1757
+#: modules/nav-menu/widgets/nav-menu.php:1758
 #: modules/price-table/widgets/price-table.php:3132
 #: modules/retina-image/widgets/retina-image.php:339
 #: modules/team-member/widgets/team-member.php:793
@@ -4703,12 +4703,12 @@ msgstr ""
 #: modules/login-form/widgets/login-form.php:164
 #: modules/nav-menu/widgets/nav-menu.php:748
 #: modules/nav-menu/widgets/nav-menu.php:1142
-#: modules/nav-menu/widgets/nav-menu.php:1762
+#: modules/nav-menu/widgets/nav-menu.php:1763
 #: modules/posts/skins/skin-base.php:187 modules/posts/skins/skin-base.php:342
 #: modules/posts/skins/skin-base.php:566 modules/posts/skins/skin-base.php:666
 #: modules/posts/skins/skin-business.php:134
 #: modules/posts/skins/skin-card.php:133 modules/posts/skins/skin-event.php:243
-#: modules/posts/skins/skin-feed.php:1507
+#: modules/posts/skins/skin-feed.php:1508
 #: modules/posts/skins/skin-news.php:1203
 #: modules/posts/skins/skin-news.php:1377
 #: modules/price-list/widgets/price-list.php:268
@@ -4766,8 +4766,8 @@ msgstr ""
 #: modules/infobox/widgets/infobox.php:699
 #: modules/infobox/widgets/infobox.php:1442
 #: modules/login-form/widgets/login-form.php:1922
-#: modules/nav-menu/widgets/nav-menu.php:1795
-#: modules/nav-menu/widgets/nav-menu.php:1916
+#: modules/nav-menu/widgets/nav-menu.php:1796
+#: modules/nav-menu/widgets/nav-menu.php:1917
 #: modules/price-table/widgets/price-table.php:3156
 #: modules/registration-form/widgets/registration-form.php:1704
 #: modules/registration-form/widgets/registration-form.php:1720
@@ -4808,7 +4808,7 @@ msgstr ""
 #: modules/instagram-feed/widgets/instagram-feed.php:681
 #: modules/login-form/widgets/login-form.php:1935
 #: modules/modal-popup/widgets/modal-popup.php:2060
-#: modules/nav-menu/widgets/nav-menu.php:1778
+#: modules/nav-menu/widgets/nav-menu.php:1779
 #: modules/offcanvas/widgets/offcanvas.php:1103
 #: modules/price-list/widgets/price-list.php:978
 #: modules/price-table/widgets/price-table.php:3179
@@ -4868,12 +4868,12 @@ msgstr ""
 #: modules/login-form/widgets/login-form.php:2264
 #: modules/marketing-button/widgets/marketing-button.php:557
 #: modules/modal-popup/widgets/modal-popup.php:2093
-#: modules/nav-menu/widgets/nav-menu.php:2137
+#: modules/nav-menu/widgets/nav-menu.php:2138
 #: modules/offcanvas/widgets/offcanvas.php:1020
 #: modules/posts/skins/skin-base.php:967 modules/posts/skins/skin-base.php:2188
 #: modules/posts/skins/skin-base.php:2424
-#: modules/posts/skins/skin-base.php:3341 modules/posts/skins/skin-feed.php:327
-#: modules/posts/skins/skin-feed.php:711 modules/posts/skins/skin-feed.php:947
+#: modules/posts/skins/skin-base.php:3341 modules/posts/skins/skin-feed.php:328
+#: modules/posts/skins/skin-feed.php:712 modules/posts/skins/skin-feed.php:948
 #: modules/posts/skins/skin-news.php:472 modules/posts/skins/skin-news.php:708
 #: modules/price-table/widgets/price-table.php:1478
 #: modules/price-table/widgets/price-table.php:1753
@@ -5297,7 +5297,7 @@ msgid "Filters"
 msgstr ""
 
 #: modules/business-reviews/widgets/business-reviews.php:654
-#: modules/posts/skins/skin-base.php:803 modules/posts/skins/skin-feed.php:172
+#: modules/posts/skins/skin-base.php:803 modules/posts/skins/skin-feed.php:173
 #: modules/woocommerce/widgets/woo-products.php:365
 msgid "Filter By"
 msgstr ""
@@ -5349,7 +5349,7 @@ msgstr ""
 #: modules/modal-popup/widgets/modal-popup.php:869
 #: modules/modal-popup/widgets/modal-popup.php:1932
 #: modules/nav-menu/widgets/nav-menu.php:452
-#: modules/nav-menu/widgets/nav-menu.php:2061
+#: modules/nav-menu/widgets/nav-menu.php:2062
 #: modules/offcanvas/widgets/offcanvas.php:376
 #: modules/offcanvas/widgets/offcanvas.php:922
 #: modules/posts/skins/skin-base.php:263
@@ -5374,7 +5374,7 @@ msgstr ""
 #: modules/modal-popup/widgets/modal-popup.php:1021
 #: modules/nav-menu/widgets/nav-menu.php:251
 #: modules/nav-menu/widgets/nav-menu.php:1147
-#: modules/nav-menu/widgets/nav-menu.php:2286
+#: modules/nav-menu/widgets/nav-menu.php:2287
 #: modules/posts/skins/skin-base.php:1789
 #: modules/price-table/widgets/price-table.php:631
 #: modules/price-table/widgets/price-table.php:1044
@@ -5570,8 +5570,8 @@ msgstr ""
 #: modules/modal-popup/widgets/modal-popup.php:1971
 #: modules/nav-menu/widgets/nav-menu.php:1243
 #: modules/nav-menu/widgets/nav-menu.php:1451
-#: modules/nav-menu/widgets/nav-menu.php:1832
-#: modules/nav-menu/widgets/nav-menu.php:2099
+#: modules/nav-menu/widgets/nav-menu.php:1833
+#: modules/nav-menu/widgets/nav-menu.php:2100
 #: modules/offcanvas/widgets/offcanvas.php:976
 #: modules/offcanvas/widgets/offcanvas.php:1159
 #: modules/offcanvas/widgets/offcanvas.php:1460
@@ -5580,8 +5580,8 @@ msgstr ""
 #: modules/posts/skins/skin-base.php:2143
 #: modules/posts/skins/skin-base.php:2375
 #: modules/posts/skins/skin-base.php:3295
-#: modules/posts/skins/skin-base.php:3647 modules/posts/skins/skin-feed.php:287
-#: modules/posts/skins/skin-feed.php:666 modules/posts/skins/skin-feed.php:898
+#: modules/posts/skins/skin-base.php:3647 modules/posts/skins/skin-feed.php:288
+#: modules/posts/skins/skin-feed.php:667 modules/posts/skins/skin-feed.php:899
 #: modules/posts/skins/skin-news.php:427 modules/posts/skins/skin-news.php:659
 #: modules/price-list/widgets/price-list.php:912
 #: modules/price-table/widgets/price-table.php:152
@@ -5637,8 +5637,8 @@ msgstr ""
 #: modules/nav-menu/widgets/nav-menu.php:662
 #: modules/nav-menu/widgets/nav-menu.php:1282
 #: modules/nav-menu/widgets/nav-menu.php:1496
-#: modules/nav-menu/widgets/nav-menu.php:1864
-#: modules/nav-menu/widgets/nav-menu.php:2168
+#: modules/nav-menu/widgets/nav-menu.php:1865
+#: modules/nav-menu/widgets/nav-menu.php:2169
 #: modules/offcanvas/widgets/offcanvas.php:1061
 #: modules/offcanvas/widgets/offcanvas.php:1204
 #: modules/offcanvas/widgets/offcanvas.php:1490
@@ -5646,8 +5646,8 @@ msgstr ""
 #: modules/posts/skins/skin-base.php:2202
 #: modules/posts/skins/skin-base.php:2438
 #: modules/posts/skins/skin-base.php:3354
-#: modules/posts/skins/skin-base.php:3689 modules/posts/skins/skin-feed.php:725
-#: modules/posts/skins/skin-feed.php:961 modules/posts/skins/skin-news.php:486
+#: modules/posts/skins/skin-base.php:3689 modules/posts/skins/skin-feed.php:726
+#: modules/posts/skins/skin-feed.php:962 modules/posts/skins/skin-news.php:486
 #: modules/posts/skins/skin-news.php:722
 #: modules/price-list/widgets/price-list.php:960
 #: modules/price-table/widgets/price-table.php:832
@@ -5693,11 +5693,11 @@ msgstr ""
 #: modules/image-gallery/widgets/image-gallery.php:1785
 #: modules/infobox/widgets/infobox.php:873
 #: modules/marketing-button/widgets/marketing-button.php:642
-#: modules/nav-menu/widgets/nav-menu.php:2204
+#: modules/nav-menu/widgets/nav-menu.php:2205
 #: modules/posts/skins/skin-base.php:2242
 #: modules/posts/skins/skin-base.php:2479
-#: modules/posts/skins/skin-base.php:3394 modules/posts/skins/skin-feed.php:765
-#: modules/posts/skins/skin-feed.php:1002 modules/posts/skins/skin-news.php:526
+#: modules/posts/skins/skin-base.php:3394 modules/posts/skins/skin-feed.php:766
+#: modules/posts/skins/skin-feed.php:1003 modules/posts/skins/skin-news.php:526
 #: modules/posts/skins/skin-news.php:763
 #: modules/price-table/widgets/price-table.php:3261
 #: modules/team-member/widgets/team-member.php:853
@@ -6062,7 +6062,7 @@ msgstr ""
 #: modules/infobox/widgets/infobox.php:664
 #: modules/infobox/widgets/infobox.php:1079
 #: modules/infobox/widgets/infobox.php:1412
-#: modules/nav-menu/widgets/nav-menu.php:1764
+#: modules/nav-menu/widgets/nav-menu.php:1765
 #: modules/price-list/widgets/price-list.php:299
 #: modules/price-table/widgets/price-table.php:2269
 #: modules/price-table/widgets/price-table.php:2609
@@ -6095,7 +6095,7 @@ msgstr ""
 #: modules/ff-styler/widgets/ff-styler.php:517
 #: modules/gf-styler/widgets/gf-styler.php:697
 #: modules/gf-styler/widgets/gf-styler.php:720
-#: modules/posts/skins/skin-base.php:2302 modules/posts/skins/skin-feed.php:825
+#: modules/posts/skins/skin-base.php:2302 modules/posts/skins/skin-feed.php:826
 #: modules/posts/skins/skin-news.php:586
 #: modules/registration-form/widgets/registration-form.php:1692
 #: modules/woocommerce/widgets/woo-checkout.php:998
@@ -6641,7 +6641,7 @@ msgstr ""
 #: modules/content-toggle/widgets/content-toggle.php:1045
 #: modules/faq/widgets/faq.php:135
 #: modules/modal-popup/widgets/modal-popup.php:2298
-#: modules/nav-menu/widgets/nav-menu.php:2287
+#: modules/nav-menu/widgets/nav-menu.php:2288
 #: modules/offcanvas/widgets/offcanvas.php:1912
 msgid "Saved Section"
 msgstr ""
@@ -6649,7 +6649,7 @@ msgstr ""
 #: modules/content-toggle/widgets/content-toggle.php:1046
 #: modules/faq/widgets/faq.php:136
 #: modules/modal-popup/widgets/modal-popup.php:2299
-#: modules/nav-menu/widgets/nav-menu.php:2288
+#: modules/nav-menu/widgets/nav-menu.php:2289
 msgid "Saved Container"
 msgstr ""
 
@@ -6891,7 +6891,7 @@ msgstr ""
 #: modules/infobox/widgets/infobox.php:1041
 #: modules/login-form/widgets/login-form.php:701
 #: modules/posts/skins/skin-business.php:211
-#: modules/posts/skins/skin-card.php:180 modules/posts/skins/skin-feed.php:1608
+#: modules/posts/skins/skin-card.php:180 modules/posts/skins/skin-feed.php:1609
 #: modules/price-table/widgets/price-table.php:586
 #: modules/price-table/widgets/price-table.php:596
 #: modules/price-table/widgets/price-table.php:2249
@@ -6923,7 +6923,7 @@ msgstr ""
 
 #: modules/countdown/widgets/countdown.php:756
 #: modules/posts/skins/skin-business.php:284
-#: modules/posts/skins/skin-card.php:253 modules/posts/skins/skin-feed.php:1681
+#: modules/posts/skins/skin-card.php:253 modules/posts/skins/skin-feed.php:1682
 msgid "Separator Color"
 msgstr ""
 
@@ -6958,8 +6958,8 @@ msgstr ""
 #: modules/countdown/widgets/countdown.php:1030 modules/faq/widgets/faq.php:740
 #: modules/faq/widgets/faq.php:753 modules/infobox/widgets/infobox.php:1572
 #: modules/login-form/widgets/login-form.php:2327
-#: modules/nav-menu/widgets/nav-menu.php:2158
-#: modules/nav-menu/widgets/nav-menu.php:2216
+#: modules/nav-menu/widgets/nav-menu.php:2159
+#: modules/nav-menu/widgets/nav-menu.php:2217
 #: modules/timeline/widgets/timeline.php:1535
 #: modules/woocommerce/widgets/woo-mini-cart.php:1445
 #: modules/woocommerce/widgets/woo-mini-cart.php:1502
@@ -6973,7 +6973,7 @@ msgstr ""
 #: modules/image-gallery/widgets/image-gallery.php:393
 #: modules/infobox/widgets/infobox.php:221
 #: modules/login-form/widgets/login-form.php:589
-#: modules/posts/skins/skin-base.php:871 modules/posts/skins/skin-feed.php:236
+#: modules/posts/skins/skin-base.php:871 modules/posts/skins/skin-feed.php:237
 #: modules/posts/skins/skin-news.php:1220 modules/table/widgets/table.php:502
 #: modules/team-member/widgets/team-member.php:712
 #: modules/timeline/widgets/timeline.php:1125
@@ -8356,7 +8356,7 @@ msgstr ""
 
 #: modules/faq/widgets/faq.php:141
 #: modules/modal-popup/widgets/modal-popup.php:2307
-#: modules/nav-menu/widgets/nav-menu.php:2292
+#: modules/nav-menu/widgets/nav-menu.php:2293
 #: modules/offcanvas/widgets/offcanvas.php:1918
 msgid "Saved Widget"
 msgstr ""
@@ -8892,8 +8892,8 @@ msgstr ""
 #: modules/posts/skins/skin-base.php:3248
 #: modules/posts/skins/skin-business.php:264
 #: modules/posts/skins/skin-business.php:528
-#: modules/posts/skins/skin-card.php:233 modules/posts/skins/skin-feed.php:1427
-#: modules/posts/skins/skin-feed.php:1661 modules/posts/skins/skin-news.php:278
+#: modules/posts/skins/skin-card.php:233 modules/posts/skins/skin-feed.php:1428
+#: modules/posts/skins/skin-feed.php:1662 modules/posts/skins/skin-news.php:278
 #: modules/price-table/widgets/price-table.php:2070
 #: modules/price-table/widgets/price-table.php:2430
 #: modules/woocommerce/widgets/woo-checkout.php:887
@@ -9537,8 +9537,8 @@ msgstr ""
 #: modules/posts/skins/skin-base.php:2226
 #: modules/posts/skins/skin-base.php:2464
 #: modules/posts/skins/skin-base.php:3379
-#: modules/posts/skins/skin-base.php:3713 modules/posts/skins/skin-feed.php:749
-#: modules/posts/skins/skin-feed.php:987 modules/posts/skins/skin-news.php:510
+#: modules/posts/skins/skin-base.php:3713 modules/posts/skins/skin-feed.php:750
+#: modules/posts/skins/skin-feed.php:988 modules/posts/skins/skin-news.php:510
 #: modules/posts/skins/skin-news.php:748
 #: modules/woocommerce/skins/skin-grid-default.php:669
 #: modules/woocommerce/skins/skin-grid-franko.php:646
@@ -10055,8 +10055,8 @@ msgstr ""
 #: modules/modal-popup/widgets/modal-popup.php:2183
 #: modules/posts/skins/skin-base.php:2212
 #: modules/posts/skins/skin-base.php:2449
-#: modules/posts/skins/skin-base.php:3364 modules/posts/skins/skin-feed.php:735
-#: modules/posts/skins/skin-feed.php:972 modules/posts/skins/skin-news.php:496
+#: modules/posts/skins/skin-base.php:3364 modules/posts/skins/skin-feed.php:736
+#: modules/posts/skins/skin-feed.php:973 modules/posts/skins/skin-news.php:496
 #: modules/posts/skins/skin-news.php:733
 #: modules/woocommerce/skins/skin-grid-default.php:654
 #: modules/woocommerce/skins/skin-grid-franko.php:632
@@ -10441,25 +10441,25 @@ msgid "Learn : %1$s How to design filterable image gallery? %2$s"
 msgstr ""
 
 #: modules/image-gallery/widgets/image-gallery.php:334
-#: modules/posts/skins/skin-base.php:822 modules/posts/skins/skin-feed.php:190
+#: modules/posts/skins/skin-base.php:822 modules/posts/skins/skin-feed.php:191
 #: modules/video-gallery/widgets/video-gallery.php:689
 msgid "\"All\" Tab Label"
 msgstr ""
 
 #: modules/image-gallery/widgets/image-gallery.php:347
-#: modules/posts/skins/skin-base.php:839 modules/posts/skins/skin-feed.php:206
+#: modules/posts/skins/skin-base.php:839 modules/posts/skins/skin-feed.php:207
 #: modules/video-gallery/widgets/video-gallery.php:705
 msgid "Default Tab on Page Load"
 msgstr ""
 
 #: modules/image-gallery/widgets/image-gallery.php:351
-#: modules/posts/skins/skin-base.php:843 modules/posts/skins/skin-feed.php:210
+#: modules/posts/skins/skin-base.php:843 modules/posts/skins/skin-feed.php:211
 #: modules/video-gallery/widgets/video-gallery.php:709
 msgid "First"
 msgstr ""
 
 #: modules/image-gallery/widgets/image-gallery.php:362
-#: modules/posts/skins/skin-base.php:856 modules/posts/skins/skin-feed.php:222
+#: modules/posts/skins/skin-base.php:856 modules/posts/skins/skin-feed.php:223
 #: modules/video-gallery/widgets/video-gallery.php:720
 msgid "Enter Category Name"
 msgstr ""
@@ -10473,7 +10473,7 @@ msgid ""
 msgstr ""
 
 #: modules/image-gallery/widgets/image-gallery.php:394
-#: modules/posts/skins/skin-base.php:872 modules/posts/skins/skin-feed.php:237
+#: modules/posts/skins/skin-base.php:872 modules/posts/skins/skin-feed.php:238
 #: modules/video-gallery/widgets/video-gallery.php:786
 msgid "Enable this option to display Filterable Tabs in a Dropdown on Mobile."
 msgstr ""
@@ -10732,7 +10732,7 @@ msgid "Tab Alignment"
 msgstr ""
 
 #: modules/image-gallery/widgets/image-gallery.php:1636
-#: modules/posts/skins/skin-base.php:1083 modules/posts/skins/skin-feed.php:436
+#: modules/posts/skins/skin-base.php:1083 modules/posts/skins/skin-feed.php:437
 #: modules/video-gallery/widgets/video-gallery.php:1260
 msgid "Spacing Between Tabs"
 msgstr ""
@@ -10743,14 +10743,14 @@ msgid "Tabs Bottom Spacing"
 msgstr ""
 
 #: modules/image-gallery/widgets/image-gallery.php:1751
-#: modules/posts/skins/skin-base.php:992 modules/posts/skins/skin-feed.php:350
+#: modules/posts/skins/skin-base.php:992 modules/posts/skins/skin-feed.php:351
 #: modules/video-gallery/widgets/video-gallery.php:1348
 #: modules/woocommerce/widgets/woo-products.php:972
 msgid "Text Active / Hover Color"
 msgstr ""
 
 #: modules/image-gallery/widgets/image-gallery.php:1767
-#: modules/posts/skins/skin-base.php:1008 modules/posts/skins/skin-feed.php:365
+#: modules/posts/skins/skin-base.php:1008 modules/posts/skins/skin-feed.php:366
 #: modules/video-gallery/widgets/video-gallery.php:1360
 msgid "Background Active / Hover Color"
 msgstr ""
@@ -10941,7 +10941,7 @@ msgstr ""
 #: modules/posts/skins/skin-base.php:3131
 #: modules/posts/skins/skin-base.php:3698
 #: modules/posts/skins/skin-business.php:487
-#: modules/posts/skins/skin-feed.php:1389 modules/posts/skins/skin-news.php:240
+#: modules/posts/skins/skin-feed.php:1390 modules/posts/skins/skin-news.php:240
 #: modules/price-list/widgets/price-list.php:482
 #: modules/price-list/widgets/price-list.php:547
 #: modules/price-list/widgets/price-list.php:613
@@ -11526,7 +11526,7 @@ msgid "Spacing between Social Login"
 msgstr ""
 
 #: modules/login-form/widgets/login-form.php:1744
-#: modules/nav-menu/widgets/nav-menu.php:1980
+#: modules/nav-menu/widgets/nav-menu.php:1981
 #: modules/registration-form/widgets/registration-form.php:240
 #: modules/registration-form/widgets/registration-form.php:402
 #: modules/registration-form/widgets/registration-form.php:1548
@@ -11976,7 +11976,7 @@ msgstr ""
 #: modules/modal-popup/widgets/modal-popup.php:1572
 #: modules/offcanvas/widgets/offcanvas.php:1378
 #: modules/posts/skins/skin-event.php:183
-#: modules/posts/skins/skin-feed.php:1751
+#: modules/posts/skins/skin-feed.php:1752
 msgid "Content Padding"
 msgstr ""
 
@@ -12345,7 +12345,7 @@ msgstr ""
 #: modules/nav-menu/widgets/nav-menu.php:1350
 #: modules/nav-menu/widgets/nav-menu.php:1539
 #: modules/posts/skins/skin-base.php:981 modules/posts/skins/skin-base.php:2259
-#: modules/posts/skins/skin-feed.php:340 modules/posts/skins/skin-feed.php:782
+#: modules/posts/skins/skin-feed.php:341 modules/posts/skins/skin-feed.php:783
 #: modules/posts/skins/skin-news.php:543
 #: modules/table-of-contents/widgets/table-of-contents.php:897
 #: modules/woocommerce/widgets/woo-checkout.php:1447
@@ -12372,25 +12372,25 @@ msgstr ""
 msgid "Top Distance"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:1822
+#: modules/nav-menu/widgets/nav-menu.php:1823
 msgid "Menu Trigger & Close Icon"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:1944
+#: modules/nav-menu/widgets/nav-menu.php:1945
 #: modules/video/widgets/video.php:1192
 msgid "Close Icon Color"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:1961
+#: modules/nav-menu/widgets/nav-menu.php:1962
 msgid "Close Icon Size"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:2257
+#: modules/nav-menu/widgets/nav-menu.php:2258
 #. translators: %1$s doc link
 msgid "%1$s How to design a custom menu? » %2$s"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:2267
+#: modules/nav-menu/widgets/nav-menu.php:2268
 #. translators: %1$s doc link
 msgid "%1$s Types of dropdown width and position options » %2$s"
 msgstr ""
@@ -12710,7 +12710,7 @@ msgid "Featured Post"
 msgstr ""
 
 #: modules/posts/skins/skin-base.php:182 modules/posts/skins/skin-base.php:2024
-#: modules/posts/skins/skin-feed.php:548 modules/posts/skins/skin-news.php:309
+#: modules/posts/skins/skin-feed.php:549 modules/posts/skins/skin-news.php:309
 #: modules/posts/template-blocks/skin-feed.php:134
 #: modules/posts/template-blocks/skin-news.php:191
 #: modules/posts/template-blocks/skin-style.php:1007
@@ -12820,8 +12820,8 @@ msgstr ""
 
 #: modules/posts/skins/skin-base.php:653 modules/posts/skins/skin-base.php:3009
 #: modules/posts/skins/skin-business.php:436
-#: modules/posts/skins/skin-feed.php:1225
-#: modules/posts/skins/skin-feed.php:1328 modules/posts/skins/skin-news.php:156
+#: modules/posts/skins/skin-feed.php:1226
+#: modules/posts/skins/skin-feed.php:1329 modules/posts/skins/skin-news.php:156
 #: modules/posts/skins/skin-news.php:916
 msgid "Taxonomy Badge"
 msgstr ""
@@ -12838,13 +12838,13 @@ msgstr ""
 msgid "Above Content"
 msgstr ""
 
-#: modules/posts/skins/skin-base.php:675 modules/posts/skins/skin-feed.php:1245
+#: modules/posts/skins/skin-base.php:675 modules/posts/skins/skin-feed.php:1246
 #: modules/posts/skins/skin-news.php:936
 msgid "Select Taxonomy"
 msgstr ""
 
 #: modules/posts/skins/skin-base.php:678 modules/posts/skins/skin-base.php:1221
-#: modules/posts/skins/skin-feed.php:1248 modules/posts/skins/skin-news.php:939
+#: modules/posts/skins/skin-feed.php:1249 modules/posts/skins/skin-news.php:939
 #: modules/posts/skins/skin-news.php:1056
 #: modules/video-gallery/widgets/video-gallery.php:1842
 #: modules/woocommerce/skins/skin-grid-default.php:105
@@ -12855,24 +12855,24 @@ msgid "Category"
 msgstr ""
 
 #: modules/posts/skins/skin-base.php:679 modules/posts/skins/skin-base.php:1222
-#: modules/posts/skins/skin-feed.php:1249 modules/posts/skins/skin-news.php:940
+#: modules/posts/skins/skin-feed.php:1250 modules/posts/skins/skin-news.php:940
 #: modules/posts/skins/skin-news.php:1057
 msgid "Tag"
 msgstr ""
 
-#: modules/posts/skins/skin-base.php:692 modules/posts/skins/skin-feed.php:1262
+#: modules/posts/skins/skin-base.php:692 modules/posts/skins/skin-feed.php:1263
 #: modules/posts/skins/skin-news.php:953
 msgid "Max Terms to Show"
 msgstr ""
 
 #: modules/posts/skins/skin-base.php:706 modules/posts/skins/skin-base.php:719
-#: modules/posts/skins/skin-feed.php:1277
-#: modules/posts/skins/skin-feed.php:1290 modules/posts/skins/skin-news.php:968
+#: modules/posts/skins/skin-feed.php:1278
+#: modules/posts/skins/skin-feed.php:1291 modules/posts/skins/skin-news.php:968
 #: modules/posts/skins/skin-news.php:981
 msgid "Term Icon"
 msgstr ""
 
-#: modules/posts/skins/skin-base.php:731 modules/posts/skins/skin-feed.php:1302
+#: modules/posts/skins/skin-base.php:731 modules/posts/skins/skin-feed.php:1303
 #: modules/posts/skins/skin-news.php:993
 msgid "Term Divider"
 msgstr ""
@@ -12881,23 +12881,23 @@ msgstr ""
 msgid "Show Filters"
 msgstr ""
 
-#: modules/posts/skins/skin-base.php:1024 modules/posts/skins/skin-feed.php:380
+#: modules/posts/skins/skin-base.php:1024 modules/posts/skins/skin-feed.php:381
 msgid "Border Active / Hover Color"
 msgstr ""
 
-#: modules/posts/skins/skin-base.php:1060 modules/posts/skins/skin-feed.php:414
+#: modules/posts/skins/skin-base.php:1060 modules/posts/skins/skin-feed.php:415
 msgid "Filter Tab Padding"
 msgstr ""
 
-#: modules/posts/skins/skin-base.php:1109 modules/posts/skins/skin-feed.php:461
+#: modules/posts/skins/skin-base.php:1109 modules/posts/skins/skin-feed.php:462
 msgid "Filter Bottom Spacing"
 msgstr ""
 
-#: modules/posts/skins/skin-base.php:1134 modules/posts/skins/skin-feed.php:485
+#: modules/posts/skins/skin-base.php:1134 modules/posts/skins/skin-feed.php:486
 msgid "Filter Separator"
 msgstr ""
 
-#: modules/posts/skins/skin-base.php:1159 modules/posts/skins/skin-feed.php:509
+#: modules/posts/skins/skin-base.php:1159 modules/posts/skins/skin-feed.php:510
 msgid "Filter Separator Color"
 msgstr ""
 
@@ -13030,59 +13030,59 @@ msgid ""
 "the frontend,"
 msgstr ""
 
-#: modules/posts/skins/skin-base.php:2048 modules/posts/skins/skin-feed.php:571
+#: modules/posts/skins/skin-base.php:2048 modules/posts/skins/skin-feed.php:572
 #: modules/posts/skins/skin-news.php:332
 msgid "\"Load More\" Label"
 msgstr ""
 
-#: modules/posts/skins/skin-base.php:2050 modules/posts/skins/skin-feed.php:573
+#: modules/posts/skins/skin-base.php:2050 modules/posts/skins/skin-feed.php:574
 #: modules/posts/skins/skin-news.php:334
 msgid "Load More"
 msgstr ""
 
-#: modules/posts/skins/skin-base.php:2124 modules/posts/skins/skin-feed.php:647
+#: modules/posts/skins/skin-base.php:2124 modules/posts/skins/skin-feed.php:648
 #: modules/posts/skins/skin-news.php:408
 msgid "Pagination Style"
 msgstr ""
 
-#: modules/posts/skins/skin-base.php:2129 modules/posts/skins/skin-feed.php:652
+#: modules/posts/skins/skin-base.php:2129 modules/posts/skins/skin-feed.php:653
 #: modules/posts/skins/skin-news.php:413
 #: modules/social-share/widgets/social-share.php:330
 msgid "Flat"
 msgstr ""
 
-#: modules/posts/skins/skin-base.php:2130 modules/posts/skins/skin-feed.php:653
+#: modules/posts/skins/skin-base.php:2130 modules/posts/skins/skin-feed.php:654
 #: modules/posts/skins/skin-news.php:414
 msgid "Transparent"
 msgstr ""
 
-#: modules/posts/skins/skin-base.php:2269 modules/posts/skins/skin-feed.php:792
+#: modules/posts/skins/skin-base.php:2269 modules/posts/skins/skin-feed.php:793
 #: modules/posts/skins/skin-news.php:553
 msgid "Text Active Color"
 msgstr ""
 
-#: modules/posts/skins/skin-base.php:2286 modules/posts/skins/skin-feed.php:809
+#: modules/posts/skins/skin-base.php:2286 modules/posts/skins/skin-feed.php:810
 #: modules/posts/skins/skin-news.php:570
 msgid "Background Active Color"
 msgstr ""
 
-#: modules/posts/skins/skin-base.php:2353 modules/posts/skins/skin-feed.php:876
+#: modules/posts/skins/skin-base.php:2353 modules/posts/skins/skin-feed.php:877
 #: modules/posts/skins/skin-news.php:637
 msgid "Page Number Spacing"
 msgstr ""
 
 #: modules/posts/skins/skin-base.php:2538
-#: modules/posts/skins/skin-feed.php:1061 modules/posts/skins/skin-news.php:822
+#: modules/posts/skins/skin-feed.php:1062 modules/posts/skins/skin-news.php:822
 msgid "Note: This Loader is visible only when user clicks on Load More button."
 msgstr ""
 
 #: modules/posts/skins/skin-base.php:2551
-#: modules/posts/skins/skin-feed.php:1074 modules/posts/skins/skin-news.php:835
+#: modules/posts/skins/skin-feed.php:1075 modules/posts/skins/skin-news.php:835
 msgid "Loader Color"
 msgstr ""
 
 #: modules/posts/skins/skin-base.php:2568
-#: modules/posts/skins/skin-feed.php:1091 modules/posts/skins/skin-news.php:852
+#: modules/posts/skins/skin-feed.php:1092 modules/posts/skins/skin-news.php:852
 msgid "Loader Size"
 msgstr ""
 
@@ -13182,7 +13182,7 @@ msgid "Business Card"
 msgstr ""
 
 #: modules/posts/skins/skin-business.php:242
-#: modules/posts/skins/skin-card.php:211 modules/posts/skins/skin-feed.php:1639
+#: modules/posts/skins/skin-card.php:211 modules/posts/skins/skin-feed.php:1640
 msgid "Separator Length ( In Percentage )"
 msgstr ""
 
@@ -13225,11 +13225,11 @@ msgstr ""
 msgid "Author Name Typography"
 msgstr ""
 
-#: modules/posts/skins/skin-card.php:189 modules/posts/skins/skin-feed.php:1617
+#: modules/posts/skins/skin-card.php:189 modules/posts/skins/skin-feed.php:1618
 msgid "Separator Width"
 msgstr ""
 
-#: modules/posts/skins/skin-card.php:267 modules/posts/skins/skin-feed.php:1695
+#: modules/posts/skins/skin-card.php:267 modules/posts/skins/skin-feed.php:1696
 msgid "Separator Alignment"
 msgstr ""
 
@@ -13265,27 +13265,27 @@ msgstr ""
 msgid "Creative Feed"
 msgstr ""
 
-#: modules/posts/skins/skin-feed.php:560
+#: modules/posts/skins/skin-feed.php:561
 msgid ""
 "Note: Infinite Load is prevented at the backend. You can see it working in "
 "the frontend."
 msgstr ""
 
-#: modules/posts/skins/skin-feed.php:1233 modules/posts/skins/skin-news.php:924
+#: modules/posts/skins/skin-feed.php:1234 modules/posts/skins/skin-news.php:924
 msgid "Show Taxonomy Badge"
 msgstr ""
 
-#: modules/posts/skins/skin-feed.php:1728
+#: modules/posts/skins/skin-feed.php:1729
 #: modules/woocommerce/skins/skin-grid-default.php:231
 #: modules/woocommerce/skins/skin-grid-franko.php:257
 msgid "Content Background Color"
 msgstr ""
 
-#: modules/posts/skins/skin-feed.php:1800
+#: modules/posts/skins/skin-feed.php:1801
 msgid "Content Max Width"
 msgstr ""
 
-#: modules/posts/skins/skin-feed.php:1823
+#: modules/posts/skins/skin-feed.php:1824
 msgid "Content Box Padding"
 msgstr ""
 

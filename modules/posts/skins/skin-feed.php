@@ -134,15 +134,16 @@ class Skin_Feed extends Skin_Base {
 			$this->add_control(
 				'show_filters',
 				array(
-					'label'        => __( 'Show Filters', 'uael' ),
-					'type'         => Controls_Manager::SWITCHER,
-					'label_on'     => __( 'Yes', 'uael' ),
-					'label_off'    => __( 'No', 'uael' ),
-					'return_value' => 'yes',
-					'default'      => 'no',
-					'condition'    => array(
+					'label'              => __( 'Show Filters', 'uael' ),
+					'type'               => Controls_Manager::SWITCHER,
+					'label_on'           => __( 'Yes', 'uael' ),
+					'label_off'          => __( 'No', 'uael' ),
+					'return_value'       => 'yes',
+					'default'            => 'no',
+					'condition'          => array(
 						'query_type' => 'custom',
 					),
+					'frontend_available' => true,
 				)
 			);
 

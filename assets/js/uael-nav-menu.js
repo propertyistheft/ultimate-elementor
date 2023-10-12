@@ -169,6 +169,17 @@
 
         $( '.elementor-element-' + id + ' ul.sub-menu li a.uael-sub-menu-item' ).css( 'paddingLeft', padd + 'px' );
 
+		//Top Distance functionality
+		var top_value = parent.data('settings').distance_from_menu.size + 'px';
+		var style_tag = document.createElement('style');
+        style_tag.innerHTML = `
+            nav ul li.menu-item ul.sub-menu::before {
+                height: ${top_value};
+                top: -${top_value};
+            }
+        `;
+        document.head.appendChild(style_tag);
+
         // Acessibility functions
 		var submenu_container = $scope.find( '.parent-has-child .uael-has-submenu-container a' );
 		var nav_toggle = $scope.find( '.uael-nav-menu__toggle' );
