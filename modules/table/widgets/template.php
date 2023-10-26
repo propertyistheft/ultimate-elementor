@@ -72,7 +72,6 @@ $csv = $this->parse_csv();
 					// Header text prepview editing.
 					$repeater_heading_text = $this->get_repeater_setting_key( 'heading_text', 'table_headings', $inline_count );
 					$this->add_render_attribute( $repeater_heading_text, 'class', 'uael-table__text-inner' );
-					$this->add_inline_editing_attributes( $repeater_heading_text );
 					// TH.
 					if ( true === $first_row_h ) {
 						$this->add_render_attribute( 'current_' . $head['_id'], 'data-sort', $cell_counter_h );
@@ -181,7 +180,6 @@ $csv = $this->parse_csv();
 					// Cell text inline classes.
 					$repeater_cell_text = $this->get_repeater_setting_key( 'cell_text', 'table_content', $cell_inline_count );
 					$this->add_render_attribute( $repeater_cell_text, 'class', 'uael-table__text-inner' );
-					$this->add_inline_editing_attributes( $repeater_cell_text );
 					$this->add_render_attribute( 'uael_cell_icon_align' . $row['_id'], 'class', 'uael-align-icon--' . $settings['all_icon_align'] );
 					$this->add_render_attribute( 'uael_table_col' . $row['_id'], 'class', 'uael-table-col' );
 

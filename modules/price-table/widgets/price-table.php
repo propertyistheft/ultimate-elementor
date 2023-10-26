@@ -2710,7 +2710,7 @@ class Price_Table extends Common_Widget {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#FFFFFF',
 				'selectors' => array(
-					'{{WRAPPER}} .uael-price-table .uael-price-table-features-list li:nth-child(even)' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .uael-price-table .uael-price-table-features-list li.even' => 'background-color: {{VALUE}}',
 				),
 				'condition' => array(
 					'price_features_layout' => 'strips',
@@ -2725,7 +2725,7 @@ class Price_Table extends Common_Widget {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => array(
-					'{{WRAPPER}} .uael-price-table .uael-price-table-features-list li:nth-child(even)' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .uael-price-table .uael-price-table-features-list li.even-tc' => 'color: {{VALUE}}',
 				),
 				'condition' => array(
 					'price_features_layout' => 'strips',
@@ -2752,7 +2752,7 @@ class Price_Table extends Common_Widget {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '#eaeaea',
 				'selectors' => array(
-					'{{WRAPPER}} .uael-price-table .uael-price-table-features-list li:nth-child(odd)' => 'background-color: {{VALUE}}',
+					'{{WRAPPER}} .uael-price-table .uael-price-table-features-list li.odd' => 'background-color: {{VALUE}}',
 				),
 				'condition' => array(
 					'price_features_layout' => 'strips',
@@ -2767,7 +2767,7 @@ class Price_Table extends Common_Widget {
 				'type'      => Controls_Manager::COLOR,
 				'default'   => '',
 				'selectors' => array(
-					'{{WRAPPER}} .uael-price-table .uael-price-table-features-list li:nth-child(odd)' => 'color: {{VALUE}}',
+					'{{WRAPPER}} .uael-price-table .uael-price-table-features-list li.odd-tc' => 'color: {{VALUE}}',
 				),
 				'condition' => array(
 					'price_features_layout' => 'strips',
@@ -3973,8 +3973,11 @@ class Price_Table extends Common_Widget {
 					$node_class = ! empty( $item['tooltip_content'] ) ? 'uael-price-table-feature-content uael-price-table-content-' . $node_id : 'uael-price-table-feature-content';
 
 					$this->add_inline_editing_attributes( $title_key, 'basic' );
+					$li_class         = 'elementor-repeater-item-' . esc_attr( $item['_id'] );
+					$li_class        .= ( 0 === $index % 2 ) ? ' odd' : ' even';
+					$text_color_class = ( 0 === $index % 2 ) ? 'odd-tc' : 'even-tc';
 					?>
-					<li class="elementor-repeater-item-<?php echo esc_attr( $item['_id'] ); ?>"  >
+					<li class="<?php echo esc_attr( $li_class . ' ' . $text_color_class ); ?>">
 						<div class="<?php echo esc_attr( $node_class ); ?>"data-tooltip-content="<?php echo '#uael-tooltip-content-' . esc_attr( $content_id ); ?>">
 							<?php
 							if ( UAEL_Helper::is_elementor_updated() ) {
@@ -4375,8 +4378,11 @@ class Price_Table extends Common_Widget {
 				<ul class="uael-price-table-features-list" {{{ param }}}> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 					<# _.each( settings.features_list, function( item, index ) {
 						var node_class = ( '' != item.tooltip_content ) ? 'uael-price-table-feature-content uael-price-table-content-' +  node_id : 'uael-price-table-feature-content';
+						var li_class = 'elementor-repeater-item-' + item._id;
+						li_class += (0 === index % 2) ? ' odd' : ' even';
+						var text_color_class = (0 === index % 2) ? 'odd-tc' : 'even-tc';
 					#>
-						<li class="elementor-repeater-item-{{ item._id }}">
+						<li class="{{ li_class + ' ' + text_color_class }}">
 							<div class="{{ node_class}} " data-tooltip-content="#uael-tooltip-content-{{ item._id }}">
 								<?php if ( UAEL_Helper::is_elementor_updated() ) { ?>
 									<# if ( item.item_icon || item.new_item_icon ) { #>

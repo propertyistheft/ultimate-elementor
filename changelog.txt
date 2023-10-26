@@ -1,3 +1,9 @@
+Version 1.36.24, Thursday, 19th October 2023
+- Improvement: Compatibility with latest Elementor and Elementor Pro 3.17 version.
+- Fix: Posts - Masonry layout problem with delayed jQuery loading.
+- Fix: Price box - Stripped layout now functions correctly when Tooltip is enabled.
+- Fix: Table - Reverted inline editing code due to issues with repeater field content.
+
 Version 1.36.23, Monday, 9th October 2023
 Fix: Posts - Creative Feed Skin Layout pagination not working for filtered tabs.
 Fix: Navigation Menu - The submenu container opens without hovering over the parent menu item.

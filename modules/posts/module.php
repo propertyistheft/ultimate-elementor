@@ -73,6 +73,10 @@ class Module extends Module_Base {
 	public function __construct() {
 		parent::__construct();
 
+		if ( ! wp_script_is( 'jquery', 'enqueued' ) ) {
+			wp_enqueue_script( 'jquery' );
+		}
+
 		/**
 		 * Pagination Break.
 		 *
