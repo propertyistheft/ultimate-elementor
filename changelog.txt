@@ -1,3 +1,12 @@
+Version 1.36.25, Thursday, 9th November 2023
+- Improvement: Compatibility with latest WordPress version 6.4
+- Improvement: User Registration Form - Accessibility support to the form label attribute.
+- Fix: Posts - Posts view with proper ellipses display.
+- Fix: Posts -  When setting a query offset above 0, pagination wasn't functioning properly.
+- Fix: Navigation Menu - Console error for undefined property 'left'. 
+- Fix: Navigation Menu - Console error for undefined property 'distance_from_menu'. 
+- Fix: Woo Products - Pagination encountered problems when the query offset was set above 0.
+
 Version 1.36.24, Thursday, 19th October 2023
 - Improvement: Compatibility with latest Elementor and Elementor Pro 3.17 version.
 - Fix: Posts - Masonry layout problem with delayed jQuery loading.

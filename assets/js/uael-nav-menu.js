@@ -170,15 +170,19 @@
         $( '.elementor-element-' + id + ' ul.sub-menu li a.uael-sub-menu-item' ).css( 'paddingLeft', padd + 'px' );
 
 		//Top Distance functionality
-		var top_value = parent.data('settings').distance_from_menu.size + 'px';
-		var style_tag = document.createElement('style');
-        style_tag.innerHTML = `
-            nav ul li.menu-item ul.sub-menu::before {
-                height: ${top_value};
-                top: -${top_value};
-            }
-        `;
-        document.head.appendChild(style_tag);
+		var parent_settings = parent.data('settings');
+
+		if ( parent_settings && parent_settings.distance_from_menu ) {
+			var top_value = parent_settings.distance_from_menu.size + 'px';
+			var style_tag = document.createElement('style');
+			style_tag.innerHTML = `
+				nav ul li.menu-item ul.sub-menu::before {
+					height: ${top_value};
+					top: -${top_value};
+				}
+			`;
+			document.head.appendChild(style_tag);
+		}
 
         // Acessibility functions
 		var submenu_container = $scope.find( '.parent-has-child .uael-has-submenu-container a' );
@@ -602,16 +606,16 @@
 
 				sub_menu.css('width', width + 'px' );
 
-				if( $( 'body' ).hasClass( 'rtl' ) ) {
-
-					var sec_right = ( win_width - ( closest_section.offset().left + closest_section.outerWidth() ) );
-					var template_right = ( win_width - ( $this.offset().left + $this.outerWidth() ) );
-					var sec_pos = sec_right - template_right;
-					sub_menu.css( 'right', sec_pos + 'px' );
-				}else {
-
-					var sec_pos = closest_section.offset().left - $this.offset().left;
-					sub_menu.css( 'left', sec_pos + 'px' );
+				if ( closest_section && $this ) {
+					if ( $( 'body' ).hasClass( 'rtl' ) ) {
+						var sec_right = closest_section.offset() ? (win_width - (closest_section.offset().left + closest_section.outerWidth())) : 0;
+						var template_right = $this.offset() ? (win_width - ($this.offset().left + $this.outerWidth())) : 0;
+						var sec_pos = sec_right - template_right;
+						sub_menu.css( 'right', sec_pos + 'px' );
+					} else {
+						var sec_pos = closest_section.offset() && $this.offset() ? (closest_section.offset().left - $this.offset().left) : 0;
+						sub_menu.css( 'left', sec_pos + 'px' );
+					}
 				}
 			}else if ( 'widget' == dropdown_width ){
 
@@ -639,20 +643,22 @@
 					var container = $( '.elementor-element-' + id).closest('.elementor-container');
 				}
 				var width = container.outerWidth();
+				if ( container && $this ){
 
-				if( $( 'body' ).hasClass( 'rtl' ) ) {
+					if( $( 'body' ).hasClass( 'rtl' ) ) {
 
-					var container_right = ( win_width - ( container.offset().left + container.outerWidth() ) );
-					var template_right = ( win_width - ( $this.offset().left + $this.outerWidth() ) );
-					var widget_pos = container_right - template_right;
-					sub_menu.css( 'right', widget_pos + 'px' );
-				} else {
+						var container_right = container.offset() ? ( win_width - ( container.offset().left + container.outerWidth() ) ) : 0;
+						var template_right = $this.offset() ? ( win_width - ( $this.offset().left + $this.outerWidth() ) ) : 0;
+						var widget_pos = container_right - template_right;
+						sub_menu.css( 'right', widget_pos + 'px' );
+					} else {
 
-					var cont_pos = container.offset().left - $this.offset().left;
-					sub_menu.css( 'left', cont_pos + 'px' );
+						var cont_pos = container.offset() && $this.offset() ? ( container.offset().left - $this.offset().left ) : 0;
+						sub_menu.css( 'left', cont_pos + 'px' );
+					}
+
+					sub_menu.css( 'width', width + 'px' );
 				}
-
-				sub_menu.css('width', width + 'px' );
 			}
 
 			if('center' == dropdown_pos && ( 'default' == dropdown_width || 'custom' == dropdown_width) ) {

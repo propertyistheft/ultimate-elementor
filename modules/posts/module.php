@@ -291,8 +291,8 @@ class Module extends Module_Base {
 	 */
 	public function fix_query_offset( &$query ) {
 		if ( ! empty( $query->query_vars['offset_to_fix'] ) ) {
-			if ( $query->is_paged && $query->is_main_query() ) {
-				$query->query_vars['offset'] = $query->query_vars['offset_to_fix'] + ( ( $query->query_vars['paged'] - 1 ) * $query->query_vars['posts_per_page'] );
+			if ( $query->is_paged ) {
+				$query->query_vars['offset'] = $query->query_vars['offset_to_fix'] + ( ( $query->query_vars['paged'] - 1 ) * $query->query_vars['posts_per_page'] ); // PHPCS:Ignore WordPressVIPMinimum.Hooks.PreGetPosts.PreGetPosts
 			} else {
 				$query->query_vars['offset'] = $query->query_vars['offset_to_fix'];
 			}

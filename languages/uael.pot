@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the Ultimate Addons for Elementor package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ultimate Addons for Elementor 1.36.24\n"
+"Project-Id-Version: Ultimate Addons for Elementor 1.36.25\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/ultimate-elementor\n"
-"POT-Creation-Date: 2023-10-19 06:55:27+00:00\n"
+"POT-Creation-Date: 2023-11-09 05:02:24+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -1715,7 +1715,7 @@ msgstr ""
 #: modules/image-gallery/widgets/image-gallery.php:336
 #: modules/posts/skins/skin-base.php:824 modules/posts/skins/skin-feed.php:193
 #: modules/posts/template-blocks/skin-feed.php:186
-#: modules/posts/template-blocks/skin-style.php:1276
+#: modules/posts/template-blocks/skin-style.php:1279
 #: modules/video-gallery/widgets/video-gallery.php:691
 msgid "All"
 msgstr ""
@@ -12684,7 +12684,7 @@ msgid ""
 "999"
 msgstr ""
 
-#: modules/posts/module.php:224 modules/woocommerce/module.php:446
+#: modules/posts/module.php:228 modules/woocommerce/module.php:446
 msgid "Saved"
 msgstr ""
 
@@ -12713,7 +12713,7 @@ msgstr ""
 #: modules/posts/skins/skin-feed.php:549 modules/posts/skins/skin-news.php:309
 #: modules/posts/template-blocks/skin-feed.php:134
 #: modules/posts/template-blocks/skin-news.php:191
-#: modules/posts/template-blocks/skin-style.php:1007
+#: modules/posts/template-blocks/skin-style.php:1010
 #: modules/timeline/widgets/skin-style.php:225
 #: modules/woocommerce/widgets/woo-products.php:447
 #: modules/woocommerce/widgets/woo-products.php:877
@@ -13302,23 +13302,23 @@ msgid "Note: Number of columns <b>excludes</b> featured post."
 msgstr ""
 
 #: modules/posts/template-blocks/skin-feed.php:190
-#: modules/posts/template-blocks/skin-style.php:1280
+#: modules/posts/template-blocks/skin-style.php:1283
 msgid "Taxonomy Filter"
 msgstr ""
 
-#: modules/posts/template-blocks/skin-style.php:1514
+#: modules/posts/template-blocks/skin-style.php:1517
 msgid ""
 "Some posts do not have featured images. Please fill in all required fields "
 "to display posts schema properly."
 msgstr ""
 
-#: modules/posts/template-blocks/skin-style.php:1517
+#: modules/posts/template-blocks/skin-style.php:1520
 msgid ""
 "Some fields are empty under the posts schema section. Please fill in all "
 "required fields."
 msgstr ""
 
-#: modules/posts/template-blocks/skin-style.php:1518
+#: modules/posts/template-blocks/skin-style.php:1521
 msgid "Make sure all your posts do have a featured image."
 msgstr ""
 
@@ -14367,52 +14367,52 @@ msgstr ""
 msgid "Please accept the Terms and Conditions to proceed."
 msgstr ""
 
-#: modules/registration-form/widgets/registration-form.php:2616
+#: modules/registration-form/widgets/registration-form.php:2617
 msgid ""
 "To use reCAPTCHA v3, you need to add the API Key and complete the setup "
 "process in Dashboard > Settings > UAE > User Registration Form Settings > "
 "reCAPTCHA v3."
 msgstr ""
 
-#: modules/registration-form/widgets/registration-form.php:2674
+#: modules/registration-form/widgets/registration-form.php:2675
 msgid "Submit"
-msgstr ""
-
-#: modules/registration-form/widgets/registration-form.php:2739
-#: modules/registration-form/widgets/registration-form.php:2742
-msgid "This is a success message preview!"
 msgstr ""
 
 #: modules/registration-form/widgets/registration-form.php:2740
 #: modules/registration-form/widgets/registration-form.php:2743
+msgid "This is a success message preview!"
+msgstr ""
+
+#: modules/registration-form/widgets/registration-form.php:2741
+#: modules/registration-form/widgets/registration-form.php:2744
 msgid "This is a error message preview!"
 msgstr ""
 
-#: modules/registration-form/widgets/registration-form.php:2778
+#: modules/registration-form/widgets/registration-form.php:2779
 #. translators: %s: Error String
 msgid ""
 "Error! It seems like you have added <b>%s</b> field in the form more than "
 "once."
 msgstr ""
 
-#: modules/registration-form/widgets/registration-form.php:2791
+#: modules/registration-form/widgets/registration-form.php:2792
 msgid "For Registration Form E-mail field is required!"
 msgstr ""
 
-#: modules/registration-form/widgets/registration-form.php:2802
+#: modules/registration-form/widgets/registration-form.php:2803
 msgid ""
 "Password field should be added to the form to use the Confirm Password "
 "field."
 msgstr ""
 
-#: modules/registration-form/widgets/registration-form.php:2814
+#: modules/registration-form/widgets/registration-form.php:2815
 msgid ""
 "To use the Registration Form on your site, you must set the \"Allow new "
 "registrations\" to \"User accounts may be registered\" setting from Network "
 "Admin -> Dashboard -> Settings."
 msgstr ""
 
-#: modules/registration-form/widgets/registration-form.php:2825
+#: modules/registration-form/widgets/registration-form.php:2826
 msgid ""
 "To use the Registration Form on your site, you must enable the \"Anyone Can "
 "Register\" setting from Dashboard -> Settings -> General -> Membership."

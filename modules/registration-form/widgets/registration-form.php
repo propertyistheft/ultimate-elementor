@@ -2507,6 +2507,7 @@ class RegistrationForm extends Common_Widget {
 								foreach ( $settings['fields_list'] as $item_index => $item ) :
 
 									$field_type = $item['field_type'];
+									$input_id   = 'form-field-' . $field_type;
 									if ( 'user_name' === $field_type || 'first_name' === $field_type || 'last_name' === $field_type ) {
 										$field_input_type = 'text';
 									} elseif ( 'confirm_pass' === $field_type ) {
@@ -2602,7 +2603,7 @@ class RegistrationForm extends Common_Widget {
 												case 'phone':
 													echo '<div class="uael-urf-field-wrapper">';
 														$this->add_render_attribute( 'input' . $item_index, 'class', 'elementor-field-textual' );
-														echo '<input size="1" ' . wp_kses_post( $this->get_render_attribute_string( 'input' . $item_index ) ) . '>';
+														echo '<input id="' . esc_attr( $input_id ) . '" size="1" ' . wp_kses_post( $this->get_render_attribute_string( 'input' . $item_index ) ) . '>';
 													if ( 'yes' === $settings['fields_icon'] ) {
 														echo '<span class="uael-fields-icon"><i class="' . wp_kses_post( $field_icon_list[ $field_type ] ) . '"></i></span>';
 													}

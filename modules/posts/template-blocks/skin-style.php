@@ -809,6 +809,9 @@ abstract class Skin_Style {
 				$words          = preg_split( '/\s+/', $excerpt );
 				$excerpt_length = (int) $_excerpt_length;
 				$trim_excerpt   = implode( ' ', array_slice( $words, 0, $excerpt_length ) );
+			if ( count( $words ) > $excerpt_length ) {
+				$trim_excerpt .= apply_filters( 'excerpt_more', '...' );
+			}   
 				echo wp_kses_post( $trim_excerpt );
 			?>
 		</div>
