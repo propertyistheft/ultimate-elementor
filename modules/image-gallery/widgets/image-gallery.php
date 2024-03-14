@@ -1022,6 +1022,29 @@ class Image_Gallery extends Common_Widget {
 							),
 						)
 					);
+					$this->add_control(
+						'overlay_border_radius',
+						array(
+							'label'      => __( 'Overlay Radius', 'uael' ),
+							'type'       => Controls_Manager::DIMENSIONS,
+							'size_units' => array( 'px', '%' ),
+							'selectors'  => array(
+								'{{WRAPPER}} .uael-grid-img-overlay' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+							),
+						)
+					);
+
+					$this->add_control(
+						'thumbnail_border_radius',
+						array(
+							'label'      => __( 'Border Radius', 'uael' ),
+							'type'       => Controls_Manager::DIMENSIONS,
+							'size_units' => array( 'px', '%' ),
+							'selectors'  => array(
+								'{{WRAPPER}} .uael-grid-img-thumbnail img' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
+							),
+						)
+					);
 
 				$this->end_controls_tab();
 

@@ -106,7 +106,9 @@ class Module extends Module_Base {
 
 		add_action( 'elementor/section/print_template', array( $this, '_print_template' ), 10, 2 );
 		add_action( 'elementor/column/print_template', array( $this, '_print_template' ), 10, 2 );
+		add_action( 'elementor/container/print_template', array( $this, '_print_template' ), 10, 2 );
 
+		add_action( 'elementor/frontend/container/before_render', array( $this, '_before_render' ), 10, 1 );
 		add_action( 'elementor/frontend/column/before_render', array( $this, '_before_render' ), 10, 1 );
 		add_action( 'elementor/frontend/section/before_render', array( $this, '_before_render' ), 10, 1 );
 	}
@@ -202,7 +204,7 @@ class Module extends Module_Base {
 	 */
 	public function register_controls( $element, $section_id, $args ) {
 
-		if ( ( 'section' === $element->get_name() && 'section_background' === $section_id ) || ( 'column' === $element->get_name() && 'section_style' === $section_id ) ) {
+		if ( ( 'section' === $element->get_name() && 'section_background' === $section_id ) || ( 'column' === $element->get_name() && 'section_style' === $section_id ) || ( 'container' === $element->get_name() && 'section_background' === $section_id ) ) {
 			$element->start_controls_section(
 				'uae_particles',
 				array(
@@ -506,7 +508,7 @@ class Module extends Module_Base {
 	 */
 	public function _before_render( $element ) { // phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
 
-		if ( $element->get_name() !== 'section' && $element->get_name() !== 'column' ) {
+		if ( $element->get_name() !== 'section' && $element->get_name() !== 'column' && $element->get_name() !== 'container' ) {
 			return;
 		}
 
@@ -548,7 +550,7 @@ class Module extends Module_Base {
 	 * @param object $widget for current widget.
 	 */
 	public function _print_template( $template, $widget ) { // phpcs:ignore PSR2.Methods.MethodDeclaration.Underscore
-		if ( $widget->get_name() !== 'section' && $widget->get_name() !== 'column' ) {
+		if ( $widget->get_name() !== 'section' && $widget->get_name() !== 'column' && $widget->get_name() !== 'container' ) {
 			return $template;
 		}
 		$old_template = $template;

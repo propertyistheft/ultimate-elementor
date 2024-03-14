@@ -99,10 +99,14 @@ class Module extends Module_Base {
 		add_action( 'elementor/element/column/section_advanced/after_section_end', array( __CLASS__, 'register_section_control' ), 1, 2 );
 		// Activate for section.
 		add_action( 'elementor/element/section/section_advanced/after_section_end', array( __CLASS__, 'register_section_control' ), 1, 2 );
+		// Activate for container.
+		add_action( 'elementor/element/container/section_layout/after_section_end', array( __CLASS__, 'register_section_control' ), 1, 2 );
 		// for editor.
 		add_action( 'elementor/column/print_template', array( $this, 'print_template_for_section' ), 10, 2 );
 		add_action( 'elementor/section/print_template', array( $this, 'print_template_for_section' ), 10, 2 );
+		add_action( 'elementor/container/print_template', array( $this, 'print_template_for_section' ), 10, 2 );
 		// for frontend.
+		add_action( 'elementor/frontend/container/after_render', array( $this, '_before_render_for_section' ), 10, 1 );
 		add_action( 'elementor/frontend/column/after_render', array( $this, '_before_render_for_section' ), 10, 1 );
 		add_action( 'elementor/frontend/section/after_render', array( $this, '_before_render_for_section' ), 10, 1 );
 		add_action( 'elementor/element/common/_section_style/after_section_end', array( __CLASS__, 'register_widget_control' ), 1, 2 );
@@ -161,6 +165,10 @@ class Module extends Module_Base {
 											$column.after( extension_html );
 
 									}
+								} else if( element_type == "container" ) {
+
+									$scope.append( extension_html );
+
 								}
 							}
 						}

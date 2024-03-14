@@ -97,6 +97,7 @@ class Display_Conditions {
 	public function init_actions() {
 		add_filter( 'elementor/frontend/section/should_render', array( $this, 'render_content' ), 10, 2 );
 		add_filter( 'elementor/frontend/column/should_render', array( $this, 'render_content' ), 10, 2 );
+		add_filter( 'elementor/frontend/container/should_render', array( $this, 'render_content' ), 10, 2 );
 		add_filter( 'elementor/frontend/widget/should_render', array( $this, 'render_content' ), 10, 2 );
 	}
 

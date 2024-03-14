@@ -1375,6 +1375,7 @@ class Infobox extends Common_Widget {
 					),
 					'selectors' => array(
 						'{{WRAPPER}} a.elementor-button, {{WRAPPER}} .elementor-button' => 'color: {{VALUE}};',
+						'{{WRAPPER}} a.elementor-button svg, {{WRAPPER}} .elementor-button svg' => 'fill: {{VALUE}};',
 					),
 				)
 			);

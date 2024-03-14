@@ -595,6 +595,7 @@ class Buttons extends Common_Widget {
 							'default'   => '',
 							'selectors' => array(
 								'{{WRAPPER}} a.elementor-button' => 'color: {{VALUE}};',
+								'{{WRAPPER}} a.elementor-button svg, {{WRAPPER}} .elementor-button svg' => 'fill: {{VALUE}};',
 							),
 						)
 					);

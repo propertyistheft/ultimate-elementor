@@ -98,7 +98,8 @@ class Module extends Module_Base {
 			add_action( 'elementor/element/column/section_advanced/after_section_end', array( __CLASS__, 'add_controls_sections' ), 1, 2 );
 			// Activate sections for sections.
 			add_action( 'elementor/element/section/section_advanced/after_section_end', array( __CLASS__, 'add_controls_sections' ), 1, 2 );
-
+			// Activate container for container.
+			add_action( 'elementor/element/container/section_layout/after_section_end', array( __CLASS__, 'add_controls_sections' ), 1, 2 );
 			self::create_files();
 		}
 	}

@@ -1983,6 +1983,7 @@ class Modal_Popup extends Common_Widget {
 							'default'   => '',
 							'selectors' => array(
 								'{{WRAPPER}} .uael-modal-action-wrap a.elementor-button, {{WRAPPER}} .uael-modal-action-wrap .elementor-button' => 'color: {{VALUE}};',
+								'{{WRAPPER}} .uael-modal-action-wrap a.elementor-button .elementor-button-icon svg, {{WRAPPER}}.uael-modal-action-wrap .elementor-button-icon svg' => 'fill: {{VALUE}};',
 							),
 							'condition' => array(
 								'modal_on' => 'button',

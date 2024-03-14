@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the Ultimate Addons for Elementor package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ultimate Addons for Elementor 1.36.29\n"
+"Project-Id-Version: Ultimate Addons for Elementor 1.36.30\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/ultimate-elementor\n"
-"POT-Creation-Date: 2024-01-29 09:22:36+00:00\n"
+"POT-Creation-Date: 2024-03-11 05:13:49+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -123,7 +123,7 @@ msgstr ""
 #: modules/headings/widgets/advanced-heading.php:244
 #: modules/hotspot/widgets/hotspot.php:913
 #: modules/image-gallery/widgets/image-gallery.php:616
-#: modules/infobox/widgets/infobox.php:1410
+#: modules/infobox/widgets/infobox.php:1411
 #: modules/login-form/widgets/login-form.php:162
 #: modules/nav-menu/widgets/nav-menu.php:355
 #: modules/nav-menu/widgets/nav-menu.php:451
@@ -429,8 +429,8 @@ msgstr ""
 msgid "Navigation Menu"
 msgstr ""
 
-#: classes/uael-config.php:300 modules/offcanvas/widgets/offcanvas.php:1359
-#: modules/offcanvas/widgets/offcanvas.php:1755
+#: classes/uael-config.php:300 modules/offcanvas/widgets/offcanvas.php:1360
+#: modules/offcanvas/widgets/offcanvas.php:1756
 msgid "Off - Canvas"
 msgstr ""
 
@@ -825,10 +825,10 @@ msgstr ""
 #: modules/image-gallery/widgets/image-gallery.php:352
 #: modules/login-form/widgets/login-form.php:163
 #: modules/nav-menu/widgets/nav-menu.php:181
-#: modules/nav-menu/widgets/nav-menu.php:356 modules/particles/module.php:242
-#: modules/party-propz-extension/module.php:279
-#: modules/party-propz-extension/module.php:320
-#: modules/party-propz-extension/module.php:723
+#: modules/nav-menu/widgets/nav-menu.php:356 modules/particles/module.php:244
+#: modules/party-propz-extension/module.php:287
+#: modules/party-propz-extension/module.php:328
+#: modules/party-propz-extension/module.php:731
 #: modules/posts/skins/skin-base.php:844 modules/posts/skins/skin-feed.php:212
 #: modules/price-list/widgets/price-list.php:757
 #: modules/price-table/widgets/price-table.php:499
@@ -1548,7 +1548,7 @@ msgstr ""
 #: includes/admin/uael-branding.php:99
 #: modules/ba-slider/widgets/ba-slider.php:669
 #: modules/business-hours/widgets/business-hours.php:547
-#: modules/business-reviews/widgets/business-reviews.php:706
+#: modules/business-reviews/widgets/business-reviews.php:718
 #: modules/buttons/widgets/buttons.php:537
 #: modules/caf-styler/widgets/caf-styler.php:1104
 #: modules/cf-styler/widgets/cf-styler.php:1295
@@ -1563,14 +1563,14 @@ msgstr ""
 #: modules/headings/widgets/fancy-heading.php:921
 #: modules/hotspot/widgets/hotspot.php:722
 #: modules/how-to/widgets/how-to.php:1717
-#: modules/image-gallery/widgets/image-gallery.php:1820
-#: modules/infobox/widgets/infobox.php:2083
+#: modules/image-gallery/widgets/image-gallery.php:1843
+#: modules/infobox/widgets/infobox.php:2084
 #: modules/instagram-feed/widgets/instagram-feed.php:1339
 #: modules/login-form/widgets/login-form.php:1324
 #: modules/marketing-button/widgets/marketing-button.php:330
-#: modules/modal-popup/widgets/modal-popup.php:2228
+#: modules/modal-popup/widgets/modal-popup.php:2229
 #: modules/nav-menu/widgets/nav-menu.php:2239
-#: modules/offcanvas/widgets/offcanvas.php:1853
+#: modules/offcanvas/widgets/offcanvas.php:1854
 #: modules/posts/widgets/posts-base.php:434
 #: modules/price-list/widgets/price-list.php:1029
 #: modules/price-table/widgets/price-table.php:3464
@@ -1736,10 +1736,10 @@ msgstr ""
 #: modules/marketing-button/widgets/marketing-button.php:359
 #: modules/modal-popup/widgets/modal-popup.php:225
 #: modules/modal-popup/widgets/modal-popup.php:1534
-#: modules/modal-popup/widgets/modal-popup.php:2295
+#: modules/modal-popup/widgets/modal-popup.php:2296
 #: modules/offcanvas/widgets/offcanvas.php:149
-#: modules/offcanvas/widgets/offcanvas.php:1672
-#: modules/offcanvas/widgets/offcanvas.php:1910
+#: modules/offcanvas/widgets/offcanvas.php:1673
+#: modules/offcanvas/widgets/offcanvas.php:1911
 #: modules/posts/skins/skin-business.php:639
 #: modules/price-table/widgets/price-table.php:622
 #: modules/price-table/widgets/price-table.php:2369
@@ -2218,7 +2218,7 @@ msgstr ""
 #: modules/ba-slider/widgets/ba-slider.php:302
 #: modules/ba-slider/widgets/ba-slider.php:592
 #: modules/ba-slider/widgets/ba-slider.php:623
-#: modules/buttons/widgets/buttons.php:759
+#: modules/buttons/widgets/buttons.php:760
 #: modules/content-toggle/widgets/content-toggle.php:585
 #: modules/countdown/widgets/countdown.php:1181 modules/faq/widgets/faq.php:352
 #: modules/faq/widgets/faq.php:518 modules/ff-styler/widgets/ff-styler.php:1206
@@ -2241,8 +2241,8 @@ msgstr ""
 #: modules/offcanvas/widgets/offcanvas.php:475
 #: modules/offcanvas/widgets/offcanvas.php:509
 #: modules/offcanvas/widgets/offcanvas.php:763
-#: modules/party-propz-extension/module.php:310
-#: modules/party-propz-extension/module.php:754
+#: modules/party-propz-extension/module.php:318
+#: modules/party-propz-extension/module.php:762
 #: modules/posts/skins/skin-base.php:888 modules/posts/skins/skin-base.php:1937
 #: modules/posts/skins/skin-base.php:2064
 #: modules/posts/skins/skin-base.php:2093
@@ -2281,7 +2281,7 @@ msgstr ""
 #: modules/business-hours/widgets/business-hours.php:409
 #: modules/business-reviews/skins/skin-base.php:132
 #: modules/business-reviews/skins/skin-base.php:161
-#: modules/buttons/widgets/buttons.php:763
+#: modules/buttons/widgets/buttons.php:764
 #: modules/caf-styler/widgets/caf-styler.php:468
 #: modules/caf-styler/widgets/caf-styler.php:716
 #: modules/cf-styler/widgets/cf-styler.php:447
@@ -2304,8 +2304,8 @@ msgstr ""
 #: modules/how-to/widgets/how-to.php:1292
 #: modules/how-to/widgets/how-to.php:1376
 #: modules/how-to/widgets/how-to.php:1643
-#: modules/image-gallery/widgets/image-gallery.php:1284
-#: modules/image-gallery/widgets/image-gallery.php:1575
+#: modules/image-gallery/widgets/image-gallery.php:1307
+#: modules/image-gallery/widgets/image-gallery.php:1598
 #: modules/infobox/widgets/infobox.php:195
 #: modules/infobox/widgets/infobox.php:269
 #: modules/instagram-feed/widgets/instagram-feed.php:802
@@ -2328,9 +2328,9 @@ msgstr ""
 #: modules/offcanvas/widgets/offcanvas.php:479
 #: modules/offcanvas/widgets/offcanvas.php:514
 #: modules/offcanvas/widgets/offcanvas.php:767
-#: modules/offcanvas/widgets/offcanvas.php:1798
-#: modules/particles/module.php:350
-#: modules/party-propz-extension/module.php:760
+#: modules/offcanvas/widgets/offcanvas.php:1799
+#: modules/particles/module.php:352
+#: modules/party-propz-extension/module.php:768
 #: modules/posts/skins/skin-base.php:895 modules/posts/skins/skin-base.php:1942
 #: modules/posts/skins/skin-base.php:2069
 #: modules/posts/skins/skin-base.php:2097
@@ -2392,7 +2392,7 @@ msgstr ""
 #: modules/business-hours/widgets/business-hours.php:413
 #: modules/business-reviews/skins/skin-base.php:136
 #: modules/business-reviews/skins/skin-base.php:165
-#: modules/buttons/widgets/buttons.php:767
+#: modules/buttons/widgets/buttons.php:768
 #: modules/caf-styler/widgets/caf-styler.php:472
 #: modules/caf-styler/widgets/caf-styler.php:720
 #: modules/cf-styler/widgets/cf-styler.php:451
@@ -2413,8 +2413,8 @@ msgstr ""
 #: modules/how-to/widgets/how-to.php:1214
 #: modules/how-to/widgets/how-to.php:1296
 #: modules/how-to/widgets/how-to.php:1380
-#: modules/image-gallery/widgets/image-gallery.php:1288
-#: modules/image-gallery/widgets/image-gallery.php:1579
+#: modules/image-gallery/widgets/image-gallery.php:1311
+#: modules/image-gallery/widgets/image-gallery.php:1602
 #: modules/infobox/widgets/infobox.php:199
 #: modules/infobox/widgets/infobox.php:273
 #: modules/instagram-feed/widgets/instagram-feed.php:758
@@ -2484,7 +2484,7 @@ msgstr ""
 #: modules/business-hours/widgets/business-hours.php:417
 #: modules/business-reviews/skins/skin-base.php:140
 #: modules/business-reviews/skins/skin-base.php:169
-#: modules/buttons/widgets/buttons.php:771
+#: modules/buttons/widgets/buttons.php:772
 #: modules/caf-styler/widgets/caf-styler.php:476
 #: modules/caf-styler/widgets/caf-styler.php:724
 #: modules/cf-styler/widgets/cf-styler.php:455
@@ -2507,8 +2507,8 @@ msgstr ""
 #: modules/how-to/widgets/how-to.php:1300
 #: modules/how-to/widgets/how-to.php:1384
 #: modules/how-to/widgets/how-to.php:1651
-#: modules/image-gallery/widgets/image-gallery.php:1292
-#: modules/image-gallery/widgets/image-gallery.php:1583
+#: modules/image-gallery/widgets/image-gallery.php:1315
+#: modules/image-gallery/widgets/image-gallery.php:1606
 #: modules/infobox/widgets/infobox.php:203
 #: modules/infobox/widgets/infobox.php:277
 #: modules/instagram-feed/widgets/instagram-feed.php:810
@@ -2531,9 +2531,9 @@ msgstr ""
 #: modules/offcanvas/widgets/offcanvas.php:487
 #: modules/offcanvas/widgets/offcanvas.php:518
 #: modules/offcanvas/widgets/offcanvas.php:775
-#: modules/offcanvas/widgets/offcanvas.php:1802
-#: modules/particles/module.php:351
-#: modules/party-propz-extension/module.php:764
+#: modules/offcanvas/widgets/offcanvas.php:1803
+#: modules/particles/module.php:353
+#: modules/party-propz-extension/module.php:772
 #: modules/posts/skins/skin-base.php:903 modules/posts/skins/skin-base.php:1950
 #: modules/posts/skins/skin-base.php:2077
 #: modules/posts/skins/skin-base.php:2105
@@ -2671,10 +2671,10 @@ msgstr ""
 #: modules/offcanvas/widgets/offcanvas.php:161
 #: modules/offcanvas/widgets/offcanvas.php:306
 #: modules/offcanvas/widgets/offcanvas.php:893
-#: modules/offcanvas/widgets/offcanvas.php:905 modules/particles/module.php:221
-#: modules/particles/module.php:370 modules/particles/module.php:448
-#: modules/party-propz-extension/module.php:414
-#: modules/party-propz-extension/module.php:461
+#: modules/offcanvas/widgets/offcanvas.php:905 modules/particles/module.php:223
+#: modules/particles/module.php:372 modules/particles/module.php:450
+#: modules/party-propz-extension/module.php:422
+#: modules/party-propz-extension/module.php:469
 #: modules/posts/skins/skin-base.php:289 modules/posts/skins/skin-base.php:367
 #: modules/posts/skins/skin-base.php:506 modules/posts/skins/skin-base.php:523
 #: modules/posts/skins/skin-base.php:771 modules/posts/skins/skin-base.php:875
@@ -2832,10 +2832,10 @@ msgstr ""
 #: modules/offcanvas/widgets/offcanvas.php:160
 #: modules/offcanvas/widgets/offcanvas.php:305
 #: modules/offcanvas/widgets/offcanvas.php:892
-#: modules/offcanvas/widgets/offcanvas.php:904 modules/particles/module.php:222
-#: modules/particles/module.php:371 modules/particles/module.php:449
-#: modules/party-propz-extension/module.php:415
-#: modules/party-propz-extension/module.php:462
+#: modules/offcanvas/widgets/offcanvas.php:904 modules/particles/module.php:224
+#: modules/particles/module.php:373 modules/particles/module.php:451
+#: modules/party-propz-extension/module.php:423
+#: modules/party-propz-extension/module.php:470
 #: modules/posts/skins/skin-base.php:290 modules/posts/skins/skin-base.php:368
 #: modules/posts/skins/skin-base.php:507 modules/posts/skins/skin-base.php:524
 #: modules/posts/skins/skin-base.php:772 modules/posts/skins/skin-base.php:876
@@ -2916,9 +2916,9 @@ msgstr ""
 #: modules/ba-slider/widgets/ba-slider.php:341
 #: modules/hotspot/widgets/hotspot.php:1464
 #: modules/image-gallery/widgets/image-gallery.php:1018
-#: modules/image-gallery/widgets/image-gallery.php:1088
+#: modules/image-gallery/widgets/image-gallery.php:1111
 #: modules/modal-popup/widgets/modal-popup.php:201
-#: modules/offcanvas/widgets/offcanvas.php:1829
+#: modules/offcanvas/widgets/offcanvas.php:1830
 #: modules/posts/skins/skin-base.php:427 modules/video/widgets/video.php:769
 #: modules/video-gallery/widgets/video-gallery.php:1751
 #: modules/woocommerce/skins/skin-grid-base.php:148
@@ -3052,10 +3052,10 @@ msgstr ""
 #: modules/how-to/widgets/how-to.php:1570
 #: modules/how-to/widgets/how-to.php:1604
 #: modules/image-gallery/widgets/image-gallery.php:766
-#: modules/image-gallery/widgets/image-gallery.php:1366
+#: modules/image-gallery/widgets/image-gallery.php:1389
 #: modules/infobox/widgets/infobox.php:1093
-#: modules/infobox/widgets/infobox.php:1661
-#: modules/infobox/widgets/infobox.php:1750
+#: modules/infobox/widgets/infobox.php:1662
+#: modules/infobox/widgets/infobox.php:1751
 #: modules/instagram-feed/widgets/instagram-feed.php:732
 #: modules/instagram-feed/widgets/instagram-feed.php:1202
 #: modules/login-form/widgets/login-form.php:358
@@ -3068,7 +3068,7 @@ msgstr ""
 #: modules/modal-popup/widgets/modal-popup.php:1542
 #: modules/nav-menu/widgets/nav-menu.php:1840
 #: modules/nav-menu/widgets/nav-menu.php:1872
-#: modules/offcanvas/widgets/offcanvas.php:1683
+#: modules/offcanvas/widgets/offcanvas.php:1684
 #: modules/posts/skins/skin-base.php:2816
 #: modules/posts/skins/skin-base.php:2910
 #: modules/posts/skins/skin-base.php:3114
@@ -3174,8 +3174,8 @@ msgstr ""
 #: modules/business-reviews/skins/skin-base.php:695
 #: modules/buttons/widgets/buttons.php:348
 #: modules/buttons/widgets/buttons.php:400
-#: modules/buttons/widgets/buttons.php:605
-#: modules/buttons/widgets/buttons.php:668
+#: modules/buttons/widgets/buttons.php:606
+#: modules/buttons/widgets/buttons.php:669
 #: modules/caf-styler/widgets/caf-styler.php:562
 #: modules/caf-styler/widgets/caf-styler.php:798
 #: modules/caf-styler/widgets/caf-styler.php:891
@@ -3209,20 +3209,20 @@ msgstr ""
 #: modules/hotspot/widgets/hotspot.php:1262
 #: modules/hotspot/widgets/hotspot.php:1375
 #: modules/hotspot/widgets/hotspot.php:1556
-#: modules/image-gallery/widgets/image-gallery.php:1710
+#: modules/image-gallery/widgets/image-gallery.php:1733
 #: modules/infobox/widgets/infobox.php:638
-#: modules/infobox/widgets/infobox.php:1385
+#: modules/infobox/widgets/infobox.php:1386
 #: modules/instagram-feed/widgets/instagram-feed.php:1000
 #: modules/instagram-feed/widgets/instagram-feed.php:1072
 #: modules/login-form/widgets/login-form.php:1885
 #: modules/login-form/widgets/login-form.php:2249
 #: modules/login-form/widgets/login-form.php:2313
-#: modules/marketing-button/widgets/marketing-button.php:540
-#: modules/marketing-button/widgets/marketing-button.php:626
+#: modules/marketing-button/widgets/marketing-button.php:541
+#: modules/marketing-button/widgets/marketing-button.php:627
 #: modules/modal-popup/widgets/modal-popup.php:1477
 #: modules/modal-popup/widgets/modal-popup.php:1560
-#: modules/modal-popup/widgets/modal-popup.php:1997
-#: modules/modal-popup/widgets/modal-popup.php:2043
+#: modules/modal-popup/widgets/modal-popup.php:1998
+#: modules/modal-popup/widgets/modal-popup.php:2044
 #: modules/nav-menu/widgets/nav-menu.php:1123
 #: modules/nav-menu/widgets/nav-menu.php:1265
 #: modules/nav-menu/widgets/nav-menu.php:1307
@@ -3234,14 +3234,14 @@ msgstr ""
 #: modules/nav-menu/widgets/nav-menu.php:1884
 #: modules/nav-menu/widgets/nav-menu.php:2120
 #: modules/nav-menu/widgets/nav-menu.php:2188
-#: modules/offcanvas/widgets/offcanvas.php:1001
-#: modules/offcanvas/widgets/offcanvas.php:1085
-#: modules/offcanvas/widgets/offcanvas.php:1187
-#: modules/offcanvas/widgets/offcanvas.php:1233
-#: modules/offcanvas/widgets/offcanvas.php:1304
-#: modules/offcanvas/widgets/offcanvas.php:1367
-#: modules/offcanvas/widgets/offcanvas.php:1514
-#: modules/offcanvas/widgets/offcanvas.php:1643
+#: modules/offcanvas/widgets/offcanvas.php:1002
+#: modules/offcanvas/widgets/offcanvas.php:1086
+#: modules/offcanvas/widgets/offcanvas.php:1188
+#: modules/offcanvas/widgets/offcanvas.php:1234
+#: modules/offcanvas/widgets/offcanvas.php:1305
+#: modules/offcanvas/widgets/offcanvas.php:1368
+#: modules/offcanvas/widgets/offcanvas.php:1515
+#: modules/offcanvas/widgets/offcanvas.php:1644
 #: modules/posts/skins/skin-base.php:950 modules/posts/skins/skin-base.php:1982
 #: modules/posts/skins/skin-base.php:2171
 #: modules/posts/skins/skin-base.php:2405
@@ -3338,7 +3338,7 @@ msgstr ""
 
 #: modules/ba-slider/widgets/ba-slider.php:579
 #: modules/business-reviews/skins/skin-base.php:707
-#: modules/buttons/widgets/buttons.php:736
+#: modules/buttons/widgets/buttons.php:737
 #: modules/caf-styler/widgets/caf-styler.php:760
 #: modules/cf-styler/widgets/cf-styler.php:716
 #: modules/content-toggle/widgets/content-toggle.php:700
@@ -3360,9 +3360,9 @@ msgstr ""
 #: modules/headings/widgets/fancy-heading.php:851
 #: modules/hotspot/widgets/hotspot.php:1391
 #: modules/hotspot/widgets/hotspot.php:1509
-#: modules/image-gallery/widgets/image-gallery.php:1396
-#: modules/image-gallery/widgets/image-gallery.php:1619
-#: modules/infobox/widgets/infobox.php:1497
+#: modules/image-gallery/widgets/image-gallery.php:1419
+#: modules/image-gallery/widgets/image-gallery.php:1642
+#: modules/infobox/widgets/infobox.php:1498
 #: modules/instagram-feed/widgets/instagram-feed.php:860
 #: modules/instagram-feed/widgets/instagram-feed.php:1120
 #: modules/login-form/widgets/login-form.php:1909
@@ -3372,10 +3372,10 @@ msgstr ""
 #: modules/modal-popup/widgets/modal-popup.php:1443
 #: modules/nav-menu/widgets/nav-menu.php:2086
 #: modules/offcanvas/widgets/offcanvas.php:959
-#: modules/offcanvas/widgets/offcanvas.php:1145
-#: modules/offcanvas/widgets/offcanvas.php:1326
-#: modules/offcanvas/widgets/offcanvas.php:1435
-#: modules/offcanvas/widgets/offcanvas.php:1559
+#: modules/offcanvas/widgets/offcanvas.php:1146
+#: modules/offcanvas/widgets/offcanvas.php:1327
+#: modules/offcanvas/widgets/offcanvas.php:1436
+#: modules/offcanvas/widgets/offcanvas.php:1560
 #: modules/posts/skins/skin-base.php:1994
 #: modules/posts/skins/skin-base.php:2337
 #: modules/posts/skins/skin-base.php:2514
@@ -3441,13 +3441,13 @@ msgstr ""
 #: modules/headings/widgets/advanced-heading.php:295
 #: modules/hotspot/widgets/hotspot.php:834
 #: modules/image-gallery/widgets/image-gallery.php:917
-#: modules/image-gallery/widgets/image-gallery.php:1313
+#: modules/image-gallery/widgets/image-gallery.php:1336
 #: modules/infobox/widgets/infobox.php:245
 #: modules/instagram-feed/widgets/instagram-feed.php:754
 #: modules/instagram-feed/widgets/instagram-feed.php:896
 #: modules/login-form/widgets/login-form.php:656
 #: modules/marketing-button/widgets/marketing-button.php:228
-#: modules/particles/module.php:348 modules/posts/skins/skin-base.php:340
+#: modules/particles/module.php:350 modules/posts/skins/skin-base.php:340
 #: modules/posts/skins/skin-business.php:133
 #: modules/posts/skins/skin-card.php:132 modules/posts/skins/skin-event.php:242
 #: modules/price-list/widgets/price-list.php:265
@@ -3474,11 +3474,11 @@ msgstr ""
 #: modules/hotspot/widgets/hotspot.php:835
 #: modules/how-to/widgets/how-to.php:1647
 #: modules/image-gallery/widgets/image-gallery.php:925
-#: modules/image-gallery/widgets/image-gallery.php:1321
+#: modules/image-gallery/widgets/image-gallery.php:1344
 #: modules/instagram-feed/widgets/instagram-feed.php:762
 #: modules/instagram-feed/widgets/instagram-feed.php:904
 #: modules/login-form/widgets/login-form.php:657
-#: modules/particles/module.php:349
+#: modules/particles/module.php:351
 #: modules/price-list/widgets/price-list.php:354
 #: modules/price-table/widgets/price-table.php:415
 #: modules/price-table/widgets/price-table.php:814
@@ -3500,9 +3500,9 @@ msgstr ""
 #: modules/google-map/widgets/google-map.php:787
 #: modules/headings/widgets/dual-heading.php:764
 #: modules/headings/widgets/fancy-heading.php:930
-#: modules/image-gallery/widgets/image-gallery.php:1839
-#: modules/infobox/widgets/infobox.php:2092
-#: modules/modal-popup/widgets/modal-popup.php:2237
+#: modules/image-gallery/widgets/image-gallery.php:1862
+#: modules/infobox/widgets/infobox.php:2093
+#: modules/modal-popup/widgets/modal-popup.php:2238
 #: modules/posts/widgets/posts-base.php:453
 #: modules/price-list/widgets/price-list.php:1048
 #: modules/price-table/widgets/price-table.php:3483
@@ -3517,7 +3517,7 @@ msgstr ""
 
 #: modules/ba-slider/widgets/ba-slider.php:688
 #: modules/business-hours/widgets/business-hours.php:566
-#: modules/business-reviews/widgets/business-reviews.php:715
+#: modules/business-reviews/widgets/business-reviews.php:727
 #: modules/buttons/widgets/buttons.php:546
 #: modules/caf-styler/widgets/caf-styler.php:1113
 #: modules/content-toggle/widgets/content-toggle.php:1005
@@ -3529,13 +3529,13 @@ msgstr ""
 #: modules/headings/widgets/fancy-heading.php:940
 #: modules/hotspot/widgets/hotspot.php:731
 #: modules/how-to/widgets/how-to.php:1726
-#: modules/image-gallery/widgets/image-gallery.php:1829
-#: modules/infobox/widgets/infobox.php:2102
+#: modules/image-gallery/widgets/image-gallery.php:1852
+#: modules/infobox/widgets/infobox.php:2103
 #: modules/instagram-feed/widgets/instagram-feed.php:1348
 #: modules/login-form/widgets/login-form.php:1333
 #: modules/marketing-button/widgets/marketing-button.php:339
 #: modules/nav-menu/widgets/nav-menu.php:2248
-#: modules/offcanvas/widgets/offcanvas.php:1862
+#: modules/offcanvas/widgets/offcanvas.php:1863
 #: modules/posts/widgets/posts-base.php:443
 #: modules/price-list/widgets/price-list.php:1038
 #: modules/price-table/widgets/price-table.php:3473
@@ -3723,8 +3723,8 @@ msgstr ""
 #: modules/hotspot/widgets/hotspot.php:344
 #: modules/infobox/widgets/infobox.php:1071
 #: modules/login-form/widgets/login-form.php:337
-#: modules/particles/module.php:232
-#: modules/party-propz-extension/module.php:447
+#: modules/particles/module.php:234
+#: modules/party-propz-extension/module.php:455
 #: modules/price-table/widgets/price-table.php:147
 #: modules/price-table/widgets/price-table.php:1173
 #: modules/price-table/widgets/price-table.php:2261
@@ -3756,7 +3756,7 @@ msgstr ""
 #: modules/hotspot/widgets/hotspot.php:1158
 #: modules/infobox/widgets/infobox.php:663
 #: modules/infobox/widgets/infobox.php:1076
-#: modules/infobox/widgets/infobox.php:1411
+#: modules/infobox/widgets/infobox.php:1412
 #: modules/login-form/widgets/login-form.php:340
 #: modules/nav-menu/widgets/nav-menu.php:1764
 #: modules/price-list/widgets/price-list.php:296
@@ -3786,7 +3786,7 @@ msgstr ""
 #: modules/hotspot/widgets/hotspot.php:1160
 #: modules/infobox/widgets/infobox.php:665
 #: modules/infobox/widgets/infobox.php:1078
-#: modules/infobox/widgets/infobox.php:1413
+#: modules/infobox/widgets/infobox.php:1414
 #: modules/login-form/widgets/login-form.php:341
 #: modules/nav-menu/widgets/nav-menu.php:1766
 #: modules/price-list/widgets/price-list.php:297
@@ -3816,7 +3816,7 @@ msgstr ""
 #: modules/hotspot/widgets/hotspot.php:1161
 #: modules/infobox/widgets/infobox.php:666
 #: modules/infobox/widgets/infobox.php:1077
-#: modules/infobox/widgets/infobox.php:1414
+#: modules/infobox/widgets/infobox.php:1415
 #: modules/login-form/widgets/login-form.php:342
 #: modules/nav-menu/widgets/nav-menu.php:1767
 #: modules/price-list/widgets/price-list.php:298
@@ -3902,7 +3902,7 @@ msgstr ""
 #: modules/login-form/widgets/login-form.php:1097
 #: modules/login-form/widgets/login-form.php:1162
 #: modules/login-form/widgets/login-form.php:1249
-#: modules/party-propz-extension/module.php:968
+#: modules/party-propz-extension/module.php:976
 #: modules/posts/skins/skin-base.php:1266
 #: modules/posts/skins/skin-base.php:1349
 #: modules/posts/skins/skin-base.php:1399
@@ -3984,7 +3984,7 @@ msgstr ""
 #: modules/login-form/widgets/login-form.php:1096
 #: modules/login-form/widgets/login-form.php:1161
 #: modules/login-form/widgets/login-form.php:1248
-#: modules/party-propz-extension/module.php:969
+#: modules/party-propz-extension/module.php:977
 #: modules/posts/skins/skin-base.php:1267
 #: modules/posts/skins/skin-base.php:1350
 #: modules/posts/skins/skin-base.php:1400
@@ -4072,8 +4072,8 @@ msgstr ""
 #: modules/hotspot/widgets/hotspot.php:163
 #: modules/hotspot/widgets/hotspot.php:349
 #: modules/image-gallery/widgets/image-gallery.php:562
-#: modules/party-propz-extension/module.php:476
-#: modules/party-propz-extension/module.php:860
+#: modules/party-propz-extension/module.php:484
+#: modules/party-propz-extension/module.php:868
 #: modules/posts/skins/skin-base.php:350
 #: modules/retina-image/widgets/retina-image.php:154
 #: modules/timeline/widgets/timeline.php:568
@@ -4147,8 +4147,8 @@ msgstr ""
 #: modules/modal-popup/widgets/modal-popup.php:1672
 #: modules/modal-popup/widgets/modal-popup.php:1816
 #: modules/nav-menu/widgets/nav-menu.php:1899
-#: modules/party-propz-extension/module.php:506
-#: modules/party-propz-extension/module.php:886
+#: modules/party-propz-extension/module.php:514
+#: modules/party-propz-extension/module.php:894
 #: modules/price-table/widgets/price-table.php:2484
 #: modules/social-share/widgets/social-share.php:720
 #: modules/table-of-contents/widgets/table-of-contents.php:308
@@ -4165,11 +4165,11 @@ msgstr ""
 #: modules/modal-popup/widgets/modal-popup.php:946
 #: modules/modal-popup/widgets/modal-popup.php:1708
 #: modules/modal-popup/widgets/modal-popup.php:1852
-#: modules/offcanvas/widgets/offcanvas.php:1168
-#: modules/offcanvas/widgets/offcanvas.php:1214
-#: modules/offcanvas/widgets/offcanvas.php:1281
-#: modules/party-propz-extension/module.php:570
-#: modules/party-propz-extension/module.php:913
+#: modules/offcanvas/widgets/offcanvas.php:1169
+#: modules/offcanvas/widgets/offcanvas.php:1215
+#: modules/offcanvas/widgets/offcanvas.php:1282
+#: modules/party-propz-extension/module.php:578
+#: modules/party-propz-extension/module.php:921
 #: modules/price-table/widgets/price-table.php:692
 #: modules/price-table/widgets/price-table.php:2506
 #: modules/table/widgets/table.php:1684
@@ -4201,7 +4201,7 @@ msgstr ""
 #: modules/buttons/widgets/buttons.php:337
 #: modules/buttons/widgets/buttons.php:389
 #: modules/buttons/widgets/buttons.php:593
-#: modules/buttons/widgets/buttons.php:657
+#: modules/buttons/widgets/buttons.php:658
 #: modules/caf-styler/widgets/caf-styler.php:784
 #: modules/caf-styler/widgets/caf-styler.php:866
 #: modules/cf-styler/widgets/cf-styler.php:737
@@ -4220,7 +4220,7 @@ msgstr ""
 #: modules/hotspot/widgets/hotspot.php:1249
 #: modules/hotspot/widgets/hotspot.php:1363
 #: modules/hotspot/widgets/hotspot.php:1539
-#: modules/image-gallery/widgets/image-gallery.php:1692
+#: modules/image-gallery/widgets/image-gallery.php:1715
 #: modules/infobox/widgets/infobox.php:1370
 #: modules/instagram-feed/widgets/instagram-feed.php:984
 #: modules/instagram-feed/widgets/instagram-feed.php:1056
@@ -4229,10 +4229,10 @@ msgstr ""
 #: modules/login-form/widgets/login-form.php:2236
 #: modules/login-form/widgets/login-form.php:2301
 #: modules/marketing-button/widgets/marketing-button.php:516
-#: modules/marketing-button/widgets/marketing-button.php:603
+#: modules/marketing-button/widgets/marketing-button.php:604
 #: modules/modal-popup/widgets/modal-popup.php:1981
-#: modules/modal-popup/widgets/modal-popup.php:2029
-#: modules/modal-popup/widgets/modal-popup.php:2166
+#: modules/modal-popup/widgets/modal-popup.php:2030
+#: modules/modal-popup/widgets/modal-popup.php:2167
 #: modules/nav-menu/widgets/nav-menu.php:1250
 #: modules/nav-menu/widgets/nav-menu.php:1289
 #: modules/nav-menu/widgets/nav-menu.php:1357
@@ -4243,11 +4243,11 @@ msgstr ""
 #: modules/nav-menu/widgets/nav-menu.php:2107
 #: modules/nav-menu/widgets/nav-menu.php:2176
 #: modules/offcanvas/widgets/offcanvas.php:986
-#: modules/offcanvas/widgets/offcanvas.php:1071
-#: modules/offcanvas/widgets/offcanvas.php:1470
-#: modules/offcanvas/widgets/offcanvas.php:1497
-#: modules/offcanvas/widgets/offcanvas.php:1594
-#: modules/offcanvas/widgets/offcanvas.php:1625
+#: modules/offcanvas/widgets/offcanvas.php:1072
+#: modules/offcanvas/widgets/offcanvas.php:1471
+#: modules/offcanvas/widgets/offcanvas.php:1498
+#: modules/offcanvas/widgets/offcanvas.php:1595
+#: modules/offcanvas/widgets/offcanvas.php:1626
 #: modules/posts/skins/skin-base.php:935 modules/posts/skins/skin-base.php:2153
 #: modules/posts/skins/skin-base.php:2386
 #: modules/posts/skins/skin-base.php:3305 modules/posts/skins/skin-feed.php:298
@@ -4425,7 +4425,7 @@ msgstr ""
 
 #: modules/business-reviews/skins/skin-base.php:726
 #: modules/buttons/widgets/buttons.php:369
-#: modules/buttons/widgets/buttons.php:628
+#: modules/buttons/widgets/buttons.php:629
 #: modules/caf-styler/widgets/caf-styler.php:827
 #: modules/cf-styler/widgets/cf-styler.php:777
 #: modules/content-toggle/widgets/content-toggle.php:684
@@ -4440,19 +4440,20 @@ msgstr ""
 #: modules/headings/widgets/fancy-heading.php:879
 #: modules/how-to/widgets/how-to.php:1276
 #: modules/how-to/widgets/how-to.php:1690
+#: modules/image-gallery/widgets/image-gallery.php:1040
 #: modules/instagram-feed/widgets/instagram-feed.php:647
 #: modules/instagram-feed/widgets/instagram-feed.php:1029
 #: modules/instagram-feed/widgets/instagram-feed.php:1101
 #: modules/login-form/widgets/login-form.php:1948
 #: modules/login-form/widgets/login-form.php:2119
 #: modules/login-form/widgets/login-form.php:2272
-#: modules/marketing-button/widgets/marketing-button.php:565
-#: modules/modal-popup/widgets/modal-popup.php:2107
+#: modules/marketing-button/widgets/marketing-button.php:566
+#: modules/modal-popup/widgets/modal-popup.php:2108
 #: modules/nav-menu/widgets/nav-menu.php:1618
 #: modules/nav-menu/widgets/nav-menu.php:1933
 #: modules/nav-menu/widgets/nav-menu.php:2146
-#: modules/offcanvas/widgets/offcanvas.php:1033
-#: modules/offcanvas/widgets/offcanvas.php:1730
+#: modules/offcanvas/widgets/offcanvas.php:1034
+#: modules/offcanvas/widgets/offcanvas.php:1731
 #: modules/posts/skins/skin-base.php:1043
 #: modules/posts/skins/skin-base.php:2321
 #: modules/posts/skins/skin-base.php:2498
@@ -4495,9 +4496,9 @@ msgid "Border Radius"
 msgstr ""
 
 #: modules/business-reviews/skins/skin-base.php:759
-#: modules/business-reviews/widgets/business-reviews.php:525
+#: modules/business-reviews/widgets/business-reviews.php:537
 #: modules/image-gallery/widgets/image-gallery.php:525
-#: modules/image-gallery/widgets/image-gallery.php:1421
+#: modules/image-gallery/widgets/image-gallery.php:1444
 #: modules/posts/skins/skin-base.php:559 modules/posts/skins/skin-base.php:3585
 #: modules/twitter/widgets/twitter.php:1842
 #: modules/video-gallery/widgets/video-gallery.php:824
@@ -4510,9 +4511,9 @@ msgid "Navigation"
 msgstr ""
 
 #: modules/business-reviews/skins/skin-base.php:771
-#: modules/business-reviews/widgets/business-reviews.php:530
+#: modules/business-reviews/widgets/business-reviews.php:542
 #: modules/image-gallery/widgets/image-gallery.php:530
-#: modules/image-gallery/widgets/image-gallery.php:1433
+#: modules/image-gallery/widgets/image-gallery.php:1456
 #: modules/nav-menu/widgets/nav-menu.php:680
 #: modules/posts/skins/skin-base.php:564 modules/posts/skins/skin-base.php:3597
 #: modules/twitter/widgets/twitter.php:702
@@ -4527,13 +4528,13 @@ msgid "Arrows"
 msgstr ""
 
 #: modules/business-reviews/skins/skin-base.php:783
-#: modules/image-gallery/widgets/image-gallery.php:1446
+#: modules/image-gallery/widgets/image-gallery.php:1469
 #: modules/twitter/widgets/twitter.php:715
 msgid "Arrows Position"
 msgstr ""
 
 #: modules/business-reviews/skins/skin-base.php:787
-#: modules/image-gallery/widgets/image-gallery.php:1450
+#: modules/image-gallery/widgets/image-gallery.php:1473
 #: modules/posts/skins/skin-base.php:3613
 #: modules/twitter/widgets/twitter.php:719
 #: modules/woocommerce/widgets/woo-categories.php:485
@@ -4542,7 +4543,7 @@ msgid "Inside"
 msgstr ""
 
 #: modules/business-reviews/skins/skin-base.php:788
-#: modules/image-gallery/widgets/image-gallery.php:1451
+#: modules/image-gallery/widgets/image-gallery.php:1474
 #: modules/posts/skins/skin-base.php:3614
 #: modules/twitter/widgets/twitter.php:720
 #: modules/woocommerce/widgets/woo-categories.php:486
@@ -4551,7 +4552,7 @@ msgid "Outside"
 msgstr ""
 
 #: modules/business-reviews/skins/skin-base.php:801
-#: modules/image-gallery/widgets/image-gallery.php:1464
+#: modules/image-gallery/widgets/image-gallery.php:1487
 #: modules/posts/skins/skin-base.php:3626
 #: modules/twitter/widgets/twitter.php:733
 #: modules/video-gallery/widgets/video-gallery.php:1927
@@ -4559,7 +4560,7 @@ msgid "Arrows Size"
 msgstr ""
 
 #: modules/business-reviews/skins/skin-base.php:822
-#: modules/image-gallery/widgets/image-gallery.php:1485
+#: modules/image-gallery/widgets/image-gallery.php:1508
 #: modules/posts/skins/skin-base.php:3656
 #: modules/twitter/widgets/twitter.php:754
 #: modules/video-gallery/widgets/video-gallery.php:1947
@@ -4567,9 +4568,9 @@ msgid "Arrows Color"
 msgstr ""
 
 #: modules/business-reviews/skins/skin-base.php:837
-#: modules/business-reviews/widgets/business-reviews.php:531
+#: modules/business-reviews/widgets/business-reviews.php:543
 #: modules/image-gallery/widgets/image-gallery.php:531
-#: modules/image-gallery/widgets/image-gallery.php:1500
+#: modules/image-gallery/widgets/image-gallery.php:1523
 #: modules/posts/skins/skin-base.php:565 modules/posts/skins/skin-base.php:3772
 #: modules/twitter/widgets/twitter.php:769
 #: modules/twitter/widgets/twitter.php:1848
@@ -4583,7 +4584,7 @@ msgid "Dots"
 msgstr ""
 
 #: modules/business-reviews/skins/skin-base.php:850
-#: modules/image-gallery/widgets/image-gallery.php:1513
+#: modules/image-gallery/widgets/image-gallery.php:1536
 #: modules/posts/skins/skin-base.php:3784
 #: modules/twitter/widgets/twitter.php:782
 #: modules/video-gallery/widgets/video-gallery.php:2020
@@ -4591,7 +4592,7 @@ msgid "Dots Size"
 msgstr ""
 
 #: modules/business-reviews/skins/skin-base.php:871
-#: modules/image-gallery/widgets/image-gallery.php:1534
+#: modules/image-gallery/widgets/image-gallery.php:1557
 #: modules/posts/skins/skin-base.php:3804
 #: modules/twitter/widgets/twitter.php:803
 #: modules/video-gallery/widgets/video-gallery.php:2040
@@ -4610,12 +4611,12 @@ msgstr ""
 #: modules/hotspot/widgets/hotspot.php:1355
 #: modules/hotspot/widgets/hotspot.php:1496
 #: modules/image-gallery/widgets/image-gallery.php:755
-#: modules/image-gallery/widgets/image-gallery.php:1355
-#: modules/infobox/widgets/infobox.php:1610
+#: modules/image-gallery/widgets/image-gallery.php:1378
+#: modules/infobox/widgets/infobox.php:1611
 #: modules/instagram-feed/widgets/instagram-feed.php:721
 #: modules/instagram-feed/widgets/instagram-feed.php:958
 #: modules/modal-popup/widgets/modal-popup.php:1955
-#: modules/modal-popup/widgets/modal-popup.php:2202
+#: modules/modal-popup/widgets/modal-popup.php:2203
 #: modules/nav-menu/widgets/nav-menu.php:1994
 #: modules/nav-menu/widgets/nav-menu.php:2075
 #: modules/offcanvas/widgets/offcanvas.php:945
@@ -4666,7 +4667,7 @@ msgstr ""
 #: modules/headings/widgets/advanced-heading.php:1296
 #: modules/hotspot/widgets/hotspot.php:1152
 #: modules/infobox/widgets/infobox.php:657
-#: modules/infobox/widgets/infobox.php:1404
+#: modules/infobox/widgets/infobox.php:1405
 #: modules/nav-menu/widgets/nav-menu.php:1758
 #: modules/price-table/widgets/price-table.php:3132
 #: modules/retina-image/widgets/retina-image.php:339
@@ -4678,7 +4679,7 @@ msgid "Border Style"
 msgstr ""
 
 #: modules/business-reviews/skins/skin-bubble.php:197
-#: modules/business-reviews/widgets/business-reviews.php:532
+#: modules/business-reviews/widgets/business-reviews.php:544
 #: modules/buttons/widgets/buttons.php:511
 #: modules/caf-styler/widgets/caf-styler.php:311
 #: modules/cf-styler/widgets/cf-styler.php:308
@@ -4703,7 +4704,7 @@ msgstr ""
 #: modules/image-gallery/widgets/image-gallery.php:577
 #: modules/infobox/widgets/infobox.php:662
 #: modules/infobox/widgets/infobox.php:1188
-#: modules/infobox/widgets/infobox.php:1409
+#: modules/infobox/widgets/infobox.php:1410
 #: modules/instagram-feed/widgets/instagram-feed.php:292
 #: modules/login-form/widgets/login-form.php:164
 #: modules/nav-menu/widgets/nav-menu.php:748
@@ -4769,7 +4770,7 @@ msgstr ""
 #: modules/headings/widgets/advanced-heading.php:1338
 #: modules/hotspot/widgets/hotspot.php:1172
 #: modules/infobox/widgets/infobox.php:699
-#: modules/infobox/widgets/infobox.php:1442
+#: modules/infobox/widgets/infobox.php:1443
 #: modules/login-form/widgets/login-form.php:1922
 #: modules/nav-menu/widgets/nav-menu.php:1796
 #: modules/nav-menu/widgets/nav-menu.php:1917
@@ -4808,13 +4809,13 @@ msgstr ""
 #: modules/hotspot/widgets/hotspot.php:1194
 #: modules/hotspot/widgets/hotspot.php:1279
 #: modules/infobox/widgets/infobox.php:680
-#: modules/infobox/widgets/infobox.php:1427
-#: modules/infobox/widgets/infobox.php:1556
+#: modules/infobox/widgets/infobox.php:1428
+#: modules/infobox/widgets/infobox.php:1557
 #: modules/instagram-feed/widgets/instagram-feed.php:681
 #: modules/login-form/widgets/login-form.php:1935
-#: modules/modal-popup/widgets/modal-popup.php:2060
+#: modules/modal-popup/widgets/modal-popup.php:2061
 #: modules/nav-menu/widgets/nav-menu.php:1779
-#: modules/offcanvas/widgets/offcanvas.php:1103
+#: modules/offcanvas/widgets/offcanvas.php:1104
 #: modules/price-list/widgets/price-list.php:978
 #: modules/price-table/widgets/price-table.php:3179
 #: modules/registration-form/widgets/registration-form.php:1679
@@ -4854,7 +4855,7 @@ msgstr ""
 #: modules/business-reviews/skins/skin-card.php:166
 #: modules/business-reviews/skins/skin-default.php:103
 #: modules/buttons/widgets/buttons.php:360
-#: modules/buttons/widgets/buttons.php:620
+#: modules/buttons/widgets/buttons.php:621
 #: modules/caf-styler/widgets/caf-styler.php:816
 #: modules/cf-styler/widgets/cf-styler.php:767
 #: modules/content-toggle/widgets/content-toggle.php:673
@@ -4866,15 +4867,15 @@ msgstr ""
 #: modules/headings/widgets/dual-heading.php:560
 #: modules/headings/widgets/fancy-heading.php:747
 #: modules/headings/widgets/fancy-heading.php:867
-#: modules/image-gallery/widgets/image-gallery.php:1726
+#: modules/image-gallery/widgets/image-gallery.php:1749
 #: modules/instagram-feed/widgets/instagram-feed.php:637
 #: modules/instagram-feed/widgets/instagram-feed.php:1016
 #: modules/instagram-feed/widgets/instagram-feed.php:1088
 #: modules/login-form/widgets/login-form.php:2264
-#: modules/marketing-button/widgets/marketing-button.php:557
-#: modules/modal-popup/widgets/modal-popup.php:2093
+#: modules/marketing-button/widgets/marketing-button.php:558
+#: modules/modal-popup/widgets/modal-popup.php:2094
 #: modules/nav-menu/widgets/nav-menu.php:2138
-#: modules/offcanvas/widgets/offcanvas.php:1020
+#: modules/offcanvas/widgets/offcanvas.php:1021
 #: modules/posts/skins/skin-base.php:967 modules/posts/skins/skin-base.php:2188
 #: modules/posts/skins/skin-base.php:2424
 #: modules/posts/skins/skin-base.php:3341 modules/posts/skins/skin-feed.php:328
@@ -4919,13 +4920,13 @@ msgid ""
 "display the reviews.%4$s"
 msgstr ""
 
-#: modules/business-reviews/template-blocks/skin-style.php:293
+#: modules/business-reviews/template-blocks/skin-style.php:295
 #. translators: 1: <span> notice message <span> 2: error message <span> 3:
 #. first </span>
 msgid "%1$sSomething went wrong while fetching Google reviews: %2$s%3$s"
 msgstr ""
 
-#: modules/business-reviews/template-blocks/skin-style.php:319
+#: modules/business-reviews/template-blocks/skin-style.php:321
 #. translators: %1$s doc link
 msgid ""
 "<span class=\"uael-reviews-notice-message elementor-clickable\"><span "
@@ -4936,7 +4937,7 @@ msgid ""
 "%2$s to activate billing. </span>"
 msgstr ""
 
-#: modules/business-reviews/template-blocks/skin-style.php:325
+#: modules/business-reviews/template-blocks/skin-style.php:327
 msgid ""
 "<span class=\"uael-reviews-notice-message\"><span "
 "class=\"uael-reviews-error-message\">Google Error Message: "
@@ -4944,7 +4945,7 @@ msgid ""
 "key from UAE settings.</span>"
 msgstr ""
 
-#: modules/business-reviews/template-blocks/skin-style.php:331
+#: modules/business-reviews/template-blocks/skin-style.php:333
 msgid ""
 "<span class=\"uael-reviews-notice-message\"><span "
 "class=\"uael-reviews-error-message\">Google Error Message: "
@@ -4952,7 +4953,7 @@ msgid ""
 "later.</span>"
 msgstr ""
 
-#: modules/business-reviews/template-blocks/skin-style.php:338
+#: modules/business-reviews/template-blocks/skin-style.php:340
 msgid ""
 "<span class=\"uael-reviews-notice-message\"><span "
 "class=\"uael-reviews-error-message\">Google Error Message: "
@@ -4960,14 +4961,14 @@ msgid ""
 "invalid.</span>"
 msgstr ""
 
-#: modules/business-reviews/template-blocks/skin-style.php:345
+#: modules/business-reviews/template-blocks/skin-style.php:347
 msgid ""
 "<span class=\"uael-reviews-notice-message\"><span "
 "class=\"uael-reviews-error-message\">Google Error Message:</span> It seems "
 "like the Google place you have selected does not have any reviews.</span>"
 msgstr ""
 
-#: modules/business-reviews/template-blocks/skin-style.php:418
+#: modules/business-reviews/template-blocks/skin-style.php:420
 #. translators: 1: <span> notice message <span> 2: error message <span> 3:
 #. first </span> 4: second </span>
 msgid ""
@@ -4975,12 +4976,12 @@ msgid ""
 "reviews.%4$s"
 msgstr ""
 
-#: modules/business-reviews/template-blocks/skin-style.php:464
+#: modules/business-reviews/template-blocks/skin-style.php:466
 #. translators: 1: first <span> 2: doc link 3: </span>
 msgid "%1$sSomething went wrong:%2$s%3$s"
 msgstr ""
 
-#: modules/business-reviews/template-blocks/skin-style.php:486
+#: modules/business-reviews/template-blocks/skin-style.php:488
 #. translators: 1: <span> notice message <span> 2: error message <span> 3:
 #. first </span> 4: second </span>
 msgid ""
@@ -4988,13 +4989,13 @@ msgid ""
 "API key from UAE settings.%4$s"
 msgstr ""
 
-#: modules/business-reviews/template-blocks/skin-style.php:495
+#: modules/business-reviews/template-blocks/skin-style.php:497
 #. translators: 1: <span> notice message <span> 2: error message <span> 3:
 #. first </span> 4: second </span>
 msgid "%1$s%2$sYelp Error Message:%3$s Incorrect Business ID.%4$s"
 msgstr ""
 
-#: modules/business-reviews/template-blocks/skin-style.php:509
+#: modules/business-reviews/template-blocks/skin-style.php:511
 #. translators: 1: first <span> 2: doc link 3: </span>
 msgid "%1$s%2$s Unknown error occurred.%3$s"
 msgstr ""
@@ -5040,62 +5041,75 @@ msgstr ""
 msgid "ChIJBUo5LX5FXj4RqXDEdkjfdmA"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:212
+#: modules/business-reviews/widgets/business-reviews.php:210
+#: modules/twitter/widgets/twitter.php:274
+msgid "Sort By"
+msgstr ""
+
+#: modules/business-reviews/widgets/business-reviews.php:214
+msgid "Most Relevant"
+msgstr ""
+
+#: modules/business-reviews/widgets/business-reviews.php:215
+msgid "Newest"
+msgstr ""
+
+#: modules/business-reviews/widgets/business-reviews.php:224
 #. translators: %s admin link
 msgid "Click %1$s here %2$s to find your Google Place ID."
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:234
+#: modules/business-reviews/widgets/business-reviews.php:246
 #. translators: 1: <b> 2: </b>
 msgid "%1$sLanguage Code%2$s"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:251
+#: modules/business-reviews/widgets/business-reviews.php:263
 #. translators: %s admin link
 msgid "Click %1$s here %2$s to check your Language code."
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:263
+#: modules/business-reviews/widgets/business-reviews.php:275
 #. translators: 1: <b> 2: </b>
 msgid "%1$sYelp Business ID%2$s"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:281
+#: modules/business-reviews/widgets/business-reviews.php:293
 #. translators: %s admin link
 msgid "Click %1$s here %2$s to find your Yelp Business ID."
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:292
+#: modules/business-reviews/widgets/business-reviews.php:304
 msgid "Reload Reviews after a"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:296
+#: modules/business-reviews/widgets/business-reviews.php:308
 #: modules/instagram-feed/widgets/instagram-feed.php:294
 msgid "Hour"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:297
+#: modules/business-reviews/widgets/business-reviews.php:309
 #: modules/display-conditions/conditions/day.php:42
 #: modules/instagram-feed/widgets/instagram-feed.php:295
 msgid "Day"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:298
+#: modules/business-reviews/widgets/business-reviews.php:310
 #: modules/instagram-feed/widgets/instagram-feed.php:296
 msgid "Week"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:299
+#: modules/business-reviews/widgets/business-reviews.php:311
 msgid "Month"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:300
+#: modules/business-reviews/widgets/business-reviews.php:312
 msgid "Year"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:312
-#: modules/business-reviews/widgets/business-reviews.php:327
-#: modules/business-reviews/widgets/business-reviews.php:341
+#: modules/business-reviews/widgets/business-reviews.php:324
+#: modules/business-reviews/widgets/business-reviews.php:339
+#: modules/business-reviews/widgets/business-reviews.php:353
 #. translators: %s admin link
 msgid ""
 "Note: If you are facing issues while fetching the reviews make sure you "
@@ -5103,7 +5117,7 @@ msgid ""
 "rel=\"noopener\">here</a>."
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:363
+#: modules/business-reviews/widgets/business-reviews.php:375
 #: modules/content-toggle/widgets/content-toggle.php:613
 #: modules/countdown/widgets/countdown.php:696 modules/faq/widgets/faq.php:385
 #: modules/faq/widgets/faq.php:391
@@ -5132,11 +5146,11 @@ msgstr ""
 msgid "Layout"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:371
+#: modules/business-reviews/widgets/business-reviews.php:383
 msgid "Select Layout"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:375
+#: modules/business-reviews/widgets/business-reviews.php:387
 #: modules/faq/widgets/faq.php:395
 #: modules/image-gallery/widgets/image-gallery.php:186
 #: modules/instagram-feed/widgets/instagram-feed.php:172
@@ -5148,7 +5162,7 @@ msgstr ""
 msgid "Grid"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:376
+#: modules/business-reviews/widgets/business-reviews.php:388
 #: modules/image-gallery/widgets/image-gallery.php:189
 #: modules/image-gallery/widgets/image-gallery.php:419
 #: modules/posts/skins/skin-base.php:157 modules/posts/skins/skin-base.php:548
@@ -5162,27 +5176,27 @@ msgstr ""
 msgid "Carousel"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:384
-#: modules/business-reviews/widgets/business-reviews.php:413
-#: modules/business-reviews/widgets/business-reviews.php:442
+#: modules/business-reviews/widgets/business-reviews.php:396
+#: modules/business-reviews/widgets/business-reviews.php:425
+#: modules/business-reviews/widgets/business-reviews.php:454
 msgid "Number of Reviews"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:401
+#: modules/business-reviews/widgets/business-reviews.php:413
 #. translators: %s admin link
 msgid ""
 "Google allows maximum 5 reviews. Click <a href=\"%s\" target=\"_blank\" "
 "rel=\"noopener\">here</a> to know more."
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:430
+#: modules/business-reviews/widgets/business-reviews.php:442
 #. translators: %s admin link
 msgid ""
 "Yelp allows maximum 3 reviews. Click <a href=\"%s\" target=\"_blank\" "
 "rel=\"noopener\">here</a> to know more."
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:458
+#: modules/business-reviews/widgets/business-reviews.php:470
 #. translators: %s admin link
 msgid ""
 "We can fetch only up to 5 Google and 3 Yelp Reviews. So, a maximum of 8 "
@@ -5190,7 +5204,7 @@ msgid ""
 "rel=\"noopener\">here</a> to know more."
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:469
+#: modules/business-reviews/widgets/business-reviews.php:481
 #: modules/faq/widgets/faq.php:453
 #: modules/image-gallery/widgets/image-gallery.php:242
 #: modules/instagram-feed/widgets/instagram-feed.php:182
@@ -5203,20 +5217,20 @@ msgstr ""
 msgid "Columns"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:492
+#: modules/business-reviews/widgets/business-reviews.php:504
 msgid "Reviews to Show"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:493
+#: modules/business-reviews/widgets/business-reviews.php:505
 msgid "Note: <b>Reviews to Show</b> should be less than <b>Number of Reviews</b>."
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:508
+#: modules/business-reviews/widgets/business-reviews.php:520
 #: modules/posts/skins/skin-base.php:629
 msgid "Slides to Scroll"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:529
+#: modules/business-reviews/widgets/business-reviews.php:541
 #: modules/image-gallery/widgets/image-gallery.php:529
 #: modules/posts/skins/skin-base.php:563
 #: modules/twitter/widgets/twitter.php:1846
@@ -5226,7 +5240,7 @@ msgstr ""
 msgid "Arrows and Dots"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:543
+#: modules/business-reviews/widgets/business-reviews.php:555
 #: modules/image-gallery/widgets/image-gallery.php:500
 #: modules/posts/skins/skin-base.php:609
 #: modules/twitter/widgets/twitter.php:1817
@@ -5236,7 +5250,7 @@ msgstr ""
 msgid "Infinite Loop"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:556
+#: modules/business-reviews/widgets/business-reviews.php:568
 #: modules/hotspot/widgets/hotspot.php:519
 #: modules/image-gallery/widgets/image-gallery.php:460
 #: modules/modal-popup/widgets/modal-popup.php:498
@@ -5251,7 +5265,7 @@ msgstr ""
 msgid "Autoplay"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:569
+#: modules/business-reviews/widgets/business-reviews.php:581
 #: modules/headings/widgets/fancy-heading.php:291
 #: modules/image-gallery/widgets/image-gallery.php:486
 #: modules/posts/skins/skin-base.php:574
@@ -5262,7 +5276,7 @@ msgstr ""
 msgid "Pause on Hover"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:583
+#: modules/business-reviews/widgets/business-reviews.php:595
 #: modules/posts/skins/skin-base.php:594
 #: modules/video-gallery/widgets/video-gallery.php:849
 #: modules/woocommerce/widgets/woo-categories.php:343
@@ -5270,7 +5284,7 @@ msgstr ""
 msgid "Autoplay Speed"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:599
+#: modules/business-reviews/widgets/business-reviews.php:611
 #: modules/image-gallery/widgets/image-gallery.php:513
 #: modules/posts/skins/skin-base.php:619
 #: modules/twitter/widgets/twitter.php:1830
@@ -5280,7 +5294,7 @@ msgstr ""
 msgid "Transition Speed (ms)"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:611
+#: modules/business-reviews/widgets/business-reviews.php:623
 #: modules/posts/skins/skin-base.php:302
 #: modules/posts/skins/skin-business.php:366
 #: modules/posts/skins/skin-classic.php:100
@@ -5289,55 +5303,55 @@ msgstr ""
 msgid "Equal Height"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:624
+#: modules/business-reviews/widgets/business-reviews.php:636
 msgid ""
 "Note: This option sets an equal height for all the reviews content boxes. "
 "It takes the height of the longest review and applies it to the other "
 "reviews."
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:646
+#: modules/business-reviews/widgets/business-reviews.php:658
 #: modules/woocommerce/widgets/woo-categories.php:683
 msgid "Filters"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:654
+#: modules/business-reviews/widgets/business-reviews.php:666
 #: modules/posts/skins/skin-base.php:803 modules/posts/skins/skin-feed.php:173
 #: modules/woocommerce/widgets/woo-products.php:365
 msgid "Filter By"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:669
+#: modules/business-reviews/widgets/business-reviews.php:681
 msgid "Minimum Rating"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:687
+#: modules/business-reviews/widgets/business-reviews.php:699
 msgid ""
 "Choose the lowest star ratings to display.</br>For example, choosing 3 star "
 "will skip the reviews with less than 3 rating from displaying."
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:725
+#: modules/business-reviews/widgets/business-reviews.php:737
 #. translators: %1$s doc link
 msgid "%1$s How to get Google Places API Key? » %2$s"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:735
+#: modules/business-reviews/widgets/business-reviews.php:747
 #. translators: %1$s doc link
 msgid "%1$s How to find Google Place ID? » %2$s"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:745
+#: modules/business-reviews/widgets/business-reviews.php:757
 #. translators: %1$s doc link
 msgid "%1$s How to get Yelp API Key? » %2$s"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:755
+#: modules/business-reviews/widgets/business-reviews.php:767
 #. translators: %1$s doc link
 msgid "%1$s How to find Yelp Business ID? » %2$s"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:765
+#: modules/business-reviews/widgets/business-reviews.php:777
 #. translators: %1$s doc link
 msgid "%1$s Unable to display more than 5 Google/3 Yelp Reviews? » %2$s"
 msgstr ""
@@ -5417,7 +5431,7 @@ msgstr ""
 #: modules/infobox/widgets/infobox.php:1229
 #: modules/marketing-button/widgets/marketing-button.php:155
 #: modules/nav-menu/widgets/nav-menu.php:279
-#: modules/party-propz-extension/module.php:412
+#: modules/party-propz-extension/module.php:420
 #: modules/price-list/widgets/price-list.php:203
 #: modules/price-table/widgets/price-table.php:1111
 #: modules/price-table/widgets/price-table.php:2984
@@ -5453,7 +5467,7 @@ msgstr ""
 #: modules/offcanvas/widgets/offcanvas.php:377
 #: modules/offcanvas/widgets/offcanvas.php:404
 #: modules/offcanvas/widgets/offcanvas.php:420
-#: modules/offcanvas/widgets/offcanvas.php:1134
+#: modules/offcanvas/widgets/offcanvas.php:1135
 #: modules/posts/skins/skin-base.php:1805
 #: modules/posts/skins/skin-base.php:1818
 #: modules/price-table/widgets/price-table.php:197
@@ -5539,7 +5553,7 @@ msgid "Add space separated custom classes WITHOUT the dot."
 msgstr ""
 
 #: modules/buttons/widgets/buttons.php:312
-#: modules/buttons/widgets/buttons.php:717
+#: modules/buttons/widgets/buttons.php:718
 msgid "Design"
 msgstr ""
 
@@ -5561,11 +5575,11 @@ msgstr ""
 #: modules/hotspot/widgets/hotspot.php:1528
 #: modules/image-gallery/widgets/image-gallery.php:124
 #: modules/image-gallery/widgets/image-gallery.php:961
-#: modules/image-gallery/widgets/image-gallery.php:1681
+#: modules/image-gallery/widgets/image-gallery.php:1704
 #: modules/infobox/widgets/infobox.php:298
 #: modules/infobox/widgets/infobox.php:565
 #: modules/infobox/widgets/infobox.php:1361
-#: modules/infobox/widgets/infobox.php:1787
+#: modules/infobox/widgets/infobox.php:1788
 #: modules/instagram-feed/widgets/instagram-feed.php:617
 #: modules/instagram-feed/widgets/instagram-feed.php:974
 #: modules/instagram-feed/widgets/instagram-feed.php:1195
@@ -5578,9 +5592,9 @@ msgstr ""
 #: modules/nav-menu/widgets/nav-menu.php:1833
 #: modules/nav-menu/widgets/nav-menu.php:2100
 #: modules/offcanvas/widgets/offcanvas.php:976
-#: modules/offcanvas/widgets/offcanvas.php:1159
-#: modules/offcanvas/widgets/offcanvas.php:1460
-#: modules/offcanvas/widgets/offcanvas.php:1584
+#: modules/offcanvas/widgets/offcanvas.php:1160
+#: modules/offcanvas/widgets/offcanvas.php:1461
+#: modules/offcanvas/widgets/offcanvas.php:1585
 #: modules/posts/skins/skin-base.php:205 modules/posts/skins/skin-base.php:924
 #: modules/posts/skins/skin-base.php:2143
 #: modules/posts/skins/skin-base.php:2375
@@ -5620,7 +5634,7 @@ msgid "Normal"
 msgstr ""
 
 #: modules/buttons/widgets/buttons.php:381
-#: modules/buttons/widgets/buttons.php:650
+#: modules/buttons/widgets/buttons.php:651
 #: modules/caf-styler/widgets/caf-styler.php:858
 #: modules/cf-styler/widgets/cf-styler.php:799 modules/faq/widgets/faq.php:963
 #: modules/faq/widgets/faq.php:1120 modules/ff-styler/widgets/ff-styler.php:888
@@ -5629,25 +5643,25 @@ msgstr ""
 #: modules/headings/widgets/advanced-heading.php:1388
 #: modules/hotspot/widgets/hotspot.php:854
 #: modules/hotspot/widgets/hotspot.php:1629
-#: modules/image-gallery/widgets/image-gallery.php:1031
-#: modules/image-gallery/widgets/image-gallery.php:1740
+#: modules/image-gallery/widgets/image-gallery.php:1054
+#: modules/image-gallery/widgets/image-gallery.php:1763
 #: modules/infobox/widgets/infobox.php:819
-#: modules/infobox/widgets/infobox.php:1514
+#: modules/infobox/widgets/infobox.php:1515
 #: modules/instagram-feed/widgets/instagram-feed.php:662
 #: modules/instagram-feed/widgets/instagram-feed.php:1046
 #: modules/instagram-feed/widgets/instagram-feed.php:1281
 #: modules/login-form/widgets/login-form.php:2294
-#: modules/marketing-button/widgets/marketing-button.php:596
-#: modules/modal-popup/widgets/modal-popup.php:2019
+#: modules/marketing-button/widgets/marketing-button.php:597
+#: modules/modal-popup/widgets/modal-popup.php:2020
 #: modules/nav-menu/widgets/nav-menu.php:662
 #: modules/nav-menu/widgets/nav-menu.php:1282
 #: modules/nav-menu/widgets/nav-menu.php:1496
 #: modules/nav-menu/widgets/nav-menu.php:1865
 #: modules/nav-menu/widgets/nav-menu.php:2169
-#: modules/offcanvas/widgets/offcanvas.php:1061
-#: modules/offcanvas/widgets/offcanvas.php:1204
-#: modules/offcanvas/widgets/offcanvas.php:1490
-#: modules/offcanvas/widgets/offcanvas.php:1614
+#: modules/offcanvas/widgets/offcanvas.php:1062
+#: modules/offcanvas/widgets/offcanvas.php:1205
+#: modules/offcanvas/widgets/offcanvas.php:1491
+#: modules/offcanvas/widgets/offcanvas.php:1615
 #: modules/posts/skins/skin-base.php:2202
 #: modules/posts/skins/skin-base.php:2438
 #: modules/posts/skins/skin-base.php:3354
@@ -5687,7 +5701,7 @@ msgid "Hover"
 msgstr ""
 
 #: modules/buttons/widgets/buttons.php:411
-#: modules/buttons/widgets/buttons.php:682
+#: modules/buttons/widgets/buttons.php:683
 #: modules/caf-styler/widgets/caf-styler.php:878
 #: modules/cf-styler/widgets/cf-styler.php:817
 #: modules/ff-styler/widgets/ff-styler.php:907
@@ -5695,9 +5709,9 @@ msgstr ""
 #: modules/gf-styler/widgets/gf-styler.php:1380
 #: modules/headings/widgets/advanced-heading.php:1430
 #: modules/hotspot/widgets/hotspot.php:1677
-#: modules/image-gallery/widgets/image-gallery.php:1785
+#: modules/image-gallery/widgets/image-gallery.php:1808
 #: modules/infobox/widgets/infobox.php:873
-#: modules/marketing-button/widgets/marketing-button.php:642
+#: modules/marketing-button/widgets/marketing-button.php:643
 #: modules/nav-menu/widgets/nav-menu.php:2205
 #: modules/posts/skins/skin-base.php:2242
 #: modules/posts/skins/skin-base.php:2479
@@ -5759,7 +5773,7 @@ msgstr ""
 msgid "Mobile"
 msgstr ""
 
-#: modules/buttons/widgets/buttons.php:725
+#: modules/buttons/widgets/buttons.php:726
 #: modules/caf-styler/widgets/caf-styler.php:742
 #: modules/cf-styler/widgets/cf-styler.php:699
 #: modules/ff-styler/widgets/ff-styler.php:279
@@ -5812,7 +5826,7 @@ msgstr ""
 msgid "Size"
 msgstr ""
 
-#: modules/buttons/widgets/buttons.php:775
+#: modules/buttons/widgets/buttons.php:776
 #: modules/image-gallery/widgets/image-gallery.php:291
 #: modules/marketing-button/widgets/marketing-button.php:470
 #: modules/nav-menu/widgets/nav-menu.php:538
@@ -5820,15 +5834,15 @@ msgstr ""
 msgid "Justify"
 msgstr ""
 
-#: modules/buttons/widgets/buttons.php:788
+#: modules/buttons/widgets/buttons.php:789
 #: modules/headings/widgets/advanced-heading.php:1211
 #: modules/headings/widgets/advanced-heading.php:1446
 #: modules/infobox/widgets/infobox.php:924
 #: modules/infobox/widgets/infobox.php:939
-#: modules/infobox/widgets/infobox.php:1583
-#: modules/marketing-button/widgets/marketing-button.php:663
-#: modules/modal-popup/widgets/modal-popup.php:2077
-#: modules/party-propz-extension/module.php:606
+#: modules/infobox/widgets/infobox.php:1584
+#: modules/marketing-button/widgets/marketing-button.php:664
+#: modules/modal-popup/widgets/modal-popup.php:2078
+#: modules/party-propz-extension/module.php:614
 #: modules/price-list/widgets/price-list.php:998
 #: modules/price-table/widgets/price-table.php:163
 #: modules/retina-image/widgets/retina-image.php:491
@@ -6066,7 +6080,7 @@ msgstr ""
 #: modules/hotspot/widgets/hotspot.php:1159
 #: modules/infobox/widgets/infobox.php:664
 #: modules/infobox/widgets/infobox.php:1079
-#: modules/infobox/widgets/infobox.php:1412
+#: modules/infobox/widgets/infobox.php:1413
 #: modules/nav-menu/widgets/nav-menu.php:1765
 #: modules/price-list/widgets/price-list.php:299
 #: modules/price-table/widgets/price-table.php:2269
@@ -6120,7 +6134,7 @@ msgstr ""
 #: modules/hotspot/widgets/hotspot.php:1410
 #: modules/hotspot/widgets/hotspot.php:1590
 #: modules/infobox/widgets/infobox.php:723
-#: modules/infobox/widgets/infobox.php:1465
+#: modules/infobox/widgets/infobox.php:1466
 #: modules/posts/skins/skin-business.php:330
 #: modules/price-table/widgets/price-table.php:2912
 #: modules/timeline/widgets/timeline.php:1595
@@ -6437,7 +6451,7 @@ msgstr ""
 #: modules/how-to/widgets/how-to.php:140 modules/how-to/widgets/how-to.php:635
 #: modules/how-to/widgets/how-to.php:1173
 #: modules/infobox/widgets/infobox.php:143
-#: modules/infobox/widgets/infobox.php:1811
+#: modules/infobox/widgets/infobox.php:1812
 #: modules/marketing-button/widgets/marketing-button.php:142
 #: modules/modal-popup/widgets/modal-popup.php:266
 #: modules/offcanvas/widgets/offcanvas.php:211
@@ -6548,7 +6562,7 @@ msgstr ""
 #: modules/gf-styler/widgets/gf-styler.php:1872
 #: modules/headings/widgets/advanced-heading.php:467
 #: modules/headings/widgets/advanced-heading.php:988
-#: modules/image-gallery/widgets/image-gallery.php:1334
+#: modules/image-gallery/widgets/image-gallery.php:1357
 #: modules/modal-popup/widgets/modal-popup.php:1492
 #: modules/posts/skins/skin-base.php:1308
 #: modules/posts/skins/skin-base.php:1359
@@ -6645,23 +6659,23 @@ msgstr ""
 
 #: modules/content-toggle/widgets/content-toggle.php:1045
 #: modules/faq/widgets/faq.php:135
-#: modules/modal-popup/widgets/modal-popup.php:2298
+#: modules/modal-popup/widgets/modal-popup.php:2299
 #: modules/nav-menu/widgets/nav-menu.php:2288
-#: modules/offcanvas/widgets/offcanvas.php:1912
+#: modules/offcanvas/widgets/offcanvas.php:1913
 msgid "Saved Section"
 msgstr ""
 
 #: modules/content-toggle/widgets/content-toggle.php:1046
 #: modules/faq/widgets/faq.php:136
-#: modules/modal-popup/widgets/modal-popup.php:2299
+#: modules/modal-popup/widgets/modal-popup.php:2300
 #: modules/nav-menu/widgets/nav-menu.php:2289
 msgid "Saved Container"
 msgstr ""
 
 #: modules/content-toggle/widgets/content-toggle.php:1047
 #: modules/faq/widgets/faq.php:137
-#: modules/modal-popup/widgets/modal-popup.php:2300
-#: modules/offcanvas/widgets/offcanvas.php:1914
+#: modules/modal-popup/widgets/modal-popup.php:2301
+#: modules/offcanvas/widgets/offcanvas.php:1915
 msgid "Saved Page"
 msgstr ""
 
@@ -6911,8 +6925,8 @@ msgstr ""
 
 #: modules/countdown/widgets/countdown.php:744
 #: modules/countdown/widgets/countdown.php:773 modules/faq/widgets/faq.php:406
-#: modules/party-propz-extension/module.php:196
-#: modules/party-propz-extension/module.php:640
+#: modules/party-propz-extension/module.php:204
+#: modules/party-propz-extension/module.php:648
 #: modules/registration-form/widgets/registration-form.php:867
 #: modules/video/widgets/video.php:1435 modules/video/widgets/video.php:1490
 #: modules/woocommerce/widgets/woo-checkout.php:399
@@ -6961,7 +6975,7 @@ msgid "Spacing Between Digits and Labels"
 msgstr ""
 
 #: modules/countdown/widgets/countdown.php:1030 modules/faq/widgets/faq.php:740
-#: modules/faq/widgets/faq.php:753 modules/infobox/widgets/infobox.php:1572
+#: modules/faq/widgets/faq.php:753 modules/infobox/widgets/infobox.php:1573
 #: modules/login-form/widgets/login-form.php:2327
 #: modules/nav-menu/widgets/nav-menu.php:2159
 #: modules/nav-menu/widgets/nav-menu.php:2217
@@ -6992,7 +7006,7 @@ msgid "Enable this option to stack the Countdown items on mobile."
 msgstr ""
 
 #: modules/countdown/widgets/countdown.php:1053
-#: modules/display-conditions/display-conditions.php:160
+#: modules/display-conditions/display-conditions.php:161
 #: modules/google-map/widgets/google-map.php:471
 #: modules/google-map/widgets/google-map.php:499
 #: modules/google-map/widgets/google-map.php:527
@@ -7002,14 +7016,14 @@ msgstr ""
 #: modules/login-form/widgets/login-form.php:592
 #: modules/login-form/widgets/login-form.php:1042
 #: modules/login-form/widgets/login-form.php:1069
-#: modules/party-propz-extension/module.php:198
-#: modules/party-propz-extension/module.php:642
+#: modules/party-propz-extension/module.php:206
+#: modules/party-propz-extension/module.php:650
 #: modules/table/widgets/table.php:505
 msgid "On"
 msgstr ""
 
 #: modules/countdown/widgets/countdown.php:1054
-#: modules/display-conditions/display-conditions.php:161
+#: modules/display-conditions/display-conditions.php:162
 #: modules/google-map/widgets/google-map.php:472
 #: modules/google-map/widgets/google-map.php:500
 #: modules/google-map/widgets/google-map.php:528
@@ -7019,8 +7033,8 @@ msgstr ""
 #: modules/login-form/widgets/login-form.php:593
 #: modules/login-form/widgets/login-form.php:1041
 #: modules/login-form/widgets/login-form.php:1068
-#: modules/party-propz-extension/module.php:199
-#: modules/party-propz-extension/module.php:643
+#: modules/party-propz-extension/module.php:207
+#: modules/party-propz-extension/module.php:651
 #: modules/table/widgets/table.php:506
 msgid "Off"
 msgstr ""
@@ -8272,97 +8286,97 @@ msgstr ""
 msgid "Returning Visitor"
 msgstr ""
 
-#: modules/display-conditions/display-conditions.php:158
+#: modules/display-conditions/display-conditions.php:159
 msgid "Enable Conditions"
 msgstr ""
 
-#: modules/display-conditions/display-conditions.php:171
+#: modules/display-conditions/display-conditions.php:172
 msgid "To"
 msgstr ""
 
-#: modules/display-conditions/display-conditions.php:175
+#: modules/display-conditions/display-conditions.php:176
 msgid "Show Element"
 msgstr ""
 
-#: modules/display-conditions/display-conditions.php:176
+#: modules/display-conditions/display-conditions.php:177
 msgid "Hide Element"
 msgstr ""
 
-#: modules/display-conditions/display-conditions.php:187
+#: modules/display-conditions/display-conditions.php:188
 msgid "When"
 msgstr ""
 
-#: modules/display-conditions/display-conditions.php:191
+#: modules/display-conditions/display-conditions.php:192
 msgid "All Conditions Met"
 msgstr ""
 
-#: modules/display-conditions/display-conditions.php:192
+#: modules/display-conditions/display-conditions.php:193
 msgid "Any Condition Met"
 msgstr ""
 
-#: modules/display-conditions/display-conditions.php:217
+#: modules/display-conditions/display-conditions.php:218
 msgid "Is"
 msgstr ""
 
-#: modules/display-conditions/display-conditions.php:218
+#: modules/display-conditions/display-conditions.php:219
 msgid "Is not"
 msgstr ""
 
-#: modules/display-conditions/display-conditions.php:233
+#: modules/display-conditions/display-conditions.php:234
 msgid "Is Less than"
 msgstr ""
 
-#: modules/display-conditions/display-conditions.php:234
+#: modules/display-conditions/display-conditions.php:235
 msgid "Is Greater than"
 msgstr ""
 
-#: modules/display-conditions/display-conditions.php:235
+#: modules/display-conditions/display-conditions.php:236
 msgid "Is Less than equal to"
 msgstr ""
 
-#: modules/display-conditions/display-conditions.php:236
+#: modules/display-conditions/display-conditions.php:237
 msgid "Is Greater than equal to"
 msgstr ""
 
-#: modules/display-conditions/display-conditions.php:249
+#: modules/display-conditions/display-conditions.php:250
 msgid "Conditions"
 msgstr ""
 
-#: modules/display-conditions/display-conditions.php:275
-#: modules/display-conditions/display-conditions.php:278
+#: modules/display-conditions/display-conditions.php:276
+#: modules/display-conditions/display-conditions.php:279
 msgid "Timezone"
 msgstr ""
 
-#: modules/display-conditions/display-conditions.php:278
+#: modules/display-conditions/display-conditions.php:279
 #. translators: 1: admin link 2: Timezone.
 msgid "You can change Server"
 msgstr ""
 
-#: modules/display-conditions/display-conditions.php:278
+#: modules/display-conditions/display-conditions.php:279
 msgid " It will fetch the time as per selected option. %1$s Learn more %2$s "
 msgstr ""
 
-#: modules/display-conditions/display-conditions.php:281
+#: modules/display-conditions/display-conditions.php:282
 msgid "Server Timezone"
 msgstr ""
 
-#: modules/display-conditions/display-conditions.php:282
+#: modules/display-conditions/display-conditions.php:283
 msgid "Local Timezone"
 msgstr ""
 
-#: modules/display-conditions/display-conditions.php:294
+#: modules/display-conditions/display-conditions.php:295
 msgid "Note: Display conditions feature will work on the frontend."
 msgstr ""
 
-#: modules/display-conditions/module.php:146
+#: modules/display-conditions/module.php:147
 #. translators: %s admin link
 msgid "%1s - Display Conditions"
 msgstr ""
 
 #: modules/faq/widgets/faq.php:141
-#: modules/modal-popup/widgets/modal-popup.php:2307
+#: modules/modal-popup/widgets/modal-popup.php:2308
 #: modules/nav-menu/widgets/nav-menu.php:2293
-#: modules/offcanvas/widgets/offcanvas.php:1918
+#: modules/offcanvas/widgets/offcanvas.php:1919
 msgid "Saved Widget"
 msgstr ""
 
@@ -8373,7 +8387,7 @@ msgstr ""
 #: modules/how-to/widgets/how-to.php:606 modules/how-to/widgets/how-to.php:623
 #: modules/how-to/widgets/how-to.php:1442
 #: modules/infobox/widgets/infobox.php:131
-#: modules/infobox/widgets/infobox.php:1706
+#: modules/infobox/widgets/infobox.php:1707
 #: modules/marketing-button/widgets/marketing-button.php:129
 #: modules/modal-popup/widgets/modal-popup.php:244
 #: modules/modal-popup/widgets/modal-popup.php:1405
@@ -8519,8 +8533,8 @@ msgstr ""
 #: modules/headings/widgets/dual-heading.php:213
 #: modules/headings/widgets/fancy-heading.php:531
 #: modules/how-to/widgets/how-to.php:1096
-#: modules/infobox/widgets/infobox.php:1630
-#: modules/infobox/widgets/infobox.php:1719
+#: modules/infobox/widgets/infobox.php:1631
+#: modules/infobox/widgets/infobox.php:1720
 #: modules/modal-popup/widgets/modal-popup.php:1495
 #: modules/posts/skins/skin-base.php:1311
 #: modules/posts/skins/skin-base.php:1362
@@ -8542,8 +8556,8 @@ msgstr ""
 #: modules/headings/widgets/dual-heading.php:214
 #: modules/headings/widgets/fancy-heading.php:532
 #: modules/how-to/widgets/how-to.php:1097
-#: modules/infobox/widgets/infobox.php:1631
-#: modules/infobox/widgets/infobox.php:1720
+#: modules/infobox/widgets/infobox.php:1632
+#: modules/infobox/widgets/infobox.php:1721
 #: modules/modal-popup/widgets/modal-popup.php:1496
 #: modules/posts/skins/skin-base.php:1312
 #: modules/posts/skins/skin-base.php:1363
@@ -8565,8 +8579,8 @@ msgstr ""
 #: modules/headings/widgets/dual-heading.php:215
 #: modules/headings/widgets/fancy-heading.php:533
 #: modules/how-to/widgets/how-to.php:1098
-#: modules/infobox/widgets/infobox.php:1632
-#: modules/infobox/widgets/infobox.php:1721
+#: modules/infobox/widgets/infobox.php:1633
+#: modules/infobox/widgets/infobox.php:1722
 #: modules/modal-popup/widgets/modal-popup.php:1497
 #: modules/posts/skins/skin-base.php:1313
 #: modules/posts/skins/skin-base.php:1364
@@ -8588,8 +8602,8 @@ msgstr ""
 #: modules/headings/widgets/dual-heading.php:216
 #: modules/headings/widgets/fancy-heading.php:534
 #: modules/how-to/widgets/how-to.php:1099
-#: modules/infobox/widgets/infobox.php:1633
-#: modules/infobox/widgets/infobox.php:1722
+#: modules/infobox/widgets/infobox.php:1634
+#: modules/infobox/widgets/infobox.php:1723
 #: modules/modal-popup/widgets/modal-popup.php:1498
 #: modules/posts/skins/skin-base.php:1314
 #: modules/posts/skins/skin-base.php:1365
@@ -8611,8 +8625,8 @@ msgstr ""
 #: modules/headings/widgets/dual-heading.php:217
 #: modules/headings/widgets/fancy-heading.php:535
 #: modules/how-to/widgets/how-to.php:1100
-#: modules/infobox/widgets/infobox.php:1634
-#: modules/infobox/widgets/infobox.php:1723
+#: modules/infobox/widgets/infobox.php:1635
+#: modules/infobox/widgets/infobox.php:1724
 #: modules/modal-popup/widgets/modal-popup.php:1499
 #: modules/posts/skins/skin-base.php:1315
 #: modules/posts/skins/skin-base.php:1366
@@ -8634,8 +8648,8 @@ msgstr ""
 #: modules/headings/widgets/dual-heading.php:218
 #: modules/headings/widgets/fancy-heading.php:536
 #: modules/how-to/widgets/how-to.php:1101
-#: modules/infobox/widgets/infobox.php:1635
-#: modules/infobox/widgets/infobox.php:1724
+#: modules/infobox/widgets/infobox.php:1636
+#: modules/infobox/widgets/infobox.php:1725
 #: modules/modal-popup/widgets/modal-popup.php:1500
 #: modules/posts/skins/skin-base.php:1316
 #: modules/posts/skins/skin-base.php:1367
@@ -8655,8 +8669,8 @@ msgstr ""
 #: modules/headings/widgets/dual-heading.php:219
 #: modules/headings/widgets/fancy-heading.php:537
 #: modules/how-to/widgets/how-to.php:1102
-#: modules/infobox/widgets/infobox.php:1636
-#: modules/infobox/widgets/infobox.php:1725
+#: modules/infobox/widgets/infobox.php:1637
+#: modules/infobox/widgets/infobox.php:1726
 #: modules/modal-popup/widgets/modal-popup.php:1501
 #: modules/price-table/widgets/price-table.php:1503
 #: modules/price-table/widgets/price-table.php:1557
@@ -8672,8 +8686,8 @@ msgstr ""
 #: modules/headings/widgets/dual-heading.php:221
 #: modules/headings/widgets/fancy-heading.php:538
 #: modules/how-to/widgets/how-to.php:1104
-#: modules/infobox/widgets/infobox.php:1637
-#: modules/infobox/widgets/infobox.php:1726
+#: modules/infobox/widgets/infobox.php:1638
+#: modules/infobox/widgets/infobox.php:1727
 #: modules/modal-popup/widgets/modal-popup.php:1503
 #: modules/price-table/widgets/price-table.php:1504
 #: modules/price-table/widgets/price-table.php:1558
@@ -8773,7 +8787,7 @@ msgstr ""
 #: modules/headings/widgets/fancy-heading.php:276
 #: modules/hotspot/widgets/hotspot.php:928
 #: modules/modal-popup/widgets/modal-popup.php:544
-#: modules/particles/module.php:368
+#: modules/particles/module.php:370
 #: modules/price-table/widgets/price-table.php:921
 msgid "Advanced Settings"
 msgstr ""
@@ -8928,16 +8942,16 @@ msgid "Top Center"
 msgstr ""
 
 #: modules/google-map/widgets/google-map.php:104
-#: modules/particles/module.php:352
-#: modules/party-propz-extension/module.php:314
+#: modules/particles/module.php:354
+#: modules/party-propz-extension/module.php:322
 #: modules/video/widgets/video.php:1330
 #: modules/welcome-music/widgets/welcome-music.php:257
 msgid "Top Left"
 msgstr ""
 
 #: modules/google-map/widgets/google-map.php:105
-#: modules/particles/module.php:353
-#: modules/party-propz-extension/module.php:315
+#: modules/particles/module.php:355
+#: modules/party-propz-extension/module.php:323
 #: modules/video/widgets/video.php:1331
 #: modules/welcome-music/widgets/welcome-music.php:256
 msgid "Top Right"
@@ -8974,8 +8988,8 @@ msgid "Bottom Center"
 msgstr ""
 
 #: modules/google-map/widgets/google-map.php:113
-#: modules/particles/module.php:354
-#: modules/party-propz-extension/module.php:316
+#: modules/particles/module.php:356
+#: modules/party-propz-extension/module.php:324
 #: modules/registration-form/widgets/registration-form.php:323
 #: modules/video/widgets/video.php:1332
 #: modules/welcome-music/widgets/welcome-music.php:258
@@ -8983,8 +8997,8 @@ msgid "Bottom Left"
 msgstr ""
 
 #: modules/google-map/widgets/google-map.php:114
-#: modules/particles/module.php:355
-#: modules/party-propz-extension/module.php:317
+#: modules/particles/module.php:357
+#: modules/party-propz-extension/module.php:325
 #: modules/registration-form/widgets/registration-form.php:322
 #: modules/video/widgets/video.php:1333
 #: modules/welcome-music/widgets/welcome-music.php:259
@@ -9283,7 +9297,7 @@ msgstr ""
 #: modules/how-to/widgets/how-to.php:648
 #: modules/login-form/widgets/login-form.php:1053
 #: modules/login-form/widgets/login-form.php:1080
-#: modules/party-propz-extension/module.php:432
+#: modules/party-propz-extension/module.php:440
 #: modules/retina-image/widgets/retina-image.php:236
 #: modules/social-share/widgets/social-share.php:536
 #: modules/team-member/widgets/team-member.php:562
@@ -9354,10 +9368,10 @@ msgstr ""
 #: modules/modal-popup/widgets/modal-popup.php:1791
 #: modules/offcanvas/widgets/offcanvas.php:629
 #: modules/offcanvas/widgets/offcanvas.php:642
-#: modules/party-propz-extension/module.php:234
-#: modules/party-propz-extension/module.php:252
-#: modules/party-propz-extension/module.php:678
-#: modules/party-propz-extension/module.php:696
+#: modules/party-propz-extension/module.php:242
+#: modules/party-propz-extension/module.php:260
+#: modules/party-propz-extension/module.php:686
+#: modules/party-propz-extension/module.php:704
 #: modules/price-table/widgets/price-table.php:1069
 #: modules/price-table/widgets/price-table.php:1082
 #: modules/video/widgets/video.php:853 modules/video/widgets/video.php:870
@@ -9380,7 +9394,7 @@ msgstr ""
 #: modules/headings/widgets/advanced-heading.php:356
 #: modules/infobox/widgets/infobox.php:465
 #: modules/modal-popup/widgets/modal-popup.php:283
-#: modules/modal-popup/widgets/modal-popup.php:2296
+#: modules/modal-popup/widgets/modal-popup.php:2297
 msgid "Photo"
 msgstr ""
 
@@ -9404,7 +9418,7 @@ msgid "Fill"
 msgstr ""
 
 #: modules/headings/widgets/advanced-heading.php:497
-#: modules/image-gallery/widgets/image-gallery.php:1381
+#: modules/image-gallery/widgets/image-gallery.php:1404
 #: modules/posts/skins/skin-base.php:341
 #: modules/twitter/widgets/twitter.php:589
 msgid "Background"
@@ -9415,7 +9429,7 @@ msgid "Heading Margin"
 msgstr ""
 
 #: modules/headings/widgets/advanced-heading.php:565
-#: modules/infobox/widgets/infobox.php:1784
+#: modules/infobox/widgets/infobox.php:1785
 #: modules/instagram-feed/widgets/instagram-feed.php:1191
 msgid "Blend Mode"
 msgstr ""
@@ -9439,8 +9453,8 @@ msgstr ""
 
 #: modules/headings/widgets/advanced-heading.php:808
 #: modules/headings/widgets/dual-heading.php:690
-#: modules/party-propz-extension/module.php:359
-#: modules/party-propz-extension/module.php:805
+#: modules/party-propz-extension/module.php:367
+#: modules/party-propz-extension/module.php:813
 #: modules/price-table/widgets/price-table.php:1201
 #: modules/social-share/widgets/social-share.php:484
 msgid "Horizontal Position"
@@ -9448,8 +9462,8 @@ msgstr ""
 
 #: modules/headings/widgets/advanced-heading.php:833
 #: modules/headings/widgets/dual-heading.php:715
-#: modules/party-propz-extension/module.php:333
-#: modules/party-propz-extension/module.php:779
+#: modules/party-propz-extension/module.php:341
+#: modules/party-propz-extension/module.php:787
 #: modules/price-table/widgets/price-table.php:1853
 #: modules/price-table/widgets/price-table.php:1920
 #: modules/price-table/widgets/price-table.php:2033
@@ -9491,7 +9505,7 @@ msgstr ""
 #: modules/instagram-feed/widgets/instagram-feed.php:397
 #: modules/login-form/widgets/login-form.php:653
 #: modules/offcanvas/widgets/offcanvas.php:456
-#: modules/offcanvas/widgets/offcanvas.php:1793
+#: modules/offcanvas/widgets/offcanvas.php:1794
 #: modules/posts/skins/skin-base.php:3609
 #: modules/price-table/widgets/price-table.php:339
 #: modules/price-table/widgets/price-table.php:809
@@ -9522,8 +9536,8 @@ msgstr ""
 #: modules/infobox/widgets/infobox.php:605
 #: modules/infobox/widgets/infobox.php:829
 #: modules/modal-popup/widgets/modal-popup.php:964
-#: modules/party-propz-extension/module.php:589
-#: modules/party-propz-extension/module.php:931
+#: modules/party-propz-extension/module.php:597
+#: modules/party-propz-extension/module.php:939
 msgid "Icon Hover Color"
 msgstr ""
 
@@ -9538,7 +9552,7 @@ msgstr ""
 #: modules/headings/widgets/advanced-heading.php:1414
 #: modules/hotspot/widgets/hotspot.php:1656
 #: modules/infobox/widgets/infobox.php:857
-#: modules/infobox/widgets/infobox.php:1537
+#: modules/infobox/widgets/infobox.php:1538
 #: modules/posts/skins/skin-base.php:2226
 #: modules/posts/skins/skin-base.php:2464
 #: modules/posts/skins/skin-base.php:3379
@@ -9661,8 +9675,8 @@ msgstr ""
 
 #: modules/headings/widgets/fancy-heading.php:188
 #: modules/infobox/widgets/infobox.php:409
-#: modules/party-propz-extension/module.php:533
-#: modules/party-propz-extension/module.php:832
+#: modules/party-propz-extension/module.php:541
+#: modules/party-propz-extension/module.php:840
 msgid "Rotate"
 msgstr ""
 
@@ -9672,7 +9686,7 @@ msgstr ""
 
 #: modules/headings/widgets/fancy-heading.php:190
 #: modules/nav-menu/widgets/nav-menu.php:576
-#: modules/offcanvas/widgets/offcanvas.php:1820
+#: modules/offcanvas/widgets/offcanvas.php:1821
 #: modules/video-gallery/widgets/video-gallery.php:1522
 #: modules/video-gallery/widgets/video-gallery.php:1701
 msgid "Push"
@@ -9737,7 +9751,7 @@ msgid "Back Delay (ms)"
 msgstr ""
 
 #: modules/headings/widgets/fancy-heading.php:528
-#: modules/infobox/widgets/infobox.php:1716
+#: modules/infobox/widgets/infobox.php:1717
 #: modules/price-table/widgets/price-table.php:1494
 msgid "Title Tag"
 msgstr ""
@@ -9764,13 +9778,13 @@ msgstr ""
 #: modules/hotspot/widgets/hotspot.php:1018
 #: modules/how-to/widgets/how-to.php:153 modules/how-to/widgets/how-to.php:661
 #: modules/how-to/widgets/how-to.php:1242
-#: modules/image-gallery/widgets/image-gallery.php:1103
+#: modules/image-gallery/widgets/image-gallery.php:1126
 #: modules/infobox/widgets/infobox.php:315
 #: modules/modal-popup/widgets/modal-popup.php:649
 #: modules/modal-popup/widgets/modal-popup.php:867
 #: modules/modal-popup/widgets/modal-popup.php:982
-#: modules/party-propz-extension/module.php:214
-#: modules/party-propz-extension/module.php:657
+#: modules/party-propz-extension/module.php:222
+#: modules/party-propz-extension/module.php:665
 #: modules/posts/skins/skin-base.php:327
 #: modules/posts/skins/skin-business.php:578
 #: modules/price-list/widgets/price-list.php:189
@@ -9986,7 +10000,7 @@ msgstr ""
 
 #: modules/hotspot/widgets/hotspot.php:916
 #: modules/nav-menu/widgets/nav-menu.php:575
-#: modules/offcanvas/widgets/offcanvas.php:1819
+#: modules/offcanvas/widgets/offcanvas.php:1820
 #: modules/price-table/widgets/price-table.php:890
 msgid "Slide"
 msgstr ""
@@ -10016,7 +10030,7 @@ msgstr ""
 
 #: modules/hotspot/widgets/hotspot.php:991
 #: modules/offcanvas/widgets/offcanvas.php:744
-#: modules/party-propz-extension/module.php:947
+#: modules/party-propz-extension/module.php:955
 #: modules/price-table/widgets/price-table.php:1004
 #: modules/welcome-music/widgets/welcome-music.php:349
 msgid "Z-Index"
@@ -10031,7 +10045,7 @@ msgstr ""
 
 #: modules/hotspot/widgets/hotspot.php:1026
 #: modules/image-gallery/widgets/image-gallery.php:986
-#: modules/image-gallery/widgets/image-gallery.php:1056
+#: modules/image-gallery/widgets/image-gallery.php:1079
 #: modules/posts/skins/skin-base.php:478
 msgid "Opacity (%)"
 msgstr ""
@@ -10049,15 +10063,15 @@ msgid "Hover / Active"
 msgstr ""
 
 #: modules/hotspot/widgets/hotspot.php:1329
-#: modules/image-gallery/widgets/image-gallery.php:1279
+#: modules/image-gallery/widgets/image-gallery.php:1302
 #: modules/price-table/widgets/price-table.php:2831
 #: modules/table/widgets/table.php:1071 modules/table/widgets/table.php:1359
 msgid "Text Alignment"
 msgstr ""
 
 #: modules/hotspot/widgets/hotspot.php:1640
-#: modules/infobox/widgets/infobox.php:1523
-#: modules/modal-popup/widgets/modal-popup.php:2183
+#: modules/infobox/widgets/infobox.php:1524
+#: modules/modal-popup/widgets/modal-popup.php:2184
 #: modules/posts/skins/skin-base.php:2212
 #: modules/posts/skins/skin-base.php:2449
 #: modules/posts/skins/skin-base.php:3364 modules/posts/skins/skin-feed.php:736
@@ -10643,7 +10657,7 @@ msgid "Image Vertical</br>Alignment"
 msgstr ""
 
 #: modules/image-gallery/widgets/image-gallery.php:921
-#: modules/image-gallery/widgets/image-gallery.php:1317
+#: modules/image-gallery/widgets/image-gallery.php:1340
 #: modules/infobox/widgets/infobox.php:249
 #: modules/instagram-feed/widgets/instagram-feed.php:900
 #: modules/marketing-button/widgets/marketing-button.php:232
@@ -10663,50 +10677,54 @@ msgid "Thumbnail"
 msgstr ""
 
 #: modules/image-gallery/widgets/image-gallery.php:968
-#: modules/image-gallery/widgets/image-gallery.php:1038
+#: modules/image-gallery/widgets/image-gallery.php:1061
 #: modules/posts/skins/skin-base.php:454 modules/table/widgets/table.php:1699
 #: modules/table/widgets/table.php:1773
 msgid "Scale"
 msgstr ""
 
 #: modules/image-gallery/widgets/image-gallery.php:1007
-#: modules/image-gallery/widgets/image-gallery.php:1077
+#: modules/image-gallery/widgets/image-gallery.php:1100
 msgid "Image Effect"
 msgstr ""
 
-#: modules/image-gallery/widgets/image-gallery.php:1099
+#: modules/image-gallery/widgets/image-gallery.php:1028
+msgid "Overlay Radius"
+msgstr ""
+
+#: modules/image-gallery/widgets/image-gallery.php:1122
 msgid "Overlay Icon"
 msgstr ""
 
-#: modules/image-gallery/widgets/image-gallery.php:1107
+#: modules/image-gallery/widgets/image-gallery.php:1130
 #: modules/infobox/widgets/infobox.php:319
-#: modules/party-propz-extension/module.php:218
-#: modules/party-propz-extension/module.php:661
+#: modules/party-propz-extension/module.php:226
+#: modules/party-propz-extension/module.php:669
 msgid "Font Icon"
 msgstr ""
 
-#: modules/image-gallery/widgets/image-gallery.php:1120
-#: modules/image-gallery/widgets/image-gallery.php:1136
+#: modules/image-gallery/widgets/image-gallery.php:1143
+#: modules/image-gallery/widgets/image-gallery.php:1159
 msgid "Select Overlay Icon"
 msgstr ""
 
-#: modules/image-gallery/widgets/image-gallery.php:1149
+#: modules/image-gallery/widgets/image-gallery.php:1172
 msgid "Overlay Icon Color"
 msgstr ""
 
-#: modules/image-gallery/widgets/image-gallery.php:1177
+#: modules/image-gallery/widgets/image-gallery.php:1200
 msgid "Overlay Icon Size"
 msgstr ""
 
-#: modules/image-gallery/widgets/image-gallery.php:1215
+#: modules/image-gallery/widgets/image-gallery.php:1238
 msgid "Overlay Image"
 msgstr ""
 
-#: modules/image-gallery/widgets/image-gallery.php:1228
+#: modules/image-gallery/widgets/image-gallery.php:1251
 msgid "Overlay Image Width"
 msgstr ""
 
-#: modules/image-gallery/widgets/image-gallery.php:1268
+#: modules/image-gallery/widgets/image-gallery.php:1291
 #: modules/instagram-feed/widgets/instagram-feed.php:313
 #: modules/retina-image/widgets/retina-image.php:188
 #: modules/retina-image/widgets/retina-image.php:531
@@ -10715,7 +10733,7 @@ msgstr ""
 msgid "Caption"
 msgstr ""
 
-#: modules/image-gallery/widgets/image-gallery.php:1308
+#: modules/image-gallery/widgets/image-gallery.php:1331
 #: modules/infobox/widgets/infobox.php:240
 #: modules/price-list/widgets/price-list.php:342
 #: modules/table/widgets/table.php:1386
@@ -10723,80 +10741,80 @@ msgstr ""
 msgid "Vertical Alignment"
 msgstr ""
 
-#: modules/image-gallery/widgets/image-gallery.php:1560
+#: modules/image-gallery/widgets/image-gallery.php:1583
 #: modules/posts/skins/skin-base.php:757 modules/posts/skins/skin-feed.php:126
 #: modules/video-gallery/widgets/video-gallery.php:648
 #: modules/video-gallery/widgets/video-gallery.php:1191
 msgid "Filterable Tabs"
 msgstr ""
 
-#: modules/image-gallery/widgets/image-gallery.php:1571
+#: modules/image-gallery/widgets/image-gallery.php:1594
 #: modules/video-gallery/widgets/video-gallery.php:1203
 #: modules/woocommerce/widgets/woo-checkout.php:1416
 msgid "Tab Alignment"
 msgstr ""
 
-#: modules/image-gallery/widgets/image-gallery.php:1636
+#: modules/image-gallery/widgets/image-gallery.php:1659
 #: modules/posts/skins/skin-base.php:1083 modules/posts/skins/skin-feed.php:437
 #: modules/video-gallery/widgets/video-gallery.php:1260
 msgid "Spacing Between Tabs"
 msgstr ""
 
-#: modules/image-gallery/widgets/image-gallery.php:1657
+#: modules/image-gallery/widgets/image-gallery.php:1680
 #: modules/video-gallery/widgets/video-gallery.php:1277
 msgid "Tabs Bottom Spacing"
 msgstr ""
 
-#: modules/image-gallery/widgets/image-gallery.php:1751
+#: modules/image-gallery/widgets/image-gallery.php:1774
 #: modules/posts/skins/skin-base.php:992 modules/posts/skins/skin-feed.php:351
 #: modules/video-gallery/widgets/video-gallery.php:1348
 #: modules/woocommerce/widgets/woo-products.php:972
 msgid "Text Active / Hover Color"
 msgstr ""
 
-#: modules/image-gallery/widgets/image-gallery.php:1767
+#: modules/image-gallery/widgets/image-gallery.php:1790
 #: modules/posts/skins/skin-base.php:1008 modules/posts/skins/skin-feed.php:366
 #: modules/video-gallery/widgets/video-gallery.php:1360
 msgid "Background Active / Hover Color"
 msgstr ""
 
-#: modules/image-gallery/widgets/image-gallery.php:1849
+#: modules/image-gallery/widgets/image-gallery.php:1872
 #. translators: %1$s doc link
 msgid "%1$s Design filterable Image Gallery » %2$s"
 msgstr ""
 
-#: modules/image-gallery/widgets/image-gallery.php:1859
+#: modules/image-gallery/widgets/image-gallery.php:1882
 #. translators: %1$s doc link
 msgid "%1$s Open lightbox on the click of an image » %2$s"
 msgstr ""
 
-#: modules/image-gallery/widgets/image-gallery.php:1869
+#: modules/image-gallery/widgets/image-gallery.php:1892
 #. translators: %1$s doc link
 msgid "%1$s Open a webpage on the click of an image » %2$s"
 msgstr ""
 
-#: modules/image-gallery/widgets/image-gallery.php:1879
+#: modules/image-gallery/widgets/image-gallery.php:1902
 #. translators: %1$s doc link
 msgid "%1$s Apply scale, opacity, overlay, effects to images » %2$s"
 msgstr ""
 
-#: modules/image-gallery/widgets/image-gallery.php:1889
+#: modules/image-gallery/widgets/image-gallery.php:1912
 #. translators: %1$s doc link
 msgid "%1$s Display specific category tab as a default on page load » %2$s"
 msgstr ""
 
-#: modules/image-gallery/widgets/image-gallery.php:1899
+#: modules/image-gallery/widgets/image-gallery.php:1922
 #. translators: %1$s doc link
 msgid "%1$s Set icon on image hover » %2$s"
 msgstr ""
 
-#: modules/image-gallery/widgets/image-gallery.php:1909
+#: modules/image-gallery/widgets/image-gallery.php:1932
 #. translators: %1$s doc link
 msgid "%1$s Display Caption below image in the lightbox » %2$s"
 msgstr ""
 
 #: modules/infobox/widgets/infobox.php:120
-#: modules/infobox/widgets/infobox.php:1617
+#: modules/infobox/widgets/infobox.php:1618
 msgid "Title Prefix"
 msgstr ""
 
@@ -10842,7 +10860,7 @@ msgid "For Tablet & Mobile "
 msgstr ""
 
 #: modules/infobox/widgets/infobox.php:293
-#: modules/party-propz-extension/module.php:966
+#: modules/party-propz-extension/module.php:974
 msgid "Image/Icon Style"
 msgstr ""
 
@@ -10855,8 +10873,8 @@ msgid "Square / Rectangle Background"
 msgstr ""
 
 #: modules/infobox/widgets/infobox.php:311
-#: modules/party-propz-extension/module.php:210
-#: modules/party-propz-extension/module.php:653
+#: modules/party-propz-extension/module.php:218
+#: modules/party-propz-extension/module.php:661
 msgid "Image Type"
 msgstr ""
 
@@ -10875,7 +10893,7 @@ msgstr ""
 
 #: modules/infobox/widgets/infobox.php:771
 #: modules/infobox/widgets/infobox.php:976
-#: modules/party-propz-extension/module.php:997
+#: modules/party-propz-extension/module.php:1005
 msgid "Image Opacity"
 msgstr ""
 
@@ -10886,7 +10904,7 @@ msgstr ""
 msgid "Transition Duration"
 msgstr ""
 
-#: modules/infobox/widgets/infobox.php:902 modules/particles/module.php:324
+#: modules/infobox/widgets/infobox.php:902 modules/particles/module.php:326
 #: modules/retina-image/widgets/retina-image.php:431
 #: modules/retina-image/widgets/retina-image.php:465
 msgid "Opacity"
@@ -10935,13 +10953,13 @@ msgstr ""
 msgid "Colors"
 msgstr ""
 
-#: modules/infobox/widgets/infobox.php:1627
+#: modules/infobox/widgets/infobox.php:1628
 msgid "Prefix Tag"
 msgstr ""
 
-#: modules/infobox/widgets/infobox.php:1679
-#: modules/infobox/widgets/infobox.php:1768
-#: modules/infobox/widgets/infobox.php:1853
+#: modules/infobox/widgets/infobox.php:1680
+#: modules/infobox/widgets/infobox.php:1769
+#: modules/infobox/widgets/infobox.php:1854
 #: modules/posts/skins/skin-base.php:2833
 #: modules/posts/skins/skin-base.php:3131
 #: modules/posts/skins/skin-base.php:3698
@@ -10962,9 +10980,9 @@ msgstr ""
 msgid "Hover Color"
 msgstr ""
 
-#: modules/infobox/widgets/infobox.php:1835
-#: modules/marketing-button/widgets/marketing-button.php:528
-#: modules/marketing-button/widgets/marketing-button.php:614
+#: modules/infobox/widgets/infobox.php:1836
+#: modules/marketing-button/widgets/marketing-button.php:529
+#: modules/marketing-button/widgets/marketing-button.php:615
 #: modules/timeline/widgets/timeline.php:909
 #: modules/timeline/widgets/timeline.php:1406
 #: modules/timeline/widgets/timeline.php:1647
@@ -10972,45 +10990,45 @@ msgstr ""
 msgid "Description Color"
 msgstr ""
 
-#: modules/infobox/widgets/infobox.php:1869
+#: modules/infobox/widgets/infobox.php:1870
 msgid "CTA Link Text"
 msgstr ""
 
-#: modules/infobox/widgets/infobox.php:1881
+#: modules/infobox/widgets/infobox.php:1882
 msgid "CTA Button Text"
 msgstr ""
 
-#: modules/infobox/widgets/infobox.php:1906
+#: modules/infobox/widgets/infobox.php:1907
 #: modules/posts/skins/skin-base.php:2923
 msgid "Link Color"
 msgstr ""
 
-#: modules/infobox/widgets/infobox.php:1933
+#: modules/infobox/widgets/infobox.php:1934
 msgid "Margins"
 msgstr ""
 
-#: modules/infobox/widgets/infobox.php:1940
+#: modules/infobox/widgets/infobox.php:1941
 #: modules/price-list/widgets/price-list.php:504
 msgid "Title Margin"
 msgstr ""
 
-#: modules/infobox/widgets/infobox.php:1963
+#: modules/infobox/widgets/infobox.php:1964
 msgid "Prefix Margin"
 msgstr ""
 
-#: modules/infobox/widgets/infobox.php:1986
+#: modules/infobox/widgets/infobox.php:1987
 msgid "Image/Icon Margin"
 msgstr ""
 
-#: modules/infobox/widgets/infobox.php:2001
+#: modules/infobox/widgets/infobox.php:2002
 msgid "Description Margins"
 msgstr ""
 
-#: modules/infobox/widgets/infobox.php:2024
+#: modules/infobox/widgets/infobox.php:2025
 msgid "Separator Margins"
 msgstr ""
 
-#: modules/infobox/widgets/infobox.php:2047
+#: modules/infobox/widgets/infobox.php:2048
 msgid "CTA Margin"
 msgstr ""
 
@@ -11477,7 +11495,7 @@ msgstr ""
 
 #: modules/login-form/widgets/login-form.php:1135
 #: modules/login-form/widgets/login-form.php:1200
-#: modules/party-propz-extension/module.php:427
+#: modules/party-propz-extension/module.php:435
 #: modules/registration-form/widgets/registration-form.php:620
 #: modules/registration-form/widgets/registration-form.php:681
 msgid "Enter URL"
@@ -11636,7 +11654,7 @@ msgstr ""
 msgid "Space between Title & Description"
 msgstr ""
 
-#: modules/marketing-button/widgets/marketing-button.php:585
+#: modules/marketing-button/widgets/marketing-button.php:586
 msgid "Flare Animation"
 msgstr ""
 
@@ -11849,7 +11867,7 @@ msgstr ""
 #: modules/modal-popup/widgets/modal-popup.php:704
 #: modules/nav-menu/widgets/nav-menu.php:910
 #: modules/nav-menu/widgets/nav-menu.php:926
-#: modules/offcanvas/widgets/offcanvas.php:1263
+#: modules/offcanvas/widgets/offcanvas.php:1264
 #: modules/woocommerce/skins/skin-grid-base.php:195
 #: modules/woocommerce/widgets/woo-mini-cart.php:1131
 msgid "Close Icon"
@@ -11979,7 +11997,7 @@ msgid "Hide for Number of Days"
 msgstr ""
 
 #: modules/modal-popup/widgets/modal-popup.php:1572
-#: modules/offcanvas/widgets/offcanvas.php:1378
+#: modules/offcanvas/widgets/offcanvas.php:1379
 #: modules/posts/skins/skin-event.php:183
 #: modules/posts/skins/skin-feed.php:1752
 msgid "Content Padding"
@@ -12003,58 +12021,58 @@ msgid "Iframe Loader Color"
 msgstr ""
 
 #: modules/modal-popup/widgets/modal-popup.php:1944
-#: modules/modal-popup/widgets/modal-popup.php:2156
+#: modules/modal-popup/widgets/modal-popup.php:2157
 #: modules/offcanvas/widgets/offcanvas.php:934
 msgid "To see these changes please turn off the preview setting from Content Tab."
 msgstr ""
 
-#: modules/modal-popup/widgets/modal-popup.php:2144
+#: modules/modal-popup/widgets/modal-popup.php:2145
 msgid "Display Text"
 msgstr ""
 
-#: modules/modal-popup/widgets/modal-popup.php:2247
+#: modules/modal-popup/widgets/modal-popup.php:2248
 #. translators: %1$s doc link
 msgid "%1$s Trigger Modal Popup on the click of menu » %2$s"
 msgstr ""
 
-#: modules/modal-popup/widgets/modal-popup.php:2257
+#: modules/modal-popup/widgets/modal-popup.php:2258
 #. translators: %1$s doc link
 msgid "%1$s Close Modal Popup on click of button or link » %2$s"
 msgstr ""
 
-#: modules/modal-popup/widgets/modal-popup.php:2267
+#: modules/modal-popup/widgets/modal-popup.php:2268
 #. translators: %1$s doc link
 msgid "%1$s Trigger Modal Popup from another widget » %2$s"
 msgstr ""
 
-#: modules/modal-popup/widgets/modal-popup.php:2277
+#: modules/modal-popup/widgets/modal-popup.php:2278
 #. translators: %1$s doc link
 msgid "%1$s Modal Popup JS Triggers » %2$s"
 msgstr ""
 
-#: modules/modal-popup/widgets/modal-popup.php:2297
+#: modules/modal-popup/widgets/modal-popup.php:2298
 msgid "Video Embed Code"
 msgstr ""
 
-#: modules/modal-popup/widgets/modal-popup.php:2301
+#: modules/modal-popup/widgets/modal-popup.php:2302
 #: modules/video/widgets/video.php:135
 msgid "YouTube"
 msgstr ""
 
-#: modules/modal-popup/widgets/modal-popup.php:2302
+#: modules/modal-popup/widgets/modal-popup.php:2303
 #: modules/video/widgets/video.php:136
 msgid "Vimeo"
 msgstr ""
 
-#: modules/modal-popup/widgets/modal-popup.php:2303
+#: modules/modal-popup/widgets/modal-popup.php:2304
 msgid "Iframe"
 msgstr ""
 
-#: modules/modal-popup/widgets/modal-popup.php:2645
+#: modules/modal-popup/widgets/modal-popup.php:2646
 msgid "Modal Popup - ID "
 msgstr ""
 
-#: modules/modal-popup/widgets/modal-popup.php:2646
+#: modules/modal-popup/widgets/modal-popup.php:2647
 msgid ""
 "Click here to edit the \"Modal Popup\" settings. This text will not be "
 "visible on frontend."
@@ -12066,8 +12084,8 @@ msgstr ""
 #: modules/nav-menu/widgets/nav-menu.php:841
 #: modules/offcanvas/widgets/offcanvas.php:181
 #: modules/offcanvas/widgets/offcanvas.php:291
-#: modules/offcanvas/widgets/offcanvas.php:1400
-#: modules/offcanvas/widgets/offcanvas.php:1911
+#: modules/offcanvas/widgets/offcanvas.php:1401
+#: modules/offcanvas/widgets/offcanvas.php:1912
 msgid "Menu"
 msgstr ""
 
@@ -12129,7 +12147,7 @@ msgid "Equal to \tWidget"
 msgstr ""
 
 #: modules/nav-menu/widgets/nav-menu.php:371
-#: modules/offcanvas/widgets/offcanvas.php:1762
+#: modules/offcanvas/widgets/offcanvas.php:1763
 msgid "Width (px)"
 msgstr ""
 
@@ -12170,7 +12188,7 @@ msgid "Flyout Orientation"
 msgstr ""
 
 #: modules/nav-menu/widgets/nav-menu.php:570
-#: modules/offcanvas/widgets/offcanvas.php:1814
+#: modules/offcanvas/widgets/offcanvas.php:1815
 msgid "Appear Effect"
 msgstr ""
 
@@ -12464,94 +12482,94 @@ msgstr ""
 msgid "Icon Alignment"
 msgstr ""
 
-#: modules/offcanvas/widgets/offcanvas.php:1411
+#: modules/offcanvas/widgets/offcanvas.php:1412
 msgid "Menu Item"
 msgstr ""
 
-#: modules/offcanvas/widgets/offcanvas.php:1532
+#: modules/offcanvas/widgets/offcanvas.php:1533
 msgid "Submenu Item"
 msgstr ""
 
-#: modules/offcanvas/widgets/offcanvas.php:1717
+#: modules/offcanvas/widgets/offcanvas.php:1718
 msgid "Content Border"
 msgstr ""
 
-#: modules/offcanvas/widgets/offcanvas.php:1872
+#: modules/offcanvas/widgets/offcanvas.php:1873
 #. translators: %1$s doc link
 msgid "%1$s Trigger Off-Canvas from any Elementor Widget » %2$s"
 msgstr ""
 
-#: modules/offcanvas/widgets/offcanvas.php:1882
+#: modules/offcanvas/widgets/offcanvas.php:1883
 #. translators: %1$s doc link
 msgid "%1$s How to Design an Off-Canvas menu for Elementor? » %2$s"
 msgstr ""
 
-#: modules/offcanvas/widgets/offcanvas.php:1892
+#: modules/offcanvas/widgets/offcanvas.php:1893
 #. translators: %1$s doc link
 msgid "%1$s How to Trigger Off-Canvas on the Click of a Menu Element? » %2$s"
 msgstr ""
 
-#: modules/offcanvas/widgets/offcanvas.php:1913
+#: modules/offcanvas/widgets/offcanvas.php:1914
 msgid "Saved container"
-msgstr ""
-
-#: modules/offcanvas/widgets/offcanvas.php:2205
-#: modules/offcanvas/widgets/offcanvas.php:2218
-#: modules/offcanvas/widgets/offcanvas.php:2248
-msgid "Off - Canvas - ID "
 msgstr ""
 
 #: modules/offcanvas/widgets/offcanvas.php:2206
 #: modules/offcanvas/widgets/offcanvas.php:2219
 #: modules/offcanvas/widgets/offcanvas.php:2249
+msgid "Off - Canvas - ID "
+msgstr ""
+
+#: modules/offcanvas/widgets/offcanvas.php:2207
+#: modules/offcanvas/widgets/offcanvas.php:2220
+#: modules/offcanvas/widgets/offcanvas.php:2250
 msgid ""
 "Click here to edit the \"Off- Canvas\" settings. This text will not be "
 "visible on frontend."
 msgstr ""
 
-#: modules/particles/module.php:211
+#: modules/particles/module.php:213
 #. translators: %s admin link
 msgid "%1s - Particle Backgrounds"
 msgstr ""
 
-#: modules/particles/module.php:219
+#: modules/particles/module.php:221
 msgid "Enable Particle Background"
 msgstr ""
 
-#: modules/particles/module.php:236
+#: modules/particles/module.php:238
 msgid "Polygon"
 msgstr ""
 
-#: modules/particles/module.php:237
+#: modules/particles/module.php:239
 msgid "NASA"
 msgstr ""
 
-#: modules/particles/module.php:238
-#: modules/party-propz-extension/module.php:277
-#: modules/party-propz-extension/module.php:721
+#: modules/particles/module.php:240
+#: modules/party-propz-extension/module.php:285
+#: modules/party-propz-extension/module.php:729
 msgid "Snow"
 msgstr ""
 
-#: modules/particles/module.php:239
+#: modules/particles/module.php:241
 msgid "Snowflakes"
 msgstr ""
 
-#: modules/particles/module.php:240
+#: modules/particles/module.php:242
 msgid "Christmas"
 msgstr ""
 
-#: modules/particles/module.php:241
+#: modules/particles/module.php:243
 msgid "Halloween"
 msgstr ""
 
-#: modules/particles/module.php:255
+#: modules/particles/module.php:257
 #. translators: %s admin link
 msgid ""
 "Add custom JSON for the Particle Background below. To generate a completely "
 "customized background style follow steps below - "
 msgstr ""
 
-#: modules/particles/module.php:269
+#: modules/particles/module.php:271
 #. translators: %s admin link
 msgid ""
 "1. Visit a link %1$s here %2$s and choose required attributes for particle "
@@ -12560,38 +12578,38 @@ msgid ""
 "downloaded file and paste it below"
 msgstr ""
 
-#: modules/particles/module.php:284
+#: modules/particles/module.php:286
 #. translators: %s admin link
 msgid ""
 "To know more about creating a custom style, refer to a document %1$s here "
 "%2$s."
 msgstr ""
 
-#: modules/particles/module.php:310
+#: modules/particles/module.php:312
 msgid "Particle Color"
 msgstr ""
 
-#: modules/particles/module.php:344
+#: modules/particles/module.php:346
 msgid "Flow Direction"
 msgstr ""
 
-#: modules/particles/module.php:385
+#: modules/particles/module.php:387
 msgid "Number of Particles"
 msgstr ""
 
-#: modules/particles/module.php:405
+#: modules/particles/module.php:407
 msgid "Particle Size"
 msgstr ""
 
-#: modules/particles/module.php:425
+#: modules/particles/module.php:427
 msgid "Move Speed"
 msgstr ""
 
-#: modules/particles/module.php:446
+#: modules/particles/module.php:448
 msgid "Enable Hover Effect"
 msgstr ""
 
-#: modules/particles/module.php:465
+#: modules/particles/module.php:467
 #. translators: %s admin link
 msgid ""
 "Particle hover effect will not work in the following scenarios - </br></br> "
@@ -12600,90 +12618,90 @@ msgid ""
 "padding to the section/column can resolve this."
 msgstr ""
 
-#: modules/particles/module.php:482
+#: modules/particles/module.php:484
 #. translators: %s admin link
 msgid "Learn more about this %1$s here. %2$s"
 msgstr ""
 
-#: modules/party-propz-extension/module.php:189
-#: modules/party-propz-extension/module.php:633
+#: modules/party-propz-extension/module.php:197
+#: modules/party-propz-extension/module.php:641
 #. translators: %s Admin name
 #. translators: %s admin link
 msgid "%1s - Party Propz"
 msgstr ""
 
-#: modules/party-propz-extension/module.php:267
-#: modules/party-propz-extension/module.php:711
+#: modules/party-propz-extension/module.php:275
+#: modules/party-propz-extension/module.php:719
 msgid "Image Source"
 msgstr ""
 
-#: modules/party-propz-extension/module.php:271
-#: modules/party-propz-extension/module.php:715
+#: modules/party-propz-extension/module.php:279
+#: modules/party-propz-extension/module.php:723
 msgid "Christmas Tree"
 msgstr ""
 
-#: modules/party-propz-extension/module.php:272
-#: modules/party-propz-extension/module.php:716
+#: modules/party-propz-extension/module.php:280
+#: modules/party-propz-extension/module.php:724
 msgid "Reindeer"
 msgstr ""
 
-#: modules/party-propz-extension/module.php:273
-#: modules/party-propz-extension/module.php:717
+#: modules/party-propz-extension/module.php:281
+#: modules/party-propz-extension/module.php:725
 msgid "Hanukkah Candles"
 msgstr ""
 
-#: modules/party-propz-extension/module.php:274
-#: modules/party-propz-extension/module.php:718
+#: modules/party-propz-extension/module.php:282
+#: modules/party-propz-extension/module.php:726
 msgid "Hanging Decoration"
 msgstr ""
 
-#: modules/party-propz-extension/module.php:275
-#: modules/party-propz-extension/module.php:719
+#: modules/party-propz-extension/module.php:283
+#: modules/party-propz-extension/module.php:727
 msgid "Santa Cap"
 msgstr ""
 
-#: modules/party-propz-extension/module.php:276
-#: modules/party-propz-extension/module.php:720
+#: modules/party-propz-extension/module.php:284
+#: modules/party-propz-extension/module.php:728
 msgid "Santa Claus"
 msgstr ""
 
-#: modules/party-propz-extension/module.php:278
-#: modules/party-propz-extension/module.php:722
+#: modules/party-propz-extension/module.php:286
+#: modules/party-propz-extension/module.php:730
 msgid "Snow Man"
 msgstr ""
 
-#: modules/party-propz-extension/module.php:291
-#: modules/party-propz-extension/module.php:735
+#: modules/party-propz-extension/module.php:299
+#: modules/party-propz-extension/module.php:743
 #: modules/video/widgets/video.php:740 modules/video/widgets/video.php:837
 #: modules/video-gallery/widgets/video-gallery.php:361
 #: modules/video-gallery/widgets/video-gallery.php:1433
 msgid "Select Image"
 msgstr ""
 
-#: modules/party-propz-extension/module.php:318
+#: modules/party-propz-extension/module.php:326
 #: modules/video/widgets/video.php:1334
 msgid "Center Left"
 msgstr ""
 
-#: modules/party-propz-extension/module.php:319
+#: modules/party-propz-extension/module.php:327
 #: modules/video/widgets/video.php:1335
 msgid "Center Right"
 msgstr ""
 
-#: modules/party-propz-extension/module.php:387
+#: modules/party-propz-extension/module.php:395
 #: modules/video/widgets/video.php:1348
 msgid "Spacing from Edges"
 msgstr ""
 
-#: modules/party-propz-extension/module.php:388
+#: modules/party-propz-extension/module.php:396
 msgid "Note: This is spacing around the image with respect to the Alignment chosen."
 msgstr ""
 
-#: modules/party-propz-extension/module.php:459
+#: modules/party-propz-extension/module.php:467
 msgid "Flip Image"
 msgstr ""
 
-#: modules/party-propz-extension/module.php:948
+#: modules/party-propz-extension/module.php:956
 msgid ""
 "Adjust the z-index of the image if it is not visibile. Defaults is set to "
 "999"
@@ -15488,10 +15506,6 @@ msgstr ""
 
 #: modules/twitter/widgets/twitter.php:264
 msgid "List"
-msgstr ""
-
-#: modules/twitter/widgets/twitter.php:274
-msgid "Sort By"
 msgstr ""
 
 #: modules/twitter/widgets/twitter.php:278

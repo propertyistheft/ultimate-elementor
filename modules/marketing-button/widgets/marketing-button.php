@@ -518,6 +518,7 @@ class Marketing_Button extends Common_Widget {
 							'default'   => '',
 							'selectors' => array(
 								'{{WRAPPER}} a.elementor-button' => 'color: {{VALUE}};',
+								'{{WRAPPER}} a.elementor-button-icon svg, {{WRAPPER}} .elementor-button-icon svg' => 'fill: {{VALUE}};',
 							),
 						)
 					);

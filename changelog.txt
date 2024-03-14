@@ -1,3 +1,14 @@
+Version 1.36.30, Monday, 11th March 2024
+- Improvement: Compatibility with latest Elementor and Elementor Pro 3.20 version.
+- Improvement: Compatibility with PHP 8.3
+- Improvement: Business Reviews - Added a Sort by filter, allowing users to view the latest and most relevant reviews.
+- Improvement: Display Conditions - Added support for Grid and Container.
+- Improvement: Image Gallery - Added thumbnail and overlay border radius options.
+- Improvement: Particle Backgrounds - Added support for Grid and Container.
+- Improvement: Party Propz -  Added support for Grid and Container.
+- Improvement: Added fill colour to buttons with icons for proper colour reflection.
+- Fix: Navigation Menu - Multistep submenu fails to display when a border radius is applied to dropdown.
+
 Version 1.36.29, Monday, 29th January 2024
 - Improvement: Compatibility with latest Elementor and Elementor Pro 3.19 version.
 - Fix: Gravity Forms Styler - Button style and typography controls not working.

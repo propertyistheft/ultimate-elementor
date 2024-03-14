@@ -205,6 +205,18 @@ class Business_Reviews extends Common_Widget {
 			);
 
 			$this->add_control(
+				'reviews_sort',
+				array(
+					'label'   => __( 'Sort By', 'uael' ),
+					'type'    => Controls_Manager::SELECT,
+					'default' => 'most_relevant',
+					'options' => array(
+						'most_relevant' => __( 'Most Relevant', 'uael' ),
+						'newest'        => __( 'Newest', 'uael' ),
+					),
+				)
+			);
+			$this->add_control(
 				'google_place_id_doc',
 				array(
 					'type'            => Controls_Manager::RAW_HTML,

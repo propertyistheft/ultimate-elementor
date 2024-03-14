@@ -262,7 +262,9 @@ abstract class Skin_Style {
 			return false;
 		}
 
-		$parameters = "key=$api_key&placeid=$placeid";
+		$sort_by = $settings['reviews_sort'];
+
+		$parameters = "key=$api_key&placeid=$placeid&reviews_sort=$sort_by";
 
 		$url = "https://maps.googleapis.com/maps/api/place/details/json?$parameters";
 
@@ -274,7 +276,7 @@ abstract class Skin_Style {
 
 		$result = get_transient( $transient_name );
 
-		if ( false === $result ) {
+		if ( false === $result || ( is_user_logged_in() && current_user_can( 'manage_options' ) ) ) {
 			sleep( 2 );
 			$result = wp_remote_post(
 				$url,

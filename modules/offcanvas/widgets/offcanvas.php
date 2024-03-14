@@ -988,6 +988,7 @@ class Offcanvas extends Common_Widget {
 					'default'   => '',
 					'selectors' => array(
 						'{{WRAPPER}} .uael-offcanvas-action-wrap a.elementor-button, {{WRAPPER}} .uael-offcanvas-action-wrap .elementor-button' => 'color: {{VALUE}};',
+						'{{WRAPPER}} .uael-offcanvas-action-wrap a.elementor-button .elementor-button-icon svg, {{WRAPPER}}.uael-offcanvas-action-wrap .elementor-button-icon svg' => 'fill: {{VALUE}};',
 					),
 					'condition' => array(
 						'offcanvas_on' => 'button',
