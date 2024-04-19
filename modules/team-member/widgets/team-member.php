@@ -577,7 +577,7 @@ class Team_Member extends Common_Widget {
 					),
 					array(
 						'new_social' => array(
-							'value'   => 'fab fa-twitter',
+							'value'   => 'fab fa-x-twitter',
 							'library' => 'fa-brands',
 						),
 					),

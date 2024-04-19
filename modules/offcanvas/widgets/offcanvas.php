@@ -2320,7 +2320,7 @@ class Offcanvas extends Common_Widget {
 
 				'data-custom-id'        => $settings['offcanvas_custom_id'],
 
-				'data-canvas-width'     => $settings['offcanvas_width']['size'],
+				'data-canvas-width'     => isset( $settings['offcanvas_width']['size'] ) ? $settings['offcanvas_width']['size'] : '',
 				'data-wrap-menu-item'   => $settings['wrap_the_submenu'],
 			)
 		);

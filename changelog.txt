@@ -1,3 +1,10 @@
+Version 1.36.31, Wednesday, 17th April 2024
+- Improvement: Compatibility with latest WordPress version 6.5
+- Improvement: Compatibility with latest Elementor and Elementor Pro 3.21 version.
+- Improvement: FAQ Schema - Added unique IDs to faq items to prevent duplicates.
+- Improvement: Updated the Twitter icons within widgets.
+- Table: Improved Security.
+
 Version 1.36.30, Monday, 11th March 2024
 - Improvement: Compatibility with latest Elementor and Elementor Pro 3.20 version.
 - Improvement: Compatibility with PHP 8.3

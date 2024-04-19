@@ -2717,7 +2717,7 @@ class Video extends Common_Widget {
 				$params[ $option ] = $value;
 			}
 
-			$params['color']     = str_replace( '#', '', $settings['vimeo_color'] );
+			$params['color']     = isset( $settings['vimeo_color'] ) ? str_replace( '#', '', $settings['vimeo_color'] ) : '';
 			$params['autopause'] = '0';
 
 			/**

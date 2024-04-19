@@ -41,8 +41,9 @@ class SocialShare extends Common_Widget {
 	 * @var $settings array.
 	 */
 	private static $uael_networks_class_dictionary = array(
-		'pocket' => 'fab fa-get-pocket',
-		'email'  => 'fas fa-envelope',
+		'pocket'  => 'fab fa-get-pocket',
+		'email'   => 'fas fa-envelope',
+		'twitter' => 'fab fa-x-twitter',
 	);
 
 	/**
@@ -273,7 +274,8 @@ class SocialShare extends Common_Widget {
 				var networksClassDictionary = {
 					pocket: "fab fa-get-pocket",
 					email: "fas fa-envelope",
-					print: "fa fa-print"
+					print: "fa fa-print",
+					twitter: "fab fa-x-twitter"
 				};
 				var networkClass = networksClassDictionary[text] || "fab fa-" + text;
 

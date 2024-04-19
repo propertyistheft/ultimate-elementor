@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the Ultimate Addons for Elementor package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ultimate Addons for Elementor 1.36.30\n"
+"Project-Id-Version: Ultimate Addons for Elementor 1.36.31\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/ultimate-elementor\n"
-"POT-Creation-Date: 2024-03-11 05:13:49+00:00\n"
+"POT-Creation-Date: 2024-04-17 04:55:50+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -455,8 +455,8 @@ msgstr ""
 
 #: classes/uael-config.php:355
 #: modules/image-gallery/widgets/image-gallery.php:698
-#: modules/social-share/widgets/social-share.php:195
-#: modules/social-share/widgets/social-share.php:550
+#: modules/social-share/widgets/social-share.php:196
+#: modules/social-share/widgets/social-share.php:552
 msgid "Social Share"
 msgstr ""
 
@@ -835,7 +835,7 @@ msgstr ""
 #: modules/registration-form/widgets/registration-form.php:1169
 #: modules/registration-form/widgets/registration-form.php:2164
 #: modules/registration-form/widgets/registration-form.php:2254
-#: modules/social-share/widgets/social-share.php:523
+#: modules/social-share/widgets/social-share.php:525
 #: modules/team-member/widgets/team-member.php:1199
 #: modules/timeline/widgets/timeline.php:171
 #: modules/timeline/widgets/timeline.php:659
@@ -1576,7 +1576,7 @@ msgstr ""
 #: modules/price-table/widgets/price-table.php:3464
 #: modules/registration-form/widgets/registration-form.php:1326
 #: modules/retina-image/widgets/retina-image.php:637
-#: modules/social-share/widgets/social-share.php:1471
+#: modules/social-share/widgets/social-share.php:1473
 #: modules/table/widgets/table.php:2017
 #: modules/table-of-contents/widgets/table-of-contents.php:526
 #: modules/team-member/widgets/team-member.php:661
@@ -2130,7 +2130,7 @@ msgstr ""
 #: modules/modal-popup/widgets/modal-popup.php:1308
 #: modules/posts/skins/skin-base.php:1835
 #: modules/registration-form/widgets/registration-form.php:1097
-#: modules/social-share/widgets/social-share.php:314
+#: modules/social-share/widgets/social-share.php:316
 #: modules/table/widgets/table.php:1729 modules/table/widgets/table.php:1802
 #: modules/woocommerce/widgets/woo-add-to-cart.php:340
 #: modules/woocommerce/widgets/woo-mini-cart.php:183
@@ -2173,7 +2173,7 @@ msgstr ""
 #: modules/modal-popup/widgets/modal-popup.php:1309
 #: modules/posts/skins/skin-base.php:1836
 #: modules/registration-form/widgets/registration-form.php:1098
-#: modules/social-share/widgets/social-share.php:315
+#: modules/social-share/widgets/social-share.php:317
 #: modules/table/widgets/table.php:1730 modules/table/widgets/table.php:1803
 #: modules/woocommerce/widgets/woo-add-to-cart.php:341
 #: modules/woocommerce/widgets/woo-mini-cart.php:182
@@ -2255,9 +2255,9 @@ msgstr ""
 #: modules/registration-form/widgets/registration-form.php:696
 #: modules/registration-form/widgets/registration-form.php:1044
 #: modules/retina-image/widgets/retina-image.php:161
-#: modules/social-share/widgets/social-share.php:396
-#: modules/social-share/widgets/social-share.php:424
-#: modules/social-share/widgets/social-share.php:1425
+#: modules/social-share/widgets/social-share.php:398
+#: modules/social-share/widgets/social-share.php:426
+#: modules/social-share/widgets/social-share.php:1427
 #: modules/table-of-contents/widgets/table-of-contents.php:612
 #: modules/woocommerce/skins/skin-grid-default.php:195
 #: modules/woocommerce/skins/skin-grid-franko.php:220
@@ -2352,9 +2352,9 @@ msgstr ""
 #: modules/registration-form/widgets/registration-form.php:700
 #: modules/registration-form/widgets/registration-form.php:1048
 #: modules/retina-image/widgets/retina-image.php:165
-#: modules/social-share/widgets/social-share.php:400
-#: modules/social-share/widgets/social-share.php:429
-#: modules/social-share/widgets/social-share.php:1429
+#: modules/social-share/widgets/social-share.php:402
+#: modules/social-share/widgets/social-share.php:431
+#: modules/social-share/widgets/social-share.php:1431
 #: modules/table/widgets/table.php:1076 modules/table/widgets/table.php:1364
 #: modules/table-of-contents/widgets/table-of-contents.php:616
 #: modules/team-member/widgets/team-member.php:702
@@ -2451,8 +2451,8 @@ msgstr ""
 #: modules/registration-form/widgets/registration-form.php:704
 #: modules/registration-form/widgets/registration-form.php:1052
 #: modules/retina-image/widgets/retina-image.php:169
-#: modules/social-share/widgets/social-share.php:404
-#: modules/social-share/widgets/social-share.php:1433
+#: modules/social-share/widgets/social-share.php:406
+#: modules/social-share/widgets/social-share.php:1435
 #: modules/table/widgets/table.php:1080 modules/table/widgets/table.php:1368
 #: modules/table-of-contents/widgets/table-of-contents.php:620
 #: modules/team-member/widgets/team-member.php:906
@@ -2554,9 +2554,9 @@ msgstr ""
 #: modules/registration-form/widgets/registration-form.php:708
 #: modules/registration-form/widgets/registration-form.php:1056
 #: modules/retina-image/widgets/retina-image.php:173
-#: modules/social-share/widgets/social-share.php:408
-#: modules/social-share/widgets/social-share.php:433
-#: modules/social-share/widgets/social-share.php:1437
+#: modules/social-share/widgets/social-share.php:410
+#: modules/social-share/widgets/social-share.php:435
+#: modules/social-share/widgets/social-share.php:1439
 #: modules/table/widgets/table.php:1084 modules/table/widgets/table.php:1372
 #: modules/table-of-contents/widgets/table-of-contents.php:624
 #: modules/team-member/widgets/team-member.php:703
@@ -2868,7 +2868,7 @@ msgstr ""
 #: modules/registration-form/widgets/registration-form.php:639
 #: modules/registration-form/widgets/registration-form.php:870
 #: modules/registration-form/widgets/registration-form.php:894
-#: modules/social-share/widgets/social-share.php:1100
+#: modules/social-share/widgets/social-share.php:1102
 #: modules/table/widgets/table.php:766 modules/table/widgets/table.php:977
 #: modules/table/widgets/table.php:1007
 #: modules/table-of-contents/widgets/table-of-contents.php:284
@@ -3092,7 +3092,7 @@ msgstr ""
 #: modules/price-table/widgets/price-table.php:2626
 #: modules/price-table/widgets/price-table.php:3315
 #: modules/registration-form/widgets/registration-form.php:1775
-#: modules/social-share/widgets/social-share.php:814
+#: modules/social-share/widgets/social-share.php:816
 #: modules/table/widgets/table.php:390 modules/table/widgets/table.php:781
 #: modules/table-of-contents/widgets/table-of-contents.php:640
 #: modules/table-of-contents/widgets/table-of-contents.php:739
@@ -3541,7 +3541,7 @@ msgstr ""
 #: modules/price-table/widgets/price-table.php:3473
 #: modules/registration-form/widgets/registration-form.php:1335
 #: modules/retina-image/widgets/retina-image.php:646
-#: modules/social-share/widgets/social-share.php:1480
+#: modules/social-share/widgets/social-share.php:1482
 #: modules/table/widgets/table.php:2026
 #: modules/table-of-contents/widgets/table-of-contents.php:535
 #: modules/team-member/widgets/team-member.php:670
@@ -3729,8 +3729,8 @@ msgstr ""
 #: modules/price-table/widgets/price-table.php:1173
 #: modules/price-table/widgets/price-table.php:2261
 #: modules/price-table/widgets/price-table.php:2605
-#: modules/social-share/widgets/social-share.php:292
-#: modules/social-share/widgets/social-share.php:1317
+#: modules/social-share/widgets/social-share.php:294
+#: modules/social-share/widgets/social-share.php:1319
 #: modules/table-of-contents/widgets/table-of-contents.php:718
 #: modules/timeline/widgets/timeline.php:878
 #: modules/woocommerce/widgets/woo-categories.php:499
@@ -3918,7 +3918,7 @@ msgstr ""
 #: modules/registration-form/widgets/registration-form.php:416
 #: modules/registration-form/widgets/registration-form.php:433
 #: modules/registration-form/widgets/registration-form.php:824
-#: modules/social-share/widgets/social-share.php:1086
+#: modules/social-share/widgets/social-share.php:1088
 #: modules/table/widgets/table.php:422 modules/table/widgets/table.php:813
 #: modules/table/widgets/table.php:961
 #: modules/table-of-contents/widgets/table-of-contents.php:206
@@ -4000,7 +4000,7 @@ msgstr ""
 #: modules/registration-form/widgets/registration-form.php:417
 #: modules/registration-form/widgets/registration-form.php:432
 #: modules/registration-form/widgets/registration-form.php:825
-#: modules/social-share/widgets/social-share.php:1087
+#: modules/social-share/widgets/social-share.php:1089
 #: modules/table/widgets/table.php:423 modules/table/widgets/table.php:814
 #: modules/table/widgets/table.php:962
 #: modules/table-of-contents/widgets/table-of-contents.php:207
@@ -4150,7 +4150,7 @@ msgstr ""
 #: modules/party-propz-extension/module.php:514
 #: modules/party-propz-extension/module.php:894
 #: modules/price-table/widgets/price-table.php:2484
-#: modules/social-share/widgets/social-share.php:720
+#: modules/social-share/widgets/social-share.php:722
 #: modules/table-of-contents/widgets/table-of-contents.php:308
 #: modules/team-member/widgets/team-member.php:1116
 #: modules/timeline/widgets/timeline.php:1890
@@ -4368,7 +4368,7 @@ msgstr ""
 #: modules/instagram-feed/widgets/instagram-feed.php:530
 #: modules/posts/skins/skin-base.php:1890
 #: modules/registration-form/widgets/registration-form.php:1453
-#: modules/social-share/widgets/social-share.php:558
+#: modules/social-share/widgets/social-share.php:560
 #: modules/twitter/widgets/twitter.php:1284
 #: modules/video-gallery/widgets/video-gallery.php:1030
 #: modules/woocommerce/widgets/woo-categories.php:790
@@ -4383,7 +4383,7 @@ msgstr ""
 #: modules/login-form/widgets/login-form.php:1390
 #: modules/posts/skins/skin-base.php:1914
 #: modules/registration-form/widgets/registration-form.php:1474
-#: modules/social-share/widgets/social-share.php:609
+#: modules/social-share/widgets/social-share.php:611
 #: modules/twitter/widgets/twitter.php:1309
 #: modules/video-gallery/widgets/video-gallery.php:1053
 #: modules/woocommerce/widgets/woo-categories.php:812
@@ -5209,7 +5209,7 @@ msgstr ""
 #: modules/image-gallery/widgets/image-gallery.php:242
 #: modules/instagram-feed/widgets/instagram-feed.php:182
 #: modules/posts/skins/skin-base.php:137
-#: modules/social-share/widgets/social-share.php:372
+#: modules/social-share/widgets/social-share.php:374
 #: modules/twitter/widgets/twitter.php:289
 #: modules/video-gallery/widgets/video-gallery.php:575
 #: modules/woocommerce/widgets/woo-categories.php:164
@@ -5402,9 +5402,9 @@ msgstr ""
 #: modules/registration-form/widgets/registration-form.php:649
 #: modules/registration-form/widgets/registration-form.php:879
 #: modules/registration-form/widgets/registration-form.php:998
-#: modules/social-share/widgets/social-share.php:298
-#: modules/social-share/widgets/social-share.php:1321
-#: modules/social-share/widgets/social-share.php:1334
+#: modules/social-share/widgets/social-share.php:300
+#: modules/social-share/widgets/social-share.php:1323
+#: modules/social-share/widgets/social-share.php:1336
 #: modules/table/widgets/table.php:224 modules/table/widgets/table.php:605
 #: modules/timeline/widgets/timeline.php:628
 #: modules/video/widgets/video.php:1505
@@ -5437,7 +5437,7 @@ msgstr ""
 #: modules/price-table/widgets/price-table.php:2984
 #: modules/retina-image/widgets/retina-image.php:218
 #: modules/retina-image/widgets/retina-image.php:231
-#: modules/social-share/widgets/social-share.php:533
+#: modules/social-share/widgets/social-share.php:535
 #: modules/table/widgets/table.php:620
 #: modules/team-member/widgets/team-member.php:556
 #: modules/timeline/widgets/timeline.php:862
@@ -5476,8 +5476,8 @@ msgstr ""
 #: modules/price-table/widgets/price-table.php:1334
 #: modules/registration-form/widgets/registration-form.php:1074
 #: modules/registration-form/widgets/registration-form.php:1083
-#: modules/social-share/widgets/social-share.php:297
-#: modules/social-share/widgets/social-share.php:1320
+#: modules/social-share/widgets/social-share.php:299
+#: modules/social-share/widgets/social-share.php:1322
 #: modules/table/widgets/table.php:256 modules/table/widgets/table.php:268
 #: modules/table/widgets/table.php:284 modules/table/widgets/table.php:657
 #: modules/table/widgets/table.php:669 modules/table/widgets/table.php:684
@@ -5506,7 +5506,7 @@ msgstr ""
 #: modules/posts/skins/skin-base.php:1831
 #: modules/price-table/widgets/price-table.php:1094
 #: modules/registration-form/widgets/registration-form.php:1093
-#: modules/social-share/widgets/social-share.php:310
+#: modules/social-share/widgets/social-share.php:312
 #: modules/table/widgets/table.php:1725
 #: modules/twitter/widgets/twitter.php:1703
 #: modules/woocommerce/widgets/woo-add-to-cart.php:336
@@ -5608,7 +5608,7 @@ msgstr ""
 #: modules/price-table/widgets/price-table.php:3089
 #: modules/registration-form/widgets/registration-form.php:2013
 #: modules/retina-image/widgets/retina-image.php:424
-#: modules/social-share/widgets/social-share.php:829
+#: modules/social-share/widgets/social-share.php:831
 #: modules/table-of-contents/widgets/table-of-contents.php:852
 #: modules/team-member/widgets/team-member.php:1211
 #: modules/video/widgets/video.php:930
@@ -5674,7 +5674,7 @@ msgstr ""
 #: modules/price-table/widgets/price-table.php:3223
 #: modules/registration-form/widgets/registration-form.php:2072
 #: modules/retina-image/widgets/retina-image.php:459
-#: modules/social-share/widgets/social-share.php:939
+#: modules/social-share/widgets/social-share.php:941
 #: modules/table/widgets/table.php:1219 modules/table/widgets/table.php:1588
 #: modules/table-of-contents/widgets/table-of-contents.php:875
 #: modules/team-member/widgets/team-member.php:1253
@@ -5800,7 +5800,7 @@ msgstr ""
 #: modules/price-table/widgets/price-table.php:3053
 #: modules/registration-form/widgets/registration-form.php:1011
 #: modules/registration-form/widgets/registration-form.php:1790
-#: modules/social-share/widgets/social-share.php:1354
+#: modules/social-share/widgets/social-share.php:1356
 #: modules/table-of-contents/widgets/table-of-contents.php:397
 #: modules/twitter/widgets/twitter.php:890 modules/video/widgets/video.php:883
 #: modules/video-gallery/widgets/video-gallery.php:1479
@@ -5846,7 +5846,7 @@ msgstr ""
 #: modules/price-list/widgets/price-list.php:998
 #: modules/price-table/widgets/price-table.php:163
 #: modules/retina-image/widgets/retina-image.php:491
-#: modules/social-share/widgets/social-share.php:1034
+#: modules/social-share/widgets/social-share.php:1036
 #: modules/team-member/widgets/team-member.php:871
 #: modules/team-member/widgets/team-member.php:1375
 #: modules/video/widgets/video.php:909 modules/video/widgets/video.php:1076
@@ -6103,7 +6103,7 @@ msgstr ""
 #: modules/ff-styler/widgets/ff-styler.php:1288
 #: modules/gf-styler/widgets/gf-styler.php:627
 #: modules/gf-styler/widgets/gf-styler.php:1611
-#: modules/social-share/widgets/social-share.php:758
+#: modules/social-share/widgets/social-share.php:760
 #: modules/wpf-styler/widgets/wpf-styler.php:501
 msgid "Border Size"
 msgstr ""
@@ -6588,7 +6588,7 @@ msgstr ""
 #: modules/offcanvas/widgets/offcanvas.php:460
 #: modules/posts/skins/skin-base.php:170
 #: modules/registration-form/widgets/registration-form.php:324
-#: modules/social-share/widgets/social-share.php:359
+#: modules/social-share/widgets/social-share.php:361
 #: modules/woocommerce/widgets/woo-categories.php:236
 #: modules/woocommerce/widgets/woo-categories.php:434
 #: modules/woocommerce/widgets/woo-mini-cart.php:270
@@ -9299,7 +9299,7 @@ msgstr ""
 #: modules/login-form/widgets/login-form.php:1080
 #: modules/party-propz-extension/module.php:440
 #: modules/retina-image/widgets/retina-image.php:236
-#: modules/social-share/widgets/social-share.php:536
+#: modules/social-share/widgets/social-share.php:538
 #: modules/team-member/widgets/team-member.php:562
 #: modules/timeline/widgets/timeline.php:864
 msgid "https://your-link.com"
@@ -9456,7 +9456,7 @@ msgstr ""
 #: modules/party-propz-extension/module.php:367
 #: modules/party-propz-extension/module.php:813
 #: modules/price-table/widgets/price-table.php:1201
-#: modules/social-share/widgets/social-share.php:484
+#: modules/social-share/widgets/social-share.php:486
 msgid "Horizontal Position"
 msgstr ""
 
@@ -9468,7 +9468,7 @@ msgstr ""
 #: modules/price-table/widgets/price-table.php:1920
 #: modules/price-table/widgets/price-table.php:2033
 #: modules/price-table/widgets/price-table.php:2201
-#: modules/social-share/widgets/social-share.php:450
+#: modules/social-share/widgets/social-share.php:452
 msgid "Vertical Position"
 msgstr ""
 
@@ -9509,7 +9509,7 @@ msgstr ""
 #: modules/posts/skins/skin-base.php:3609
 #: modules/price-table/widgets/price-table.php:339
 #: modules/price-table/widgets/price-table.php:809
-#: modules/social-share/widgets/social-share.php:356
+#: modules/social-share/widgets/social-share.php:358
 #: modules/team-member/widgets/team-member.php:288
 #: modules/welcome-music/widgets/welcome-music.php:252
 #: modules/woocommerce/widgets/woo-categories.php:481
@@ -11596,8 +11596,8 @@ msgid "Google"
 msgstr ""
 
 #: modules/login-form/widgets/login-form.php:2464
-#: modules/social-share/widgets/social-share.php:1200
-#: modules/social-share/widgets/social-share.php:1290
+#: modules/social-share/widgets/social-share.php:1202
+#: modules/social-share/widgets/social-share.php:1292
 msgid "Facebook"
 msgstr ""
 
@@ -12345,7 +12345,7 @@ msgid "Double Line"
 msgstr ""
 
 #: modules/nav-menu/widgets/nav-menu.php:1146
-#: modules/social-share/widgets/social-share.php:331
+#: modules/social-share/widgets/social-share.php:333
 msgid "Framed"
 msgstr ""
 
@@ -12448,7 +12448,7 @@ msgid "Size (px)"
 msgstr ""
 
 #: modules/offcanvas/widgets/offcanvas.php:461
-#: modules/social-share/widgets/social-share.php:360
+#: modules/social-share/widgets/social-share.php:362
 #: modules/woocommerce/widgets/woo-mini-cart.php:1225
 msgid "Floating"
 msgstr ""
@@ -13070,7 +13070,7 @@ msgstr ""
 
 #: modules/posts/skins/skin-base.php:2129 modules/posts/skins/skin-feed.php:653
 #: modules/posts/skins/skin-news.php:413
-#: modules/social-share/widgets/social-share.php:330
+#: modules/social-share/widgets/social-share.php:332
 msgid "Flat"
 msgstr ""
 
@@ -13346,7 +13346,7 @@ msgid "Make sure all your posts do have a featured image."
 msgstr ""
 
 #: modules/posts/widgets/posts-base.php:101
-#: modules/social-share/widgets/social-share.php:326
+#: modules/social-share/widgets/social-share.php:328
 msgid "Skin"
 msgstr ""
 
@@ -13642,21 +13642,21 @@ msgid "Image Area"
 msgstr ""
 
 #: modules/price-list/widgets/price-list.php:750
-#: modules/social-share/widgets/social-share.php:342
+#: modules/social-share/widgets/social-share.php:344
 #: modules/team-member/widgets/team-member.php:602
 #: modules/team-member/widgets/team-member.php:753
 msgid "Shape"
 msgstr ""
 
 #: modules/price-list/widgets/price-list.php:755
-#: modules/social-share/widgets/social-share.php:346
+#: modules/social-share/widgets/social-share.php:348
 #: modules/team-member/widgets/team-member.php:607
 #: modules/team-member/widgets/team-member.php:758
 msgid "Rounded"
 msgstr ""
 
 #: modules/price-list/widgets/price-list.php:756
-#: modules/social-share/widgets/social-share.php:347
+#: modules/social-share/widgets/social-share.php:349
 #: modules/team-member/widgets/team-member.php:608
 #: modules/team-member/widgets/team-member.php:759
 #: modules/woocommerce/skins/skin-grid-default.php:825
@@ -14476,45 +14476,45 @@ msgstr ""
 msgid "UAE Shapes"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:203
+#: modules/social-share/widgets/social-share.php:204
 msgid "Select Network"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:236
-#: modules/social-share/widgets/social-share.php:1564
+#: modules/social-share/widgets/social-share.php:237
+#: modules/social-share/widgets/social-share.php:1566
 #. translators: %s Pinterest share link
 msgid ""
 "To share the post on Pinterest you must assign a featured image for the "
 "Post/Page."
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:247
+#: modules/social-share/widgets/social-share.php:248
 msgid "Custom Label"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:258
+#: modules/social-share/widgets/social-share.php:259
 #: modules/team-member/widgets/team-member.php:396
 #: modules/team-member/widgets/team-member.php:1105
 msgid "Social Icons"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:296
+#: modules/social-share/widgets/social-share.php:298
 msgid "Icon & Text"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:329
+#: modules/social-share/widgets/social-share.php:331
 msgid "Gradient"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:332
+#: modules/social-share/widgets/social-share.php:334
 msgid "Minimal"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:333
+#: modules/social-share/widgets/social-share.php:335
 msgid "Boxed"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:345
+#: modules/social-share/widgets/social-share.php:347
 #: modules/team-member/widgets/team-member.php:606
 #: modules/woocommerce/skins/skin-grid-default.php:826
 #: modules/woocommerce/skins/skin-grid-default.php:1042
@@ -14526,185 +14526,185 @@ msgstr ""
 msgid "Square"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:519
+#: modules/social-share/widgets/social-share.php:521
 msgid "Target URL"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:522
+#: modules/social-share/widgets/social-share.php:524
 msgid "Current Page"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:652
+#: modules/social-share/widgets/social-share.php:654
 msgid "Button Size"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:685
+#: modules/social-share/widgets/social-share.php:687
 msgid "Button Height"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:818
+#: modules/social-share/widgets/social-share.php:820
 #: modules/team-member/widgets/team-member.php:1198
 msgid "Official Color"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:819
+#: modules/social-share/widgets/social-share.php:821
 msgid "Custom color"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:839
-#: modules/social-share/widgets/social-share.php:949
+#: modules/social-share/widgets/social-share.php:841
+#: modules/social-share/widgets/social-share.php:951
 msgid "Primary Color"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:887
-#: modules/social-share/widgets/social-share.php:1000
+#: modules/social-share/widgets/social-share.php:889
+#: modules/social-share/widgets/social-share.php:1002
 msgid "Secondary Color"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1050
+#: modules/social-share/widgets/social-share.php:1052
 msgid "Text Padding"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1076
-#: modules/social-share/widgets/social-share.php:1083
+#: modules/social-share/widgets/social-share.php:1078
+#: modules/social-share/widgets/social-share.php:1085
 msgid "Share Count"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1084
+#: modules/social-share/widgets/social-share.php:1086
 msgid "Enable this option to display the total share count of target post/page."
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1096
+#: modules/social-share/widgets/social-share.php:1098
 msgid "Show Fake Count"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1101
+#: modules/social-share/widgets/social-share.php:1103
 msgid "Static Count"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1102
+#: modules/social-share/widgets/social-share.php:1104
 msgid "Random Count"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1114
+#: modules/social-share/widgets/social-share.php:1116
 msgid "Fake Count"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1115
+#: modules/social-share/widgets/social-share.php:1117
 msgid "Note: Enter the number of fake count you want to display."
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1131
+#: modules/social-share/widgets/social-share.php:1133
 msgid "Minimum Count"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1147
+#: modules/social-share/widgets/social-share.php:1149
 msgid "Maximum Count"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1177
+#: modules/social-share/widgets/social-share.php:1179
 #. translators: %s admin link
 msgid "Fake Count Limit"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1178
+#: modules/social-share/widgets/social-share.php:1180
 msgid ""
 "Once the original count reaches this limit the fake count will be hidden. "
 "Only the original count will be shown after this limit reaches."
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1194
+#: modules/social-share/widgets/social-share.php:1196
 msgid "Fetch Share Count From"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1195
+#: modules/social-share/widgets/social-share.php:1197
 msgid ""
 "Choose Social media from above actions to display share count of particular "
 "media."
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1201
-#: modules/social-share/widgets/social-share.php:1231
+#: modules/social-share/widgets/social-share.php:1203
+#: modules/social-share/widgets/social-share.php:1233
 #. translators: %s admin link
 msgid "Twitter"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1202
-#: modules/social-share/widgets/social-share.php:1258
+#: modules/social-share/widgets/social-share.php:1204
+#: modules/social-share/widgets/social-share.php:1260
 msgid "Pinterest"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1203
+#: modules/social-share/widgets/social-share.php:1205
 msgid "Tumblr"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1204
+#: modules/social-share/widgets/social-share.php:1206
 msgid "Reddit"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1205
+#: modules/social-share/widgets/social-share.php:1207
 msgid "Buffer"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1206
+#: modules/social-share/widgets/social-share.php:1208
 msgid "VK"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1207
+#: modules/social-share/widgets/social-share.php:1209
 msgid "OK"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1246
+#: modules/social-share/widgets/social-share.php:1248
 #. translators: %s link
 msgid ""
 "For Twitter you will need to register your website %s in order to return "
 "the share counts."
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1272
+#: modules/social-share/widgets/social-share.php:1274
 msgid ""
 "For pinterest you need to set up a featured image and Image URL should "
 "contain https://"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1304
+#: modules/social-share/widgets/social-share.php:1306
 #. translators: %s admin link
 msgid ""
 "Please configure Facebook Access Token from <a href=\"%s\" "
 "target=\"_blank\" rel=\"noopener\">here</a>."
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1336
+#: modules/social-share/widgets/social-share.php:1338
 msgid "Share "
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1337
+#: modules/social-share/widgets/social-share.php:1339
 msgid "Custom Text"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1388
+#: modules/social-share/widgets/social-share.php:1390
 msgid "Text/Icon Color"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1520
+#: modules/social-share/widgets/social-share.php:1522
 msgid "Floating Social Share - ID"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1521
+#: modules/social-share/widgets/social-share.php:1523
 msgid ""
 "Click here to edit the \"Floating Social Share\" settings. This text will "
 "not be visible on frontend."
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1548
+#: modules/social-share/widgets/social-share.php:1550
 msgid ""
 "Please set the Facebook token from Dashboard -> Settings -> UAE -> Social "
 "Share - Facebook Access Token."
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1691
-#: modules/social-share/widgets/social-share.php:1700
-#: modules/social-share/widgets/social-share.php:1720
+#: modules/social-share/widgets/social-share.php:1693
+#: modules/social-share/widgets/social-share.php:1702
+#: modules/social-share/widgets/social-share.php:1722
 #. translators: %s share text
 msgid "Share on %s"
 msgstr ""

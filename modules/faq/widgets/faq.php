@@ -1412,6 +1412,7 @@ class FAQ extends Common_Widget {
 
 						if ( ! ( '' === $key['question'] || '' === $key['answer'] ) ) {
 							$heading_size_tag = UAEL_Helper::validate_html_tag( $settings['heading_tag'] );
+							$unique_id        = uniqid(); 
 							?>
 							<div <?php echo wp_kses_post( $this->get_render_attribute_string( 'uael_faq_accordion_' . $key['_id'] ) ); ?> role="tablist">
 								<div class= "uael-accordion-title" aria-expanded="false" role="tab">
@@ -1419,7 +1420,7 @@ class FAQ extends Common_Widget {
 										<span class="uael-accordion-icon-closed"><?php Icons_Manager::render_icon( $settings['selected_icon'] ); ?></span>
 										<span class="uael-accordion-icon-opened"><?php Icons_Manager::render_icon( $settings['selected_active_icon'] ); ?></span>
 									</span>
-									<<?php echo esc_html( $heading_size_tag ); ?> class="uael-question-<?php echo esc_attr( $key['_id'] ); ?> uael-question-span" tabindex="0" id="uael-faq-<?php echo esc_attr( $count ); ?>"><?php echo wp_kses_post( $key['question'] ); ?></<?php echo esc_html( $heading_size_tag ); ?>>
+									<<?php echo esc_html( $heading_size_tag ); ?> class="uael-question-<?php echo esc_attr( $key['_id'] ); ?> uael-question-span" tabindex="0" id="uael-faq-<?php echo esc_attr( $count . '-' . $unique_id ); ?>"><?php echo wp_kses_post( $key['question'] ); ?></<?php echo esc_html( $heading_size_tag ); ?>>
 								</div>
 								<div class="uael-accordion-content" role="tabpanel">
 									<span>

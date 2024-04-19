@@ -1298,7 +1298,7 @@ class Woo_Categories extends Common_Widget {
 		$slick_options = array(
 			'slidesToShow'   => ( $settings['slides_to_show'] ) ? $settings['slides_to_show'] : '4',
 			'slidesToScroll' => ( $settings['slides_to_scroll'] ) ? absint( $settings['slides_to_scroll'] ) : 1,
-			'autoplaySpeed'  => ( $settings['autoplay_speed'] ) ? absint( $settings['autoplay_speed'] ) : 5000,
+			'autoplaySpeed'  => ( isset( $settings['autoplay_speed'] ) && $settings['autoplay_speed'] ) ? absint( $settings['autoplay_speed'] ) : 5000,
 			'autoplay'       => ( 'yes' === $settings['autoplay'] ),
 			'infinite'       => ( 'yes' === $settings['infinite'] ),
 			'pauseOnHover'   => ( 'yes' === $settings['pause_on_hover'] ),
