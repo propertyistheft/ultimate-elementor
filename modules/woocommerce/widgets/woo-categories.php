@@ -1573,9 +1573,11 @@ class Woo_Categories extends Common_Widget {
 		$node_id  = $this->get_id();
 		$this->set_slider_attr();
 
-		$out_html      = '<div class="uael-woo-categories uael-woo-categories-' . $settings['products_layout_type'] . ' uael-woocommerce"' . $this->get_render_attribute_string( 'cat-wrapper' ) . '>';
-			$out_html .= $this->query_product_categories();
-		$out_html     .= '</div>';
+		// Sanitize the layout type.
+		$products_layout_type = isset( $settings['products_layout_type'] ) ? sanitize_text_field( $settings['products_layout_type'] ) : '';
+		$out_html             = '<div class="uael-woo-categories uael-woo-categories-' . esc_attr( $products_layout_type ) . ' uael-woocommerce"' . $this->get_render_attribute_string( 'cat-wrapper' ) . '>';
+			$out_html        .= $this->query_product_categories();
+		$out_html            .= '</div>';
 
 		echo $out_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
 	}

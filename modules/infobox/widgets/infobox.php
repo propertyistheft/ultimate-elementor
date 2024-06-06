@@ -2180,7 +2180,7 @@ class Infobox extends Common_Widget {
 					if ( 'photo' === $settings['uael_infobox_image_type'] ) {
 						if ( 'media' === $settings['uael_infobox_photo_type'] ) {
 							if ( ! empty( $settings['infobox_image']['url'] ) ) {
-								$this->add_render_attribute( 'image', 'src', $settings['infobox_image']['url'] );
+								$this->add_render_attribute( 'image', 'src', esc_url( $settings['infobox_image']['url'] ) );
 								$this->add_render_attribute( 'image', 'alt', Control_Media::get_image_alt( $settings['infobox_image'] ) );
 								$this->add_render_attribute( 'image', 'title', Control_Media::get_image_title( $settings['infobox_image'] ) );
 
@@ -2360,7 +2360,7 @@ class Infobox extends Common_Widget {
 		$settings = $this->get_settings_for_display();
 
 		$this->add_render_attribute( 'content-wrapper', 'class', 'elementor-button-content-wrapper' );
-		$this->add_render_attribute( 'icon-align', 'class', 'elementor-align-icon-' . $settings['infobox_button_icon_position'] );
+		$this->add_render_attribute( 'icon-align', 'class', 'elementor-align-icon-' . esc_attr( $settings['infobox_button_icon_position'] ) );
 		$this->add_render_attribute( 'icon-align', 'class', 'elementor-button-icon' );
 
 		$this->add_render_attribute( 'text', 'class', 'elementor-button-text' );

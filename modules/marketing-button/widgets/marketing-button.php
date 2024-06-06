@@ -730,9 +730,9 @@ class Marketing_Button extends Common_Widget {
 		$settings = $this->get_settings_for_display();
 
 		$this->add_render_attribute( 'content-wrapper', 'class', 'elementor-button-content-wrapper' );
-		$this->add_render_attribute( 'content-wrapper', 'class', 'uael-buttons-icon-' . $settings['icon_align'] );
+		$this->add_render_attribute( 'content-wrapper', 'class', 'uael-buttons-icon-' . esc_attr( $settings['icon_align'] ) );
 
-		$this->add_render_attribute( 'icon-align', 'class', 'elementor-align-icon-' . $settings['icon_align'] );
+		$this->add_render_attribute( 'icon-align', 'class', 'elementor-align-icon-' . esc_attr( $settings['icon_align'] ) );
 		$this->add_render_attribute( 'icon-align', 'class', 'elementor-button-icon' );
 
 		$this->add_render_attribute( 'btn-text', 'class', 'elementor-button-text' );
@@ -785,13 +785,13 @@ class Marketing_Button extends Common_Widget {
 		$this->add_render_attribute( 'button', 'class', 'elementor-button' );
 
 		if ( ! empty( $settings['size'] ) ) {
-			$this->add_render_attribute( 'button', 'class', 'elementor-size-' . $settings['size'] );
+			$this->add_render_attribute( 'button', 'class', 'elementor-size-' . esc_attr( $settings['size'] ) );
 		}
 
-		$this->add_render_attribute( 'button', 'class', 'uael-marketing-buttons-' . $settings['icon_align'] );
+		$this->add_render_attribute( 'button', 'class', 'uael-marketing-buttons-' . esc_attr( $settings['icon_align'] ) );
 
 		if ( $settings['hover_animation'] ) {
-			$this->add_render_attribute( 'button', 'class', 'elementor-animation-' . $settings['hover_animation'] );
+			$this->add_render_attribute( 'button', 'class', 'elementor-animation-' . esc_attr( $settings['hover_animation'] ) );
 		}
 		?>
 		<div class="uael-marketing-button">

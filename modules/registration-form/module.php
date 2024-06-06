@@ -380,7 +380,7 @@ class Module extends Module_Base {
 
 				$phone_val = $user_args['phone'];
 
-				if ( 'administrator' === $user_args['role'] ) {
+				if ( 'administrator' === $user_args['role'] || 'editor' === $user_args['role'] ) {
 					$user_args['role'] = get_option( 'default_role' );
 				}
 

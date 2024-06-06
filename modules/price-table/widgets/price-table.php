@@ -3669,10 +3669,10 @@ class Price_Table extends Common_Widget {
 			}
 			$this->add_render_attribute( 'button', 'class', ' elementor-button' );
 			if ( ! empty( $settings['button_size'] ) ) {
-				$this->add_render_attribute( 'button', 'class', 'elementor-size-' . $settings['button_size'] );
+				$this->add_render_attribute( 'button', 'class', 'elementor-size-' . esc_attr( $settings['button_size'] ) );
 			}
 			if ( ! empty( $settings['button_hover_animation'] ) ) {
-				$this->add_render_attribute( 'button', 'class', 'elementor-animation-' . $settings['button_hover_animation'] );
+				$this->add_render_attribute( 'button', 'class', 'elementor-animation-' . esc_attr( $settings['button_hover_animation'] ) );
 			}
 
 			?>

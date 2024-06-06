@@ -2569,9 +2569,12 @@ class Image_Gallery extends Common_Widget {
 		$unjustified = '';
 		$row_margin  = '';
 
+		// Sanitize the gallery style.
+		$gallery_style = isset( $settings['gallery_style'] ) ? sanitize_text_field( $settings['gallery_style'] ) : '';
+
 		$wrap_class = array(
 			'uael-img-gallery-wrap',
-			'uael-img-' . $settings['gallery_style'] . '-wrap',
+			'uael-img-' . esc_attr( $gallery_style ) . '-wrap',
 		);
 
 		if ( 'grid' === $settings['gallery_style'] || 'masonry' === $settings['gallery_style'] || 'justified' === $settings['gallery_style'] ) {

@@ -17,8 +17,10 @@ if ( 'icon' === $settings['uael_infobox_image_type'] || 'photo' === $settings['u
 	$this->add_render_attribute( 'classname', 'class', 'uael-imgicon-style-' . $settings['infobox_imgicon_style'] );
 
 	if ( 'above-title' === $settings['infobox_image_position'] || 'below-title' === $settings['infobox_image_position'] ) {
-		$this->add_render_attribute( 'classname', 'class', ' uael-infobox-' . $settings['infobox_align'] );
-	}
+		if ( isset( $settings['infobox_align'] ) ) {
+			$this->add_render_attribute( 'classname', 'class', ' uael-infobox-' . $settings['infobox_align'] );
+		}
+	}   
 	if ( 'left-title' === $settings['infobox_image_position'] || 'left' === $settings['infobox_image_position'] ) {
 		$this->add_render_attribute( 'classname', 'class', ' uael-infobox-left' );
 	}

@@ -137,30 +137,35 @@ class Acf_Text extends Condition {
 
 		$show = false;
 
-		// Handle string value for correct comparison boolean (true_false) acf field.
-		if ( ( 'true_false' === get_field_object( $key )['type'] ) && 'true' === $value ) {
-			$value = true;
-		}
+		// Ensure the ACF function exists before calling it.
+		if ( function_exists( 'get_field_object' ) ) {
+			$field_object = get_field_object( $key );
 
-		global $post;
-
-		$field_value = get_field( $key );
-
-		if ( is_archive() ) {
-			$term = get_queried_object();
-
-			if ( get_class( $term ) === 'WP_Term' ) {
-				$field_value = get_field( $key, $term );
+			// Handle string value for correct comparison boolean (true_false) acf field.
+			if ( ( 'true_false' === $field_object['type'] ) && 'true' === $value ) {
+				$value = true;
 			}
-		}
 
-		if ( $field_value ) {
-			$field_settings = get_field_object( $key );
+			global $post;
 
-			switch ( $field_settings['type'] ) {
-				default:
-					$show = $value === $field_value;
-					break;
+			$field_value = get_field( $key );
+
+			if ( is_archive() ) {
+				$term = get_queried_object();
+
+				if ( get_class( $term ) === 'WP_Term' ) {
+					$field_value = get_field( $key, $term );
+				}
+			}
+
+			if ( $field_value ) {
+				$field_settings = get_field_object( $key );
+
+				switch ( $field_settings['type'] ) {
+					default:
+						$show = $value === $field_value;
+						break;
+				}
 			}
 		}
 

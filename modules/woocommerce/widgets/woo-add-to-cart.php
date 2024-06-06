@@ -1090,7 +1090,7 @@ class Woo_Add_To_Cart extends Common_Widget {
 				$atc_html     .= '</span>';
 			}
 
-				$atc_html .= '<span class="uael-atc-btn-text">' . $settings['btn_text'] . '</span>';
+				$atc_html .= '<span class="uael-atc-btn-text">' . esc_html( $settings['btn_text'] ) . '</span>';
 				$atc_html .= '</span>';
 				$atc_html .= '</a>';
 				$atc_html .= '</div>';

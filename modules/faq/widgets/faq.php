@@ -1363,7 +1363,7 @@ class FAQ extends Common_Widget {
 			<?php
 		}
 
-		$this->add_render_attribute( 'uael-faq-container', 'class', 'uael-faq-container uael-faq-layout-' . $settings['faq_layout'] );
+		$this->add_render_attribute( 'uael-faq-container', 'class', 'uael-faq-container uael-faq-layout-' . esc_attr( $settings['faq_layout'] ) );
 
 		if ( 'grid' === $settings['faq_layout'] ) {
 			$this->add_render_attribute( 'uael-faq-container', 'class', 'elementor-grid' );

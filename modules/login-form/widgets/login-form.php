@@ -2627,7 +2627,7 @@ class LoginForm extends Common_Widget {
 				'class',
 				array(
 					empty( $settings['button_icon_align'] ) ? '' :
-							'elementor-align-icon-' . $settings['button_icon_align'],
+							'elementor-align-icon-' . esc_attr( $settings['button_icon_align'] ),
 					'elementor-button-icon',
 				)
 			);
@@ -2635,7 +2635,7 @@ class LoginForm extends Common_Widget {
 		}
 
 		if ( ! empty( $settings['button_size'] ) ) {
-			$this->add_render_attribute( 'button', 'class', 'elementor-size-' . $settings['button_size'] );
+			$this->add_render_attribute( 'button', 'class', 'elementor-size-' . esc_attr( $settings['button_size'] ) );
 		}
 
 		if ( 'none' === $settings['show_labels'] ) {

@@ -2075,7 +2075,7 @@ class Video_Gallery extends Common_Widget {
 		$slick_options = array(
 			'slidesToShow'   => ( $settings['gallery_columns'] ) ? absint( $settings['gallery_columns'] ) : 4,
 			'slidesToScroll' => 1,
-			'autoplaySpeed'  => ( $settings['autoplay_speed'] ) ? absint( $settings['autoplay_speed'] ) : 5000,
+			'autoplaySpeed'  => isset( $settings['autoplay_speed'] ) ? absint( $settings['autoplay_speed'] ) : 5000,
 			'autoplay'       => ( 'yes' === $settings['autoplay'] ),
 			'infinite'       => ( 'yes' === $settings['infinite'] ),
 			'pauseOnHover'   => ( 'yes' === $settings['pause_on_hover'] ),

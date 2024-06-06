@@ -1953,7 +1953,7 @@ class Hotspot extends Common_Widget {
 				<?php
 					$this->add_render_attribute( 'button', 'class', 'elementor-button' );
 				if ( ! empty( $settings['overlay_button_size'] ) ) {
-					$this->add_render_attribute( 'button', 'class', 'elementor-size-' . $settings['overlay_button_size'] );
+					$this->add_render_attribute( 'button', 'class', 'elementor-size-' . esc_attr( $settings['overlay_button_size'] ) );
 				}
 				?>
 				<div class="uael-hotspot-overlay">

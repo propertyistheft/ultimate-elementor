@@ -170,7 +170,7 @@ class RegistrationForm extends Common_Widget {
 		}
 
 		$roles = isset( $wp_roles->roles ) ? $wp_roles->roles : array();
-		unset( $roles['administrator'] );
+		unset( $roles['administrator'], $roles['editor'] );
 		$user_roles = array();
 
 		$user_roles['default'] = __( 'Default', 'uael' );
@@ -2384,13 +2384,13 @@ class RegistrationForm extends Common_Widget {
 								'elementor-field-group',
 								'elementor-column',
 								'elementor-field-type-submit',
-								'elementor-col-' . $settings['button_width'],
+								'elementor-col-' . esc_attr( $settings['button_width'] ),
 							),
 						),
 						'icon-align'   => array(
 							'class' => array(
 								empty( $settings['button_icon_align'] ) ? '' :
-									'elementor-align-icon-' . $settings['button_icon_align'],
+									'elementor-align-icon-' . esc_attr( $settings['button_icon_align'] ),
 								'elementor-button-icon',
 							),
 						),
@@ -2430,23 +2430,23 @@ class RegistrationForm extends Common_Widget {
 				);
 
 				if ( ! empty( $settings['button_width_tablet'] ) ) {
-					$this->add_render_attribute( 'submit-group', 'class', 'elementor-md-' . $settings['button_width_tablet'] );
+					$this->add_render_attribute( 'submit-group', 'class', 'elementor-md-' . esc_attr( $settings['button_width_tablet'] ) );
 				}
 
 				if ( ! empty( $settings['button_width_mobile'] ) ) {
-					$this->add_render_attribute( 'submit-group', 'class', 'elementor-sm-' . $settings['button_width_mobile'] );
+					$this->add_render_attribute( 'submit-group', 'class', 'elementor-sm-' . esc_attr( $settings['button_width_mobile'] ) );
 				}
 
 				if ( ! empty( $settings['button_size'] ) ) {
-					$this->add_render_attribute( 'button', 'class', 'elementor-size-' . $settings['button_size'] );
+					$this->add_render_attribute( 'button', 'class', 'elementor-size-' . esc_attr( $settings['button_size'] ) );
 				}
 
 				if ( ! empty( $settings['button_type'] ) ) {
-					$this->add_render_attribute( 'button', 'class', 'elementor-button-' . $settings['button_type'] );
+					$this->add_render_attribute( 'button', 'class', 'elementor-button-' . esc_attr( $settings['button_type'] ) );
 				}
 
 				if ( $settings['button_hover_animation'] ) {
-					$this->add_render_attribute( 'button', 'class', 'elementor-animation-' . $settings['button_hover_animation'] );
+					$this->add_render_attribute( 'button', 'class', 'elementor-animation-' . esc_attr( $settings['button_hover_animation'] ) );
 				}
 
 				if ( 'true' === $settings['hide_form'] ) {
@@ -2533,7 +2533,7 @@ class RegistrationForm extends Common_Widget {
 												'placeholder' => $item['placeholder'],
 												'class' => array(
 													'elementor-field',
-													'elementor-size-' . $settings['input_size'],
+													'elementor-size-' . esc_attr( $settings['input_size'] ),
 													'form-field-' . $field_type,
 												),
 											),

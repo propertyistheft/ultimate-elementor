@@ -2037,14 +2037,14 @@ class Offcanvas extends Common_Widget {
 		$this->add_render_attribute( 'button', 'class', 'uael-offcanvas-trigger elementor-button-link elementor-button elementor-clickable' );
 
 		if ( ! empty( $settings['btn_size'] ) ) {
-			$this->add_render_attribute( 'button', 'class', 'elementor-size-' . $settings['btn_size'] );
+			$this->add_render_attribute( 'button', 'class', 'elementor-size-' . esc_attr( $settings['btn_size'] ) );
 		}
 
 		$position = '';
 
 		if ( 'button' === $settings['offcanvas_on'] ) {
 			if ( 'floating' === $settings['uael_display_position'] ) {
-				$position = ' uael-offcanvas-action-alignment-' . $settings['uael_display_floating_align'];
+				$position = ' uael-offcanvas-action-alignment-' . esc_attr( $settings['uael_display_floating_align'] );
 
 				$this->add_render_attribute( 'button', 'class', '' . $position . '' );
 			} else {
@@ -2155,7 +2155,7 @@ class Offcanvas extends Common_Widget {
 		$this->add_render_attribute(
 			'icon-align',
 			array(
-				'class' => 'elementor-button-icon elementor-align-icon-' . $settings['offcanvas_button_icon_position'],
+				'class' => 'elementor-button-icon elementor-align-icon-' . esc_attr( $settings['offcanvas_button_icon_position'] ),
 			)
 		);
 
@@ -2374,7 +2374,7 @@ class Offcanvas extends Common_Widget {
 				'uael-custom-offcanvas',
 				$class,
 				$editor_mode_class,
-				'uael-offcanvas-type-' . $settings['offcanvas_type'],
+				'uael-offcanvas-type-' . esc_attr( $settings['offcanvas_type'] ),
 				$scrollclass,
 				$shadowclass,
 			)

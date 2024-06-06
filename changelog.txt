@@ -1,3 +1,10 @@
+Version 1.36.33, Tuesday, 4th June 2024
+- Improvement: Compatibility with latest Elementor and Elementor Pro 3.22 version.
+- Improvement: Improved code enforcement of widgets in edit mode.
+
+Version 1.36.32, Friday, 31st May 2024
+- Addressed a security bug.
+
 Version 1.36.31, Wednesday, 17th April 2024
 - Improvement: Compatibility with latest WordPress version 6.5
 - Improvement: Compatibility with latest Elementor and Elementor Pro 3.21 version.

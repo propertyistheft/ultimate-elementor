@@ -806,7 +806,7 @@ class Dual_Heading extends Common_Widget {
 
 		$this->add_render_attribute( 'uael-dual-heading', 'class', 'uael-module-content uael-dual-color-heading' );
 		if ( 'yes' === $settings['show_bg_text'] && ! empty( $settings['bg_text'] ) ) {
-			$this->add_render_attribute( 'uael-dual-heading', 'data-bg_text', $settings['bg_text'] );
+			$this->add_render_attribute( 'uael-dual-heading', 'data-bg_text', esc_attr( $settings['bg_text'] ) );
 		}
 
 		if ( 'yes' === $settings['normal_heading_bg'] ) {
@@ -823,7 +823,7 @@ class Dual_Heading extends Common_Widget {
 			$this->add_render_attribute( 'uael-dual-heading', 'class', 'uael-stack-desktop-yes' );
 		}
 
-		$this->add_render_attribute( 'uael-dual-heading', 'class', 'uael-heading-stack-' . $settings['heading_stack_on'] );
+		$this->add_render_attribute( 'uael-dual-heading', 'class', 'uael-heading-stack-' . esc_attr( $settings['heading_stack_on'] ) );
 
 		$dual_html_tag = UAEL_Helper::validate_html_tag( $settings['dual_tag_selection'] );
 		?>

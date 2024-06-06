@@ -1619,7 +1619,7 @@ class Advanced_Heading extends Common_Widget {
 				if ( 'line_image' === $settings['heading_separator_style'] ) {
 					if ( 'media' === $settings['heading_image_type'] ) {
 						if ( ! empty( $settings['heading_image']['url'] ) ) {
-							$this->add_render_attribute( 'heading_image', 'src', $settings['heading_image']['url'] );
+							$this->add_render_attribute( 'heading_image', 'src', esc_url( $settings['heading_image']['url'] ) );
 							$this->add_render_attribute( 'heading_image', 'alt', Control_Media::get_image_alt( $settings['heading_image'] ) );
 
 							$image_html = '<img class="uael-photo-img" ' . $this->get_render_attribute_string( 'heading_image' ) . '>';
@@ -1676,7 +1676,7 @@ class Advanced_Heading extends Common_Widget {
 
 		$this->add_render_attribute( 'uael-heading-wrapper', 'class', 'uael-module-content uael-heading-wrapper' );
 		if ( 'yes' === $settings['show_bg_text'] && ! empty( $settings['bg_text'] ) ) {
-			$this->add_render_attribute( 'uael-heading-wrapper', 'data-bg-text', $settings['bg_text'] );
+			$this->add_render_attribute( 'uael-heading-wrapper', 'data-bg-text', esc_attr( $settings['bg_text'] ) );
 		}
 
 		if ( 'gradient' === $settings['heading_color_type'] ) {
