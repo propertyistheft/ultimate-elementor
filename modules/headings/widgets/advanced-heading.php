@@ -1751,7 +1751,7 @@ class Advanced_Heading extends Common_Widget {
 								if ( 'line_text' == settings.heading_separator_style ) {
 								var text_tag = render_html_tag( settings.text_tag );
 								#>
-									<{{text_tag}} class="uael-divider-text elementor-inline-editing" data-elementor-setting-key="heading_line_text" data-elementor-inline-editing-toolbar="basic">{{ settings.heading_line_text }}</{{text_tag}}>
+									<{{text_tag}} class="uael-divider-text elementor-inline-editing" data-elementor-setting-key="heading_line_text" data-elementor-inline-editing-toolbar="basic">{{ elementor.helpers.sanitize(settings.heading_line_text) }}</{{text_tag}}>
 								<# } #>
 							</div>
 							<div class="uael-separator-line uael-side-right">
@@ -1772,7 +1772,7 @@ class Advanced_Heading extends Common_Widget {
 		function render_subheading( pos ) {
 			if ( 'yes' == settings.show_sub_heading && '' != settings.sub_heading && pos == settings.subheading_position ) {
 			#>
-				<div class="uael-sub-heading elementor-inline-editing" data-elementor-setting-key="sub_heading" data-elementor-inline-editing-toolbar="advanced" >{{ settings.sub_heading }}</div>
+				<div class="uael-sub-heading elementor-inline-editing" data-elementor-setting-key="sub_heading" data-elementor-inline-editing-toolbar="advanced" >{{ elementor.helpers.sanitize(settings.sub_heading) }}</div>
 			<#
 			}
 		}
@@ -1853,12 +1853,17 @@ class Advanced_Heading extends Common_Widget {
 			return;
 		}
 		if ( '' != settings.heading_link.url ) {
-			view.addRenderAttribute( 'url', 'href', settings.heading_link.url );
+			var urlPattern = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$|^www\.[^\s/$.?#].[^\s]*$/;
+			if( urlPattern.test( settings.heading_link.url )){
+				var heading_link = _.escape( settings.heading_link.url );
+				view.addRenderAttribute( 'url', 'href', heading_link );
+			}
 		}
 
 		view.addRenderAttribute( 'uael-heading-wrapper', 'class', 'uael-module-content uael-heading-wrapper' );
 		if ( 'yes' == settings.show_bg_text && '' != settings.bg_text ) {
-			view.addRenderAttribute( 'uael-heading-wrapper', 'data-bg-text', settings.bg_text );
+			var bg_text = elementor.helpers.sanitize( settings.bg_text );
+			view.addRenderAttribute( 'uael-heading-wrapper', 'data-bg-text', bg_text );
 		}
 
 		if ( 'gradient' == settings.heading_color_type ) {
@@ -1877,7 +1882,7 @@ class Advanced_Heading extends Common_Widget {
 				<# if ( '' != settings.heading_link.url ) { #>
 					<a {{ view.getRenderAttributeString( 'url' ) }} >
 				<# } #>
-				<span class="uael-heading-text elementor-inline-editing uael-size--{{ settings.size }}" data-elementor-setting-key="heading_title" data-elementor-inline-editing-toolbar="basic">{{ settings.heading_title }}</span>
+				<span class="uael-heading-text elementor-inline-editing uael-size--{{ elementor.helpers.sanitize( settings.size ) }}" data-elementor-setting-key="heading_title" data-elementor-inline-editing-toolbar="basic">{{ elementor.helpers.sanitize( settings.heading_title ) }}</span>
 				<# if ( '' != settings.heading_link.url ) { #>
 					</a>
 				<# } #>
@@ -1889,7 +1894,7 @@ class Advanced_Heading extends Common_Widget {
 
 			<# if ( 'yes' == settings.show_description && '' != settings.heading_description ) { #>
 				<div class="uael-subheading elementor-inline-editing" data-elementor-setting-key="heading_description" data-elementor-inline-editing-toolbar="basic" >
-					{{ settings.heading_description }}
+					{{ elementor.helpers.sanitize( settings.heading_description ) }}
 				</div>
 			<# } #>
 			<# render_separator( 'bottom' ); #>

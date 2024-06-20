@@ -2899,7 +2899,7 @@ class LoginForm extends Common_Widget {
 						</div>
 						<div class="uael-divider-content">
 							<# if ( '' !== settings.separator_line_text ) { #>
-								<span class="uael-divider-text elementor-inline-editing" data-elementor-setting-key="separator_line_text" data-elementor-inline-editing-toolbar="basic">{{ settings.separator_line_text }}</span>
+								<span class="uael-divider-text elementor-inline-editing" data-elementor-setting-key="separator_line_text" data-elementor-inline-editing-toolbar="basic">{{ elementor.helpers.sanitize(settings.separator_line_text) }}</span>
 							<# } #>
 						</div>
 						<div class="uael-separator-line uael-side-right">
@@ -2986,13 +2986,13 @@ class LoginForm extends Common_Widget {
 					<div class="elementor-form-fields-wrapper">
 						<#
 							fieldGroupClasses = 'elementor-field-type-text elementor-field-group elementor-column elementor-col-100';
-							var user_placeholder = ( 'yes' == settings.show_placeholder ) ? settings.user_placeholder : '';
-							var pass_placeholder = ( 'yes' == settings.show_placeholder ) ? settings.password_placeholder : '';
+							var user_placeholder = ( 'yes' == settings.show_placeholder ) ? elementor.helpers.sanitize(settings.user_placeholder) : '';
+							var pass_placeholder = ( 'yes' == settings.show_placeholder ) ? elementor.helpers.sanitize(settings.password_placeholder) : '';
 						#>
 
 						<div class="{{ fieldGroupClasses }}">
 							<# if ( 'custom' === settings.show_labels && '' !== settings.user_label ) { #>
-								<label class="elementor-field-label" for="user"> {{ settings.user_label }} </label>
+								<label class="elementor-field-label" for="user"> {{elementor.helpers.sanitize(settings.user_label)}} </label>
 							<# } else if ( 'default' === settings.show_labels ) { #>
 								<label class="elementor-field-label" for="user">
 									<?php echo esc_attr_e( 'Username or Email Address', 'uael' ); ?>
@@ -3006,17 +3006,17 @@ class LoginForm extends Common_Widget {
 
 							<# if ( 'custom' === settings.show_labels ) { #>
 
-								<input size="1" type="text" id="user" placeholder="{{ user_placeholder }}" class="uael-login-form-username elementor-field elementor-field-textual elementor-size-{{ settings.input_size }}" />
+								<input size="1" type="text" id="user" placeholder="{{ user_placeholder }}" class="uael-login-form-username elementor-field elementor-field-textual elementor-size-{{ elementor.helpers.sanitize( settings.input_size ) }}" />
 
 							<# } else if ( 'default' === settings.show_labels || 'none' === settings.show_labels ) { #>
 
 								<# if ( 'yes' == settings.show_placeholder ) { #>
 
-									<input size="1" type="text" id="user" placeholder="<?php echo esc_attr_e( 'Username or Email Address', 'uael' ); ?>" class="uael-login-form-username elementor-field elementor-field-textual elementor-size-{{ settings.input_size }}" />
+									<input size="1" type="text" id="user" placeholder="<?php echo esc_attr_e( 'Username or Email Address', 'uael' ); ?>" class="uael-login-form-username elementor-field elementor-field-textual elementor-size-{{ elementor.helpers.sanitize( settings.input_size ) }}" />
 
 								<# } else { #>
 
-									<input size="1" type="text" id="user" class="uael-login-form-username elementor-field elementor-field-textual elementor-size-{{ settings.input_size }}" />
+									<input size="1" type="text" id="user" class="uael-login-form-username elementor-field elementor-field-textual elementor-size-{{ elementor.helpers.sanitize( settings.input_size ) }}" />
 
 								<# } #>
 
@@ -3032,7 +3032,7 @@ class LoginForm extends Common_Widget {
 
 						<div class="{{ fieldGroupClasses }}">
 							<# if ( 'custom' === settings.show_labels && '' !== settings.password_label ) { #>
-								<label class="elementor-field-label" for="password"> {{ settings.password_label }} </label>
+								<label class="elementor-field-label" for="password"> {{elementor.helpers.sanitize(settings.password_label) }} </label>
 							<# } else if ( 'default' === settings.show_labels ) { #>
 								<label class="elementor-field-label" for="password">
 									<?php echo esc_attr_e( 'Password', 'uael' ); ?>
@@ -3042,17 +3042,17 @@ class LoginForm extends Common_Widget {
 
 								<# if ( 'custom' === settings.show_labels ) { #>
 
-									<input size="1" type="password" id="password" placeholder="{{ pass_placeholder }}" class="uael-login-form-password elementor-field elementor-field-textual elementor-size-{{ settings.input_size }}" />
+									<input size="1" type="password" id="password" placeholder="{{ pass_placeholder }}" class="uael-login-form-password elementor-field elementor-field-textual elementor-size-{{ elementor.helpers.sanitize( settings.input_size ) }}" />
 
 								<# } else if ( 'default' === settings.show_labels || 'none' === settings.show_labels ) { #>
 
 									<# if ( 'yes' == settings.show_placeholder ) { #>
 
-										<input size="1" type="password" id="password" placeholder="<?php echo esc_attr_e( 'Password', 'uael' ); ?>" class="uael-login-form-password elementor-field elementor-field-textual elementor-size-{{ settings.input_size }}" />
+										<input size="1" type="password" id="password" placeholder="<?php echo esc_attr_e( 'Password', 'uael' ); ?>" class="uael-login-form-password elementor-field elementor-field-textual elementor-size-{{ elementor.helpers.sanitize( settings.input_size ) }}" />
 
 									<# } else { #>
 
-										<input size="1" type="password" id="password" class="uael-login-form-password elementor-field elementor-field-textual elementor-size-{{ settings.input_size }}" />
+										<input size="1" type="password" id="password" class="uael-login-form-password elementor-field elementor-field-textual elementor-size-{{ elementor.helpers.sanitize( settings.input_size ) }}" />
 
 									<# } #>
 
@@ -3075,7 +3075,7 @@ class LoginForm extends Common_Widget {
 						<# } #>
 
 						<div class="elementor-field-group elementor-button-wrapper elementor-column elementor-field-type-submit elementor-col-100">
-							<button type="submit" class="uael-login-form-submit elementor-button elementor-size-{{ settings.button_size }}" data-ajax-enable="{{ settings.enable_ajax }}">
+							<button type="submit" class="uael-login-form-submit elementor-button elementor-size-{{ elementor.helpers.sanitize( settings.button_size ) }}" data-ajax-enable="{{ settings.enable_ajax }}">
 								<?php if ( UAEL_Helper::is_elementor_updated() ) { ?>
 									<# if ( settings.button_icon || settings.button_icon ) { #>
 										<span class="elementor-button-content-wrapper">
@@ -3092,7 +3092,7 @@ class LoginForm extends Common_Widget {
 									<# } #>
 								<?php } ?>
 									<# if ( settings.button_text ) { #>
-										<span class="elementor-button-text">{{ settings.button_text }}</span>
+										<span class="elementor-button-text">{{ elementor.helpers.sanitize(settings.button_text) }}</span>
 									<# } #>
 									<# if ( settings.button_icon || settings.button_icon ) { #>
 										</span>
@@ -3104,23 +3104,23 @@ class LoginForm extends Common_Widget {
 							<div class="uael-login-form-footer elementor-field-group elementor-column elementor-col-100">
 								<?php if ( get_option( 'users_can_register' ) ) { ?>
 									<# if ( settings.show_register ) { #>
-											<a class="uael-login-form-footer-link" href="{{ settings.show_register_url.url }}">
+											<a class="uael-login-form-footer-link" href="{{ _.escape(settings.show_register_url.url) }}">
 										<# if ( 'custom' === settings.show_register_select ) { #>
 										<# } else { #>
 											<a class="uael-login-form-footer-link" href="<?php echo esc_url( wp_registration_url() ); ?>">
 										<# } #>
-											<span class="elementor-inline-editing" data-elementor-setting-key="show_register_text" data-elementor-inline-editing-toolbar="basic">{{ settings.show_register_text }}</span>
+											<span class="elementor-inline-editing" data-elementor-setting-key="show_register_text" data-elementor-inline-editing-toolbar="basic">{{ elementor.helpers.sanitize(settings.show_register_text) }}</span>
 										</a>
 									<# } #>
 								<?php } ?>
 
 								<# if ( settings.show_lost_password ) { #>
 									<# if ( 'custom' === settings.lost_password_select ) { #>
-										<a class="uael-login-form-footer-link" href="{{ settings.lost_password_url.url }}">
+										<a class="uael-login-form-footer-link" href="{{ _.escape(settings.lost_password_url.url) }}">
 									<# } else { #>
 										<a class="uael-login-form-footer-link" href="<?php echo esc_url( wp_lostpassword_url() ); ?>">
 									<# } #>
-										<span class="elementor-inline-editing" data-elementor-setting-key="show_lost_password_text" data-elementor-inline-editing-toolbar="basic">{{ settings.show_lost_password_text }}</span>
+										<span class="elementor-inline-editing" data-elementor-setting-key="show_lost_password_text" data-elementor-inline-editing-toolbar="basic">{{ elementor.helpers.sanitize( settings.show_lost_password_text )}}</span>
 									</a>
 								<# } #>
 

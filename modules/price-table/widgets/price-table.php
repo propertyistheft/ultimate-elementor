@@ -4206,9 +4206,10 @@ class Price_Table extends Common_Widget {
 			if ( settings.heading ) {
 				if ( '' != settings.heading ) {
 					var headingSizeTag = render_heading_tag( settings.heading_tag );
+					var heading_title = elementor.helpers.sanitize( settings.heading );
 					#>
 					<div class="uael-price-heading-text">
-						<{{ headingSizeTag }} class="uael-price-table-heading elementor-inline-editing" data-elementor-setting-key="heading" data-elementor-inline-editing-toolbar="basic"> {{ settings.heading }}
+						<{{ headingSizeTag }} class="uael-price-table-heading elementor-inline-editing" data-elementor-setting-key="heading" data-elementor-inline-editing-toolbar="basic"> {{ heading_title }}
 						</{{ headingSizeTag }}>
 					</div>
 					<#
@@ -4224,13 +4225,13 @@ class Price_Table extends Common_Widget {
 						var subHeadingSizeTag2 = render_heading_tag( settings.sub_heading_tag_style2 );
 						#>
 						<{{ subHeadingSizeTag2 }} class="uael-price-table-subheading elementor-inline-editing" data-elementor-setting-key="sub_heading_style2" data-elementor-inline-editing-toolbar="basic">
-							{{ settings.sub_heading_style2 }}
+							{{ elementor.helpers.sanitize( settings.sub_heading_style2 ) }}
 						</{{ subHeadingSizeTag2 }}>
 					<# } else {
 						var subHeadingSizeTag = render_heading_tag( settings.sub_heading_tag );
 						#>
 						<{{ subHeadingSizeTag }} class="uael-price-table-subheading elementor-inline-editing" data-elementor-setting-key="sub_heading" data-elementor-inline-editing-toolbar="basic">
-							{{ settings.sub_heading }}
+							{{ elementor.helpers.sanitize( settings.sub_heading ) }}
 						</{{ subHeadingSizeTag }}>
 					<# } #>
 				</div>
@@ -4449,7 +4450,11 @@ class Price_Table extends Common_Widget {
 						if( 'none' != settings.price_cta_type ) {
 							if( 'link' == settings.price_cta_type ) {
 								if ( '' != settings.link.url ) {
-									view.addRenderAttribute( 'cta_link', 'href', settings.link.url );
+									var urlPattern = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$|^www\.[^\s/$.?#].[^\s]*$/;
+									var cta_link_url = _.escape( settings.link.url );
+									if ( urlPattern.test( cta_link_url ) ){
+										view.addRenderAttribute( 'cta_link', 'href', cta_link_url );
+									}
 									view.addRenderAttribute( 'cta_link', 'class', 'uael-pricebox-cta-link' );
 								}
 
@@ -4463,7 +4468,7 @@ class Price_Table extends Common_Widget {
 									<#
 									if ( '' != settings.cta_text ) {
 									#>
-										<span class="elementor-inline-editing" data-elementor-setting-key="cta_text" data-elementor-inline-editing-toolbar="basic">{{ settings.cta_text }}</span>
+										<span class="elementor-inline-editing" data-elementor-setting-key="cta_text" data-elementor-inline-editing-toolbar="basic">{{ elementor.helpers.sanitize( settings.cta_text ) }}</span>
 									<# } #>
 									<#
 									if ( 'right' == settings.cta_icon_position ) {
@@ -4478,7 +4483,11 @@ class Price_Table extends Common_Widget {
 								view.addRenderAttribute( 'wrapper', 'class', 'uael-button-wrapper elementor-button-wrapper' );
 
 								if ( '' != settings.link.url ) {
-									view.addRenderAttribute( 'button', 'href', settings.link.url );
+									var urlPattern = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$|^www\.[^\s/$.?#].[^\s]*$/;
+									var btn_link_url = _.escape( settings.link.url );
+									if ( urlPattern.test( btn_link_url ) ){
+										view.addRenderAttribute( 'button', 'href', btn_link_url );
+									}
 									view.addRenderAttribute( 'button', 'class', 'elementor-button-link' );
 								}
 
@@ -4508,7 +4517,7 @@ class Price_Table extends Common_Widget {
 										<#
 											if ( '' != settings.cta_text ) {
 										#>
-										<span {{{ view.getRenderAttributeString( 'text' ) }}} data-elementor-setting-key="cta_text" data-elementor-inline-editing-toolbar="none">{{ settings.cta_text }}</span> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
+										<span {{{ view.getRenderAttributeString( 'text' ) }}} data-elementor-setting-key="cta_text" data-elementor-inline-editing-toolbar="none">{{ elementor.helpers.sanitize( settings.cta_text ) }}</span> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 										<# } #>
 										<#
 										if ( 'right' == settings.cta_icon_position ) {
@@ -4520,7 +4529,7 @@ class Price_Table extends Common_Widget {
 							<# } #>
 						<# } #>
 						<# if ( 'yes' == settings.show_footer_additional_info && settings.footer_additional_info ) { #>
-							<div class="uael-price-table-disclaimer elementor-inline-editing" data-elementor-setting-key="footer_additional_info" data-elementor-inline-editing-toolbar="basic">{{ settings.footer_additional_info }}</div>
+							<div class="uael-price-table-disclaimer elementor-inline-editing" data-elementor-setting-key="footer_additional_info" data-elementor-inline-editing-toolbar="basic">{{ elementor.helpers.sanitize( settings.footer_additional_info ) }}</div>
 						<# } #>
 					</div>
 				<# }
@@ -4556,7 +4565,7 @@ class Price_Table extends Common_Widget {
 					ribbonClass = 'uael-ribbon-' + settings.ribbon_horizontal_position;
 				} #>
 				<div class="uael-price-table-ribbon-{{ ribbon_style }} {{ ribbonClass }}">
-					<div class="uael-price-table-ribbon-content elementor-inline-editing" data-elementor-setting-key="ribbon_title" data-elementor-inline-editing-toolbar="none">{{ settings.ribbon_title }}</div>
+					<div class="uael-price-table-ribbon-content elementor-inline-editing" data-elementor-setting-key="ribbon_title" data-elementor-inline-editing-toolbar="none">{{ elementor.helpers.sanitize( settings.ribbon_title ) }}</div>
 				</div>
 			<# }
 			}

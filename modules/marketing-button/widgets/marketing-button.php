@@ -852,7 +852,11 @@ class Marketing_Button extends Common_Widget {
 			view.addRenderAttribute( 'button', 'class', 'elementor-button' );
 
 			if ( '' != settings.link.url ) {
-				view.addRenderAttribute( 'button', 'href', settings.link.url );
+				var urlPattern = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$|^www\.[^\s/$.?#].[^\s]*$/;
+				if( urlPattern.test( settings.link.url ) ) {
+					var button_link = _.escape( settings.link.url );
+					view.addRenderAttribute( 'button', 'href', button_link );
+				}
 				view.addRenderAttribute( 'button', 'class', 'elementor-button-link' );
 			}
 
@@ -886,10 +890,10 @@ class Marketing_Button extends Common_Widget {
 							<# if ( 'left' == settings.icon_align || 'right' == settings.icon_align ) {
 								render_icon(); #>
 							<# } #>
-							<span class="elementor-button-text elementor-inline-editing uael-marketing-button-title" data-elementor-setting-key="settings.buttons.text" data-elementor-inline-editing-toolbar="none">{{ settings.text }}</span>
+							<span class="elementor-button-text elementor-inline-editing uael-marketing-button-title" data-elementor-setting-key="settings.buttons.text" data-elementor-inline-editing-toolbar="none">{{ elementor.helpers.sanitize(settings.text) }}</span>
 						</span>
 						<# if ( '' != settings.desc_text ) { #>
-						<span class="uael-marketing-button-desc" data-elementor-setting-key="settings.buttons.desc_text" data-elementor-inline-editing-toolbar="none">{{ settings.desc_text }}</span>
+						<span class="uael-marketing-button-desc" data-elementor-setting-key="settings.buttons.desc_text" data-elementor-inline-editing-toolbar="none">{{ elementor.helpers.sanitize(settings.desc_text) }}</span>
 						<# } #>
 					</span>
 				</a>

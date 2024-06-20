@@ -1772,9 +1772,10 @@ class Team_Member extends Common_Widget {
 							<# if ( '' !== settings.team_member_name ) {
 								view.addRenderAttribute( 'team_member_name', 'class', 'uael-team-name' );
 								view.addInlineEditingAttributes( 'team_member_name' );
-								var memberNameHtml = settings.team_member_name;
 
-								var nameSizeTag = settings.name_size;
+								var memberNameHtml = elementor.helpers.sanitize(settings.team_member_name);
+
+								var nameSizeTag = elementor.helpers.validateHTMLTag( settings.name_size );
 
 								if ( typeof elementor.helpers.validateHTMLTag === "function" ) {
 									nameSizeTag = elementor.helpers.validateHTMLTag( nameSizeTag );
@@ -1782,7 +1783,7 @@ class Team_Member extends Common_Widget {
 									nameSizeTag = UAEWidgetsData.allowed_tags.includes( nameSizeTag.toLowerCase() ) ? nameSizeTag : 'div';
 								}
 								#>
-								<{{ nameSizeTag }} {{{ view.getRenderAttributeString( 'team_member_name' )}}}>{{settings.team_member_name}}</{{ nameSizeTag }}> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
+								<{{ nameSizeTag }} {{{ view.getRenderAttributeString( 'team_member_name' )}}}>{{ memberNameHtml }}</{{ nameSizeTag }}> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 							<# } #>
 						</div>
 						<#
@@ -1799,7 +1800,7 @@ class Team_Member extends Common_Widget {
 
 								view.addInlineEditingAttributes( 'team_member_desig' );
 
-								var memberDesignHtml = settings.team_member_desig;
+								var memberDesignHtml = elementor.helpers.sanitize(settings.team_member_desig);
 								#>
 								<div {{ view.getRenderAttributeString( 'team_member_desig' ) }}>{{ memberDesignHtml }}</div>
 							<# } #>
@@ -1817,7 +1818,7 @@ class Team_Member extends Common_Widget {
 
 								view.addInlineEditingAttributes( 'team_member_desc' );
 
-								var memberDescHtml = settings.team_member_desc;
+								var memberDescHtml = elementor.helpers.sanitize(settings.team_member_desc);
 								#>
 								<div {{ view.getRenderAttributeString( 'team_member_desc' ) }}>{{ memberDescHtml }}</div>
 							<# } #>

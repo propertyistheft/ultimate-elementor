@@ -1254,8 +1254,12 @@ if ( ! class_exists( 'Price_List' ) ) {
 					#>
 
 					<# if ( 'yes' === settings.link_complete_box ) { #>
-						<# if ( settings.price_list[i].link.url ) { #>
-							<a href="{{ settings.price_list[i].link.url }}" class="uael-price-link-box">
+						<# if ( settings.price_list[i].link.url ) {
+							var urlPattern = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$|^www\.[^\s/$.?#].[^\s]*$/;
+							var price_list_url = _.escape( settings.price_list[i].link.url );
+							if ( urlPattern.test( price_list_url ) ){ #>
+								<a href="{{ price_list_url }}" class="uael-price-link-box">
+							<# } #>
 						<# } else { #>
 							<div class="uael-price-list-title">
 						<# } #>

@@ -2462,14 +2462,14 @@ class Infobox extends Common_Widget {
 					var prefixSizeTag = render_html_tag( settings.infobox_prefix_tag ); #>
 
 					<{{ prefixSizeTag }} class="uael-infobox-title-prefix elementor-inline-editing" data-elementor-setting-key="infobox_title_prefix" data-elementor-inline-editing-toolbar="basic" >
-						{{ settings.infobox_title_prefix }}
+						{{ elementor.helpers.sanitize( settings.infobox_title_prefix ) }}
 					</{{ prefixSizeTag }}>
 				<# } #>
 				<# if( 'after_prefix' == settings.infobox_separator_position ) {
 					render_separator();
 				} #>
 				<{{ headingSizeTag }} class="uael-infobox-title elementor-inline-editing" data-elementor-setting-key="infobox_title" data-elementor-inline-editing-toolbar="basic" >
-					{{ settings.infobox_title }}
+					{{ elementor.helpers.sanitize( settings.infobox_title ) }}
 				</{{ headingSizeTag }}>
 			</div>
 			<# render_image( 'right-title' ); #>
@@ -2571,9 +2571,14 @@ class Infobox extends Common_Widget {
 		<#
 		function render_link() {
 
-			if ( 'link' == settings.infobox_cta_type ) { #>
+			if ( 'link' == settings.infobox_cta_type ) {
+				var urlPattern = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$|^www\.[^\s/$.?#].[^\s]*$/;
+				var text_link_url = _.escape( settings.infobox_text_link.url );
+				if ( urlPattern.test( text_link_url ) ){
+					view.addRenderAttribute( 'link', 'href', text_link_url  );
+				}#>
 				<div class="uael-infobox-cta-link-style">
-					<a href="{{ settings.infobox_text_link.url }}" class="uael-infobox-cta-link">
+					<a {{{ view.getRenderAttributeString( 'link' ) }}} class="uael-infobox-cta-link"> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 						<#
 						if ( 'left' == settings.infobox_button_icon_position ) {
 						#>
@@ -2594,7 +2599,7 @@ class Infobox extends Common_Widget {
 								<?php } ?>
 							</span>
 						<# } #>
-						<span class="elementor-inline-editing" data-elementor-setting-key="infobox_link_text" data-elementor-inline-editing-toolbar="basic">{{ settings.infobox_link_text }}</span>
+						<span class="elementor-inline-editing" data-elementor-setting-key="infobox_link_text" data-elementor-inline-editing-toolbar="basic">{{ elementor.helpers.sanitize( settings.infobox_link_text ) }}</span>
 
 						<# if ( 'right' == settings.infobox_button_icon_position ) {
 						#>
@@ -2622,7 +2627,11 @@ class Infobox extends Common_Widget {
 
 				view.addRenderAttribute( 'wrapper', 'class', 'uael-button-wrapper elementor-button-wrapper' );
 				if ( '' != settings.infobox_text_link.url ) {
-					view.addRenderAttribute( 'button', 'href', settings.infobox_text_link.url );
+					var urlPattern = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$|^www\.[^\s/$.?#].[^\s]*$/;
+					var btn_link_url = _.escape( settings.infobox_text_link.url );
+					if( urlPattern.test( btn_link_url ) ){
+						view.addRenderAttribute( 'button', 'href', btn_link_url  );
+					}
 					view.addRenderAttribute( 'button', 'class', 'elementor-button-link' );
 				}
 				view.addRenderAttribute( 'button', 'class', 'elementor-button' );
@@ -2667,7 +2676,7 @@ class Infobox extends Common_Widget {
 									<i class="{{ settings.infobox_button_icon }}"></i>
 								</span>
 							<?php } ?>
-							<span {{{ view.getRenderAttributeString( 'text' ) }}} data-elementor-setting-key="infobox_button_text" data-elementor-inline-editing-toolbar="none">{{ settings.infobox_button_text }}</span> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
+							<span {{{ view.getRenderAttributeString( 'text' ) }}} data-elementor-setting-key="infobox_button_text" data-elementor-inline-editing-toolbar="none">{{ elementor.helpers.sanitize( settings.infobox_button_text ) }}</span> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 						</span>
 					</a>
 				</div>
@@ -2742,8 +2751,11 @@ class Infobox extends Common_Widget {
 				<div class="uael-infobox-left-right-wrap">
 					<#
 					if ( 'module' == settings.infobox_cta_type && '' != settings.infobox_text_link ) {
-					#>
-						<a href="{{ settings.infobox_text_link.url }}" class="uael-infobox-module-link"></a>
+						var urlPattern = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$|^www\.[^\s/$.?#].[^\s]*$/;
+						var module_link = _.escape( settings.infobox_text_link.url );
+						if( urlPattern.test( module_link ) ){ #>
+							<a href="{{ module_link }}" class="uael-infobox-module-link"></a>
+					<#	} #>
 					<# } #>
 					<# render_image( 'left' ); #>
 					<div class="uael-infobox-content">
@@ -2755,7 +2767,7 @@ class Infobox extends Common_Widget {
 						<# render_image( 'below-title' ); #>
 						<div class="uael-infobox-text-wrap">
 							<div class="uael-infobox-text elementor-inline-editing" data-elementor-setting-key="infobox_description" data-elementor-inline-editing-toolbar="advanced">
-								{{ settings.infobox_description }}
+								{{ elementor.helpers.sanitize( settings.infobox_description ) }}
 							</div>
 							<# if( 'after_description' == settings.infobox_separator_position ) {
 								render_separator();

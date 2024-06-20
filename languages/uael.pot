@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the Ultimate Addons for Elementor package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ultimate Addons for Elementor 1.36.33\n"
+"Project-Id-Version: Ultimate Addons for Elementor 1.36.34\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/ultimate-elementor\n"
 "POT-Creation-Date: 2024-06-03 17:40:32+00:00\n"

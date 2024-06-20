@@ -2154,13 +2154,13 @@ class Hotspot extends Common_Widget {
 					<#
 						view.addRenderAttribute( 'button', 'class', 'elementor-button' );
 						if ( '' != settings.overlay_button_size ) {
-							view.addRenderAttribute( 'button', 'class', 'elementor-size-' + settings.overlay_button_size );
+							view.addRenderAttribute( 'button', 'class', 'elementor-size-' + elementor.helpers.sanitize( settings.overlay_button_size ) );
 						}
 					#>
 					<div class="uael-hotspot-overlay">
 						<div class="uael-overlay-button">
 							<a {{{ view.getRenderAttributeString( 'button' ) }}}> <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
-								<span class="elementor-button-text elementor-inline-editing" data-elementor-setting-key="overlay_button_text" data-elementor-inline-editing-toolbar="none">{{ settings.overlay_button_text }}</span>
+								<span class="elementor-button-text elementor-inline-editing" data-elementor-setting-key="overlay_button_text" data-elementor-inline-editing-toolbar="none">{{ elementor.helpers.sanitize( settings.overlay_button_text ) }}</span>
 							</a>
 						</div>
 					</div>

@@ -776,7 +776,7 @@ class BaSlider extends Common_Widget {
 			};
 			before_img = elementor.imagesManager.getImageUrl( before_image );
 		} else {
-			before_img = settings.before_img_url;
+			before_img = _.escape( settings.before_img_url );
 		}
 
 		if( 'media' == settings.after_src ) {
@@ -789,7 +789,7 @@ class BaSlider extends Common_Widget {
 			};
 			after_img = elementor.imagesManager.getImageUrl( after_image );
 		} else {
-			after_img = settings.after_img_url;
+			after_img = _.escape( settings.after_img_url );
 		}
 
 		if ( ! before_img || ! after_img ) {
@@ -799,8 +799,8 @@ class BaSlider extends Common_Widget {
 		#>
 		<div class="uael-before-after-slider">
 			<div class="uael-ba-container" data-move-on-hover="{{settings.move_on_hover}}" data-orientation="{{settings.orientation}}" data-offset="{{settings.initial_offset.size/100}}">
-				<img class="uael-before-img" style="position: absolute;" src="{{before_img}}" alt="{{settings.before_text}}"/>
-				<img class="uael-after-img" src="{{after_img}}" alt="{{settings.after_text}}"/>
+				<img class="uael-before-img" style="position: absolute;" src="{{before_img}}" alt="{{elementor.helpers.sanitize(settings.before_text)}}"/>
+				<img class="uael-after-img" src="{{after_img}}" alt="{{elementor.helpers.sanitize(settings.after_text)}}"/>
 			</div>
 		</div>
 		<# elementorFrontend.hooks.doAction( 'frontend/element_ready/uael-ba-slider.default' ); #>

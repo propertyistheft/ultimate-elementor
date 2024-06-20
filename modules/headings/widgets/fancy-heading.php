@@ -1215,7 +1215,7 @@ class Fancy_Heading extends Common_Widget {
 					<{{ fancy_text_title_tag }} class="uael-fancy-text-wrap uael-fancy-text-{{ settings.fancytext_effect_type }}" >
 
 						<# if ( '' != settings.fancytext_prefix ) { #>
-							<span class="uael-fancy-heading uael-fancy-text-prefix">{{ settings.fancytext_prefix }}</span>
+							<span class="uael-fancy-heading uael-fancy-text-prefix">{{ elementor.helpers.sanitize(settings.fancytext_prefix ) }}</span>
 						<# } #>
 						<span class="uael-fancy-stack">
 							<# if ( 'type' == settings.fancytext_effect_type ) { #>
@@ -1223,7 +1223,7 @@ class Fancy_Heading extends Common_Widget {
 							<# }
 							else { #>
 								<#
-								var str 	= settings.fancytext;
+								var str 	= elementor.helpers.sanitize( settings.fancytext );
 								str 		= str.trim();
 								str 		= str.replace( /\r?\n|\r/g, "|" );
 								var lines 	= str.split("|");
@@ -1250,7 +1250,7 @@ class Fancy_Heading extends Common_Widget {
 							<# } #>
 						</span>
 						<# if ( '' != settings.fancytext_suffix ) { #>
-							<span class="uael-fancy-heading uael-fancy-text-suffix">{{ settings.fancytext_suffix }}</span>
+							<span class="uael-fancy-heading uael-fancy-text-suffix">{{ elementor.helpers.sanitize( settings.fancytext_suffix ) }}</span>
 						<# } #>
 
 					</{{ fancy_text_title_tag }}>

@@ -1078,15 +1078,18 @@ class Table_Of_Contents extends Common_Widget {
 		view.addRenderAttribute( 'list-parent-wrapper', 'data-scroll', settings.scroll_time.size );
 
 		if ( '' !== settings.scroll_offset_mobile.size ) {
-			view.addRenderAttribute( 'list-parent-wrapper', 'data-scroll-offset-mobile', settings.scroll_offset_mobile.size );
+			var scroll_offset_mobile_size = elementor.helpers.sanitize( settings.scroll_offset_mobile.size );
+			view.addRenderAttribute( 'list-parent-wrapper', 'data-scroll-offset-mobile', scroll_offset_mobile_size );
 		}
 
 		if ( '' !== settings.scroll_offset_tablet.size ) {
-			view.addRenderAttribute( 'list-parent-wrapper', 'data-scroll-offset-tablet', settings.scroll_offset_tablet.size );
+			var scroll_offset_tablet_size = elementor.helpers.sanitize( settings.scroll_offset_tablet.size );
+			view.addRenderAttribute( 'list-parent-wrapper', 'data-scroll-offset-tablet', scroll_offset_tablet_size );
 		}
 
 		if ( '' !== settings.scroll_offset.size ) {
-			view.addRenderAttribute( 'list-parent-wrapper', 'data-scroll-offset', settings.scroll_offset.size );
+			var scroll_offset_size = elementor.helpers.sanitize( settings.scroll_offset.size );
+			view.addRenderAttribute( 'list-parent-wrapper', 'data-scroll-offset', scroll_offset_size );
 		}
 
 		view.addRenderAttribute( 'hide-show-wrapper', 'data-hideshow', 'settings.collapsible' );
@@ -1106,7 +1109,7 @@ class Table_Of_Contents extends Common_Widget {
 		<div {{{ view.getRenderAttributeString( 'parent-wrapper' ) }}} > <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 			<div class="uael-toc-wrapper">
 				<div class="uael-toc-header">
-					<span class="uael-toc-heading elementor-inline-editing" data-elementor-setting-key="heading_title" data-elementor-inline-editing-toolbar="basic" >{{ settings.heading_title }}</span>
+					<span class="uael-toc-heading elementor-inline-editing" data-elementor-setting-key="heading_title" data-elementor-inline-editing-toolbar="basic" >{{ elementor.helpers.sanitize( settings.heading_title ) }}</span>
 					<# if ( 'yes' === settings.collapsible ) { #>
 						<div class="uael-toc-switch" {{{ view.getRenderAttributeString( 'hide-show-wrapper' ) }}} > <?php //phpcs:ignore WordPressVIPMinimum.Security.Mustache.OutputNotation ?>
 							<span class="uael-icon fa"></span>
