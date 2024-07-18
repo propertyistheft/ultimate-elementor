@@ -1,3 +1,12 @@
+Version 1.36.35, Monday, 15th July 2024
+- Improvement: Compatibility with latest WordPress version 6.6.
+- Improvement: Compatibility with latest Elementor and Elementor Pro 3.23 version.
+- Improvement: Hardened the security of plugin.
+- Improvement: Table of Contents - Refined jQuery selector for enhanced element targeting.
+- Fix: Display Conditions - PHP warning for ACF field when trying to access array offset on false.
+- Fix: Info Box - An undefined array key warning occurs for overall alignment setting.
+- Fix: Resize JS throwing console error.
+
 Version 1.36.34, Monday, 17th June 2024
 - Improvement: Improved code enforcement of widgets in edit mode.
 

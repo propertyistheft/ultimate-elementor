@@ -58,7 +58,7 @@ if ( 'icon' === $settings['uael_infobox_image_type'] || 'photo' === $settings['u
 		}
 	}
 } else {
-	if ( 'left' === $settings['infobox_overall_align'] || 'center' === $settings['infobox_overall_align'] || 'right' === $settings['infobox_overall_align'] ) {
+	if ( isset( $settings['infobox_overall_align'] ) && 'left' === $settings['infobox_overall_align'] || 'center' === $settings['infobox_overall_align'] || 'right' === $settings['infobox_overall_align'] ) {
 		$classname = 'uael-infobox-' . $settings['infobox_overall_align'];
 		$this->add_render_attribute( 'classname', 'class', ' uael-infobox-' . $settings['infobox_overall_align'] );
 	}

@@ -235,7 +235,7 @@
     WidgetUAELTableOfContents = function( $scope, $ ) { 
 
         var body_wrap =  $( 'body' );
-        var $body = body_wrap.find( '.entry-content' );
+        var $body = body_wrap.find( '.entry-content, div[data-elementor-type]' );
         var node_id = $scope.data( 'id' );
         var toggle_button = $scope.find( '.uael-toc-switch' );
         var toggle_content = $scope.find( '.uael-toc-toggle-content' );

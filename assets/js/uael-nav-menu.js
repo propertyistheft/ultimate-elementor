@@ -42,16 +42,16 @@
 		_handleSinglePageMenu( id, layout );
 
 
-		if( 'horizontal' !== layout ){
-
-			_eventClick( id );
-		}else if ( 'horizontal' === layout && window.matchMedia( "( max-width: 767px )" ).matches ) {
-
-			_eventClick( id );
-		}else if ( 'horizontal' === layout && window.matchMedia( "( max-width: 1024px )" ).matches ) {
-
-			_eventClick( id );
-		} else if( 'horizontal' == layout && $( '.elementor-element-' + id ).hasClass( 'uael-submenu-open-click' ) && window.matchMedia( "( min-width: 1025px )" ).matches ){
+		if( 'horizontal' !== layout || 
+			(
+				'horizontal' === layout && 
+				(
+					window.matchMedia( "( max-width: 767px )" ).matches ||
+					window.matchMedia( "( max-width: 1024px )" ).matches ||
+					( $( '.elementor-element-' + id ).hasClass( 'uael-submenu-open-click' ) && window.matchMedia( "( min-width: 1025px )" ).matches )
+				)
+			)
+		){
 
 			_eventClick( id );
 		}
@@ -122,16 +122,15 @@
 
 			_sizeCal( id );
 
-			if( 'horizontal' !== layout ) {
-
-				_eventClick( id );
-			}else if ( 'horizontal' === layout && window.matchMedia( "( max-width: 767px )" ).matches ) {
-
-				_eventClick( id );
-			}else if ( 'horizontal' === layout && window.matchMedia( "( max-width: 1024px )" ).matches ) {
-
-				_eventClick( id );
-			} else if( 'horizontal' == layout && $( '.elementor-element-' + id ).hasClass( 'uael-submenu-open-click' ) && window.matchMedia( "( min-width: 1025px )" ).matches ){
+			if( 'horizontal' !== layout ||
+				( 'horizontal' === layout && 
+					(
+						window.matchMedia( "( max-width: 767px )" ).matches  ||
+						window.matchMedia( "( max-width: 1024px )" ).matches ||
+						( $( '.elementor-element-' + id ).hasClass( 'uael-submenu-open-click' ) && window.matchMedia( "( min-width: 1025px )" ).matches )
+					)	
+				)
+			) {
 
 				_eventClick( id );
 			}
@@ -145,10 +144,12 @@
 
 				_toggleClick( id );
 			}else if ( 'vertical' == layout || 'horizontal' == layout ) {
-				if( window.matchMedia( "( max-width: 767px )" ).matches && ($( '.elementor-element-' + id ).hasClass('uael-nav-menu__breakpoint-tablet') || $( '.elementor-element-' + id ).hasClass('uael-nav-menu__breakpoint-mobile'))){
+				
+				const element = $( '.elementor-element-' + id );
+    			const isMobile = window.matchMedia( "( max-width: 767px )" ).matches;
+    			const isTablet = window.matchMedia( "( max-width: 1024px )" ).matches;
 
-					_toggleClick( id );
-				}else if ( window.matchMedia( "( max-width: 1024px )" ).matches && $( '.elementor-element-' + id ).hasClass('uael-nav-menu__breakpoint-tablet') ) {
+				if( ( isMobile && ( element.hasClass('uael-nav-menu__breakpoint-tablet') ||  element.hasClass('uael-nav-menu__breakpoint-mobile')) ) || ( isTablet &&  element.hasClass('uael-nav-menu__breakpoint-tablet') ) ){
 
 					_toggleClick( id );
 				}
@@ -236,10 +237,7 @@
 
 				$parent_div.addClass( 'menu-active' );
 
-				if( 'horizontal' !== layout ){
-
-					$this.addClass( 'sub-menu-active' );
-				} else if( 'horizontal' == layout && $( '.elementor-element-' + id ).hasClass( 'uael-submenu-open-click' ) && window.matchMedia( "( min-width: 1025px )" ).matches ){
+				if( 'horizontal' !== layout || ( 'horizontal' == layout && $( '.elementor-element-' + id ).hasClass( 'uael-submenu-open-click' ) && window.matchMedia( "( min-width: 1025px )" ).matches ) ){
 
 					$this.addClass( 'sub-menu-active' );
 				}
@@ -248,12 +246,9 @@
 
 				$this.next().css( { 'visibility': 'visible', 'height': 'auto', 'opacity': '1' } );
 
-				if ( 'horizontal' !== layout ) {
+				if ( 'horizontal' !== layout || ( 'horizontal' === layout && window.matchMedia( "( max-width: 767px )" ).matches && ($( '.elementor-element-' + id ).hasClass('uael-nav-menu__breakpoint-tablet') || $( '.elementor-element-' + id ).hasClass('uael-nav-menu__breakpoint-mobile')) ) ) {
 
 		  			$this.next().css( 'position', 'relative');
-				} else if ( 'horizontal' === layout && window.matchMedia( "( max-width: 767px )" ).matches && ($( '.elementor-element-' + id ).hasClass('uael-nav-menu__breakpoint-tablet') || $( '.elementor-element-' + id ).hasClass('uael-nav-menu__breakpoint-mobile'))) {
-
-  					$this.next().css( 'position', 'relative');
 				} else if ( 'horizontal' === layout && window.matchMedia( "( max-width: 1024px )" ).matches ) {
 
   					if ( $( '.elementor-element-' + id ).hasClass('uael-nav-menu__breakpoint-tablet') ) {

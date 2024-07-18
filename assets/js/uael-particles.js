@@ -3040,7 +3040,10 @@ class Canvas {
         }
       }
 
-      this.context.restore();
+      // Ensure context is still valid before calling restore
+      if ( this.context ) {
+        this.context.restore();
+      }
     }
   }
 

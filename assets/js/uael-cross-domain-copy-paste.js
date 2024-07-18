@@ -216,7 +216,7 @@ UAE_Cross_Domain_Handler = {
 }
 
 
-item_type.forEach( function( item, index ) {
+item_type.forEach( ( item, index ) => {
     elementor.hooks.addFilter( 'elements/' + item_type_elementor_hook[index] + '/contextMenuGroups', function ( groups, element ) {
         var loop_element = this;
         groups.push(

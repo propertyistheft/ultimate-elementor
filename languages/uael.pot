@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the Ultimate Addons for Elementor package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ultimate Addons for Elementor 1.36.34\n"
+"Project-Id-Version: Ultimate Addons for Elementor 1.36.35\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/ultimate-elementor\n"
-"POT-Creation-Date: 2024-06-03 17:40:32+00:00\n"
+"POT-Creation-Date: 2024-07-15 06:22:36+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -15142,7 +15142,7 @@ msgid "Spacing Between Content"
 msgstr ""
 
 #: modules/table-of-contents/widgets/table-of-contents.php:1039
-#: modules/table-of-contents/widgets/table-of-contents.php:1134
+#: modules/table-of-contents/widgets/table-of-contents.php:1137
 msgid "Add a header to begin generating the table of contents"
 msgstr ""
 
@@ -17385,6 +17385,41 @@ msgstr ""
 msgid "Please select a WPForm."
 msgstr ""
 
+#: vendor/wp-cli/core-command/src/Core_Command.php:749
+msgid "Wildcard DNS may not be configured correctly."
+msgstr ""
+
+#: vendor/wp-cli/entity-command/src/Site_Command.php:157
+msgid "Uncategorized"
+msgstr ""
+
+#: vendor/wp-cli/export-command/src/WP_Export_XML_Over_HTTP.php:20
+#: vendor/wp-cli/export-command/src/WP_Export_XML_Over_HTTP.php:25
+msgid "Export Error"
+msgstr ""
+
+#: vendor/wp-cli/extension-command/src/WP_CLI/CommandWithUpgrade.php:770
+msgid " Try again"
+msgstr ""
+
+#: vendor/wp-cli/extension-command/src/WP_CLI/CommandWithUpgrade.php:776
+msgid "API error. Try Again."
+msgstr ""
+
+#: vendor/wp-cli/media-command/src/Media_Command.php:151
+msgid "image"
+msgid_plural "images"
+msgstr[0] ""
+msgstr[1] ""
+
+#: vendor/wp-cli/wp-cli/php/utils-wp.php:247
+msgid "Inactive Widgets"
+msgstr ""
+
+#: vendor/wp-cli/wp-cli/php/utils-wp.php:250
+msgid "Drag widgets here to remove them from the sidebar but keep their settings."
+msgstr ""
+
 #. Plugin URI of the plugin/theme
 msgid "https://ultimateelementor.com/"
 msgstr ""
@@ -17516,3 +17551,17 @@ msgid "<mark class=\"uael-count\">%1$s %2$s</mark>"
 msgid_plural "<mark class=\"uael-count\">%1$s %3$s</mark>"
 msgstr[0] ""
 msgstr[1] ""
+
+#: vendor/wp-cli/core-command/src/Core_Command.php:491
+#: vendor/wp-cli/core-command/src/Core_Command.php:565
+#. translators: placeholder is blog name
+#. translators: placeholder is user supplied title
+msgctxt "Default network name"
+msgid "%s Sites"
+msgstr ""
+
+#: vendor/wp-cli/entity-command/src/Site_Command.php:160
+#. translators: Default category slug
+msgctxt "Default category slug"
+msgid "Uncategorized"
+msgstr ""

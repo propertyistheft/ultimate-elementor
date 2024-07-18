@@ -132,7 +132,7 @@
                         } else if( ( '' !== presets_json[controls_index] ) && current_widget.isContentTransferControl( current_control ) ) {
                             var edited_value = edited_controls[controls_index];
 
-                            if( ( undefined !== typeof edited_value && '' !== edited_value && edited_value !== presets_json[controls_index] ) ) {
+                            if( ( 'undefined' !== typeof edited_value && '' !== edited_value && edited_value !== presets_json[controls_index] ) ) {
                                 data_array[controls_index] = edited_value;
                             } else {
                                 data_array[controls_index] = presets_json[controls_index];

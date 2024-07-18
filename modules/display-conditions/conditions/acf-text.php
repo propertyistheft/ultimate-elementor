@@ -142,7 +142,7 @@ class Acf_Text extends Condition {
 			$field_object = get_field_object( $key );
 
 			// Handle string value for correct comparison boolean (true_false) acf field.
-			if ( ( 'true_false' === $field_object['type'] ) && 'true' === $value ) {
+			if ( is_array( $field_object ) && isset( $field_object['type'] ) && ( 'true_false' === $field_object['type'] ) && 'true' === $value ) {
 				$value = true;
 			}
 

@@ -1096,7 +1096,7 @@
 						def_cat_sel.addClass( 'uael-filter__current' );
 					}
 
-					if ( -1 == all_filters.indexOf( def_cat.replace('.', "") ) ) {
+					if ( all_filters.indexOf( def_cat.replace(/\./g, "") ) === -1) {
 						def_cat = '*';
 					}
 				}
@@ -2188,7 +2188,7 @@
 			}
 		);
 
-		if ( ! isNaN( musicVolume ) && '' !== musicVolume && undefined !== musicVolume && '' !== audio ) {
+		if ( !Number.isNaN( Number( musicVolume ) ) && '' !== musicVolume && musicVolume !== undefined && '' !== audio ) {
 			audio.volume = parseFloat( musicVolume / 100 );
 		}
 
