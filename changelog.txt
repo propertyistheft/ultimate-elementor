@@ -1,3 +1,9 @@
+Version 1.36.36, Thursday, 1st August 2024
+- Improvement: Google Map - Updated deprecated marker clustering solution for better performance.
+- Fix: Before-After Slider - Overlay transparency to work when the mouse hovers over it.
+- Fix: Video - Special characters appearing in HTML attributes.
+- Fix: Icon Position set to 'Before' was not working in some modules.
+
 Version 1.36.35, Monday, 15th July 2024
 - Improvement: Compatibility with latest WordPress version 6.6.
 - Improvement: Compatibility with latest Elementor and Elementor Pro 3.23 version.

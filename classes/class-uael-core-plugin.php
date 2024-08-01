@@ -342,7 +342,7 @@ class UAEL_Core_Plugin {
 
 		wp_register_script( 'uael-google-maps-api', $url, array( 'jquery' ), UAEL_VER, true );
 
-		wp_register_script( 'uael-google-maps-cluster', 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js', array( 'jquery' ), UAEL_VER, true );
+		wp_register_script( 'uael-google-maps-cluster', 'https://unpkg.com/@googlemaps/markerclusterer/dist/index.min.js', array( 'jquery' ), UAEL_VER, true );
 
 		wp_register_script( 'uael-video-subscribe', 'https://apis.google.com/js/platform.js', array( 'jquery' ), UAEL_VER, true );
 

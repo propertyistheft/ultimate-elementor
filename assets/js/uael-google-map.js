@@ -268,30 +268,10 @@
 					google.maps.event.removeListener( listener );
 				});
 			}
-			var cluster_image = {
-				imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'
-			};
-			
-			if( cluster_attr == '' ) {
-				cluster_object = cluster_image;	
-			} else {
-                cluster_object = Object.assign( {}, cluster_image, cluster_attr );
+
+			if( m_cluster ) {
+				cluster_object = new markerClusterer.MarkerClusterer({ map, markers: marker_cluster });
 			}
-			
-			var cluster_listener = google.maps.event.addListener( map, "idle", function () {
-
-				if( 0 < marker_cluster.length && m_cluster ) {
-
-					var markerCluster = new MarkerClusterer(
-						map,
-						marker_cluster,
-						cluster_object
-					);
-				}
-				
-				google.maps.event.removeListener( cluster_listener );
-			});
-
 
 		})();
 	};

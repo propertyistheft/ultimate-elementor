@@ -2399,9 +2399,8 @@ class Video extends Common_Widget {
 			$this->render_hosted_video();
 
 			$video_html = ob_get_clean();
-
+			$video_html = preg_replace( '/[\t\n\r]+/', ' ', $video_html );
 			$video_html = wp_json_encode( $video_html );
-
 			$video_html = htmlspecialchars( $video_html, ENT_QUOTES );
 
 			$this->add_render_attribute(
