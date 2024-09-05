@@ -1,3 +1,16 @@
+Version 1.36.37, Tuesday, 3rd September 2024
+- Improvement: Compatibility with latest Elementor and Elementor Pro 3.24 version.
+- Improvement: Implemented widget output caching to enhance page performance.
+- Improvement: Provided 'Automatically Align Buttons' to the Woo Products & Posts widget.
+- Improvement: Navigation Menu - The dropdown menu now extends to full width when the navigation menu container is set to full width on smaller screens.
+- Improvement: Posts - Optimized term fetching by context to boost server performance.
+- Improvement: Video Gallery - Added missing timezone to 'uploadDate' datetime property.
+- Fix: Info Box - A warning occurred for the overall alignment setting when no image type is added.
+- Fix: Navigation Menu - Console error for undefined property ‘left’.
+- Fix: Navigation Menu - Active color not applying for dynamic links in custom menu items.
+- Fix: Twitter - Tweets are now displaying correctly!
+- Fix: Removed dependency on waypoints.js and transition to IntersectionObserver().
+
 Version 1.36.36, Thursday, 1st August 2024
 - Improvement: Google Map - Updated deprecated marker clustering solution for better performance.
 - Fix: Before-After Slider - Overlay transparency to work when the mouse hovers over it.

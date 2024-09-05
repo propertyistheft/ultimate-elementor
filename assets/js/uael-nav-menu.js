@@ -107,7 +107,7 @@
 		custom_menu.each( function(){
 			var $this = $( this );
 			var href = $this.find( 'a' ).attr( 'href' );
-			if( url == href ){
+			if( url.replace(/\/+$/, '') === href.replace(/\/+$/, '') ) {
 			   var parentClass = $this.parent( 'ul' ).hasClass( 'sub-menu' );
 			   if( parentClass ) {
 				$this.addClass( 'custom-submenu-active' );
@@ -742,11 +742,20 @@
 
 			nav_toggle_next.css( 'left', '0' );
 
-			var width = element.closest('.elementor-section').outerWidth();
-			var sec_pos = element.closest('.elementor-section').offset().left - nav_toggle_next.offset().left;
+			var closestSection = element.closest('.elementor-section');
+			
+			if ( 0 == closestSection.length ) {
+				var width = closestSection.outerWidth();
+				var sectionOffset = closestSection.offset();
+				var navToggleNextOffset = nav_toggle_next.offset().left;
 
-			nav_toggle_next.css( 'width', width + 'px' );
-			nav_toggle_next.css( 'left', sec_pos + 'px' );
+				if ( sectionOffset && navToggleNextOffset ) {
+					var sec_pos = sectionOffset.left - navToggleNextOffset.left;
+		
+					nav_toggle_next.css( 'width', width + 'px' );
+					nav_toggle_next.css( 'left', sec_pos + 'px' );
+				}
+			}
 		}
 
 		nav_toggle.off( 'click keyup' ).on( 'click keyup', function( event ) {
@@ -787,13 +796,13 @@
 				if ( 'yes' == full_width ){
 
 					$this.addClass( 'uael-active-menu-full-width' );
-					var $element_section = $element.closest('.elementor-section');
-					if (0 == $element_section.length){
-						$element_section = $element.closest('.e-con');
+					var $element_section_cont = $element.closest('.elementor-section, .e-con-boxed');
+					if (0 == $element_section_cont.length){
+						$element_section_cont = $element.closest('.e-con');
 					}
 
-					var width = $element_section.outerWidth();
-					var sec_pos = $element_section.offset().left - $selector.offset().left;
+					var width = $element_section_cont.outerWidth();
+					var sec_pos = $element_section_cont.offset().left - $selector.offset().left;
 
 					$selector.css( 'width', width + 'px' );
 					$selector.css( 'left', sec_pos + 'px' );

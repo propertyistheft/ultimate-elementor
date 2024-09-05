@@ -177,7 +177,12 @@ abstract class Posts_Base extends Common_Widget {
 			if ( ! empty( $taxonomy ) ) {
 				// Get all taxonomy values under the taxonomy.
 				foreach ( $taxonomy as $index => $tax ) {
-					$terms = get_terms( $index );
+					// Fetch all terms in editor/preview mode; only non-empty terms on the frontend for performance optimization.
+					if ( \Elementor\Plugin::$instance->editor->is_edit_mode() || \Elementor\Plugin::$instance->preview->is_preview_mode() ) {
+						$terms = get_terms( $index );
+					} else {
+						$terms = get_terms( $index, array( 'hide_empty' => true ) );
+					}
 
 					$related_tax = array();
 

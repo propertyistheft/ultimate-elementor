@@ -112,8 +112,14 @@ class Module extends Module_Base {
 				if ( isset( $_SERVER['HTTP_HOST'] ) && isset( $_SERVER['REQUEST_URI'] ) ) {
 					$actual_link = ( 'on' === isset( $_SERVER['HTTPS'] ) && sanitize_text_field( $_SERVER['HTTPS'] ) ) ? 'https' : 'http://' . sanitize_text_field( $_SERVER['HTTP_HOST'] ) . esc_url_raw( $_SERVER['REQUEST_URI'] );
 				}
-				$settings             = $widget->get_settings();
-				$enable_schema        = $settings['schema_support'];
+				$settings      = $widget->get_settings();
+				$enable_schema = $settings['schema_support'];
+				$upload_date   = null; // Initialize $upload_date.
+
+				if ( isset( $settings['schema_upload_date'] ) ) {
+					$upload_date = new \DateTime( $settings['schema_upload_date'] );
+				}
+
 				$video_link           = array();
 				$video_type           = '';
 				$is_custom            = '';
@@ -167,15 +173,16 @@ class Module extends Module_Base {
 						$content_schema_warning = true;
 					}
 
-					if ( 'yes' === $enable_schema && false === $content_schema_warning ) {
-						$new_data = array(
+					if ( 'yes' === $enable_schema && false === $content_schema_warning && isset( $settings['schema_upload_date'] ) ) {
+						$upload_date = new \DateTime( $settings['schema_upload_date'] );
+						$new_data    = array(
 							'@type'        => 'VideoObject',
 							'url'          => $actual_link . '#uael-video__gallery-item' . ( $videocount++ ),
 							'position'     => $positioncount++,
 							'name'         => $val['schema_title'],
 							'description'  => $val['schema_description'],
 							'thumbnailUrl' => $is_custom ? $custom_thumbnail_url : $schema_thumbnail_url,
-							'uploadDate'   => $val['schema_upload_date'],
+							'uploadDate'   => $upload_date->format( 'Y-m-d\TH:i:s\Z' ),
 							'contentUrl'   => $video_link,
 							'embedUrl'     => $video_link,
 						);

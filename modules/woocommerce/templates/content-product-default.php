@@ -34,9 +34,12 @@ $quick_view_type = $this->get_instance_value( 'quick_view_type' );
 $out_of_stock        = get_post_meta( $wp_post_id, '_stock_status', true );
 $out_of_stock_string = apply_filters( 'uael_woo_out_of_stock_string', __( 'Out of stock', 'uael' ) );
 
+$switcher_enabled = 'yes' === $this->get_instance_value( 'automatically_align_buttons' ); /* Automatically Align Buttons */
+$switcher_class   = $switcher_enabled ? 'enabled' : 'disabled';
 ?>
+
 <li class=" <?php echo esc_attr( $wc_classes ); ?>">
-	<div class="uael-woo-product-wrapper">
+	<div class="uael-woo-product-wrapper uael-prod-auto-align-<?php echo esc_attr( $switcher_class ); ?>">
 		<?php
 
 		echo '<div class="uael-woo-products-thumbnail-wrap">';
@@ -137,7 +140,7 @@ $out_of_stock_string = apply_filters( 'uael_woo_out_of_stock_string', __( 'Out o
 		if ( is_array( $shop_structure ) && ! empty( $shop_structure ) ) {
 
 			do_action( 'uael_woo_products_before_summary_wrap', $wp_post_id, $settings );
-			echo '<div class="uael-woo-products-summary-wrap">';
+			echo '<div class="uael-woo-products-summary-wrap uael-auto-align-' . esc_attr( $switcher_class ) . '">';
 			do_action( 'uael_woo_products_summary_wrap_top', $wp_post_id, $settings );
 
 			foreach ( $shop_structure as $value ) {
@@ -176,7 +179,14 @@ $out_of_stock_string = apply_filters( 'uael_woo_out_of_stock_string', __( 'Out o
 						break;
 					case 'add_cart':
 						do_action( 'uael_woo_products_add_to_cart_before', $wp_post_id, $settings );
+						if ( $switcher_enabled ) { /* Automatically Align Buttons */
+							echo '<div class="uael-woo-products-button-align ">';
+						}
 						woocommerce_template_loop_add_to_cart();
+
+						if ( $switcher_enabled ) {
+							echo '</div>';
+						}
 						do_action( 'uael_woo_products_add_to_cart_after', $wp_post_id, $settings );
 						break;
 					case 'category':

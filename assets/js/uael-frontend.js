@@ -491,15 +491,22 @@
 				} else if( 'auto' == action_autoplay && 'yes' == autoplay ) {
 					if( ! isElEditMode ) {
 
-						if( typeof elementorFrontend.waypoint !== 'undefined' ) {
-							elementorFrontend.waypoint(
-								$this,
-								tourPlay,
-								{
-									offset: viewport_position + '%'
+						// Create an Intersection Observer instance.
+						var observer = new IntersectionObserver(function(entries) {
+							entries.forEach(function(entry) {
+								// If the element is in the viewport
+								if (entry.isIntersecting) {
+									tourPlay(entry.target); // Call the 'tourPlay' function when the element enters the viewport
 								}
-							);
-						}
+							});
+						}, {
+							root: null, // Use the viewport as the root
+							rootMargin: viewport_position + '%', // Adjust the margin to trigger at the desired viewport position
+							threshold: 0 // Trigger as soon as the element enters the viewport
+						});
+
+						// Start observing the $this element
+						observer.observe($this[0]);
 					}
 				} else {
 					tourPlay();
@@ -650,23 +657,23 @@
 			return;
 		}
 		var node_id = $scope.data( 'id' );
-		var viewport_position	= 90;
-		var selector = $( '.elementor-element-' + node_id );
+		var selector = document.querySelector('.elementor-element-' + node_id);
+        
+        if ( selector ) {
+            var observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        UAELFancyText.call(selector);
+                        observer.unobserve(selector);
+                    }
+                });
+            }, {
+                root: null,
+                threshold: 0.1
+            });
 
-		var current_device = elementorFrontend.getCurrentDeviceMode();
-		if( 'mobile' === current_device ) {
-			viewport_position	= 100;
-		}
-
-		if( typeof elementorFrontend.waypoint !== 'undefined' ) {
-			elementorFrontend.waypoint(
-				selector,
-				UAELFancyText,
-				{
-					offset: viewport_position + '%'
-				}
-			);
-		}
+            observer.observe(selector);
+        }
 
 	};
 
@@ -1601,57 +1608,62 @@
 
 		if( 'yes' == outer_wrap.data( 'vsticky' ) ) {
 
-			if( typeof elementorFrontend.waypoint !== 'undefined' ) {
-				var uael_waypoint = elementorFrontend.waypoint(
-					outer_wrap,
-					function ( direction ) {
-						if ( 'down' === direction ) {
-							outer_wrap.removeClass( 'uael-sticky-hide' );
-							outer_wrap.addClass( 'uael-sticky-apply' );
-							$( document ).trigger( 'uael_after_sticky_applied', [ $scope ] );
-						} else {
-							outer_wrap.removeClass( 'uael-sticky-apply' );
-							outer_wrap.addClass( 'uael-sticky-hide' );
-						}
-					},
-					{ offset: viewport + '%', triggerOnce: false }
-				);
-			}
+			var observer = new IntersectionObserver( function( entries ) {
+				entries.forEach(function( entry ) {
+					if ( ! entry.isIntersecting && entry.boundingClientRect.top < 0 ) {
+						outer_wrap.removeClass( 'uael-sticky-hide' );
+						outer_wrap.addClass( 'uael-sticky-apply' );
+						$(document).trigger( 'uael_after_sticky_applied', [ $scope ] );
+					} else if ( entry.isIntersecting ) {
+						outer_wrap.removeClass( 'uael-sticky-apply' );
+						outer_wrap.addClass( 'uael-sticky-hide' );
+					}
+				});
+			}, {
+				root: null, // Use the viewport as the root
+				rootMargin: '0px 0px 0px 0px', // Adjusts when the sticky class is applied
+				threshold: 0 // Trigger as soon as the top of the element is at the specified offset
+			});
+		
+			// Start observing the outer_wrap element
+			observer.observe( outer_wrap[0] );
 
 			var close_button = $scope.find( '.uael-video-sticky-close' );
 			close_button.off( 'click.closetrigger' ).on( 'click.closetrigger', function(e) {
-				uael_waypoint[0].disable();
+				observer.unobserve( outer_wrap[0] ); // Stop observing the 'outer_wrap' element
 				outer_wrap.removeClass( 'uael-sticky-apply' );
 				outer_wrap.removeClass( 'uael-sticky-hide' );
 			});
-			checkResize( uael_waypoint );
+			checkResize( observer );
 			checkScroll();
 
 			window.addEventListener( "scroll", checkScroll );
 			$( window ).on( 'resize', function( e ) {
-				checkResize( uael_waypoint );
+				checkResize( observer );
 			} );
 
 		}
 
-		function checkResize( uael_waypoint ) {
+		function checkResize(observer) {
 			var currentDeviceMode = elementorFrontend.getCurrentDeviceMode();
-
-	  		if( ( '' !== sticky_desktop && currentDeviceMode == sticky_desktop ) || ( '' !== sticky_tablet && currentDeviceMode == sticky_tablet ) || ( '' !== sticky_mobile && currentDeviceMode == sticky_mobile ) ) {
-  				disableSticky( uael_waypoint );
-	  		} else {
-	  			uael_waypoint[0].enable();
-	  		}
+		
+			if ( ('' !== sticky_desktop && currentDeviceMode === sticky_desktop) || 
+				('' !== sticky_tablet && currentDeviceMode === sticky_tablet) || 
+				('' !== sticky_mobile && currentDeviceMode === sticky_mobile)) {
+				disableSticky( observer );
+			} else {
+				observer.observe( outer_wrap[0] ); // Re-enable observation for the 'outer_wrap' element
+			}
 		}
 
-		function disableSticky( uael_waypoint ) {
-			uael_waypoint[0].disable();
+		function disableSticky( observer ) {
+			observer.unobserve( outer_wrap[0] ); // Disable observation
 			outer_wrap.removeClass( 'uael-sticky-apply' );
 			outer_wrap.removeClass( 'uael-sticky-hide' );
 		}
 
 		function checkScroll() {
-			if( !isElEditMode && outer_wrap.hasClass( 'uael-sticky-apply' ) ){
+			if( ! isElEditMode && outer_wrap.hasClass( 'uael-sticky-apply' ) ){
 				inner_wrap.draggable({ start: function() {
 					$( this ).css({ transform: "none", top: $( this ).offset().top + "px", left: $( this ).offset().left + "px" });
 					},

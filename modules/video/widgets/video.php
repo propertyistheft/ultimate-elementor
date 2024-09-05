@@ -89,7 +89,7 @@ class Video extends Common_Widget {
 	 * @return array Widget scripts dependencies.
 	 */
 	public function get_script_depends() {
-		return array( 'elementor-waypoints', 'uael-frontend-script', 'uael-video-subscribe', 'jquery-ui-draggable' );
+		return array( 'uael-frontend-script', 'uael-video-subscribe', 'jquery-ui-draggable' );
 	}
 
 	/**

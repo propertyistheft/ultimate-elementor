@@ -109,6 +109,19 @@ class Hotspot extends Common_Widget {
 	}
 
 	/**
+	 * Indicates if the widget's content is dynamic.
+	 *
+	 * This method returns true if the widget's output is dynamic and should not be cached,
+	 * or false if the content is static and can be cached.
+	 *
+	 * @since 1.36.37
+	 * @return bool True for dynamic content, false for static content.
+	 */
+	protected function is_dynamic_content(): bool { // phpcs:ignore
+		return false;
+	}
+
+	/**
 	 * Register Hotspot controls.
 	 *
 	 * @since 1.29.2

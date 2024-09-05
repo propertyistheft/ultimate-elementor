@@ -168,6 +168,19 @@ class Skin_Grid_Default extends Skin_Grid_Base {
 				)
 			);
 
+			$this->add_control(
+				'automatically_align_buttons',
+				array(
+					'label'        => __( 'Automatically align buttons', 'uael' ),
+					'type'         => Controls_Manager::SWITCHER,
+					'label_on'     => __( 'Show', 'uael' ),
+					'label_off'    => __( 'Hide', 'uael' ),
+					'default'      => '',
+					'return_value' => 'yes',
+					'render_type'  => 'template',
+				)
+			);
+
 		$this->end_controls_section();
 	}
 

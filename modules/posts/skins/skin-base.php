@@ -791,8 +791,12 @@ abstract class Skin_Base extends Elementor_Skin_Base {
 
 				// Get all taxonomy values under the taxonomy.
 				foreach ( $taxonomy as $index => $tax ) {
-					$terms = get_terms( $index );
-
+					// Fetch all terms in editor/preview mode based on context to optimize performance.
+					if ( \Elementor\Plugin::$instance->editor->is_edit_mode() || \Elementor\Plugin::$instance->preview->is_preview_mode() ) {
+						$terms = get_terms( $index );
+					} else {
+						$terms = get_terms( $index, array( 'hide_empty' => true ) );
+					}
 					$related_tax[ $index ] = $tax->label;
 				}
 
