@@ -346,6 +346,8 @@ class UAEL_Core_Plugin {
 
 		wp_register_script( 'uael-video-subscribe', 'https://apis.google.com/js/platform.js', array( 'jquery' ), UAEL_VER, true );
 
+		wp_register_script( 'uael-google-sign-in', 'https://accounts.google.com/gsi/client', array( 'jquery' ), UAEL_VER, true );
+
 		wp_register_script( 'uael-google-recaptcha', 'https://www.google.com/recaptcha/api.js?onload=onLoadUAEReCaptcha&render=explicit', array( 'jquery', 'uael-registration' ), UAEL_VER, true );
 
 		foreach ( $js_files as $handle => $data ) {
@@ -517,6 +519,36 @@ class UAEL_Core_Plugin {
 				plugins_url( '/fluentform/public/css/fluent-forms-public.css', 'fluentform' ),
 				null,
 				FLUENTFORM_VERSION
+			);
+		}
+		
+		// Team Member, Social Share & Navigation.
+		if ( class_exists( 'Elementor\Plugin' ) ) {
+			wp_enqueue_style(
+				'uael-teammember-social-icons',
+				plugins_url( '/elementor/assets/css/widget-social-icons.min.css', 'elementor' ),
+				array(),
+				'3.24.0'
+			);
+
+			wp_enqueue_style(
+				'uael-social-share-icons-brands',
+				plugins_url( '/elementor/assets/lib/font-awesome/css/brands.css', 'elementor' ),
+				array(),
+				'5.15.3'
+			);
+
+			wp_enqueue_style(
+				'uael-social-share-icons-fontawesome',
+				plugins_url( '/elementor/assets/lib/font-awesome/css/fontawesome.css', 'elementor' ),
+				array(),
+				'5.15.3'
+			);
+			wp_enqueue_style(
+				'uael-nav-menu-icons',
+				plugins_url( '/elementor/assets/lib/font-awesome/css/solid.css', 'elementor' ),
+				array(),
+				'5.15.3'
 			);
 		}
 	}

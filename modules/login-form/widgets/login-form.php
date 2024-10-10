@@ -90,7 +90,7 @@ class LoginForm extends Common_Widget {
 	 * @return array Widget scripts dependencies.
 	 */
 	public function get_script_depends() {
-		return array( 'uael-frontend-script', 'uael-video-subscribe' );
+		return array( 'uael-frontend-script', 'uael-google-sign-in' );
 	}
 
 	/**
@@ -1689,9 +1689,9 @@ class LoginForm extends Common_Widget {
 						),
 					),
 					'selectors'          => array(
-						'{{WRAPPER}}.uael-login-form-social-inline .uael-login-form-social .elementor-field-group:first-child' => 'padding-right: {{SIZE}}{{UNIT}};',
+						'{{WRAPPER}}.uael-login-form-social-inline .uael-login-form-social .elementor-field-group:first-child' => 'margin-right: {{SIZE}}{{UNIT}};',
 						'(mobile){{WRAPPER}}.uael-lf-responsive-yes.uael-login-form-social-inline .elementor-field-group:not(:first-child)' => 'margin-top: {{SIZE}}{{UNIT}};',
-						'(mobile){{WRAPPER}}.uael-lf-responsive-yes.uael-login-form-social-inline .uael-login-form-social .elementor-field-group:first-child' => 'padding-right: 0px;',
+						'(mobile){{WRAPPER}}.uael-lf-responsive-yes.uael-login-form-social-inline .uael-login-form-social .elementor-field-group:first-child' => 'margin-right: 0px;',
 					),
 					'conditions'         => array(
 						'relation' => 'and',
@@ -2107,47 +2107,8 @@ class LoginForm extends Common_Widget {
 					),
 					'selectors'  => array(
 						'{{WRAPPER}} .uael-login-form-social,
-						{{WRAPPER}}.uael-login-form-social-stack .uael-login-form-social .elementor-field-group,
 						{{WRAPPER}}.uael-lf-responsive-yes .uael-login-form-social .elementor-field-group' => 'justify-content: {{VALUE}};',
 					),
-				)
-			);
-
-			$this->add_responsive_control(
-				'social_border_radius',
-				array(
-					'label'      => __( 'Border Radius', 'uael' ),
-					'type'       => Controls_Manager::DIMENSIONS,
-					'size_units' => array( 'px', 'em', '%' ),
-					'selectors'  => array(
-						'{{WRAPPER}} .uaelFacebookContentWrapper,
-						{{WRAPPER}}.uael-lf-social-theme-light .uaelGoogleContentWrapper' => 'border-radius: {{TOP}}{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} {{LEFT}}{{UNIT}};',
-						'{{WRAPPER}}.uael-lf-social-theme-dark .uaelGoogleButtonIcon' => 'border-radius: {{TOP}}{{UNIT}} 0{{UNIT}} 0{{UNIT}} {{LEFT}}{{UNIT}};',
-						'{{WRAPPER}}.uael-lf-social-theme-dark .uael-google-text' => 'border-radius: 0{{UNIT}} {{RIGHT}}{{UNIT}} {{BOTTOM}}{{UNIT}} 0{{UNIT}};',
-					),
-					'conditions' => array(
-						'relation' => 'or',
-						'terms'    => array(
-							array(
-								'name'     => 'facebook_login',
-								'operator' => '==',
-								'value'    => 'yes',
-							),
-							array(
-								'name'     => 'google_login',
-								'operator' => '==',
-								'value'    => 'yes',
-							),
-						),
-					),
-				)
-			);
-
-			$this->add_group_control(
-				Group_Control_Box_Shadow::get_type(),
-				array(
-					'name'     => 'social_box_shadow',
-					'selector' => '{{WRAPPER}} .uaelFacebookContentWrapper, {{WRAPPER}} .uaelGoogleContentWrapper',
 				)
 			);
 
@@ -2433,6 +2394,7 @@ class LoginForm extends Common_Widget {
 
 		$is_google_valid = ( 'yes' === $settings['google_login'] && '' !== $google_clientid );
 		$is_fb_valid     = ( 'yes' === $settings['facebook_login'] && '' !== $facebook_appid && '' !== $facebook_secret );
+		$is_editor_class = ( $is_editor ) ? 'uael-login-edit-mode' : '';
 
 		if ( $is_google_valid || $is_fb_valid ) {
 			if ( ! $is_hidden && 'bottom' === $position ) {
@@ -2443,25 +2405,24 @@ class LoginForm extends Common_Widget {
 				<div class="uael-login-form-social <?php echo esc_attr( $hide_custom_class ); ?>">
 					<?php
 					if ( $is_google_valid ) {
-						$google_string   = __( 'Google', 'uael' );
-						$google_filters  = apply_filters( 'uael_login_form_google_button', $google_string );
+						$google_string   = __( 'Sign in with Google', 'uael' );
 						$google_scope_id = 'uael-google-login-' . $node_id;
 						?>
-						<div class="elementor-field-group uael-login-form-google">
-							<div class="uaelGoogleContentWrapper" id="<?php echo esc_attr( $google_scope_id ); ?>" data-clientid="<?php echo esc_attr( $google_clientid ); ?>">
+						<div class="elementor-field-group uael-login-form-google <?php echo esc_attr( $is_editor_class ); ?>">
+							<div class="uaelGoogleContentWrapper" id="<?php echo esc_attr( $google_scope_id ); ?>" data-clientid="<?php echo esc_attr( $google_clientid ); ?>" data-theme="<?php echo esc_attr( $settings['social_theme'] ); ?>">
 								<div class="uaelGoogleButtonIcon">
 									<div class="uaelGoogleButtonIconImage">
 										<svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" class="uaelGoogleButtonSvg"><g><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"></path><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"></path><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"></path><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"></path><path fill="none" d="M0 0h48v48H0z"></path></g></svg>
 									</div>
 								</div>
-								<span class="uael-google-text"><?php echo wp_kses_post( $google_filters ); ?></span>
+								<span class="uael-google-text"><?php echo wp_kses_post( $google_string ); ?></span>
 							</div>
 						</div>
 					<?php } ?>
 
 					<?php
 					if ( $is_fb_valid ) {
-						$facebook_string  = __( 'Facebook', 'uael' );
+						$facebook_string  = __( 'Sign in with Facebook', 'uael' );
 						$facebook_filters = apply_filters( 'uael_login_form_facebook_button', $facebook_string );
 						?>
 						<div class="elementor-field-group uael-login-form-facebook">
@@ -2924,9 +2885,9 @@ class LoginForm extends Common_Widget {
 						<# if ( is_google_valid ) { #>
 							<?php if ( '' !== $google_clientid ) { ?>
 								<#
-									var google_string = 'Google';
+									var google_string = 'Sign in with Google';
 								#>
-								<div class="elementor-field-group uael-login-form-google">
+								<div class="elementor-field-group uael-login-form-google uael-login-edit-mode">
 									<div class="uaelGoogleContentWrapper" id="uael-google-login" data-clientid="<?php echo esc_attr( $google_clientid ); ?>">
 										<div class="uaelGoogleButtonIcon">
 											<div class="uaelGoogleButtonIconImage">
@@ -2942,7 +2903,7 @@ class LoginForm extends Common_Widget {
 						<# if ( is_fb_valid ) { #>
 							<?php if ( '' !== $facebook_appid && '' !== $facebook_app_secret ) { ?>
 								<#
-									var facebook_string = 'Facebook';
+									var facebook_string = 'Sign in with Facebook';
 								#>
 								<div class="elementor-field-group uael-login-form-facebook">
 									<div class="uaelFacebookContentWrapper" id="uael-fbLink" data-appid="<?php echo esc_attr( $facebook_appid ); ?>">

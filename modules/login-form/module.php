@@ -73,6 +73,7 @@ class Module extends Module_Base {
 
 		add_action( 'wp_ajax_uael_login_form_google', array( $this, 'get_google_data' ) );
 		add_action( 'wp_ajax_nopriv_uael_login_form_google', array( $this, 'get_google_data' ) );
+
 	}
 
 	/**
@@ -313,20 +314,31 @@ class Module extends Module_Base {
 		$user_data = array();
 		$result    = '';
 
-		if ( isset( $_POST['data'] ) ) {
+		if ( isset( $_POST['data'] ) && is_array( $_POST['data'] ) ) {
 
-			$id_token            = filter_input( INPUT_POST, 'id_token', FILTER_SANITIZE_STRING );
+			$data = array_map( 'sanitize_text_field', $_POST['data'] );
+
+			$id_token = $data['id_token'];
+			
 			$integration_options = UAEL_Helper::get_integrations_options();
+			
+			// Verify the ID token using Google's token info endpoint.
+			$url = 'https://oauth2.googleapis.com/tokeninfo?id_token=' . $id_token;
 
-			$verified_data = $this->verify_user_data( $id_token, $integration_options['google_client_id'] );
+			$response = wp_remote_get( $url );
+			
+			if ( is_wp_error( $response ) ) {
+				wp_send_json_error( array( 'error' => __( 'Token verification failed', 'uael' ) ) );
+			}
 
-			$data       = array_map( 'sanitize_text_field', $_POST['data'] );
+			$verified_data = json_decode( wp_remote_retrieve_body( $response ), true );
+
 			$name       = isset( $verified_data['name'] ) ? $verified_data['name'] : '';
 			$email      = isset( $verified_data['email'] ) ? $verified_data['email'] : '';
 			$send_email = $data['send_email'];
 
 			// Check if email is verified with Google.
-			if ( empty( $verified_data ) || ( $verified_data['aud'] !== $integration_options['google_client_id'] ) || ( isset( $verified_data['email'] ) && $verified_data['email'] !== $email ) ) {
+			if ( empty( $verified_data ) || ( isset( $verified_data['aud'] ) && $verified_data['aud'] !== $integration_options['google_client_id'] ) || ( isset( $verified_data['email'] ) && $verified_data['email'] !== $email ) ) {
 				wp_send_json_error(
 					array(
 						'error' => __( 'Unauthorized access', 'uael' ),
@@ -422,36 +434,6 @@ class Module extends Module_Base {
 		 *                       for more information on possible values.
 		 */
 		do_action( 'edit_user_created_user', $result, $notify );
-
-	}
-
-	/**
-	 * Get access token info.
-	 *
-	 * @since 1.20.1
-	 * @access public
-	 * @param string $id_token ID token.
-	 * @param string $uae_google_client_id settings page client ID.
-	 * @return array
-	 */
-	public function verify_user_data( $id_token, $uae_google_client_id ) {
-
-		require_once UAEL_MODULES_DIR . 'login-form/includes/vendor/autoload.php';
-
-		// Get $id_token via HTTPS POST.
-		$client = new \Google_Client( array( 'client_id' => $uae_google_client_id ) );  //PHPCS:ignore:PHPCompatibility.PHP.ShortArray.Found
-
-		$verified_data = $client->verifyIdToken( $id_token );
-
-		if ( $verified_data ) {
-			return $verified_data;
-		} else {
-			wp_send_json_error(
-				array(
-					'error' => __( 'Unauthorized access', 'uael' ),
-				)
-			);
-		}
 
 	}
 

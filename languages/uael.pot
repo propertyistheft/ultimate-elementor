@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the Ultimate Addons for Elementor package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ultimate Addons for Elementor 1.36.37\n"
+"Project-Id-Version: Ultimate Addons for Elementor 1.36.39\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/ultimate-elementor\n"
-"POT-Creation-Date: 2024-08-28 08:03:17+00:00\n"
+"POT-Creation-Date: 2024-10-08 06:59:55+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -125,9 +125,9 @@ msgstr ""
 #: modules/image-gallery/widgets/image-gallery.php:630
 #: modules/infobox/widgets/infobox.php:1424
 #: modules/login-form/widgets/login-form.php:162
-#: modules/nav-menu/widgets/nav-menu.php:368
-#: modules/nav-menu/widgets/nav-menu.php:464
-#: modules/nav-menu/widgets/nav-menu.php:711
+#: modules/nav-menu/widgets/nav-menu.php:355
+#: modules/nav-menu/widgets/nav-menu.php:451
+#: modules/nav-menu/widgets/nav-menu.php:698
 #: modules/price-list/widgets/price-list.php:767
 #: modules/price-table/widgets/price-table.php:887
 #: modules/price-table/widgets/price-table.php:3137
@@ -246,7 +246,7 @@ msgid "This Field is required!"
 msgstr ""
 
 #: classes/class-uael-core-plugin.php:298
-#: modules/login-form/widgets/login-form.php:2529
+#: modules/login-form/widgets/login-form.php:2490
 msgid "Error: The Password you have entered is incorrect."
 msgstr ""
 
@@ -262,38 +262,38 @@ msgstr ""
 msgid "Thanks for logging in, "
 msgstr ""
 
-#: classes/class-uael-core-plugin.php:389
+#: classes/class-uael-core-plugin.php:391
 msgid "Invalid or data missing in the required(*) fields."
 msgstr ""
 
-#: classes/class-uael-core-plugin.php:397
+#: classes/class-uael-core-plugin.php:399
 msgid "No matching records found"
 msgstr ""
 
-#: classes/class-uael-core-plugin.php:398
+#: classes/class-uael-core-plugin.php:400
 msgid "Show _MENU_ Entries"
 msgstr ""
 
-#: classes/class-uael-core-plugin.php:573
+#: classes/class-uael-core-plugin.php:605
 msgid "The widget type you are trying to paste is not available on this site."
 msgstr ""
 
-#: classes/class-uael-core-plugin.php:575
+#: classes/class-uael-core-plugin.php:607
 #. translators: %s: html tags
 msgid "%1s Copy"
 msgstr ""
 
-#: classes/class-uael-core-plugin.php:577
+#: classes/class-uael-core-plugin.php:609
 #. translators: %s: html tags
 msgid "%1s Paste"
 msgstr ""
 
-#: classes/class-uael-core-plugin.php:579
+#: classes/class-uael-core-plugin.php:611
 #. translators: %s: html tags
 msgid "%1s Copy All"
 msgstr ""
 
-#: classes/class-uael-core-plugin.php:581
+#: classes/class-uael-core-plugin.php:613
 #. translators: %s: html tags
 msgid "%1s Paste All"
 msgstr ""
@@ -824,8 +824,8 @@ msgstr ""
 #: modules/headings/widgets/dual-heading.php:693
 #: modules/image-gallery/widgets/image-gallery.php:366
 #: modules/login-form/widgets/login-form.php:163
-#: modules/nav-menu/widgets/nav-menu.php:194
-#: modules/nav-menu/widgets/nav-menu.php:369 modules/particles/module.php:244
+#: modules/nav-menu/widgets/nav-menu.php:181
+#: modules/nav-menu/widgets/nav-menu.php:356 modules/particles/module.php:244
 #: modules/party-propz-extension/module.php:287
 #: modules/party-propz-extension/module.php:328
 #: modules/party-propz-extension/module.php:731
@@ -1569,7 +1569,7 @@ msgstr ""
 #: modules/login-form/widgets/login-form.php:1324
 #: modules/marketing-button/widgets/marketing-button.php:343
 #: modules/modal-popup/widgets/modal-popup.php:2242
-#: modules/nav-menu/widgets/nav-menu.php:2252
+#: modules/nav-menu/widgets/nav-menu.php:2239
 #: modules/offcanvas/widgets/offcanvas.php:1854
 #: modules/posts/widgets/posts-base.php:439
 #: modules/price-list/widgets/price-list.php:1042
@@ -2206,12 +2206,12 @@ msgid "Before After Slider Orientation"
 msgstr ""
 
 #: modules/ba-slider/widgets/ba-slider.php:300
-#: modules/nav-menu/widgets/nav-menu.php:525
+#: modules/nav-menu/widgets/nav-menu.php:512
 msgid "Vertical"
 msgstr ""
 
 #: modules/ba-slider/widgets/ba-slider.php:304
-#: modules/nav-menu/widgets/nav-menu.php:524
+#: modules/nav-menu/widgets/nav-menu.php:511
 msgid "Horizontal"
 msgstr ""
 
@@ -2236,8 +2236,8 @@ msgstr ""
 #: modules/modal-popup/widgets/modal-popup.php:1223
 #: modules/modal-popup/widgets/modal-popup.php:1377
 #: modules/modal-popup/widgets/modal-popup.php:1429
-#: modules/nav-menu/widgets/nav-menu.php:535
-#: modules/nav-menu/widgets/nav-menu.php:774
+#: modules/nav-menu/widgets/nav-menu.php:522
+#: modules/nav-menu/widgets/nav-menu.php:761
 #: modules/offcanvas/widgets/offcanvas.php:475
 #: modules/offcanvas/widgets/offcanvas.php:509
 #: modules/offcanvas/widgets/offcanvas.php:763
@@ -2319,12 +2319,12 @@ msgstr ""
 #: modules/modal-popup/widgets/modal-popup.php:1227
 #: modules/modal-popup/widgets/modal-popup.php:1381
 #: modules/modal-popup/widgets/modal-popup.php:1433
-#: modules/nav-menu/widgets/nav-menu.php:413
-#: modules/nav-menu/widgets/nav-menu.php:539
-#: modules/nav-menu/widgets/nav-menu.php:571
-#: modules/nav-menu/widgets/nav-menu.php:606
-#: modules/nav-menu/widgets/nav-menu.php:641
-#: modules/nav-menu/widgets/nav-menu.php:778
+#: modules/nav-menu/widgets/nav-menu.php:400
+#: modules/nav-menu/widgets/nav-menu.php:526
+#: modules/nav-menu/widgets/nav-menu.php:558
+#: modules/nav-menu/widgets/nav-menu.php:593
+#: modules/nav-menu/widgets/nav-menu.php:628
+#: modules/nav-menu/widgets/nav-menu.php:765
 #: modules/offcanvas/widgets/offcanvas.php:479
 #: modules/offcanvas/widgets/offcanvas.php:514
 #: modules/offcanvas/widgets/offcanvas.php:767
@@ -2429,11 +2429,11 @@ msgstr ""
 #: modules/modal-popup/widgets/modal-popup.php:1231
 #: modules/modal-popup/widgets/modal-popup.php:1385
 #: modules/modal-popup/widgets/modal-popup.php:1437
-#: modules/nav-menu/widgets/nav-menu.php:414
-#: modules/nav-menu/widgets/nav-menu.php:543
-#: modules/nav-menu/widgets/nav-menu.php:610
-#: modules/nav-menu/widgets/nav-menu.php:645
-#: modules/nav-menu/widgets/nav-menu.php:782
+#: modules/nav-menu/widgets/nav-menu.php:401
+#: modules/nav-menu/widgets/nav-menu.php:530
+#: modules/nav-menu/widgets/nav-menu.php:597
+#: modules/nav-menu/widgets/nav-menu.php:632
+#: modules/nav-menu/widgets/nav-menu.php:769
 #: modules/offcanvas/widgets/offcanvas.php:483
 #: modules/offcanvas/widgets/offcanvas.php:771
 #: modules/posts/skins/skin-base.php:903 modules/posts/skins/skin-base.php:1950
@@ -2522,12 +2522,12 @@ msgstr ""
 #: modules/modal-popup/widgets/modal-popup.php:1235
 #: modules/modal-popup/widgets/modal-popup.php:1389
 #: modules/modal-popup/widgets/modal-popup.php:1441
-#: modules/nav-menu/widgets/nav-menu.php:415
-#: modules/nav-menu/widgets/nav-menu.php:547
-#: modules/nav-menu/widgets/nav-menu.php:572
-#: modules/nav-menu/widgets/nav-menu.php:614
-#: modules/nav-menu/widgets/nav-menu.php:649
-#: modules/nav-menu/widgets/nav-menu.php:786
+#: modules/nav-menu/widgets/nav-menu.php:402
+#: modules/nav-menu/widgets/nav-menu.php:534
+#: modules/nav-menu/widgets/nav-menu.php:559
+#: modules/nav-menu/widgets/nav-menu.php:601
+#: modules/nav-menu/widgets/nav-menu.php:636
+#: modules/nav-menu/widgets/nav-menu.php:773
 #: modules/offcanvas/widgets/offcanvas.php:487
 #: modules/offcanvas/widgets/offcanvas.php:518
 #: modules/offcanvas/widgets/offcanvas.php:775
@@ -2664,10 +2664,10 @@ msgstr ""
 #: modules/modal-popup/widgets/modal-popup.php:1081
 #: modules/modal-popup/widgets/modal-popup.php:1099
 #: modules/modal-popup/widgets/modal-popup.php:1135
-#: modules/nav-menu/widgets/nav-menu.php:483
-#: modules/nav-menu/widgets/nav-menu.php:500
-#: modules/nav-menu/widgets/nav-menu.php:808
-#: modules/nav-menu/widgets/nav-menu.php:837
+#: modules/nav-menu/widgets/nav-menu.php:470
+#: modules/nav-menu/widgets/nav-menu.php:487
+#: modules/nav-menu/widgets/nav-menu.php:795
+#: modules/nav-menu/widgets/nav-menu.php:824
 #: modules/offcanvas/widgets/offcanvas.php:161
 #: modules/offcanvas/widgets/offcanvas.php:306
 #: modules/offcanvas/widgets/offcanvas.php:893
@@ -2825,10 +2825,10 @@ msgstr ""
 #: modules/modal-popup/widgets/modal-popup.php:1080
 #: modules/modal-popup/widgets/modal-popup.php:1098
 #: modules/modal-popup/widgets/modal-popup.php:1134
-#: modules/nav-menu/widgets/nav-menu.php:484
-#: modules/nav-menu/widgets/nav-menu.php:501
-#: modules/nav-menu/widgets/nav-menu.php:809
-#: modules/nav-menu/widgets/nav-menu.php:838
+#: modules/nav-menu/widgets/nav-menu.php:471
+#: modules/nav-menu/widgets/nav-menu.php:488
+#: modules/nav-menu/widgets/nav-menu.php:796
+#: modules/nav-menu/widgets/nav-menu.php:825
 #: modules/offcanvas/widgets/offcanvas.php:160
 #: modules/offcanvas/widgets/offcanvas.php:305
 #: modules/offcanvas/widgets/offcanvas.php:892
@@ -3062,12 +3062,12 @@ msgstr ""
 #: modules/login-form/widgets/login-form.php:748
 #: modules/login-form/widgets/login-form.php:1767
 #: modules/login-form/widgets/login-form.php:1972
-#: modules/login-form/widgets/login-form.php:2373
+#: modules/login-form/widgets/login-form.php:2334
 #: modules/modal-popup/widgets/modal-popup.php:787
 #: modules/modal-popup/widgets/modal-popup.php:1475
 #: modules/modal-popup/widgets/modal-popup.php:1555
-#: modules/nav-menu/widgets/nav-menu.php:1853
-#: modules/nav-menu/widgets/nav-menu.php:1885
+#: modules/nav-menu/widgets/nav-menu.php:1840
+#: modules/nav-menu/widgets/nav-menu.php:1872
 #: modules/offcanvas/widgets/offcanvas.php:1684
 #: modules/posts/skins/skin-base.php:2820
 #: modules/posts/skins/skin-base.php:2914
@@ -3215,25 +3215,25 @@ msgstr ""
 #: modules/instagram-feed/widgets/instagram-feed.php:1000
 #: modules/instagram-feed/widgets/instagram-feed.php:1072
 #: modules/login-form/widgets/login-form.php:1885
-#: modules/login-form/widgets/login-form.php:2249
-#: modules/login-form/widgets/login-form.php:2313
+#: modules/login-form/widgets/login-form.php:2210
+#: modules/login-form/widgets/login-form.php:2274
 #: modules/marketing-button/widgets/marketing-button.php:554
 #: modules/marketing-button/widgets/marketing-button.php:640
 #: modules/modal-popup/widgets/modal-popup.php:1490
 #: modules/modal-popup/widgets/modal-popup.php:1573
 #: modules/modal-popup/widgets/modal-popup.php:2011
 #: modules/modal-popup/widgets/modal-popup.php:2057
-#: modules/nav-menu/widgets/nav-menu.php:1136
-#: modules/nav-menu/widgets/nav-menu.php:1278
-#: modules/nav-menu/widgets/nav-menu.php:1320
-#: modules/nav-menu/widgets/nav-menu.php:1384
-#: modules/nav-menu/widgets/nav-menu.php:1488
-#: modules/nav-menu/widgets/nav-menu.php:1533
-#: modules/nav-menu/widgets/nav-menu.php:1578
-#: modules/nav-menu/widgets/nav-menu.php:1865
-#: modules/nav-menu/widgets/nav-menu.php:1897
-#: modules/nav-menu/widgets/nav-menu.php:2133
-#: modules/nav-menu/widgets/nav-menu.php:2201
+#: modules/nav-menu/widgets/nav-menu.php:1123
+#: modules/nav-menu/widgets/nav-menu.php:1265
+#: modules/nav-menu/widgets/nav-menu.php:1307
+#: modules/nav-menu/widgets/nav-menu.php:1371
+#: modules/nav-menu/widgets/nav-menu.php:1475
+#: modules/nav-menu/widgets/nav-menu.php:1520
+#: modules/nav-menu/widgets/nav-menu.php:1565
+#: modules/nav-menu/widgets/nav-menu.php:1852
+#: modules/nav-menu/widgets/nav-menu.php:1884
+#: modules/nav-menu/widgets/nav-menu.php:2120
+#: modules/nav-menu/widgets/nav-menu.php:2188
 #: modules/offcanvas/widgets/offcanvas.php:1002
 #: modules/offcanvas/widgets/offcanvas.php:1086
 #: modules/offcanvas/widgets/offcanvas.php:1188
@@ -3366,11 +3366,11 @@ msgstr ""
 #: modules/instagram-feed/widgets/instagram-feed.php:860
 #: modules/instagram-feed/widgets/instagram-feed.php:1120
 #: modules/login-form/widgets/login-form.php:1909
-#: modules/login-form/widgets/login-form.php:2215
+#: modules/login-form/widgets/login-form.php:2176
 #: modules/marketing-button/widgets/marketing-button.php:507
 #: modules/modal-popup/widgets/modal-popup.php:1273
 #: modules/modal-popup/widgets/modal-popup.php:1456
-#: modules/nav-menu/widgets/nav-menu.php:2099
+#: modules/nav-menu/widgets/nav-menu.php:2086
 #: modules/offcanvas/widgets/offcanvas.php:959
 #: modules/offcanvas/widgets/offcanvas.php:1146
 #: modules/offcanvas/widgets/offcanvas.php:1327
@@ -3534,7 +3534,7 @@ msgstr ""
 #: modules/instagram-feed/widgets/instagram-feed.php:1348
 #: modules/login-form/widgets/login-form.php:1333
 #: modules/marketing-button/widgets/marketing-button.php:352
-#: modules/nav-menu/widgets/nav-menu.php:2261
+#: modules/nav-menu/widgets/nav-menu.php:2248
 #: modules/offcanvas/widgets/offcanvas.php:1863
 #: modules/posts/widgets/posts-base.php:448
 #: modules/price-list/widgets/price-list.php:1051
@@ -3699,7 +3699,7 @@ msgid "Sunday"
 msgstr ""
 
 #: modules/business-hours/widgets/business-hours.php:267
-#: modules/nav-menu/widgets/nav-menu.php:1094
+#: modules/nav-menu/widgets/nav-menu.php:1081
 msgid "Row Spacing"
 msgstr ""
 
@@ -3707,7 +3707,7 @@ msgstr ""
 #: modules/business-hours/widgets/business-hours.php:292
 #: modules/login-form/widgets/login-form.php:321
 #: modules/login-form/widgets/login-form.php:1216
-#: modules/nav-menu/widgets/nav-menu.php:1762
+#: modules/nav-menu/widgets/nav-menu.php:1749
 #: modules/price-table/widgets/price-table.php:2581
 #: modules/registration-form/widgets/registration-form.php:795
 #: modules/woocommerce/widgets/woo-mini-cart.php:2431
@@ -3758,7 +3758,7 @@ msgstr ""
 #: modules/infobox/widgets/infobox.php:1089
 #: modules/infobox/widgets/infobox.php:1425
 #: modules/login-form/widgets/login-form.php:340
-#: modules/nav-menu/widgets/nav-menu.php:1777
+#: modules/nav-menu/widgets/nav-menu.php:1764
 #: modules/price-list/widgets/price-list.php:309
 #: modules/price-table/widgets/price-table.php:2266
 #: modules/price-table/widgets/price-table.php:2608
@@ -3788,7 +3788,7 @@ msgstr ""
 #: modules/infobox/widgets/infobox.php:1091
 #: modules/infobox/widgets/infobox.php:1427
 #: modules/login-form/widgets/login-form.php:341
-#: modules/nav-menu/widgets/nav-menu.php:1779
+#: modules/nav-menu/widgets/nav-menu.php:1766
 #: modules/price-list/widgets/price-list.php:310
 #: modules/price-table/widgets/price-table.php:2268
 #: modules/price-table/widgets/price-table.php:2610
@@ -3818,7 +3818,7 @@ msgstr ""
 #: modules/infobox/widgets/infobox.php:1090
 #: modules/infobox/widgets/infobox.php:1428
 #: modules/login-form/widgets/login-form.php:342
-#: modules/nav-menu/widgets/nav-menu.php:1780
+#: modules/nav-menu/widgets/nav-menu.php:1767
 #: modules/price-list/widgets/price-list.php:311
 #: modules/price-table/widgets/price-table.php:2267
 #: modules/price-table/widgets/price-table.php:2611
@@ -4154,7 +4154,7 @@ msgstr ""
 #: modules/marketing-button/widgets/marketing-button.php:261
 #: modules/modal-popup/widgets/modal-popup.php:1685
 #: modules/modal-popup/widgets/modal-popup.php:1829
-#: modules/nav-menu/widgets/nav-menu.php:1912
+#: modules/nav-menu/widgets/nav-menu.php:1899
 #: modules/party-propz-extension/module.php:514
 #: modules/party-propz-extension/module.php:894
 #: modules/price-table/widgets/price-table.php:2484
@@ -4234,22 +4234,22 @@ msgstr ""
 #: modules/instagram-feed/widgets/instagram-feed.php:1056
 #: modules/login-form/widgets/login-form.php:847
 #: modules/login-form/widgets/login-form.php:1285
-#: modules/login-form/widgets/login-form.php:2236
-#: modules/login-form/widgets/login-form.php:2301
+#: modules/login-form/widgets/login-form.php:2197
+#: modules/login-form/widgets/login-form.php:2262
 #: modules/marketing-button/widgets/marketing-button.php:529
 #: modules/marketing-button/widgets/marketing-button.php:617
 #: modules/modal-popup/widgets/modal-popup.php:1994
 #: modules/modal-popup/widgets/modal-popup.php:2043
 #: modules/modal-popup/widgets/modal-popup.php:2180
-#: modules/nav-menu/widgets/nav-menu.php:1263
-#: modules/nav-menu/widgets/nav-menu.php:1302
-#: modules/nav-menu/widgets/nav-menu.php:1370
-#: modules/nav-menu/widgets/nav-menu.php:1471
-#: modules/nav-menu/widgets/nav-menu.php:1516
-#: modules/nav-menu/widgets/nav-menu.php:1559
-#: modules/nav-menu/widgets/nav-menu.php:2018
-#: modules/nav-menu/widgets/nav-menu.php:2120
-#: modules/nav-menu/widgets/nav-menu.php:2189
+#: modules/nav-menu/widgets/nav-menu.php:1250
+#: modules/nav-menu/widgets/nav-menu.php:1289
+#: modules/nav-menu/widgets/nav-menu.php:1357
+#: modules/nav-menu/widgets/nav-menu.php:1458
+#: modules/nav-menu/widgets/nav-menu.php:1503
+#: modules/nav-menu/widgets/nav-menu.php:1546
+#: modules/nav-menu/widgets/nav-menu.php:2005
+#: modules/nav-menu/widgets/nav-menu.php:2107
+#: modules/nav-menu/widgets/nav-menu.php:2176
 #: modules/offcanvas/widgets/offcanvas.php:986
 #: modules/offcanvas/widgets/offcanvas.php:1072
 #: modules/offcanvas/widgets/offcanvas.php:1471
@@ -4341,7 +4341,7 @@ msgstr ""
 #: modules/how-to/widgets/how-to.php:776
 #: modules/instagram-feed/widgets/instagram-feed.php:1146
 #: modules/login-form/widgets/login-form.php:1382
-#: modules/nav-menu/widgets/nav-menu.php:2035
+#: modules/nav-menu/widgets/nav-menu.php:2022
 #: modules/registration-form/widgets/registration-form.php:443
 #: modules/registration-form/widgets/registration-form.php:1445
 #: modules/team-member/widgets/team-member.php:1189
@@ -4453,13 +4453,12 @@ msgstr ""
 #: modules/instagram-feed/widgets/instagram-feed.php:1029
 #: modules/instagram-feed/widgets/instagram-feed.php:1101
 #: modules/login-form/widgets/login-form.php:1948
-#: modules/login-form/widgets/login-form.php:2119
-#: modules/login-form/widgets/login-form.php:2272
+#: modules/login-form/widgets/login-form.php:2233
 #: modules/marketing-button/widgets/marketing-button.php:579
 #: modules/modal-popup/widgets/modal-popup.php:2121
-#: modules/nav-menu/widgets/nav-menu.php:1631
-#: modules/nav-menu/widgets/nav-menu.php:1946
-#: modules/nav-menu/widgets/nav-menu.php:2159
+#: modules/nav-menu/widgets/nav-menu.php:1618
+#: modules/nav-menu/widgets/nav-menu.php:1933
+#: modules/nav-menu/widgets/nav-menu.php:2146
 #: modules/offcanvas/widgets/offcanvas.php:1034
 #: modules/offcanvas/widgets/offcanvas.php:1731
 #: modules/posts/skins/skin-base.php:1047
@@ -4522,7 +4521,7 @@ msgstr ""
 #: modules/business-reviews/widgets/business-reviews.php:542
 #: modules/image-gallery/widgets/image-gallery.php:544
 #: modules/image-gallery/widgets/image-gallery.php:1470
-#: modules/nav-menu/widgets/nav-menu.php:693
+#: modules/nav-menu/widgets/nav-menu.php:680
 #: modules/posts/skins/skin-base.php:564 modules/posts/skins/skin-base.php:3601
 #: modules/twitter/widgets/twitter.php:702
 #: modules/twitter/widgets/twitter.php:1847
@@ -4625,8 +4624,8 @@ msgstr ""
 #: modules/instagram-feed/widgets/instagram-feed.php:958
 #: modules/modal-popup/widgets/modal-popup.php:1968
 #: modules/modal-popup/widgets/modal-popup.php:2216
-#: modules/nav-menu/widgets/nav-menu.php:2007
-#: modules/nav-menu/widgets/nav-menu.php:2088
+#: modules/nav-menu/widgets/nav-menu.php:1994
+#: modules/nav-menu/widgets/nav-menu.php:2075
 #: modules/offcanvas/widgets/offcanvas.php:945
 #: modules/price-table/widgets/price-table.php:2857
 #: modules/table/widgets/table.php:1051 modules/table/widgets/table.php:1327
@@ -4676,7 +4675,7 @@ msgstr ""
 #: modules/hotspot/widgets/hotspot.php:1165
 #: modules/infobox/widgets/infobox.php:670
 #: modules/infobox/widgets/infobox.php:1418
-#: modules/nav-menu/widgets/nav-menu.php:1771
+#: modules/nav-menu/widgets/nav-menu.php:1758
 #: modules/price-table/widgets/price-table.php:3132
 #: modules/retina-image/widgets/retina-image.php:352
 #: modules/team-member/widgets/team-member.php:806
@@ -4715,9 +4714,9 @@ msgstr ""
 #: modules/infobox/widgets/infobox.php:1423
 #: modules/instagram-feed/widgets/instagram-feed.php:292
 #: modules/login-form/widgets/login-form.php:164
-#: modules/nav-menu/widgets/nav-menu.php:761
-#: modules/nav-menu/widgets/nav-menu.php:1155
-#: modules/nav-menu/widgets/nav-menu.php:1776
+#: modules/nav-menu/widgets/nav-menu.php:748
+#: modules/nav-menu/widgets/nav-menu.php:1142
+#: modules/nav-menu/widgets/nav-menu.php:1763
 #: modules/posts/skins/skin-base.php:187 modules/posts/skins/skin-base.php:342
 #: modules/posts/skins/skin-base.php:566 modules/posts/skins/skin-base.php:666
 #: modules/posts/skins/skin-business.php:134
@@ -4780,8 +4779,8 @@ msgstr ""
 #: modules/infobox/widgets/infobox.php:712
 #: modules/infobox/widgets/infobox.php:1456
 #: modules/login-form/widgets/login-form.php:1922
-#: modules/nav-menu/widgets/nav-menu.php:1809
-#: modules/nav-menu/widgets/nav-menu.php:1930
+#: modules/nav-menu/widgets/nav-menu.php:1796
+#: modules/nav-menu/widgets/nav-menu.php:1917
 #: modules/price-table/widgets/price-table.php:3156
 #: modules/registration-form/widgets/registration-form.php:1704
 #: modules/registration-form/widgets/registration-form.php:1720
@@ -4822,7 +4821,7 @@ msgstr ""
 #: modules/instagram-feed/widgets/instagram-feed.php:681
 #: modules/login-form/widgets/login-form.php:1935
 #: modules/modal-popup/widgets/modal-popup.php:2074
-#: modules/nav-menu/widgets/nav-menu.php:1792
+#: modules/nav-menu/widgets/nav-menu.php:1779
 #: modules/offcanvas/widgets/offcanvas.php:1104
 #: modules/price-list/widgets/price-list.php:991
 #: modules/price-table/widgets/price-table.php:3179
@@ -4879,10 +4878,10 @@ msgstr ""
 #: modules/instagram-feed/widgets/instagram-feed.php:637
 #: modules/instagram-feed/widgets/instagram-feed.php:1016
 #: modules/instagram-feed/widgets/instagram-feed.php:1088
-#: modules/login-form/widgets/login-form.php:2264
+#: modules/login-form/widgets/login-form.php:2225
 #: modules/marketing-button/widgets/marketing-button.php:571
 #: modules/modal-popup/widgets/modal-popup.php:2107
-#: modules/nav-menu/widgets/nav-menu.php:2151
+#: modules/nav-menu/widgets/nav-menu.php:2138
 #: modules/offcanvas/widgets/offcanvas.php:1021
 #: modules/posts/skins/skin-base.php:971 modules/posts/skins/skin-base.php:2192
 #: modules/posts/skins/skin-base.php:2428
@@ -5137,8 +5136,8 @@ msgstr ""
 #: modules/instagram-feed/widgets/instagram-feed.php:519
 #: modules/login-form/widgets/login-form.php:289
 #: modules/login-form/widgets/login-form.php:560
-#: modules/nav-menu/widgets/nav-menu.php:513
-#: modules/nav-menu/widgets/nav-menu.php:520
+#: modules/nav-menu/widgets/nav-menu.php:500
+#: modules/nav-menu/widgets/nav-menu.php:507
 #: modules/posts/skins/skin-base.php:151 modules/posts/skins/skin-base.php:1886
 #: modules/price-list/widgets/price-list.php:268
 #: modules/price-table/widgets/price-table.php:2378
@@ -5371,12 +5370,12 @@ msgstr ""
 #: modules/ff-styler/widgets/ff-styler.php:1839
 #: modules/infobox/widgets/infobox.php:1203
 #: modules/login-form/widgets/login-form.php:889
-#: modules/login-form/widgets/login-form.php:2168
+#: modules/login-form/widgets/login-form.php:2129
 #: modules/marketing-button/widgets/marketing-button.php:459
 #: modules/modal-popup/widgets/modal-popup.php:882
 #: modules/modal-popup/widgets/modal-popup.php:1945
-#: modules/nav-menu/widgets/nav-menu.php:465
-#: modules/nav-menu/widgets/nav-menu.php:2075
+#: modules/nav-menu/widgets/nav-menu.php:452
+#: modules/nav-menu/widgets/nav-menu.php:2062
 #: modules/offcanvas/widgets/offcanvas.php:376
 #: modules/offcanvas/widgets/offcanvas.php:922
 #: modules/posts/skins/skin-base.php:263
@@ -5399,9 +5398,9 @@ msgstr ""
 #: modules/login-form/widgets/login-form.php:1169
 #: modules/modal-popup/widgets/modal-popup.php:881
 #: modules/modal-popup/widgets/modal-popup.php:1034
-#: modules/nav-menu/widgets/nav-menu.php:264
-#: modules/nav-menu/widgets/nav-menu.php:1160
-#: modules/nav-menu/widgets/nav-menu.php:2300
+#: modules/nav-menu/widgets/nav-menu.php:251
+#: modules/nav-menu/widgets/nav-menu.php:1147
+#: modules/nav-menu/widgets/nav-menu.php:2287
 #: modules/posts/skins/skin-base.php:1793
 #: modules/price-table/widgets/price-table.php:631
 #: modules/price-table/widgets/price-table.php:1044
@@ -5438,7 +5437,7 @@ msgstr ""
 #: modules/how-to/widgets/how-to.php:659
 #: modules/infobox/widgets/infobox.php:1242
 #: modules/marketing-button/widgets/marketing-button.php:168
-#: modules/nav-menu/widgets/nav-menu.php:292
+#: modules/nav-menu/widgets/nav-menu.php:279
 #: modules/party-propz-extension/module.php:420
 #: modules/price-list/widgets/price-list.php:216
 #: modules/price-table/widgets/price-table.php:1111
@@ -5471,7 +5470,7 @@ msgstr ""
 #: modules/modal-popup/widgets/modal-popup.php:924
 #: modules/modal-popup/widgets/modal-popup.php:1290
 #: modules/modal-popup/widgets/modal-popup.php:1304
-#: modules/nav-menu/widgets/nav-menu.php:908
+#: modules/nav-menu/widgets/nav-menu.php:895
 #: modules/offcanvas/widgets/offcanvas.php:377
 #: modules/offcanvas/widgets/offcanvas.php:404
 #: modules/offcanvas/widgets/offcanvas.php:420
@@ -5592,13 +5591,13 @@ msgstr ""
 #: modules/instagram-feed/widgets/instagram-feed.php:974
 #: modules/instagram-feed/widgets/instagram-feed.php:1195
 #: modules/instagram-feed/widgets/instagram-feed.php:1222
-#: modules/login-form/widgets/login-form.php:2229
+#: modules/login-form/widgets/login-form.php:2190
 #: modules/marketing-button/widgets/marketing-button.php:522
 #: modules/modal-popup/widgets/modal-popup.php:1984
-#: modules/nav-menu/widgets/nav-menu.php:1256
-#: modules/nav-menu/widgets/nav-menu.php:1464
-#: modules/nav-menu/widgets/nav-menu.php:1846
-#: modules/nav-menu/widgets/nav-menu.php:2113
+#: modules/nav-menu/widgets/nav-menu.php:1243
+#: modules/nav-menu/widgets/nav-menu.php:1451
+#: modules/nav-menu/widgets/nav-menu.php:1833
+#: modules/nav-menu/widgets/nav-menu.php:2100
 #: modules/offcanvas/widgets/offcanvas.php:976
 #: modules/offcanvas/widgets/offcanvas.php:1160
 #: modules/offcanvas/widgets/offcanvas.php:1461
@@ -5658,14 +5657,14 @@ msgstr ""
 #: modules/instagram-feed/widgets/instagram-feed.php:662
 #: modules/instagram-feed/widgets/instagram-feed.php:1046
 #: modules/instagram-feed/widgets/instagram-feed.php:1281
-#: modules/login-form/widgets/login-form.php:2294
+#: modules/login-form/widgets/login-form.php:2255
 #: modules/marketing-button/widgets/marketing-button.php:610
 #: modules/modal-popup/widgets/modal-popup.php:2033
-#: modules/nav-menu/widgets/nav-menu.php:675
-#: modules/nav-menu/widgets/nav-menu.php:1295
-#: modules/nav-menu/widgets/nav-menu.php:1509
-#: modules/nav-menu/widgets/nav-menu.php:1878
-#: modules/nav-menu/widgets/nav-menu.php:2182
+#: modules/nav-menu/widgets/nav-menu.php:662
+#: modules/nav-menu/widgets/nav-menu.php:1282
+#: modules/nav-menu/widgets/nav-menu.php:1496
+#: modules/nav-menu/widgets/nav-menu.php:1865
+#: modules/nav-menu/widgets/nav-menu.php:2169
 #: modules/offcanvas/widgets/offcanvas.php:1062
 #: modules/offcanvas/widgets/offcanvas.php:1205
 #: modules/offcanvas/widgets/offcanvas.php:1491
@@ -5720,7 +5719,7 @@ msgstr ""
 #: modules/image-gallery/widgets/image-gallery.php:1822
 #: modules/infobox/widgets/infobox.php:886
 #: modules/marketing-button/widgets/marketing-button.php:656
-#: modules/nav-menu/widgets/nav-menu.php:2218
+#: modules/nav-menu/widgets/nav-menu.php:2205
 #: modules/posts/skins/skin-base.php:2246
 #: modules/posts/skins/skin-base.php:2483
 #: modules/posts/skins/skin-base.php:3398 modules/posts/skins/skin-feed.php:770
@@ -5837,8 +5836,8 @@ msgstr ""
 #: modules/buttons/widgets/buttons.php:776
 #: modules/image-gallery/widgets/image-gallery.php:305
 #: modules/marketing-button/widgets/marketing-button.php:483
-#: modules/nav-menu/widgets/nav-menu.php:551
-#: modules/nav-menu/widgets/nav-menu.php:653
+#: modules/nav-menu/widgets/nav-menu.php:538
+#: modules/nav-menu/widgets/nav-menu.php:640
 msgid "Justify"
 msgstr ""
 
@@ -5898,7 +5897,7 @@ msgstr ""
 #: modules/cf-styler/widgets/cf-styler.php:202
 #: modules/ff-styler/widgets/ff-styler.php:270
 #: modules/gf-styler/widgets/gf-styler.php:341
-#: modules/nav-menu/widgets/nav-menu.php:1156
+#: modules/nav-menu/widgets/nav-menu.php:1143
 #: modules/registration-form/widgets/registration-form.php:1622
 #: modules/wpf-styler/widgets/wpf-styler.php:271
 msgid "Underline"
@@ -6089,7 +6088,7 @@ msgstr ""
 #: modules/infobox/widgets/infobox.php:677
 #: modules/infobox/widgets/infobox.php:1092
 #: modules/infobox/widgets/infobox.php:1426
-#: modules/nav-menu/widgets/nav-menu.php:1778
+#: modules/nav-menu/widgets/nav-menu.php:1765
 #: modules/price-list/widgets/price-list.php:312
 #: modules/price-table/widgets/price-table.php:2269
 #: modules/price-table/widgets/price-table.php:2609
@@ -6491,7 +6490,7 @@ msgstr ""
 #: modules/content-toggle/widgets/content-toggle.php:330
 #: modules/faq/widgets/faq.php:201
 #: modules/modal-popup/widgets/modal-popup.php:331
-#: modules/nav-menu/widgets/nav-menu.php:336
+#: modules/nav-menu/widgets/nav-menu.php:323
 #: modules/offcanvas/widgets/offcanvas.php:228
 msgid "Select Section"
 msgstr ""
@@ -6500,7 +6499,7 @@ msgstr ""
 #: modules/content-toggle/widgets/content-toggle.php:344
 #: modules/faq/widgets/faq.php:214
 #: modules/modal-popup/widgets/modal-popup.php:344
-#: modules/nav-menu/widgets/nav-menu.php:350
+#: modules/nav-menu/widgets/nav-menu.php:337
 msgid "Select Container"
 msgstr ""
 
@@ -6668,7 +6667,7 @@ msgstr ""
 #: modules/content-toggle/widgets/content-toggle.php:1058
 #: modules/faq/widgets/faq.php:148
 #: modules/modal-popup/widgets/modal-popup.php:2312
-#: modules/nav-menu/widgets/nav-menu.php:2301
+#: modules/nav-menu/widgets/nav-menu.php:2288
 #: modules/offcanvas/widgets/offcanvas.php:1913
 msgid "Saved Section"
 msgstr ""
@@ -6676,7 +6675,7 @@ msgstr ""
 #: modules/content-toggle/widgets/content-toggle.php:1059
 #: modules/faq/widgets/faq.php:149
 #: modules/modal-popup/widgets/modal-popup.php:2313
-#: modules/nav-menu/widgets/nav-menu.php:2302
+#: modules/nav-menu/widgets/nav-menu.php:2289
 msgid "Saved Container"
 msgstr ""
 
@@ -6710,7 +6709,7 @@ msgstr ""
 #: modules/countdown/widgets/countdown.php:148
 #: modules/headings/widgets/fancy-heading.php:198
 #: modules/infobox/widgets/infobox.php:1196
-#: modules/nav-menu/widgets/nav-menu.php:189
+#: modules/nav-menu/widgets/nav-menu.php:176
 #: modules/price-table/widgets/price-table.php:1038
 #: modules/registration-form/widgets/registration-form.php:230
 #: modules/woocommerce/widgets/woo-products.php:459
@@ -6899,7 +6898,7 @@ msgid "Seconds"
 msgstr ""
 
 #: modules/countdown/widgets/countdown.php:591
-#: modules/nav-menu/widgets/nav-menu.php:866
+#: modules/nav-menu/widgets/nav-menu.php:853
 msgid "Label Position"
 msgstr ""
 
@@ -6984,9 +6983,9 @@ msgstr ""
 
 #: modules/countdown/widgets/countdown.php:1030 modules/faq/widgets/faq.php:753
 #: modules/faq/widgets/faq.php:766 modules/infobox/widgets/infobox.php:1586
-#: modules/login-form/widgets/login-form.php:2327
-#: modules/nav-menu/widgets/nav-menu.php:2172
-#: modules/nav-menu/widgets/nav-menu.php:2230
+#: modules/login-form/widgets/login-form.php:2288
+#: modules/nav-menu/widgets/nav-menu.php:2159
+#: modules/nav-menu/widgets/nav-menu.php:2217
 #: modules/timeline/widgets/timeline.php:1535
 #: modules/woocommerce/widgets/woo-mini-cart.php:1445
 #: modules/woocommerce/widgets/woo-mini-cart.php:1502
@@ -8383,7 +8382,7 @@ msgstr ""
 
 #: modules/faq/widgets/faq.php:154
 #: modules/modal-popup/widgets/modal-popup.php:2321
-#: modules/nav-menu/widgets/nav-menu.php:2306
+#: modules/nav-menu/widgets/nav-menu.php:2293
 #: modules/offcanvas/widgets/offcanvas.php:1919
 msgid "Saved Widget"
 msgstr ""
@@ -8433,14 +8432,14 @@ msgstr ""
 
 #: modules/faq/widgets/faq.php:191
 #: modules/modal-popup/widgets/modal-popup.php:269
-#: modules/nav-menu/widgets/nav-menu.php:251
+#: modules/nav-menu/widgets/nav-menu.php:238
 #: modules/offcanvas/widgets/offcanvas.php:168
 msgid "Content Type"
 msgstr ""
 
 #: modules/faq/widgets/faq.php:227
 #: modules/modal-popup/widgets/modal-popup.php:357
-#: modules/nav-menu/widgets/nav-menu.php:322
+#: modules/nav-menu/widgets/nav-menu.php:309
 #: modules/offcanvas/widgets/offcanvas.php:267
 msgid "Select Widget"
 msgstr ""
@@ -8468,7 +8467,7 @@ msgstr ""
 msgid "Elementum voluptate sodales?"
 msgstr ""
 
-#: modules/faq/widgets/faq.php:301 modules/nav-menu/widgets/nav-menu.php:498
+#: modules/faq/widgets/faq.php:301 modules/nav-menu/widgets/nav-menu.php:485
 msgid "Enable Schema Support"
 msgstr ""
 
@@ -9673,7 +9672,7 @@ msgid "Select Effect"
 msgstr ""
 
 #: modules/headings/widgets/fancy-heading.php:199
-#: modules/nav-menu/widgets/nav-menu.php:712
+#: modules/nav-menu/widgets/nav-menu.php:699
 msgid "Slide Up"
 msgstr ""
 
@@ -9693,7 +9692,7 @@ msgid "Clip"
 msgstr ""
 
 #: modules/headings/widgets/fancy-heading.php:203
-#: modules/nav-menu/widgets/nav-menu.php:589
+#: modules/nav-menu/widgets/nav-menu.php:576
 #: modules/offcanvas/widgets/offcanvas.php:1821
 #: modules/video-gallery/widgets/video-gallery.php:1522
 #: modules/video-gallery/widgets/video-gallery.php:1701
@@ -9964,7 +9963,7 @@ msgid "Display on"
 msgstr ""
 
 #: modules/hotspot/widgets/hotspot.php:868
-#: modules/nav-menu/widgets/nav-menu.php:676
+#: modules/nav-menu/widgets/nav-menu.php:663
 #: modules/price-table/widgets/price-table.php:833
 #: modules/woocommerce/widgets/woo-mini-cart.php:386
 msgid "Click"
@@ -10007,7 +10006,7 @@ msgid "Swing"
 msgstr ""
 
 #: modules/hotspot/widgets/hotspot.php:929
-#: modules/nav-menu/widgets/nav-menu.php:588
+#: modules/nav-menu/widgets/nav-menu.php:575
 #: modules/offcanvas/widgets/offcanvas.php:1820
 #: modules/price-table/widgets/price-table.php:890
 msgid "Slide"
@@ -11295,7 +11294,11 @@ msgstr ""
 msgid "No Posts Found"
 msgstr ""
 
-#: modules/login-form/module.php:332 modules/login-form/module.php:451
+#: modules/login-form/module.php:331
+msgid "Token verification failed"
+msgstr ""
+
+#: modules/login-form/module.php:344
 msgid "Unauthorized access"
 msgstr ""
 
@@ -11305,10 +11308,10 @@ msgstr ""
 
 #: modules/login-form/widgets/login-form.php:174
 #: modules/login-form/widgets/login-form.php:218
-#: modules/login-form/widgets/login-form.php:2542
-#: modules/login-form/widgets/login-form.php:2706
-#: modules/login-form/widgets/login-form.php:2998
-#: modules/login-form/widgets/login-form.php:3015
+#: modules/login-form/widgets/login-form.php:2503
+#: modules/login-form/widgets/login-form.php:2667
+#: modules/login-form/widgets/login-form.php:2959
+#: modules/login-form/widgets/login-form.php:2976
 msgid "Username or Email Address"
 msgstr ""
 
@@ -11318,10 +11321,10 @@ msgstr ""
 
 #: modules/login-form/widgets/login-form.php:190
 #: modules/login-form/widgets/login-form.php:235
-#: modules/login-form/widgets/login-form.php:2543
-#: modules/login-form/widgets/login-form.php:2729
-#: modules/login-form/widgets/login-form.php:3038
-#: modules/login-form/widgets/login-form.php:3051
+#: modules/login-form/widgets/login-form.php:2504
+#: modules/login-form/widgets/login-form.php:2690
+#: modules/login-form/widgets/login-form.php:2999
+#: modules/login-form/widgets/login-form.php:3012
 #: modules/registration-form/widgets/registration-form.php:126
 #: modules/registration-form/widgets/registration-form.php:372
 #: modules/registration-form/widgets/registration-form.php:373
@@ -11349,8 +11352,8 @@ msgid "Input Size"
 msgstr ""
 
 #: modules/login-form/widgets/login-form.php:267
-#: modules/login-form/widgets/login-form.php:2746
-#: modules/login-form/widgets/login-form.php:3072
+#: modules/login-form/widgets/login-form.php:2707
+#: modules/login-form/widgets/login-form.php:3033
 msgid "Remember Me"
 msgstr ""
 
@@ -11557,7 +11560,7 @@ msgid "Spacing between Social Login"
 msgstr ""
 
 #: modules/login-form/widgets/login-form.php:1744
-#: modules/nav-menu/widgets/nav-menu.php:1994
+#: modules/nav-menu/widgets/nav-menu.php:1981
 #: modules/registration-form/widgets/registration-form.php:240
 #: modules/registration-form/widgets/registration-form.php:402
 #: modules/registration-form/widgets/registration-form.php:1548
@@ -11589,43 +11592,41 @@ msgstr ""
 msgid "Eye Icon Size"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:2190
+#: modules/login-form/widgets/login-form.php:2151
 #: modules/posts/skins/skin-business.php:748
 #: modules/price-table/widgets/price-table.php:2159
 msgid "Top Spacing"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:2351
+#: modules/login-form/widgets/login-form.php:2312
 msgid "Field Validation Message"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:2446
-msgid "Google"
+#: modules/login-form/widgets/login-form.php:2408
+msgid "Sign in with Google"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:2464
-#: modules/social-share/widgets/social-share.php:1202
-#: modules/social-share/widgets/social-share.php:1292
-msgid "Facebook"
+#: modules/login-form/widgets/login-form.php:2425
+msgid "Sign in with Facebook"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:2486
-#: modules/login-form/widgets/login-form.php:2967
+#: modules/login-form/widgets/login-form.php:2447
+#: modules/login-form/widgets/login-form.php:2928
 #. translators: %s: Error String
 msgid ""
 "Please configure Facebook App settings correctly from Dashboard -> Settings "
 "-> UAE -> Login Form - Facebook App Details."
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:2525
+#: modules/login-form/widgets/login-form.php:2486
 msgid "Unknown Username. Check again or try your email address."
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:2527
+#: modules/login-form/widgets/login-form.php:2488
 msgid "Unknown Email address. Check again or try your username."
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:2669
+#: modules/login-form/widgets/login-form.php:2630
 #. translators: %1$s user name
 msgid "You are Logged in as %1$s (%2$sLogout%3$s)"
 msgstr ""
@@ -11873,8 +11874,8 @@ msgstr ""
 
 #: modules/modal-popup/widgets/modal-popup.php:700
 #: modules/modal-popup/widgets/modal-popup.php:717
-#: modules/nav-menu/widgets/nav-menu.php:923
-#: modules/nav-menu/widgets/nav-menu.php:939
+#: modules/nav-menu/widgets/nav-menu.php:910
+#: modules/nav-menu/widgets/nav-menu.php:926
 #: modules/offcanvas/widgets/offcanvas.php:1264
 #: modules/woocommerce/skins/skin-grid-base.php:195
 #: modules/woocommerce/widgets/woo-mini-cart.php:1131
@@ -12086,10 +12087,10 @@ msgid ""
 "visible on frontend."
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:182
-#: modules/nav-menu/widgets/nav-menu.php:205
-#: modules/nav-menu/widgets/nav-menu.php:242
-#: modules/nav-menu/widgets/nav-menu.php:854
+#: modules/nav-menu/widgets/nav-menu.php:169
+#: modules/nav-menu/widgets/nav-menu.php:192
+#: modules/nav-menu/widgets/nav-menu.php:229
+#: modules/nav-menu/widgets/nav-menu.php:841
 #: modules/offcanvas/widgets/offcanvas.php:181
 #: modules/offcanvas/widgets/offcanvas.php:291
 #: modules/offcanvas/widgets/offcanvas.php:1401
@@ -12097,11 +12098,11 @@ msgstr ""
 msgid "Menu"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:193
+#: modules/nav-menu/widgets/nav-menu.php:180
 msgid "WordPress Menu"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:211
+#: modules/nav-menu/widgets/nav-menu.php:198
 #: modules/offcanvas/widgets/offcanvas.php:187
 #. translators: %s Nav menu URL
 #. translators: %s admin link
@@ -12110,7 +12111,7 @@ msgid ""
 "menus."
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:223
+#: modules/nav-menu/widgets/nav-menu.php:210
 #: modules/offcanvas/widgets/offcanvas.php:199
 #. translators: %s Nav menu URL
 #. translators: %s admin link
@@ -12119,262 +12120,262 @@ msgid ""
 "href=\"%s\" target=\"_blank\">Menus screen</a> to create one."
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:238
+#: modules/nav-menu/widgets/nav-menu.php:225
 msgid "Item Type"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:243
-#: modules/nav-menu/widgets/nav-menu.php:438
-#: modules/nav-menu/widgets/nav-menu.php:446
+#: modules/nav-menu/widgets/nav-menu.php:230
+#: modules/nav-menu/widgets/nav-menu.php:425
+#: modules/nav-menu/widgets/nav-menu.php:433
 msgid "Sub Menu"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:266
-#: modules/nav-menu/widgets/nav-menu.php:267
+#: modules/nav-menu/widgets/nav-menu.php:253
+#: modules/nav-menu/widgets/nav-menu.php:254
 msgid "Item"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:364
+#: modules/nav-menu/widgets/nav-menu.php:351
 msgid "Dropdown Width"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:370
+#: modules/nav-menu/widgets/nav-menu.php:357
 msgid "Equal to \tSection"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:371
+#: modules/nav-menu/widgets/nav-menu.php:358
 msgid "Equal to Container"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:372
+#: modules/nav-menu/widgets/nav-menu.php:359
 msgid "Equal to \tColumn"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:373
+#: modules/nav-menu/widgets/nav-menu.php:360
 msgid "Equal to \tWidget"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:384
+#: modules/nav-menu/widgets/nav-menu.php:371
 #: modules/offcanvas/widgets/offcanvas.php:1763
 msgid "Width (px)"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:409
+#: modules/nav-menu/widgets/nav-menu.php:396
 msgid "Dropdown Position"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:427
+#: modules/nav-menu/widgets/nav-menu.php:414
 msgid "Menu Items"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:434
+#: modules/nav-menu/widgets/nav-menu.php:421
 msgid "Menu Item 1"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:442
+#: modules/nav-menu/widgets/nav-menu.php:429
 msgid "Menu Item 2"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:460
+#: modules/nav-menu/widgets/nav-menu.php:447
 msgid "Last Menu Item"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:480
+#: modules/nav-menu/widgets/nav-menu.php:467
 msgid "Hide + & - Sign"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:526
+#: modules/nav-menu/widgets/nav-menu.php:513
 msgid "Expanded"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:527
+#: modules/nav-menu/widgets/nav-menu.php:514
 msgid "Flyout"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:567
+#: modules/nav-menu/widgets/nav-menu.php:554
 msgid "Flyout Orientation"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:583
+#: modules/nav-menu/widgets/nav-menu.php:570
 #: modules/offcanvas/widgets/offcanvas.php:1815
 msgid "Appear Effect"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:601
+#: modules/nav-menu/widgets/nav-menu.php:588
 msgid "Hamburger Align"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:637
+#: modules/nav-menu/widgets/nav-menu.php:624
 msgid "Menu Items Align"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:671
+#: modules/nav-menu/widgets/nav-menu.php:658
 msgid "Show Submenu On"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:689
+#: modules/nav-menu/widgets/nav-menu.php:676
 msgid "Submenu Icon"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:694
+#: modules/nav-menu/widgets/nav-menu.php:681
 #: modules/offcanvas/widgets/offcanvas.php:323
 msgid "Plus Sign"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:695
+#: modules/nav-menu/widgets/nav-menu.php:682
 #: modules/offcanvas/widgets/offcanvas.php:324
 #: modules/posts/skins/skin-classic.php:46
 #: modules/woocommerce/skins/skin-grid-default.php:47
 msgid "Classic"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:707
+#: modules/nav-menu/widgets/nav-menu.php:694
 msgid "Submenu Animation"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:728
+#: modules/nav-menu/widgets/nav-menu.php:715
 #: modules/offcanvas/widgets/offcanvas.php:337
 msgid "Action On Menu Click"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:731
+#: modules/nav-menu/widgets/nav-menu.php:718
 msgid "For Horizontal layout, this will affect on the selected breakpoint."
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:733
+#: modules/nav-menu/widgets/nav-menu.php:720
 #: modules/offcanvas/widgets/offcanvas.php:341
 msgid "Open Submenu"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:734
+#: modules/nav-menu/widgets/nav-menu.php:721
 #: modules/offcanvas/widgets/offcanvas.php:342
 msgid "Redirect To Self Link"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:744
+#: modules/nav-menu/widgets/nav-menu.php:731
 msgid "Responsive"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:755
+#: modules/nav-menu/widgets/nav-menu.php:742
 msgid "Breakpoint"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:759
+#: modules/nav-menu/widgets/nav-menu.php:746
 msgid "Mobile (768px >)"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:760
+#: modules/nav-menu/widgets/nav-menu.php:747
 msgid "Tablet (1025px >)"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:791
+#: modules/nav-menu/widgets/nav-menu.php:778
 msgid "This is the alignement of menu icon on selected responsive breakpoints."
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:805
+#: modules/nav-menu/widgets/nav-menu.php:792
 #: modules/posts/skins/skin-base.php:3455
 #: modules/woocommerce/widgets/woo-checkout.php:1106
 msgid "Full Width"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:806
+#: modules/nav-menu/widgets/nav-menu.php:793
 msgid "Enable this option to stretch the Sub Menu to Full Width."
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:823
+#: modules/nav-menu/widgets/nav-menu.php:810
 msgid "Toggle Button"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:835
+#: modules/nav-menu/widgets/nav-menu.php:822
 msgid "Show Label"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:852
+#: modules/nav-menu/widgets/nav-menu.php:839
 msgid "Label Text"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:855
+#: modules/nav-menu/widgets/nav-menu.php:842
 msgid "Type your label text"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:869
+#: modules/nav-menu/widgets/nav-menu.php:856
 msgid "Before Icon"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:870
+#: modules/nav-menu/widgets/nav-menu.php:857
 msgid "After Icon"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:892
+#: modules/nav-menu/widgets/nav-menu.php:879
 msgid "Menu Icon"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:964
+#: modules/nav-menu/widgets/nav-menu.php:951
 msgid "Main Menu"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:975
+#: modules/nav-menu/widgets/nav-menu.php:962
 msgid "Flyout Box Width"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:1002
+#: modules/nav-menu/widgets/nav-menu.php:989
 msgid "Flyout Box Padding"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:1025
-#: modules/nav-menu/widgets/nav-menu.php:1690
+#: modules/nav-menu/widgets/nav-menu.php:1012
+#: modules/nav-menu/widgets/nav-menu.php:1677
 msgid "Horizontal Padding"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:1047
-#: modules/nav-menu/widgets/nav-menu.php:1711
+#: modules/nav-menu/widgets/nav-menu.php:1034
+#: modules/nav-menu/widgets/nav-menu.php:1698
 msgid "Vertical Padding"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:1069
+#: modules/nav-menu/widgets/nav-menu.php:1056
 #: modules/woocommerce/widgets/woo-mini-cart.php:1895
 msgid "Space Between"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:1115
+#: modules/nav-menu/widgets/nav-menu.php:1102
 msgid "Menu Item Top Spacing"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:1151
+#: modules/nav-menu/widgets/nav-menu.php:1138
 msgid "Link Hover Effect"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:1157
+#: modules/nav-menu/widgets/nav-menu.php:1144
 msgid "Overline"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:1158
+#: modules/nav-menu/widgets/nav-menu.php:1145
 msgid "Double Line"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:1159
+#: modules/nav-menu/widgets/nav-menu.php:1146
 #: modules/social-share/widgets/social-share.php:333
 msgid "Framed"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:1171
-#: modules/nav-menu/widgets/nav-menu.php:1213
+#: modules/nav-menu/widgets/nav-menu.php:1158
+#: modules/nav-menu/widgets/nav-menu.php:1200
 #: modules/price-table/widgets/price-table.php:3288
 #: modules/registration-form/widgets/registration-form.php:2121
 msgid "Animation"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:1192
+#: modules/nav-menu/widgets/nav-menu.php:1179
 msgid "Frame Animation"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:1338
-#: modules/nav-menu/widgets/nav-menu.php:1401
+#: modules/nav-menu/widgets/nav-menu.php:1325
+#: modules/nav-menu/widgets/nav-menu.php:1388
 msgid "Link Hover Effect Color"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:1363
-#: modules/nav-menu/widgets/nav-menu.php:1552
+#: modules/nav-menu/widgets/nav-menu.php:1350
+#: modules/nav-menu/widgets/nav-menu.php:1539
 #: modules/posts/skins/skin-base.php:985 modules/posts/skins/skin-base.php:2263
 #: modules/posts/skins/skin-feed.php:345 modules/posts/skins/skin-feed.php:787
 #: modules/posts/skins/skin-news.php:543
@@ -12383,45 +12384,45 @@ msgstr ""
 msgid "Active"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:1439
+#: modules/nav-menu/widgets/nav-menu.php:1426
 #: modules/woocommerce/widgets/woo-mini-cart.php:354
 msgid "Dropdown"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:1447
+#: modules/nav-menu/widgets/nav-menu.php:1434
 msgid ""
 "<b>Note:</b> On desktop, below style options will apply to the submenu. On "
 "mobile, this will apply to the entire menu."
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:1665
+#: modules/nav-menu/widgets/nav-menu.php:1652
 msgid "Dropdown Width (px)"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:1737
+#: modules/nav-menu/widgets/nav-menu.php:1724
 #: modules/price-table/widgets/price-table.php:1271
 msgid "Top Distance"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:1836
+#: modules/nav-menu/widgets/nav-menu.php:1823
 msgid "Menu Trigger & Close Icon"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:1958
+#: modules/nav-menu/widgets/nav-menu.php:1945
 #: modules/video/widgets/video.php:1192
 msgid "Close Icon Color"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:1975
+#: modules/nav-menu/widgets/nav-menu.php:1962
 msgid "Close Icon Size"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:2271
+#: modules/nav-menu/widgets/nav-menu.php:2258
 #. translators: %1$s doc link
 msgid "%1$s How to design a custom menu? » %2$s"
 msgstr ""
 
-#: modules/nav-menu/widgets/nav-menu.php:2281
+#: modules/nav-menu/widgets/nav-menu.php:2268
 #. translators: %1$s doc link
 msgid "%1$s Types of dropdown width and position options » %2$s"
 msgstr ""
@@ -14636,6 +14637,11 @@ msgstr ""
 msgid ""
 "Choose Social media from above actions to display share count of particular "
 "media."
+msgstr ""
+
+#: modules/social-share/widgets/social-share.php:1202
+#: modules/social-share/widgets/social-share.php:1292
+msgid "Facebook"
 msgstr ""
 
 #: modules/social-share/widgets/social-share.php:1203
@@ -17400,41 +17406,6 @@ msgstr ""
 msgid "Please select a WPForm."
 msgstr ""
 
-#: vendor/wp-cli/core-command/src/Core_Command.php:749
-msgid "Wildcard DNS may not be configured correctly."
-msgstr ""
-
-#: vendor/wp-cli/entity-command/src/Site_Command.php:157
-msgid "Uncategorized"
-msgstr ""
-
-#: vendor/wp-cli/export-command/src/WP_Export_XML_Over_HTTP.php:20
-#: vendor/wp-cli/export-command/src/WP_Export_XML_Over_HTTP.php:25
-msgid "Export Error"
-msgstr ""
-
-#: vendor/wp-cli/extension-command/src/WP_CLI/CommandWithUpgrade.php:770
-msgid " Try again"
-msgstr ""
-
-#: vendor/wp-cli/extension-command/src/WP_CLI/CommandWithUpgrade.php:776
-msgid "API error. Try Again."
-msgstr ""
-
-#: vendor/wp-cli/media-command/src/Media_Command.php:151
-msgid "image"
-msgid_plural "images"
-msgstr[0] ""
-msgstr[1] ""
-
-#: vendor/wp-cli/wp-cli/php/utils-wp.php:247
-msgid "Inactive Widgets"
-msgstr ""
-
-#: vendor/wp-cli/wp-cli/php/utils-wp.php:250
-msgid "Drag widgets here to remove them from the sidebar but keep their settings."
-msgstr ""
-
 #. Plugin URI of the plugin/theme
 msgid "https://ultimateelementor.com/"
 msgstr ""
@@ -17566,17 +17537,3 @@ msgid "<mark class=\"uael-count\">%1$s %2$s</mark>"
 msgid_plural "<mark class=\"uael-count\">%1$s %3$s</mark>"
 msgstr[0] ""
 msgstr[1] ""
-
-#: vendor/wp-cli/core-command/src/Core_Command.php:491
-#: vendor/wp-cli/core-command/src/Core_Command.php:565
-#. translators: placeholder is blog name
-#. translators: placeholder is user supplied title
-msgctxt "Default network name"
-msgid "%s Sites"
-msgstr ""
-
-#: vendor/wp-cli/entity-command/src/Site_Command.php:160
-#. translators: Default category slug
-msgctxt "Default category slug"
-msgid "Uncategorized"
-msgstr ""

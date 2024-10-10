@@ -104,19 +104,6 @@ class Nav_Menu extends Common_Widget {
 	}
 
 	/**
-	 * Indicates if the widget's content is dynamic.
-	 *
-	 * This method returns true if the widget's output is dynamic and should not be cached,
-	 * or false if the content is static and can be cached.
-	 *
-	 * @since 1.36.37
-	 * @return bool True for dynamic content, false for static content.
-	 */
-	protected function is_dynamic_content(): bool { // phpcs:ignore
-		return false;
-	}
-
-	/**
 	 * Retrieve the menu index.
 	 *
 	 * Used to get index of nav menu.
@@ -2472,7 +2459,6 @@ class Nav_Menu extends Common_Widget {
 					$icon,
 					array(
 						'aria-hidden' => 'true',
-						'tabindex'    => '0',
 					)
 				);
 				$menu_icon = ob_get_clean();
@@ -2552,8 +2538,9 @@ class Nav_Menu extends Common_Widget {
 				}
 			}
 			?>
-			<div class="uael-nav-menu__toggle elementor-clickable uael-flyout-trigger" tabindex="0">
-					<div class="uael-nav-menu-icon">
+			<div role="button" class="uael-nav-menu__toggle elementor-clickable uael-flyout-trigger" tabindex="0">
+				<span class="screen-reader-text">Flyout Menu</span>
+					<div class="uael-nav-menu-icon" tabindex="0" >
 						<?php echo isset( $menu_close_icons[0] ) ? $menu_close_icons[0] : ''; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
 					</div>
 					<?php if ( 'yes' === $settings['toggle_label_show'] ) { ?>

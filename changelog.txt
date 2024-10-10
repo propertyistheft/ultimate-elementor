@@ -1,3 +1,14 @@
+Version 1.36.39, Tuesday, 8th October 2024
+- Improvement: Navigation Menu - Improved accessibility for Flyout menu layout.
+- Fix: Business Reviews - An undefined array key warning occurs for autoplay speed setting.
+- Fix: Navigation Menu – Active color now changes correctly when moving between pages.
+- Fix: Icons displaying correctly on frontend.
+
+Version 1.36.38, Wednesday, 25th September 2024
+- This update addressed a security bug. Please make sure you are using the latest version on your website.
+- Fix: Login Form - Updated Google Sign In as per latest Google guidelines.
+- Deprecated: Login Form - Removed Social login border-radius & box shadow options.
+
 Version 1.36.37, Tuesday, 3rd September 2024
 - Improvement: Compatibility with latest Elementor and Elementor Pro 3.24 version.
 - Improvement: Implemented widget output caching to enhance page performance.

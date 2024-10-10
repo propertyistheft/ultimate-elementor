@@ -4,7 +4,6 @@
 	var hoverFlag = false;
 	var isElEditMode = false;
 	window.is_fb_loggedin = false;
-	window.is_google_loggedin = false;
 	var id = window.location.hash.substring( 1 );
 	var pattern = new RegExp( "^[\\w\\-]+$" );
 	var sanitize_input = pattern.test( id );
@@ -1886,6 +1885,7 @@
 		if( ! elementorFrontend.isEditMode() ) {
 
 			if( facebook_button.length > 0 ) {
+
 				/**
 				 * Login with Facebook.
 				 *
@@ -1996,83 +1996,75 @@
 			if( google_button.length > 0 ) {
 
 				var client_id = google_button.data( 'clientid' );
+				var theme = google_button.data( 'theme' );
+				var theme_option =  "outline";
 				var google_scope_id = document.getElementById( 'uael-google-login-' + scope_id );
+				nonce = $scope.find('.uael-login-form-wrapper' ).data('nonce');
 
-				/**
-				 * Login with Google.
-				 *
-				 */
-				gapi.load( 'auth2', function() {
-					// Retrieve the singleton for the GoogleAuth library and set up the client.
-					auth2 = gapi.auth2.init({
-					  client_id: client_id,
-					  cookiepolicy: 'single_host_origin',
-					});
-				
-					auth2.attachClickHandler(google_scope_id, {},
-						function(googleUser) {
-							var google_data = {
-								'send_email': send_email,
-							};
-					
-							if (window.is_google_loggedin) {
-								var id_token = googleUser.getAuthResponse().id_token;
-								var google_text = google_button.find('.uael-google-text');
-						
-									$.ajax({
-										url: ajaxurl,
-										method: 'post',
-										dataType: 'json',
-										data: {
-											nonce: nonce,
-											action: 'uael_login_form_google',
-											data: google_data,
-											id_token: id_token,
-										},
-										beforeSend: function() {
-											form_wrapper.animate({
-												opacity: '0.45'
-											}, 500).addClass('uael-form-waiting');
-							
-											if (!google_text.hasClass('disabled')) {
-												google_text.addClass('disabled');
-												google_text.append('<span class="uael-form-loader"></span>');
-											}
-										},
-										success: function(data) {
-											if (data.success === true) {
-												form_wrapper.animate({
-													opacity: '1'
-												}, 100).removeClass('uael-form-waiting');
-											
-												google_text.find('.uael-form-loader').remove();
-												google_text.removeClass('disabled');
-											
-												$scope.find('.status').addClass('success').text(uael_login_form_script.logged_in_message + data.username + '!');
-												
-												if (typeof redirect_url === 'undefined') {
-													location.reload();
-												} else {
-													window.location = redirect_url;
-												}
-											}
-										}
-								});
-							}
-					  },
-					  function(error) {
-						// Handle any errors here
-					  }
-					);
+				// Load the new Google Identity Services script.
+				google.accounts.id.initialize({
+					client_id: client_id,
+					callback: handleGoogleSignInResponse,
+					auto_select: false,
 				});
 
+				if( 'dark' === theme ) {
+					theme_option =  "filled_blue";
+				}
+				
+				// Customize the button to match your HTML structure.
+				google.accounts.id.renderButton(
+					google_scope_id,
+					{
+						size: "large",    // Large button size
+						width: 195,
+						type: "standard",
+						theme: theme_option,
+						logo_alignment: "left",
+						shape: "rectangular",
+     					text: "signin_with"
+					}
+				);
+
+				// Callback function to handle the response from GIS.
+				function handleGoogleSignInResponse( response ) {
+					var id_token = response.credential;
+		
+					$.post( ajaxurl, {
+						action: 'uael_login_form_google',
+						data: {
+							'id_token': id_token,
+							'send_email' : send_email,
+						},
+						nonce: nonce,
+						method: 'post',
+						dataType: 'json',
+						beforeSend: function () {
+							form_wrapper.animate({ opacity: '0.45' }, 500).addClass('uael-form-waiting');
+						}
+					}, function ( data ) {
+						if( data.success === true ) {
+
+							form_wrapper.animate({	
+								opacity: '1'	
+							}, 100).removeClass('uael-form-waiting');
+
+							$scope.find('.status').addClass('success').text( uael_login_form_script.logged_in_message + data.username + '!');	
+
+							if (typeof redirect_url === 'undefined') {
+								location.reload();	
+							} else {	
+								window.location = redirect_url;	
+							}
+
+						} else {
+							console.log( "Login Failed" );
+						}
+						
+					});
+				}
 			}
 		}
-
-
-		google_button.on( 'click', function() {
-			window.is_google_loggedin = true;
-		});
 
 	};
 

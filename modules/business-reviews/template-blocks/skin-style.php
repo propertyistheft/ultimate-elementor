@@ -81,13 +81,13 @@ abstract class Skin_Style {
 		$show_arrows = ( in_array( $settings['navigation'], array( 'arrows', 'both' ), true ) );
 
 		$slick_options = array(
-			'slidesToShow'   => ( $settings['slides_to_show'] ) ? absint( $settings['slides_to_show'] ) : 4,
-			'slidesToScroll' => ( $settings['slides_to_scroll'] ) ? absint( $settings['slides_to_scroll'] ) : 1,
-			'autoplaySpeed'  => ( $settings['autoplay_speed'] ) ? absint( $settings['autoplay_speed'] ) : 5000,
+			'slidesToShow'   => isset( $settings['slides_to_show'] ) ? absint( $settings['slides_to_show'] ) : 4,
+			'slidesToScroll' => isset( $settings['slides_to_scroll'] ) ? absint( $settings['slides_to_scroll'] ) : 1,
+			'autoplaySpeed'  => isset( $settings['autoplay_speed'] ) ? absint( $settings['autoplay_speed'] ) : 5000,
 			'autoplay'       => ( 'yes' === $settings['autoplay'] ),
 			'infinite'       => ( 'yes' === $settings['infinite'] ),
 			'pauseOnHover'   => ( 'yes' === $settings['pause_on_hover'] ),
-			'speed'          => ( $settings['transition_speed'] ) ? absint( $settings['transition_speed'] ) : 500,
+			'speed'          => isset( $settings['transition_speed'] ) ? absint( $settings['transition_speed'] ) : 500,
 			'arrows'         => $show_arrows,
 			'dots'           => $show_dots,
 			'rtl'            => $is_rtl,
