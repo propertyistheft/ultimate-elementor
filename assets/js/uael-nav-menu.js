@@ -821,17 +821,27 @@
 	function _handleSinglePageMenu( id, layout ) {
 		$( '.elementor-element-' + id + ' ul.uael-nav-menu li a' ).on(
 			'click',
-			function () {
+			function ( event ) {
 				var $this      = $( this );
 				var link       = $this.attr( 'href' );
 				var linkValue  = '';
 				var menuToggle = $( '.elementor-element-' + id + ' .uael-nav-menu__toggle' );
-				var subToggle  = $( '.elementor-element-' + id + ' .uael-menu-toggle' )
-				if ( link.includes( '#' ) ) {
+				var subToggle  = $( '.elementor-element-' + id + ' .uael-menu-toggle' );
+
+				if ( link.includes( '#' ) && link.charAt(0) === '#' ) {	// Check if the link is an anchor link.
+					event.preventDefault();	// Prevent page refresh for anchor links.
 					var index = link.indexOf( '#' );
 					linkValue = link.slice( index + 1 );
 				}
 				if ( linkValue.length > 0 ) {
+					var targetSection = $( '#' + linkValue );
+					
+					if ( targetSection.length ) {	// Check if the target section exists.
+						$('html, body').animate({
+							scrollTop: targetSection.offset().top
+						}, 800); 
+					}
+
 					if ( 'expandible' == layout ) {
 						menuToggle.trigger( "click" );
 						if ($this.hasClass( 'uael-sub-menu-item' )) {

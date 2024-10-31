@@ -1,3 +1,11 @@
+Version 1.36.41, Thursday, 31st October 2024
+- Fix: Modal Popup - Vimeo thumbnail is now displayed correctly in the popup.
+- Fix: WPML issue with login form redirection URLs to enhance translation support.
+
+Version 1.36.40, Thursday, 24th October 2024
+- Improvement: Compatibility with latest Elementor and Elementor Pro 3.25 version.
+- Fix: Navigation Menu - Anchor links now correctly scroll to sections/container when submenu items with IDs are clicked.
+
 Version 1.36.39, Tuesday, 8th October 2024
 - Improvement: Navigation Menu - Improved accessibility for Flyout menu layout.
 - Fix: Business Reviews - An undefined array key warning occurs for autoplay speed setting.

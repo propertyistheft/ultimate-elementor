@@ -2471,7 +2471,7 @@ class Modal_Popup extends Common_Widget {
 					return;
 				}
 				$body  = wp_remote_retrieve_body( $response );
-				$vimeo = json_decode( $body, true );
+				$vimeo = maybe_unserialize( $body );
 
 				if ( is_array( $vimeo ) && isset( $vimeo[0]['thumbnail_large'] ) ) {
 					$thumb = $vimeo[0]['thumbnail_large'];

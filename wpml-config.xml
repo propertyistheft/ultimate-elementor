@@ -349,6 +349,8 @@
 				<field type="Login Form : Button Text" editor_type="LINE">button_text</field>
 				<field type="Login Form : Register Text" editor_type="LINE">show_register_text</field>
 				<field type="Login Form : Lost your password Text" editor_type="LINE">show_lost_password_text</field>
+				<field type="Login Form: Redirect URL After Login" editor_type="LINK">redirect_url>url</field>
+       	 		<field type="Login Form: Redirect URL After Logout" editor_type="LINK">redirect_logout_url>url</field>
 			</fields>
 		</widget>
 		<widget name="uael-registration-form">
