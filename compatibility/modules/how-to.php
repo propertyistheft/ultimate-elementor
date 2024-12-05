@@ -14,7 +14,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 }
 
 /**
- * How-to Schema
+ * How-to 
  *
  * Registers translatable module with items.
  *
@@ -59,15 +59,15 @@ class HowTo extends WPML_Elementor_Module_With_Items {
 	protected function get_title( $field ) {
 
 		if ( 'steps_item_title' === $field ) {
-			return __( 'How-to Schema: Title', 'uael' );
+			return __( 'How-to: Title', 'uael' );
 		}
 
 		if ( 'steps_item_desc' === $field ) {
-			return __( 'How-to Schema: Description', 'uael' );
+			return __( 'How-to: Description', 'uael' );
 		}
 
 		if ( 'steps_item_url' === $field ) {
-			return __( 'How-to Schema: Link', 'uael' );
+			return __( 'How-to: Link', 'uael' );
 		}
 
 		return '';

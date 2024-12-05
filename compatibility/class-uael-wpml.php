@@ -543,37 +543,37 @@ class UAEL_Wpml {
 			'fields'            => array(
 				array(
 					'field'       => 'title',
-					'type'        => __( 'How-to Schema: Heading', 'uael' ),
+					'type'        => __( 'How-to: Heading', 'uael' ),
 					'editor_type' => 'AREA',
 				),
 				array(
 					'field'       => 'description',
-					'type'        => __( 'How-to Schema: Description', 'uael' ),
+					'type'        => __( 'How-to: Description', 'uael' ),
 					'editor_type' => 'VISUAL',
 				),
 				array(
 					'field'       => 'time_text',
-					'type'        => __( 'How-to Schema: Text', 'uael' ),
+					'type'        => __( 'How-to: Text', 'uael' ),
 					'editor_type' => 'LINE',
 				),
 				array(
 					'field'       => 'cost_text',
-					'type'        => __( 'How-to Schema: Text', 'uael' ),
+					'type'        => __( 'How-to: Text', 'uael' ),
 					'editor_type' => 'LINE',
 				),
 				array(
 					'field'       => 'tools_text',
-					'type'        => __( 'How-to Schema: Title', 'uael' ),
+					'type'        => __( 'How-to: Title', 'uael' ),
 					'editor_type' => 'LINE',
 				),
 				array(
 					'field'       => 'supply_text',
-					'type'        => __( 'How-to Schema: Title', 'uael' ),
+					'type'        => __( 'How-to: Title', 'uael' ),
 					'editor_type' => 'LINE',
 				),
 				array(
 					'field'       => 'steps_text',
-					'type'        => __( 'How-to Schema: Title', 'uael' ),
+					'type'        => __( 'How-to: Title', 'uael' ),
 					'editor_type' => 'LINE',
 				),
 			),

@@ -104,7 +104,7 @@ abstract class Posts_Base extends Common_Widget {
 		);
 
 		if ( parent::is_internal_links() ) {
-			$settings_page = admin_url( 'options-general.php?page=' . UAEL_SLUG . '&action=post' );
+			$settings_page = admin_url( 'admin.php?page=uaepro&tab=6#settings' );
 
 			$this->add_control(
 				'deactivate_post_skin',

@@ -16,11 +16,17 @@
     "dealerdirect/phpcodesniffer-composer-installer": "^0.7.0",
     "phpcompatibility/phpcompatibility-wp": "*",
     "wp-cli/dist-archive-command": "^2.0",
-    "wp-coding-standards/wpcs": "dev-master"
+    "wp-coding-standards/wpcs": "^2.3"
   },
   "minimum-stability": "stable",
   "scripts": {
     "format": "vendor/bin/phpcbf --standard=phpcs.xml.dist",
     "lint": "vendor/bin/phpcs --standard=phpcs.xml.dist"
+  },
+  "config": {
+    "allow-plugins": {
+      "composer/installers": true,
+      "dealerdirect/phpcodesniffer-composer-installer": true
+    }
   }
 }

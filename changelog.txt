@@ -1,3 +1,15 @@
+Version 1.37.2, Saturday, 30th November 2024
+- Fix: Conflict with site customizer style.
+
+Version 1.37.1, Friday, 29th November 2024
+- Improvement: Added UAE Lite free version compatibility.
+
+Version 1.37.0, Monday, 25th November 2024
+- Improvement: Compatibility with WordPress 6.7.
+- Improvement: Improved widget rendering for faster page load times.
+- Improvement: Revamped settings page UI/UX. A redesigned interface for better usability and seamless navigation.
+- Fix: Load text domain during init action to prevent early translation loading error.
+
 Version 1.36.41, Thursday, 31st October 2024
 - Fix: Modal Popup - Vimeo thumbnail is now displayed correctly in the popup.
 - Fix: WPML issue with login form redirection URLs to enhance translation support.

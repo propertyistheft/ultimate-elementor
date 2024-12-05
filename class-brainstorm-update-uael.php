@@ -44,12 +44,12 @@ if ( ! class_exists( 'Brainstorm_Update_UAEL' ) ) :
 		public function __construct() {
 
 			self::version_check();
-
+			add_action( 'init', array( $this, 'load' ), 999 );
 			add_filter( 'bsf_get_license_message_uael', array( $this, 'license_message_uael' ), 10, 2 );
 			add_filter( 'bsf_skip_braisntorm_menu', array( $this, 'skip_menu' ) );
 			add_filter( 'bsf_skip_author_registration', array( $this, 'skip_menu' ) );
 			add_filter( 'bsf_allow_beta_updates_uael', array( $this, 'beta_updates_check' ) );
-			// Register Licence Link.
+			// Register License Link.
 			add_filter( 'bsf_registration_page_url_uael', array( $this, 'get_registration_page_url' ) );
 			add_filter( 'agency_updater_productname_uael', array( $this, 'product_name' ) );
 
@@ -57,6 +57,18 @@ if ( ! class_exists( 'Brainstorm_Update_UAEL' ) ) :
 			add_filter( 'plugin_action_links_' . UAEL_BASE, array( $this, 'plugin_slug_license_form_and_links' ) );
 			add_filter( 'network_admin_plugin_action_links_' . UAEL_BASE, array( $this, 'plugin_slug_license_form_and_links' ) );
 			add_filter( 'bsf_is_product_bundled', array( $this, 'remove_uae_pro_bundled_products' ), 20, 3 );
+		}
+
+		/**
+		 * Load the brainstorm updater.
+		 *
+		 * @return void
+		 */
+		public function load() {
+			global $bsf_core_version, $bsf_core_path;
+			if ( is_file( realpath( $bsf_core_path . '/index.php' ) ) ) {
+				include_once realpath( $bsf_core_path . '/index.php' );
+			}
 		}
 
 		/**
@@ -94,6 +106,14 @@ if ( ! class_exists( 'Brainstorm_Update_UAEL' ) ) :
 		 */
 		public function plugin_slug_license_form_and_links( $links = array() ) {
 
+			$slug         = 'uaepro';
+			$admin_base   = 'admin.php';
+			$action_links = array(
+				'settings' => '<a href="' . esc_url( admin_url( $admin_base . '?page=' . $slug ) ) . '" aria-label="' . esc_attr__( 'View Settings', 'uael' ) . '">' . esc_html__( 'Settings', 'uael' ) . '</a>',
+			);
+
+			$links = array_merge( $action_links, $links );
+
 			if ( function_exists( 'get_bsf_inline_license_form' ) ) {
 				$args = array(
 					'product_id'              => 'uael',
@@ -102,8 +122,9 @@ if ( ! class_exists( 'Brainstorm_Update_UAEL' ) ) :
 				);
 				return get_bsf_inline_license_form( $links, $args, 'edd' );
 			}
-
+		
 			return $links;
+
 		}
 
 		/**

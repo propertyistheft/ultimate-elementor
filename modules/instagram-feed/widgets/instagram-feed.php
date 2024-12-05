@@ -1807,7 +1807,7 @@ class Instagram_Feed extends Common_Widget {
 			<div class="uael-builder-msg elementor-alert elementor-alert-warning">
 				<span class="elementor-alert-title"><?php echo esc_html__( 'Instagram Feed - ID ', 'uael' ); ?><?php echo esc_html( $widget_id ); ?></span>
 				<span class="elementor-alert-description"><?php echo esc_html__( 'Please configure Instagram Feed API keys.', 'uael' ); ?><br>
-					<?php echo esc_html__( 'Navigate to WP Dashboard -> Settings -> UAE -> Instagram Feed -> Settings link.', 'uael' ); ?>
+					<?php echo esc_html__( 'Navigate to WP Dashboard -> UAE -> Settings -> Integrations.', 'uael' ); ?>
 				</span>
 			</div>
 			<?php

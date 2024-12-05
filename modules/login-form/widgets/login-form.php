@@ -2444,7 +2444,7 @@ class LoginForm extends Common_Widget {
 				<div class="uael-login-form-alert elementor-alert elementor-alert-warning">
 					<?php
 					/* translators: %s: Error String */
-					echo esc_html__( 'Please configure Facebook App settings correctly from Dashboard -> Settings -> UAE -> Login Form - Facebook App Details.', 'uael' );
+					echo esc_html__( 'Please configure Facebook App settings correctly from WP Dashboard -> UAE -> Settings -> Integrations -> Login Form - Facebook App Details.', 'uael' );
 					?>
 				</div>
 			<?php } ?>
@@ -2925,7 +2925,7 @@ class LoginForm extends Common_Widget {
 					<div class="elementor-alert elementor-alert-warning">
 						<?php
 						/* translators: %s: Error String */
-						echo esc_attr_e( 'Please configure Facebook App settings correctly from Dashboard -> Settings -> UAE -> Login Form - Facebook App Details.', 'uael' );
+						echo esc_attr_e( 'Please configure Facebook App settings correctly from WP Dashboard -> UAE -> Settings -> Integrations -> Login Form - Facebook App Details.', 'uael' );
 						?>
 					</div>
 				<# } #>

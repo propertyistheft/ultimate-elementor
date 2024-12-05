@@ -43,6 +43,9 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 			$this->define_constants();
 
 			add_action( 'plugins_loaded', array( $this, 'load_plugin' ) );
+
+			// Hook the load_textdomain function to the init action.
+			add_action( 'init', array( $this, 'load_textdomain' ) );
 		}
 
 		/**
@@ -54,13 +57,15 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 			define( 'UAEL_BASE', plugin_basename( UAEL_FILE ) );
 			define( 'UAEL_DIR', plugin_dir_path( UAEL_FILE ) );
 			define( 'UAEL_URL', plugins_url( '/', UAEL_FILE ) );
-			define( 'UAEL_VER', '1.36.41' );
+			define( 'UAEL_VER', '1.37.2' );
 			define( 'UAEL_MODULES_DIR', UAEL_DIR . 'modules/' );
 			define( 'UAEL_MODULES_URL', UAEL_URL . 'modules/' );
 			define( 'UAEL_SLUG', 'uae' );
 			define( 'UAEL_CATEGORY', 'Ultimate Addons' );
 			define( 'UAEL_DOMAIN', trailingslashit( 'https://ultimateelementor.com' ) );
 			define( 'UAEL_FACEBOOK_GRAPH_API_ENDPOINT', trailingslashit( 'https://graph.facebook.com/v2.12' ) );
+			define( 'UAEL_BSF_PACKAGE', file_exists( UAEL_DIR . 'class-brainstorm-update-uael.php' ) );
+			define( 'UAEL_PRO', true );
 		}
 
 		/**
@@ -91,9 +96,12 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 				define( 'FS_CHMOD_FILE', ( fileperms( ABSPATH . 'index.php' ) & 0777 | 0644 ) );
 			}
 
-			$this->load_textdomain();
-
+			if ( ! function_exists( 'get_plugins' ) ) {
+				require_once ABSPATH . 'wp-admin/includes/plugin.php';
+			}
+			
 			require_once UAEL_DIR . 'classes/class-uael-core-plugin.php';
+			require_once UAEL_DIR . 'includes/admin/settings-api.php';
 			if ( is_admin() ) {
 				require_once UAEL_DIR . 'class-brainstorm-update-uael.php';
 				require_once UAEL_DIR . 'classes/class-uael-update.php';
@@ -116,6 +124,23 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 					),
 				)
 			);
+			
+			add_action( 'admin_notices', __CLASS__ . '::hide_admin_notices', 1 );
+			add_action( 'all_admin_notices', __CLASS__ . '::hide_admin_notices', 1 );
+		}
+
+		/**
+		 * Hide admin notices on the custom settings page.
+		 *
+		 * @since 1.37.0
+		 * @return void
+		 */
+		public static function hide_admin_notices() {
+			$screen = get_current_screen();
+			if ( 'toplevel_page_uaepro' === $screen->id ) {
+				remove_all_actions( 'admin_notices' );
+				remove_all_actions( 'all_admin_notices' );
+			}
 		}
 
 		/**

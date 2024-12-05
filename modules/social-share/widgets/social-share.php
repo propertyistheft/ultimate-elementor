@@ -1547,7 +1547,7 @@ class SocialShare extends Common_Widget {
 					?>
 
 					<div class="uael-builder-msg" style="text-align: center;">
-						<p><?php esc_html_e( 'Please set the Facebook token from Dashboard -> Settings -> UAE -> Social Share - Facebook Access Token.', 'uael' ); ?></p>
+						<p><?php esc_html_e( 'Please set the Facebook token from WP Dashboard -> UAE -> Settings -> Integrations -> Social Share - Facebook Access Token.', 'uael' ); ?></p>
 					</div>
 					<?php
 				} else {

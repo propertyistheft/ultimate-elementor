@@ -265,24 +265,24 @@
 				<condition key="widgetType">uael-how-to</condition>
 			</conditions>
 			<fields>
-				<field type="How-to Schema: Heading" editor_type="LINE">title</field>
-				<field type="How-to Schema: Description" editor_type="VISUAL">description</field>
-				<field type="How-to Schema: Time Text" editor_type="LINE">time_text</field>
-				<field type="How-to Schema: Cost Text" editor_type="LINE">cost_text</field>
-				<field type="How-to Schema: Tools Text" editor_type="LINE">tools_text</field>
-				<field type="How-to Schema: Supply Text" editor_type="LINE">supply_text</field>
-				<field type="How-to Schema: Step Text" editor_type="LINE">steps_text</field>
+				<field type="How-to: Heading" editor_type="LINE">title</field>
+				<field type="How-to: Description" editor_type="VISUAL">description</field>
+				<field type="How-to: Time Text" editor_type="LINE">time_text</field>
+				<field type="How-to: Cost Text" editor_type="LINE">cost_text</field>
+				<field type="How-to: Tools Text" editor_type="LINE">tools_text</field>
+				<field type="How-to: Supply Text" editor_type="LINE">supply_text</field>
+				<field type="How-to: Step Text" editor_type="LINE">steps_text</field>
 			</fields>
 			<fields-in-item items_of="tool">
-				<field type="How-to Schema: Tool Item Text" editor_type="LINE">tool_item_text</field>
+				<field type="How-to: Tool Item Text" editor_type="LINE">tool_item_text</field>
 			</fields-in-item>
 			<fields-in-item items_of="supply">
-				<field type="How-to Schema: Supply Item Text" editor_type="LINE">supply_item_text</field>
+				<field type="How-to: Supply Item Text" editor_type="LINE">supply_item_text</field>
 			</fields-in-item>
 			<fields-in-item items_of="steps">
-				<field type="How-to Schema: Title" editor_type="LINE">steps_item_title</field>
-				<field type="How-to Schema: Description" editor_type="LINE">steps_item_desc</field>
-				<field type="How-to Schema: Link" editor_type="LINK" key_of="steps_item_url">url</field>
+				<field type="How-to: Title" editor_type="LINE">steps_item_title</field>
+				<field type="How-to: Description" editor_type="LINE">steps_item_desc</field>
+				<field type="How-to: Link" editor_type="LINK" key_of="steps_item_url">url</field>
 			</fields-in-item>
 		</widget>
 		<widget name="uael-offcanvas">

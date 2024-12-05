@@ -9,6 +9,7 @@ namespace UltimateElementor\Classes;
 
 use UltimateElementor\Classes\UAEL_Helper;
 use UltimateElementor\Classes\UAEL_Maxmind_Database;
+use \BSF_License_Manager;
 
 if ( ! class_exists( 'UAEL_Admin' ) ) {
 
@@ -18,6 +19,16 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 	final class UAEL_Admin {
 
 		/**
+		 * Instance
+		 * z
+		 *
+		 * @access private
+		 * @var string Class object.
+		 * @since 1.0.0
+		 */
+		private static $menu_slug = 'uaepro';
+
+		/**
 		 * Widget List
 		 *
 		 * @var widget_list
@@ -25,12 +36,36 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 		private static $widget_list = null;
 
 		/**
+		 * Widget List
+		 *
+		 * @var free_widget_list
+		 */
+		private static $free_widget_list = null;
+
+		/**
+		 * Errors
+		 *
+		 * @access private
+		 * @var array Errors strings.
+		 * @since 1.0.0
+		 */
+		private static $errors = array();
+
+		/**
+		 * Product ID
+		 *
+		 * @access private
+		 * @var string Product ID.
+		 * @since 1.37.0
+		 */
+		private static $product_id = 'uael';
+
+		/**
 		 * Calls on initialization
 		 *
 		 * @since 0.0.1
 		 */
 		public static function init() {
-
 			self::initialize_ajax();
 			self::initialise_plugin();
 			add_action( 'after_setup_theme', __CLASS__ . '::init_hooks' );
@@ -43,6 +78,8 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 				add_filter( 'bsf_product_description_uael', __CLASS__ . '::uael_whitelabel_description' );
 				add_filter( 'bsf_product_author_uael', __CLASS__ . '::uael_whitelabel_author_name' );
 				add_filter( 'bsf_product_homepage_uael', __CLASS__ . '::uael_whitelabel_author_url' );
+
+				add_filter( 'all_plugins', __CLASS__ . '::change_plugin_details' );
 
 				if ( 'Ultimate Addons for Elementor' !== self::uael_whitelabel_name() && 'update-core.php' === $pagenow ) {
 					add_filter( 'gettext', __CLASS__ . '::get_plugin_branding_name' );
@@ -62,6 +99,57 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 				}
 			}
 
+			self::$errors = array(
+				'permission' => __( 'Sorry, you are not allowed to do this operation.', 'uael' ),
+				'nonce'      => __( 'Nonce validation failed', 'uael' ),
+				'default'    => __( 'Sorry, something went wrong.', 'uael' ),
+			);
+
+		}
+
+		/**
+		 * Add UAE Lite Branding support.
+		 *
+		 * Updates the plugin details with branding information based on white-labeling settings.
+		 *
+		 * @param array $plugins An array containing data for each plugin.
+		 * @return array Filtered plugin data with branding changes applied.
+		 */
+		public static function change_plugin_details( $plugins ) {
+			// Define the plugin file path relative to the plugins directory.
+			$plugin_file = 'header-footer-elementor/header-footer-elementor.php';
+
+			$branding = UAEL_Helper::get_white_labels();
+
+			// Check if the plugin exists in the list.
+			if ( isset( $plugins[ $plugin_file ] ) ) {
+				// Change the plugin name.
+				$branding_name = $branding['plugin']['name'];
+				if ( ! empty( $branding_name ) ) {
+					$plugins[ $plugin_file ]['Name'] = $branding_name . ' Lite';
+				}
+
+				// Change the plugin description.
+				$branding_desc = $branding['plugin']['description'];
+				if ( ! empty( $branding_desc ) ) {
+					$plugins[ $plugin_file ]['Description'] = $branding_desc;
+				}
+
+				// Change the plugin author.
+				$branding_author_name = $branding['agency']['author'];
+				if ( ! empty( $branding_author_name ) ) {
+					$plugins[ $plugin_file ]['Author']     = $branding_author_name;
+					$plugins[ $plugin_file ]['AuthorName'] = $branding_author_name;
+				}
+
+				// Change the plugin author URL.
+				$branding_url = $branding['agency']['author_url'];
+				if ( ! empty( $branding_url ) ) {
+					$plugins[ $plugin_file ]['AuthorURI'] = $branding_url;
+				}
+			}
+
+			return $plugins;
 		}
 
 		/**
@@ -219,11 +307,15 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 
 			wp_enqueue_style( 'uael-style' );
 
-			$branding = UAEL_Helper::get_white_labels();
+			$branding       = UAEL_Helper::get_white_labels();
+			$is_lite_active = UAEL_Helper::is_lite_active();
 
 			if ( isset( $branding['plugin']['short_name'] ) && '' !== $branding['plugin']['short_name'] ) {
-				$short_name  = $branding['plugin']['short_name'];
-				$custom_css  = '.elementor-element [class*="uael-icon-"]:after {';
+				$short_name = $branding['plugin']['short_name'];
+				$custom_css = '.elementor-element [class*="uael-icon-"]:after {';
+				if ( $is_lite_active ) {
+					$custom_css = '.elementor-element [class*="uael-icon-"]:after, .elementor-element [class*="hfe-icon-"]:after {';
+				}
 				$custom_css .= 'content: "' . $short_name . '"; }';
 				wp_add_inline_style( 'uael-style', $custom_css );
 			}
@@ -248,9 +340,98 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 
 			// Filter to White labled options.
 			add_filter( 'all_plugins', __CLASS__ . '::plugins_page' );
+			/* Flow content view */
+			add_action( 'uael_render_admin_page_content', __CLASS__ . '::react_content', 10, 2 );
+			add_action( 'admin_enqueue_scripts', __CLASS__ . '::update_uae_page', 10, 2 );
 
-			add_action( 'uael_render_admin_content', __CLASS__ . '::render_content' );
+		}
 
+		/**
+		 * Update strings on the update-core.php page.
+		 *
+		 * @since 1.37.0
+		 * @return void
+		 */
+		public static function update_uae_page() {
+
+			$replaced_logo = UAEL_Helper::replaced_logo_url();
+			$hide_logo     = UAEL_Helper::is_replace_logo();
+			$uae_logo      = $hide_logo ? '' : UAEL_URL . 'assets/images/settings/dashboard-logo.svg';
+			$white_logo    = $hide_logo ? '' : UAEL_URL . 'assets/images/settings/white-logo.svg';
+
+			if ( '' !== $replaced_logo ) {
+				$uae_logo   = $replaced_logo;
+				$white_logo = $replaced_logo;
+			}
+
+			if ( '' !== $uae_logo && '' !== $white_logo ) {
+
+				// Add inline styles.
+				$custom_css = '
+					#toplevel_page_uaepro .wp-menu-image {
+						background-image: url(' . esc_url( $uae_logo ) . ') !important;
+						background-size: 23px 34px !important;
+						background-repeat: no-repeat;
+						background-position: center;
+					}
+					#toplevel_page_uaepro.wp-menu-open .wp-menu-image,
+					#toplevel_page_uaepro .wp-has-current-submenu .wp-menu-image {
+						background-image: url(' . esc_url( $white_logo ) . ') !important;
+					}
+				';
+				
+				wp_add_inline_style( 'wp-admin', $custom_css );
+			}
+
+		}
+
+		/**
+		 * Renders the admin settings content.
+		 *
+		 * @since 1.37.0
+		 *
+		 * @return void
+		 */
+		public static function react_content() {
+
+			if ( ! current_user_can( 'manage_options' ) ) {
+				return;
+			}
+
+			if ( self::is_current_page( 'uaepro' ) ) {
+				include_once UAEL_DIR . 'includes/admin/uael-settings-app.php';
+			}
+		}
+
+		
+		/**
+		 * CHeck if it is current page by parameters
+		 *
+		 * @param string $page_slug Menu name.
+		 * @param string $action Menu name.
+		 *
+		 * @return  string page url
+		 */
+		public static function is_current_page( $page_slug = '', $action = '' ) {
+
+			$page_matched = false;
+
+			if ( empty( $page_slug ) ) {
+				return false;
+			}
+
+			$current_page_slug = isset( $_GET['page'] ) ? sanitize_text_field( $_GET['page'] ) : ''; //phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			$current_action    = isset( $_GET['action'] ) ? sanitize_text_field( $_GET['action'] ) : ''; //phpcs:ignore WordPress.Security.NonceVerification.Recommended
+
+			if ( ! is_array( $action ) ) {
+				$action = explode( ' ', $action );
+			}
+
+			if ( $page_slug === $current_page_slug && in_array( $current_action, $action, true ) ) {
+				$page_matched = true;
+			}
+
+			return $page_matched;
 		}
 
 		/**
@@ -286,28 +467,67 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 		}
 
 		/**
-		 * Renders the admin settings menu.
-		 *
-		 * @since 0.0.1
-		 * @return void
+		 * Register Menu pages.
 		 */
 		public static function menu() {
 
+			$menu_slug = self::$menu_slug;
+		
 			// Check the user capability.
 			if ( ! current_user_can( 'manage_options' ) ) {
 				return;
 			}
-
+		
 			$_REQUEST['uael_admin_nonce'] = wp_create_nonce( 'uael_admin_nonce' );
 
-			add_submenu_page(
-				'options-general.php',
+			// Add main menu page.
+			add_menu_page(
 				UAEL_PLUGIN_SHORT_NAME,
 				UAEL_PLUGIN_SHORT_NAME,
 				'manage_options',
-				UAEL_SLUG,
-				__CLASS__ . '::render'
+				'uaepro',
+				__CLASS__ . '::render',
+				'none',
+				'59'
 			);
+		
+			// Add sub-menu pages with different sections (linked to render with page actions).
+			add_submenu_page(
+				'uaepro',                                       // Parent slug.
+				UAEL_PLUGIN_SHORT_NAME,                      // Page title.
+				__( 'Dashboard', 'uael' ),                      // Menu title.
+				'manage_options',                               // Capability.
+				$menu_slug,                      // Menu slug with page hash.
+				__CLASS__ . '::render',                              // Callback method.
+			);
+		
+			add_submenu_page(
+				'uaepro',                                       // Parent slug.
+				__( 'Widgets & Features', 'uael' ),             // Page title.
+				__( 'Widgets & Features', 'uael' ),                        // Menu title.
+				'manage_options',                               // Capability.
+				$menu_slug . '#widgets',                        // Menu slug with page hash.
+				__CLASS__ . '::render',                             // Callback method.
+			);
+		
+			add_submenu_page(
+				'uaepro',                                       // Parent slug.
+				__( 'Templates', 'uael' ),                      // Page title.
+				__( 'Templates', 'uael' ),                      // Menu title.
+				'manage_options',                               // Capability.
+				$menu_slug . '#templates',                      // Menu slug with page hash.
+				__CLASS__ . '::render',                            // Callback method.
+			);
+		
+			add_submenu_page(
+				'uaepro',                                       // Parent slug.
+				__( 'Settings', 'uael' ),                       // Page title.
+				__( 'Settings', 'uael' ),                       // Menu title.
+				'manage_options',                               // Capability.
+				$menu_slug . '#settings',                       // Menu slug with page hash.
+				__CLASS__ . '::render',                             // Callback method.
+			);
+		
 		}
 
 		/**
@@ -318,15 +538,227 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 		 */
 		public static function render_styles() {
 			if ( isset( $_REQUEST['uael_admin_nonce'] ) && wp_verify_nonce( sanitize_text_field( $_REQUEST['uael_admin_nonce'] ), 'uael_admin_nonce' ) ) {
-				if ( isset( $_REQUEST['page'] ) && UAEL_SLUG === $_REQUEST['page'] ) {
+				if ( isset( $_REQUEST['page'] ) ) {
 
-					add_action( 'admin_enqueue_scripts', __CLASS__ . '::styles_scripts' );
-
-					self::save_settings();
+					if ( 'uaepro' === $_REQUEST['page'] ) {
+						add_action( 'admin_enqueue_scripts', __CLASS__ . '::enqueue_react_scripts' );
+					}
 				}
 			}
 		}
 
+		
+		/**
+		 * Check if the license is active.
+		 *
+		 * @return bool
+		 * @since 1.37.0
+		 */
+		public static function is_license_active() {
+
+			if ( ! class_exists( 'BSF_License_Manager' ) ) {
+				return false;
+			}
+
+			return BSF_License_Manager::bsf_is_active_license( self::$product_id );
+		}
+
+		/**
+		 * Load admin styles on UAEL settings screen.
+		 *
+		 * @return void
+		 */
+		public static function enqueue_react_scripts() {
+
+			$replaced_logo      = UAEL_Helper::replaced_logo_url();
+			$hide_logo          = UAEL_Helper::is_replace_logo();
+			$hide_whitelabel    = UAEL_Helper::is_hide_branding();
+			$is_lite_active     = UAEL_Helper::is_lite_active(); // phpcs:ignore WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase
+			$st_status          = UAEL_Helper::free_starter_templates_status();
+			$stpro_status       = UAEL_Helper::premium_starter_templates_status();
+			$st_link            = UAEL_Helper::starter_templates_link();
+			$show_theme_support = 'no';
+			$hfe_theme_status   = get_option( 'hfe_is_theme_supported', false );
+			$rollback_version   = isset( self::uael_get_rollback_versions( 'uael' )[0] ) ? self::uael_get_rollback_versions( 'uael' )[0] : '';
+			$hfe_post_url       = $is_lite_active ? admin_url( 'post-new.php?post_type=elementor-hf' ) : '';
+
+			// UAE Lite rollback versions.
+			$free_versions = self::uaelite_get_rollback_versions();
+			if ( $is_lite_active &&
+				( ! current_theme_supports( 'header-footer-elementor' ) ) &&
+				! $hfe_theme_status
+			) {
+				$show_theme_support = 'yes';
+			}
+			$theme_option = get_option( 'hfe_compatibility_option', '1' );
+
+			
+			$beta_enabled = UAEL_Helper::get_admin_settings_option( '_uael_beta', 'disable' );
+			$uae_logo     = $hide_logo ? '' : UAEL_URL . 'assets/images/settings/logo.svg';
+
+			if ( '' !== $replaced_logo ) {
+				$uae_logo = $replaced_logo;
+			}
+
+			wp_enqueue_script(
+				'uael-react-app',
+				UAEL_URL . 'build/main.js',
+				array( 'wp-element', 'wp-dom-ready', 'wp-api-fetch' ),
+				UAEL_VER,
+				true
+			);
+
+			wp_enqueue_style(
+				'uael-react-styles',
+				UAEL_URL . 'build/main.css',
+				array(),
+				UAEL_VER
+			);
+
+			wp_register_style(
+				'uael-style',
+				UAEL_URL . 'editor-assets/css/style.css',
+				array(),
+				UAEL_VER
+			);
+
+			wp_enqueue_style( 'uael-style' );
+
+			wp_localize_script(
+				'uael-react-app',
+				'uaelSettingsData',
+				array(
+					'license_activation_nonce'            => wp_create_nonce( 'uael_license_activation' ),
+					'license_deactivation_nonce'          => wp_create_nonce( 'uael_license_deactivation' ),
+					'license_status'                      => self::is_license_active(),
+					'bsf_graupi_nonce'                    => wp_create_nonce( 'bsf_license_activation_deactivation_nonce' ),
+					'uael_nonce_action'                   => wp_create_nonce( 'wp_rest' ),
+					'installer_nonce'                     => wp_create_nonce( 'updates' ),
+					'ajax_url'                            => admin_url( 'admin-ajax.php' ),
+					'ajax_nonce'                          => wp_create_nonce( 'uael-widget-nonce' ),
+					'templates_url'                       => UAEL_URL . 'assets/images/settings/starter-templates.png',
+					'column_url'                          => UAEL_URL . 'assets/images/settings/column.png',
+					'template_url'                        => UAEL_URL . 'assets/images/settings/template.png',
+					'icon_url'                            => $uae_logo,
+					'theme_url'                           => UAEL_URL . 'assets/images/settings/editor.svg',
+					'theme__selected_url'                 => UAEL_URL . 'assets/images/settings/theme-selected.svg',
+					'user__selected_url'                  => UAEL_URL . 'assets/images/settings/user-selected.svg',
+					'version__selected_url'               => UAEL_URL . 'assets/images/settings/git-compare.svg',
+					'integrations__selected_url'          => UAEL_URL . 'assets/images/settings/integrations-selected.svg',
+					'version_url'                         => UAEL_URL . 'assets/images/settings/version.svg',
+					'integrations_url'                    => UAEL_URL . 'assets/images/settings/integrations.svg',
+					'postskins_url'                       => UAEL_URL . 'assets/images/settings/Post-Skin.svg',
+					'postskins_selected_url'              => UAEL_URL . 'assets/images/settings/Post-Skin-Selected.svg',
+					'user_url'                            => UAEL_URL . 'assets/images/settings/user.svg',
+					'info_url'                            => UAEL_URL . 'assets/images/settings/info.svg',
+					'branding_url'                        => UAEL_URL . 'assets/images/settings/branding.svg',
+					'branding__selected_url'              => UAEL_URL . 'assets/images/settings/branding-selected.svg',
+					'video_control'                       => UAEL_URL . 'assets/images/settings/video-control.svg',
+					'business_skin'                       => UAEL_URL . 'assets/images/settings/uae-post-skin-business.png',
+					'pro_badge'                           => UAEL_URL . 'assets/images/settings/badge.svg',
+					'core_badge'                          => UAEL_URL . 'assets/images/settings/core-badge.svg',
+					'beta_enabled'                        => $beta_enabled,
+					'elementor_page_url'                  => self::get_elementor_new_page_url(),
+					'hide_settings'                       => $hide_whitelabel,
+					'plugin_name'                         => UAEL_PLUGIN_NAME,
+					'plugin_short_name'                   => UAEL_PLUGIN_SHORT_NAME,
+					'is_lite_active'                      => $is_lite_active, // phpcs:ignore WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase
+					'st_link'                             => $st_link,
+					'theme_option'                        => $theme_option,
+					'show_theme_support'                  => $show_theme_support,
+					'uael_domain'                         => UAEL_DOMAIN,
+					'st_status'                           => $st_status,
+					'enable_internal_links'               => UAEL_Helper::is_internal_links(),
+					'is_bsf_package'                      => UAEL_BSF_PACKAGE,
+					'license_status'                      => UAEL_BSF_PACKAGE ? BSF_License_Manager::bsf_is_active_license( 'uael' ) : false,
+					'uael_versions'                       => self::uael_get_rollback_versions( 'uael' ),
+					'uael_rollback_nonce_url'             => esc_url( add_query_arg( 'version_no', $rollback_version, wp_nonce_url( admin_url( 'index.php?action=bsf_rollback&product_id=' . self::$product_id ), 'bsf_rollback' ) ) ),
+					'uael_rollback_nonce_placeholder_url' => esc_url( wp_nonce_url( admin_url( 'index.php?action=bsf_rollback&version_no=VERSION&product_id=' . self::$product_id ), 'bsf_rollback' ) ),
+					'uael_rollback_url'                   => esc_url( admin_url() . 'index.php?action=bsf_rollback&version_no=VERSION&product_id=uael&_wpnonce=' . wp_create_nonce( 'bsf_rollback' ) ),
+					'maxmind_db_path'                     => UAEL_Helper::get_maxmind_database_path(),
+					'uaelite_previous_version'            => isset( $free_versions[0]['value'] ) ? $free_versions[0]['value'] : '',
+					'uaelite_versions'                    => $free_versions,
+					'uaelite_rollback_url'                => esc_url( add_query_arg( 'version', 'VERSION', wp_nonce_url( admin_url( 'admin-post.php?action=uaelite_rollback' ), 'uaelite_rollback' ) ) ),
+					'uael_current_version'                => UAEL_VER,
+					'uaelite_current_version'             => $is_lite_active && defined( 'HFE_VER' ) ? HFE_VER : '',
+					'st_pro_status'                       => $stpro_status,
+					'uael_hfe_post_url'                   => $hfe_post_url,
+				)
+			);
+		}
+
+		/**
+		 * Get UAE Lite Rollback versions.
+		 *
+		 * @return array
+		 * @since 1.37.0
+		 */
+		public static function uaelite_get_rollback_versions() {
+			// Activate all free widgets.
+			$is_lite_active = UAEL_Helper::is_lite_active(); // phpcs:ignore WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase
+			
+			if ( $is_lite_active && class_exists( '\HFE\WidgetsManager\Base\HFE_Helper' ) ) { // phpcs:ignore WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase
+
+				$hfe_helper = new \HFE\WidgetsManager\Base\HFE_Helper();
+				return $hfe_helper::get_rollback_versions_options();
+			}
+
+			return '';
+		}
+
+		/**
+		 * Get UAE Pro Rollback versions.
+		 *
+		 * @param string $product UAE.
+		 * @return array
+		 * @since 1.37.0
+		 */
+		public static function uael_get_rollback_versions( $product = 'uael' ) {
+			$rollback_versions_options = array();
+
+			if ( UAEL_BSF_PACKAGE && 'uael' === $product ) {
+				$product_id        = self::$product_id;
+				$product_details   = get_brainstorm_product( $product_id );
+				$installed_version = isset( $product_details['version'] ) ? $product_details['version'] : '';
+				$product_versions  = \BSF_Rollback_Version::bsf_get_product_versions( $product_id ); // Get Remote versions
+				// Show versions above than latest install version of the product.
+				$rollback_versions = \BSF_Rollback_Version::sort_product_versions( $product_versions, $installed_version );
+
+				foreach ( $rollback_versions as $version ) {
+
+					$version = array(
+						'label' => $version,
+						'value' => $version,
+					);
+
+					$rollback_versions_options[] = $version;
+				}
+			}
+
+			return $rollback_versions_options;
+		}
+		
+
+		/**
+		 * Get Elementor edit page link
+		 */
+		public static function get_elementor_new_page_url() {
+
+			if ( class_exists( '\Elementor\Plugin' ) && current_user_can( 'edit_pages' ) ) {
+				// Ensure Elementor is loaded.
+				$query_args = array(
+					'action'    => 'elementor_new_post',
+					'post_type' => 'page',
+				);
+		
+				$new_post_url = add_query_arg( $query_args, admin_url( 'edit.php' ) );
+		
+				$new_post_url = add_query_arg( '_wpnonce', wp_create_nonce( 'elementor_action_new_post' ), $new_post_url );
+		
+				return $new_post_url;
+			}
+			return '';
+		}
 
 		/**
 		 * Renders the admin settings.
@@ -336,174 +768,8 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 		 */
 		public static function render() {
 
-			if ( isset( $_REQUEST['uael_admin_nonce'] ) && wp_verify_nonce( sanitize_text_field( $_REQUEST['uael_admin_nonce'] ), 'uael_admin_nonce' ) ) {
-				$action = ( isset( $_GET['action'] ) ) ? sanitize_text_field( $_GET['action'] ) : '';
-			}
-				$action = ( ! empty( $action ) && '' !== $action ) ? $action : 'general';
-				$action = str_replace( '_', '-', $action );
+			include_once UAEL_DIR . 'includes/admin/uael-admin-base.php';
 
-				$files = array( 'admin', 'branding', 'general', 'integration', 'post' );
-
-			if ( ! in_array( $action, $files, true ) ) {
-				return;
-			}
-
-				// Enable header icon filter below.
-				$uael_icon                 = apply_filters( 'uael_header_top_icon', true );
-				$uael_visit_site_url       = apply_filters( 'uael_site_url', UAEL_DOMAIN );
-				$uael_header_wrapper_class = apply_filters( 'uael_header_wrapper_class', array( $action ) );
-
-			include_once UAEL_DIR . 'includes/admin/uael-admin.php';
-		}
-
-		/**
-		 * Renders the admin settings content.
-		 *
-		 * @since 0.0.1
-		 * @return void
-		 */
-		public static function render_content() {
-
-			// Check the user capability.
-			if ( ! current_user_can( 'manage_options' ) ) {
-				return;
-			}
-
-			if ( isset( $_REQUEST['uael_admin_nonce'] ) && wp_verify_nonce( sanitize_text_field( $_REQUEST['uael_admin_nonce'] ), 'uael_admin_nonce' ) ) {
-				$action = ( isset( $_GET['action'] ) ) ? sanitize_text_field( $_GET['action'] ) : 'general';
-			}
-			$action = str_replace( '_', '-', $action );
-
-			$files = array( 'admin', 'branding', 'general', 'integration', 'post' );
-
-			if ( ! in_array( $action, $files, true ) ) {
-				return;
-			}
-
-			$uael_header_wrapper_class = apply_filters( 'uael_header_wrapper_class', array( $action ) );
-
-			include_once UAEL_DIR . 'includes/admin/uael-' . $action . '.php';
-		}
-
-		/**
-		 * Save General Setting options.
-		 *
-		 * @since 0.0.1
-		 */
-		public static function save_integration_option() {
-
-			if ( isset( $_POST['uael-integration-nonce'] ) && wp_verify_nonce( sanitize_text_field( $_POST['uael-integration-nonce'] ), 'uael-integration' ) ) {
-
-				$query = array(
-					'message' => 'saved',
-				);
-
-				$url            = isset( $_SERVER['REQUEST_URI'] ) ? esc_url_raw( $_SERVER['REQUEST_URI'] ) : '';
-				$input_settings = array();
-				$new_settings   = array();
-
-				if ( isset( $_POST['uael_integration'] ) ) {
-
-					$input_settings = array_map( 'sanitize_text_field', $_POST['uael_integration'] );
-
-					$geolite_db = new UAEL_Maxmind_Database();
-					$result     = $geolite_db->verify_key_and_download_database( $input_settings['uael_maxmind_geolocation_license_key'] );
-					if ( isset( $result['error'] ) && $result['error'] ) {
-						$query = array(
-							'message' => 'error',
-							'error'   => $result['message'],
-						);
-					}
-
-					// Loop through the input and sanitize each of the values.
-					foreach ( $input_settings as $key => $val ) {
-
-						if ( is_array( $val ) ) {
-							foreach ( $val as $k => $v ) {
-								$new_settings[ $key ][ $k ] = ( isset( $val[ $k ] ) ) ? sanitize_text_field( $v ) : '';
-							}
-						} else {
-							$new_settings[ $key ] = ( isset( $input_settings[ $key ] ) ) ? sanitize_text_field( $val ) : '';
-						}
-					}
-				}
-
-				UAEL_Helper::update_admin_settings_option( '_uael_integration', $new_settings, true );
-
-				$redirect_to = add_query_arg( $query, $url );
-
-				wp_safe_redirect( $redirect_to );
-				exit;
-			} // End if statement.
-		}
-
-		/**
-		 * Save White Label options.
-		 *
-		 * @since 0.0.1
-		 */
-		public static function save_branding_option() {
-
-			if ( isset( $_POST['uael-white-label-nonce'] ) && wp_verify_nonce( sanitize_text_field( $_POST['uael-white-label-nonce'] ), 'white-label' ) ) {
-
-				$url             = isset( $_SERVER['REQUEST_URI'] ) ? esc_url_raw( $_SERVER['REQUEST_URI'] ) : '';
-				$stored_settings = UAEL_Helper::get_white_labels();
-				$input_settings  = array();
-				$new_settings    = array();
-
-				if ( isset( $_POST['uael_white_label'] ) ) {
-
-					$input_settings = $_POST['uael_white_label']; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
-
-					// Loop through the input and sanitize each of the values.
-					if ( is_array( $input_settings ) ) {
-						foreach ( $input_settings as $key => $val ) {
-
-							if ( is_array( $val ) ) {
-								foreach ( $val as $k => $v ) {
-									$new_settings[ $key ][ $k ] = ( isset( $val[ $k ] ) ) ? sanitize_text_field( $v ) : '';
-								}
-							} else {
-								$new_settings[ $key ] = ( isset( $input_settings[ $key ] ) ) ? sanitize_text_field( $val ) : '';
-							}
-						}
-					}
-				}
-
-				if ( ! isset( $new_settings['agency']['hide_branding'] ) ) {
-					$new_settings['agency']['hide_branding'] = false;
-				} else {
-					$url = str_replace( 'branding', 'general', $url );
-				}
-
-				$checkbox_var = array(
-					'replace_logo',
-					'enable_knowledgebase',
-					'enable_support',
-					'enable_beta_box',
-					'enable_custom_tagline',
-					'internal_help_links',
-				);
-
-				foreach ( $checkbox_var as $key => $value ) {
-					if ( ! isset( $new_settings[ $value ] ) ) {
-						$new_settings[ $value ] = 'disable';
-					}
-				}
-
-				$new_settings = wp_parse_args( $new_settings, $stored_settings );
-
-				UAEL_Helper::update_admin_settings_option( '_uael_white_label', $new_settings, true );
-
-				$query = array(
-					'message' => 'saved',
-				);
-
-				$redirect_to = add_query_arg( $query, $url );
-
-				wp_safe_redirect( $redirect_to );
-				exit;
-			}
 		}
 
 		/**
@@ -548,51 +814,6 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 		}
 
 		/**
-		 * Enqueues the needed CSS/JS for the builder's admin settings page.
-		 *
-		 * @since 1.0
-		 */
-		public static function styles_scripts() {
-
-			// Check the user capability.
-			if ( ! current_user_can( 'manage_options' ) ) {
-				return;
-			}
-
-			// Styles.
-			wp_enqueue_style( 'uael-admin-settings', UAEL_URL . 'admin/assets/admin-menu-settings.css', array(), UAEL_VER );
-			// Script.
-			wp_enqueue_script( 'uael-admin-settings', UAEL_URL . 'admin/assets/admin-menu-settings.js', array( 'jquery', 'wp-util', 'updates' ), UAEL_VER, true );
-
-			$localize = array(
-				'ajax_nonce'   => wp_create_nonce( 'uael-widget-nonce' ),
-				'activate'     => __( 'Activate', 'uael' ),
-				'deactivate'   => __( 'Deactivate', 'uael' ),
-				'enable_beta'  => __( 'Enable Beta Updates', 'uael' ),
-				'disable_beta' => __( 'Disable Beta Updates', 'uael' ),
-			);
-
-			wp_localize_script( 'uael-admin-settings', 'uael', apply_filters( 'uael_js_localize', $localize ) );
-		}
-
-		/**
-		 * Save All admin settings here
-		 */
-		public static function save_settings() {
-
-			// Only admins can save settings.
-			if ( ! current_user_can( 'manage_options' ) ) {
-				return;
-			}
-
-			self::save_integration_option();
-			self::save_branding_option();
-
-			// Let extensions hook into saving.
-			do_action( 'uael_admin_settings_save' );
-		}
-
-		/**
 		 * Initialize Ajax
 		 */
 		public static function initialize_ajax() {
@@ -603,6 +824,10 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 			}
 
 			// Ajax requests.
+
+			add_action( 'wp_ajax_uael_license_activation', __CLASS__ . '::license_activation' );
+			add_action( 'wp_ajax_uael_license_deactivation', __CLASS__ . '::license_deactivation' );
+
 			add_action( 'wp_ajax_uael_activate_widget', __CLASS__ . '::activate_widget' );
 			add_action( 'wp_ajax_uael_deactivate_widget', __CLASS__ . '::deactivate_widget' );
 
@@ -613,6 +838,203 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 			add_action( 'wp_ajax_uael_bulk_deactivate_skins', __CLASS__ . '::bulk_deactivate_skins' );
 
 			add_action( 'wp_ajax_uael_allow_beta_updates', __CLASS__ . '::allow_beta_updates' );
+
+			add_action( 'wp_ajax_uael_recommended_plugin_activate', __CLASS__ . '::activate_addon' );
+			add_action( 'wp_ajax_uael_recommended_plugin_install', 'wp_ajax_install_plugin' );
+			add_action( 'wp_ajax_uael_recommended_theme_install', 'wp_ajax_install_theme' );
+
+			add_action( 'wp_ajax_save_hfe_compatibility_option', __CLASS__ . '::save_hfe_compatibility_option_callback' );
+		}
+
+		/**
+		 * Save HFE compatibility option via AJAX.
+		 *
+		 * @since 1.37.0
+		 * @return void
+		 */
+		public static function save_hfe_compatibility_option_callback() {
+			// Check nonce for security.
+			check_ajax_referer( 'uael-widget-nonce', 'nonce' );
+
+			if ( isset( $_POST['hfe_compatibility_option'] ) ) {
+				// Sanitize and update option.
+				$option = sanitize_text_field( $_POST['hfe_compatibility_option'] );
+				update_option( 'hfe_compatibility_option', $option );
+		
+				// Return a success response.
+				wp_send_json_success( 'Option saved successfully!' );
+			} else {
+				// Return an error response if the option is not set.
+				wp_send_json_error( 'Option not set.' );
+			}
+		}
+
+		/**
+		 * License Deactivation AJAX
+		 *
+		 * @Hooked - wp_ajax_uael_license_activation
+		 *
+		 * @return void
+		 * @since 1.37.0
+		 */
+		public static function license_activation() {
+
+			if ( ! class_exists( 'BSF_License_Manager' ) ) {
+				wp_send_json_error( array( 'message' => self::$errors['default'] ) );
+			}
+
+			if ( ! current_user_can( 'manage_options' ) ) {
+				wp_send_json_error( array( 'message' => self::$errors['permission'] ) );
+			}
+			if ( ! check_ajax_referer( 'uael_license_activation', 'security', false ) ) {
+				wp_send_json_error( array( 'message' => self::$errors['nonce'] ) );
+			}
+		
+			if ( ! isset( $_POST['key'] ) ) {
+				wp_send_json_error( array( 'message' => __( 'License key not found.', 'uael' ) ) );
+			}
+		
+			$license_key = sanitize_text_field( $_POST['key'] );
+			$data        = array(
+				'privacy_consent'          => true,
+				'terms_conditions_consent' => true,
+				'product_id'               => self::$product_id,
+				'license_key'              => $license_key,
+			);
+
+			if ( method_exists( BSF_License_Manager::instance(), 'bsf_process_license_activation' ) ) {
+				$result = BSF_License_Manager::instance()->bsf_process_license_activation( $data );
+
+				if ( ! is_bool( $result ) && ! $result['success'] ) {
+					wp_send_json_error(
+						array(
+							'success' => false,
+							'message' => $result['message'],
+						)
+					);
+				}
+			
+				wp_send_json_success(
+					array(
+						'success' => true,
+						'message' => __( 'License Successfully Activated', 'uael' ),
+					)
+				);
+			} else {
+				wp_send_json_error( array( 'message' => __( 'License activation failed!', 'uael' ) ) );
+			}
+		
+		}
+
+		/**
+		 * License Deactivation AJAX
+		 *
+		 * @Hooked - wp_ajax_uag_license_deactivation
+		 *
+		 * @return void
+		 * @since 1.0.0
+		 */
+		public static function license_deactivation() {
+
+			if ( ! class_exists( 'BSF_License_Manager' ) ) {
+				wp_send_json_error( array( 'message' => self::$errors['default'] ) );
+			}
+
+			if ( ! current_user_can( 'manage_options' ) ) {
+				wp_send_json_error( array( 'message' => self::$errors['permission'] ) );
+			}
+			if ( ! check_ajax_referer( 'uael_license_deactivation', 'security', false ) ) {
+				wp_send_json_error( array( 'message' => self::$errors['nonce'] ) );
+			}
+		
+			if ( method_exists( BSF_License_Manager::instance(), 'process_license_deactivation' ) ) {
+				$result = BSF_License_Manager::instance()->process_license_deactivation( self::$product_id );
+
+				if ( isset( $result['success'] ) && ! $result['success'] ) {
+					wp_send_json_error(
+						array(
+							'success' => false,
+							'message' => $result['message'],
+						)
+					);
+				}
+			
+				wp_send_json_success(
+					array(
+						'success' => true,
+						'message' => __( 'License Successfully Deactivated', 'uael' ),
+					)
+				);
+			} else {
+				wp_send_json_error( array( 'message' => __( 'License deactivation failed!', 'uael' ) ) );
+			}
+		
+		}
+
+		/**
+		 * Activate addon.
+		 *
+		 * @since 1.6.0
+		 * @return void
+		 */
+		public static function activate_addon() {
+
+			// Run a security check.
+			check_ajax_referer( 'uael-widget-nonce', 'nonce' );
+
+			if ( isset( $_POST['plugin'] ) ) {
+
+				$type = '';
+				if ( ! empty( $_POST['type'] ) ) {
+					$type = sanitize_key( wp_unslash( $_POST['type'] ) );
+				}
+
+				$plugin = sanitize_text_field( wp_unslash( $_POST['plugin'] ) );
+
+				if ( 'plugin' === $type ) {
+
+					// Check for permissions.
+					if ( ! current_user_can( 'activate_plugins' ) ) {
+						wp_send_json_error( esc_html__( 'Plugin activation is disabled for you on this site.', 'uael' ) );
+					}
+
+					$activate = activate_plugins( $plugin );
+
+					if ( ! is_wp_error( $activate ) ) {
+
+						do_action( 'uael_plugin_activated', $plugin );
+
+						wp_send_json_success( esc_html__( 'Plugin Activated.', 'uael' ) );
+					}
+				}
+
+				if ( 'theme' === $type ) {
+
+					if ( isset( $_POST['slug'] ) ) {
+						$slug = sanitize_key( wp_unslash( $_POST['slug'] ) );
+
+						// Check for permissions.
+						if ( ! ( current_user_can( 'switch_themes' ) ) ) {
+							wp_send_json_error( esc_html__( 'Theme activation is disabled for you on this site.', 'uael' ) );
+						}
+
+						$activate = switch_theme( $slug );
+
+						if ( ! is_wp_error( $activate ) ) {
+
+							do_action( 'uael_theme_activated', $plugin );
+
+							wp_send_json_success( esc_html__( 'Theme Activated.', 'uael' ) );
+						}
+					}
+				}
+			}
+
+			if ( 'plugin' === $type ) {
+				wp_send_json_error( esc_html__( 'Could not activate plugin. Please activate from the Plugins page.', 'uael' ) );
+			} elseif ( 'theme' === $type ) {
+				wp_send_json_error( esc_html__( 'Could not activate theme. Please activate from the Themes page.', 'uael' ) );
+			}
 		}
 
 		/**
@@ -622,16 +1044,31 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 
 			check_ajax_referer( 'uael-widget-nonce', 'nonce' );
 
-			$module_id             = isset( $_POST['module_id'] ) ? sanitize_text_field( $_POST['module_id'] ) : '';
-			$widgets               = UAEL_Helper::get_admin_settings_option( '_uael_widgets', array() );
-			$widgets[ $module_id ] = $module_id;
-			$widgets               = array_map( 'esc_attr', $widgets );
+			$module_id      = isset( $_POST['module_id'] ) ? sanitize_text_field( $_POST['module_id'] ) : '';
+			$is_pro         = isset( $_POST['is_pro'] ) ? sanitize_text_field( $_POST['is_pro'] ) : '';
+			$is_lite_active = UAEL_Helper::is_lite_active(); // phpcs:ignore WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase
+			
+			if ( 'false' === $is_pro ) {
+				if ( $is_lite_active ) { // phpcs:ignore WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase
+					
+					$widgets               = UAEL_Helper::get_admin_settings_option( '_hfe_widgets', array() );
+					$widgets[ $module_id ] = $module_id;
+					$widgets               = array_map( 'esc_attr', $widgets );
 
-			// Update widgets.
-			UAEL_Helper::update_admin_settings_option( '_uael_widgets', $widgets );
-			UAEL_Helper::create_specific_stylesheet();
+					// Update widgets.
+					UAEL_Helper::update_admin_settings_option( '_hfe_widgets', $widgets );
+				}
+			} else {
+				$widgets               = UAEL_Helper::get_admin_settings_option( '_uael_widgets', array() );
+				$widgets[ $module_id ] = $module_id;
+				$widgets               = array_map( 'esc_attr', $widgets );
 
-			wp_send_json( $module_id );
+				// Update widgets.
+				UAEL_Helper::update_admin_settings_option( '_uael_widgets', $widgets );
+				UAEL_Helper::create_specific_stylesheet();
+			}
+
+			wp_send_json_success( $module_id );
 		}
 
 		/**
@@ -641,16 +1078,30 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 
 			check_ajax_referer( 'uael-widget-nonce', 'nonce' );
 
-			$module_id             = isset( $_POST['module_id'] ) ? sanitize_text_field( $_POST['module_id'] ) : '';
-			$widgets               = UAEL_Helper::get_admin_settings_option( '_uael_widgets', array() );
-			$widgets[ $module_id ] = 'disabled';
-			$widgets               = array_map( 'esc_attr', $widgets );
+			$module_id      = isset( $_POST['module_id'] ) ? sanitize_text_field( $_POST['module_id'] ) : '';
+			$is_pro         = isset( $_POST['is_pro'] ) ? sanitize_text_field( $_POST['is_pro'] ) : '';
+			$is_lite_active = UAEL_Helper::is_lite_active(); // phpcs:ignore WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase
 
-			// Update widgets.
-			UAEL_Helper::update_admin_settings_option( '_uael_widgets', $widgets );
-			UAEL_Helper::create_specific_stylesheet();
+			if ( 'false' === $is_pro ) {
+				if ( $is_lite_active ) { // phpcs:ignore WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase
+					$widgets               = UAEL_Helper::get_admin_settings_option( '_hfe_widgets', array() );
+					$widgets[ $module_id ] = 'disabled';
+					$widgets               = array_map( 'esc_attr', $widgets );
 
-			wp_send_json( $module_id );
+					// Update widgets.
+					UAEL_Helper::update_admin_settings_option( '_hfe_widgets', $widgets );
+				}
+			} else {
+				$widgets               = UAEL_Helper::get_admin_settings_option( '_uael_widgets', array() );
+				$widgets[ $module_id ] = 'disabled';
+				$widgets               = array_map( 'esc_attr', $widgets );
+
+				// Update widgets.
+				UAEL_Helper::update_admin_settings_option( '_uael_widgets', $widgets );
+				UAEL_Helper::create_specific_stylesheet();
+			}
+
+			wp_send_json_success( $module_id );
 		}
 
 		/**
@@ -678,9 +1129,28 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 			UAEL_Helper::update_admin_settings_option( '_uael_widgets', $new_widgets );
 			UAEL_Helper::create_specific_stylesheet();
 
-			echo 'success';
+			// Activate all free widgets.
+			$is_lite_active = UAEL_Helper::is_lite_active(); // phpcs:ignore WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase
+			
+			if ( $is_lite_active && class_exists( '\HFE\WidgetsManager\Base\HFE_Helper' ) ) { // phpcs:ignore WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase
 
-			die();
+				if ( ( ! isset( self::$free_widget_list ) ) ) {
+					$hfe_helper             = new \HFE\WidgetsManager\Base\HFE_Helper();
+					self::$free_widget_list = $hfe_helper::get_widget_list();
+				}
+				$new_free_widgets = array();
+				// Set all extension to enabled.
+				foreach ( self::$free_widget_list  as $slug => $value ) {
+					$new_free_widgets[ $slug ] = $slug;
+				}
+				// Escape attrs.
+				$new_free_widgets = array_map( 'esc_attr', $new_free_widgets );
+				// Update new_extensions.
+				UAEL_Helper::update_admin_settings_option( '_hfe_widgets', $new_free_widgets );
+			}
+
+			// Send a JSON response.
+			wp_send_json_success( 'Widgets activated successfully.' );
 		}
 
 		/**
@@ -708,9 +1178,28 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 			UAEL_Helper::update_admin_settings_option( '_uael_widgets', $new_widgets );
 			UAEL_Helper::create_specific_stylesheet();
 
-			echo 'success';
+			// Activate all free widgets.
+			$is_lite_active = UAEL_Helper::is_lite_active(); // phpcs:ignore WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase
+			
+			if ( $is_lite_active && class_exists( '\HFE\WidgetsManager\Base\HFE_Helper' ) ) { // phpcs:ignore WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase
 
-			die();
+				if ( ( ! isset( self::$free_widget_list ) ) ) {
+					$hfe_helper             = new \HFE\WidgetsManager\Base\HFE_Helper();
+					self::$free_widget_list = $hfe_helper::get_widget_list();
+				}
+				$new_free_widgets = array();
+				// Set all extension to enabled.
+				foreach ( self::$free_widget_list  as $slug => $value ) {
+					$new_free_widgets[ $slug ] = 'disabled';
+				}
+				// Escape attrs.
+				$new_free_widgets = array_map( 'esc_attr', $new_free_widgets );
+				// Update new_extensions.
+				UAEL_Helper::update_admin_settings_option( '_hfe_widgets', $new_free_widgets );
+			}
+
+			// Send a JSON response.
+			wp_send_json_success( 'Widgets deactivated successfully.' );
 		}
 
 		/**
@@ -737,9 +1226,7 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 			UAEL_Helper::update_admin_settings_option( '_uael_widgets', $new_widgets );
 			UAEL_Helper::create_specific_stylesheet();
 
-			echo 'success';
-
-			die();
+			wp_send_json_success( 'Skins activated successfully.' );
 		}
 
 		/**
@@ -766,9 +1253,7 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 			UAEL_Helper::update_admin_settings_option( '_uael_widgets', $new_widgets );
 			UAEL_Helper::create_specific_stylesheet();
 
-			echo 'success';
-
-			die();
+			wp_send_json_success( 'Skins deactivated successfully.' );
 		}
 
 		/**
@@ -783,9 +1268,7 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 			// Update new_extensions.
 			UAEL_Helper::update_admin_settings_option( '_uael_beta', $beta_update );
 
-			echo 'success';
-
-			die();
+			wp_send_json_success( 'success' );
 		}
 
 	}
@@ -793,4 +1276,3 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 	UAEL_Admin::init();
 
 }
-

@@ -140,7 +140,7 @@ class HowTo extends Common_Widget {
 					'label'   => __( 'Heading', 'uael' ),
 					'type'    => Controls_Manager::TEXTAREA,
 					'rows'    => '2',
-					'default' => __( 'How to configure HowTo Schema in UAE?', 'uael' ),
+					'default' => __( 'How to configure HowTo in UAE?', 'uael' ),
 					'dynamic' => array(
 						'active' => true,
 					),
@@ -153,7 +153,7 @@ class HowTo extends Common_Widget {
 					'label'   => __( 'Description', 'uael' ),
 					'type'    => Controls_Manager::WYSIWYG,
 					'rows'    => '5',
-					'default' => __( 'So to get started, you will just need to drag-n-drop the How-to Schema widget in the Elementor editor. The How-to Schema widget can be used on pages which contain a How-to in their title and describe steps to achieve certain requirements.', 'uael' ),
+					'default' => __( 'So to get started, you will just need to drag-n-drop the HowTo widget in the Elementor editor. The How-to widget can be used on pages which contain a How-to in their title and describe steps to achieve certain requirements.', 'uael' ),
 					'dynamic' => array(
 						'active' => true,
 					),
@@ -618,7 +618,7 @@ class HowTo extends Common_Widget {
 				array(
 					'label'       => __( 'Title', 'uael' ),
 					'type'        => Controls_Manager::TEXT,
-					'default'     => __( 'Steps to configure the How-to Schema widget:', 'uael' ),
+					'default'     => __( 'Steps to configure the HowTo widget:', 'uael' ),
 					'label_block' => true,
 					'dynamic'     => array(
 						'active' => true,

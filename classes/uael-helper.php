@@ -15,6 +15,7 @@ use Elementor\Plugin;
 use Elementor\Utils;
 use Elementor\Widget_Base;
 use UltimateElementor\Classes\UAEL_Config;
+use UltimateElementor\Classes\UAEL_Maxmind_Database;
 
 /**
  * Class UAEL_Helper.
@@ -97,6 +98,34 @@ class UAEL_Helper {
 	private static $widget_list = null;
 
 	/**
+	 * Widget List
+	 *
+	 * @var free_widgets
+	 */
+	private static $free_widgets = array();
+
+	/**
+	 * Widget List
+	 *
+	 * @var free_widget_list
+	 */
+	private static $free_widget_list = array();
+
+	/**
+	 * All Widget List
+	 *
+	 * @var all_widgets_list
+	 */
+	private static $all_widgets_list = null;
+
+	/**
+	 * Plugins List
+	 *
+	 * @var get_bsf_plugins_list
+	 */
+	private static $get_bsf_plugins_list = null;
+
+	/**
 	 * Google Map Language List
 	 *
 	 * @var google_map_languages
@@ -158,6 +187,157 @@ class UAEL_Helper {
 		}
 
 		return apply_filters( 'uael_widget_list', self::$widget_list );
+	}
+
+	/**
+	 * Provide General settings array().
+	 *
+	 * @return array()
+	 * @since 1.37.0
+	 */
+	public static function is_lite_active() {
+
+		if ( defined( 'UAE_LITE' ) && is_plugin_active( 'header-footer-elementor/header-footer-elementor.php' ) ) {
+			return true;
+		}
+
+		return false;
+	}
+
+	/**
+	 * Provide General settings array().
+	 *
+	 * @return array()
+	 * @since 1.37.0
+	 */
+	public static function starter_templates_link() {
+
+		if ( is_plugin_active( 'astra-sites/astra-sites.php' ) || is_plugin_active( 'astra-pro-sites/astra-pro-sites.php' ) ) {
+			return admin_url( 'themes.php?page=starter-templates' );
+		}
+
+		return '';
+	}
+
+	/**
+	 * Provide General settings array().
+	 *
+	 * @return array()
+	 * @since 1.37.0
+	 */
+	public static function premium_starter_templates_status() {
+
+		$st_pro_status = UAEL_Config::get_plugin_status( 'astra-pro-sites/astra-pro-sites.php' );
+
+		return $st_pro_status;
+	}
+
+	/**
+	 * Provide General settings array().
+	 *
+	 * @return array()
+	 * @since 1.37.0
+	 */
+	public static function free_starter_templates_status() {
+		$free_status = UAEL_Config::get_plugin_status( 'astra-sites/astra-sites.php' );
+		return $free_status;
+	}
+
+	/**
+	 * Provide General settings array().
+	 *
+	 * @return array()
+	 * @since 1.37.0
+	 */
+	public static function starter_templates_status() {
+
+		$st_pro_status = self::premium_starter_templates_status();
+		$free_status   = self::free_starter_templates_status();
+
+		if ( 'Activated' !== $free_status && ( 'Installed' === $st_pro_status || 'Activated' === $st_pro_status ) ) {
+			return $st_pro_status;
+		}
+
+		return $free_status;
+	}
+
+	/**
+	 * Provide General settings array().
+	 *
+	 * @return array()
+	 * @since 1.37.0
+	 */
+	public static function get_maxmind_database_path() {
+
+		$geolite_db = new UAEL_Maxmind_Database();
+		if ( method_exists( $geolite_db, 'get_uael_database_path' ) ) {
+			$db_path = $geolite_db->get_uael_database_path();
+			return $db_path;
+		}
+
+		return '';
+	}
+
+	/**
+	 * Provide General settings array().
+	 *
+	 * @return array()
+	 * @since 1.37.0
+	 */
+	public static function get_free_widgets() {
+
+		if ( ! isset( self::$free_widgets ) && self::is_lite_active() && class_exists( '\HFE\WidgetsManager\Base\HFE_Helper' ) ) {
+			$hfe_helper         = new \HFE\WidgetsManager\Base\HFE_Helper();
+			self::$free_widgets = $hfe_helper::get_widget_options();
+		}
+
+		return apply_filters( 'hfe_widgets', self::$free_widgets );
+	}
+
+	/**
+	 * Provide General settings array().
+	 *
+	 * @return array()
+	 * @since 1.37.0
+	 */
+	public static function get_free_widget_list() {
+
+		if ( self::is_lite_active() && class_exists( '\HFE\WidgetsManager\Base\HFE_Helper' ) ) {
+			$hfe_helper             = new \HFE\WidgetsManager\Base\HFE_Helper();
+			self::$free_widget_list = $hfe_helper::get_widget_options();
+		}
+
+		return apply_filters( 'hfe_widget_list', self::$free_widget_list );
+	}
+
+	/**
+	 * Provide General settings array().
+	 *
+	 * @since 1.37.0
+	 * @return array()
+	 */
+	public static function get_all_widgets_list() {
+
+		if ( ! isset( self::$all_widgets_list ) ) {
+			self::$all_widgets_list = self::get_free_widget_list() + self::get_widget_options();
+		}
+
+		return apply_filters( 'uael_all_widget_list', self::$all_widgets_list );
+	}
+
+	/**
+	 * Provide General settings array().
+	 *
+	 * @since 1.37.0
+	 * @return array()
+	 */
+	public static function get_bsf_plugins_list() {
+
+		if ( ! isset( self::$get_bsf_plugins_list ) ) {
+			self::$get_bsf_plugins_list = UAEL_Config::get_bsf_plugins();
+		}
+
+		return apply_filters( 'uael_plugins_list', self::$get_bsf_plugins_list );
 	}
 
 	/**
@@ -376,6 +556,7 @@ class UAEL_Helper {
 					'enable_beta_box'       => 'enable',
 					'enable_custom_tagline' => 'disable',
 					'internal_help_links'   => 'enable',
+					'logo_url'              => '',
 				)
 			);
 
@@ -455,7 +636,7 @@ class UAEL_Helper {
 			$hide = true;
 		} else {
 
-			if ( isset( $branding['agency']['hide_branding'] ) && false === $branding['agency']['hide_branding'] ) {
+			if ( isset( $branding['agency']['hide_branding'] ) && 'enable' !== $branding['agency']['hide_branding'] ) {
 
 				$hide = false;
 			} else {
@@ -476,12 +657,31 @@ class UAEL_Helper {
 
 		$branding = self::get_white_labels();
 
-		if ( isset( $branding['replace_logo'] ) && 'disable' === $branding['replace_logo'] ) {
+		if ( isset( $branding['replace_logo'] ) && 'enable' === $branding['replace_logo'] ) {
 
-			return false;
+			return true;
 		}
 
-		return true;
+		return false;
+	}
+
+	/**
+	 * Is replace_logo.
+	 *
+	 * @return string
+	 * @since 0.0.1
+	 */
+	public static function replaced_logo_url() {
+
+		$branding  = self::get_white_labels();
+		$hide_logo = self::is_replace_logo();
+
+		if ( $hide_logo && isset( $branding['logo_url'] ) && '' !== $branding['logo_url'] ) {
+
+			return $branding['logo_url'];
+		}
+
+		return '';
 	}
 
 	/**
@@ -738,28 +938,6 @@ class UAEL_Helper {
 						$widgets[ $slug ]['is_activate'] = ( isset( $data['default'] ) ) ? $data['default'] : false;
 					}
 				}
-			}
-
-			if ( false === self::is_hide_branding() ) {
-				$options_url  = admin_url( 'options-general.php' );
-				$branding_url = add_query_arg(
-					array(
-						'page'   => UAEL_SLUG,
-						'action' => 'branding',
-					),
-					$options_url
-				);
-
-				$widgets['White_Label'] = array(
-					'slug'         => 'uael-white-label',
-					'title'        => __( 'White Label', 'uael' ),
-					'icon'         => '',
-					'title_url'    => '#',
-					'is_activate'  => true,
-					'setting_text' => __( 'Settings', 'uael' ),
-					'setting_url'  => $branding_url,
-					'category'     => 'feature',
-				);
 			}
 
 			self::$widget_options = $widgets;
@@ -1060,14 +1238,12 @@ class UAEL_Helper {
 	 * Authenticate Google & Yelp API keys
 	 *
 	 * @since 1.13.0
+	 * @param string $source  The source of the API key (e.g., 'google' or 'yelp').
+	 * @param string $api_key The API key to authenticate.
 	 */
-	public static function get_api_authentication() {
+	public static function get_api_authentication( $source, $api_key = '' ) {
 
-		$integration_settings = self::get_integrations_options();
-
-		if ( '' !== $integration_settings['google_places_api'] ) {
-
-			$api_key = $integration_settings['google_places_api'];
+		if ( '' !== $api_key && 'google' === $source ) {
 
 			$place_id = 'ChIJq6qqat2_wjsR4Rri4i22ap4';
 
@@ -1109,7 +1285,7 @@ class UAEL_Helper {
 			delete_option( 'uael_google_api_status' );
 		}
 
-		if ( '' !== $integration_settings['yelp_api'] ) {
+		if ( '' !== $api_key && 'yelp' === $source ) {
 			$url = 'https://api.yelp.com/v3/businesses/search?term=pizza&location=boston';
 
 			$result = wp_remote_get(
@@ -1120,7 +1296,7 @@ class UAEL_Helper {
 					'httpversion' => '1.0',
 					'user-agent'  => '',
 					'headers'     => array(
-						'Authorization' => 'Bearer ' . $integration_settings['yelp_api'],
+						'Authorization' => 'Bearer ' . $api_key,
 					),
 				)
 			);
@@ -1164,19 +1340,17 @@ class UAEL_Helper {
 	 * Authenticate Facebook Access Token.
 	 *
 	 * @since 1.30.0
+	 * @param string $api_key The Facebook Access Token to authenticate.
 	 */
-	public static function facebook_token_authentication() {
-		$integration_settings = self::get_integrations_options();
+	public static function facebook_token_authentication( $api_key = '' ) {
 
-		if ( '' !== $integration_settings['uael_share_button'] ) {
-			$access_token_validation = UAEL_FACEBOOK_GRAPH_API_ENDPOINT . '?id=https://facebook.com&access_token=' . $integration_settings['uael_share_button'];
+		if ( '' !== $api_key ) {
+			$access_token_validation = UAEL_FACEBOOK_GRAPH_API_ENDPOINT . '?id=https://facebook.com&access_token=' . $api_key;
 
 			$response = wp_remote_get( $access_token_validation );
 
 			if ( is_wp_error( $response ) ) {
-
 				return false;
-
 			}
 
 			return $response['response']['code'];
@@ -1679,4 +1853,5 @@ class UAEL_Helper {
 
 		return $original_widget_type ? $template_data['content'][0]['widgetType'] : '';
 	}
+	
 }

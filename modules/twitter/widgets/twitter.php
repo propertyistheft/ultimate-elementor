@@ -2605,7 +2605,7 @@ class Twitter extends Common_Widget {
 						</span>
 						<span class="elementor-alert-description">
 						<?php esc_html_e( 'Invalid Consumer key or Consumer Secret Key.', 'uael' ); ?><br>
-						<?php esc_html_e( 'Navigate to Settings -> UAE -> Twitter Feed -> Settings.', 'uael' ); ?>
+						<?php esc_html_e( 'Navigate to  WP Dashboard -> UAE -> Settings -> Integrations.', 'uael' ); ?>
 						</span>
 					</div>
 					<?php
@@ -2748,7 +2748,7 @@ class Twitter extends Common_Widget {
 							</span>
 							<span class="elementor-alert-description">
 								<?php esc_html_e( 'To show Twitter Feed widget, please set valid Consumer key and Consumer Secret Key.', 'uael' ); ?><br>
-								<?php esc_html_e( 'Navigate to Settings -> UAE -> Twitter Feed -> Settings.', 'uael' ); ?>
+								<?php esc_html_e( 'Navigate to  WP Dashboard -> UAE -> Settings -> Integrations.', 'uael' ); ?>
 							</span>
 						</div>
 						<?php
@@ -2975,7 +2975,7 @@ class Twitter extends Common_Widget {
 					<?php esc_html_e( 'Twitter Feed - ID ', 'uael' ); ?><?php echo esc_html( $page_id ); ?>
 				</span>
 				<span class="elementor-alert-description"><?php esc_html_e( 'To show Twitter Feed widget, please set the Consumer key and Consumer Secret Key.', 'uael' ); ?><br>
-					<?php esc_html_e( 'Navigate to Settings -> UAE -> Twitter Feed -> Settings.', 'uael' ); ?>
+					<?php esc_html_e( 'Navigate to  WP Dashboard -> UAE -> Settings -> Integrations.', 'uael' ); ?>
 				</span>
 			</div>
 			<?php
