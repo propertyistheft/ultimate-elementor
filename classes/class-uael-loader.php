@@ -57,11 +57,11 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 			define( 'UAEL_BASE', plugin_basename( UAEL_FILE ) );
 			define( 'UAEL_DIR', plugin_dir_path( UAEL_FILE ) );
 			define( 'UAEL_URL', plugins_url( '/', UAEL_FILE ) );
-			define( 'UAEL_VER', '1.37.2' );
+			define( 'UAEL_VER', '1.37.3' );
 			define( 'UAEL_MODULES_DIR', UAEL_DIR . 'modules/' );
 			define( 'UAEL_MODULES_URL', UAEL_URL . 'modules/' );
 			define( 'UAEL_SLUG', 'uae' );
-			define( 'UAEL_CATEGORY', 'Ultimate Addons' );
+			define( 'UAEL_CATEGORY', 'Ultimate Addons Pro' );
 			define( 'UAEL_DOMAIN', trailingslashit( 'https://ultimateelementor.com' ) );
 			define( 'UAEL_FACEBOOK_GRAPH_API_ENDPOINT', trailingslashit( 'https://graph.facebook.com/v2.12' ) );
 			define( 'UAEL_BSF_PACKAGE', file_exists( UAEL_DIR . 'class-brainstorm-update-uael.php' ) );
@@ -117,7 +117,7 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 			$bsf_analytics->set_entity(
 				array(
 					'bsf' => array(
-						'product_name'    => 'Ultimate Addons for Elementor',
+						'product_name'    => 'Ultimate Addons for Elementor Pro',
 						'path'            => UAEL_DIR . 'admin/bsf-analytics',
 						'author'          => 'Brainstorm Force',
 						'time_to_display' => '+24 hours',
@@ -137,7 +137,7 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 		 */
 		public static function hide_admin_notices() {
 			$screen = get_current_screen();
-			if ( 'toplevel_page_uaepro' === $screen->id ) {
+			if ( 'toplevel_page_uaepro' === $screen->id || 'edit-elementor-hf' === $screen->id ) {
 				remove_all_actions( 'admin_notices' );
 				remove_all_actions( 'all_admin_notices' );
 			}
@@ -212,7 +212,7 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 
 			$class = 'notice notice-error';
 			/* translators: %s: html tags */
-			$message = sprintf( __( 'The %1$sUltimate Addons for Elementor%2$s plugin requires %1$sElementor%2$s plugin installed & activated.', 'uael' ), '<strong>', '</strong>' );
+			$message = sprintf( __( 'The %1$sUltimate Addons for Elementor Pro%2$s plugin requires %1$sElementor%2$s plugin installed & activated.', 'uael' ), '<strong>', '</strong>' );
 
 			$plugin = 'elementor/elementor.php';
 
@@ -233,9 +233,9 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 				$button_label = __( 'Install Elementor', 'uael' );
 			}
 
-			$button = '<p><a href="' . $action_url . '" class="button-primary">' . $button_label . '</a></p><p></p>';
-
-			printf( '<div class="%1$s"><p>%2$s</p>%3$s</div>', esc_attr( $class ), wp_kses_post( $message ), wp_kses_post( $button ) );
+			$button = '<a href="' . $action_url . '" class="button-primary" style="margin-left: 10px; margin-left: 10px;">' . $button_label . '</a>';
+		
+			printf( '<div class="%1$s" style="display: flex; align-items: center; padding: 15px 0;"><p style="margin: 0; padding-left: 10px; padding-right: 10px;">%2$s</p>%3$s</div>', esc_attr( $class ), wp_kses_post( $message ), wp_kses_post( $button ) );
 		}
 
 
@@ -249,7 +249,7 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 		public function elementor_outdated() {
 			$class = 'notice notice-error';
 			/* translators: %s: html tags */
-			$message = sprintf( __( 'The %1$sUltimate Addons for Elementor%2$s plugin has stopped working because you are using an older version of %1$sElementor%2$s plugin.', 'uael' ), '<strong>', '</strong>' );
+			$message = sprintf( __( 'The %1$sUltimate Addons for Elementor Pro%2$s plugin has stopped working because you are using an older version of %1$sElementor%2$s plugin.', 'uael' ), '<strong>', '</strong>' );
 
 			$plugin = 'elementor/elementor.php';
 

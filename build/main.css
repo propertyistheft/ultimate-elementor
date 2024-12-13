@@ -2881,33 +2881,22 @@
 :is(#uae-settings-app, [data-floating-ui-portal]) .\[grid-area\:1\/1\/2\/3\]{
 	grid-area: 1/1/2/3;
 }
-
-/* Add to your main CSS file (e.g., index.css) */
-#toplevel_page_uaepro .wp-submenu li.wp-first-item::after,
-#toplevel_page_uaepro .wp-submenu li:nth-last-child(2)::after {
-	content: "";
-	border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-	display: block;
-	float: left;
-	margin: 8px 0;
-	width: 100%;
-}
 input[type="radio"].uael-radio-field:checked::before {
 	content: "";
-    -webkit-border-radius: 50%;
-            border-radius: 50%;
-    width: 0.5rem;
-    height: 0.5rem;
-    margin: 0.1875rem;
-    background-color: #6005FF;
-    line-height: 1.14285714;
+	-webkit-border-radius: 50%;
+	        border-radius: 50%;
+	width: 0.5rem;
+	height: 0.5rem;
+	margin: 0.1875rem;
+	background-color: #6005ff;
+	line-height: 1.14285714;
 }
 input[type="radio"].uael-radio-field:focus {
 	border-color: #6005ff;
 	-webkit-box-shadow: 0 0 0 1px #6005ff;
 	        box-shadow: 0 0 0 1px #6005ff;
 }
-.loader {
+#uae-settings-app .loader {
 	border: 4px solid #f3f3f3;
 	-webkit-border-radius: 50%;
 	        border-radius: 50%;
@@ -2917,7 +2906,7 @@ input[type="radio"].uael-radio-field:focus {
 	-webkit-animation: spin 2s linear infinite;
 	        animation: spin 2s linear infinite;
 }
-.subject-cell {
+#uae-settings-app .subject-cell {
 	max-width: 200px; /* Adjust this width based on your layout */
 	white-space: nowrap;
 	overflow: hidden;
@@ -2925,7 +2914,7 @@ input[type="radio"].uael-radio-field:focus {
 }
 .uae-tooltip-wrap {
 	width: 100%;
-    text-align: right;
+	text-align: right;
 }
 
 .uael-radio-option {
@@ -2945,15 +2934,26 @@ input[type="radio"].uael-radio-field:focus {
 	width: calc( 100% - 25px);
 } */
 #uae-settings-app .gap-2 {
-    gap: 1.2rem;
+	gap: 1.2rem;
 }
-.toplevel_page_uaepro #wpcontent {
+.toplevel_page_uaepro #wpcontent,
+.post-type-elementor-hf #wpcontent {
     padding-left: 0;
 }
+.post-type-elementor-hf #wpbody-content {
+	padding-left: 20px;
+}
+.post-type-elementor-hf .wp-heading-inline {
+	font-size: 18px;
+}
+.post-type-elementor-hf #adminmenu .wp-submenu a[href ="edit.php?post_type=elementor-hf" ] {
+    color: #ffffff;
+    font-weight: 600;
+}
 div#uae-settings-app {
-    font-size: 15px;
-    font-weight: 500;
-    line-height: normal;
+	font-size: 15px;
+	font-weight: 500;
+	line-height: normal;
 }
 .uael-settings-page h2 {
 	margin-bottom: 0.3rem !important;
@@ -2962,11 +2962,11 @@ div#uae-settings-app {
 	overflow: hidden; /* Hide scrollbar */
 }
 .uae-hide-scrollbar::-webkit-scrollbar {
-    display: none; /* Hide scrollbar for WebKit browsers */
+	display: none; /* Hide scrollbar for WebKit browsers */
 }
 .uae-hide-scrollbar {
-    -ms-overflow-style: none;  /* Hide scrollbar for IE and Edge */
-    scrollbar-width: none;  /* Hide scrollbar for Firefox */
+	-ms-overflow-style: none; /* Hide scrollbar for IE and Edge */
+	scrollbar-width: none; /* Hide scrollbar for Firefox */
 }
 .uael-link-color,
 .uael-link-color span {
@@ -2983,13 +2983,13 @@ div#uae-settings-app {
 	padding: 15px 25px;
 }
 button.uae-plugin-activated {
-	color: #16A34A;
+	color: #16a34a;
 }
 button.uae-bulk-action-button {
 	width: 150px;
 }
 .uae-subtitle h2 {
-	font-size: 0.90rem;
+	font-size: 0.9rem;
 }
 .uael-65-width {
 	width: 65%;
@@ -3004,16 +3004,16 @@ button.uae-bulk-action-button {
 .uael-remove-ring input[type="checkbox"],
 .uael-remove-ring a,
 .uael-remove-ring {
-    outline: none; /* Removes the outline */
-    -webkit-box-shadow: none !important;
-            box-shadow: none !important; /* Ensures no shadow on focus */
-    --tw-ring-inset: auto; /* Tailwind-specific variable, keep if needed */
+	outline: none; /* Removes the outline */
+	-webkit-box-shadow: none !important;
+	        box-shadow: none !important; /* Ensures no shadow on focus */
+	--tw-ring-inset: auto; /* Tailwind-specific variable, keep if needed */
 }
 .uael-remove-ring a:focus,
 .uael-remove-ring input[type="checkbox"]:focus {
-    outline: none; /* Ensures focus does not trigger the outline */
-    -webkit-box-shadow: none !important;
-            box-shadow: none !important; /* Safeguards against custom focus shadows */
+	outline: none; /* Ensures focus does not trigger the outline */
+	-webkit-box-shadow: none !important;
+	        box-shadow: none !important; /* Safeguards against custom focus shadows */
 }
 .uael-green-placeholder::-webkit-input-placeholder {
 	color: #1ca51c;
@@ -3077,11 +3077,11 @@ button.uae-bulk-action-button {
 }
 
 @media (max-width: 768px) {
-	.container {
+	#uae-settings-app .container {
 		padding: 0 1rem;
 	}
 
-	.fixed {
+	#uae-settings-app .fixed {
 		-webkit-box-pack: start !important;
 		-webkit-justify-content: flex-start !important;
 		   -moz-box-pack: start !important;
@@ -3089,7 +3089,7 @@ button.uae-bulk-action-button {
 		        justify-content: flex-start !important;
 	}
 
-	.bg-white {
+	#uae-settings-app .bg-white {
 		width: 100% !important;
 		height: 100% !important;
 		-webkit-border-radius: 0 !important;
@@ -3106,14 +3106,20 @@ button.uae-bulk-action-button {
 }
 
 @media screen and (max-width: 782px) {
-	.uael-radio-option {
-		width: 1rem !important;
-		height: 1rem !important;
+	input[type="radio"].uae-radio-field:checked::before {
+		content: "";
+		-webkit-border-radius: 50%;
+		border-radius: 50%;
+		width: 0.5rem;
+		height: 0.5rem;
+		margin: 0.1875rem;
+		background-color: #6005ff;
+		line-height: 1.14285714;
 	}
-	.uael-radio-option:checked:before {
-		width: 0.5rem !important;
-        height: 0.5rem !important;
-        margin: 0.18rem !important;
+	input[type="radio"].uae-radio-field:focus {
+		border-color: #6005ff;
+		-webkit-box-shadow: 0 0 0 1px #6005ff;
+		box-shadow: 0 0 0 1px #6005ff;
 	}
 }
 
@@ -5231,5 +5237,6 @@ button.uae-bulk-action-button {
 	width: 1.5rem;
 	height: 1.5rem;
 }
+
 
 /*# sourceMappingURL=main.css.map*/

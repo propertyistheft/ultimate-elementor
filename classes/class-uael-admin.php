@@ -340,10 +340,39 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 
 			// Filter to White labled options.
 			add_filter( 'all_plugins', __CLASS__ . '::plugins_page' );
+
+			add_action(
+				'current_screen',
+				function () {
+					$current_screen = get_current_screen();
+					if ( $current_screen && ( 'edit-elementor-hf' === $current_screen->id || 'elementor-hf' === $current_screen->id ) ) {
+						add_action(
+							'in_admin_header',
+							function () {
+								self::render_admin_top_bar();
+							} 
+						);
+					}
+				} 
+			);
+
 			/* Flow content view */
 			add_action( 'uael_render_admin_page_content', __CLASS__ . '::react_content', 10, 2 );
 			add_action( 'admin_enqueue_scripts', __CLASS__ . '::update_uae_page', 10, 2 );
 
+		}
+
+		/**
+		 * Update strings on the update-core.php page.
+		 *
+		 * @since 1.37.3
+		 * @return void
+		 */
+		public static function render_admin_top_bar() {
+			?>
+			<div id="hfe-admin-top-bar-root">
+			</div>
+			<?php
 		}
 
 		/**
@@ -504,7 +533,7 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 			add_submenu_page(
 				'uaepro',                                       // Parent slug.
 				__( 'Widgets & Features', 'uael' ),             // Page title.
-				__( 'Widgets & Features', 'uael' ),                        // Menu title.
+				__( 'Widgets', 'uael' ),                        // Menu title.
 				'manage_options',                               // Capability.
 				$menu_slug . '#widgets',                        // Menu slug with page hash.
 				__CLASS__ . '::render',                             // Callback method.
@@ -545,6 +574,14 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 					}
 				}
 			}
+
+			if ( ( isset( $_GET['post_type'] ) && 'elementor-hf' === sanitize_text_field( $_GET['post_type'] ) && 
+					( 'edit.php' === $GLOBALS['pagenow'] || 'post.php' === $GLOBALS['pagenow'] || 'post-new.php' === $GLOBALS['pagenow'] ) ) ||
+					( isset( $_GET['post'] ) && 'post.php' === $GLOBALS['pagenow'] && isset( $_GET['action'] ) && 'edit' === sanitize_text_field( $_GET['action'] ) && 'elementor-hf' === get_post_type( sanitize_text_field( $_GET['post'] ) ) )
+				) {
+				add_action( 'admin_enqueue_scripts', __CLASS__ . '::enqueue_react_scripts' );
+			}
+			
 		}
 
 		
@@ -570,6 +607,8 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 		 */
 		public static function enqueue_react_scripts() {
 
+			global $pagenow, $post_type;
+
 			$replaced_logo      = UAEL_Helper::replaced_logo_url();
 			$hide_logo          = UAEL_Helper::is_replace_logo();
 			$hide_whitelabel    = UAEL_Helper::is_hide_branding();
@@ -581,6 +620,7 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 			$hfe_theme_status   = get_option( 'hfe_is_theme_supported', false );
 			$rollback_version   = isset( self::uael_get_rollback_versions( 'uael' )[0] ) ? self::uael_get_rollback_versions( 'uael' )[0] : '';
 			$hfe_post_url       = $is_lite_active ? admin_url( 'post-new.php?post_type=elementor-hf' ) : '';
+			$is_hfe_post        = ( 'elementor-hf' === $post_type && ( 'post.php' === $pagenow || 'post-new.php' === $pagenow ) ) ? 'yes' : 'no';
 
 			// UAE Lite rollback versions.
 			$free_versions = self::uaelite_get_rollback_versions();
@@ -681,8 +721,11 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 					'uaelite_rollback_url'                => esc_url( add_query_arg( 'version', 'VERSION', wp_nonce_url( admin_url( 'admin-post.php?action=uaelite_rollback' ), 'uaelite_rollback' ) ) ),
 					'uael_current_version'                => UAEL_VER,
 					'uaelite_current_version'             => $is_lite_active && defined( 'HFE_VER' ) ? HFE_VER : '',
+					'uaepro_settings_url'                 => admin_url( 'admin.php?page=uaepro' ),
+					'header_footer_builder'               => $is_lite_active ? admin_url( 'edit.php?post_type=elementor-hf' ) : '',
 					'st_pro_status'                       => $stpro_status,
 					'uael_hfe_post_url'                   => $hfe_post_url,
+					'is_hfe_post'                         => $is_hfe_post,
 				)
 			);
 		}

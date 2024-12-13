@@ -203,8 +203,9 @@ class Module extends Module_Base {
 
 			$data = array_map( 'sanitize_text_field', $_POST['data'] );
 
-			$fb_user_id   = filter_input( INPUT_POST, 'userID', FILTER_SANITIZE_STRING );
-			$access_token = filter_input( INPUT_POST, 'security_string', FILTER_SANITIZE_STRING );
+			// Replaced FILTER_SANITIZE_STRING with FILTER_SANITIZE_SPECIAL_CHARS as its deprecated in PHP 8.1.
+			$fb_user_id   = filter_input( INPUT_POST, 'userID', FILTER_SANITIZE_SPECIAL_CHARS );
+			$access_token = filter_input( INPUT_POST, 'security_string', FILTER_SANITIZE_SPECIAL_CHARS );
 
 			$integration_options     = UAEL_Helper::get_integrations_options();
 			$uae_facebook_app_id     = $integration_options['facebook_app_id'];

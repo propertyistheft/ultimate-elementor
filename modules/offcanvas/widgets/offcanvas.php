@@ -1989,6 +1989,25 @@ class Offcanvas extends Common_Widget {
 		$dynamic_settings = $this->get_settings_for_display();
 		$output_html;
 
+		// WPML compatibility for Off-Canvas section content.
+		// phpcs:disable WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase
+		if ( class_exists( 'SitePress' ) ) {
+
+			$arrayKeysToConvert = array(
+				'ct_saved_rows',
+				'ct_saved_container',
+				'ct_saved_modules',
+				'ct_page_templates',
+			);
+	
+			foreach ( $arrayKeysToConvert as $key ) {
+				if ( isset( $settings[ $key ] ) && is_numeric( $settings[ $key ] ) ) {
+					$settings[ $key ] = apply_filters( 'wpml_object_id', $settings[ $key ], get_post_type( $settings[ $key ] ), true );
+				}
+			}
+		}
+		// phpcs:enable WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase
+
 		switch ( $content_type ) {
 			case 'content':
 				global $wp_embed;

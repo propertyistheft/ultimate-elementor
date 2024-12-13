@@ -1,3 +1,11 @@
+Version 1.37.3 - Monday, 9th December 2024
+- Improvement: Enhanced user interface for better accessibility and a more streamlined user experience.
+- Improvement: Added WPML compatibility for some widgets to handle translations for content sections template.
+- Fix: Navigation Menu – Submenu now stays open when clicked until you close it or click another menu item.
+- Fix: Posts - Ensured posts from the same category are displayed correctly when the Responsive Support feature is enabled.
+- Fix: Price box - Resolved hover animation issue in the widget.
+- Fix: Deprecated PHP error related to FILTER_SANITIZE_STRING.
+
 Version 1.37.2, Saturday, 30th November 2024
 - Fix: Conflict with site customizer style.
 

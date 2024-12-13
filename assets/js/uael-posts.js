@@ -133,7 +133,17 @@
 		}
 
 		$scope.find( '.uael-post__header-filter' ).off( 'click' ).on( 'click', function(e) {
-			$this = $( this );
+			
+			var $clickedElement = $(this);  // Get the clicked element
+			var selectedText = $clickedElement.text(); // Text of the clicked element or filter
+			$scope.find('.uael-filters-dropdown-button').text(selectedText);
+		
+			// Find the <li> element that matches the selectedText
+			var $this = $scope.find('.uael-post__header-filter').filter(function() {
+				return $(this).text() === selectedText;
+			});
+			
+			// Remove 'uael-filter__current' class from all <li> elements and add to the matching one
 			$this.siblings().removeClass( 'uael-filter__current' );
 			$this.addClass( 'uael-filter__current' );
 
@@ -151,9 +161,6 @@
 			} else {
 				def_filter = post_grid.data( 'filter-default' );
 			}
-
-			var str_text = $scope.find( '.uael-filter__current' ).first().text();
-			$scope.find( '.uael-filters-dropdown-button' ).text( str_text );
 
 			count = 1;
 

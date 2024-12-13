@@ -130,6 +130,30 @@ class ContentToggle extends Common_Widget {
 		$normal_content_2 = $this->get_settings_for_display( 'section_content_2' );
 		$content_type     = $settings[ $section ];
 		$output           = '';
+
+		// WPML compatibility for Content Toggle section content.
+		// phpcs:disable WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase
+		if ( class_exists( 'SitePress' ) ) {
+
+			$arrayKeysToConvert = array( 
+				'section_content_', 
+				'saved_pages_', 
+				'section_saved_rows_', 
+			);
+
+			$numSections = 2;
+
+			foreach ( $arrayKeysToConvert as $key ) {
+				for ( $i = 1; $i <= $numSections; $i++ ) {
+					$settingKey = $key . $i;
+					if ( isset( $settings[ $settingKey ] ) && is_numeric( $settings[ $settingKey ] ) ) {
+						$settings[ $settingKey ] = apply_filters( 'wpml_object_id', $settings[ $settingKey ], get_post_type( $settings[ $settingKey ] ), true );
+					}
+				}
+			}
+		}
+		// phpcs:enable WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase
+
 		if ( 'rbs_select_section_1' === $section ) {
 			switch ( $content_type ) {
 				case 'content':

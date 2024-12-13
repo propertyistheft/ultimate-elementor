@@ -355,7 +355,7 @@ class UAEL_Config {
 				),
 				'Nav_Menu'            => array(
 					'slug'        => 'uael-nav-menu',
-					'title'       => __( 'Navigation Menu', 'uael' ),
+					'title'       => __( 'Advanced Navigation Menu', 'uael' ),
 					'description' => __( 'Build easy-to-navigate, visually appealing site menus.', 'uael' ),
 					'keywords'    => array( 'uael', 'menu', 'nav', 'navigation', 'mega' ),
 					'icon'        => 'uael-icon-navigation-menu',
