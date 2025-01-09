@@ -1171,11 +1171,19 @@ class Module extends Module_Base {
 		$settings = $element->get_settings();
 
 		$element->add_render_attribute( 'uael_party_propz_widget_wrap', 'class', 'uael-party-propz-widget-wrap' );
-		$element->add_render_attribute( 'uael_party_propz_widget_wrap', 'class', 'party-propz-widget-alignment-' . $settings['party_propz_widget_alignment'] );
+
+		// Check if 'party_propz_widget_alignment' exists before using it.
+		if ( isset( $settings['party_propz_widget_alignment'] ) ) {
+			$element->add_render_attribute( 
+				'uael_party_propz_widget_wrap', 
+				'class', 
+				'party-propz-widget-alignment-' . $settings['party_propz_widget_alignment'] 
+			);
+		}
 
 		$element->add_render_attribute( 'uael_party_propz_widget_img_cls', 'class', 'uael-party-propz-img-cls' );
 
-		$party_propz_widget_style = $settings['party_propz_widget_style'];
+		$party_propz_widget_style = isset( $settings['party_propz_widget_style'] ) ? $settings['party_propz_widget_style'] : '';
 		switch ( $party_propz_widget_style ) {
 			case 'custom':
 				if ( ! empty( $settings['party_propz_widget_img']['url'] ) ) {
@@ -1238,7 +1246,7 @@ class Module extends Module_Base {
 		}
 
 		?>
-		<?php if ( 'yes' === $settings['enable_party_propz_widget'] ) { ?>
+		<?php if ( isset( $settings['enable_party_propz_widget'] ) && 'yes' === $settings['enable_party_propz_widget'] ) { ?>
 			<div <?php echo wp_kses_post( $element->get_render_attribute_string( 'uael_party_propz_widget_wrap' ) ); ?>>
 				<?php if ( 'image' === $settings['party_propz_widget_image_type'] ) { ?>
 					<img <?php echo wp_kses_post( $element->get_render_attribute_string( 'uael_party_propz_widget_img_cls' ) ); ?> />

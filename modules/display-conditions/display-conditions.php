@@ -112,7 +112,7 @@ class Display_Conditions {
 	public function render_content( $should_render, $element ) {
 		$settings = $element->get_settings();
 
-		if ( 'yes' === $settings['display_condition_enable'] ) {
+		if ( isset( $settings['display_condition_enable'] ) && 'yes' === $settings['display_condition_enable'] ) {
 			$id    = $element->get_id();
 			$to    = $settings['display_condition_to'];
 			$lists = $settings['display_condition_list'];

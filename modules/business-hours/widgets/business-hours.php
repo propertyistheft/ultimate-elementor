@@ -436,7 +436,7 @@ class Business_Hours extends Common_Widget {
 				),
 				'selectors' => array(
 					'{{WRAPPER}} .uael-business-day' => 'color: {{VALUE}};',
-					'{{WRAPPER}} .elementor-widget-container' => 'overflow: hidden;',
+					'{{WRAPPER}} .elementor-widget-uael-business-hours' => 'overflow: hidden;',
 				),
 			)
 		);

@@ -1,3 +1,7 @@
+Version 1.37.4 - Monday, 6th January 2025
+- Improvement: Compatibility with latest Elementor and Elementor Pro 3.26 version.
+- Fix: Icons for horizontal alignment options in BA Slider widget now appear correctly.
+
 Version 1.37.3 - Monday, 9th December 2024
 - Improvement: Enhanced user interface for better accessibility and a more streamlined user experience.
 - Improvement: Added WPML compatibility for some widgets to handle translations for content sections template.

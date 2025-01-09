@@ -639,15 +639,15 @@ class BaSlider extends Common_Widget {
 				'options'      => array(
 					'flex-start' => array(
 						'title' => __( 'Top', 'uael' ),
-						'icon'  => 'fa fa-long-arrow-up',
+						'icon'  => 'eicon-v-align-top',
 					),
 					'center'     => array(
 						'title' => __( 'Center', 'uael' ),
-						'icon'  => 'fa fa-arrows-v',
+						'icon'  => 'eicon-v-align-middle',
 					),
 					'flex-end'   => array(
 						'title' => __( 'Bottom', 'uael' ),
-						'icon'  => 'fa fa-long-arrow-down',
+						'icon'  => 'eicon-v-align-bottom',
 					),
 				),
 				'default'      => 'flex-start',

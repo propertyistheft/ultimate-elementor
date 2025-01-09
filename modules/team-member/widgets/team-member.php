@@ -1694,8 +1694,7 @@ class Team_Member extends Common_Widget {
 									$this->add_link_attributes( $link_key, $item['link'] );
 
 									?>
-									<a <?php echo wp_kses_post( $this->get_render_attribute_string( $link_key ) ); ?>>
-										<span class="elementor-screen-only"><?php echo esc_html( ucwords( $social ) ); ?></span>
+									<a <?php echo wp_kses_post( $this->get_render_attribute_string( $link_key ) ); ?> aria-label="<?php echo esc_attr( ucwords( $social ) ); ?>">
 										<?php
 										if ( $is_new || $migrated ) {
 											\Elementor\Icons_Manager::render_icon( $item['new_social'] );
@@ -1717,8 +1716,7 @@ class Team_Member extends Common_Widget {
 									}
 									$class_animation = ' elementor-animation-' . $settings['icon_hover_animation'];
 									?>
-									<a class="elementor-icon elementor-social-icon elementor-social-icon-<?php echo esc_attr( $social ) . esc_attr( $class_animation ); ?>" <?php echo wp_kses_post( $this->get_render_attribute_string( $link_key ) ); ?>>
-										<span class="elementor-screen-only"><?php echo esc_html( ucwords( $social ) ); ?></span>
+									<a class="elementor-icon elementor-social-icon elementor-social-icon-<?php echo esc_attr( $social ) . esc_attr( $class_animation ); ?>" <?php echo wp_kses_post( $this->get_render_attribute_string( $link_key ) ); ?> aria-label="<?php echo esc_attr( ucwords( $social ) ); ?>">
 										<i class="<?php echo esc_attr( $item['social'] ); ?>"></i>
 									</a>
 								<?php } ?>
@@ -1853,9 +1851,7 @@ class Team_Member extends Common_Widget {
 												migrated = elementor.helpers.isIconMigrated( item, 'new_social' ),
 												social = elementor.helpers.getSocialNetworkNameFromIcon( item.new_social, item.social, false, migrated );
 												#>
-												<a class="elementor-icon elementor-social-icon elementor-social-icon-{{ social }} elementor-animation-{{ settings.icon_hover_animation }} elementor-repeater-item-{{item._id}}" href="{{ link }}">
-
-												<span class="elementor-screen-only">{{ social }}</span>
+												<a class="elementor-icon elementor-social-icon elementor-social-icon-{{ social }} elementor-animation-{{ settings.icon_hover_animation }} elementor-repeater-item-{{item._id}}" href="{{ link }}" aria-label="{{ social }}">
 
 												<#
 													iconsHTML[ index ] = elementor.helpers.renderIcon( view, item.new_social, {}, 'i', 'object' );
@@ -1869,8 +1865,7 @@ class Team_Member extends Common_Widget {
 										<?php } else { ?>
 											<# var link = item.link ? item.link.url : '',
 											social = item.social.replace( 'fa fa-', '' ); #>
-											<a class="elementor-icon elementor-social-icon elementor-social-icon-{{ social }} elementor-animation-{{ settings.icon_hover_animation }}" href="{{ link }}">
-												<span class="elementor-screen-only">{{ social }}</span>
+											<a class="elementor-icon elementor-social-icon elementor-social-icon-{{ social }} elementor-animation-{{ settings.icon_hover_animation }}" href="{{ link }}" aria-label="{{ social }}">
 												<i class="{{ item.social }}"></i>
 											</a>
 										<?php } ?>

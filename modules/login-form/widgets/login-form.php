@@ -2600,7 +2600,7 @@ class LoginForm extends Common_Widget {
 		}
 
 		if ( 'none' === $settings['show_labels'] ) {
-			$this->add_render_attribute( 'label', 'class', 'elementor-screen-only' );
+			$this->add_render_attribute( 'label', 'aria-label', esc_attr__( 'Label Text', 'uael' ) );
 		}
 
 		$this->add_render_attribute( 'field-group', 'class', 'elementor-field-required' )

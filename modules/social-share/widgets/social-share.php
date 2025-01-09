@@ -1688,18 +1688,16 @@ class SocialShare extends Common_Widget {
 									case 'icon-text':
 										if ( 'left' === $settings['icon_align'] ) {
 											?>
-											<span class="uael-share-btn__icon">
+											<span class="uael-share-btn__icon" aria-label="<?php /* translators: %s share text */ echo esc_attr( sprintf( __( 'Share on %s', 'uael' ), $custom_text ) ); ?>">
 												<i class="<?php echo esc_attr( self::uael_get_network_class( $button['text'] ) ); ?>" aria-hidden="true"></i>
-												<span class="elementor-screen-only"><?php /* translators: %s share text */ echo esc_html( sprintf( __( 'Share on %s', 'uael' ), $custom_text ) ); ?></span>
 											</span>
 										<?php } ?>
 										<div class="uael-share-btn__text">
 												<span class="uael-share-btn__title"><?php echo esc_html( ucfirst( $custom_text ) ); ?></span>
 										</div>
 										<?php if ( 'right' === $settings['icon_align'] ) { ?>
-											<span class="uael-share-btn__icon">
+											<span class="uael-share-btn__icon" aria-label="<?php /* translators: %s share text */ echo esc_attr( sprintf( __( 'Share on %s', 'uael' ), $custom_text ) ); ?>">
 												<i class="<?php echo esc_attr( self::uael_get_network_class( $button['text'] ) ); ?>" aria-hidden="true"></i>
-												<span class="elementor-screen-only"><?php /* translators: %s share text */ echo esc_html( sprintf( __( 'Share on %s', 'uael' ), $custom_text ) ); ?></span>
 											</span>
 										<?php } ?>
 										<?php
@@ -1717,9 +1715,8 @@ class SocialShare extends Common_Widget {
 
 									case 'icon':
 										?>
-										<span class="uael-share-btn__icon">
+										<span class="uael-share-btn__icon" aria-label="<?php /* translators: %s share text */ echo esc_attr( sprintf( __( 'Share on %s', 'uael' ), $custom_text ) ); ?>">
 											<i class="<?php echo esc_attr( self::uael_get_network_class( $button['text'] ) ); ?>" aria-hidden="true"></i>
-											<span class="elementor-screen-only"><?php /* translators: %s share text */ echo esc_html( sprintf( __( 'Share on %s', 'uael' ), $custom_text ) ); ?></span>
 										</span>
 										<?php
 										break;

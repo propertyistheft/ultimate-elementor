@@ -2545,7 +2545,7 @@ class RegistrationForm extends Common_Widget {
 									);
 
 									if ( ! $settings['show_labels'] ) {
-										$this->add_render_attribute( 'label' . $item_index, 'class', 'elementor-screen-only' );
+										$this->add_render_attribute( 'label' . $item_index, 'aria-label', 'Descriptive text for screen readers' );
 									}
 
 									if ( ! empty( $item['required'] ) || 'email' === $field_type || 'password' === $field_type ) {
@@ -2672,7 +2672,7 @@ class RegistrationForm extends Common_Widget {
 													<?php } ?>
 											<?php } ?>
 											<?php if ( empty( $settings['button_text'] ) ) { ?>
-												<span class="elementor-screen-only"><?php esc_html_e( 'Submit', 'uael' ); ?></span>
+												<span aria-label="<?php esc_attr_e( 'Submit', 'uael' ); ?>"></span>
 											<?php } ?>
 										</span>
 									<?php if ( ! empty( $settings['button_text'] ) ) : ?>
