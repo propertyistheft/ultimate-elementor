@@ -803,6 +803,16 @@
 			widget_data['widget_id'] = $scope.data('id');
 			widget_data['page_id'] = woo_checkout.data('page-id');
 
+			var elementorContainer = $('[data-elementor-type="single-page"]');
+			if (elementorContainer.length > 0) {
+				if (elementorContainer.find($scope).length > 0) {
+					var pageId = elementorContainer.data('elementor-id');
+					if (pageId) {
+						widget_data['page_id'] = pageId;
+					}
+				}
+			}
+
 			setTimeout( function () {
 				$(".uael-checkout-review-order-table").addClass("processing").block( {
 			        message: null,

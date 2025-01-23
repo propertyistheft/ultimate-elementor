@@ -3102,6 +3102,7 @@ class Price_Table extends Common_Widget {
 					'selectors' => array(
 						'{{WRAPPER}} a.elementor-button, {{WRAPPER}} .elementor-button' => 'color: {{VALUE}};',
 						'{{WRAPPER}} .elementor-button' => 'border-color: {{VALUE}};',
+						'{{WRAPPER}} a.elementor-button .elementor-button-icon svg, {{WRAPPER}} .elementor-button-icon svg' => 'fill: {{VALUE}};',
 					),
 					'condition' => array(
 						'price_cta_type' => 'button',
@@ -3600,7 +3601,7 @@ class Price_Table extends Common_Widget {
 	 * @param string $position for before/after icon.
 	 */
 	public function render_button_icon( $settings, $position ) {
-		$this->add_render_attribute( 'button_icon', 'class', 'uael-cta-link-icon uael-cta-link-icon-' . $position );
+		$this->add_render_attribute( 'button_icon', 'class', 'elementor-button-icon uael-cta-link-icon uael-cta-link-icon-' . $position );
 		if ( UAEL_Helper::is_elementor_updated() ) {
 			$cta_migrated = isset( $settings['__fa4_migrated']['new_cta_icon'] );
 			$cta_is_new   = empty( $settings['cta_icon'] );
@@ -4419,7 +4420,7 @@ class Price_Table extends Common_Widget {
 		}
 
 		function render_cta_icon( position ) {
-			view.addRenderAttribute( 'button_icon', 'class', 'uael-cta-link-icon uael-cta-link-icon-' + position ); #>
+			view.addRenderAttribute( 'button_icon', 'class', 'elementor-button-icon uael-cta-link-icon uael-cta-link-icon-' + position ); #>
 			<?php if ( UAEL_Helper::is_elementor_updated() ) { ?>
 				<# if ( settings.cta_icon || settings.new_cta_icon ) {  #>
 				<#

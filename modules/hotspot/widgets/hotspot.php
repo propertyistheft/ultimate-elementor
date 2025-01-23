@@ -1730,7 +1730,7 @@ class Hotspot extends Common_Widget {
 		$interval_val     = empty( $settings['tour_interval']['size'] ) ? '' : $settings['tour_interval']['size'];
 		$delay            = 300;
 		$anim_duration    = ( 'yes' === $settings['hotspot_tooltip_adv'] ) ? $settings['anim_duration']['size'] : 350;
-		$distance         = ( '' !== $settings['distance']['size'] ) ? $settings['distance']['size'] : 6;
+		$distance         = isset( $settings['distance']['size'] ) && '' !== $settings['distance']['size'] ? $settings['distance']['size'] : 6;
 		$action_auto      = ( 'auto' === $settings['autoplay_options'] ) ? 'auto' : '';
 		$hotspot_viewport = 90;
 		$maxwidth         = 250;

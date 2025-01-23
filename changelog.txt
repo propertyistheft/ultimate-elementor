@@ -1,3 +1,9 @@
+Version 1.37.5 - Monday, 20th January 2025
+- Improvement: Compatibility with latest Elementor and Elementor Pro 3.27 version.
+- Fix: Hotspot - Resolved issue of accessing array offset as a null value to prevent warnings.
+- Fix: Posts - The Post Grid Filter now correctly displays translated category terms with WPML in secondary languages.
+- Fix: Woo - Checkout - Order review AJAX call failing when widget added inside Elementor's Themer builder.
+
 Version 1.37.4 - Monday, 6th January 2025
 - Improvement: Compatibility with latest Elementor and Elementor Pro 3.26 version.
 - Fix: Icons for horizontal alignment options in BA Slider widget now appear correctly.
