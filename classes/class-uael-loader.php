@@ -57,7 +57,7 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 			define( 'UAEL_BASE', plugin_basename( UAEL_FILE ) );
 			define( 'UAEL_DIR', plugin_dir_path( UAEL_FILE ) );
 			define( 'UAEL_URL', plugins_url( '/', UAEL_FILE ) );
-			define( 'UAEL_VER', '1.37.5' );
+			define( 'UAEL_VER', '1.38.0' );
 			define( 'UAEL_MODULES_DIR', UAEL_DIR . 'modules/' );
 			define( 'UAEL_MODULES_URL', UAEL_URL . 'modules/' );
 			define( 'UAEL_SLUG', 'uae' );
@@ -99,6 +99,10 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 			if ( ! function_exists( 'get_plugins' ) ) {
 				require_once ABSPATH . 'wp-admin/includes/plugin.php';
 			}
+
+			if ( ! class_exists( 'UAE_Utm_Analytics' ) ) {
+				require_once UAEL_DIR . 'lib/class-uae-utm-analytics.php';
+			}
 			
 			require_once UAEL_DIR . 'classes/class-uael-core-plugin.php';
 			require_once UAEL_DIR . 'includes/admin/settings-api.php';
@@ -127,6 +131,11 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 			
 			add_action( 'admin_notices', __CLASS__ . '::hide_admin_notices', 1 );
 			add_action( 'all_admin_notices', __CLASS__ . '::hide_admin_notices', 1 );
+
+			// Load the NPS Survey library.
+			if ( ! class_exists( 'Uae_Pro_Nps_Survey' ) ) {
+				require_once UAEL_DIR . 'lib/class-uae-pro-nps-survey.php';
+			}
 		}
 
 		/**

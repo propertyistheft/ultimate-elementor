@@ -1212,6 +1212,12 @@
 					animationEffect: "fade",
 					baseClass: fancybox_node_id,
 					loop: lightbox_loop,
+					afterClose: function () {
+                        $scope.find('.uael-grid-item').removeAttr('aria-hidden').attr('inert', 'true');
+						setTimeout(function() {
+							$scope.find('.uael-grid-item').removeAttr('inert').attr('aria-hidden', 'true');
+						}, 500);
+                    }
 				});
 			}
 		}

@@ -415,7 +415,7 @@ item_type.forEach( ( item, index ) => {
                                             if (pastedData && typeof checktype == 'object') {
                                                 // Call your paste handler function
                                                 xsLocalStorage.setItem("bsf_uael_all_sections", pastedData);
-                                                UAE_Cross_Domain_Handler.getData(checktype, element);
+                                                UAE_Cross_Domain_Handler.getData(checktype, $(editor_view)); // Convert to jQuery object
                                             }
 
                                         }
@@ -465,13 +465,11 @@ item_type.forEach( ( item, index ) => {
                                             // Call your paste handler function
                                             xsLocalStorage.setItem( "bsf_uael_all_sections", pastedData );
 
-                                            editor_view.addClass( 'uael-fpcp-wait' ).attr( "data-uael-fpcp-text", "Starting the process..." );
-                                            
-                                            if( 'uael-icon-uae' == uael_cross_domain.cross_domain_icon ){
-                                                editor_view.find('body').addClass('uael-fpcp-wait__icon');
+                                            $(editor_view).addClass( 'uael-fpcp-wait' ).attr( "data-uael-fpcp-text", "Starting the process..." ); // Convert to jQuery object
+                                            if ('uael-icon-uae' == uael_cross_domain.cross_domain_icon) {
+                                                $(editor_view).find('body').addClass('uael-fpcp-wait__icon'); // Convert to jQuery object
                                             }
-                                            
-								            UAE_Cross_Domain_Handler.getData( checktype, editor_view );
+                                            UAE_Cross_Domain_Handler.getData(checktype, $(editor_view)); // Convert to jQuery object
                                         }
                                     }
                                 }).catch(function (err) {

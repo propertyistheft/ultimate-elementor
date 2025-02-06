@@ -42,7 +42,7 @@ class UAEL_Cross_Domain_Copy_Paste {
 			);
 		}
 
-		$media = isset( $_POST['content'] ) ? sanitize_text_field( wp_unslash( $_POST['content'] ) ) : '';
+		$media = isset( $_POST['content'] ) ? wp_kses_post( wp_unslash( $_POST['content'] ) ) : '';
 
 		if ( empty( $media ) ) {
 			wp_send_json_error( __( 'Looks like content is empty. Cannot be processed.', 'uael' ) );

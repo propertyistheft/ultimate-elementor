@@ -1,3 +1,11 @@
+Version 1.38.0 - Wednesday, 5th February 2025
+- New: Added NPS Survey to gather your valuable feedback for the UAE Pro!
+- Fix: "Copy All" and "Paste All" functionality to work properly.
+- Fix: Image Gallery - Auto-scrolling now resumes correctly after closing the Light box.
+- Fix: Image Gallery - Resolved the alignment of carousel navigation arrows with the BuddyBoss Theme.
+- Fix: Navigation Menu – Resolved the issue with Hamburger Menu alignment not working correctly for Flyout and Expanded layouts.
+- Fix: Welcome Music - Resolved PHP warning when Media Library is selected as the Music source.
+
 Version 1.37.5 - Monday, 20th January 2025
 - Improvement: Compatibility with latest Elementor and Elementor Pro 3.27 version.
 - Fix: Hotspot - Resolved issue of accessing array offset as a null value to prevent warnings.

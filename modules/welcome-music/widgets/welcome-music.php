@@ -414,7 +414,7 @@ class Welcome_Music extends Common_Widget {
 				$music_link = isset( $settings['music_link']['url'] ) ? $settings['music_link']['url'] : '';
 				break;
 			case 'choose':
-				$music_link = isset( $settings['music_choose']['url'] ) ? $settings['music_link']['url'] : '';
+				$music_link = isset( $settings['music_choose'] ) && isset( $settings['music_choose']['url'] ) ? $settings['music_choose']['url'] : '';
 				break;
 			default:
 		}

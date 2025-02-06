@@ -70,6 +70,7 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 			self::initialise_plugin();
 			add_action( 'after_setup_theme', __CLASS__ . '::init_hooks' );
 			add_action( 'elementor/init', __CLASS__ . '::load_admin', 0 );
+			add_action( 'admin_footer', __CLASS__ . '::show_nps_notice' );
 
 			if ( is_admin() ) {
 				global $pagenow;
@@ -883,10 +884,100 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 			add_action( 'wp_ajax_uael_allow_beta_updates', __CLASS__ . '::allow_beta_updates' );
 
 			add_action( 'wp_ajax_uael_recommended_plugin_activate', __CLASS__ . '::activate_addon' );
-			add_action( 'wp_ajax_uael_recommended_plugin_install', 'wp_ajax_install_plugin' );
-			add_action( 'wp_ajax_uael_recommended_theme_install', 'wp_ajax_install_theme' );
+			add_action( 'wp_ajax_uael_recommended_plugin_install', __CLASS__ . '::uae_plugin_install' );
+			add_action( 'wp_ajax_uael_recommended_theme_install', __CLASS__ . '::uae_theme_install' );
 
 			add_action( 'wp_ajax_save_hfe_compatibility_option', __CLASS__ . '::save_hfe_compatibility_option_callback' );
+		}
+
+		/**
+		 * Handles the installation and saving of required plugins.
+		 *
+		 * This function is responsible for installing and saving required plugins.
+		 * It checks for the plugin slug in the AJAX request, verifies the nonce, and initiates the plugin installation process.
+		 * If the plugin is successfully installed, it schedules a database update to map the plugin slug to a custom key for analytics tracking.
+		 *
+		 * @since 1.38.0
+		 */
+		public static function uae_plugin_install() {
+
+			check_ajax_referer( 'updates', '_ajax_nonce' );
+
+			// Fetching the plugin slug from the AJAX request.
+			// @psalm-suppress PossiblyInvalidArgument.
+			$plugin_slug = isset( $_POST['slug'] ) && is_string( $_POST['slug'] ) ? sanitize_text_field( wp_unslash( $_POST['slug'] ) ) : '';
+
+			if ( empty( $plugin_slug ) ) {
+				wp_send_json_error( array( 'message' => __( 'Plugin slug is missing.', 'ultimate-elementor' ) ) );
+			}
+
+			// Schedule the database update if the plugin is installed successfully.
+			add_action(
+				'shutdown',
+				function () use ( $plugin_slug ) {
+					// Iterate through all plugins to check if the installed plugin matches the current plugin slug.
+					$all_plugins = get_plugins();
+					foreach ( $all_plugins as $plugin_file => $_ ) {
+						if ( class_exists( '\BSF_UTM_Analytics\Inc\Utils' ) && is_callable( '\BSF_UTM_Analytics\Inc\Utils::update_referer' ) && strpos( $plugin_file, $plugin_slug . '/' ) === 0 ) {
+							// If the plugin is found and the update_referer function is callable, update the referer with the corresponding product slug.
+							\BSF_UTM_Analytics\Inc\Utils::update_referer( 'ultimate-elementor', $plugin_slug );
+							return;
+						}
+					}
+				}
+			);
+
+			if ( function_exists( 'wp_ajax_install_plugin' ) ) {
+				// @psalm-suppress NoValue.
+				wp_ajax_install_plugin();
+			} else {
+				wp_send_json_error( array( 'message' => __( 'Plugin installation function not found.', 'ultimate-elementor' ) ) );
+			}
+		}
+
+		/**
+		 * Handles the installation and saving of required theme.
+		 *
+		 * This function is responsible for installing and saving required plugins.
+		 * It checks for the plugin slug in the AJAX request, verifies the nonce, and initiates the plugin installation process.
+		 * If the theme is successfully installed, it schedules a database update to map the plugin slug to a custom key for analytics tracking.
+		 *
+		 * @since 1.38.0
+		 */
+		public static function uae_theme_install() {
+
+			check_ajax_referer( 'updates', '_ajax_nonce' );
+
+			// Fetching the plugin slug from the AJAX request.
+			// @psalm-suppress PossiblyInvalidArgument.
+			$theme_slug = isset( $_POST['slug'] ) && is_string( $_POST['slug'] ) ? sanitize_text_field( wp_unslash( $_POST['slug'] ) ) : '';
+
+			if ( empty( $theme_slug ) ) {
+				wp_send_json_error( array( 'message' => __( 'Theme slug is missing.', 'ultimate-elementor' ) ) );
+			}
+
+			// Schedule the database update if the theme is installed successfully.
+			add_action(
+				'shutdown',
+				function () use ( $theme_slug ) {
+					// Iterate through all themes to check if the installed theme matches the current theme slug.
+					$all_themes = wp_get_themes();
+					foreach ( $all_themes as $theme_file => $_ ) {
+						if ( class_exists( '\BSF_UTM_Analytics\Inc\Utils' ) && is_callable( '\BSF_UTM_Analytics\Inc\Utils::update_referer' ) && strpos( $theme_file, $theme_slug . '/' ) === 0 ) {
+							// If the theme is found and the update_referer function is callable, update the referer with the corresponding product slug.
+							\BSF_UTM_Analytics\Inc\Utils::update_referer( 'ultimate-elementor', $theme_slug );
+							return;
+						}
+					}
+				}
+			);
+
+			if ( function_exists( 'wp_ajax_install_theme' ) ) {
+				// @psalm-suppress NoValue.
+				wp_ajax_install_theme();
+			} else {
+				wp_send_json_error( array( 'message' => __( 'Theme installation function not found.', 'ultimate-elementor' ) ) );
+			}
 		}
 
 		/**
@@ -1313,6 +1404,54 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 
 			wp_send_json_success( 'success' );
 		}
+
+		/**
+		 * Render UAE NPS Survey Notice.
+		 *
+		 * @since 1.38.0
+		 * @return void
+		 */
+		public static function show_nps_notice() {
+			// Check if white label is enabled.
+			$branding_name = self::uael_whitelabel_name();
+			if ( 'Ultimate Addons for Elementor' !== $branding_name ) {
+				return;
+			}
+		
+			$replaced_logo = UAEL_Helper::replaced_logo_url();
+			$hide_logo     = UAEL_Helper::is_replace_logo();
+			$uae_logo      = $hide_logo ? '' : UAEL_URL . 'assets/images/settings/logo.svg';
+			if ( '' !== $replaced_logo ) {
+				$uae_logo = $replaced_logo;
+			}
+		
+			$dismiss_timespan = get_option( 'nps-survey-header-footer-elementor' ) ? ( 3 * MONTH_IN_SECONDS ) : ( 2 * WEEK_IN_SECONDS );
+		
+			if ( class_exists( 'Nps_Survey' ) ) {
+				\Nps_Survey::show_nps_notice(
+					'nps-survey-uael',
+					array(
+						'show_if'          => true, // Add your display conditions.
+						'dismiss_timespan' => 2 * WEEK_IN_SECONDS,
+						'display_after'    => $dismiss_timespan,
+						'plugin_slug'      => 'uael',
+						'show_on_screens'  => array( 'toplevel_page_uaepro' ),
+						'message'          => array(
+							// Step 1 i.e rating input.
+							'logo'                  => esc_url( $uae_logo ),
+							'plugin_name'           => __( 'Ultimate Addons for Elementor', 'uael' ),
+							'nps_rating_message'    => __( 'How likely are you to recommend Ultimate Addons for Elementor to your friends or colleagues?', 'uael' ),
+							// Step 2A i.e. positive.
+							'feedback_content'      => __( 'Could you please do us a favor and give us a 5-star rating on Trustpilot? It would help others choose Ultimate Addons for Elementor with confidence. Thank you!', 'uael' ),
+							'plugin_rating_link'    => esc_url( 'https://www.trustpilot.com/review/ultimateelementor.com' ),
+							// Step 2B i.e. negative.
+							'plugin_rating_title'   => __( 'Thank you for your feedback', 'uael' ),
+							'plugin_rating_content' => __( 'We value your input. How can we improve your experience?', 'uael' ),
+						),
+					)
+				);
+			}
+		} 
 
 	}
 

@@ -161,6 +161,7 @@ class UAEL_Core_Plugin {
 
 			add_filter( 'bsf_white_label_options', array( $this, 'uae_bsf_analytics_white_label' ) );
 		}
+
 	}
 
 	/**
@@ -212,6 +213,7 @@ class UAEL_Core_Plugin {
 
 		/* Wpml Compatibility */
 		require UAEL_DIR . 'compatibility/class-uael-wpml.php';
+
 	}
 
 	/**
