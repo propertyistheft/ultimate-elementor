@@ -71,6 +71,29 @@
 		if ( 'undefined' == typeof $scope )
 			return;
 
+		// Check if any element with the class 'uael-gf-check-default-yes' exists in the document
+		if ( ! $scope.hasClass('uael-gf-check-default-yes')) {
+			const inputs = $scope.find(".gfield-choice-input, .ginput_container_consent input");
+		
+			inputs.each(function() {
+				const input = $(this);
+		
+				input.on("focus", function() {
+					const label = $scope.find(`label[for="${this.id}"]`);
+					if (label.length) {
+						label.addClass("uael-gf-highlight-label");
+					}
+				});
+		
+				input.on("blur", function() {
+					const label = $scope.find(`label[for="${this.id}"]`);
+					if (label.length) {
+						label.removeClass("uael-gf-highlight-label");
+					}
+				});
+			});
+		}
+
 		var confirmation_div = $scope.find( '.gform_confirmation_message' );
 		var form_title = $scope.find( '.uael-gf-form-title' );
 		var form_desc = $scope.find( '.uael-gf-form-desc' );
@@ -1267,49 +1290,47 @@
 		});
 
 		/* Carousel */
-		var slider_selector	= $scope.find('.uael-img-carousel-wrap');
-		if ( slider_selector.length > 0 ) {
-
-			var adaptiveImageHeight = function( e, obj ) {
-
-				var node = obj.$slider,
-				post_active = node.find('.slick-slide.slick-active'),
-				max_height = -1;
-
-				post_active.each(function( i ) {
-
-					var $this = $( this ),
+		$('.uael-img-carousel-wrap').each(function () {
+			var $slider_selector = $(this);
+			var slider_options = {};
+			var dataAttribute = $slider_selector.attr('data-image_carousel');
+			if( dataAttribute ) {
+				slider_options = JSON.parse(dataAttribute);
+			}
+			var adaptiveImageHeight = function ( slick ) {
+				var node = slick.$slider,
+					post_active = node.find('.slick-slide.slick-active'),
+					max_height = -1;
+				post_active.each(function () {
+					var $this = $(this),
 						this_height = $this.innerHeight();
-
-					if( max_height < this_height ) {
+					if ( max_height < this_height ) {
 						max_height = this_height;
 					}
 				});
-
 				node.find('.slick-list.draggable').animate({ height: max_height }, { duration: 200, easing: 'linear' });
-				max_height = -1;
 			};
-
-			var slider_options 	= JSON.parse( slider_selector.attr('data-image_carousel') );
-
-			/* Execute when slick initialize */
-			slider_selector.on('init', adaptiveImageHeight );
-
-			$scope.imagesLoaded( function(e) {
-
-				slider_selector.slick(slider_options);
-
-				/* After slick slide change */
-				slider_selector.on('afterChange', adaptiveImageHeight );
-
-				slider_selector.find('.uael-grid-item').resize( function() {
-					// Manually refresh positioning of slick
-					setTimeout(function() {
-						slider_selector.slick('setPosition');
+			var initSlick = function () {
+				if ($slider_selector.hasClass('slick-initialized')) {
+					$slider_selector.slick('unslick');
+				}
+				$slider_selector.slick(slider_options);
+				adaptiveImageHeight($slider_selector.slick('getSlick'));
+			};
+			// Ensure images are loaded before initializing
+			$scope.imagesLoaded(function () {
+				initSlick();
+				$slider_selector.on('afterChange', function () {
+					adaptiveImageHeight($slider_selector.slick('getSlick'));
+				});
+				$slider_selector.find('.uael-grid-item').resize(function () {
+					setTimeout(function () {
+						$slider_selector.slick('setPosition');
 					}, 300);
 				});
 			});
-		}
+		});
+
 
 
 		/* Grid */

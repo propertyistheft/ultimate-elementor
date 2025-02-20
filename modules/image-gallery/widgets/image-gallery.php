@@ -2156,7 +2156,8 @@ class Image_Gallery extends Common_Widget {
 					foreach ( $cat_arr as $value ) {
 						$cat      = trim( $value );
 						$cat_slug = strtolower( str_replace( ' ', '-', $cat ) );
-
+						// Remove special characters except underscores and hyphens as class name should not have that.
+						$cat_slug                = preg_replace( '/[^a-zA-Z0-9\s_-]/', '', $cat_slug );
 						$image_cat[]             = $cat_slug;
 						$cat_filter[ $cat_slug ] = $cat;
 					}
@@ -2288,7 +2289,9 @@ class Image_Gallery extends Common_Widget {
 			$default_cat = '';
 
 			if ( 'yes' === $settings['default_filter_switch'] && '' !== $settings['default_filter'] ) {
-				$default_cat = '.' . trim( $settings['default_filter'] );
+				// Removing  the special characters other than hyphen and underscore as class name should not have that.
+				$default_cat = preg_replace( '/[^a-zA-Z0-9\s_-]/', '', $settings['default_filter'] );
+				$default_cat = '.' . trim( $default_cat );
 				$default_cat = strtolower( str_replace( ' ', '-', $default_cat ) );
 			}
 
@@ -2461,8 +2464,8 @@ class Image_Gallery extends Common_Widget {
 								var def_filter = '.' + scope.find('.uael-img-gallery-wrap').data( 'filter-default' );
 							}
 
-							var str_img_text = scope.find('.uael-current').text();
-							var str_img_text = str_img_text.substring( def_filter.length - 1, str_img_text.length );
+							//Added parent classes to get exact text value of the current filter.
+							var str_img_text = scope.find('.uael-filters-dropdown.uael-masonry-filters  .uael-current').text();
 							scope.find( '.uael-filters-dropdown-button' ).text( str_img_text );
 
 							if ( $justified_selector.length > 0 ) {
@@ -2485,8 +2488,8 @@ class Image_Gallery extends Common_Widget {
 						var def_filter = '.' + scope.find('.uael-img-gallery-wrap').data( 'filter-default' );
 					}
 
-					var str_img_text = scope.find('.uael-current').text();
-					var str_img_text = str_img_text.substring( def_filter.length - 1, str_img_text.length );
+					//Added parent classes to get exact text value of the current filter.
+					var str_img_text = scope.find('.uael-filters-dropdown.uael-masonry-filters  .uael-current').text();
 					scope.find( '.uael-filters-dropdown-button' ).text( str_img_text );
 				});
 			});

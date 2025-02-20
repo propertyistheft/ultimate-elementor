@@ -100,7 +100,7 @@
 			var items             = [ days, hours, minutes, seconds ];
 			items_classes         = [ 'days', 'hours', 'minutes', 'seconds' ];
 			wrapper_class         = '-wrapper-' + scope_id;
-			label_wrapper_class   = '-label-wrapper-' + scope_id;
+			label_wrapper_class   = '-label-' + scope_id;
 			label_wrapper_classes = [];
 			wrapper_classes       = [];
 			custom_labels         = [];
@@ -123,9 +123,9 @@
 
 			}
 
-			if ( document.getElementById( wrapper_classes[0] ) ) {
+			if ( document.getElementsByClassName( '.uael-countdown-' + wrapper_classes[0] ) ) {
 				for ( var k = 0; k < items.length; k++) {
-					$( '#' + wrapper_classes[k] ).text( items[k] );
+					$( '.uael-countdown-' + wrapper_classes[k] ).text( items[k] );
 					if ( 'none' != wrapper.data( 'timer-labels' ) ) {
 						if ( 'custom' == wrapper.data( 'timer-labels' ) ) {
 							items_classes[k] = wrapper.data( 'timer-' + items_classes[k] );
@@ -135,7 +135,7 @@
 							items_classes[k] = items_classes[k].slice( 0, -1 );
 						}
 
-						$( '#' + label_wrapper_classes[k] ).text( items_classes[k].charAt( 0 ).toUpperCase() + items_classes[k].slice( 1 ) );
+						$( '.uael-countdown-' + label_wrapper_classes[k] ).text( items_classes[k].charAt( 0 ).toUpperCase() + items_classes[k].slice( 1 ) );
 					}
 				}
 			}

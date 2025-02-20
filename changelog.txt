@@ -1,3 +1,9 @@
+Version 1.38.1 - Tuesday, 18th February 2025
+- Fix: Countdown Timer - Resolved display issue with saved template shortcode in Elementor, particularly after duplicating the widget.
+- Fix: Gravity From Styler - Resolve issue with accessibility in checkbox and radio form elements.
+- Fix: Image Gallery - Filterable Tabs now show images correctly for categories with special characters in their names.
+- Fix: Image Gallery - Resolved an issue where multiple galleries did not display slides correctly in responsive view.
+
 Version 1.38.0 - Wednesday, 5th February 2025
 - New: Added NPS Survey to gather your valuable feedback for the UAE Pro!
 - Fix: "Copy All" and "Paste All" functionality to work properly.

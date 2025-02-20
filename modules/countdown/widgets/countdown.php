@@ -1357,8 +1357,6 @@ class Countdown extends Common_Widget {
 
 		$this->add_render_attribute( 'countdown', 'class', array( 'uael-countdown-wrapper', 'countdown-active' ) );
 
-		$this->add_render_attribute( 'digits', 'class', 'uael-countdown-item' );
-
 		for ( $i = 0; $i < 3; $i++ ) {
 			$this->add_render_attribute( 'countdown', $data_attributes[ $i ], $data_values[ $i ] );
 		}
@@ -1441,7 +1439,7 @@ class Countdown extends Common_Widget {
 			<div <?php echo wp_kses_post( $this->get_render_attribute_string( 'countdown-wrapper' ) ); ?> >
 					<?php for ( $i = 0; $i < $length; $i++ ) { ?>
 						<div class="uael-countdown-<?php echo esc_attr( $labels[ $i ] ); ?> uael-item">
-							<span id="<?php echo esc_attr( $labels[ $i ] ); ?>-wrapper-<?php echo esc_attr( $id ); ?>"<?php echo wp_kses_post( $this->get_render_attribute_string( 'digits' ) ); ?> >
+							<span id="<?php echo esc_attr( $labels[ $i ] ); ?>-wrapper-<?php echo esc_attr( $id ); ?>" class='uael-countdown-<?php echo esc_attr( $labels[ $i ] ); ?>-wrapper-<?php echo esc_attr( $id ); ?> uael-countdown-item'>
 								<?php if ( true === $edit_mode ) { ?>
 									<?php echo esc_html_e( '00', 'uael' ); ?>
 								<?php } ?>
