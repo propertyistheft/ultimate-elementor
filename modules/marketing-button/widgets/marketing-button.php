@@ -782,7 +782,7 @@ class Marketing_Button extends Common_Widget {
 
 		$settings = $this->get_settings_for_display();
 
-		$this->add_render_attribute( 'wrapper', 'class', 'uael-button-wrapper elementor-button-wrapper' );
+		$this->add_render_attribute( 'wrapper', 'class', 'uael-button-wrapper' );
 
 		if ( ! empty( $settings['link']['url'] ) ) {
 
@@ -857,7 +857,7 @@ class Marketing_Button extends Common_Widget {
 		<# } #>
 		<div class="uael-marketing-button">
 			<#
-			view.addRenderAttribute( 'wrapper', 'class', 'uael-button-wrapper elementor-button-wrapper' );
+			view.addRenderAttribute( 'wrapper', 'class', 'uael-button-wrapper' );
 			var uael_mbutton_align = '';
 			var new_icon_align = '';
 			var icon_align = '';

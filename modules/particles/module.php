@@ -172,23 +172,42 @@ class Module extends Module_Base {
 										}
 									});
 								});
-								 jQuery( document ).on( "ready elementor/popup/show", () => {
-									if ( jQuery.find( ".uael-particle-yes" ).length < 1 ) {
+
+								// Added both `document` and `window` event listeners to address issues where some users faced problems with the `document` event not triggering as expected.
+								// Define cachedScript globally to avoid redefining it.
+
+								jQuery.cachedScript = function(url, options) {
+									options = jQuery.extend(options || {}, {
+										dataType: "script",
+										cache: true,
+										url: url
+									});
+									return jQuery.ajax(options); // Return the jqXHR object so we can chain callbacks
+								};
+
+								let uael_particle_loaded = false; //flag to prevent multiple script loads.
+
+								jQuery( document ).on( "ready elementor/popup/show", () => {
+										loadParticleScript();
+								});
+
+								jQuery( window ).one( "elementor/frontend/init", () => {
+								 	if (!uael_particle_loaded) {
+										loadParticleScript();
+									}
+								});
+								
+								function loadParticleScript(){
+								 	// Use jQuery to check for the presence of the element
+									if (jQuery(".uael-particle-yes").length < 1) {
 										return;
 									}
+									
+									uael_particle_loaded = true;
 									var uael_url = uael_particles_script.uael_particles_url;
-									jQuery.cachedScript = function( url, options ) {
-										// Allow user to set any option except for dataType, cache, and url.
-										options = jQuery.extend( options || {}, {
-											dataType: "script",
-											cache: true,
-											url: url
-										});
-										// Return the jqXHR object so we can chain callbacks.
-										return jQuery.ajax( options );
-									};
-									jQuery.cachedScript( uael_url );
-								});	'
+									// Call the cachedScript function
+									jQuery.cachedScript(uael_url);
+								}'
 					);
 		}
 	}

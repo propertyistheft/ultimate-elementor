@@ -46,6 +46,36 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 
 			// Hook the load_textdomain function to the init action.
 			add_action( 'init', array( $this, 'load_textdomain' ) );
+
+			// BSF Analytics.
+			if ( ! class_exists( 'BSF_Analytics_Loader' ) ) {
+				require_once UAEL_DIR . 'admin/bsf-analytics/class-bsf-analytics-loader.php';
+			}
+
+			$bsf_analytics = BSF_Analytics_Loader::get_instance();
+
+			$bsf_analytics->set_entity(
+				array(
+					'bsf' => array(
+						'product_name'        => 'Ultimate Addons for Elementor Pro',
+						'path'                => UAEL_DIR . 'admin/bsf-analytics',
+						'author'              => 'Brainstorm Force',
+						'time_to_display'     => '+24 hours',
+						'deactivation_survey' => array(
+							array(
+								'id'                => 'deactivation-survey-ultimate-elementor', // 'deactivation-survey-<your-plugin-slug>'
+								'popup_logo'        => UAEL_URL . 'assets/images/settings/logo.svg',
+								'plugin_slug'       => 'ultimate-elementor', // <your-plugin-slug>
+								'plugin_version'    => UAEL_VER,
+								'popup_title'       => __( 'Quick Feedback', 'uael' ),
+								'support_url'       => 'https://ultimateelementor.com/contact/',
+								'popup_description' => __( 'If you have a moment, please share why you are deactivating Ultimate Addons for Elementor Pro:', 'uael' ),
+								'show_on_screens'   => array( 'plugins' ),
+							),
+						),
+					),
+				)
+			);
 		}
 
 		/**
@@ -57,7 +87,7 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 			define( 'UAEL_BASE', plugin_basename( UAEL_FILE ) );
 			define( 'UAEL_DIR', plugin_dir_path( UAEL_FILE ) );
 			define( 'UAEL_URL', plugins_url( '/', UAEL_FILE ) );
-			define( 'UAEL_VER', '1.38.1' );
+			define( 'UAEL_VER', '1.38.2' );
 			define( 'UAEL_MODULES_DIR', UAEL_DIR . 'modules/' );
 			define( 'UAEL_MODULES_URL', UAEL_URL . 'modules/' );
 			define( 'UAEL_SLUG', 'uae' );
@@ -110,24 +140,11 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 				require_once UAEL_DIR . 'class-brainstorm-update-uael.php';
 				require_once UAEL_DIR . 'classes/class-uael-update.php';
 			}
+			
+			// Hook the onboarding redirect function to admin_init action.
+			add_action( 'admin_init', __CLASS__ . '::uael_redirect_to_onboarding' );
 
-			// BSF Analytics.
-			if ( ! class_exists( 'BSF_Analytics_Loader' ) ) {
-				require_once UAEL_DIR . 'admin/bsf-analytics/class-bsf-analytics-loader.php';
-			}
 
-			$bsf_analytics = BSF_Analytics_Loader::get_instance();
-
-			$bsf_analytics->set_entity(
-				array(
-					'bsf' => array(
-						'product_name'    => 'Ultimate Addons for Elementor Pro',
-						'path'            => UAEL_DIR . 'admin/bsf-analytics',
-						'author'          => 'Brainstorm Force',
-						'time_to_display' => '+24 hours',
-					),
-				)
-			);
 			
 			add_action( 'admin_notices', __CLASS__ . '::hide_admin_notices', 1 );
 			add_action( 'all_admin_notices', __CLASS__ . '::hide_admin_notices', 1 );
@@ -135,6 +152,33 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 			// Load the NPS Survey library.
 			if ( ! class_exists( 'Uae_Pro_Nps_Survey' ) ) {
 				require_once UAEL_DIR . 'lib/class-uae-pro-nps-survey.php';
+			}
+		}
+
+		/**
+		 * Onboarding redirect function.
+		 */
+		public static function uael_redirect_to_onboarding() {
+
+			if ( ! get_option( 'uaepro_start_onboarding', false ) ) {
+				return;
+			}
+
+			$is_onboarding_triggered = ( 'yes' === get_option( 'uaepro_onboarding_triggered' ) ) ? true : false;
+			$is_lite_triggered       = ( 'yes' === get_option( 'hfe_onboarding_triggered' ) ) ? true : false; // Check if onboarding is already triggered for lite version.
+			$show_onboarding         = ( 'yes' === get_option( 'uaepro_show_onboarding' ) ) ? true : false; // Check if old user.
+			
+			// IMPORTANT: Comment out this code before release - Show onboarding only for new users only once.
+			if ( $is_onboarding_triggered || $is_lite_triggered || ! $show_onboarding ) {
+				return;
+			}
+			
+			delete_option( 'uaepro_start_onboarding' );
+
+			if ( ! defined( 'WP_CLI' ) || ! WP_CLI ) {
+				update_option( 'uaepro_onboarding_triggered', 'yes' );
+				wp_safe_redirect( admin_url( 'admin.php?page=uaepro#onboarding' ) );
+				exit();
 			}
 		}
 
@@ -289,6 +333,8 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 		 * Activation Reset
 		 */
 		public function activation_reset() {
+			
+			update_option( 'uaepro_start_onboarding', true );
 
 			// Force check graupi bundled products.
 			update_site_option( 'bsf_force_check_extensions', true );

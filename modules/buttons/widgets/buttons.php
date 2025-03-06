@@ -868,7 +868,7 @@ class Buttons extends Common_Widget {
 					}
 					$button = $settings['buttons'][ $i ];
 
-					$this->add_render_attribute( 'button_wrap_' . $i, 'class', 'uael-button-wrapper elementor-button-wrapper uael-dual-button' );
+					$this->add_render_attribute( 'button_wrap_' . $i, 'class', 'uael-button-wrapper uael-dual-button' );
 					$this->add_render_attribute( 'button_wrap_' . $i, 'class', 'elementor-repeater-item-' . $button['_id'] );
 					$this->add_render_attribute( 'button_wrap_' . $i, 'class', 'uael-dual-button-' . $i );
 
@@ -940,7 +940,7 @@ class Buttons extends Common_Widget {
 							var new_icon_align = '';
 							var icon_align = '';
 				#>
-				<div class="uael-button-wrapper elementor-button-wrapper uael-dual-button {{ button_wrap }}">
+				<div class="uael-button-wrapper uael-dual-button {{ button_wrap }}">
 					<a id="{{ item.css_id }}" href="{{ item.link.url }}" class="elementor-button-link elementor-button {{ button_class }}">
 						<# new_icon_align = ' uael-buttons-icon-' + item.icon_align; #>
 						<span class="elementor-button-content-wrapper{{ new_icon_align }}">

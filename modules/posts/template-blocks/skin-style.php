@@ -1162,13 +1162,17 @@ abstract class Skin_Style {
 
 		$taxonomies = wp_get_post_terms( get_the_ID(), $filter_by );
 		$class      = array();
+		
+		if ( is_wp_error( $taxonomies ) ) {
+			return '';
+		}
 
 		if ( count( $taxonomies ) > 0 ) {
 
 			foreach ( $taxonomies as $taxonomy ) {
-
+	
 				if ( is_object( $taxonomy ) ) {
-
+	
 					$class[] = $taxonomy->slug;
 				}
 			}

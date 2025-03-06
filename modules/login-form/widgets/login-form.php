@@ -2162,7 +2162,7 @@ class LoginForm extends Common_Widget {
 					),
 				),
 				'selectors'  => array(
-					'{{WRAPPER}} .uael-login-form .elementor-field-group.elementor-button-wrapper' => 'margin-top: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .uael-login-form .elementor-field-group.uael-login-form-submit-group' => 'margin-top: {{SIZE}}{{UNIT}};',
 				),
 				'condition'  => array(
 					'inline_control!' => 'inline',
@@ -2531,7 +2531,7 @@ class LoginForm extends Common_Widget {
 					'class' => array(
 						'elementor-field-group',
 						'elementor-column',
-						'elementor-button-wrapper',
+						'uael-login-form-submit-group',
 						'elementor-field-type-submit',
 						'elementor-col-100',
 					),
@@ -3035,7 +3035,7 @@ class LoginForm extends Common_Widget {
 							</div>
 						<# } #>
 
-						<div class="elementor-field-group elementor-button-wrapper elementor-column elementor-field-type-submit elementor-col-100">
+						<div class="elementor-field-group elementor-column elementor-field-type-submit elementor-col-100">
 							<button type="submit" class="uael-login-form-submit elementor-button elementor-size-{{ elementor.helpers.sanitize( settings.button_size ) }}" data-ajax-enable="{{ settings.enable_ajax }}">
 								<?php if ( UAEL_Helper::is_elementor_updated() ) { ?>
 									<# if ( settings.button_icon || settings.button_icon ) { #>

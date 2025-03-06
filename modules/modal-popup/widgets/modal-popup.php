@@ -2496,7 +2496,7 @@ class Modal_Popup extends Common_Widget {
 	 */
 	public function render_button( $node_id, $settings ) {
 
-		$this->add_render_attribute( 'wrapper', 'class', 'uael-button-wrapper elementor-button-wrapper' );
+		$this->add_render_attribute( 'wrapper', 'class', 'uael-button-wrapper' );
 		$this->add_render_attribute( 'button', 'href', 'javascript:void(0);' );
 		$this->add_render_attribute( 'button', 'class', 'uael-trigger elementor-button-link elementor-button elementor-clickable' );
 

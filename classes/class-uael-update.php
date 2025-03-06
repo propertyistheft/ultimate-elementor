@@ -60,6 +60,7 @@ if ( ! class_exists( 'UAEL_Update' ) ) :
 
 			// Update auto saved version number.
 			if ( ! $saved_version ) {
+				update_option( 'uaepro_show_onboarding', 'yes' );
 				update_option( 'uael-version', UAEL_VER );
 				return;
 			}

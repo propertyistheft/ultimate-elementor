@@ -3661,7 +3661,7 @@ class Price_Table extends Common_Widget {
 			</a>
 			<?php
 		} elseif ( 'button' === $settings['price_cta_type'] ) {
-			$this->add_render_attribute( 'wrapper', 'class', 'uael-button-wrapper elementor-button-wrapper' );
+			$this->add_render_attribute( 'wrapper', 'class', 'uael-button-wrapper' );
 			if ( ! empty( $settings['link']['url'] ) ) {
 
 				$this->add_render_attribute( 'button', 'class', 'elementor-button-link' );
@@ -4481,7 +4481,7 @@ class Price_Table extends Common_Widget {
 							}
 
 							if( 'button' == settings.price_cta_type ) {
-								view.addRenderAttribute( 'wrapper', 'class', 'uael-button-wrapper elementor-button-wrapper' );
+								view.addRenderAttribute( 'wrapper', 'class', 'uael-button-wrapper ' );
 
 								if ( '' != settings.link.url ) {
 									var urlPattern = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$|^www\.[^\s/$.?#].[^\s]*$/;

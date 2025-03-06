@@ -68,6 +68,7 @@
 			var $password =	'';
 			var $invalid_field = false;
 			var user_email_regex = /\S+@\S+\.\S+/;
+			var user_phone_regex = /^[0-9.()\[\]+-]*$/;
 			var is_password_exists = false;
 			var form_wrap = $scope.find( '.uael-registration-form' );
 			var redirect_url = form_wrap.attr( 'data-redirect-url' );
@@ -117,6 +118,23 @@
 						} else {
 							$invalid_field = true;
 							UAELRegistrationForm._printErrorMessages( $scope, form_field, uaelRegistration.invalid_mail );
+						}
+					}
+					if ( 'phone' === field_type ) {
+
+						if ( !/\s/.test( field_text ) ) {
+
+							if ( user_phone_regex.test( field_text ) ) {
+
+								form_field.siblings( '.uael-register-field-message' ).hide();
+
+							} else {
+								$invalid_field = true;
+								UAELRegistrationForm._printErrorMessages( $scope, form_field, uaelRegistration.invalid_phone );
+							}
+						} else {
+							$invalid_field = true;
+							UAELRegistrationForm._printErrorMessages( $scope, form_field, uaelRegistration.error_phone );
 						}
 					}
 

@@ -23,12 +23,12 @@
 
 		var cta_classes = {
 			_addClassesCta: function (){
-				last_menu_item.parent().addClass( 'elementor-button-wrapper' );
+				last_menu_item.parent().addClass( 'uael-button-wrapper' );
 				last_menu_item.addClass( 'elementor-button' );
 			},
 
 			_removeClassesCta: function (){
-				last_menu_item.parent().removeClass( 'elementor-button-wrapper' );
+				last_menu_item.parent().removeClass( 'uael-button-wrapper' );
 				last_menu_item.removeClass( 'elementor-button' );
 			}
 		}
@@ -275,6 +275,9 @@
 	  		$this.siblings().removeClass( 'menu-active' );
 	  		$this.next().find( 'div.uael-has-submenu-container' ).removeClass( 'sub-menu-active' );
 		  	$this.prev().find( 'div.uael-has-submenu-container' ).removeClass( 'sub-menu-active' );
+
+			$this.next().find('ul').css( { 'height': '0', 'opacity': '0', 'visibility': 'hidden' } );
+			$this.prev().find('ul').css( { 'height': '0', 'opacity': '0', 'visibility': 'hidden' } );
 
 		});
 	};

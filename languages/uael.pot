@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the Ultimate Addons for Elementor Pro package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ultimate Addons for Elementor Pro 1.38.1\n"
+"Project-Id-Version: Ultimate Addons for Elementor Pro 1.38.2\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/ultimate-elementor\n"
-"POT-Creation-Date: 2025-02-14 11:29:29+00:00\n"
+"POT-Creation-Date: 2025-03-05 14:51:30+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -71,45 +71,172 @@ msgstr ""
 msgid "1977"
 msgstr ""
 
-#: admin/bsf-analytics/class-bsf-analytics.php:216
+#: admin/bsf-analytics/class-bsf-analytics.php:228
 #. translators: %s product name
 msgid ""
-"Want to help make <strong>%1s</strong> even more awesome? Allow us to "
-"collect non-sensitive diagnostic data and usage information. "
+"Want to help make %1s even more awesome? Allow us to collect non-sensitive "
+"diagnostic data and usage information. "
 msgstr ""
 
-#: admin/bsf-analytics/class-bsf-analytics.php:219
+#: admin/bsf-analytics/class-bsf-analytics.php:231
 msgid "This will be applicable for all sites from the network."
 msgstr ""
 
-#: admin/bsf-analytics/class-bsf-analytics.php:243
+#: admin/bsf-analytics/class-bsf-analytics.php:255
 #. translators: %s usage doc link
 msgid " Know More."
 msgstr ""
 
-#: admin/bsf-analytics/class-bsf-analytics.php:251
+#: admin/bsf-analytics/class-bsf-analytics.php:265
 msgid "Yes! Allow it"
 msgstr ""
 
-#: admin/bsf-analytics/class-bsf-analytics.php:260
+#: admin/bsf-analytics/class-bsf-analytics.php:276
 msgid "No Thanks"
 msgstr ""
 
-#: admin/bsf-analytics/class-bsf-analytics.php:364
+#: admin/bsf-analytics/class-bsf-analytics.php:386
 msgid "Usage Tracking"
 msgstr ""
 
-#: admin/bsf-analytics/class-bsf-analytics.php:408
+#: admin/bsf-analytics/class-bsf-analytics.php:430
 #. translators: %s Product title
 msgid "Allow %s products to track non-sensitive usage tracking data."
 msgstr ""
 
-#: admin/bsf-analytics/class-bsf-analytics.php:411
+#: admin/bsf-analytics/class-bsf-analytics.php:433
 msgid " This will be applicable for all sites from the network."
 msgstr ""
 
-#: admin/bsf-analytics/class-bsf-analytics.php:416
+#: admin/bsf-analytics/class-bsf-analytics.php:438
 msgid "Learn More."
+msgstr ""
+
+#: admin/bsf-analytics/classes/class-bsf-analytics-helper.php:28
+msgid "Oops! Something went wrong. Please refresh the page and try again."
+msgstr ""
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:80
+#: classes/class-uael-loader.php:70
+msgid "Quick Feedback"
+msgstr ""
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:83
+msgid "If you have a moment, please share why you are deactivating the plugin."
+msgstr ""
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:109
+#: modules/buttons/widgets/buttons.php:175
+#: modules/buttons/widgets/buttons.php:186 modules/faq/widgets/faq.php:324
+#: modules/faq/widgets/faq.php:334 modules/faq/widgets/faq.php:1198
+#: modules/hotspot/widgets/hotspot.php:215
+#: modules/infobox/widgets/infobox.php:1281
+#: modules/instagram-feed/widgets/instagram-feed.php:1135
+#: modules/login-form/widgets/login-form.php:954
+#: modules/login-form/widgets/login-form.php:963
+#: modules/marketing-button/widgets/marketing-button.php:185
+#: modules/marketing-button/widgets/marketing-button.php:199
+#: modules/modal-popup/widgets/modal-popup.php:666
+#: modules/modal-popup/widgets/modal-popup.php:879
+#: modules/modal-popup/widgets/modal-popup.php:907
+#: modules/modal-popup/widgets/modal-popup.php:924
+#: modules/modal-popup/widgets/modal-popup.php:1290
+#: modules/modal-popup/widgets/modal-popup.php:1304
+#: modules/nav-menu/widgets/nav-menu.php:895
+#: modules/offcanvas/widgets/offcanvas.php:377
+#: modules/offcanvas/widgets/offcanvas.php:404
+#: modules/offcanvas/widgets/offcanvas.php:420
+#: modules/offcanvas/widgets/offcanvas.php:1135
+#: modules/posts/skins/skin-base.php:1809
+#: modules/posts/skins/skin-base.php:1822
+#: modules/price-table/widgets/price-table.php:197
+#: modules/price-table/widgets/price-table.php:656
+#: modules/price-table/widgets/price-table.php:670
+#: modules/price-table/widgets/price-table.php:1334
+#: modules/registration-form/widgets/registration-form.php:1074
+#: modules/registration-form/widgets/registration-form.php:1083
+#: modules/social-share/widgets/social-share.php:299
+#: modules/social-share/widgets/social-share.php:1322
+#: modules/table/widgets/table.php:269 modules/table/widgets/table.php:281
+#: modules/table/widgets/table.php:297 modules/table/widgets/table.php:670
+#: modules/table/widgets/table.php:682 modules/table/widgets/table.php:697
+#: modules/table/widgets/table.php:1688
+#: modules/team-member/widgets/team-member.php:424
+#: modules/team-member/widgets/team-member.php:502
+#: modules/video/widgets/video.php:826
+#: modules/video-gallery/widgets/video-gallery.php:1422
+#: modules/woocommerce/widgets/woo-add-to-cart.php:308
+#: modules/woocommerce/widgets/woo-add-to-cart.php:324
+#: modules/woocommerce/widgets/woo-mini-cart.php:142
+#: modules/woocommerce/widgets/woo-mini-cart.php:151
+#: modules/woocommerce/widgets/woo-mini-cart.php:335
+#: modules/woocommerce/widgets/woo-mini-cart.php:648
+#: modules/woocommerce/widgets/woo-mini-cart.php:1514
+msgid "Icon"
+msgstr ""
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:134
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:309
+msgid "Please tell us more details."
+msgstr ""
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:143
+#. translators: %1$s: link html start, %2$s: link html end
+msgid "Need help from our experts? %1$sClick here to contact us.%2$s"
+msgstr ""
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:154
+msgid "Submit & Deactivate"
+msgstr ""
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:155
+msgid "Skip & Deactivate"
+msgstr ""
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:224
+#: classes/class-uael-admin.php:104
+msgid "Sorry, you are not allowed to do this operation."
+msgstr ""
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:237
+#: classes/class-uael-admin.php:105
+msgid "Nonce validation failed"
+msgstr ""
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:284
+msgid "This is a temporary deactivation for testing."
+msgstr ""
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:285
+msgid "How can we assist you?"
+msgstr ""
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:290
+msgid "The plugin isn't working properly."
+msgstr ""
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:291
+msgid "Please tell us more about what went wrong?"
+msgstr ""
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:296
+msgid "I found a better alternative plugin."
+msgstr ""
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:297
+msgid "Could you please specify which plugin?"
+msgstr ""
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:302
+msgid "It's missing a specific feature."
+msgstr ""
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:303
+msgid "Please tell us more about the feature."
+msgstr ""
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:308
+msgid "Other"
 msgstr ""
 
 #: base/common-widget.php:95 modules/business-reviews/skins/skin-base.php:354
@@ -179,8 +306,8 @@ msgstr ""
 msgid "View Settings"
 msgstr ""
 
-#: class-brainstorm-update-uael.php:112 classes/class-uael-admin.php:554
-#: classes/class-uael-admin.php:555 classes/uael-config.php:116
+#: class-brainstorm-update-uael.php:112 classes/class-uael-admin.php:558
+#: classes/class-uael-admin.php:559 classes/uael-config.php:116
 #: classes/uael-config.php:212 classes/uael-config.php:292
 #: classes/uael-config.php:307 classes/uael-config.php:391
 #: classes/uael-config.php:446 classes/uael-config.php:516
@@ -190,14 +317,6 @@ msgstr ""
 
 #: class-brainstorm-update-uael.php:187
 msgid "Get the license >>"
-msgstr ""
-
-#: classes/class-uael-admin.php:104
-msgid "Sorry, you are not allowed to do this operation."
-msgstr ""
-
-#: classes/class-uael-admin.php:105
-msgid "Nonce validation failed"
 msgstr ""
 
 #: classes/class-uael-admin.php:106
@@ -214,7 +333,7 @@ msgid ""
 "option, adding the App Secret Key will fix it."
 msgstr ""
 
-#: classes/class-uael-admin.php:229 classes/class-uael-admin.php:1442
+#: classes/class-uael-admin.php:229 classes/class-uael-admin.php:1462
 msgid "Ultimate Addons for Elementor"
 msgstr ""
 
@@ -229,101 +348,113 @@ msgstr ""
 msgid "Brainstorm Force"
 msgstr ""
 
-#: classes/class-uael-admin.php:528
+#: classes/class-uael-admin.php:532
 msgid "Dashboard"
 msgstr ""
 
-#: classes/class-uael-admin.php:536
+#: classes/class-uael-admin.php:540
 msgid "Widgets & Features"
 msgstr ""
 
-#: classes/class-uael-admin.php:537
+#: classes/class-uael-admin.php:541
 msgid "Widgets"
 msgstr ""
 
-#: classes/class-uael-admin.php:545 classes/class-uael-admin.php:546
+#: classes/class-uael-admin.php:549 classes/class-uael-admin.php:550
 msgid "Templates"
 msgstr ""
 
-#: classes/class-uael-admin.php:911
+#: classes/class-uael-admin.php:567 classes/class-uael-admin.php:568
+msgid "Onboarding"
+msgstr ""
+
+#: classes/class-uael-admin.php:931
 msgid "Plugin slug is missing."
 msgstr ""
 
-#: classes/class-uael-admin.php:934
+#: classes/class-uael-admin.php:954
 msgid "Plugin installation function not found."
 msgstr ""
 
-#: classes/class-uael-admin.php:956
+#: classes/class-uael-admin.php:976
 msgid "Theme slug is missing."
 msgstr ""
 
-#: classes/class-uael-admin.php:979
+#: classes/class-uael-admin.php:999
 msgid "Theme installation function not found."
 msgstr ""
 
-#: classes/class-uael-admin.php:1028
+#: classes/class-uael-admin.php:1048
 msgid "License key not found."
 msgstr ""
 
-#: classes/class-uael-admin.php:1054
+#: classes/class-uael-admin.php:1074
 msgid "License Successfully Activated"
 msgstr ""
 
-#: classes/class-uael-admin.php:1058
+#: classes/class-uael-admin.php:1078
 msgid "License activation failed!"
 msgstr ""
 
-#: classes/class-uael-admin.php:1099
+#: classes/class-uael-admin.php:1119
 msgid "License Successfully Deactivated"
 msgstr ""
 
-#: classes/class-uael-admin.php:1103
+#: classes/class-uael-admin.php:1123
 msgid "License deactivation failed!"
 msgstr ""
 
-#: classes/class-uael-admin.php:1132
+#: classes/class-uael-admin.php:1152
 msgid "Plugin activation is disabled for you on this site."
 msgstr ""
 
-#: classes/class-uael-admin.php:1141
+#: classes/class-uael-admin.php:1161
 msgid "Plugin Activated."
 msgstr ""
 
-#: classes/class-uael-admin.php:1152
+#: classes/class-uael-admin.php:1172
 msgid "Theme activation is disabled for you on this site."
 msgstr ""
 
-#: classes/class-uael-admin.php:1161
+#: classes/class-uael-admin.php:1181
 msgid "Theme Activated."
 msgstr ""
 
-#: classes/class-uael-admin.php:1168
+#: classes/class-uael-admin.php:1188
 msgid "Could not activate plugin. Please activate from the Plugins page."
 msgstr ""
 
-#: classes/class-uael-admin.php:1170
+#: classes/class-uael-admin.php:1190
 msgid "Could not activate theme. Please activate from the Themes page."
 msgstr ""
 
-#: classes/class-uael-admin.php:1443
+#: classes/class-uael-admin.php:1463
 msgid ""
 "How likely are you to recommend Ultimate Addons for Elementor to your "
 "friends or colleagues?"
 msgstr ""
 
-#: classes/class-uael-admin.php:1445
+#: classes/class-uael-admin.php:1465
 msgid ""
 "Could you please do us a favor and give us a 5-star rating on Trustpilot? "
 "It would help others choose Ultimate Addons for Elementor with confidence. "
 "Thank you!"
 msgstr ""
 
-#: classes/class-uael-admin.php:1448
+#: classes/class-uael-admin.php:1468
 msgid "Thank you for your feedback"
 msgstr ""
 
-#: classes/class-uael-admin.php:1449
+#: classes/class-uael-admin.php:1469
 msgid "We value your input. How can we improve your experience?"
+msgstr ""
+
+#: classes/class-uael-admin.php:1492
+msgid "Settings saved successfully!"
+msgstr ""
+
+#: classes/class-uael-admin.php:1495
+msgid "Unable to save settings."
 msgstr ""
 
 #: classes/class-uael-attachment.php:37
@@ -341,62 +472,70 @@ msgid "Enter valid Email!"
 msgstr ""
 
 #: classes/class-uael-core-plugin.php:298
-msgid "The specified password do not match!"
+msgid "Enter valid Phone Number!"
 msgstr ""
 
 #: classes/class-uael-core-plugin.php:299
-msgid "This Field is required!"
+msgid "Phone number should not contain spaces!"
 msgstr ""
 
 #: classes/class-uael-core-plugin.php:300
+msgid "The specified password do not match!"
+msgstr ""
+
+#: classes/class-uael-core-plugin.php:301
+msgid "This Field is required!"
+msgstr ""
+
+#: classes/class-uael-core-plugin.php:302
 #: modules/login-form/widgets/login-form.php:2490
 msgid "Error: The Password you have entered is incorrect."
 msgstr ""
 
-#: classes/class-uael-core-plugin.php:301
+#: classes/class-uael-core-plugin.php:303
 msgid "Unknown username. Check again or try your email address."
 msgstr ""
 
-#: classes/class-uael-core-plugin.php:302
+#: classes/class-uael-core-plugin.php:304
 msgid "Unknown email address. Check again or try your username."
 msgstr ""
 
-#: classes/class-uael-core-plugin.php:303
+#: classes/class-uael-core-plugin.php:305
 msgid "Thanks for logging in, "
 msgstr ""
 
-#: classes/class-uael-core-plugin.php:393
+#: classes/class-uael-core-plugin.php:395
 msgid "Invalid or data missing in the required(*) fields."
 msgstr ""
 
-#: classes/class-uael-core-plugin.php:401
+#: classes/class-uael-core-plugin.php:403
 msgid "No matching records found"
 msgstr ""
 
-#: classes/class-uael-core-plugin.php:402
+#: classes/class-uael-core-plugin.php:404
 msgid "Show _MENU_ Entries"
 msgstr ""
 
-#: classes/class-uael-core-plugin.php:607
-msgid "The widget type you are trying to paste is not available on this site."
-msgstr ""
-
 #: classes/class-uael-core-plugin.php:609
-#. translators: %s: html tags
-msgid "%1s Copy"
+msgid "The widget type you are trying to paste is not available on this site."
 msgstr ""
 
 #: classes/class-uael-core-plugin.php:611
 #. translators: %s: html tags
-msgid "%1s Paste"
+msgid "%1s Copy"
 msgstr ""
 
 #: classes/class-uael-core-plugin.php:613
 #. translators: %s: html tags
-msgid "%1s Copy All"
+msgid "%1s Paste"
 msgstr ""
 
 #: classes/class-uael-core-plugin.php:615
+#. translators: %s: html tags
+msgid "%1s Copy All"
+msgstr ""
+
+#: classes/class-uael-core-plugin.php:617
 #. translators: %s: html tags
 msgid "%1s Paste All"
 msgstr ""
@@ -409,29 +548,35 @@ msgstr ""
 msgid "Looks like content is empty. Cannot be processed."
 msgstr ""
 
-#: classes/class-uael-loader.php:224
+#: classes/class-uael-loader.php:72
+msgid ""
+"If you have a moment, please share why you are deactivating Ultimate Addons "
+"for Elementor Pro:"
+msgstr ""
+
+#: classes/class-uael-loader.php:268
 #. translators: %s: html tags
 msgid ""
 "The %1$sUltimate Addons for Elementor Pro%2$s plugin requires "
 "%1$sElementor%2$s plugin installed & activated."
 msgstr ""
 
-#: classes/class-uael-loader.php:234
+#: classes/class-uael-loader.php:278
 msgid "Activate Elementor"
 msgstr ""
 
-#: classes/class-uael-loader.php:242 classes/class-uael-loader.php:280
+#: classes/class-uael-loader.php:286 classes/class-uael-loader.php:324
 msgid "Install Elementor"
 msgstr ""
 
-#: classes/class-uael-loader.php:261
+#: classes/class-uael-loader.php:305
 #. translators: %s: html tags
 msgid ""
 "The %1$sUltimate Addons for Elementor Pro%2$s plugin has stopped working "
 "because you are using an older version of %1$sElementor%2$s plugin."
 msgstr ""
 
-#: classes/class-uael-loader.php:272
+#: classes/class-uael-loader.php:316
 msgid "Update Elementor"
 msgstr ""
 
@@ -1190,7 +1335,7 @@ msgstr ""
 #: modules/image-gallery/widgets/image-gallery.php:366
 #: modules/login-form/widgets/login-form.php:163
 #: modules/nav-menu/widgets/nav-menu.php:181
-#: modules/nav-menu/widgets/nav-menu.php:356 modules/particles/module.php:244
+#: modules/nav-menu/widgets/nav-menu.php:356 modules/particles/module.php:263
 #: modules/party-propz-extension/module.php:287
 #: modules/party-propz-extension/module.php:328
 #: modules/party-propz-extension/module.php:731
@@ -2151,7 +2296,7 @@ msgstr ""
 #: modules/offcanvas/widgets/offcanvas.php:514
 #: modules/offcanvas/widgets/offcanvas.php:767
 #: modules/offcanvas/widgets/offcanvas.php:1799
-#: modules/particles/module.php:352
+#: modules/particles/module.php:371
 #: modules/party-propz-extension/module.php:768
 #: modules/posts/skins/skin-base.php:899 modules/posts/skins/skin-base.php:1946
 #: modules/posts/skins/skin-base.php:2073
@@ -2354,7 +2499,7 @@ msgstr ""
 #: modules/offcanvas/widgets/offcanvas.php:518
 #: modules/offcanvas/widgets/offcanvas.php:775
 #: modules/offcanvas/widgets/offcanvas.php:1803
-#: modules/particles/module.php:353
+#: modules/particles/module.php:372
 #: modules/party-propz-extension/module.php:772
 #: modules/posts/skins/skin-base.php:907 modules/posts/skins/skin-base.php:1954
 #: modules/posts/skins/skin-base.php:2081
@@ -2493,8 +2638,8 @@ msgstr ""
 #: modules/offcanvas/widgets/offcanvas.php:161
 #: modules/offcanvas/widgets/offcanvas.php:306
 #: modules/offcanvas/widgets/offcanvas.php:893
-#: modules/offcanvas/widgets/offcanvas.php:905 modules/particles/module.php:223
-#: modules/particles/module.php:372 modules/particles/module.php:450
+#: modules/offcanvas/widgets/offcanvas.php:905 modules/particles/module.php:242
+#: modules/particles/module.php:391 modules/particles/module.php:469
 #: modules/party-propz-extension/module.php:422
 #: modules/party-propz-extension/module.php:469
 #: modules/posts/skins/skin-base.php:289 modules/posts/skins/skin-base.php:367
@@ -2654,8 +2799,8 @@ msgstr ""
 #: modules/offcanvas/widgets/offcanvas.php:160
 #: modules/offcanvas/widgets/offcanvas.php:305
 #: modules/offcanvas/widgets/offcanvas.php:892
-#: modules/offcanvas/widgets/offcanvas.php:904 modules/particles/module.php:224
-#: modules/particles/module.php:373 modules/particles/module.php:451
+#: modules/offcanvas/widgets/offcanvas.php:904 modules/particles/module.php:243
+#: modules/particles/module.php:392 modules/particles/module.php:470
 #: modules/party-propz-extension/module.php:423
 #: modules/party-propz-extension/module.php:470
 #: modules/posts/skins/skin-base.php:290 modules/posts/skins/skin-base.php:368
@@ -3269,7 +3414,7 @@ msgstr ""
 #: modules/instagram-feed/widgets/instagram-feed.php:896
 #: modules/login-form/widgets/login-form.php:656
 #: modules/marketing-button/widgets/marketing-button.php:241
-#: modules/particles/module.php:350 modules/posts/skins/skin-base.php:340
+#: modules/particles/module.php:369 modules/posts/skins/skin-base.php:340
 #: modules/posts/skins/skin-business.php:133
 #: modules/posts/skins/skin-card.php:132 modules/posts/skins/skin-event.php:261
 #: modules/price-list/widgets/price-list.php:278
@@ -3300,7 +3445,7 @@ msgstr ""
 #: modules/instagram-feed/widgets/instagram-feed.php:762
 #: modules/instagram-feed/widgets/instagram-feed.php:904
 #: modules/login-form/widgets/login-form.php:657
-#: modules/particles/module.php:351
+#: modules/particles/module.php:370
 #: modules/price-list/widgets/price-list.php:367
 #: modules/price-table/widgets/price-table.php:415
 #: modules/price-table/widgets/price-table.php:814
@@ -3622,7 +3767,7 @@ msgstr ""
 #: modules/hotspot/widgets/hotspot.php:357
 #: modules/infobox/widgets/infobox.php:1084
 #: modules/login-form/widgets/login-form.php:337
-#: modules/particles/module.php:234
+#: modules/particles/module.php:253
 #: modules/party-propz-extension/module.php:455
 #: modules/price-table/widgets/price-table.php:147
 #: modules/price-table/widgets/price-table.php:1173
@@ -5353,55 +5498,6 @@ msgstr ""
 msgid "Link"
 msgstr ""
 
-#: modules/buttons/widgets/buttons.php:175
-#: modules/buttons/widgets/buttons.php:186 modules/faq/widgets/faq.php:324
-#: modules/faq/widgets/faq.php:334 modules/faq/widgets/faq.php:1198
-#: modules/hotspot/widgets/hotspot.php:215
-#: modules/infobox/widgets/infobox.php:1281
-#: modules/instagram-feed/widgets/instagram-feed.php:1135
-#: modules/login-form/widgets/login-form.php:954
-#: modules/login-form/widgets/login-form.php:963
-#: modules/marketing-button/widgets/marketing-button.php:185
-#: modules/marketing-button/widgets/marketing-button.php:199
-#: modules/modal-popup/widgets/modal-popup.php:666
-#: modules/modal-popup/widgets/modal-popup.php:879
-#: modules/modal-popup/widgets/modal-popup.php:907
-#: modules/modal-popup/widgets/modal-popup.php:924
-#: modules/modal-popup/widgets/modal-popup.php:1290
-#: modules/modal-popup/widgets/modal-popup.php:1304
-#: modules/nav-menu/widgets/nav-menu.php:895
-#: modules/offcanvas/widgets/offcanvas.php:377
-#: modules/offcanvas/widgets/offcanvas.php:404
-#: modules/offcanvas/widgets/offcanvas.php:420
-#: modules/offcanvas/widgets/offcanvas.php:1135
-#: modules/posts/skins/skin-base.php:1809
-#: modules/posts/skins/skin-base.php:1822
-#: modules/price-table/widgets/price-table.php:197
-#: modules/price-table/widgets/price-table.php:656
-#: modules/price-table/widgets/price-table.php:670
-#: modules/price-table/widgets/price-table.php:1334
-#: modules/registration-form/widgets/registration-form.php:1074
-#: modules/registration-form/widgets/registration-form.php:1083
-#: modules/social-share/widgets/social-share.php:299
-#: modules/social-share/widgets/social-share.php:1322
-#: modules/table/widgets/table.php:269 modules/table/widgets/table.php:281
-#: modules/table/widgets/table.php:297 modules/table/widgets/table.php:670
-#: modules/table/widgets/table.php:682 modules/table/widgets/table.php:697
-#: modules/table/widgets/table.php:1688
-#: modules/team-member/widgets/team-member.php:424
-#: modules/team-member/widgets/team-member.php:502
-#: modules/video/widgets/video.php:826
-#: modules/video-gallery/widgets/video-gallery.php:1422
-#: modules/woocommerce/widgets/woo-add-to-cart.php:308
-#: modules/woocommerce/widgets/woo-add-to-cart.php:324
-#: modules/woocommerce/widgets/woo-mini-cart.php:142
-#: modules/woocommerce/widgets/woo-mini-cart.php:151
-#: modules/woocommerce/widgets/woo-mini-cart.php:335
-#: modules/woocommerce/widgets/woo-mini-cart.php:648
-#: modules/woocommerce/widgets/woo-mini-cart.php:1514
-msgid "Icon"
-msgstr ""
-
 #: modules/buttons/widgets/buttons.php:196
 #: modules/infobox/widgets/infobox.php:1319
 #: modules/instagram-feed/widgets/instagram-feed.php:476
@@ -7011,7 +7107,7 @@ msgstr ""
 msgid "%1$s Which timezone does the timer use? » %2$s"
 msgstr ""
 
-#: modules/countdown/widgets/countdown.php:1446
+#: modules/countdown/widgets/countdown.php:1444
 msgid "00"
 msgstr ""
 
@@ -8730,7 +8826,7 @@ msgstr ""
 #: modules/headings/widgets/fancy-heading.php:289
 #: modules/hotspot/widgets/hotspot.php:941
 #: modules/modal-popup/widgets/modal-popup.php:557
-#: modules/particles/module.php:370
+#: modules/particles/module.php:389
 #: modules/price-table/widgets/price-table.php:921
 msgid "Advanced Settings"
 msgstr ""
@@ -8885,7 +8981,7 @@ msgid "Top Center"
 msgstr ""
 
 #: modules/google-map/widgets/google-map.php:104
-#: modules/particles/module.php:354
+#: modules/particles/module.php:373
 #: modules/party-propz-extension/module.php:322
 #: modules/video/widgets/video.php:1330
 #: modules/welcome-music/widgets/welcome-music.php:257
@@ -8893,7 +8989,7 @@ msgid "Top Left"
 msgstr ""
 
 #: modules/google-map/widgets/google-map.php:105
-#: modules/particles/module.php:355
+#: modules/particles/module.php:374
 #: modules/party-propz-extension/module.php:323
 #: modules/video/widgets/video.php:1331
 #: modules/welcome-music/widgets/welcome-music.php:256
@@ -8931,7 +9027,7 @@ msgid "Bottom Center"
 msgstr ""
 
 #: modules/google-map/widgets/google-map.php:113
-#: modules/particles/module.php:356
+#: modules/particles/module.php:375
 #: modules/party-propz-extension/module.php:324
 #: modules/registration-form/widgets/registration-form.php:323
 #: modules/video/widgets/video.php:1332
@@ -8940,7 +9036,7 @@ msgid "Bottom Left"
 msgstr ""
 
 #: modules/google-map/widgets/google-map.php:114
-#: modules/particles/module.php:357
+#: modules/particles/module.php:376
 #: modules/party-propz-extension/module.php:325
 #: modules/registration-form/widgets/registration-form.php:322
 #: modules/video/widgets/video.php:1333
@@ -10410,7 +10506,7 @@ msgstr ""
 #: modules/image-gallery/widgets/image-gallery.php:350
 #: modules/posts/skins/skin-base.php:828 modules/posts/skins/skin-feed.php:197
 #: modules/posts/template-blocks/skin-feed.php:186
-#: modules/posts/template-blocks/skin-style.php:1308
+#: modules/posts/template-blocks/skin-style.php:1312
 #: modules/video-gallery/widgets/video-gallery.php:691
 msgid "All"
 msgstr ""
@@ -10854,7 +10950,7 @@ msgstr ""
 msgid "Transition Duration"
 msgstr ""
 
-#: modules/infobox/widgets/infobox.php:915 modules/particles/module.php:326
+#: modules/infobox/widgets/infobox.php:915 modules/particles/module.php:345
 #: modules/retina-image/widgets/retina-image.php:444
 #: modules/retina-image/widgets/retina-image.php:478
 msgid "Opacity"
@@ -12478,49 +12574,49 @@ msgid ""
 "visible on frontend."
 msgstr ""
 
-#: modules/particles/module.php:213
+#: modules/particles/module.php:232
 #. translators: %s admin link
 msgid "%1s - Particle Backgrounds"
 msgstr ""
 
-#: modules/particles/module.php:221
+#: modules/particles/module.php:240
 msgid "Enable Particle Background"
 msgstr ""
 
-#: modules/particles/module.php:238
+#: modules/particles/module.php:257
 msgid "Polygon"
 msgstr ""
 
-#: modules/particles/module.php:239
+#: modules/particles/module.php:258
 msgid "NASA"
 msgstr ""
 
-#: modules/particles/module.php:240
+#: modules/particles/module.php:259
 #: modules/party-propz-extension/module.php:285
 #: modules/party-propz-extension/module.php:729
 msgid "Snow"
 msgstr ""
 
-#: modules/particles/module.php:241
+#: modules/particles/module.php:260
 msgid "Snowflakes"
 msgstr ""
 
-#: modules/particles/module.php:242
+#: modules/particles/module.php:261
 msgid "Christmas"
 msgstr ""
 
-#: modules/particles/module.php:243
+#: modules/particles/module.php:262
 msgid "Halloween"
 msgstr ""
 
-#: modules/particles/module.php:257
+#: modules/particles/module.php:276
 #. translators: %s admin link
 msgid ""
 "Add custom JSON for the Particle Background below. To generate a completely "
 "customized background style follow steps below - "
 msgstr ""
 
-#: modules/particles/module.php:271
+#: modules/particles/module.php:290
 #. translators: %s admin link
 msgid ""
 "1. Visit a link %1$s here %2$s and choose required attributes for particle "
@@ -12529,38 +12625,38 @@ msgid ""
 "downloaded file and paste it below"
 msgstr ""
 
-#: modules/particles/module.php:286
+#: modules/particles/module.php:305
 #. translators: %s admin link
 msgid ""
 "To know more about creating a custom style, refer to a document %1$s here "
 "%2$s."
 msgstr ""
 
-#: modules/particles/module.php:312
+#: modules/particles/module.php:331
 msgid "Particle Color"
 msgstr ""
 
-#: modules/particles/module.php:346
+#: modules/particles/module.php:365
 msgid "Flow Direction"
 msgstr ""
 
-#: modules/particles/module.php:387
+#: modules/particles/module.php:406
 msgid "Number of Particles"
 msgstr ""
 
-#: modules/particles/module.php:407
+#: modules/particles/module.php:426
 msgid "Particle Size"
 msgstr ""
 
-#: modules/particles/module.php:427
+#: modules/particles/module.php:446
 msgid "Move Speed"
 msgstr ""
 
-#: modules/particles/module.php:448
+#: modules/particles/module.php:467
 msgid "Enable Hover Effect"
 msgstr ""
 
-#: modules/particles/module.php:467
+#: modules/particles/module.php:486
 #. translators: %s admin link
 msgid ""
 "Particle hover effect will not work in the following scenarios - </br></br> "
@@ -12569,7 +12665,7 @@ msgid ""
 "padding to the section/column can resolve this."
 msgstr ""
 
-#: modules/particles/module.php:484
+#: modules/particles/module.php:503
 #. translators: %s admin link
 msgid "Learn more about this %1$s here. %2$s"
 msgstr ""
@@ -13283,23 +13379,23 @@ msgid "Note: Number of columns <b>excludes</b> featured post."
 msgstr ""
 
 #: modules/posts/template-blocks/skin-feed.php:190
-#: modules/posts/template-blocks/skin-style.php:1312
+#: modules/posts/template-blocks/skin-style.php:1316
 msgid "Taxonomy Filter"
 msgstr ""
 
-#: modules/posts/template-blocks/skin-style.php:1546
+#: modules/posts/template-blocks/skin-style.php:1550
 msgid ""
 "Some posts do not have featured images. Please fill in all required fields "
 "to display posts schema properly."
 msgstr ""
 
-#: modules/posts/template-blocks/skin-style.php:1549
+#: modules/posts/template-blocks/skin-style.php:1553
 msgid ""
 "Some fields are empty under the posts schema section. Please fill in all "
 "required fields."
 msgstr ""
 
-#: modules/posts/template-blocks/skin-style.php:1550
+#: modules/posts/template-blocks/skin-style.php:1554
 msgid "Make sure all your posts do have a featured image."
 msgstr ""
 

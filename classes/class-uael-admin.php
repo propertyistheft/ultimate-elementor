@@ -408,6 +408,10 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 					#toplevel_page_uaepro .wp-has-current-submenu .wp-menu-image {
 						background-image: url(' . esc_url( $white_logo ) . ') !important;
 					}
+					
+					.toplevel_page_uaepro .wp-submenu a[href ="admin.php?page=uaepro#onboarding" ]{
+						display: none !important;
+					}
 				';
 				
 				wp_add_inline_style( 'wp-admin', $custom_css );
@@ -557,6 +561,15 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 				$menu_slug . '#settings',                       // Menu slug with page hash.
 				__CLASS__ . '::render',                             // Callback method.
 			);
+
+			add_submenu_page(
+				'uaepro',                                       // Parent slug.
+				__( 'Onboarding', 'uael' ),                       // Page title.
+				__( 'Onboarding', 'uael' ),                       // Menu title.
+				'manage_options',                               // Capability.
+				$menu_slug . '#onboarding',                       // Menu slug with page hash.
+				__CLASS__ . '::render',                             // Callback method.
+			);
 		
 		}
 
@@ -622,6 +635,7 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 			$rollback_version   = isset( self::uael_get_rollback_versions( 'uael' )[0] ) ? self::uael_get_rollback_versions( 'uael' )[0] : '';
 			$hfe_post_url       = $is_lite_active ? admin_url( 'post-new.php?post_type=elementor-hf' ) : '';
 			$is_hfe_post        = ( 'elementor-hf' === $post_type && ( 'post.php' === $pagenow || 'post-new.php' === $pagenow ) ) ? 'yes' : 'no';
+			$analytics_status   = get_option( 'bsf_analytics_optin', false );
 
 			// UAE Lite rollback versions.
 			$free_versions = self::uaelite_get_rollback_versions();
@@ -698,6 +712,10 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 					'business_skin'                       => UAEL_URL . 'assets/images/settings/uae-post-skin-business.png',
 					'pro_badge'                           => UAEL_URL . 'assets/images/settings/badge.svg',
 					'core_badge'                          => UAEL_URL . 'assets/images/settings/core-badge.svg',
+					'uae_logo'                            => UAEL_URL . 'assets/images/settings/uae-logo.svg',
+					'welcome_banner'                      => UAEL_URL . 'assets/images/settings/welcome-banner.png',
+					'build_banner'                        => UAEL_URL . 'assets/images/settings/build_banner.png',
+					'special_reward'                      => UAEL_URL . 'assets/images/settings/special_reward.png',
 					'beta_enabled'                        => $beta_enabled,
 					'elementor_page_url'                  => self::get_elementor_new_page_url(),
 					'hide_settings'                       => $hide_whitelabel,
@@ -727,6 +745,7 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 					'st_pro_status'                       => $stpro_status,
 					'uael_hfe_post_url'                   => $hfe_post_url,
 					'is_hfe_post'                         => $is_hfe_post,
+					'analytics_status'                    => $analytics_status,
 				)
 			);
 		}
@@ -888,6 +907,7 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 			add_action( 'wp_ajax_uael_recommended_theme_install', __CLASS__ . '::uae_theme_install' );
 
 			add_action( 'wp_ajax_save_hfe_compatibility_option', __CLASS__ . '::save_hfe_compatibility_option_callback' );
+			add_action( 'wp_ajax_save_analytics_data', __CLASS__ . '::save_analytics_option' );
 		}
 
 		/**
@@ -1450,6 +1470,29 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 						),
 					)
 				);
+			}
+		}
+
+		/**
+		 * Save HFE analytics compatibility option via AJAX.
+		 *
+		 * @since 1.38.2
+		 * @return void
+		 */
+		public static function save_analytics_option() {
+			// Check nonce for security.
+			check_ajax_referer( 'uael-widget-nonce', 'nonce' );
+
+			if ( isset( $_POST['bsf_analytics_optin'] ) ) {
+				// Sanitize and update option.
+				$option = sanitize_text_field( $_POST['bsf_analytics_optin'] );
+				update_option( 'bsf_analytics_optin', $option );
+
+				// Return a success response.
+				wp_send_json_success( esc_html__( 'Settings saved successfully!', 'ultimate-elementor' ) );
+			} else {
+				// Return an error response if the option is not set.
+				wp_send_json_error( esc_html__( 'Unable to save settings.', 'ultimate-elementor' ) );
 			}
 		} 
 

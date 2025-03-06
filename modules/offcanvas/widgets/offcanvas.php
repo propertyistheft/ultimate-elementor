@@ -2051,7 +2051,7 @@ class Offcanvas extends Common_Widget {
 	 * @access public
 	 */
 	public function render_button( $node_id, $settings ) {
-		$this->add_render_attribute( 'wrapper', 'class', 'uael-button-wrapper elementor-button-wrapper' );
+		$this->add_render_attribute( 'wrapper', 'class', 'uael-button-wrapper' );
 		$this->add_render_attribute( 'button', 'href', 'javascript:void(0);' );
 		$this->add_render_attribute( 'button', 'class', 'uael-offcanvas-trigger elementor-button-link elementor-button elementor-clickable' );
 

@@ -295,6 +295,8 @@ class UAEL_Core_Plugin {
 		$validation_messages = array(
 			'ajax_url'           => admin_url( 'admin-ajax.php' ),
 			'invalid_mail'       => __( 'Enter valid Email!', 'uael' ),
+			'invalid_phone'      => __( 'Enter valid Phone Number!', 'uael' ),
+			'error_phone'        => __( 'Phone number should not contain spaces!', 'uael' ),
 			'pass_unmatch'       => __( 'The specified password do not match!', 'uael' ),
 			'required'           => __( 'This Field is required!', 'uael' ),
 			'incorrect_password' => __( 'Error: The Password you have entered is incorrect.', 'uael' ),

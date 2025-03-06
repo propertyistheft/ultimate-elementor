@@ -1,3 +1,10 @@
+Version 1.38.2 - Thursday, 6th March 2025
+- Improvement: Particle Backgrounds - Optimized script loading for better consistency across environments.
+- Improvement: Removed 'elementor-button-wrapper' to enhance performance and optimize the DOM structure.
+- Fix: Advanced Navigation Menu - Resolved submenu accessibility issue for keyboard navigation.
+- Fix: Posts Widget - Added a WP_Error check to ensure proper taxonomy handling.
+- Fix: User Registration Form - Phone number validation now rejects spaces and invalid characters.
+
 Version 1.38.1 - Tuesday, 18th February 2025
 - Fix: Countdown Timer - Resolved display issue with saved template shortcode in Elementor, particularly after duplicating the widget.
 - Fix: Gravity From Styler - Resolve issue with accessibility in checkbox and radio form elements.

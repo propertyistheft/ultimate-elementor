@@ -2335,7 +2335,7 @@ class Infobox extends Common_Widget {
 			</div>
 			<?php
 		} elseif ( 'button' === $settings['infobox_cta_type'] ) {
-			$this->add_render_attribute( 'wrapper', 'class', 'uael-button-wrapper elementor-button-wrapper' );
+			$this->add_render_attribute( 'wrapper', 'class', 'uael-button-wrapper' );
 
 			if ( ! empty( $dynamic_settings['infobox_text_link']['url'] ) ) {
 
@@ -2638,7 +2638,7 @@ class Infobox extends Common_Widget {
 			<# }
 			else if ( 'button' == settings.infobox_cta_type ) {
 
-				view.addRenderAttribute( 'wrapper', 'class', 'uael-button-wrapper elementor-button-wrapper' );
+				view.addRenderAttribute( 'wrapper', 'class', 'uael-button-wrapper' );
 				if ( '' != settings.infobox_text_link.url ) {
 					var urlPattern = /^(https?|ftp):\/\/[^\s/$.?#].[^\s]*$|^www\.[^\s/$.?#].[^\s]*$/;
 					var btn_link_url = _.escape( settings.infobox_text_link.url );

@@ -68,7 +68,7 @@ if ( ! class_exists( 'BSF_Analytics_Stats' ) ) {
 				'graupi_version'         => defined( 'BSF_UPDATER_VERSION' ) ? BSF_UPDATER_VERSION : false,
 				'domain_name'            => get_site_url(),
 				'php_os'                 => PHP_OS,
-				'server_software'        => isset( $_SERVER['SERVER_SOFTWARE'] ) ? filter_var( wp_unslash( $_SERVER['SERVER_SOFTWARE'] ), FILTER_SANITIZE_SPECIAL_CHARS ) : '', // Replaced FILTER_SANITIZE_STRING with FILTER_SANITIZE_SPECIAL_CHARS as its deprecated in PHP 8.1.
+				'server_software'        => isset( $_SERVER['SERVER_SOFTWARE'] ) ? wp_kses( wp_unslash( $_SERVER['SERVER_SOFTWARE'] ), [] ) : '',
 				'mysql_version'          => $this->get_mysql_version(),
 				'php_version'            => $this->get_php_version(),
 				'php_max_input_vars'     => ini_get( 'max_input_vars' ), // phpcs:ignore:PHPCompatibility.IniDirectives.NewIniDirectives.max_input_varsFound
@@ -85,6 +85,8 @@ if ( ! class_exists( 'BSF_Analytics_Stats' ) ) {
 
 				'wp_version'             => get_bloginfo( 'version' ),
 				'user_count'             => $this->get_user_count(),
+				'posts_count'            => wp_count_posts()->publish,
+				'page_count'             => wp_count_posts( 'page' )->publish,
 				'site_language'          => get_locale(),
 				'timezone'               => wp_timezone_string(),
 				'is_ssl'                 => is_ssl(),

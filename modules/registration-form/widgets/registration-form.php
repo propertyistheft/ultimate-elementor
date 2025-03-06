@@ -2380,7 +2380,7 @@ class RegistrationForm extends Common_Widget {
 						'submit-group' => array(
 							'class' => array(
 								'uael-reg-form-submit',
-								'elementor-button-wrapper',
+								'uael-button-wrapper',
 								'elementor-field-group',
 								'elementor-column',
 								'elementor-field-type-submit',
