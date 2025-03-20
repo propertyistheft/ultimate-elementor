@@ -49,9 +49,9 @@ class UAEL_Geolite_Integration {
 		$iso_code = '';
 
 		try {
-			$reader   = new Maxmind\Db\Reader( $this->database );
+			$reader   = new \MaxMind\Db\Reader( $this->database );
 			$data     = $reader->get( $ip_address );
-			$iso_code = $data['country']['iso_code'];
+			$iso_code = isset( $data['country']['iso_code'] ) ? $data['country']['iso_code'] : '';
 
 			$reader->close();
 		} catch ( \Exception $e ) {

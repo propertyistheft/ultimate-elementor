@@ -804,6 +804,7 @@
 			widget_data['page_id'] = woo_checkout.data('page-id');
 
 			var elementorContainer = $('[data-elementor-type="single-page"]');
+			var elementorContainerPost = elementorContainer.find('[data-elementor-type="wp-page"]');
 			if (elementorContainer.length > 0) {
 				if (elementorContainer.find($scope).length > 0) {
 					var pageId = elementorContainer.data('elementor-id');
@@ -812,7 +813,14 @@
 					}
 				}
 			}
-
+			if (elementorContainerPost.length > 0) {
+				if (elementorContainerPost.find($scope).length > 0) {
+					var pageIdPost = elementorContainerPost.data('elementor-id');
+					if (pageIdPost) {
+						widget_data['page_id'] = pageIdPost;
+					}
+				}
+			}
 			setTimeout( function () {
 				$(".uael-checkout-review-order-table").addClass("processing").block( {
 			        message: null,

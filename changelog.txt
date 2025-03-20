@@ -1,3 +1,11 @@
+Version 1.38.4 - Wednesday, 19th March 2025
+- Improvement: Compatibility with latest Elementor and Elementor Pro 3.28 version.
+- Fix: Woo - Checkout - Order review AJAX failure when the widget is used inside Elementor's Themer Builder via the Post Content widget.
+
+Version 1.38.3 - Thursday, 13th March 2025
+- This update addressed a security bug. Please make sure you are using the latest version on your website.
+- Fix: Display Conditions - Resolved a fatal error caused by the missing MaxMind\Db\Reader class when applying geolocation conditions in Elementor.
+
 Version 1.38.2 - Thursday, 6th March 2025
 - Improvement: Particle Backgrounds - Optimized script loading for better consistency across environments.
 - Improvement: Removed 'elementor-button-wrapper' to enhance performance and optimize the DOM structure.
