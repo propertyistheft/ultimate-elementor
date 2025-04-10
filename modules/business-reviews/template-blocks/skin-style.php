@@ -227,6 +227,10 @@ abstract class Skin_Style {
 		$placeid = $settings['place_id'] . '&language=' . $settings['language_id'];
 		$api_key = '';
 
+		// Retrieve the New Google Place ID and language from the settings.
+		$place_id_new = $settings['place_id'];
+		$languagecode = $settings['language_id'];
+
 		$integration_options = UAEL_Helper::get_integrations_options();
 		$widget_list         = UAEL_Helper::get_widget_list();
 		$admin_link          = $widget_list['Business_Reviews']['setting_url'];
@@ -235,7 +239,7 @@ abstract class Skin_Style {
 			if ( ! self::$google_api_status ) {
 				self::$google_api_status = get_option( 'uael_google_api_status' );
 			}
-			if ( 'yes' === self::$google_api_status ) {
+			if ( 'yes' === self::$google_api_status || 'yes-new' === self::$google_api_status ) {
 				$api_key = $integration_options['google_places_api'];
 			} elseif ( 'no' === self::$google_api_status ) {
 				printf(
@@ -262,11 +266,15 @@ abstract class Skin_Style {
 			return false;
 		}
 
-		$sort_by = $settings['reviews_sort'];
-
-		$parameters = "key=$api_key&placeid=$placeid&reviews_sort=$sort_by";
-
-		$url = "https://maps.googleapis.com/maps/api/place/details/json?$parameters";
+		
+		if ( 'yes-new' === self::$google_api_status ) {
+			$url = "https://places.googleapis.com/v1/places/$place_id_new?fields=id,displayName,formatted_address,reviews&key=$api_key&languageCode=$languagecode";
+		} else {
+			$sort_by    = $settings['reviews_sort'];
+			$parameters = "key=$api_key&placeid=$placeid&reviews_sort=$sort_by";
+			$url        = "https://maps.googleapis.com/maps/api/place/details/json?$parameters";
+		}
+	
 
 		$reviews = '';
 
@@ -278,14 +286,28 @@ abstract class Skin_Style {
 
 		if ( false === $result || ( is_user_logged_in() && current_user_can( 'manage_options' ) ) ) {
 			sleep( 2 );
-			$result = wp_remote_post(
-				$url,
-				array(
-					'method'      => 'POST',
-					'timeout'     => 60,
-					'httpversion' => '1.0',
-				)
-			);
+			if ( 'yes-new' === self::$google_api_status ) {
+				$result = wp_remote_get(
+					$url,
+					array(
+						'method'      => 'GET',
+						'timeout'     => 60,
+						'httpversion' => '1.1',
+						'headers'     => array(
+							'Accept' => 'application/json',
+						),
+					)
+				);
+			} else {
+				$result = wp_remote_post(
+					$url,
+					array(
+						'method'      => 'POST',
+						'timeout'     => 60,
+						'httpversion' => '1.0',
+					)
+				);
+			}
 
 			if ( is_wp_error( $result ) ) {
 				$error_message = $result->get_error_message();
@@ -311,56 +333,90 @@ abstract class Skin_Style {
 			set_transient( $transient_name, $result, $expire_time );
 		}
 
-		$result_status = $result->status;
-
-		if ( $is_editor ) {
-			switch ( $result_status ) {
-				// @codingStandardsIgnoreStart.
-				case 'OVER_QUERY_LIMIT':
-					/* translators: %1$s doc link */
-					echo sprintf( __( '<span class="uael-reviews-notice-message elementor-clickable"><span class="uael-reviews-error-message">Google Error Message: </span>OVER_QUERY_LIMIT</br>You have exceeded your daily request quota for this API. If you did not set a custom daily request quota, verify your project has an active billing account. Visit your %1$s Google API console %2$s to activate billing. </span>', 'uael' ), '<a href="http://g.co/dev/maps-no-account">', '</a>' );
+		if ( 'yes-new' === self::$google_api_status ) {
+			if ( $is_editor ) {
+				if ( empty( $result->reviews ) ) {
+					echo sprintf( '<span class="uael-reviews-notice-message"><span class="uael-reviews-error-message">%s</span> %s</span>', esc_html__( 'Google Error Message:', 'uael' ), esc_html__( 'It seems like the Google place you have selected does not have any reviews.', 'uael' ) );
 					delete_transient( $transient_name );
 					return false;
-					break;
-
-				case 'REQUEST_DENIED':
-					echo __( '<span class="uael-reviews-notice-message"><span class="uael-reviews-error-message">Google Error Message: </span>REQUEST_DENIED</br>Invalid Google API key! Please verify your API key from UAE settings.</span>', 'uael' );
-					delete_transient( $transient_name );
-					return false;
-					break;
-
-				case 'UNKNOWN_ERROR':
-					echo __( '<span class="uael-reviews-notice-message"><span class="uael-reviews-error-message">Google Error Message: </span>UNKNOWN_ERROR </br>Seems like a server-side error; Please try again later.</span>', 'uael' );
-					delete_transient( $transient_name );
-					return false;
-					break;
-
-				case 'ZERO_RESULTS':
-				case 'INVALID_REQUEST':
-					echo __( '<span class="uael-reviews-notice-message"><span class="uael-reviews-error-message">Google Error Message: </span>INVALID_REQUEST </br>Please check if the entered Place ID is invalid.</span>', 'uael' );
-					delete_transient( $transient_name );
-					return false;
-					break;
-
-				case 'OK':
-					if ( ! property_exists( $result->result, 'reviews' ) ) {
-						echo __( '<span class="uael-reviews-notice-message"><span class="uael-reviews-error-message">Google Error Message:</span> It seems like the Google place you have selected does not have any reviews.</span>', 'uael' );
+				}
+			}
+		} else {
+			$result_status = $result->status;
+		
+			if ( $is_editor ) {
+				switch ( $result_status ) {
+					// @codingStandardsIgnoreStart.
+					case 'OVER_QUERY_LIMIT':
+						/* translators: %1$s doc link */
+						echo sprintf( __( '<span class="uael-reviews-notice-message elementor-clickable"><span class="uael-reviews-error-message">Google Error Message: </span>OVER_QUERY_LIMIT</br>You have exceeded your daily request quota for this API. If you did not set a custom daily request quota, verify your project has an active billing account. Visit your %1$s Google API console %2$s to activate billing. </span>', 'uael' ), '<a href="http://g.co/dev/maps-no-account">', '</a>' );
 						delete_transient( $transient_name );
 						return false;
-					}
-					break;
-
-				default:
-					return false;
-					break;
-					// @codingStandardsIgnoreEnd.
+						break;
+	
+					case 'REQUEST_DENIED':
+						echo __( '<span class="uael-reviews-notice-message"><span class="uael-reviews-error-message">Google Error Message: </span>REQUEST_DENIED</br>Invalid Google API key! Please verify your API key from UAE settings.</span>', 'uael' );
+						delete_transient( $transient_name );
+						return false;
+						break;
+	
+					case 'UNKNOWN_ERROR':
+						echo __( '<span class="uael-reviews-notice-message"><span class="uael-reviews-error-message">Google Error Message: </span>UNKNOWN_ERROR </br>Seems like a server-side error; Please try again later.</span>', 'uael' );
+						delete_transient( $transient_name );
+						return false;
+						break;
+	
+					case 'ZERO_RESULTS':
+					case 'INVALID_REQUEST':
+						echo __( '<span class="uael-reviews-notice-message"><span class="uael-reviews-error-message">Google Error Message: </span>INVALID_REQUEST </br>Please check if the entered Place ID is invalid.</span>', 'uael' );
+						delete_transient( $transient_name );
+						return false;
+						break;
+	
+					case 'OK':
+						if ( ! property_exists( $result->result, 'reviews' ) ) {
+							echo __( '<span class="uael-reviews-notice-message"><span class="uael-reviews-error-message">Google Error Message:</span> It seems like the Google place you have selected does not have any reviews.</span>', 'uael' );
+							delete_transient( $transient_name );
+							return false;
+						}
+						break;
+	
+					default:
+						return false;
+						break;
+						// @codingStandardsIgnoreEnd.
+				}
+			}
+	
+			if ( 'OK' === $result_status ) {
+				if ( property_exists( $result->result, 'reviews' ) ) {
+					$reviews = $result->result->reviews;
+				}
 			}
 		}
+		
+		if ( 'yes-new' === self::$google_api_status ) {
 
-		if ( 'OK' === $result_status ) {
-			if ( property_exists( $result->result, 'reviews' ) ) {
-				$reviews = $result->result->reviews;
+			$formatted_reviews = array();
+			if ( isset( $result->reviews ) && is_array( $result->reviews ) ) {
+				// phpcs:disable WordPress.NamingConventions.ValidVariableName.UsedPropertyNotSnakeCase -- Property names coming from external API we cannot update it.
+				foreach ( $result->reviews as $review ) {
+					$formatted_reviews[] = (object) array(
+						'author_name'               => trim( $review->authorAttribution->displayName ?? '' ),
+						'author_url'                => trim( $review->authorAttribution->uri ?? '' ),
+						'language'                  => $review->text->languageCode ?? '', 
+						'original_language'         => $review->originalText->languageCode ?? '',
+						'profile_photo_url'         => trim( $review->authorAttribution->photoUri ?? '' ),
+						'rating'                    => $review->rating ?? 5,
+						'relative_time_description' => $review->relativePublishTimeDescription ?? '',
+						'text'                      => $review->text->text ?? '', 
+						'time'                      => isset( $review->publishTime ) ? strtotime( $review->publishTime ) : null,
+						'translated'                => false,
+					);
+				}
+				// phpcs:enable
 			}
+			$reviews = $formatted_reviews;
 		}
 
 		return $reviews;

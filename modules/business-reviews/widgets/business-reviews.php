@@ -205,18 +205,6 @@ class Business_Reviews extends Common_Widget {
 			);
 
 			$this->add_control(
-				'reviews_sort',
-				array(
-					'label'   => __( 'Sort By', 'uael' ),
-					'type'    => Controls_Manager::SELECT,
-					'default' => 'most_relevant',
-					'options' => array(
-						'most_relevant' => __( 'Most Relevant', 'uael' ),
-						'newest'        => __( 'Newest', 'uael' ),
-					),
-				)
-			);
-			$this->add_control(
 				'google_place_id_doc',
 				array(
 					'type'            => Controls_Manager::RAW_HTML,
@@ -228,6 +216,36 @@ class Business_Reviews extends Common_Widget {
 					),
 				)
 			);
+
+			$this->add_control(
+				'reviews_sort',
+				array(
+					'label'   => __( 'Sort By', 'uael' ),
+					'type'    => Controls_Manager::SELECT,
+					'default' => 'most_relevant',
+					'options' => array(
+						'most_relevant' => __( 'Most Relevant', 'uael' ),
+						'newest'        => __( 'Newest', 'uael' ),
+					),
+				)
+			);
+
+		/** Condition note - Google Place API(new) */
+		if ( 'yes-new' === get_option( 'uael_google_api_status' ) ) {
+				$this->add_control(
+					'google_place_id_sort_doc',
+					array(
+						'type'            => Controls_Manager::RAW_HTML,
+						/* translators: %s admin link */
+						'raw'             => sprintf( __( '<b>Note</b>: New Google Place API doesn\'t support Sort By.', 'uael' ) ),
+						'content_classes' => 'uael-editor-doc',
+						'condition'       => array(
+							'review_type!' => 'yelp',
+						),
+					)
+				);
+		}
+
 
 			$this->add_control(
 				'all_separator',

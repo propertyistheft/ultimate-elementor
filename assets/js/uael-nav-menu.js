@@ -23,12 +23,12 @@
 
 		var cta_classes = {
 			_addClassesCta: function (){
-				last_menu_item.parent().addClass( 'uael-button-wrapper' );
+				last_menu_item.parent().addClass( 'uael-button-wrapper elementor-widget-button' );
 				last_menu_item.addClass( 'elementor-button' );
 			},
 
 			_removeClassesCta: function (){
-				last_menu_item.parent().removeClass( 'uael-button-wrapper' );
+				last_menu_item.parent().removeClass( 'uael-button-wrapper elementor-widget-button' );
 				last_menu_item.removeClass( 'elementor-button' );
 			}
 		}

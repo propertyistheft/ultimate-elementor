@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
-"Last-Translator: gpt-po v1.1.1\n"
+"Last-Translator: gpt-po v1.2.3\n"
 "Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
@@ -77,10 +77,10 @@ msgstr ""
 "Elementor-pakket (Gratis, Pro). Je kunt het gebruiken met elk WordPress-thema."
 
 #: ultimate-elementor.php
-#: classes/class-uael-admin.php:260
+#: classes/class-uael-admin.php:261
 #: build/main.js:172
 #: src/Components/Settings/Branding.jsx:182
-#: build/main.js:8186
+#: build/main.js:8211
 #. Author of the plugin
 msgid "Brainstorm Force"
 msgstr "Brainstorm Force"
@@ -88,51 +88,42 @@ msgstr "Brainstorm Force"
 #: ultimate-elementor.php
 #: build/main.js:172
 #: src/Components/Settings/Branding.jsx:204
-#: build/main.js:8208
+#: build/main.js:8233
 #. Author URI of the plugin
 msgid "https://www.brainstormforce.com"
 msgstr "https://www.brainstormforce.com"
 
-#: admin/bsf-analytics/class-bsf-analytics.php:216
-#. translators: %s product name
-msgid ""
-"Want to help make <strong>%1s</strong> even more awesome? Allow us to collect non-sensitive diagnostic data and usage "
-"information. "
-msgstr ""
-"Wil je helpen om <strong>%1s</strong> nog beter te maken? Sta ons toe om niet-gevoelige diagnostische gegevens en "
-"gebruiksinformatie te verzamelen."
-
-#: admin/bsf-analytics/class-bsf-analytics.php:219
+#: admin/bsf-analytics/class-bsf-analytics.php:231
 msgid "This will be applicable for all sites from the network."
 msgstr "Dit zal van toepassing zijn op alle sites van het netwerk."
 
-#: admin/bsf-analytics/class-bsf-analytics.php:243
+#: admin/bsf-analytics/class-bsf-analytics.php:255
 #. translators: %s usage doc link
 msgid " Know More."
 msgstr "Meer weten."
 
-#: admin/bsf-analytics/class-bsf-analytics.php:251
+#: admin/bsf-analytics/class-bsf-analytics.php:265
 msgid "Yes! Allow it"
 msgstr "Ja! Sta het toe"
 
-#: admin/bsf-analytics/class-bsf-analytics.php:260
+#: admin/bsf-analytics/class-bsf-analytics.php:276
 msgid "No Thanks"
 msgstr "Nee bedankt"
 
-#: admin/bsf-analytics/class-bsf-analytics.php:364
+#: admin/bsf-analytics/class-bsf-analytics.php:386
 msgid "Usage Tracking"
 msgstr "Gebruikstracering"
 
-#: admin/bsf-analytics/class-bsf-analytics.php:408
+#: admin/bsf-analytics/class-bsf-analytics.php:430
 #. translators: %s Product title
 msgid "Allow %s products to track non-sensitive usage tracking data."
 msgstr "Sta %s producten toe om niet-gevoelige gebruiksgegevens bij te houden."
 
-#: admin/bsf-analytics/class-bsf-analytics.php:411
+#: admin/bsf-analytics/class-bsf-analytics.php:433
 msgid " This will be applicable for all sites from the network."
 msgstr "Dit zal van toepassing zijn op alle sites van het netwerk."
 
-#: admin/bsf-analytics/class-bsf-analytics.php:416
+#: admin/bsf-analytics/class-bsf-analytics.php:438
 msgid "Learn More."
 msgstr "Meer informatie."
 
@@ -154,7 +145,7 @@ msgstr "Meer informatie."
 #: modules/nav-menu/widgets/nav-menu.php:698
 #: modules/price-list/widgets/price-list.php:767
 #: modules/price-table/widgets/price-table.php:887
-#: modules/price-table/widgets/price-table.php:3137
+#: modules/price-table/widgets/price-table.php:3138
 #: modules/registration-form/widgets/registration-form.php:176
 #: modules/registration-form/widgets/registration-form.php:295
 #: modules/registration-form/widgets/registration-form.php:1024
@@ -209,8 +200,8 @@ msgid "View Settings"
 msgstr "Instellingen bekijken"
 
 #: class-brainstorm-update-uael.php:112
-#: classes/class-uael-admin.php:553
-#: classes/class-uael-admin.php:554
+#: classes/class-uael-admin.php:558
+#: classes/class-uael-admin.php:559
 #: classes/uael-config.php:116
 #: classes/uael-config.php:212
 #: classes/uael-config.php:292
@@ -222,7 +213,7 @@ msgstr "Instellingen bekijken"
 #: classes/uael-config.php:677
 #: build/main.js:2
 #: src/Components/NavMenu.js:161
-#: build/main.js:3447
+#: build/main.js:3450
 msgid "Settings"
 msgstr "Instellingen"
 
@@ -230,19 +221,21 @@ msgstr "Instellingen"
 msgid "Get the license >>"
 msgstr "Verkrijg de licentie >>"
 
-#: classes/class-uael-admin.php:103
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:224
+#: classes/class-uael-admin.php:104
 msgid "Sorry, you are not allowed to do this operation."
 msgstr "Sorry, je mag deze bewerking niet uitvoeren."
 
-#: classes/class-uael-admin.php:104
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:237
+#: classes/class-uael-admin.php:105
 msgid "Nonce validation failed"
 msgstr "Nonce-validatie mislukt"
 
-#: classes/class-uael-admin.php:105
+#: classes/class-uael-admin.php:106
 msgid "Sorry, something went wrong."
 msgstr "Sorry, er is iets misgegaan."
 
-#: classes/class-uael-admin.php:184
+#: classes/class-uael-admin.php:185
 msgid ""
 "With the new %1$s %3$s %2$s version 1.21.0 it is mandatory to add a Facebook App Secret Key for the Login Form widget.  "
 "You can add it from %1$s%4$shere%5$s%2$s. </br></br>This is to ensure extra security for the widget. In case your "
@@ -253,11 +246,15 @@ msgstr ""
 "te garanderen. Als je bestaande inlogformulier de Facebook-inlogoptie niet weergeeft, zal het toevoegen van de App "
 "Secret Key dit oplossen."
 
-#: classes/class-uael-admin.php:228
+#: classes/class-uael-admin.php:229
+#: classes/class-uael-admin.php:1464
+#: build/main.js:172
+#: src/Components/Onboarding/Welcome.jsx:16
+#: build/main.js:9684
 msgid "Ultimate Addons for Elementor"
 msgstr "Ultieme Addons voor Elementor"
 
-#: classes/class-uael-admin.php:244
+#: classes/class-uael-admin.php:245
 msgid ""
 "Ultimate Addons is a premium extension for Elementor that adds 35+ widgets and works on top of any Elementor Package "
 "(Free, Pro). You can use it with any WordPress theme."
@@ -265,73 +262,73 @@ msgstr ""
 "Ultimate Addons is een premium extensie voor Elementor die meer dan 35 widgets toevoegt en werkt bovenop elk "
 "Elementor-pakket (Gratis, Pro). Je kunt het gebruiken met elk WordPress-thema."
 
-#: classes/class-uael-admin.php:527
+#: classes/class-uael-admin.php:532
 #: build/main.js:2
 #: src/Components/NavMenu.js:117
-#: build/main.js:3403
+#: build/main.js:3406
 msgid "Dashboard"
 msgstr "Dashboard"
 
-#: classes/class-uael-admin.php:535
+#: classes/class-uael-admin.php:540
 msgid "Widgets & Features"
 msgstr "Widgets & Functies"
 
-#: classes/class-uael-admin.php:536
+#: classes/class-uael-admin.php:541
 #: build/main.js:2
 #: src/Components/NavMenu.js:139
-#: build/main.js:3425
+#: build/main.js:3428
 msgid "Widgets"
 msgstr "Widgets"
 
-#: classes/class-uael-admin.php:544
-#: classes/class-uael-admin.php:545
+#: classes/class-uael-admin.php:549
+#: classes/class-uael-admin.php:550
 #: build/main.js:2
 #: src/Components/NavMenu.js:151
-#: build/main.js:3437
+#: build/main.js:3440
 msgid "Templates"
 msgstr "Templates"
 
-#: classes/class-uael-admin.php:937
+#: classes/class-uael-admin.php:1050
 msgid "License key not found."
 msgstr "Licentiesleutel niet gevonden."
 
-#: classes/class-uael-admin.php:963
+#: classes/class-uael-admin.php:1076
 msgid "License Successfully Activated"
 msgstr "Licentie succesvol geactiveerd"
 
-#: classes/class-uael-admin.php:967
+#: classes/class-uael-admin.php:1080
 msgid "License activation failed!"
 msgstr "Licentieactivering mislukt!"
 
-#: classes/class-uael-admin.php:1008
+#: classes/class-uael-admin.php:1121
 msgid "License Successfully Deactivated"
 msgstr "Licentie succesvol gedeactiveerd"
 
-#: classes/class-uael-admin.php:1012
+#: classes/class-uael-admin.php:1125
 msgid "License deactivation failed!"
 msgstr "Licentie deactiveren mislukt!"
 
-#: classes/class-uael-admin.php:1041
+#: classes/class-uael-admin.php:1154
 msgid "Plugin activation is disabled for you on this site."
 msgstr "Pluginactivering is voor jou op deze site uitgeschakeld."
 
-#: classes/class-uael-admin.php:1050
+#: classes/class-uael-admin.php:1163
 msgid "Plugin Activated."
 msgstr "Plugin geactiveerd."
 
-#: classes/class-uael-admin.php:1061
+#: classes/class-uael-admin.php:1174
 msgid "Theme activation is disabled for you on this site."
 msgstr "Thema-activatie is voor jou op deze site uitgeschakeld."
 
-#: classes/class-uael-admin.php:1070
+#: classes/class-uael-admin.php:1183
 msgid "Theme Activated."
 msgstr "Thema geactiveerd."
 
-#: classes/class-uael-admin.php:1077
+#: classes/class-uael-admin.php:1190
 msgid "Could not activate plugin. Please activate from the Plugins page."
 msgstr "Kon de plugin niet activeren. Activeer alstublieft vanaf de Plugins-pagina."
 
-#: classes/class-uael-admin.php:1079
+#: classes/class-uael-admin.php:1192
 msgid "Could not activate theme. Please activate from the Themes page."
 msgstr "Kon thema niet activeren. Activeer het alstublieft vanaf de Thema's pagina."
 
@@ -345,67 +342,67 @@ msgstr "%1s - Aangepaste link"
 msgid "%1s - Categories (Ex: Cat1, Cat2)"
 msgstr "%1s - Categorieën (Bijv: Cat1, Cat2)"
 
-#: classes/class-uael-core-plugin.php:295
+#: classes/class-uael-core-plugin.php:297
 msgid "Enter valid Email!"
 msgstr "Voer een geldig e-mailadres in!"
 
-#: classes/class-uael-core-plugin.php:296
+#: classes/class-uael-core-plugin.php:300
 msgid "The specified password do not match!"
 msgstr "Het opgegeven wachtwoord komt niet overeen!"
 
-#: classes/class-uael-core-plugin.php:297
+#: classes/class-uael-core-plugin.php:301
 msgid "This Field is required!"
 msgstr "Dit veld is verplicht!"
 
-#: classes/class-uael-core-plugin.php:298
+#: classes/class-uael-core-plugin.php:302
 #: modules/login-form/widgets/login-form.php:2490
 msgid "Error: The Password you have entered is incorrect."
 msgstr "Fout: Het wachtwoord dat u heeft ingevoerd is onjuist."
 
-#: classes/class-uael-core-plugin.php:299
+#: classes/class-uael-core-plugin.php:303
 msgid "Unknown username. Check again or try your email address."
 msgstr "Onbekende gebruikersnaam. Controleer opnieuw of probeer uw e-mailadres."
 
-#: classes/class-uael-core-plugin.php:300
+#: classes/class-uael-core-plugin.php:304
 msgid "Unknown email address. Check again or try your username."
 msgstr "Onbekend e-mailadres. Controleer opnieuw of probeer uw gebruikersnaam."
 
-#: classes/class-uael-core-plugin.php:301
+#: classes/class-uael-core-plugin.php:305
 msgid "Thanks for logging in, "
 msgstr "Bedankt voor het inloggen,"
 
-#: classes/class-uael-core-plugin.php:391
+#: classes/class-uael-core-plugin.php:395
 msgid "Invalid or data missing in the required(*) fields."
 msgstr "Ongeldige of ontbrekende gegevens in de vereiste(*) velden."
 
-#: classes/class-uael-core-plugin.php:399
+#: classes/class-uael-core-plugin.php:403
 msgid "No matching records found"
 msgstr "Geen overeenkomende records gevonden"
 
-#: classes/class-uael-core-plugin.php:400
+#: classes/class-uael-core-plugin.php:404
 msgid "Show _MENU_ Entries"
 msgstr "Toon _MENU_ items"
 
-#: classes/class-uael-core-plugin.php:605
+#: classes/class-uael-core-plugin.php:609
 msgid "The widget type you are trying to paste is not available on this site."
 msgstr "Het widgettype dat u probeert te plakken is niet beschikbaar op deze site."
 
-#: classes/class-uael-core-plugin.php:607
+#: classes/class-uael-core-plugin.php:611
 #. translators: %s: html tags
 msgid "%1s Copy"
 msgstr "%1s Kopiëren"
 
-#: classes/class-uael-core-plugin.php:609
+#: classes/class-uael-core-plugin.php:613
 #. translators: %s: html tags
 msgid "%1s Paste"
 msgstr "%1s Plakken"
 
-#: classes/class-uael-core-plugin.php:611
+#: classes/class-uael-core-plugin.php:615
 #. translators: %s: html tags
 msgid "%1s Copy All"
 msgstr "%1s Alles kopiëren"
 
-#: classes/class-uael-core-plugin.php:613
+#: classes/class-uael-core-plugin.php:617
 #. translators: %s: html tags
 msgid "%1s Paste All"
 msgstr "Alles plakken %1s"
@@ -418,23 +415,23 @@ msgstr "Kan de taak niet voltooien. Geen geldige gebruiker."
 msgid "Looks like content is empty. Cannot be processed."
 msgstr "Het lijkt erop dat de inhoud leeg is. Kan niet worden verwerkt."
 
-#: classes/class-uael-loader.php:215
+#: classes/class-uael-loader.php:268
 #. translators: %s: html tags
 msgid "The %1$sUltimate Addons for Elementor Pro%2$s plugin requires %1$sElementor%2$s plugin installed & activated."
 msgstr ""
 "De %1$sUltimate Addons for Elementor Pro%2$s plugin vereist dat de %1$sElementor%2$s plugin is geïnstalleerd en "
 "geactiveerd."
 
-#: classes/class-uael-loader.php:225
+#: classes/class-uael-loader.php:278
 msgid "Activate Elementor"
 msgstr "Elementor activeren"
 
-#: classes/class-uael-loader.php:233
-#: classes/class-uael-loader.php:271
+#: classes/class-uael-loader.php:286
+#: classes/class-uael-loader.php:324
 msgid "Install Elementor"
 msgstr "Elementor installeren"
 
-#: classes/class-uael-loader.php:252
+#: classes/class-uael-loader.php:305
 #. translators: %s: html tags
 msgid ""
 "The %1$sUltimate Addons for Elementor Pro%2$s plugin has stopped working because you are using an older version of "
@@ -443,7 +440,7 @@ msgstr ""
 "De %1$sUltimate Addons for Elementor Pro%2$s plugin is gestopt met werken omdat je een oudere versie van de "
 "%1$sElementor%2$s plugin gebruikt."
 
-#: classes/class-uael-loader.php:263
+#: classes/class-uael-loader.php:316
 msgid "Update Elementor"
 msgstr "Elementor bijwerken"
 
@@ -474,7 +471,7 @@ msgstr "Pas uw openingstijden stijlvol aan en toon ze."
 #: classes/uael-config.php:109
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:367
-#: build/main.js:7166
+#: build/main.js:7191
 msgid "Business Reviews"
 msgstr "Zakelijke beoordelingen"
 
@@ -533,7 +530,7 @@ msgstr "Voeg SEO-vriendelijke FAQ-secties toe aan pagina's."
 #: classes/uael-config.php:205
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:253
-#: build/main.js:7052
+#: build/main.js:7077
 msgid "Google Map"
 msgstr "Google Map"
 
@@ -594,7 +591,7 @@ msgstr "Toon een aantrekkelijke, aanpasbare Instagram-feed."
 #: classes/uael-config.php:301
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:626
-#: build/main.js:7425
+#: build/main.js:7450
 msgid "Login Form"
 msgstr "Inlogformulier"
 
@@ -687,7 +684,7 @@ msgstr "Zorg ervoor dat afbeeldingen er scherp uitzien op schermen met hoge reso
 #: modules/social-share/widgets/social-share.php:552
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:778
-#: build/main.js:7577
+#: build/main.js:7602
 msgid "Social Share"
 msgstr "Sociaal delen"
 
@@ -735,7 +732,7 @@ msgstr "Toon tijdlijnen of roadmaps met geavanceerde opmaakopties."
 #: classes/uael-config.php:510
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:942
-#: build/main.js:7741
+#: build/main.js:7766
 msgid "Twitter Feed"
 msgstr "Twitter-feed"
 
@@ -1027,7 +1024,7 @@ msgstr "ENGELS (VERENIGD KONINKRIJK)"
 
 #: classes/uael-helper.php:1142
 msgid "SPANISH"
-msgstr ""
+msgstr "SPAANS"
 
 #: classes/uael-helper.php:1143
 msgid "FARSI"
@@ -1204,7 +1201,7 @@ msgstr "Het lijkt erop dat je nog geen sjabloon hebt opgeslagen."
 #: classes/uael-maxmind-database.php:139
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:922
-#: build/main.js:7721
+#: build/main.js:7746
 msgid "The MaxMind license key is invalid. If you have recently created this key, you may need to wait for it to become active."
 msgstr ""
 "De MaxMind-licentiesleutel is ongeldig. Als u deze sleutel onlangs hebt aangemaakt, moet u mogelijk wachten tot deze "
@@ -1229,7 +1226,7 @@ msgstr "Vol"
 #: modules/login-form/widgets/login-form.php:163
 #: modules/nav-menu/widgets/nav-menu.php:181
 #: modules/nav-menu/widgets/nav-menu.php:356
-#: modules/particles/module.php:244
+#: modules/particles/module.php:263
 #: modules/party-propz-extension/module.php:287
 #: modules/party-propz-extension/module.php:328
 #: modules/party-propz-extension/module.php:731
@@ -1985,7 +1982,7 @@ msgstr "Plug-inlijst niet gevonden"
 msgid "Branding settings not found"
 msgstr "Instellingen voor branding niet gevonden"
 
-#: lib/astra-notices/class-astra-notices.php:119
+#: lib/astra-notices/class-astra-notices.php:146
 msgid "WordPress Nonce not validated."
 msgstr "WordPress-nonce niet gevalideerd."
 
@@ -2206,7 +2203,7 @@ msgstr "Uitlijning"
 #: modules/offcanvas/widgets/offcanvas.php:514
 #: modules/offcanvas/widgets/offcanvas.php:767
 #: modules/offcanvas/widgets/offcanvas.php:1799
-#: modules/particles/module.php:352
+#: modules/particles/module.php:371
 #: modules/party-propz-extension/module.php:768
 #: modules/posts/skins/skin-base.php:899
 #: modules/posts/skins/skin-base.php:1946
@@ -2427,7 +2424,7 @@ msgstr "Centrum"
 #: modules/offcanvas/widgets/offcanvas.php:518
 #: modules/offcanvas/widgets/offcanvas.php:775
 #: modules/offcanvas/widgets/offcanvas.php:1803
-#: modules/particles/module.php:353
+#: modules/particles/module.php:372
 #: modules/party-propz-extension/module.php:772
 #: modules/posts/skins/skin-base.php:907
 #: modules/posts/skins/skin-base.php:1954
@@ -2578,9 +2575,9 @@ msgstr "Beweeg bij zweven"
 #: modules/offcanvas/widgets/offcanvas.php:306
 #: modules/offcanvas/widgets/offcanvas.php:893
 #: modules/offcanvas/widgets/offcanvas.php:905
-#: modules/particles/module.php:223
-#: modules/particles/module.php:372
-#: modules/particles/module.php:450
+#: modules/particles/module.php:242
+#: modules/particles/module.php:391
+#: modules/particles/module.php:469
 #: modules/party-propz-extension/module.php:422
 #: modules/party-propz-extension/module.php:469
 #: modules/posts/skins/skin-base.php:289
@@ -2668,7 +2665,7 @@ msgstr "Beweeg bij zweven"
 #: modules/wpf-styler/widgets/wpf-styler.php:631
 #: build/main.js:2
 #: src/Components/Dashboard/ExtendWebsiteWidget.jsx:243
-#: build/main.js:4699
+#: build/main.js:4707
 msgid "Yes"
 msgstr "Ja"
 
@@ -2759,9 +2756,9 @@ msgstr "Ja"
 #: modules/offcanvas/widgets/offcanvas.php:305
 #: modules/offcanvas/widgets/offcanvas.php:892
 #: modules/offcanvas/widgets/offcanvas.php:904
-#: modules/particles/module.php:224
-#: modules/particles/module.php:373
-#: modules/particles/module.php:451
+#: modules/particles/module.php:243
+#: modules/particles/module.php:392
+#: modules/particles/module.php:470
 #: modules/party-propz-extension/module.php:423
 #: modules/party-propz-extension/module.php:470
 #: modules/posts/skins/skin-base.php:290
@@ -3033,7 +3030,7 @@ msgstr "Zweven & Normaal"
 #: modules/price-table/widgets/price-table.php:2114
 #: modules/price-table/widgets/price-table.php:2284
 #: modules/price-table/widgets/price-table.php:2626
-#: modules/price-table/widgets/price-table.php:3315
+#: modules/price-table/widgets/price-table.php:3316
 #: modules/registration-form/widgets/registration-form.php:1775
 #: modules/social-share/widgets/social-share.php:816
 #: modules/table-of-contents/widgets/table-of-contents.php:653
@@ -3221,9 +3218,9 @@ msgstr "Kleur"
 #: modules/price-table/widgets/price-table.php:2751
 #: modules/price-table/widgets/price-table.php:2877
 #: modules/price-table/widgets/price-table.php:2961
-#: modules/price-table/widgets/price-table.php:3115
-#: modules/price-table/widgets/price-table.php:3247
-#: modules/price-table/widgets/price-table.php:3391
+#: modules/price-table/widgets/price-table.php:3116
+#: modules/price-table/widgets/price-table.php:3248
+#: modules/price-table/widgets/price-table.php:3392
 #: modules/registration-form/widgets/registration-form.php:1644
 #: modules/registration-form/widgets/registration-form.php:2034
 #: modules/retina-image/widgets/retina-image.php:570
@@ -3358,7 +3355,7 @@ msgstr "Achtergrondkleur"
 #: modules/price-table/widgets/price-table.php:2893
 #: modules/price-table/widgets/price-table.php:2972
 #: modules/price-table/widgets/price-table.php:3071
-#: modules/price-table/widgets/price-table.php:3406
+#: modules/price-table/widgets/price-table.php:3407
 #: modules/registration-form/widgets/registration-form.php:1667
 #: modules/registration-form/widgets/registration-form.php:1999
 #: modules/retina-image/widgets/retina-image.php:600
@@ -3411,7 +3408,7 @@ msgstr "Opvulling"
 #: modules/instagram-feed/widgets/instagram-feed.php:896
 #: modules/login-form/widgets/login-form.php:656
 #: modules/marketing-button/widgets/marketing-button.php:241
-#: modules/particles/module.php:350
+#: modules/particles/module.php:369
 #: modules/posts/skins/skin-base.php:340
 #: modules/posts/skins/skin-business.php:133
 #: modules/posts/skins/skin-card.php:132
@@ -3444,7 +3441,7 @@ msgstr "Top"
 #: modules/instagram-feed/widgets/instagram-feed.php:762
 #: modules/instagram-feed/widgets/instagram-feed.php:904
 #: modules/login-form/widgets/login-form.php:657
-#: modules/particles/module.php:351
+#: modules/particles/module.php:370
 #: modules/price-list/widgets/price-list.php:367
 #: modules/price-table/widgets/price-table.php:415
 #: modules/price-table/widgets/price-table.php:814
@@ -3484,7 +3481,7 @@ msgstr "Onderkant"
 #: modules/offcanvas/widgets/offcanvas.php:1854
 #: modules/posts/widgets/posts-base.php:439
 #: modules/price-list/widgets/price-list.php:1042
-#: modules/price-table/widgets/price-table.php:3464
+#: modules/price-table/widgets/price-table.php:3465
 #: modules/registration-form/widgets/registration-form.php:1326
 #: modules/retina-image/widgets/retina-image.php:650
 #: modules/social-share/widgets/social-share.php:1473
@@ -3519,7 +3516,7 @@ msgstr "Nuttige informatie"
 #: modules/modal-popup/widgets/modal-popup.php:2251
 #: modules/posts/widgets/posts-base.php:458
 #: modules/price-list/widgets/price-list.php:1061
-#: modules/price-table/widgets/price-table.php:3483
+#: modules/price-table/widgets/price-table.php:3484
 #: modules/table/widgets/table.php:2049
 #: modules/timeline/widgets/timeline.php:725
 #: modules/video-gallery/widgets/video-gallery.php:929
@@ -3552,7 +3549,7 @@ msgstr "%1$s Aan de slag video » %2$s"
 #: modules/offcanvas/widgets/offcanvas.php:1863
 #: modules/posts/widgets/posts-base.php:448
 #: modules/price-list/widgets/price-list.php:1051
-#: modules/price-table/widgets/price-table.php:3473
+#: modules/price-table/widgets/price-table.php:3474
 #: modules/registration-form/widgets/registration-form.php:1335
 #: modules/retina-image/widgets/retina-image.php:659
 #: modules/social-share/widgets/social-share.php:1482
@@ -3739,7 +3736,7 @@ msgstr "Scheiding"
 #: modules/hotspot/widgets/hotspot.php:357
 #: modules/infobox/widgets/infobox.php:1084
 #: modules/login-form/widgets/login-form.php:337
-#: modules/particles/module.php:234
+#: modules/particles/module.php:253
 #: modules/party-propz-extension/module.php:455
 #: modules/price-table/widgets/price-table.php:147
 #: modules/price-table/widgets/price-table.php:1173
@@ -3780,7 +3777,7 @@ msgstr "Stijl"
 #: modules/price-list/widgets/price-list.php:309
 #: modules/price-table/widgets/price-table.php:2266
 #: modules/price-table/widgets/price-table.php:2608
-#: modules/price-table/widgets/price-table.php:3139
+#: modules/price-table/widgets/price-table.php:3140
 #: modules/retina-image/widgets/retina-image.php:358
 #: modules/table-of-contents/widgets/table-of-contents.php:736
 #: modules/team-member/widgets/team-member.php:812
@@ -3812,7 +3809,7 @@ msgstr "Solide"
 #: modules/price-list/widgets/price-list.php:310
 #: modules/price-table/widgets/price-table.php:2268
 #: modules/price-table/widgets/price-table.php:2610
-#: modules/price-table/widgets/price-table.php:3141
+#: modules/price-table/widgets/price-table.php:3142
 #: modules/retina-image/widgets/retina-image.php:360
 #: modules/table-of-contents/widgets/table-of-contents.php:738
 #: modules/team-member/widgets/team-member.php:814
@@ -3844,7 +3841,7 @@ msgstr "Gestippeld"
 #: modules/price-list/widgets/price-list.php:311
 #: modules/price-table/widgets/price-table.php:2267
 #: modules/price-table/widgets/price-table.php:2611
-#: modules/price-table/widgets/price-table.php:3142
+#: modules/price-table/widgets/price-table.php:3143
 #: modules/retina-image/widgets/retina-image.php:361
 #: modules/table-of-contents/widgets/table-of-contents.php:737
 #: modules/team-member/widgets/team-member.php:815
@@ -4306,8 +4303,8 @@ msgstr "Tekst beoordelen"
 #: modules/price-table/widgets/price-table.php:2865
 #: modules/price-table/widgets/price-table.php:2996
 #: modules/price-table/widgets/price-table.php:3099
-#: modules/price-table/widgets/price-table.php:3233
-#: modules/price-table/widgets/price-table.php:3422
+#: modules/price-table/widgets/price-table.php:3234
+#: modules/price-table/widgets/price-table.php:3423
 #: modules/registration-form/widgets/registration-form.php:518
 #: modules/registration-form/widgets/registration-form.php:740
 #: modules/registration-form/widgets/registration-form.php:1559
@@ -4517,7 +4514,7 @@ msgstr "Doos"
 #: modules/posts/skins/skin-news.php:782
 #: modules/price-list/widgets/price-list.php:814
 #: modules/price-list/widgets/price-list.php:959
-#: modules/price-table/widgets/price-table.php:3195
+#: modules/price-table/widgets/price-table.php:3196
 #: modules/registration-form/widgets/registration-form.php:1744
 #: modules/registration-form/widgets/registration-form.php:1957
 #: modules/registration-form/widgets/registration-form.php:2058
@@ -4726,7 +4723,7 @@ msgstr "Pijl verbergen"
 #: modules/infobox/widgets/infobox.php:670
 #: modules/infobox/widgets/infobox.php:1418
 #: modules/nav-menu/widgets/nav-menu.php:1758
-#: modules/price-table/widgets/price-table.php:3132
+#: modules/price-table/widgets/price-table.php:3133
 #: modules/retina-image/widgets/retina-image.php:352
 #: modules/team-member/widgets/team-member.php:806
 #: modules/team-member/widgets/team-member.php:1310
@@ -4788,7 +4785,7 @@ msgstr "Randstijl"
 #: modules/price-table/widgets/price-table.php:907
 #: modules/price-table/widgets/price-table.php:1043
 #: modules/price-table/widgets/price-table.php:1178
-#: modules/price-table/widgets/price-table.php:3138
+#: modules/price-table/widgets/price-table.php:3139
 #: modules/retina-image/widgets/retina-image.php:204
 #: modules/retina-image/widgets/retina-image.php:235
 #: modules/retina-image/widgets/retina-image.php:357
@@ -4838,7 +4835,7 @@ msgstr "Geen"
 #: modules/login-form/widgets/login-form.php:1922
 #: modules/nav-menu/widgets/nav-menu.php:1796
 #: modules/nav-menu/widgets/nav-menu.php:1917
-#: modules/price-table/widgets/price-table.php:3156
+#: modules/price-table/widgets/price-table.php:3157
 #: modules/registration-form/widgets/registration-form.php:1704
 #: modules/registration-form/widgets/registration-form.php:1720
 #: modules/registration-form/widgets/registration-form.php:1935
@@ -4881,7 +4878,7 @@ msgstr "Randbreedte"
 #: modules/nav-menu/widgets/nav-menu.php:1779
 #: modules/offcanvas/widgets/offcanvas.php:1104
 #: modules/price-list/widgets/price-list.php:991
-#: modules/price-table/widgets/price-table.php:3179
+#: modules/price-table/widgets/price-table.php:3180
 #: modules/registration-form/widgets/registration-form.php:1679
 #: modules/registration-form/widgets/registration-form.php:1920
 #: modules/registration-form/widgets/registration-form.php:2107
@@ -5099,7 +5096,7 @@ msgstr "%1$sGoogle Plaats-ID%2$s"
 
 #: modules/business-reviews/widgets/business-reviews.php:200
 msgid "ChIJBUo5LX5FXj4RqXDEdkjfdmA"
-msgstr ""
+msgstr "ChIJBUo5LX5FXj4RqXDEdkjfdmA"
 
 #: modules/business-reviews/widgets/business-reviews.php:210
 #: modules/twitter/widgets/twitter.php:274
@@ -5521,6 +5518,7 @@ msgstr "Klik op mij"
 msgid "Link"
 msgstr "Link"
 
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:109
 #: modules/buttons/widgets/buttons.php:175
 #: modules/buttons/widgets/buttons.php:186
 #: modules/faq/widgets/faq.php:324
@@ -5762,7 +5760,7 @@ msgstr "Normaal"
 #: modules/price-list/widgets/price-list.php:973
 #: modules/price-table/widgets/price-table.php:832
 #: modules/price-table/widgets/price-table.php:1429
-#: modules/price-table/widgets/price-table.php:3223
+#: modules/price-table/widgets/price-table.php:3224
 #: modules/registration-form/widgets/registration-form.php:2072
 #: modules/retina-image/widgets/retina-image.php:472
 #: modules/social-share/widgets/social-share.php:941
@@ -5812,7 +5810,7 @@ msgstr "Zweven"
 #: modules/posts/skins/skin-feed.php:1007
 #: modules/posts/skins/skin-news.php:526
 #: modules/posts/skins/skin-news.php:763
-#: modules/price-table/widgets/price-table.php:3261
+#: modules/price-table/widgets/price-table.php:3262
 #: modules/team-member/widgets/team-member.php:866
 #: modules/team-member/widgets/team-member.php:1370
 #: modules/video-gallery/widgets/video-gallery.php:1374
@@ -5834,7 +5832,7 @@ msgstr "Schrijf je vandaag in"
 #: modules/buttons/widgets/buttons.php:447
 #: build/main.js:2
 #: src/Components/Templates/ExploreTemplates.jsx:247
-#: build/main.js:5790
+#: build/main.js:5799
 msgid "Learn More"
 msgstr "Meer informatie"
 
@@ -6189,7 +6187,7 @@ msgstr "Vereiste Asterisk-kleur"
 #: modules/price-list/widgets/price-list.php:312
 #: modules/price-table/widgets/price-table.php:2269
 #: modules/price-table/widgets/price-table.php:2609
-#: modules/price-table/widgets/price-table.php:3140
+#: modules/price-table/widgets/price-table.php:3141
 #: modules/retina-image/widgets/retina-image.php:359
 #: modules/table-of-contents/widgets/table-of-contents.php:739
 #: modules/team-member/widgets/team-member.php:813
@@ -7226,7 +7224,7 @@ msgstr "%1$s Hoe werkt de terugkerende timer? » %2$s"
 msgid "%1$s Which timezone does the timer use? » %2$s"
 msgstr "%1$s Welke tijdzone gebruikt de timer? » %2$s"
 
-#: modules/countdown/widgets/countdown.php:1446
+#: modules/countdown/widgets/countdown.php:1444
 msgid "00"
 msgstr "00"
 
@@ -8390,7 +8388,7 @@ msgstr "Gebruikersrol"
 #: modules/display-conditions/conditions/role.php:58
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:495
-#: build/main.js:7294
+#: build/main.js:7319
 msgid "Note: "
 msgstr "Opmerking:"
 
@@ -8966,7 +8964,7 @@ msgstr "Secundaire knop"
 #: modules/headings/widgets/fancy-heading.php:289
 #: modules/hotspot/widgets/hotspot.php:941
 #: modules/modal-popup/widgets/modal-popup.php:557
-#: modules/particles/module.php:370
+#: modules/particles/module.php:389
 #: modules/price-table/widgets/price-table.php:921
 msgid "Advanced Settings"
 msgstr "Geavanceerde instellingen"
@@ -9124,7 +9122,7 @@ msgid "Top Center"
 msgstr "Boven Midden"
 
 #: modules/google-map/widgets/google-map.php:104
-#: modules/particles/module.php:354
+#: modules/particles/module.php:373
 #: modules/party-propz-extension/module.php:322
 #: modules/video/widgets/video.php:1330
 #: modules/welcome-music/widgets/welcome-music.php:257
@@ -9132,7 +9130,7 @@ msgid "Top Left"
 msgstr "Linksboven"
 
 #: modules/google-map/widgets/google-map.php:105
-#: modules/particles/module.php:355
+#: modules/particles/module.php:374
 #: modules/party-propz-extension/module.php:323
 #: modules/video/widgets/video.php:1331
 #: modules/welcome-music/widgets/welcome-music.php:256
@@ -9170,7 +9168,7 @@ msgid "Bottom Center"
 msgstr "Onder Midden"
 
 #: modules/google-map/widgets/google-map.php:113
-#: modules/particles/module.php:356
+#: modules/particles/module.php:375
 #: modules/party-propz-extension/module.php:324
 #: modules/registration-form/widgets/registration-form.php:323
 #: modules/video/widgets/video.php:1332
@@ -9179,7 +9177,7 @@ msgid "Bottom Left"
 msgstr "Linksonder"
 
 #: modules/google-map/widgets/google-map.php:114
-#: modules/particles/module.php:357
+#: modules/particles/module.php:376
 #: modules/party-propz-extension/module.php:325
 #: modules/registration-form/widgets/registration-form.php:322
 #: modules/video/widgets/video.php:1333
@@ -10667,7 +10665,7 @@ msgstr "\"Alles\" Tabbladlabel"
 #: modules/posts/skins/skin-base.php:828
 #: modules/posts/skins/skin-feed.php:197
 #: modules/posts/template-blocks/skin-feed.php:186
-#: modules/posts/template-blocks/skin-style.php:1288
+#: modules/posts/template-blocks/skin-style.php:1312
 #: modules/video-gallery/widgets/video-gallery.php:691
 msgid "All"
 msgstr "Alle"
@@ -11124,7 +11122,7 @@ msgid "Transition Duration"
 msgstr "Overgangsduur"
 
 #: modules/infobox/widgets/infobox.php:915
-#: modules/particles/module.php:326
+#: modules/particles/module.php:345
 #: modules/retina-image/widgets/retina-image.php:444
 #: modules/retina-image/widgets/retina-image.php:478
 msgid "Opacity"
@@ -11471,7 +11469,7 @@ msgid "Luminosity"
 msgstr "Luminositeit"
 
 #: modules/instagram-feed/widgets/instagram-feed.php:1242
-#: modules/price-table/widgets/price-table.php:3347
+#: modules/price-table/widgets/price-table.php:3348
 #: modules/woocommerce/skins/skin-grid-default.php:919
 #: modules/woocommerce/skins/skin-grid-default.php:1134
 #: modules/woocommerce/skins/skin-grid-franko.php:837
@@ -12579,7 +12577,7 @@ msgstr "Ingelijst"
 
 #: modules/nav-menu/widgets/nav-menu.php:1158
 #: modules/nav-menu/widgets/nav-menu.php:1200
-#: modules/price-table/widgets/price-table.php:3288
+#: modules/price-table/widgets/price-table.php:3289
 #: modules/registration-form/widgets/registration-form.php:2121
 msgid "Animation"
 msgstr "Animatie"
@@ -12753,42 +12751,42 @@ msgstr "Uit - Canvas - ID"
 msgid "Click here to edit the \"Off- Canvas\" settings. This text will not be visible on frontend."
 msgstr "Klik hier om de \"Off-Canvas\" instellingen te bewerken. Deze tekst zal niet zichtbaar zijn aan de voorkant."
 
-#: modules/particles/module.php:213
+#: modules/particles/module.php:232
 #. translators: %s admin link
 msgid "%1s - Particle Backgrounds"
 msgstr "%1s - Deeltjesachtergronden"
 
-#: modules/particles/module.php:221
+#: modules/particles/module.php:240
 msgid "Enable Particle Background"
 msgstr "Deeltjesachtergrond inschakelen"
 
-#: modules/particles/module.php:238
+#: modules/particles/module.php:257
 msgid "Polygon"
 msgstr "Veelhoek"
 
-#: modules/particles/module.php:239
+#: modules/particles/module.php:258
 msgid "NASA"
 msgstr "NASA"
 
-#: modules/particles/module.php:240
+#: modules/particles/module.php:259
 #: modules/party-propz-extension/module.php:285
 #: modules/party-propz-extension/module.php:729
 msgid "Snow"
 msgstr "Sneeuw"
 
-#: modules/particles/module.php:241
+#: modules/particles/module.php:260
 msgid "Snowflakes"
 msgstr "Sneeuwvlokken"
 
-#: modules/particles/module.php:242
+#: modules/particles/module.php:261
 msgid "Christmas"
 msgstr "Kerstmis"
 
-#: modules/particles/module.php:243
+#: modules/particles/module.php:262
 msgid "Halloween"
 msgstr "Halloween"
 
-#: modules/particles/module.php:257
+#: modules/particles/module.php:276
 #. translators: %s admin link
 msgid ""
 "Add custom JSON for the Particle Background below. To generate a completely customized background style follow steps "
@@ -12797,7 +12795,7 @@ msgstr ""
 "Voeg aangepaste JSON toe voor de deeltjesachtergrond hieronder. Volg de onderstaande stappen om een volledig aangepaste "
 "achtergrondstijl te genereren -"
 
-#: modules/particles/module.php:271
+#: modules/particles/module.php:290
 #. translators: %s admin link
 msgid ""
 "1. Visit a link %1$s here %2$s and choose required attributes for particle </br></br> 2. Once a custom style is "
@@ -12808,36 +12806,36 @@ msgstr ""
 "stijl is gemaakt, download de JSON van de link \"Download huidige configuratie (json)\" </br></br> 3. Kopieer de "
 "JSON-code uit het gedownloade bestand en plak deze hieronder"
 
-#: modules/particles/module.php:286
+#: modules/particles/module.php:305
 #. translators: %s admin link
 msgid "To know more about creating a custom style, refer to a document %1$s here %2$s."
 msgstr "Om meer te weten te komen over het maken van een aangepaste stijl, raadpleeg een document %1$s hier %2$s."
 
-#: modules/particles/module.php:312
+#: modules/particles/module.php:331
 msgid "Particle Color"
 msgstr "Deelkleur"
 
-#: modules/particles/module.php:346
+#: modules/particles/module.php:365
 msgid "Flow Direction"
 msgstr "Stroomrichting"
 
-#: modules/particles/module.php:387
+#: modules/particles/module.php:406
 msgid "Number of Particles"
 msgstr "Aantal deeltjes"
 
-#: modules/particles/module.php:407
+#: modules/particles/module.php:426
 msgid "Particle Size"
 msgstr "Deeltjesgrootte"
 
-#: modules/particles/module.php:427
+#: modules/particles/module.php:446
 msgid "Move Speed"
 msgstr "Bewegingssnelheid"
 
-#: modules/particles/module.php:448
+#: modules/particles/module.php:467
 msgid "Enable Hover Effect"
 msgstr "Hover-effect inschakelen"
 
-#: modules/particles/module.php:467
+#: modules/particles/module.php:486
 #. translators: %s admin link
 msgid ""
 "Particle hover effect will not work in the following scenarios - </br></br> 1. In the Elementor backend "
@@ -12848,7 +12846,7 @@ msgstr ""
 "editor</br></br> 2. Inhoud/ruimtehouder toegevoegd in de sectie/kolom neemt de volledige ruimte in beslag en maakt deze "
 "ontoegankelijk. Het toevoegen van opvulling aan de sectie/kolom kan dit oplossen."
 
-#: modules/particles/module.php:484
+#: modules/particles/module.php:503
 #. translators: %s admin link
 msgid "Learn more about this %1$s here. %2$s"
 msgstr "Lees hier meer over deze %1$s. %2$s"
@@ -13596,21 +13594,21 @@ msgid "Note: Number of columns <b>excludes</b> featured post."
 msgstr "Opmerking: Het aantal kolommen <b>exclusief</b> de uitgelichte post."
 
 #: modules/posts/template-blocks/skin-feed.php:190
-#: modules/posts/template-blocks/skin-style.php:1292
+#: modules/posts/template-blocks/skin-style.php:1316
 msgid "Taxonomy Filter"
 msgstr "Taxonomie Filter"
 
-#: modules/posts/template-blocks/skin-style.php:1526
+#: modules/posts/template-blocks/skin-style.php:1550
 msgid "Some posts do not have featured images. Please fill in all required fields to display posts schema properly."
 msgstr ""
 "Sommige berichten hebben geen uitgelichte afbeeldingen. Vul alle verplichte velden in om het berichtenschema correct "
 "weer te geven."
 
-#: modules/posts/template-blocks/skin-style.php:1529
+#: modules/posts/template-blocks/skin-style.php:1553
 msgid "Some fields are empty under the posts schema section. Please fill in all required fields."
 msgstr "Sommige velden zijn leeg onder de sectie postschema. Vul alstublieft alle vereiste velden in."
 
-#: modules/posts/template-blocks/skin-style.php:1530
+#: modules/posts/template-blocks/skin-style.php:1554
 msgid "Make sure all your posts do have a featured image."
 msgstr "Zorg ervoor dat al je berichten een uitgelichte afbeelding hebben."
 
@@ -14103,12 +14101,12 @@ msgid "Show Disclaimer Text"
 msgstr "Disclaimertekst weergeven"
 
 #: modules/price-table/widgets/price-table.php:1141
-#: modules/price-table/widgets/price-table.php:3303
+#: modules/price-table/widgets/price-table.php:3304
 msgid "Disclaimer Text"
 msgstr "Disclaimertekst"
 
 #: modules/price-table/widgets/price-table.php:1166
-#: modules/price-table/widgets/price-table.php:3380
+#: modules/price-table/widgets/price-table.php:3381
 msgid "Ribbon"
 msgstr "Lint"
 
@@ -14185,35 +14183,35 @@ msgstr "Oneven"
 msgid "Item Spacing"
 msgstr "Itemafstand"
 
-#: modules/price-table/widgets/price-table.php:3210
+#: modules/price-table/widgets/price-table.php:3211
 msgid "Button Shadow"
 msgstr "Knopschaduw"
 
-#: modules/price-table/widgets/price-table.php:3276
+#: modules/price-table/widgets/price-table.php:3277
 msgid "Hover Shadow"
 msgstr "Zweefschaduw"
 
-#: modules/price-table/widgets/price-table.php:3493
+#: modules/price-table/widgets/price-table.php:3494
 #. translators: %1$s doc link
 msgid "%1$s Price Box styles » %2$s"
 msgstr "%1$s Prijsbox stijlen » %2$s"
 
-#: modules/price-table/widgets/price-table.php:3503
+#: modules/price-table/widgets/price-table.php:3504
 #. translators: %1$s doc link
 msgid "%1$s Price value & Currency styling » %2$s"
 msgstr "%1$s Prijswaarde & Valutaopmaak » %2$s"
 
-#: modules/price-table/widgets/price-table.php:3513
+#: modules/price-table/widgets/price-table.php:3514
 #. translators: %1$s doc link
 msgid "%1$s Content / Features area styling » %2$s"
 msgstr "%1$s Inhoud / Functies gebiedsstyling » %2$s"
 
-#: modules/price-table/widgets/price-table.php:3523
+#: modules/price-table/widgets/price-table.php:3524
 #. translators: %1$s doc link
 msgid "%1$s Ribbon styles » %2$s"
 msgstr "%1$s Lintstijlen » %2$s"
 
-#: modules/price-table/widgets/price-table.php:3533
+#: modules/price-table/widgets/price-table.php:3534
 #. translators: %1$s doc link
 msgid "%1$s Hover Animation effects » %2$s"
 msgstr "%1$s Hover-animatie-effecten » %2$s"
@@ -14320,7 +14318,7 @@ msgstr "Honeypot"
 #: modules/registration-form/widgets/registration-form.php:131
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:502
-#: build/main.js:7301
+#: build/main.js:7326
 msgid "reCAPTCHA v3"
 msgstr "reCAPTCHA v3"
 
@@ -17647,532 +17645,540 @@ msgstr "Selecteer een WPForm."
 
 #: build/main.js:2
 #: src/Components/NavMenu.js:128
-#: build/main.js:3414
+#: build/main.js:3417
 msgid "Header & Footer Builder"
 msgstr "Header & Footer Builder"
 
 #: build/main.js:2
 #: src/Components/NavMenu.js:176
-#: build/main.js:3462
+#: build/main.js:3465
 msgid "PRO"
 msgstr "PRO"
 
 #: build/main.js:2
 #: src/Components/NavMenu.js:185
-#: build/main.js:3471
+#: build/main.js:3474
 msgid "Version"
 msgstr "Versie"
 
 #: build/main.js:2
 #: src/Components/NavMenu.js:236
-#: build/main.js:3522
+#: build/main.js:3525
 msgid "Useful Resources"
 msgstr "Nuttige bronnen"
 
 #: build/main.js:2
 #: src/Components/NavMenu.js:250
-#: build/main.js:3536
+#: build/main.js:3539
 msgid "Getting Started"
 msgstr "Aan de slag"
 
 #: build/main.js:2
 #: src/Components/NavMenu.js:260
-#: build/main.js:3546
+#: build/main.js:3549
 msgid "How to use widgets"
 msgstr "Hoe widgets te gebruiken"
 
 #: build/main.js:2
 #: src/Components/NavMenu.js:273
-#: build/main.js:3559
+#: build/main.js:3562
 msgid "How to use features"
 msgstr "Hoe functies te gebruiken"
 
 #: build/main.js:2
 #: src/Components/NavMenu.js:286
-#: build/main.js:3572
+#: build/main.js:3575
 msgid "How to use templates"
 msgstr "Hoe sjablonen te gebruiken"
 
 #: build/main.js:2
 #: src/Components/NavMenu.js:299
-#: build/main.js:3585
+#: build/main.js:3588
 msgid "Contact us"
 msgstr "Neem contact met ons op"
 
 #: build/main.js:2
-#: src/Components/Dashboard/WidgetItem.jsx:120
-#: build/main.js:3787
+#: src/Components/Dashboard/WidgetItem.jsx:121
+#: build/main.js:3791
 msgid "View Demo"
 msgstr "Bekijk demo"
 
 #: build/main.js:2
 #: build/main.js:172
-#: src/Components/Dashboard/WidgetItem.jsx:133
+#: src/Components/Dashboard/WidgetItem.jsx:135
 #: src/Components/Settings/Branding.jsx:137
-#: build/main.js:3800
-#: build/main.js:8141
+#: build/main.js:3805
+#: build/main.js:8166
 msgid "Read Documentation"
 msgstr "Documentatie lezen"
 
 #: build/main.js:2
-#: src/Components/Dashboard/Widgets.jsx:69
-#: build/main.js:3909
+#: src/Components/Dashboard/Widgets.jsx:70
+#: build/main.js:3916
 msgid "Popular Widgets & Features"
 msgstr "Populaire widgets en functies"
 
 #: build/main.js:2
-#: src/Components/Dashboard/Widgets.jsx:72
-#: build/main.js:3912
+#: src/Components/Dashboard/Widgets.jsx:73
+#: build/main.js:3919
 msgid "View All"
 msgstr "Alles bekijken"
 
 #: build/main.js:2
 #: src/Components/Dashboard/TemplateSection.js:67
-#: build/main.js:4036
+#: build/main.js:4043
 msgid "Build Websites 10x Faster with Templates"
 msgstr "Bouw websites 10x sneller met sjablonen"
 
 #: build/main.js:2
 #: src/Components/Dashboard/TemplateSection.js:69
-#: build/main.js:4038
+#: build/main.js:4045
 msgid "Choose from our professionally designed websites to build your site faster, with easy customization options."
 msgstr "Kies uit onze professioneel ontworpen websites om uw site sneller te bouwen, met eenvoudige aanpassingsopties."
 
 #: build/main.js:2
 #: src/Components/Dashboard/TemplateSection.js:80
 #: src/Components/Dashboard/TemplateSection.js:92
-#: build/main.js:4049
-#: build/main.js:4061
+#: build/main.js:4056
+#: build/main.js:4068
 msgid "View Templates"
 msgstr "Bekijk sjablonen"
 
 #: build/main.js:2
 #: src/Components/Dashboard/QuickAccess.js:20
-#: build/main.js:4132
+#: build/main.js:4139
 msgid "Quick Access"
 msgstr "Snelle toegang"
 
 #: build/main.js:2
 #: src/Components/Dashboard/QuickAccess.js:53
-#: build/main.js:4165
+#: build/main.js:4172
 msgid "Premium Support"
 msgstr "Premium Ondersteuning"
 
 #: build/main.js:2
 #: src/Components/Dashboard/QuickAccess.js:69
-#: build/main.js:4181
+#: build/main.js:4188
 msgid "Help Centre"
 msgstr "Helpcentrum"
 
 #: build/main.js:2
 #: src/Components/Dashboard/QuickAccess.js:101
-#: build/main.js:4213
+#: build/main.js:4220
 msgid "Request a Feature"
 msgstr "Vraag een functie aan"
 
 #: build/main.js:2
 #: src/Components/Dashboard/WelcomeContainer.js:24
-#: build/main.js:4281
+#: build/main.js:4288
 msgid "Hello,"
 msgstr "Hallo,"
 
 #: build/main.js:2
-#: src/Components/Dashboard/WelcomeContainer.js:61
-#: build/main.js:4318
+#: build/main.js:172
+#: src/Components/Dashboard/WelcomeContainer.js:62
+#: src/Components/Onboarding/Build.jsx:152
+#: build/main.js:4326
+#: build/main.js:9892
 msgid "Create Header/Footer"
 msgstr "Koptekst/Voettekst maken"
 
 #: build/main.js:2
-#: src/Components/Dashboard/WelcomeContainer.js:91
-#: src/Components/Dashboard/WelcomeContainer.js:120
-#: build/main.js:4348
-#: build/main.js:4377
+#: build/main.js:172
+#: src/Components/Dashboard/WelcomeContainer.js:92
+#: src/Components/Dashboard/WelcomeContainer.js:121
+#: src/Components/Onboarding/Build.jsx:182
+#: src/Components/Onboarding/Build.jsx:210
+#: build/main.js:4356
+#: build/main.js:4385
+#: build/main.js:9922
+#: build/main.js:9950
 msgid "Create New Page"
 msgstr "Nieuwe pagina maken"
 
 #: build/main.js:2
-#: src/Components/Dashboard/WelcomeContainer.js:151
-#: build/main.js:4408
+#: src/Components/Dashboard/WelcomeContainer.js:152
+#: build/main.js:4416
 msgid "Read full guide"
 msgstr "Lees de volledige gids"
 
 #: build/main.js:2
 #: src/Components/Dashboard/ExtendWebsiteWidget.jsx:144
-#: build/main.js:4600
+#: build/main.js:4608
 msgid "Activating.."
 msgstr "Activeren.."
 
 #: build/main.js:2
 #: src/Components/Dashboard/ExtendWebsiteWidget.jsx:156
-#: build/main.js:4612
+#: build/main.js:4620
 msgid "Activated"
 msgstr "Geactiveerd"
 
 #: build/main.js:2
 #: src/Components/Dashboard/ExtendWebsiteWidget.jsx:86
 #: src/Components/Dashboard/ExtendWebsiteWidget.jsx:173
-#: build/main.js:4542
-#: build/main.js:4629
+#: build/main.js:4550
+#: build/main.js:4637
 msgid "Activate"
 msgstr "Activeren"
 
 #: build/main.js:2
 #: src/Components/Dashboard/ExtendWebsiteWidget.jsx:200
-#: build/main.js:4656
+#: build/main.js:4664
 msgid "Free"
 msgstr "Gratis"
 
 #: build/main.js:2
 #: src/Components/Dashboard/ExtendWebsiteWidget.jsx:72
-#: build/main.js:4528
+#: build/main.js:4536
 msgid "Installing.."
 msgstr "Installeren.."
 
 #: build/main.js:2
 #: src/Components/Dashboard/ExtendWebsiteWidget.jsx:80
-#: build/main.js:4536
+#: build/main.js:4544
 msgid "Installed"
 msgstr "Geïnstalleerd"
 
 #: build/main.js:2
 #: src/Components/Dashboard/ExtendWebsiteWidget.jsx:91
-#: build/main.js:4547
+#: build/main.js:4555
 msgid "Install"
 msgstr "Installeren"
 
 #: build/main.js:2
 #: src/Components/Dashboard/ExtendWebsiteWidget.jsx:94
-#: build/main.js:4550
+#: build/main.js:4558
 msgid "Theme Installation failed, Please try again later."
 msgstr "Thema-installatie mislukt, probeer het later opnieuw."
 
 #: build/main.js:2
 #: src/Components/Dashboard/ExtendWebsiteWidget.jsx:95
-#: build/main.js:4551
+#: build/main.js:4559
 msgid "Plugin Installation failed, Please try again later."
 msgstr "Installatie van plugin mislukt, probeer het later opnieuw."
 
 #: build/main.js:2
 #: src/Components/Dashboard/ExtendWebsiteWidget.jsx:222
-#: build/main.js:4678
+#: build/main.js:4686
 msgid "Visit Site"
 msgstr "Bezoek site"
 
 #: build/main.js:2
 #: src/Components/Dashboard/ExtendWebsiteWidget.jsx:234
-#: build/main.js:4690
+#: build/main.js:4698
 msgid "Activate Theme"
 msgstr "Thema activeren"
 
 #: build/main.js:2
 #: src/Components/Dashboard/ExtendWebsiteWidget.jsx:238
-#: build/main.js:4694
+#: build/main.js:4702
 msgid "Are you sure you want to switch your current theme to Astra?"
 msgstr "Weet je zeker dat je je huidige thema wilt wijzigen naar Astra?"
 
 #: build/main.js:2
 #: src/Components/Dashboard/ExtendWebsiteWidget.jsx:246
-#: build/main.js:4702
+#: build/main.js:4710
 msgid "Close"
 msgstr "Sluiten"
 
 #: build/main.js:2
 #: src/Components/Dashboard/ExtendWebsite.jsx:56
-#: build/main.js:4778
+#: build/main.js:4786
 msgid "Extend Your Website"
 msgstr "Breid uw website uit"
 
 #: build/main.js:2
 #: src/Components/Dashboard/VideoTutorials.jsx:10
-#: build/main.js:4871
+#: build/main.js:4879
 msgid "Video Tutorial 1"
 msgstr "Videotutorial 1"
 
 #: build/main.js:2
 #: src/Components/Dashboard/VideoTutorials.jsx:15
-#: build/main.js:4876
+#: build/main.js:4884
 msgid "Video Tutorial 2"
 msgstr "Videotutorial 2"
 
 #: build/main.js:2
 #: src/Components/Dashboard/VideoTutorials.jsx:20
-#: build/main.js:4881
+#: build/main.js:4889
 msgid "Video Tutorial 3"
 msgstr "Videotutorial 3"
 
 #: build/main.js:2
 #: src/Components/Dashboard/VideoTutorials.jsx:25
-#: build/main.js:4886
+#: build/main.js:4894
 msgid "Video Tutorial 4"
 msgstr "Videotutorial 4"
 
 #: build/main.js:2
 #: src/Components/Dashboard/VideoTutorials.jsx:30
-#: build/main.js:4891
+#: build/main.js:4899
 msgid "Video Tutorial 5"
 msgstr "Videotutorial 5"
 
 #: build/main.js:2
 #: src/Components/Dashboard/VideoTutorials.jsx:35
-#: build/main.js:4896
+#: build/main.js:4904
 msgid "Video Tutorial 6"
 msgstr "Videotutorial 6"
 
 #: build/main.js:2
 #: src/Components/Dashboard/VideoTutorials.jsx:40
-#: build/main.js:4901
+#: build/main.js:4909
 msgid "Video Tutorial 7"
 msgstr "Videotutorial 7"
 
 #: build/main.js:2
 #: src/Components/Dashboard/VideoTutorials.jsx:45
-#: build/main.js:4906
+#: build/main.js:4914
 msgid "Video Tutorial 8"
 msgstr "Videotutorial 8"
 
 #: build/main.js:2
 #: src/Components/Dashboard/VideoTutorials.jsx:50
-#: build/main.js:4911
+#: build/main.js:4919
 msgid "Video Tutorial 9"
 msgstr "Videotutorial 9"
 
 #: build/main.js:2
 #: src/Components/Dashboard/VideoTutorials.jsx:55
-#: build/main.js:4916
+#: build/main.js:4924
 msgid "Video Tutorial 10"
 msgstr "Videotutorial 10"
 
 #: build/main.js:2
 #: src/Components/Dashboard/VideoTutorials.jsx:60
-#: build/main.js:4921
+#: build/main.js:4929
 msgid "Video Tutorial 11"
 msgstr "Videotutorial 11"
 
 #: build/main.js:2
 #: src/Components/Dashboard/VideoTutorials.jsx:65
-#: build/main.js:4926
+#: build/main.js:4934
 msgid "Video Tutorial 12"
 msgstr "Videotutorial 12"
 
 #: build/main.js:2
 #: src/Components/Dashboard/VideoTutorials.jsx:70
-#: build/main.js:4931
+#: build/main.js:4939
 msgid "Video Tutorial 13"
 msgstr "Videotutorial 13"
 
 #: build/main.js:2
 #: src/Components/Dashboard/VideoTutorials.jsx:75
-#: build/main.js:4936
+#: build/main.js:4944
 msgid "Video Tutorial 14"
 msgstr "Videotutorial 14"
 
 #: build/main.js:2
 #: src/Components/Dashboard/VideoTutorials.jsx:80
-#: build/main.js:4941
+#: build/main.js:4949
 msgid "Video Tutorial 15"
 msgstr "Videotutorial 15"
 
 #: build/main.js:2
 #: src/Components/Dashboard/VideoTutorials.jsx:85
-#: build/main.js:4946
+#: build/main.js:4954
 msgid "Video Tutorial 16"
 msgstr "Videotutorial 16"
 
 #: build/main.js:2
 #: src/Components/Dashboard/VideoTutorials.jsx:90
-#: build/main.js:4951
+#: build/main.js:4959
 msgid "Video Tutorial 17"
 msgstr "Videotutorial 17"
 
 #: build/main.js:2
 #: src/Components/Dashboard/VideoTutorials.jsx:95
-#: build/main.js:4956
+#: build/main.js:4964
 msgid "Video Tutorial 18"
 msgstr "Videotutorial 18"
 
 #: build/main.js:2
 #: src/Components/Dashboard/VideoTutorials.jsx:100
-#: build/main.js:4961
+#: build/main.js:4969
 msgid "Video Tutorial 19"
 msgstr "Videotutorial 19"
 
 #: build/main.js:2
 #: src/Components/Dashboard/VideoTutorials.jsx:105
-#: build/main.js:4966
+#: build/main.js:4974
 msgid "Video Tutorial 20"
 msgstr "Videotutorial 20"
 
 #: build/main.js:2
 #: src/Components/Dashboard/VideoTutorials.jsx:110
-#: build/main.js:4971
+#: build/main.js:4979
 msgid "Video Tutorial 21"
 msgstr "Videotutorial 21"
 
 #: build/main.js:2
 #: src/Components/Dashboard/VideoTutorials.jsx:115
-#: build/main.js:4976
+#: build/main.js:4984
 msgid "Video Tutorial 22"
 msgstr "Videotutorial 22"
 
 #: build/main.js:2
 #: src/Components/Dashboard/VideoTutorials.jsx:120
-#: build/main.js:4981
+#: build/main.js:4989
 msgid "Video Tutorial 23"
 msgstr "Videotutorial 23"
 
 #: build/main.js:2
 #: src/Components/Dashboard/VideoTutorials.jsx:125
-#: build/main.js:4986
+#: build/main.js:4994
 msgid "Video Tutorial 24"
 msgstr "Videotutorial 24"
 
 #: build/main.js:2
 #: src/Components/Dashboard/VideoTutorials.jsx:130
-#: build/main.js:4991
+#: build/main.js:4999
 msgid "Video Tutorial 25"
 msgstr "Videotutorial 25"
 
 #: build/main.js:2
 #: src/Components/Dashboard/VideoTutorials.jsx:135
-#: build/main.js:4996
+#: build/main.js:5004
 msgid "Video Tutorial 26"
 msgstr "Videotutorial 26"
 
 #: build/main.js:2
 #: src/Components/Dashboard/VideoTutorials.jsx:140
-#: build/main.js:5001
+#: build/main.js:5009
 msgid "Video Tutorial 27"
 msgstr "Videotutorial 27"
 
 #: build/main.js:2
 #: src/Components/Dashboard/VideoTutorials.jsx:145
-#: build/main.js:5006
+#: build/main.js:5014
 msgid "Video Tutorial 28"
 msgstr "Videotutorial 28"
 
 #: build/main.js:2
 #: src/Components/Dashboard/VideoTutorials.jsx:150
-#: build/main.js:5011
+#: build/main.js:5019
 msgid "Video Tutorial 29"
 msgstr "Videotutorial 29"
 
 #: build/main.js:2
 #: src/Components/Dashboard/VideoTutorials.jsx:222
-#: build/main.js:5083
+#: build/main.js:5091
 msgid "Video Tutorials"
 msgstr "Videotutorials"
 
 #: build/main.js:2
-#: src/Components/Widgets/Features/FeatureWidgets.jsx:130
-#: build/main.js:5351
+#: src/Components/Widgets/Features/FeatureWidgets.jsx:131
+#: build/main.js:5360
 msgid "Widgets / Features"
 msgstr "Widgets / Functies"
 
 #: build/main.js:2
-#: src/Components/Widgets/Features/FeatureWidgets.jsx:142
-#: build/main.js:5363
+#: src/Components/Widgets/Features/FeatureWidgets.jsx:143
+#: build/main.js:5372
 msgid "Search..."
 msgstr "Zoeken..."
 
 #: build/main.js:2
 #: build/main.js:172
 #: src/Components/Settings/MyAccount.jsx:153
-#: src/Components/Widgets/Features/FeatureWidgets.jsx:164
-#: build/main.js:5385
-#: build/main.js:6766
+#: src/Components/Widgets/Features/FeatureWidgets.jsx:165
+#: build/main.js:5394
+#: build/main.js:6791
 msgid "Activating..."
 msgstr "Activeren..."
 
 #: build/main.js:2
-#: src/Components/Widgets/Features/FeatureWidgets.jsx:164
-#: build/main.js:5385
+#: src/Components/Widgets/Features/FeatureWidgets.jsx:165
+#: build/main.js:5394
 msgid "Activate All"
 msgstr "Alles activeren"
 
 #: build/main.js:2
 #: build/main.js:172
 #: src/Components/Settings/MyAccount.jsx:153
-#: src/Components/Widgets/Features/FeatureWidgets.jsx:174
-#: build/main.js:5395
-#: build/main.js:6766
+#: src/Components/Widgets/Features/FeatureWidgets.jsx:175
+#: build/main.js:5404
+#: build/main.js:6791
 msgid "Deactivating..."
 msgstr "Deactiveren..."
 
 #: build/main.js:2
-#: src/Components/Widgets/Features/FeatureWidgets.jsx:174
-#: build/main.js:5395
+#: src/Components/Widgets/Features/FeatureWidgets.jsx:175
+#: build/main.js:5404
 msgid "Deactivate All"
 msgstr "Alles deactiveren"
 
 #: build/main.js:2
 #: src/Components/Templates/ExploreTemplates.jsx:17
-#: build/main.js:5560
+#: build/main.js:5569
 msgid "250+ templates for every niche"
 msgstr "250+ sjablonen voor elke niche"
 
 #: build/main.js:2
 #: src/Components/Templates/ExploreTemplates.jsx:22
-#: build/main.js:5565
+#: build/main.js:5574
 msgid "Modern, timeless designs"
 msgstr "Moderne, tijdloze ontwerpen"
 
 #: build/main.js:2
 #: src/Components/Templates/ExploreTemplates.jsx:27
-#: build/main.js:5570
+#: build/main.js:5579
 msgid "Full design flexibility for easy customization"
 msgstr "Volledige ontwerpflexibiliteit voor eenvoudige aanpassing"
 
 #: build/main.js:2
 #: src/Components/Templates/ExploreTemplates.jsx:32
-#: build/main.js:5575
+#: build/main.js:5584
 msgid "100% responsive across all devices"
 msgstr "100% responsief op alle apparaten"
 
 #: build/main.js:2
 #: src/Components/Templates/ExploreTemplates.jsx:65
 #: src/Components/Templates/ExploreTemplates.jsx:94
-#: build/main.js:5608
-#: build/main.js:5637
+#: build/main.js:5617
+#: build/main.js:5646
 msgid "Install Starter Templates"
 msgstr "Starter-sjablonen installeren"
 
 #: build/main.js:2
 #: src/Components/Templates/ExploreTemplates.jsx:65
 #: src/Components/Templates/ExploreTemplates.jsx:165
-#: build/main.js:5608
-#: build/main.js:5708
+#: build/main.js:5617
+#: build/main.js:5717
 msgid "Activate Starter Templates"
 msgstr "Starter-sjablonen activeren"
 
 #: build/main.js:2
 #: src/Components/Templates/ExploreTemplates.jsx:100
 #: src/Components/Templates/ExploreTemplates.jsx:154
-#: build/main.js:5643
-#: build/main.js:5697
+#: build/main.js:5652
+#: build/main.js:5706
 msgid "Activating Starter Templates..."
 msgstr "Starter-sjablonen activeren..."
 
 #: build/main.js:2
 #: src/Components/Templates/ExploreTemplates.jsx:156
-#: build/main.js:5699
+#: build/main.js:5708
 msgid "Activated Starter Templates"
 msgstr "Geactiveerde Starter Templates"
 
 #: build/main.js:2
 #: src/Components/Templates/ExploreTemplates.jsx:189
-#: build/main.js:5732
+#: build/main.js:5741
 msgid "Design Your Website in Minutes"
 msgstr "Ontwerp je website in enkele minuten"
 
 #: build/main.js:2
 #: src/Components/Templates/ExploreTemplates.jsx:198
-#: build/main.js:5741
+#: build/main.js:5750
 msgid "Build your website faster using our prebuilt templates"
 msgstr "Bouw je website sneller met onze vooraf gebouwde sjablonen"
 
 #: build/main.js:2
 #: src/Components/Templates/ExploreTemplates.jsx:203
-#: build/main.js:5746
+#: build/main.js:5755
 msgid ""
 "Stop building your site from scratch. Use our professional templates for your stunning website.It is easy to customize "
 "and completely responsive. Explore hundreds of designs and bring your vision to life in no time."
@@ -18183,33 +18189,33 @@ msgstr ""
 
 #: build/main.js:2
 #: src/Components/Templates/ExploreTemplates.jsx:81
-#: build/main.js:5624
+#: build/main.js:5633
 msgid "Installing Starter Templates..."
 msgstr "Starter Templates installeren..."
 
 #: build/main.js:2
 #: src/Components/Templates/ExploreTemplates.jsx:90
-#: build/main.js:5633
+#: build/main.js:5642
 msgid "Installed Starter Templates"
 msgstr "Geïnstalleerde Starter Templates"
 
 #: build/main.js:2
 #: src/Components/Templates/ExploreTemplates.jsx:236
-#: build/main.js:5779
+#: build/main.js:5788
 msgid "Explore Templates"
 msgstr "Verken sjablonen"
 
 #: build/main.js:172
 #: src/Components/Settings/ThemeSupport.jsx:9
-#: build/main.js:6094
+#: build/main.js:6103
 msgid "Option 1 (Recommended)"
 msgstr "Optie 1 (Aanbevolen)"
 
 #: build/main.js:172
 #: src/Components/Settings/ThemeSupport.jsx:10
 #: src/Components/Settings/ThemeSupport.jsx:16
-#: build/main.js:6095
-#: build/main.js:6101
+#: build/main.js:6104
+#: build/main.js:6110
 msgid ""
 "This option will automatically replace your theme's header and footer files with custom templates from the plugin. It "
 "works with most themes and is selected by default."
@@ -18219,173 +18225,180 @@ msgstr ""
 
 #: build/main.js:172
 #: src/Components/Settings/ThemeSupport.jsx:15
-#: build/main.js:6100
+#: build/main.js:6109
 msgid "Option 2"
 msgstr "Optie 2"
 
 #: build/main.js:172
 #: src/Components/Settings/ThemeSupport.jsx:91
-#: build/main.js:6176
+#: build/main.js:6185
 msgid "Select Option to Add Theme Support"
 msgstr "Selecteer optie om themasteun toe te voegen"
 
 #: build/main.js:172
 #: src/Components/Settings/ThemeSupport.jsx:136
-#: build/main.js:6221
+#: build/main.js:6230
 msgid "Note:"
 msgstr "Opmerking:"
 
 #: build/main.js:172
 #: src/Components/Settings/ThemeSupport.jsx:136
-#: build/main.js:6221
+#: build/main.js:6230
 msgid "If neither option works, please contact your theme author to add support for this plugin."
 msgstr ""
 "Als geen van beide opties werkt, neem dan contact op met de auteur van je thema om ondersteuning voor deze plugin toe "
 "te voegen."
 
 #: build/main.js:172
+#: src/Components/Settings/Settings.jsx:73
 #: src/Components/Settings/VersionControl.jsx:103
-#: build/main.js:6360
+#: build/main.js:6369
+#: build/main.js:8840
 msgid "Version Control"
 msgstr "Versiebeheer"
 
 #: build/main.js:172
-#: src/Components/Settings/VersionControl.jsx:126
-#: src/Components/Settings/VersionControl.jsx:222
-#: build/main.js:6383
-#: build/main.js:6479
+#: src/Components/Settings/VersionControl.jsx:129
+#: src/Components/Settings/VersionControl.jsx:232
+#: build/main.js:6395
+#: build/main.js:6498
 msgid "Experiencing an issue with current version? Roll back to a previous version to help troubleshoot the issue."
 msgstr "Ervaar je een probleem met de huidige versie? Ga terug naar een eerdere versie om het probleem te helpen oplossen."
 
 #: build/main.js:172
-#: src/Components/Settings/VersionControl.jsx:168
-#: src/Components/Settings/VersionControl.jsx:185
-#: src/Components/Settings/VersionControl.jsx:270
-#: src/Components/Settings/VersionControl.jsx:287
-#: build/main.js:6425
-#: build/main.js:6442
-#: build/main.js:6527
-#: build/main.js:6544
+#: src/Components/Settings/VersionControl.jsx:171
+#: src/Components/Settings/VersionControl.jsx:192
+#: src/Components/Settings/VersionControl.jsx:280
+#: src/Components/Settings/VersionControl.jsx:297
+#: build/main.js:6437
+#: build/main.js:6458
+#: build/main.js:6546
+#: build/main.js:6563
 msgid "Rollback"
 msgstr "Terugdraaien"
 
 #: build/main.js:172
-#: src/Components/Settings/VersionControl.jsx:175
-#: src/Components/Settings/VersionControl.jsx:277
-#: build/main.js:6432
-#: build/main.js:6534
+#: src/Components/Settings/VersionControl.jsx:178
+#: src/Components/Settings/VersionControl.jsx:287
+#: build/main.js:6444
+#: build/main.js:6553
 msgid "Rollback to Previous Version"
 msgstr "Terugzetten naar vorige versie"
 
 #: build/main.js:172
-#: src/Components/Settings/VersionControl.jsx:188
-#: src/Components/Settings/VersionControl.jsx:290
-#: build/main.js:6445
-#: build/main.js:6547
+#: src/Components/Settings/VersionControl.jsx:195
+#: src/Components/Settings/VersionControl.jsx:300
+#: build/main.js:6461
+#: build/main.js:6566
 msgid "Cancel"
 msgstr "Annuleren"
 
 #: build/main.js:172
-#: src/Components/Settings/VersionControl.jsx:319
-#: build/main.js:6576
+#: src/Components/Settings/VersionControl.jsx:329
+#: build/main.js:6595
 msgid "Enable Beta Version"
 msgstr "Bèta-versie inschakelen"
 
 #: build/main.js:172
-#: src/Components/Settings/VersionControl.jsx:325
-#: build/main.js:6582
+#: src/Components/Settings/VersionControl.jsx:341
+#: build/main.js:6607
 msgid "Please read "
 msgstr "Lees alsjeblieft"
 
 #: build/main.js:172
-#: src/Components/Settings/VersionControl.jsx:332
-#: build/main.js:6589
+#: src/Components/Settings/VersionControl.jsx:348
+#: build/main.js:6614
 msgid "this article"
 msgstr "dit artikel"
 
 #: build/main.js:172
-#: src/Components/Settings/VersionControl.jsx:334
-#: build/main.js:6591
+#: src/Components/Settings/VersionControl.jsx:350
+#: build/main.js:6616
 msgid " to know more."
 msgstr "om meer te weten."
 
 #: build/main.js:172
 #: src/Components/Settings/MyAccount.jsx:14
-#: build/main.js:6627
+#: build/main.js:6652
 msgid "Your license is active."
 msgstr "Uw licentie is actief."
 
 #: build/main.js:172
 #: src/Components/Settings/MyAccount.jsx:14
-#: build/main.js:6627
+#: build/main.js:6652
 msgid "Paste your license key here"
 msgstr "Plak hier uw licentiesleutel"
 
 #: build/main.js:172
 #: src/Components/Settings/MyAccount.jsx:102
-#: build/main.js:6715
+#: src/Components/Settings/Settings.jsx:33
+#: build/main.js:6740
+#: build/main.js:8800
 msgid "My Account"
 msgstr "Mijn account"
 
 #: build/main.js:172
+#: src/Components/Settings/Account.jsx:21
 #: src/Components/Settings/Integrations.jsx:867
 #: src/Components/Settings/MyAccount.jsx:116
-#: build/main.js:6729
-#: build/main.js:7666
+#: build/main.js:6754
+#: build/main.js:7691
 msgid "License Key"
 msgstr "Licentiesleutel"
 
 #: build/main.js:172
 #: src/Components/Settings/MyAccount.jsx:62
-#: build/main.js:6675
+#: build/main.js:6700
 msgid "License successfully deactivated!"
 msgstr "Licentie succesvol gedeactiveerd!"
 
 #: build/main.js:172
 #: src/Components/Settings/MyAccount.jsx:65
 #: src/Components/Settings/MyAccount.jsx:66
-#: build/main.js:6678
-#: build/main.js:6679
+#: build/main.js:6703
+#: build/main.js:6704
 msgid "An error occurred while deactivating license."
 msgstr "Er is een fout opgetreden bij het deactiveren van de licentie."
 
 #: build/main.js:172
 #: src/Components/Settings/MyAccount.jsx:18
 #: src/Components/Settings/MyAccount.jsx:41
-#: build/main.js:6631
-#: build/main.js:6654
+#: build/main.js:6656
+#: build/main.js:6679
 msgid "Please enter a valid license key!"
 msgstr "Voer een geldige licentiesleutel in!"
 
 #: build/main.js:172
 #: src/Components/Settings/MyAccount.jsx:19
 #: src/Components/Settings/MyAccount.jsx:42
-#: build/main.js:6632
-#: build/main.js:6655
+#: build/main.js:6657
+#: build/main.js:6680
 msgid "Enter a valid license key!"
 msgstr "Voer een geldige licentiesleutel in!"
 
 #: build/main.js:172
 #: src/Components/Settings/MyAccount.jsx:38
-#: build/main.js:6651
+#: build/main.js:6676
 msgid "License successfully validated!"
 msgstr "Licentie succesvol gevalideerd!"
 
 #: build/main.js:172
 #: src/Components/Settings/MyAccount.jsx:154
-#: build/main.js:6767
+#: build/main.js:6792
 msgid "Deactivate License"
 msgstr "Licentie deactiveren"
 
 #: build/main.js:172
 #: src/Components/Settings/MyAccount.jsx:154
-#: build/main.js:6767
+#: build/main.js:6792
 msgid "Activate License"
 msgstr "Licentie activeren"
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:206
-#: build/main.js:7005
+#: src/Components/Settings/Settings.jsx:114
+#: build/main.js:7030
+#: build/main.js:8881
 msgid "Integrations"
 msgstr "Integraties"
 
@@ -18393,9 +18406,9 @@ msgstr "Integraties"
 #: src/Components/Settings/Branding.jsx:147
 #: src/Components/Settings/Integrations.jsx:222
 #: src/Components/Settings/Integrations.jsx:1168
-#: build/main.js:7021
-#: build/main.js:7967
-#: build/main.js:8151
+#: build/main.js:7046
+#: build/main.js:7992
+#: build/main.js:8176
 msgid "Saving..."
 msgstr "Opslaan..."
 
@@ -18403,21 +18416,21 @@ msgstr "Opslaan..."
 #: src/Components/Settings/Branding.jsx:147
 #: src/Components/Settings/Integrations.jsx:222
 #: src/Components/Settings/Integrations.jsx:1168
-#: build/main.js:7021
-#: build/main.js:7967
-#: build/main.js:8151
+#: build/main.js:7046
+#: build/main.js:7992
+#: build/main.js:8176
 msgid "Save"
 msgstr "Opslaan"
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:263
-#: build/main.js:7062
+#: build/main.js:7087
 msgid "API Key"
 msgstr "API-sleutel"
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:267
-#: build/main.js:7066
+#: build/main.js:7091
 msgid "Note: This setting is required if you wish to use Google Map in your website. "
 msgstr "Opmerking: Deze instelling is vereist als u Google Maps op uw website wilt gebruiken."
 
@@ -18433,35 +18446,35 @@ msgstr "Opmerking: Deze instelling is vereist als u Google Maps op uw website wi
 #: src/Components/Settings/Integrations.jsx:853
 #: src/Components/Settings/Integrations.jsx:953
 #: src/Components/Settings/Integrations.jsx:1049
-#: build/main.js:7073
-#: build/main.js:7118
-#: build/main.js:7188
-#: build/main.js:7248
-#: build/main.js:7310
-#: build/main.js:7447
-#: build/main.js:7491
-#: build/main.js:7599
-#: build/main.js:7652
-#: build/main.js:7752
-#: build/main.js:7848
+#: build/main.js:7098
+#: build/main.js:7143
+#: build/main.js:7213
+#: build/main.js:7273
+#: build/main.js:7335
+#: build/main.js:7472
+#: build/main.js:7516
+#: build/main.js:7624
+#: build/main.js:7677
+#: build/main.js:7777
+#: build/main.js:7873
 msgid "Need Help?"
 msgstr "Hulp nodig?"
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:286
-#: build/main.js:7085
+#: build/main.js:7110
 msgid "Paste your API Key here"
 msgstr "Plak hier uw API-sleutel"
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:308
-#: build/main.js:7107
+#: build/main.js:7132
 msgid "Localization Language"
 msgstr "Lokalisatie Taal"
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:312
-#: build/main.js:7111
+#: build/main.js:7136
 msgid ""
 "Note: This setting sets localization language to google map. The language affects the names of controls, copyright "
 "notices, driving directions, and control labels. "
@@ -18471,25 +18484,25 @@ msgstr ""
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:378
-#: build/main.js:7177
+#: build/main.js:7202
 msgid "Google Places API Key"
 msgstr "Google Places API-sleutel"
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:382
-#: build/main.js:7181
+#: build/main.js:7206
 msgid "Note: This setting is required if you wish to use Google Places Reviews in your website. "
 msgstr "Opmerking: Deze instelling is vereist als u Google Places Reviews op uw website wilt gebruiken."
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:402
-#: build/main.js:7201
+#: build/main.js:7226
 msgid "Enter Google Places API Key"
 msgstr "Voer de Google Places API-sleutel in"
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:416
-#: build/main.js:7215
+#: build/main.js:7240
 msgid "Google now requires an active billing account associated with your API Key. To enable billing click "
 msgstr ""
 "Google vereist nu een actief factureringsaccount dat is gekoppeld aan uw API-sleutel. Om facturering in te schakelen, "
@@ -18497,37 +18510,37 @@ msgstr ""
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:423
-#: build/main.js:7222
+#: build/main.js:7247
 msgid "here!"
 msgstr "hier!"
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:438
-#: build/main.js:7237
+#: build/main.js:7262
 msgid "Yelp API Key"
 msgstr "Yelp API-sleutel"
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:442
-#: build/main.js:7241
+#: build/main.js:7266
 msgid "Note: This setting is required if you wish to use Yelp Reviews in your website. "
 msgstr "Opmerking: Deze instelling is vereist als u Yelp-recensies op uw website wilt gebruiken."
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:462
-#: build/main.js:7261
+#: build/main.js:7286
 msgid "Enter Yelp API Key"
 msgstr "Voer Yelp API-sleutel in"
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:491
-#: build/main.js:7290
+#: build/main.js:7315
 msgid "Setup reCAPTCHA v3"
 msgstr "reCAPTCHA v3 instellen"
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:504
-#: build/main.js:7303
+#: build/main.js:7328
 msgid ""
 " is a free service by Google that protects your website from spam and abuse. It does this while letting your valid "
 "users pass through with ease. "
@@ -18537,115 +18550,115 @@ msgstr ""
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:524
-#: build/main.js:7323
+#: build/main.js:7348
 msgid "Site key"
 msgstr "Sitesleutel"
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:535
-#: build/main.js:7334
+#: build/main.js:7359
 msgid "Enter reCAPTCHA v3 Key"
 msgstr "Voer reCAPTCHA v3-sleutel in"
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:555
-#: build/main.js:7354
+#: build/main.js:7379
 msgid "Secret key"
 msgstr "Geheime sleutel"
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:566
-#: build/main.js:7365
+#: build/main.js:7390
 msgid "Enter reCAPTCHA v3 Secret Key"
 msgstr "Voer reCAPTCHA v3 geheime sleutel in"
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:585
-#: build/main.js:7384
+#: build/main.js:7409
 msgid "Score Threshold"
 msgstr "Drempelwaarde voor score"
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:596
-#: build/main.js:7395
+#: build/main.js:7420
 msgid "Enter reCAPTCHA v3 Score"
 msgstr "Voer reCAPTCHA v3-score in"
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:637
-#: build/main.js:7436
+#: build/main.js:7461
 msgid "Google Client ID"
 msgstr "Google-client-ID"
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:641
 #: src/Components/Settings/Integrations.jsx:685
-#: build/main.js:7440
-#: build/main.js:7484
+#: build/main.js:7465
+#: build/main.js:7509
 msgid "Note: This setting is required if you wish to use Login with Google in your website. "
 msgstr "Opmerking: Deze instelling is vereist als u wilt inloggen met Google op uw website."
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:661
-#: build/main.js:7460
+#: build/main.js:7485
 msgid "Enter Google Client ID"
 msgstr "Voer Google Client-ID in"
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:681
-#: build/main.js:7480
+#: build/main.js:7505
 msgid "Facebook App Details"
 msgstr "Facebook-appgegevens"
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:707
 #: src/Components/Settings/Integrations.jsx:1064
-#: build/main.js:7506
-#: build/main.js:7863
+#: build/main.js:7531
+#: build/main.js:7888
 msgid "App ID"
 msgstr "App-ID"
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:717
-#: build/main.js:7516
+#: build/main.js:7541
 msgid "Enter Facebook App ID"
 msgstr "Voer Facebook-app-ID in"
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:737
 #: src/Components/Settings/Integrations.jsx:1094
-#: build/main.js:7536
-#: build/main.js:7893
+#: build/main.js:7561
+#: build/main.js:7918
 msgid "App Secret"
 msgstr "App-geheim"
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:747
-#: build/main.js:7546
+#: build/main.js:7571
 msgid "Enter Facebook App Secret"
 msgstr "Voer Facebook App-geheim in"
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:789
-#: build/main.js:7588
+#: build/main.js:7613
 msgid "Facebook Access Token"
 msgstr "Facebook-toegangstoken"
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:793
-#: build/main.js:7592
+#: build/main.js:7617
 msgid "Note: This setting is required if you wish to fetch share count of your post/page from Facebook. "
 msgstr "Opmerking: Deze instelling is vereist als je het aantal keren dat je bericht/pagina is gedeeld op Facebook wilt ophalen."
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:842
-#: build/main.js:7641
+#: build/main.js:7666
 msgid "MaxMind Geolocation"
 msgstr "MaxMind Geolocatie"
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:846
-#: build/main.js:7645
+#: build/main.js:7670
 msgid ""
 "Note: An integration for utilizing MaxMind to do Geolocation lookups. Please note that this integration will only do "
 "Country lookups. "
@@ -18655,19 +18668,19 @@ msgstr ""
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:877
-#: build/main.js:7676
+#: build/main.js:7701
 msgid "Enter MaxMind License Key"
 msgstr "Voer MaxMind-licentiesleutel in"
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:897
-#: build/main.js:7696
+#: build/main.js:7721
 msgid "Database File Path"
 msgstr "Databasebestandspad"
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:946
-#: build/main.js:7745
+#: build/main.js:7770
 msgid ""
 "Note: To display your Twitter Feed on your website, you'll need to acquire Twitter's basic plan and obtain your Twitter "
 "Consumer Key and Consumer Secret Key. For guidance on obtaining these keys, "
@@ -18677,163 +18690,166 @@ msgstr ""
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:968
-#: build/main.js:7767
+#: build/main.js:7792
 msgid "Consumer Key"
 msgstr "Consumentensleutel"
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:977
-#: build/main.js:7776
+#: build/main.js:7801
 msgid "Enter Twitter Consumer Key"
 msgstr "Voer Twitter Consumer Key in"
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:997
-#: build/main.js:7796
+#: build/main.js:7821
 msgid "Consumer Secret"
 msgstr "Consumentengeheim"
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:1006
-#: build/main.js:7805
+#: build/main.js:7830
 msgid "Enter Twitter Consumer Secret"
 msgstr "Voer Twitter Consumer Secret in"
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:1042
-#: build/main.js:7841
+#: build/main.js:7866
 msgid "Note: This setting is required if you wish to use Instagram Feed in your website. "
 msgstr "Opmerking: Deze instelling is vereist als u Instagram Feed op uw website wilt gebruiken."
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:1074
-#: build/main.js:7873
+#: build/main.js:7898
 msgid "Enter Instagram App ID"
 msgstr "Voer Instagram-app-ID in"
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:1104
-#: build/main.js:7903
+#: build/main.js:7928
 msgid "Enter Instagram App Secret"
 msgstr "Voer Instagram-appgeheim in"
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:1126
-#: build/main.js:7925
+#: build/main.js:7950
 msgid "Access Token"
 msgstr "Toegangstoken"
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:1139
-#: build/main.js:7938
+#: build/main.js:7963
 msgid "Refreshing token..."
 msgstr "Token vernieuwen..."
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:1139
-#: build/main.js:7938
+#: build/main.js:7963
 msgid "Refresh Access Token"
 msgstr "Toegangstoken vernieuwen"
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:1147
-#: build/main.js:7946
+#: build/main.js:7971
 msgid "Enter Instagram Access Token"
 msgstr "Voer Instagram-toegangstoken in"
 
 #: build/main.js:172
 #: src/Components/Settings/Branding.jsx:52
-#: build/main.js:8056
+#: build/main.js:8081
 msgid "Error fetching settings. Please try again."
 msgstr "Fout bij het ophalen van instellingen. Probeer het opnieuw."
 
+#: classes/class-uael-admin.php:1494
 #: build/main.js:172
+#: src/Components/Onboarding/Build.jsx:56
 #: src/Components/Settings/Branding.jsx:107
-#: build/main.js:8111
+#: build/main.js:8136
+#: build/main.js:9796
 msgid "Settings saved successfully!"
 msgstr "Instellingen succesvol opgeslagen!"
 
 #: build/main.js:172
 #: src/Components/Settings/Branding.jsx:112
-#: build/main.js:8116
+#: build/main.js:8141
 msgid "Error saving settings. Please try again."
 msgstr "Fout bij het opslaan van de instellingen. Probeer het opnieuw."
 
 #: build/main.js:172
 #: src/Components/Settings/Branding.jsx:131
-#: build/main.js:8135
+#: build/main.js:8160
 msgid "White Label"
 msgstr "White Label"
 
 #: build/main.js:172
 #: src/Components/Settings/Branding.jsx:170
-#: build/main.js:8174
+#: build/main.js:8199
 msgid "Plugins Details"
 msgstr "Details van plugins"
 
 #: build/main.js:172
 #: src/Components/Settings/Branding.jsx:170
-#: build/main.js:8174
+#: build/main.js:8199
 msgid "You can change the author name and plugin details that are displayed in the WordPress backend."
 msgstr "Je kunt de naam van de auteur en de plugindetails wijzigen die in de WordPress-backend worden weergegeven."
 
 #: build/main.js:172
 #: src/Components/Settings/Branding.jsx:176
-#: build/main.js:8180
+#: build/main.js:8205
 msgid "Author:"
 msgstr "Auteur:"
 
 #: build/main.js:172
 #: src/Components/Settings/Branding.jsx:198
-#: build/main.js:8202
+#: build/main.js:8227
 msgid "Author URL:"
 msgstr "Auteurs-URL:"
 
 #: build/main.js:172
 #: src/Components/Settings/Branding.jsx:221
-#: build/main.js:8225
+#: build/main.js:8250
 msgid "Plugin Name:"
 msgstr "Plug-in naam:"
 
 #: build/main.js:172
 #: src/Components/Settings/Branding.jsx:227
-#: build/main.js:8231
+#: build/main.js:8256
 msgid "Ultimate Addons"
 msgstr "Ultieme Add-ons"
 
 #: build/main.js:172
 #: src/Components/Settings/Branding.jsx:242
-#: build/main.js:8246
+#: build/main.js:8271
 msgid "Plugin Short Name:"
 msgstr "Plug-in korte naam:"
 
 #: build/main.js:172
 #: src/Components/Settings/Branding.jsx:248
-#: build/main.js:8252
+#: build/main.js:8277
 msgid "UAE"
 msgstr "VAE"
 
 #: build/main.js:172
 #: src/Components/Settings/Branding.jsx:264
-#: build/main.js:8268
+#: build/main.js:8293
 msgid "Plugin Description:"
 msgstr "Pluginbeschrijving:"
 
 #: build/main.js:172
 #: src/Components/Settings/Branding.jsx:270
-#: build/main.js:8274
+#: build/main.js:8299
 msgid "Ultimate Addons is a premium extension for Elementor..."
 msgstr "Ultimate Addons is een premium extensie voor Elementor..."
 
 #: build/main.js:172
 #: src/Components/Settings/Branding.jsx:288
-#: build/main.js:8292
+#: build/main.js:8317
 msgid "Replace or Hide Logo"
 msgstr "Logo vervangen of verbergen"
 
 #: build/main.js:172
 #: src/Components/Settings/Branding.jsx:288
-#: build/main.js:8292
+#: build/main.js:8317
 msgid ""
 "Enable this option to hide the default logo or replace it with your own logo. (Note: To hide the logo, leave the logo "
 "URL field empty.)"
@@ -18843,31 +18859,31 @@ msgstr ""
 
 #: build/main.js:172
 #: src/Components/Settings/Branding.jsx:300
-#: build/main.js:8304
+#: build/main.js:8329
 msgid "Enter logo URL to replace"
 msgstr "Voer logo-URL in om te vervangen"
 
 #: build/main.js:172
 #: src/Components/Settings/Branding.jsx:302
-#: build/main.js:8306
+#: build/main.js:8331
 msgid "Replace Plugin Logo URL:"
 msgstr "Vervang Plugin Logo URL:"
 
 #: build/main.js:172
 #: src/Components/Settings/Branding.jsx:308
-#: build/main.js:8312
+#: build/main.js:8337
 msgid "https://www.example.com/logo.svg"
 msgstr "https://www.example.com/logo.svg"
 
 #: build/main.js:172
 #: src/Components/Settings/Branding.jsx:325
-#: build/main.js:8329
+#: build/main.js:8354
 msgid "Hide White Label Settings"
 msgstr "Witte label-instellingen verbergen"
 
 #: build/main.js:172
 #: src/Components/Settings/Branding.jsx:325
-#: build/main.js:8329
+#: build/main.js:8354
 msgid "Enabling this option will hide the White Label settings. To access it again, re-activate the plugin."
 msgstr ""
 "Als u deze optie inschakelt, worden de White Label-instellingen verborgen. Om er opnieuw toegang toe te krijgen, "
@@ -18875,63 +18891,442 @@ msgstr ""
 
 #: build/main.js:172
 #: src/Components/Settings/Branding.jsx:338
-#: build/main.js:8342
+#: build/main.js:8367
 msgid "Elementor Editor Area"
 msgstr "Elementor-bewerkingsgebied"
 
 #: build/main.js:172
 #: src/Components/Settings/Branding.jsx:340
-#: build/main.js:8344
+#: build/main.js:8369
 msgid "Show Help Links"
 msgstr "Help-links weergeven"
 
 #: build/main.js:172
 #: src/Components/Settings/Branding.jsx:340
-#: build/main.js:8344
+#: build/main.js:8369
 msgid "Display internal help links in widget editor area."
 msgstr "Interne hulpkoppelingen weergeven in het widgeteditorgebied."
 
 #: build/main.js:172
 #: src/Components/Settings/PostSkins.jsx:57
-#: build/main.js:8559
+#: build/main.js:8584
 msgid "All skins activated successfully!."
 msgstr "Alle skins zijn succesvol geactiveerd!."
 
 #: build/main.js:172
 #: src/Components/Settings/PostSkins.jsx:60
-#: build/main.js:8562
+#: build/main.js:8587
 msgid "Failed to activate all skins."
 msgstr "Het is niet gelukt om alle skins te activeren."
 
 #: build/main.js:172
 #: src/Components/Settings/PostSkins.jsx:65
-#: build/main.js:8567
+#: build/main.js:8592
 msgid "An error occurred while activating all skins."
 msgstr "Er is een fout opgetreden bij het activeren van alle skins."
 
 #: build/main.js:172
 #: src/Components/Settings/PostSkins.jsx:87
-#: build/main.js:8589
+#: build/main.js:8614
 msgid "All skins deactivated successfully!."
 msgstr "Alle skins zijn succesvol gedeactiveerd!."
 
 #: build/main.js:172
 #: src/Components/Settings/PostSkins.jsx:90
-#: build/main.js:8592
+#: build/main.js:8617
 msgid "Failed to deactivate all skins."
 msgstr "Het is niet gelukt om alle skins te deactiveren."
 
 #: build/main.js:172
 #: src/Components/Settings/PostSkins.jsx:95
-#: build/main.js:8597
+#: build/main.js:8622
 msgid "An error occurred while deactivating all skins."
 msgstr "Er is een fout opgetreden bij het deactiveren van alle skins."
 
 #: build/main.js:172
 #: src/Components/Settings/Integrations.jsx:1038
-#: build/main.js:7837
+#: build/main.js:7862
 msgid "Instagram Feed - Instagram Product API Details"
 msgstr "Instagram-feed - Details van de Instagram Product API"
+
+#: classes/class-uael-admin.php:1465
+msgid "How likely are you to recommend Ultimate Addons for Elementor to your friends or colleagues?"
+msgstr "Hoe waarschijnlijk is het dat je Ultimate Addons voor Elementor aan je vrienden of collega's zou aanbevelen?"
+
+#: classes/class-uael-admin.php:1467
+msgid ""
+"Could you please do us a favor and give us a 5-star rating on Trustpilot? It would help others choose Ultimate Addons "
+"for Elementor with confidence. Thank you!"
+msgstr ""
+"Zou je ons alstublieft een plezier willen doen en ons een 5-sterrenbeoordeling op Trustpilot willen geven? Het zou "
+"anderen helpen om met vertrouwen voor Ultimate Addons for Elementor te kiezen. Dank je!"
+
+#: classes/class-uael-admin.php:1470
+msgid "Thank you for your feedback"
+msgstr "Dank u voor uw feedback"
+
+#: classes/class-uael-admin.php:1471
+msgid "We value your input. How can we improve your experience?"
+msgstr "We waarderen uw inbreng. Hoe kunnen we uw ervaring verbeteren?"
+
+#: lib/nps-survey/classes/nps-survey-script.php:249
+msgid "Sorry, you are not allowed to do that."
+msgstr "Sorry, je mag dat niet doen."
+
+#: lib/nps-survey/classes/nps-survey-script.php:271
+#: lib/nps-survey/classes/nps-survey-script.php:377
+msgid "Nonce verification failed."
+msgstr "Verificatie van nonce mislukt."
+
+#: classes/class-uael-admin.php:933
+msgid "Plugin slug is missing."
+msgstr "Plugin slug ontbreekt."
+
+#: classes/class-uael-admin.php:956
+msgid "Plugin installation function not found."
+msgstr "Plugin installatiefunctie niet gevonden."
+
+#: classes/class-uael-admin.php:978
+msgid "Theme slug is missing."
+msgstr "Thema slug ontbreekt."
+
+#: classes/class-uael-admin.php:1001
+msgid "Theme installation function not found."
+msgstr "Thema installatiefunctie niet gevonden."
+
+#: admin/bsf-analytics/class-bsf-analytics.php:228
+#. translators: %s product name
+msgid "Want to help make %1s even more awesome? Allow us to collect non-sensitive diagnostic data and usage information. "
+msgstr ""
+"Wil je helpen om %1s nog beter te maken? Sta ons toe om niet-gevoelige diagnostische gegevens en gebruiksinformatie te "
+"verzamelen."
+
+#: admin/bsf-analytics/classes/class-bsf-analytics-helper.php:28
+msgid "Oops! Something went wrong. Please refresh the page and try again."
+msgstr "Oeps! Er is iets misgegaan. Vernieuw de pagina en probeer het opnieuw."
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:80
+#: classes/class-uael-loader.php:70
+msgid "Quick Feedback"
+msgstr "Snelle Feedback"
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:83
+msgid "If you have a moment, please share why you are deactivating the plugin."
+msgstr "Als je een moment hebt, deel dan alsjeblieft waarom je de plugin deactiveert."
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:134
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:309
+msgid "Please tell us more details."
+msgstr "Vertel ons alsjeblieft meer details."
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:143
+#. translators: %1$s: link html start, %2$s: link html end
+msgid "Need help from our experts? %1$sClick here to contact us.%2$s"
+msgstr "Heb je hulp nodig van onze experts? %1$sKlik hier om contact met ons op te nemen.%2$s"
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:154
+msgid "Submit & Deactivate"
+msgstr "Indienen & Deactiveren"
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:155
+msgid "Skip & Deactivate"
+msgstr "Overslaan & Deactiveren"
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:284
+msgid "This is a temporary deactivation for testing."
+msgstr "Dit is een tijdelijke deactivatie voor testen."
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:285
+msgid "How can we assist you?"
+msgstr "Hoe kunnen we je helpen?"
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:290
+msgid "The plugin isn't working properly."
+msgstr "De plugin werkt niet goed."
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:291
+msgid "Please tell us more about what went wrong?"
+msgstr "Vertel ons alsjeblieft meer over wat er misging?"
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:296
+msgid "I found a better alternative plugin."
+msgstr "Ik heb een betere alternatieve plugin gevonden."
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:297
+msgid "Could you please specify which plugin?"
+msgstr "Kun je alsjeblieft specificeren welke plugin?"
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:302
+msgid "It's missing a specific feature."
+msgstr "Er ontbreekt een specifieke functie."
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:303
+msgid "Please tell us more about the feature."
+msgstr "Vertel ons alsjeblieft meer over de functie."
+
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:308
+msgid "Other"
+msgstr "Overig"
+
+#: classes/class-uael-admin.php:567
+#: classes/class-uael-admin.php:568
+msgid "Onboarding"
+msgstr "Inwerken"
+
+#: classes/class-uael-admin.php:1497
+msgid "Unable to save settings."
+msgstr "Instellingen kunnen niet worden opgeslagen."
+
+#: classes/class-uael-core-plugin.php:298
+msgid "Enter valid Phone Number!"
+msgstr "Voer een geldig telefoonnummer in!"
+
+#: classes/class-uael-core-plugin.php:299
+msgid "Phone number should not contain spaces!"
+msgstr "Telefoonnummer mag geen spaties bevatten!"
+
+#: classes/class-uael-loader.php:72
+msgid "If you have a moment, please share why you are deactivating Ultimate Addons for Elementor Pro:"
+msgstr "Als je een moment hebt, deel dan alsjeblieft waarom je Ultimate Addons voor Elementor Pro deactiveert:"
+
+#: lib/astra-notices/class-astra-notices.php:153
+msgid "Invalid notice ID."
+msgstr "Ongeldig kennisgevings-ID."
+
+#: build/main.js:2
+#: src/Components/NavMenu.js:70
+#: build/main.js:3359
+msgid "What's New?"
+msgstr "Wat is er nieuw?"
+
+#: build/main.js:2
+#: src/Components/Dashboard/WelcomeContainer.js:29
+#: build/main.js:4293
+msgid ""
+"Thanks for choosing UAE Pro! You're now part of an exclusive community of website builders. Explore the features and "
+"enjoy creating something amazing. Let's take your site to the next level together."
+msgstr ""
+"Bedankt voor het kiezen van UAE Pro! Je maakt nu deel uit van een exclusieve gemeenschap van websitebouwers. Ontdek de "
+"functies en geniet van het creëren van iets geweldigs. Laten we samen je site naar een hoger niveau tillen."
+
+#: build/main.js:172
+#: src/Components/Settings/VersionControl.jsx:124
+#: build/main.js:6390
+msgid "Rollback %s Lite to Previous Version"
+msgstr "Rollback %s Lite naar Vorige Versie"
+
+#: build/main.js:172
+#: src/Components/Settings/VersionControl.jsx:185
+#: build/main.js:6451
+msgid "Are you sure you want to rollback to %s Lite v%s?"
+msgstr "Weet je zeker dat je wilt terugrollen naar %s Lite v%s?"
+
+#: build/main.js:172
+#: src/Components/Settings/VersionControl.jsx:227
+#: build/main.js:6493
+msgid "Rollback %s Pro to Previous Version"
+msgstr "Rollback %s Pro naar Vorige Versie"
+
+#: build/main.js:172
+#: src/Components/Settings/VersionControl.jsx:333
+#: build/main.js:6599
+msgid ""
+"Turn this on to get notified when a new beta version of %s is available. The beta version will not install "
+"automatically. You will need to install it manually. We recommend using it only in a test environment."
+msgstr ""
+"Zet dit aan om een melding te ontvangen wanneer er een nieuwe bètaversie van %s beschikbaar is. De bètaversie wordt "
+"niet automatisch geïnstalleerd. Je moet deze handmatig installeren. We raden aan het alleen in een testomgeving te "
+"gebruiken."
+
+#: build/main.js:172
+#: src/Components/Settings/PostSkins.jsx:158
+#: src/Components/Settings/Settings.jsx:134
+#: build/main.js:8685
+#: build/main.js:8901
+msgid "Post Widget Skins"
+msgstr "Post Widget Skins"
+
+#: build/main.js:172
+#: src/Components/Settings/Settings.jsx:52
+#: build/main.js:8819
+msgid "Editor"
+msgstr "Editor"
+
+#: build/main.js:172
+#: src/Components/Settings/Settings.jsx:53
+#: build/main.js:8820
+msgid "Theme Support"
+msgstr "Thema Ondersteuning"
+
+#: build/main.js:172
+#: src/Components/Settings/Settings.jsx:72
+#: build/main.js:8839
+msgid "Utilities"
+msgstr "Hulpmiddelen"
+
+#: build/main.js:172
+#: src/Components/Settings/Settings.jsx:94
+#: build/main.js:8861
+msgid "Branding"
+msgstr "Branding"
+
+#: build/main.js:172
+#: src/Components/Settings/Settings.jsx:113
+#: build/main.js:8880
+msgid "Preferences"
+msgstr "Voorkeuren"
+
+#: build/main.js:172
+#: src/Components/Settings/Settings.jsx:133
+#: build/main.js:8900
+msgid "Skins"
+msgstr "Skins"
+
+#: build/main.js:172
+#: src/Components/Widgets/Features/FeatureWidgetsOnboarding.jsx:155
+#: build/main.js:9519
+msgid "Customize Your UAE Setup"
+msgstr "Pas je UAE-configuratie aan"
+
+#: build/main.js:172
+#: src/Components/Widgets/Features/FeatureWidgetsOnboarding.jsx:158
+#: build/main.js:9522
+msgid "Activate only what you need to keep your website fast and optimized."
+msgstr "Activeer alleen wat je nodig hebt om je website snel en geoptimaliseerd te houden."
+
+#: build/main.js:172
+#: src/Components/Onboarding/Welcome.jsx:11
+#: build/main.js:9679
+msgid "Thank You For Choosing"
+msgstr "Bedankt voor het Kiezen"
+
+#: build/main.js:172
+#: src/Components/Onboarding/Welcome.jsx:23
+#: build/main.js:9691
+msgid ""
+"We're excited to have you onboard. Get ready to create stunning headers, footers, and custom blocks with ease while "
+"keeping your website lightweight and fast."
+msgstr ""
+"We zijn enthousiast dat je aan boord bent. Maak je klaar om verbluffende kopteksten, voetteksten en aangepaste blokken "
+"met gemak te creëren, terwijl je website licht en snel blijft."
+
+#: build/main.js:172
+#: src/Components/Onboarding/Welcome.jsx:53
+#: build/main.js:9721
+msgid "Let's Get Started"
+msgstr "Laten we Aan de Slag Gaan"
+
+#: build/main.js:172
+#: src/Components/Onboarding/Build.jsx:58
+#: src/Components/Onboarding/Build.jsx:61
+#: build/main.js:9798
+#: build/main.js:9801
+msgid "Failed to save settings!"
+msgstr "Instellingen opslaan is mislukt!"
+
+#: build/main.js:172
+#: src/Components/Onboarding/Build.jsx:73
+#: build/main.js:9813
+msgid "You're all set!🚀"
+msgstr "Je bent helemaal klaar!🚀"
+
+#: build/main.js:172
+#: src/Components/Onboarding/Build.jsx:79
+#: build/main.js:9819
+msgid "Start creating headers, footers, or pages with UAE and take your website to the next level"
+msgstr "Begin met het maken van kopteksten, voetteksten of pagina's met UAE en til je website naar een hoger niveau"
+
+#: build/main.js:172
+#: src/Components/Onboarding/Build.jsx:86
+#: build/main.js:9826
+msgid "Start creating amazing designs with UAE and take your website to the next level"
+msgstr "Begin met het maken van geweldige ontwerpen met UAE en breng je website naar een hoger niveau"
+
+#: build/main.js:172
+#: src/Components/Onboarding/Build.jsx:94
+#: build/main.js:9834
+msgid "Here’s how to get started:"
+msgstr "Hier is hoe je kunt beginnen:"
+
+#: build/main.js:172
+#: src/Components/Onboarding/Build.jsx:99
+#: build/main.js:9839
+msgid "Click on “Create” button"
+msgstr "Klik op de knop “Creëren”"
+
+#: build/main.js:172
+#: src/Components/Onboarding/Build.jsx:100
+#: build/main.js:9840
+msgid "Use the Elementor editor to customize your header, footer, page or post according to your preferences"
+msgstr "Gebruik de Elementor-editor om je koptekst, voettekst, pagina of bericht aan te passen aan je voorkeuren"
+
+#: build/main.js:172
+#: src/Components/Onboarding/Build.jsx:101
+#: build/main.js:9841
+msgid "Use UAE widgets for your designs"
+msgstr "Gebruik UAE-widgets voor je ontwerpen"
+
+#: build/main.js:172
+#: src/Components/Onboarding/Build.jsx:102
+#: src/Components/Onboarding/Build.jsx:109
+#: build/main.js:9842
+#: build/main.js:9849
+msgid "Click “Publish” to make it live"
+msgstr "Klik op “Publiceren” om het live te maken"
+
+#: build/main.js:172
+#: src/Components/Onboarding/Build.jsx:106
+#: build/main.js:9846
+msgid "Click on “Create New Page” button"
+msgstr "Klik op de knop “Nieuwe pagina maken”"
+
+#: build/main.js:172
+#: src/Components/Onboarding/Build.jsx:107
+#: build/main.js:9847
+msgid "Use the Elementor editor to customize your page/post according to your preferences"
+msgstr "Gebruik de Elementor-editor om je pagina/bericht aan te passen aan je voorkeuren"
+
+#: build/main.js:172
+#: src/Components/Onboarding/Build.jsx:108
+#: build/main.js:9848
+msgid "Use UAE widgets to design your pages."
+msgstr "Gebruik UAE-widgets om je pagina's te ontwerpen."
+
+#: build/main.js:172
+#: src/Components/Onboarding/Build.jsx:236
+#: build/main.js:9976
+msgid "Go To Dashboard"
+msgstr "Ga naar Dashboard"
+
+#: build/main.js:172
+#: src/Components/Onboarding/Build.jsx:252
+#: build/main.js:9992
+msgid "Help make UAE Better"
+msgstr "Help UAE beter te maken"
+
+#: build/main.js:172
+#: src/Components/Onboarding/Build.jsx:281
+#: build/main.js:10021
+msgid ""
+"Help us improve by sharing anonymous data about your website setup. This includes non-sensitive info about plugins, "
+"themes, and settings, so we can create a better product for you. Your privacy is always our top priority. Learn more in "
+"our privacy policy."
+msgstr ""
+"Help ons verbeteren door anonieme gegevens over je website-instellingen te delen. Dit omvat niet-gevoelige informatie "
+"over plugins, thema's en instellingen, zodat we een beter product voor je kunnen creëren. Jouw privacy is altijd onze "
+"hoogste prioriteit. Lees meer in ons privacybeleid."
+
+#: src/Components/Settings/Account.jsx:26
+msgid ""
+"Activate <a href=\"%1$s\">%2$s</a> to get professional support and latest updates from your WordPress dashboard. If you "
+"don't have a license, you can <a href=\"%3$s\">get it here »</a>"
+msgstr ""
+"Activeer <a href=\"%1$s\">%2$s</a> om professionele ondersteuning en de laatste updates vanuit je WordPress-dashboard "
+"te krijgen. Als je geen licentie hebt, kun je <a href=\"%3$s\">het hier krijgen »</a>"
+
+#: src/Components/Settings/Account.jsx:38
+msgid "Please enter your valid license key below to activate %s Pro!"
+msgstr "Voer hieronder je geldige licentiesleutel in om %s Pro te activeren!"
 
 #: modules/price-table/widgets/price-table.php:482
 msgctxt "Currency Symbol"

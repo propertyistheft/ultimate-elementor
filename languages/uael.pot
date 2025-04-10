@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the Ultimate Addons for Elementor Pro package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ultimate Addons for Elementor Pro 1.38.4\n"
+"Project-Id-Version: Ultimate Addons for Elementor Pro 1.39.2\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/ultimate-elementor\n"
-"POT-Creation-Date: 2025-03-18 12:59:36+00:00\n"
+"POT-Creation-Date: 2025-04-09 06:21:13+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -95,20 +95,20 @@ msgstr ""
 msgid "No Thanks"
 msgstr ""
 
-#: admin/bsf-analytics/class-bsf-analytics.php:386
+#: admin/bsf-analytics/class-bsf-analytics.php:387
 msgid "Usage Tracking"
 msgstr ""
 
-#: admin/bsf-analytics/class-bsf-analytics.php:430
+#: admin/bsf-analytics/class-bsf-analytics.php:431
 #. translators: %s Product title
 msgid "Allow %s products to track non-sensitive usage tracking data."
 msgstr ""
 
-#: admin/bsf-analytics/class-bsf-analytics.php:433
+#: admin/bsf-analytics/class-bsf-analytics.php:434
 msgid " This will be applicable for all sites from the network."
 msgstr ""
 
-#: admin/bsf-analytics/class-bsf-analytics.php:438
+#: admin/bsf-analytics/class-bsf-analytics.php:439
 msgid "Learn More."
 msgstr ""
 
@@ -117,7 +117,7 @@ msgid "Oops! Something went wrong. Please refresh the page and try again."
 msgstr ""
 
 #: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:80
-#: classes/class-uael-loader.php:70
+#: classes/class-uael-loader.php:73
 msgid "Quick Feedback"
 msgstr ""
 
@@ -333,7 +333,7 @@ msgid ""
 "option, adding the App Secret Key will fix it."
 msgstr ""
 
-#: classes/class-uael-admin.php:229 classes/class-uael-admin.php:1462
+#: classes/class-uael-admin.php:229 classes/class-uael-admin.php:1465
 msgid "Ultimate Addons for Elementor"
 msgstr ""
 
@@ -368,92 +368,92 @@ msgstr ""
 msgid "Onboarding"
 msgstr ""
 
-#: classes/class-uael-admin.php:931
+#: classes/class-uael-admin.php:933
 msgid "Plugin slug is missing."
 msgstr ""
 
-#: classes/class-uael-admin.php:954
+#: classes/class-uael-admin.php:957
 msgid "Plugin installation function not found."
 msgstr ""
 
-#: classes/class-uael-admin.php:976
+#: classes/class-uael-admin.php:979
 msgid "Theme slug is missing."
 msgstr ""
 
-#: classes/class-uael-admin.php:999
+#: classes/class-uael-admin.php:1002
 msgid "Theme installation function not found."
 msgstr ""
 
-#: classes/class-uael-admin.php:1048
+#: classes/class-uael-admin.php:1051
 msgid "License key not found."
 msgstr ""
 
-#: classes/class-uael-admin.php:1074
+#: classes/class-uael-admin.php:1077
 msgid "License Successfully Activated"
 msgstr ""
 
-#: classes/class-uael-admin.php:1078
+#: classes/class-uael-admin.php:1081
 msgid "License activation failed!"
 msgstr ""
 
-#: classes/class-uael-admin.php:1119
+#: classes/class-uael-admin.php:1122
 msgid "License Successfully Deactivated"
 msgstr ""
 
-#: classes/class-uael-admin.php:1123
+#: classes/class-uael-admin.php:1126
 msgid "License deactivation failed!"
 msgstr ""
 
-#: classes/class-uael-admin.php:1152
+#: classes/class-uael-admin.php:1155
 msgid "Plugin activation is disabled for you on this site."
 msgstr ""
 
-#: classes/class-uael-admin.php:1161
+#: classes/class-uael-admin.php:1164
 msgid "Plugin Activated."
 msgstr ""
 
-#: classes/class-uael-admin.php:1172
+#: classes/class-uael-admin.php:1175
 msgid "Theme activation is disabled for you on this site."
 msgstr ""
 
-#: classes/class-uael-admin.php:1181
+#: classes/class-uael-admin.php:1184
 msgid "Theme Activated."
 msgstr ""
 
-#: classes/class-uael-admin.php:1188
+#: classes/class-uael-admin.php:1191
 msgid "Could not activate plugin. Please activate from the Plugins page."
 msgstr ""
 
-#: classes/class-uael-admin.php:1190
+#: classes/class-uael-admin.php:1193
 msgid "Could not activate theme. Please activate from the Themes page."
 msgstr ""
 
-#: classes/class-uael-admin.php:1463
+#: classes/class-uael-admin.php:1466
 msgid ""
 "How likely are you to recommend Ultimate Addons for Elementor to your "
 "friends or colleagues?"
 msgstr ""
 
-#: classes/class-uael-admin.php:1465
+#: classes/class-uael-admin.php:1468
 msgid ""
 "Could you please do us a favor and give us a 5-star rating on Trustpilot? "
 "It would help others choose Ultimate Addons for Elementor with confidence. "
 "Thank you!"
 msgstr ""
 
-#: classes/class-uael-admin.php:1468
+#: classes/class-uael-admin.php:1471
 msgid "Thank you for your feedback"
 msgstr ""
 
-#: classes/class-uael-admin.php:1469
+#: classes/class-uael-admin.php:1472
 msgid "We value your input. How can we improve your experience?"
 msgstr ""
 
-#: classes/class-uael-admin.php:1492
+#: classes/class-uael-admin.php:1495
 msgid "Settings saved successfully!"
 msgstr ""
 
-#: classes/class-uael-admin.php:1495
+#: classes/class-uael-admin.php:1498
 msgid "Unable to save settings."
 msgstr ""
 
@@ -548,35 +548,35 @@ msgstr ""
 msgid "Looks like content is empty. Cannot be processed."
 msgstr ""
 
-#: classes/class-uael-loader.php:72
+#: classes/class-uael-loader.php:75
 msgid ""
 "If you have a moment, please share why you are deactivating Ultimate Addons "
 "for Elementor Pro:"
 msgstr ""
 
-#: classes/class-uael-loader.php:268
+#: classes/class-uael-loader.php:276
 #. translators: %s: html tags
 msgid ""
 "The %1$sUltimate Addons for Elementor Pro%2$s plugin requires "
 "%1$sElementor%2$s plugin installed & activated."
 msgstr ""
 
-#: classes/class-uael-loader.php:278
+#: classes/class-uael-loader.php:286
 msgid "Activate Elementor"
 msgstr ""
 
-#: classes/class-uael-loader.php:286 classes/class-uael-loader.php:324
+#: classes/class-uael-loader.php:294 classes/class-uael-loader.php:332
 msgid "Install Elementor"
 msgstr ""
 
-#: classes/class-uael-loader.php:305
+#: classes/class-uael-loader.php:313
 #. translators: %s: html tags
 msgid ""
 "The %1$sUltimate Addons for Elementor Pro%2$s plugin has stopped working "
 "because you are using an older version of %1$sElementor%2$s plugin."
 msgstr ""
 
-#: classes/class-uael-loader.php:316
+#: classes/class-uael-loader.php:324
 msgid "Update Elementor"
 msgstr ""
 
@@ -1067,7 +1067,7 @@ msgid "Create high-converting forms with ease."
 msgstr ""
 
 #: classes/uael-config.php:1138
-msgid "SureTriggers"
+msgid "OttoKit (Formerly SureTriggers)"
 msgstr ""
 
 #: classes/uael-config.php:1139
@@ -1301,13 +1301,13 @@ msgstr ""
 msgid "CHINESE (TRADITIONAL)"
 msgstr ""
 
-#: classes/uael-helper.php:1484 modules/ff-styler/widgets/ff-styler.php:111
+#: classes/uael-helper.php:1505 modules/ff-styler/widgets/ff-styler.php:111
 #: modules/table/widgets/table.php:265 modules/table/widgets/table.php:666
 #: modules/video/widgets/video.php:1620
 msgid "Select"
 msgstr ""
 
-#: classes/uael-helper.php:1495
+#: classes/uael-helper.php:1516
 msgid "It seems that, you have not saved any template yet."
 msgstr ""
 
@@ -2022,6 +2022,7 @@ msgid "Entered API key is invalid"
 msgstr ""
 
 #: includes/admin/settings-api.php:143
+#: modules/business-reviews/template-blocks/skin-style.php:339
 msgid "Google Error Message:"
 msgstr ""
 
@@ -2077,11 +2078,11 @@ msgstr ""
 msgid "Branding settings not found"
 msgstr ""
 
-#: lib/astra-notices/class-astra-notices.php:141
+#: lib/astra-notices/class-astra-notices.php:146
 msgid "WordPress Nonce not validated."
 msgstr ""
 
-#: lib/astra-notices/class-astra-notices.php:148
+#: lib/astra-notices/class-astra-notices.php:153
 msgid "Invalid notice ID."
 msgstr ""
 
@@ -3464,7 +3465,7 @@ msgstr ""
 
 #: modules/ba-slider/widgets/ba-slider.php:683
 #: modules/business-hours/widgets/business-hours.php:547
-#: modules/business-reviews/widgets/business-reviews.php:718
+#: modules/business-reviews/widgets/business-reviews.php:736
 #: modules/buttons/widgets/buttons.php:537
 #: modules/caf-styler/widgets/caf-styler.php:1104
 #: modules/cf-styler/widgets/cf-styler.php:1295
@@ -3536,7 +3537,7 @@ msgstr ""
 
 #: modules/ba-slider/widgets/ba-slider.php:702
 #: modules/business-hours/widgets/business-hours.php:566
-#: modules/business-reviews/widgets/business-reviews.php:727
+#: modules/business-reviews/widgets/business-reviews.php:745
 #: modules/buttons/widgets/buttons.php:546
 #: modules/caf-styler/widgets/caf-styler.php:1113
 #: modules/content-toggle/widgets/content-toggle.php:1042
@@ -4551,7 +4552,7 @@ msgid "Border Radius"
 msgstr ""
 
 #: modules/business-reviews/skins/skin-base.php:759
-#: modules/business-reviews/widgets/business-reviews.php:537
+#: modules/business-reviews/widgets/business-reviews.php:555
 #: modules/image-gallery/widgets/image-gallery.php:539
 #: modules/image-gallery/widgets/image-gallery.php:1458
 #: modules/posts/skins/skin-base.php:559 modules/posts/skins/skin-base.php:3589
@@ -4566,7 +4567,7 @@ msgid "Navigation"
 msgstr ""
 
 #: modules/business-reviews/skins/skin-base.php:771
-#: modules/business-reviews/widgets/business-reviews.php:542
+#: modules/business-reviews/widgets/business-reviews.php:560
 #: modules/image-gallery/widgets/image-gallery.php:544
 #: modules/image-gallery/widgets/image-gallery.php:1470
 #: modules/nav-menu/widgets/nav-menu.php:680
@@ -4623,7 +4624,7 @@ msgid "Arrows Color"
 msgstr ""
 
 #: modules/business-reviews/skins/skin-base.php:837
-#: modules/business-reviews/widgets/business-reviews.php:543
+#: modules/business-reviews/widgets/business-reviews.php:561
 #: modules/image-gallery/widgets/image-gallery.php:545
 #: modules/image-gallery/widgets/image-gallery.php:1537
 #: modules/posts/skins/skin-base.php:565 modules/posts/skins/skin-base.php:3776
@@ -4734,7 +4735,7 @@ msgid "Border Style"
 msgstr ""
 
 #: modules/business-reviews/skins/skin-bubble.php:197
-#: modules/business-reviews/widgets/business-reviews.php:544
+#: modules/business-reviews/widgets/business-reviews.php:562
 #: modules/buttons/widgets/buttons.php:511
 #: modules/caf-styler/widgets/caf-styler.php:311
 #: modules/cf-styler/widgets/cf-styler.php:308
@@ -4959,7 +4960,7 @@ msgstr ""
 msgid "Border"
 msgstr ""
 
-#: modules/business-reviews/template-blocks/skin-style.php:243
+#: modules/business-reviews/template-blocks/skin-style.php:247
 #. translators: 1: <span> notice message <span> 2: error message <span> 3:
 #. first </span> 4: second </span>
 msgid ""
@@ -4967,7 +4968,7 @@ msgid ""
 "the API key from UAE settings.%4$s"
 msgstr ""
 
-#: modules/business-reviews/template-blocks/skin-style.php:254
+#: modules/business-reviews/template-blocks/skin-style.php:258
 #. translators: 1: <span> notice message <span> 2: error message <span> 3:
 #. first </span> 4: second </span>
 msgid ""
@@ -4975,13 +4976,17 @@ msgid ""
 "display the reviews.%4$s"
 msgstr ""
 
-#: modules/business-reviews/template-blocks/skin-style.php:295
+#: modules/business-reviews/template-blocks/skin-style.php:317
 #. translators: 1: <span> notice message <span> 2: error message <span> 3:
 #. first </span>
 msgid "%1$sSomething went wrong while fetching Google reviews: %2$s%3$s"
 msgstr ""
 
-#: modules/business-reviews/template-blocks/skin-style.php:321
+#: modules/business-reviews/template-blocks/skin-style.php:339
+msgid "It seems like the Google place you have selected does not have any reviews."
+msgstr ""
+
+#: modules/business-reviews/template-blocks/skin-style.php:352
 #. translators: %1$s doc link
 msgid ""
 "<span class=\"uael-reviews-notice-message elementor-clickable\"><span "
@@ -4992,7 +4997,7 @@ msgid ""
 "%2$s to activate billing. </span>"
 msgstr ""
 
-#: modules/business-reviews/template-blocks/skin-style.php:327
+#: modules/business-reviews/template-blocks/skin-style.php:358
 msgid ""
 "<span class=\"uael-reviews-notice-message\"><span "
 "class=\"uael-reviews-error-message\">Google Error Message: "
@@ -5000,7 +5005,7 @@ msgid ""
 "key from UAE settings.</span>"
 msgstr ""
 
-#: modules/business-reviews/template-blocks/skin-style.php:333
+#: modules/business-reviews/template-blocks/skin-style.php:364
 msgid ""
 "<span class=\"uael-reviews-notice-message\"><span "
 "class=\"uael-reviews-error-message\">Google Error Message: "
@@ -5008,7 +5013,7 @@ msgid ""
 "later.</span>"
 msgstr ""
 
-#: modules/business-reviews/template-blocks/skin-style.php:340
+#: modules/business-reviews/template-blocks/skin-style.php:371
 msgid ""
 "<span class=\"uael-reviews-notice-message\"><span "
 "class=\"uael-reviews-error-message\">Google Error Message: "
@@ -5016,14 +5021,14 @@ msgid ""
 "invalid.</span>"
 msgstr ""
 
-#: modules/business-reviews/template-blocks/skin-style.php:347
+#: modules/business-reviews/template-blocks/skin-style.php:378
 msgid ""
 "<span class=\"uael-reviews-notice-message\"><span "
 "class=\"uael-reviews-error-message\">Google Error Message:</span> It seems "
 "like the Google place you have selected does not have any reviews.</span>"
 msgstr ""
 
-#: modules/business-reviews/template-blocks/skin-style.php:420
+#: modules/business-reviews/template-blocks/skin-style.php:476
 #. translators: 1: <span> notice message <span> 2: error message <span> 3:
 #. first </span> 4: second </span>
 msgid ""
@@ -5031,12 +5036,12 @@ msgid ""
 "reviews.%4$s"
 msgstr ""
 
-#: modules/business-reviews/template-blocks/skin-style.php:466
+#: modules/business-reviews/template-blocks/skin-style.php:522
 #. translators: 1: first <span> 2: doc link 3: </span>
 msgid "%1$sSomething went wrong:%2$s%3$s"
 msgstr ""
 
-#: modules/business-reviews/template-blocks/skin-style.php:488
+#: modules/business-reviews/template-blocks/skin-style.php:544
 #. translators: 1: <span> notice message <span> 2: error message <span> 3:
 #. first </span> 4: second </span>
 msgid ""
@@ -5044,13 +5049,13 @@ msgid ""
 "API key from UAE settings.%4$s"
 msgstr ""
 
-#: modules/business-reviews/template-blocks/skin-style.php:497
+#: modules/business-reviews/template-blocks/skin-style.php:553
 #. translators: 1: <span> notice message <span> 2: error message <span> 3:
 #. first </span> 4: second </span>
 msgid "%1$s%2$sYelp Error Message:%3$s Incorrect Business ID.%4$s"
 msgstr ""
 
-#: modules/business-reviews/template-blocks/skin-style.php:511
+#: modules/business-reviews/template-blocks/skin-style.php:567
 #. translators: 1: first <span> 2: doc link 3: </span>
 msgid "%1$s%2$s Unknown error occurred.%3$s"
 msgstr ""
@@ -5096,75 +5101,80 @@ msgstr ""
 msgid "ChIJBUo5LX5FXj4RqXDEdkjfdmA"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:210
-#: modules/twitter/widgets/twitter.php:274
-msgid "Sort By"
-msgstr ""
-
-#: modules/business-reviews/widgets/business-reviews.php:214
-msgid "Most Relevant"
-msgstr ""
-
-#: modules/business-reviews/widgets/business-reviews.php:215
-msgid "Newest"
-msgstr ""
-
-#: modules/business-reviews/widgets/business-reviews.php:224
+#: modules/business-reviews/widgets/business-reviews.php:212
 #. translators: %s admin link
 msgid "Click %1$s here %2$s to find your Google Place ID."
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:246
+#: modules/business-reviews/widgets/business-reviews.php:223
+#: modules/twitter/widgets/twitter.php:274
+msgid "Sort By"
+msgstr ""
+
+#: modules/business-reviews/widgets/business-reviews.php:227
+msgid "Most Relevant"
+msgstr ""
+
+#: modules/business-reviews/widgets/business-reviews.php:228
+msgid "Newest"
+msgstr ""
+
+#: modules/business-reviews/widgets/business-reviews.php:240
+#. translators: %s admin link
+msgid "<b>Note</b>: New Google Place API doesn't support Sort By."
+msgstr ""
+
+#: modules/business-reviews/widgets/business-reviews.php:264
 #. translators: 1: <b> 2: </b>
 msgid "%1$sLanguage Code%2$s"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:263
+#: modules/business-reviews/widgets/business-reviews.php:281
 #. translators: %s admin link
 msgid "Click %1$s here %2$s to check your Language code."
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:275
+#: modules/business-reviews/widgets/business-reviews.php:293
 #. translators: 1: <b> 2: </b>
 msgid "%1$sYelp Business ID%2$s"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:293
+#: modules/business-reviews/widgets/business-reviews.php:311
 #. translators: %s admin link
 msgid "Click %1$s here %2$s to find your Yelp Business ID."
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:304
+#: modules/business-reviews/widgets/business-reviews.php:322
 msgid "Reload Reviews after a"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:308
+#: modules/business-reviews/widgets/business-reviews.php:326
 #: modules/instagram-feed/widgets/instagram-feed.php:294
 msgid "Hour"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:309
+#: modules/business-reviews/widgets/business-reviews.php:327
 #: modules/display-conditions/conditions/day.php:42
 #: modules/instagram-feed/widgets/instagram-feed.php:295
 msgid "Day"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:310
+#: modules/business-reviews/widgets/business-reviews.php:328
 #: modules/instagram-feed/widgets/instagram-feed.php:296
 msgid "Week"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:311
+#: modules/business-reviews/widgets/business-reviews.php:329
 msgid "Month"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:312
+#: modules/business-reviews/widgets/business-reviews.php:330
 msgid "Year"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:324
-#: modules/business-reviews/widgets/business-reviews.php:339
-#: modules/business-reviews/widgets/business-reviews.php:353
+#: modules/business-reviews/widgets/business-reviews.php:342
+#: modules/business-reviews/widgets/business-reviews.php:357
+#: modules/business-reviews/widgets/business-reviews.php:371
 #. translators: %s admin link
 msgid ""
 "Note: If you are facing issues while fetching the reviews make sure you "
@@ -5172,7 +5182,7 @@ msgid ""
 "rel=\"noopener\">here</a>."
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:375
+#: modules/business-reviews/widgets/business-reviews.php:393
 #: modules/content-toggle/widgets/content-toggle.php:650
 #: modules/countdown/widgets/countdown.php:696 modules/faq/widgets/faq.php:398
 #: modules/faq/widgets/faq.php:404
@@ -5201,11 +5211,11 @@ msgstr ""
 msgid "Layout"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:383
+#: modules/business-reviews/widgets/business-reviews.php:401
 msgid "Select Layout"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:387
+#: modules/business-reviews/widgets/business-reviews.php:405
 #: modules/faq/widgets/faq.php:408
 #: modules/image-gallery/widgets/image-gallery.php:200
 #: modules/instagram-feed/widgets/instagram-feed.php:172
@@ -5217,7 +5227,7 @@ msgstr ""
 msgid "Grid"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:388
+#: modules/business-reviews/widgets/business-reviews.php:406
 #: modules/image-gallery/widgets/image-gallery.php:203
 #: modules/image-gallery/widgets/image-gallery.php:433
 #: modules/posts/skins/skin-base.php:157 modules/posts/skins/skin-base.php:548
@@ -5231,27 +5241,27 @@ msgstr ""
 msgid "Carousel"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:396
-#: modules/business-reviews/widgets/business-reviews.php:425
-#: modules/business-reviews/widgets/business-reviews.php:454
+#: modules/business-reviews/widgets/business-reviews.php:414
+#: modules/business-reviews/widgets/business-reviews.php:443
+#: modules/business-reviews/widgets/business-reviews.php:472
 msgid "Number of Reviews"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:413
+#: modules/business-reviews/widgets/business-reviews.php:431
 #. translators: %s admin link
 msgid ""
 "Google allows maximum 5 reviews. Click <a href=\"%s\" target=\"_blank\" "
 "rel=\"noopener\">here</a> to know more."
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:442
+#: modules/business-reviews/widgets/business-reviews.php:460
 #. translators: %s admin link
 msgid ""
 "Yelp allows maximum 3 reviews. Click <a href=\"%s\" target=\"_blank\" "
 "rel=\"noopener\">here</a> to know more."
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:470
+#: modules/business-reviews/widgets/business-reviews.php:488
 #. translators: %s admin link
 msgid ""
 "We can fetch only up to 5 Google and 3 Yelp Reviews. So, a maximum of 8 "
@@ -5259,7 +5269,7 @@ msgid ""
 "rel=\"noopener\">here</a> to know more."
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:481
+#: modules/business-reviews/widgets/business-reviews.php:499
 #: modules/faq/widgets/faq.php:466
 #: modules/image-gallery/widgets/image-gallery.php:256
 #: modules/instagram-feed/widgets/instagram-feed.php:182
@@ -5272,20 +5282,20 @@ msgstr ""
 msgid "Columns"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:504
+#: modules/business-reviews/widgets/business-reviews.php:522
 msgid "Reviews to Show"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:505
+#: modules/business-reviews/widgets/business-reviews.php:523
 msgid "Note: <b>Reviews to Show</b> should be less than <b>Number of Reviews</b>."
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:520
+#: modules/business-reviews/widgets/business-reviews.php:538
 #: modules/posts/skins/skin-base.php:629
 msgid "Slides to Scroll"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:541
+#: modules/business-reviews/widgets/business-reviews.php:559
 #: modules/image-gallery/widgets/image-gallery.php:543
 #: modules/posts/skins/skin-base.php:563
 #: modules/twitter/widgets/twitter.php:1846
@@ -5295,7 +5305,7 @@ msgstr ""
 msgid "Arrows and Dots"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:555
+#: modules/business-reviews/widgets/business-reviews.php:573
 #: modules/image-gallery/widgets/image-gallery.php:514
 #: modules/posts/skins/skin-base.php:609
 #: modules/twitter/widgets/twitter.php:1817
@@ -5305,7 +5315,7 @@ msgstr ""
 msgid "Infinite Loop"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:568
+#: modules/business-reviews/widgets/business-reviews.php:586
 #: modules/hotspot/widgets/hotspot.php:532
 #: modules/image-gallery/widgets/image-gallery.php:474
 #: modules/modal-popup/widgets/modal-popup.php:511
@@ -5320,7 +5330,7 @@ msgstr ""
 msgid "Autoplay"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:581
+#: modules/business-reviews/widgets/business-reviews.php:599
 #: modules/headings/widgets/fancy-heading.php:304
 #: modules/image-gallery/widgets/image-gallery.php:500
 #: modules/posts/skins/skin-base.php:574
@@ -5331,7 +5341,7 @@ msgstr ""
 msgid "Pause on Hover"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:595
+#: modules/business-reviews/widgets/business-reviews.php:613
 #: modules/posts/skins/skin-base.php:594
 #: modules/video-gallery/widgets/video-gallery.php:849
 #: modules/woocommerce/widgets/woo-categories.php:343
@@ -5339,7 +5349,7 @@ msgstr ""
 msgid "Autoplay Speed"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:611
+#: modules/business-reviews/widgets/business-reviews.php:629
 #: modules/image-gallery/widgets/image-gallery.php:527
 #: modules/posts/skins/skin-base.php:619
 #: modules/twitter/widgets/twitter.php:1830
@@ -5349,7 +5359,7 @@ msgstr ""
 msgid "Transition Speed (ms)"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:623
+#: modules/business-reviews/widgets/business-reviews.php:641
 #: modules/posts/skins/skin-base.php:302
 #: modules/posts/skins/skin-business.php:366
 #: modules/posts/skins/skin-classic.php:100
@@ -5358,55 +5368,55 @@ msgstr ""
 msgid "Equal Height"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:636
+#: modules/business-reviews/widgets/business-reviews.php:654
 msgid ""
 "Note: This option sets an equal height for all the reviews content boxes. "
 "It takes the height of the longest review and applies it to the other "
 "reviews."
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:658
+#: modules/business-reviews/widgets/business-reviews.php:676
 #: modules/woocommerce/widgets/woo-categories.php:683
 msgid "Filters"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:666
+#: modules/business-reviews/widgets/business-reviews.php:684
 #: modules/posts/skins/skin-base.php:807 modules/posts/skins/skin-feed.php:177
 #: modules/woocommerce/widgets/woo-products.php:365
 msgid "Filter By"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:681
+#: modules/business-reviews/widgets/business-reviews.php:699
 msgid "Minimum Rating"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:699
+#: modules/business-reviews/widgets/business-reviews.php:717
 msgid ""
 "Choose the lowest star ratings to display.</br>For example, choosing 3 star "
 "will skip the reviews with less than 3 rating from displaying."
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:737
+#: modules/business-reviews/widgets/business-reviews.php:755
 #. translators: %1$s doc link
 msgid "%1$s How to get Google Places API Key? » %2$s"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:747
+#: modules/business-reviews/widgets/business-reviews.php:765
 #. translators: %1$s doc link
 msgid "%1$s How to find Google Place ID? » %2$s"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:757
+#: modules/business-reviews/widgets/business-reviews.php:775
 #. translators: %1$s doc link
 msgid "%1$s How to get Yelp API Key? » %2$s"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:767
+#: modules/business-reviews/widgets/business-reviews.php:785
 #. translators: %1$s doc link
 msgid "%1$s How to find Yelp Business ID? » %2$s"
 msgstr ""
 
-#: modules/business-reviews/widgets/business-reviews.php:777
+#: modules/business-reviews/widgets/business-reviews.php:795
 #. translators: %1$s doc link
 msgid "%1$s Unable to display more than 5 Google/3 Yelp Reviews? » %2$s"
 msgstr ""
@@ -11350,9 +11360,9 @@ msgstr ""
 #: modules/login-form/widgets/login-form.php:174
 #: modules/login-form/widgets/login-form.php:218
 #: modules/login-form/widgets/login-form.php:2503
-#: modules/login-form/widgets/login-form.php:2667
-#: modules/login-form/widgets/login-form.php:2959
-#: modules/login-form/widgets/login-form.php:2976
+#: modules/login-form/widgets/login-form.php:2668
+#: modules/login-form/widgets/login-form.php:2960
+#: modules/login-form/widgets/login-form.php:2977
 msgid "Username or Email Address"
 msgstr ""
 
@@ -11363,9 +11373,9 @@ msgstr ""
 #: modules/login-form/widgets/login-form.php:190
 #: modules/login-form/widgets/login-form.php:235
 #: modules/login-form/widgets/login-form.php:2504
-#: modules/login-form/widgets/login-form.php:2690
-#: modules/login-form/widgets/login-form.php:2999
-#: modules/login-form/widgets/login-form.php:3012
+#: modules/login-form/widgets/login-form.php:2691
+#: modules/login-form/widgets/login-form.php:3000
+#: modules/login-form/widgets/login-form.php:3013
 #: modules/registration-form/widgets/registration-form.php:126
 #: modules/registration-form/widgets/registration-form.php:372
 #: modules/registration-form/widgets/registration-form.php:373
@@ -11393,8 +11403,8 @@ msgid "Input Size"
 msgstr ""
 
 #: modules/login-form/widgets/login-form.php:267
-#: modules/login-form/widgets/login-form.php:2707
-#: modules/login-form/widgets/login-form.php:3033
+#: modules/login-form/widgets/login-form.php:2708
+#: modules/login-form/widgets/login-form.php:3034
 msgid "Remember Me"
 msgstr ""
 
@@ -11652,7 +11662,7 @@ msgid "Sign in with Facebook"
 msgstr ""
 
 #: modules/login-form/widgets/login-form.php:2447
-#: modules/login-form/widgets/login-form.php:2928
+#: modules/login-form/widgets/login-form.php:2929
 #. translators: %s: Error String
 msgid ""
 "Please configure Facebook App settings correctly from WP Dashboard -> UAE "
@@ -11667,12 +11677,12 @@ msgstr ""
 msgid "Unknown Email address. Check again or try your username."
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:2603
+#: modules/login-form/widgets/login-form.php:2604
 #: modules/nav-menu/widgets/nav-menu.php:839
 msgid "Label Text"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:2630
+#: modules/login-form/widgets/login-form.php:2631
 #. translators: %1$s user name
 msgid "You are Logged in as %1$s (%2$sLogout%3$s)"
 msgstr ""
@@ -14444,56 +14454,56 @@ msgstr ""
 msgid "Preview Messages"
 msgstr ""
 
-#: modules/registration-form/widgets/registration-form.php:2406
+#: modules/registration-form/widgets/registration-form.php:2407
 msgid "Please accept the Terms and Conditions to proceed."
 msgstr ""
 
-#: modules/registration-form/widgets/registration-form.php:2617
+#: modules/registration-form/widgets/registration-form.php:2618
 msgid ""
 "To use reCAPTCHA v3, you need to add the API Key and complete the setup "
 "process in Dashboard > Settings > UAE > User Registration Form Settings > "
 "reCAPTCHA v3."
 msgstr ""
 
-#: modules/registration-form/widgets/registration-form.php:2675
+#: modules/registration-form/widgets/registration-form.php:2676
 msgid "Submit"
-msgstr ""
-
-#: modules/registration-form/widgets/registration-form.php:2740
-#: modules/registration-form/widgets/registration-form.php:2743
-msgid "This is a success message preview!"
 msgstr ""
 
 #: modules/registration-form/widgets/registration-form.php:2741
 #: modules/registration-form/widgets/registration-form.php:2744
+msgid "This is a success message preview!"
+msgstr ""
+
+#: modules/registration-form/widgets/registration-form.php:2742
+#: modules/registration-form/widgets/registration-form.php:2745
 msgid "This is a error message preview!"
 msgstr ""
 
-#: modules/registration-form/widgets/registration-form.php:2779
+#: modules/registration-form/widgets/registration-form.php:2780
 #. translators: %s: Error String
 msgid ""
 "Error! It seems like you have added <b>%s</b> field in the form more than "
 "once."
 msgstr ""
 
-#: modules/registration-form/widgets/registration-form.php:2792
+#: modules/registration-form/widgets/registration-form.php:2793
 msgid "For Registration Form E-mail field is required!"
 msgstr ""
 
-#: modules/registration-form/widgets/registration-form.php:2803
+#: modules/registration-form/widgets/registration-form.php:2804
 msgid ""
 "Password field should be added to the form to use the Confirm Password "
 "field."
 msgstr ""
 
-#: modules/registration-form/widgets/registration-form.php:2815
+#: modules/registration-form/widgets/registration-form.php:2816
 msgid ""
 "To use the Registration Form on your site, you must set the \"Allow new "
 "registrations\" to \"User accounts may be registered\" setting from Network "
 "Admin -> Dashboard -> Settings."
 msgstr ""
 
-#: modules/registration-form/widgets/registration-form.php:2826
+#: modules/registration-form/widgets/registration-form.php:2827
 msgid ""
 "To use the Registration Form on your site, you must enable the \"Anyone Can "
 "Register\" setting from Dashboard -> Settings -> General -> Membership."

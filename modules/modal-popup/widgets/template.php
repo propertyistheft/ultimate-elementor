@@ -70,7 +70,7 @@ $this->add_render_attribute(
 	<div class="uael-overlay"></div>
 </div>
 
-<div class="uael-modal-action-wrap">
+<div class="uael-modal-action-wrap elementor-widget-button">
 	<?php
 		$action_html = $this->render_action_html();
 		echo wp_kses_post( sanitize_text_field( $action_html ) );

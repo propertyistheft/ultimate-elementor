@@ -133,7 +133,7 @@ class Settings_Api {
 			if( 'google' === $api_type ) {
 				$google_status = get_option( 'uael_google_api_status' );
 
-				if ( 'yes' === $google_status ) {
+				if ( 'yes-new' === $google_status  || 'yes' === $google_status ) {
                     return new WP_REST_Response( array( 'success' => true, 'message' => __( 'Your API key authenticated successfully!', 'uael' ) ), 200 );
                 } elseif ( 'no' === $google_status ) {
                     return new WP_REST_Response( array( 'success' => false, 'message' => __( 'Entered API key is invalid', 'uael' ) ), 400 );

@@ -1,3 +1,13 @@
+Version 1.39.2 - Wednesday, 9th April 2025
+- Fix: Buttons now correctly load the default color and font settings as defined in the Theme Customizer.
+
+Version 1.39.1 - Friday, 4th April 2025
+- Tweak: French language support has been held back temporarily due to incorrect translations showing in Spanish.
+
+Version 1.39.0 - Tuesday, 1st April 2025
+- New: Ultimate Addons for Elementor Pro now includes translations for Portuguese, Netherlands, French, Spanish, and German enhancing multilingual accessibility.
+- Improvement: Business Reviews - Added support to the New Google Place API.
+
 Version 1.38.4 - Wednesday, 19th March 2025
 - Improvement: Compatibility with latest Elementor and Elementor Pro 3.28 version.
 - Fix: Woo - Checkout - Order review AJAX failure when the widget is used inside Elementor's Themer Builder via the Post Content widget.

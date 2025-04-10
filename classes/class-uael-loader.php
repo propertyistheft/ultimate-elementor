@@ -44,6 +44,9 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 
 			add_action( 'plugins_loaded', array( $this, 'load_plugin' ) );
 
+			// Filter to change Astra menu positon.
+			add_filter( 'astra_menu_priority', array( $this, 'update_admin_menu_position' ) );
+
 			// Hook the load_textdomain function to the init action.
 			add_action( 'init', array( $this, 'load_textdomain' ) );
 
@@ -79,6 +82,15 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 		}
 
 		/**
+		 * Update Astra's menu priority to show after Dashboard menu.
+		 *
+		 * @param int $menu_priority top level menu priority.
+		 */
+		public function update_admin_menu_position( $menu_priority ) {
+			return 2.1;
+		}
+
+		/**
 		 * Defines all constants
 		 *
 		 * @since 0.0.1
@@ -87,7 +99,7 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 			define( 'UAEL_BASE', plugin_basename( UAEL_FILE ) );
 			define( 'UAEL_DIR', plugin_dir_path( UAEL_FILE ) );
 			define( 'UAEL_URL', plugins_url( '/', UAEL_FILE ) );
-			define( 'UAEL_VER', '1.38.4' );
+			define( 'UAEL_VER', '1.39.2' );
 			define( 'UAEL_MODULES_DIR', UAEL_DIR . 'modules/' );
 			define( 'UAEL_MODULES_URL', UAEL_URL . 'modules/' );
 			define( 'UAEL_SLUG', 'uae' );
@@ -128,10 +140,6 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 
 			if ( ! function_exists( 'get_plugins' ) ) {
 				require_once ABSPATH . 'wp-admin/includes/plugin.php';
-			}
-
-			if ( ! class_exists( 'UAE_Utm_Analytics' ) ) {
-				require_once UAEL_DIR . 'lib/class-uae-utm-analytics.php';
 			}
 			
 			require_once UAEL_DIR . 'classes/class-uael-core-plugin.php';

@@ -663,6 +663,8 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 				true
 			);
 
+			wp_set_script_translations( 'uael-react-app', 'uael', UAEL_DIR . 'languages' );
+
 			wp_enqueue_style(
 				'uael-react-styles',
 				UAEL_URL . 'build/main.css',
@@ -928,7 +930,7 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 			$plugin_slug = isset( $_POST['slug'] ) && is_string( $_POST['slug'] ) ? sanitize_text_field( wp_unslash( $_POST['slug'] ) ) : '';
 
 			if ( empty( $plugin_slug ) ) {
-				wp_send_json_error( array( 'message' => __( 'Plugin slug is missing.', 'ultimate-elementor' ) ) );
+				wp_send_json_error( array( 'message' => __( 'Plugin slug is missing.', 'uael' ) ) );
 			}
 
 			// Schedule the database update if the plugin is installed successfully.
@@ -938,9 +940,10 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 					// Iterate through all plugins to check if the installed plugin matches the current plugin slug.
 					$all_plugins = get_plugins();
 					foreach ( $all_plugins as $plugin_file => $_ ) {
-						if ( class_exists( '\BSF_UTM_Analytics\Inc\Utils' ) && is_callable( '\BSF_UTM_Analytics\Inc\Utils::update_referer' ) && strpos( $plugin_file, $plugin_slug . '/' ) === 0 ) {
+						// Use back slash to reference the BSF_UTM_Analytics class in the global namespace.						
+						if ( class_exists( '\BSF_UTM_Analytics' ) && is_callable( '\BSF_UTM_Analytics::update_referer' ) && strpos( $plugin_file, $plugin_slug . '/' ) === 0 ) {
 							// If the plugin is found and the update_referer function is callable, update the referer with the corresponding product slug.
-							\BSF_UTM_Analytics\Inc\Utils::update_referer( 'ultimate-elementor', $plugin_slug );
+							\BSF_UTM_Analytics::update_referer( 'ultimate-elementor', $plugin_slug );
 							return;
 						}
 					}
@@ -951,7 +954,7 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 				// @psalm-suppress NoValue.
 				wp_ajax_install_plugin();
 			} else {
-				wp_send_json_error( array( 'message' => __( 'Plugin installation function not found.', 'ultimate-elementor' ) ) );
+				wp_send_json_error( array( 'message' => __( 'Plugin installation function not found.', 'uael' ) ) );
 			}
 		}
 
@@ -973,7 +976,7 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 			$theme_slug = isset( $_POST['slug'] ) && is_string( $_POST['slug'] ) ? sanitize_text_field( wp_unslash( $_POST['slug'] ) ) : '';
 
 			if ( empty( $theme_slug ) ) {
-				wp_send_json_error( array( 'message' => __( 'Theme slug is missing.', 'ultimate-elementor' ) ) );
+				wp_send_json_error( array( 'message' => __( 'Theme slug is missing.', 'uael' ) ) );
 			}
 
 			// Schedule the database update if the theme is installed successfully.
@@ -983,9 +986,9 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 					// Iterate through all themes to check if the installed theme matches the current theme slug.
 					$all_themes = wp_get_themes();
 					foreach ( $all_themes as $theme_file => $_ ) {
-						if ( class_exists( '\BSF_UTM_Analytics\Inc\Utils' ) && is_callable( '\BSF_UTM_Analytics\Inc\Utils::update_referer' ) && strpos( $theme_file, $theme_slug . '/' ) === 0 ) {
+						if ( class_exists( '\BSF_UTM_Analytics' ) && is_callable( '\BSF_UTM_Analytics::update_referer' ) && strpos( $theme_file, $theme_slug . '/' ) === 0 ) {
 							// If the theme is found and the update_referer function is callable, update the referer with the corresponding product slug.
-							\BSF_UTM_Analytics\Inc\Utils::update_referer( 'ultimate-elementor', $theme_slug );
+							\BSF_UTM_Analytics::update_referer( 'ultimate-elementor', $theme_slug );
 							return;
 						}
 					}
@@ -996,7 +999,7 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 				// @psalm-suppress NoValue.
 				wp_ajax_install_theme();
 			} else {
-				wp_send_json_error( array( 'message' => __( 'Theme installation function not found.', 'ultimate-elementor' ) ) );
+				wp_send_json_error( array( 'message' => __( 'Theme installation function not found.', 'uael' ) ) );
 			}
 		}
 

@@ -1133,13 +1133,13 @@ class UAEL_Config {
 			),
 
 			'suretriggers/suretriggers.php'                => array(
-				'icon'         => $images_url . 'suretriggers.svg',
+				'icon'         => $images_url . 'OttoKit-Symbol-Primary.svg',
 				'type'         => 'plugin',
-				'name'         => esc_html__( 'SureTriggers', 'uael' ),
+				'name'         => esc_html__( 'OttoKit (Formerly SureTriggers)', 'uael' ),
 				'desc'         => esc_html__( 'Automate WordPress tasks effortlessly.', 'uael' ),
 				'wporg'        => 'https://wordpress.org/plugins/suretriggers/',
 				'url'          => 'https://downloads.wordpress.org/plugin/suretriggers.zip',
-				'siteurl'      => 'https://suretriggers.com/',
+				'siteurl'      => 'https://ottokit.com/',
 				'slug'         => 'suretriggers',
 				'isFree'       => true,
 				'status'       => self::get_plugin_status( 'suretriggers/suretriggers.php' ),

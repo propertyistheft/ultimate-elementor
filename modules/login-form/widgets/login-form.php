@@ -2531,6 +2531,7 @@ class LoginForm extends Common_Widget {
 					'class' => array(
 						'elementor-field-group',
 						'elementor-column',
+						'elementor-widget-button',
 						'uael-login-form-submit-group',
 						'elementor-field-type-submit',
 						'elementor-col-100',

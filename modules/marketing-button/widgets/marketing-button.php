@@ -807,7 +807,7 @@ class Marketing_Button extends Common_Widget {
 			$this->add_render_attribute( 'button', 'class', 'elementor-animation-' . esc_attr( $settings['hover_animation'] ) );
 		}
 		?>
-		<div class="uael-marketing-button">
+		<div class="uael-marketing-button elementor-widget-button">
 			<div <?php echo wp_kses_post( $this->get_render_attribute_string( 'wrapper' ) ); ?>>
 				<a <?php echo wp_kses_post( $this->get_render_attribute_string( 'button' ) ); ?>>
 				<?php if ( 'yes' === $settings['blink_effect'] ) { ?>
@@ -855,7 +855,7 @@ class Marketing_Button extends Common_Widget {
 				</span>
 			<?php } ?>
 		<# } #>
-		<div class="uael-marketing-button">
+		<div class="uael-marketing-button elementor-widget-button">
 			<#
 			view.addRenderAttribute( 'wrapper', 'class', 'uael-button-wrapper' );
 			var uael_mbutton_align = '';
