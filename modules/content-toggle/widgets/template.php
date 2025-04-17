@@ -172,7 +172,7 @@ $rbs_header_size = UAEL_Helper::validate_html_tag( $settings['rbs_header_size'] 
 			?>
 
 			<!-- Display Switch -->
-			<?php echo $switch_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?> 
+			<?php echo $switch_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If Escaped the content switcher doesn't work. ?> 
 
 		</div>
 		<div <?php echo wp_kses_post( $this->get_render_attribute_string( 'sec_2' ) ); ?>>

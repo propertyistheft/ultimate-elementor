@@ -3644,7 +3644,25 @@ class Price_Table extends Common_Widget {
 			}
 
 			?>
-			<a <?php echo $this->get_render_attribute_string( 'cta_link' ); ?>> <?php //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+			<a 
+			<?php
+			echo wp_kses( 
+				$this->get_render_attribute_string( 'cta_link' ), 
+				array(
+					'a' => array(
+						'href'   => array(),
+						'title'  => array(),
+						'target' => array(),
+						'rel'    => array(),
+						'class'  => array(),
+						'id'     => array(),
+						'style'  => array(),
+						'data-*' => array(), // Allow data attributes.
+					),
+				) 
+			);
+			?>
+			>
 				<?php if ( 'left' === $settings['cta_icon_position'] ) { ?>
 					<?php $this->render_button_icon( $settings, 'before' ); ?>
 				<?php } ?>
@@ -3966,7 +3984,7 @@ class Price_Table extends Common_Widget {
 			}
 			?>
 
-			<ul class="uael-price-table-features-list" <?php echo $this->get_data_attrs( $settings, $device ); //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>>
+			<ul class="uael-price-table-features-list" <?php echo wp_kses( $this->get_data_attrs( $settings, $device ), array( 'data-*' => array() ) ); ?>>
 				<?php foreach ( $settings['features_list'] as  $index => $item ) : ?>
 					<?php
 					$title_key  = $this->get_repeater_setting_key( 'item_text', 'features_list', $index );
@@ -4136,7 +4154,7 @@ class Price_Table extends Common_Widget {
 		ob_start();
 		include UAEL_MODULES_DIR . 'price-table/widgets/template.php';
 		$html = ob_get_clean();
-		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If escaped icons are not rendering.
 	}
 
 	/**

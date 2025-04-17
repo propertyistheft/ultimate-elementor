@@ -1122,7 +1122,7 @@ class ContentToggle extends Common_Widget {
 		ob_start();
 		include UAEL_MODULES_DIR . 'content-toggle/widgets/template.php';
 		$html = ob_get_clean();
-		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If Escaped the content switcher doesn't work.
 	}
 
 	/**

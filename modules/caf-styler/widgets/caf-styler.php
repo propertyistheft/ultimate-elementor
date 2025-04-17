@@ -1329,7 +1329,7 @@ class CafStyler extends Common_Widget {
 		ob_start();
 		include UAEL_MODULES_DIR . 'caf-styler/widgets/template.php';
 		$html = ob_get_clean();
-		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If escaped will break on frontend.
 		$this->render_editor_script();
 	}
 }

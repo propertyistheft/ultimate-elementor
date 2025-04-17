@@ -2289,7 +2289,7 @@ class Offcanvas extends Common_Widget {
 					break;
 			}
 			?>
-			<div tabindex="0" <?php echo wp_kses_post( $this->get_render_attribute_string( 'action-wrap' ) ); ?>><span class="uael-offcanvas-icon-bg uael-offcanvas-icon <?php echo esc_attr( $position ); ?>"><?php echo $inner_html; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span></div>
+			<div tabindex="0" <?php echo wp_kses_post( $this->get_render_attribute_string( 'action-wrap' ) ); ?>><span class="uael-offcanvas-icon-bg uael-offcanvas-icon <?php echo esc_attr( $position ); ?>"><?php echo $inner_html; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If Escaping the icon doesn't appear on FE ?></span></div>
 			<?php
 		}
 	}

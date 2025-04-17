@@ -2114,7 +2114,7 @@ class GfStyler extends Common_Widget {
 		ob_start();
 		include UAEL_MODULES_DIR . 'gf-styler/widgets/template.php';
 		$html = ob_get_clean();
-		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If escaped show css on frontend and doesn't show the form fields.
 	}
 }
 

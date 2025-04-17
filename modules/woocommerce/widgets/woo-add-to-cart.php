@@ -1095,7 +1095,7 @@ class Woo_Add_To_Cart extends Common_Widget {
 				$atc_html .= '</a>';
 				$atc_html .= '</div>';
 
-			echo $atc_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo $atc_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped --If escaped it will not render the button icon.
 		} elseif ( current_user_can( 'manage_options' ) ) {
 
 			$class = implode(
@@ -1119,7 +1119,7 @@ class Woo_Add_To_Cart extends Common_Widget {
 				$atc_html .= '</a>';
 			$atc_html     .= '</div>';
 
-			echo $atc_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo wp_kses_post( $atc_html );
 		}
 	}
 }

@@ -664,7 +664,7 @@ abstract class Skin_Style {
 
 		do_action( 'uael_single_post_before_content_terms', get_the_ID(), $settings );
 
-		printf( '<span class="uael-post__terms-meta uael-post__terms-meta-%s">%s</span>', esc_attr( $prefix ), $result );//phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		printf( '<span class="uael-post__terms-meta uael-post__terms-meta-%s">%s</span>', esc_attr( $prefix ), $result );//phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If escaped doesn't render category icon. 
 
 		do_action( 'uael_single_post_after_content_terms', get_the_ID(), $settings );
 	}
@@ -750,7 +750,7 @@ abstract class Skin_Style {
 		}
 		do_action( 'uael_single_post_before_terms', get_the_ID(), $settings );
 
-		printf( '<span class="uael-post__terms">%s</span>', $result );//phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		printf( '<span class="uael-post__terms">%s</span>', $result );//phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If escaped doesn't render category icon.
 
 		do_action( 'uael_single_post_after_terms', get_the_ID(), $settings );
 	}

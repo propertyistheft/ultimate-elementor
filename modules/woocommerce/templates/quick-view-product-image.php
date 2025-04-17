@@ -28,7 +28,7 @@ global $post, $product, $woocommerce;
 		);
 		echo sprintf(
 			'<li class="woocommerce-product-gallery__image">%s</li>',
-			$image // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			$image // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If escaped it will remove many attributes from the image tag.
 		);
 
 		if ( $attachment_ids ) {

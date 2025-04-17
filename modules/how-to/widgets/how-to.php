@@ -1943,7 +1943,7 @@ class HowTo extends Common_Widget {
 
 										$title = sprintf( '<a %1$s>%2$s</a>', $this->get_render_attribute_string( 'step_url_' . $index ), $title );
 
-										echo $title; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+										echo wp_kses_post( $title );
 
 									} else {
 										?>

@@ -1760,7 +1760,7 @@ class SocialShare extends Common_Widget {
 
 				if ( 'floating' === $settings['display_position'] ) {
 					$html = $this->inline_floating( $settings, $total_result );
-						echo $html; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+						echo esc_html( $html );
 				}
 				?>
 			</div>

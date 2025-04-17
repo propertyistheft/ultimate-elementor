@@ -2478,7 +2478,7 @@ class Video_Gallery extends Common_Widget {
 					<?php
 						$url = empty( $url['url'] ) ? '' : esc_url( $url['url'] );
 					?>
-					<div class="uael-video__gallery-iframe" style="background-image:url('<?php echo $url; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>');">
+					<div class="uael-video__gallery-iframe" style="background-image:url('<?php echo esc_url( $url ); ?>');">
 						<a <?php echo wp_kses_post( $this->get_render_attribute_string( 'video-container-link' . $index ) ); ?>>
 							<div class="uael-video__content-wrap">
 								<div class="uael-video__content">

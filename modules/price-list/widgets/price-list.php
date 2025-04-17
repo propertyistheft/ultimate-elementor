@@ -1243,7 +1243,7 @@ if ( ! class_exists( 'Price_List' ) ) {
 			ob_start();
 			include UAEL_MODULES_DIR . 'price-list/widgets/template.php';
 			$html = ob_get_clean();
-			echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo wp_kses_post( $html );
 		}
 
 		/**

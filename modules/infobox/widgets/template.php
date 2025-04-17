@@ -77,7 +77,7 @@ $this->add_render_attribute( 'classname', 'class', ' uael-infobox-link-type-' . 
 			}
 			$this->add_render_attribute( 'module_link', 'class', 'uael-infobox-module-link' );
 			?>
-			<a <?php echo wp_kses_post( $this->get_render_attribute_string( 'module_link' ) ); ?>></a><?php //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>  
+			<a <?php echo wp_kses_post( $this->get_render_attribute_string( 'module_link' ) ); ?>></a>  
 			<?php
 		}
 		?>

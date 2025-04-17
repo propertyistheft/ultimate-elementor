@@ -1,3 +1,7 @@
+Version 1.39.3 - Wednesday, 16th April 2025
+- Improvement: Enhanced the codebase to strengthen security measures.
+- Fix: Display Conditions - Fixed an issue where ACF checkbox and true/false field type values were not displayed correctly.
+
 Version 1.39.2 - Wednesday, 9th April 2025
 - Fix: Buttons now correctly load the default color and font settings as defined in the Theme Customizer.
 

@@ -1556,7 +1556,7 @@ class Woo_Categories extends Common_Widget {
 		}
 		$output .= '</div>';
 
-		echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If escaped breaks the output.
 	}
 
 	/**
@@ -1579,6 +1579,6 @@ class Woo_Categories extends Common_Widget {
 			$out_html        .= $this->query_product_categories();
 		$out_html            .= '</div>';
 
-		echo $out_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo $out_html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped --If escaped it will not render the correct output for Carousel layout.
 	}
 }

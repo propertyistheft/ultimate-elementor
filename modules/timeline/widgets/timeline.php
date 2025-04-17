@@ -2336,7 +2336,7 @@ class Timeline extends Common_Widget {
 			ob_start();
 			include UAEL_MODULES_DIR . 'timeline/widgets/template.php';
 			$html = ob_get_clean();
-			echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If escaped the icon in the timeline is not appearing.
 		} elseif ( 'posts' === $settings['timeline_type'] ) {
 			$this->add_render_attribute( 'timeline_wrapper', 'class', 'uael-timeline-wrapper' );
 			$this->add_render_attribute( 'timeline_wrapper', 'class', 'uael-timeline-node' );

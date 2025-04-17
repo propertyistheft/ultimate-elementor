@@ -2732,7 +2732,7 @@ class Modal_Popup extends Common_Widget {
 			}
 			?>
 			<div <?php echo wp_kses_post( $this->get_render_attribute_string( 'action-wrap' ) ); ?>>
-				<?php echo $inner_html;//phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+				<?php echo $inner_html;//phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If escaped doesn't work for Icon ?>
 			</div>
 
 			<?php
@@ -2919,7 +2919,7 @@ class Modal_Popup extends Common_Widget {
 		ob_start();
 		include UAEL_MODULES_DIR . 'modal-popup/widgets/template.php';
 		$html = ob_get_clean();
-		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped  -- If escaped not working for icon and also not showing modal popup close button.
 	}
 
 	/**

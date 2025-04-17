@@ -2777,7 +2777,7 @@ class RegistrationForm extends Common_Widget {
 									<?php
 									echo '<div class="elementor-alert elementor-alert-warning">';
 									/* translators: %s: Error String */
-									echo sprintf( __( 'Error! It seems like you have added <b>%s</b> field in the form more than once.', 'uael' ), wp_kses_post( $error_string ) ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+									echo wp_kses_post( sprintf( __( 'Error! It seems like you have added <b>%s</b> field in the form more than once.', 'uael' ), $error_string ) );
 									echo '</div>';
 									?>
 								</span>
@@ -2836,7 +2836,7 @@ class RegistrationForm extends Common_Widget {
 					} elseif ( ! $is_allowed_register ) {
 						return false;
 					}
-					echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If the output is escaped, the form fields will not be rendered.
 			endif;
 
 		}

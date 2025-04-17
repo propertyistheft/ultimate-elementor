@@ -2247,22 +2247,22 @@ class Woo_Checkout extends Common_Widget {
 			<div class="woocommerce">
 				<style>
 					.woocommerce .blockUI.blockOverlay:before {
-						background-image: url('<?php echo WC_ABSPATH . 'assets/images/icons/loader.svg'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>') center center !important;
+						background-image: url('<?php echo WC_ABSPATH . 'assets/images/icons/loader.svg'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If escaped url is not coming properly. ?>') center center !important;
 					}
 				</style>
 				<?php
 
 				// Backwards compatibility with old pay and thanks link arguments.
-				if ( isset( $_GET['order'] ) && isset( $_GET['key'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+				if ( isset( $_GET['order'] ) && isset( $_GET['key'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Nonce verification skipped as this is a read-only check.
 					wc_deprecated_argument( __CLASS__ . '->' . __FUNCTION__, '2.1', '"order" is no longer used to pass an order ID. Use the order-pay or order-received endpoint instead.' );
 
-					$order_id = absint( $_GET['order'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+					$order_id = absint( $_GET['order'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Nonce verification skipped as this is a read-only check.
 					$order    = wc_get_order( $order_id );
 
 					if ( $order && $order->has_status( 'pending' ) ) {
-						$wp->query_vars['order-pay'] = absint( $_GET['order'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+						$wp->query_vars['order-pay'] = absint( $_GET['order'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Nonce verification skipped as this is a read-only check.
 					} else {
-						$wp->query_vars['order-received'] = absint( $_GET['order'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+						$wp->query_vars['order-received'] = absint( $_GET['order'] ); // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Nonce verification skipped as this is a read-only check.
 					}
 				}
 

@@ -2476,7 +2476,7 @@ class Video extends Common_Widget {
 				<div <?php echo wp_kses_post( $this->get_render_attribute_string( 'video-wrapper' ) ); ?>>
 					<<?php echo esc_attr( $custom_tag ); ?> <?php echo wp_kses_post( $this->get_render_attribute_string( 'video-thumb' ) ); ?>></<?php echo esc_attr( $custom_tag ); ?>>
 					<div <?php echo wp_kses_post( $this->get_render_attribute_string( 'video-play' ) ); ?>>
-						<?php echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						<?php echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If escaped the play icon will not rendered on FE. ?>
 					</div>
 				</div>
 				<?php if ( 'yes' === $settings['enable_sticky'] && 'yes' === $settings['enable_sticky_close_button'] ) { ?>

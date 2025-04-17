@@ -433,7 +433,7 @@ class Welcome_Music extends Common_Widget {
 		}
 		?>
 		<audio class="uael-welcome-track" data-autoplay="<?php echo esc_attr( $autoplay ); ?>" <?php echo $loop ? 'loop' : ''; ?>>
-			<source src="<?php echo esc_url( $music_link ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>" type="audio/mpeg" />
+			<source src="<?php echo esc_url( $music_link ); ?>" type="audio/mpeg" />
 		</audio>
 		<div class="uael-welcome-music-container" <?php echo wp_kses_post( $this->get_render_attribute_string( 'music-container' ) ); ?>>
 			<div id="uael-play-pause" class="uael-play">

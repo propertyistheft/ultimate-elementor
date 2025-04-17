@@ -843,7 +843,7 @@ class Dual_Heading extends Common_Widget {
 		<div <?php echo wp_kses_post( $this->get_render_attribute_string( 'uael-dual-heading' ) ); ?>>
 			<<?php echo esc_attr( $dual_html_tag ); ?>>
 				<?php if ( ! empty( $settings['heading_link']['url'] ) ) { ?>
-					<a <?php echo $link; ?> > <?php //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+					<a <?php echo wp_kses_post( $link ); ?> >
 				<?php } ?>
 						<?php
 						// Ignore the PHPCS warning about constant declaration.
@@ -858,7 +858,7 @@ class Dual_Heading extends Common_Widget {
 		</div>
 		<?php
 		$html = ob_get_clean();
-		echo $html; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo wp_kses_post( $html );
 	}
 
 	/**

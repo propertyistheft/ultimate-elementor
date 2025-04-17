@@ -1438,7 +1438,7 @@ class FAQ extends Common_Widget {
 								<div class="uael-accordion-content" role="tabpanel">
 									<span>
 									<?php
-									echo $this->get_modal_content( $key ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+									echo $this->get_modal_content( $key ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If escaped it will not correctly render the content for saved templates.
 									?>
 									</span>
 								</div>

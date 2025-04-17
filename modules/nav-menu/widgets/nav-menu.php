@@ -2417,7 +2417,7 @@ class Nav_Menu extends Common_Widget {
 			}
 			$output .= '</ul>';
 
-			echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+			echo $output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped --If escaping the output, the menu doesn't appear on the frontend.
 			?>
 		</nav>
 		<?php
@@ -2542,7 +2542,7 @@ class Nav_Menu extends Common_Widget {
 				<div role="button" class="uael-nav-menu__toggle elementor-clickable uael-flyout-trigger" tabindex="0">
 					<span class="screen-reader-text">Flyout Menu</span>
 						<div class="uael-nav-menu-icon" tabindex="0" >
-							<?php echo isset( $menu_close_icons[0] ) ? $menu_close_icons[0] : ''; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+							<?php echo isset( $menu_close_icons[0] ) ? $menu_close_icons[0] : ''; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If escaping the svg icon doesn't appear on FE ?>
 						</div>
 						<?php if ( 'yes' === $settings['toggle_label_show'] ) { ?>
 							<span class="uael-nav-menu-label"><?php echo esc_html( $settings['toggle_label_text'] ); ?></span>
@@ -2554,14 +2554,14 @@ class Nav_Menu extends Common_Widget {
 						<div id="uael-flyout-content-id-<?php echo esc_attr( $this->get_id() ); ?>" class="uael-side uael-flyout-<?php echo esc_attr( $settings['flyout_layout'] ); ?> uael-flyout-open" data-layout="<?php echo wp_kses_post( $settings['flyout_layout'] ); ?>" data-flyout-type="<?php echo wp_kses_post( $settings['flyout_type'] ); ?>">
 							<div class="uael-flyout-content push">
 								<?php if ( 'wordpress_menu' === $settings['menu_type'] ) { ?>
-									<nav <?php echo wp_kses_post( $this->get_render_attribute_string( 'uael-nav-menu' ) ); ?>><?php echo $menu_html; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></nav>
+									<nav <?php echo wp_kses_post( $this->get_render_attribute_string( 'uael-nav-menu' ) ); ?>><?php echo wp_kses_post( $menu_html ); ?></nav>
 									<?php
 								} else {
 									$this->get_custom_style();
 								}
 								?>
 								<div class="elementor-clickable uael-flyout-close" tabindex="0">
-									<?php echo isset( $menu_close_icons[1] ) ? $menu_close_icons[1] : ''; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+									<?php echo isset( $menu_close_icons[1] ) ? $menu_close_icons[1] : ''; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If escaping the svg icon doesn't appear on FE ?>
 								</div>
 							</div>
 						</div>
@@ -2630,14 +2630,14 @@ class Nav_Menu extends Common_Widget {
 				<div role="button" class="uael-nav-menu__toggle elementor-clickable">
 					<span class="screen-reader-text">Main Menu</span>
 					<div class="uael-nav-menu-icon">
-						<?php echo isset( $menu_close_icons[0] ) ? $menu_close_icons[0] : ''; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						<?php echo isset( $menu_close_icons[0] ) ? $menu_close_icons[0] : ''; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If escaping the svg icon doesn't appear on FE ?>
 					</div>
 					<?php if ( 'yes' === $settings['toggle_label_show'] ) { ?>
 						<span class="uael-nav-menu-label"><?php echo esc_html( $settings['toggle_label_text'] ); ?></span>
 					<?php } ?>
 				</div>
 			<?php if ( 'wordpress_menu' === $settings['menu_type'] ) { ?>
-				<nav <?php echo wp_kses_post( $this->get_render_attribute_string( 'uael-nav-menu' ) ); ?>><?php echo $menu_html; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></nav>
+				<nav <?php echo wp_kses_post( $this->get_render_attribute_string( 'uael-nav-menu' ) ); ?>><?php echo wp_kses_post( $menu_html ); ?></nav>
 			<?php } else { ?>
 					<?php $this->get_custom_style(); ?>
 			<?php } ?>

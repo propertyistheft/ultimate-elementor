@@ -84,7 +84,7 @@ trait Woo_Checkout_Template {
 
 				<?php do_action( 'woocommerce_login_form_start' ); ?>
 
-				<?php echo ( $message ) ? wpautop( wptexturize( $message ) ) : ''; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+				<?php echo ( $message ) ? wpautop( wptexturize( $message ) ) : ''; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaping may break the message output. ?>
 
 				<p class="form-row form-row-first">
 					<label for="username"><?php esc_html_e( 'Username or email', 'uael' ); ?>&nbsp;<span class="required">*</span></label>
@@ -372,15 +372,15 @@ trait Woo_Checkout_Template {
 										?>
 									</div>
 									<div class="product-name">
-										<?php echo apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) . '&nbsp;'; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-										<?php echo apply_filters( 'woocommerce_checkout_cart_item_quantity', ' <strong class="product-quantity">' . sprintf( '&times;&nbsp;%s', $cart_item['quantity'] ) . '</strong>', $cart_item, $cart_item_key ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
-										<?php echo wc_get_formatted_cart_item_data( $cart_item ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+										<?php echo wp_kses_post( apply_filters( 'woocommerce_cart_item_name', $_product->get_name(), $cart_item, $cart_item_key ) ) . '&nbsp;'; ?>
+										<?php echo wp_kses_post( apply_filters( 'woocommerce_checkout_cart_item_quantity', ' <strong class="product-quantity">' . sprintf( '&times;&nbsp;%s', $cart_item['quantity'] ) . '</strong>', $cart_item, $cart_item_key ) ); ?>
+										<?php echo wp_kses_post( wc_get_formatted_cart_item_data( $cart_item ) ); ?>									
 									</div>
 								</div>
 								<div class="table-col-3 product-total">
 									<?php
 									$product_subtotal = WC()->cart->get_product_subtotal( $_product, $cart_item['quantity'] );
-									echo apply_filters( 'woocommerce_cart_item_subtotal', $product_subtotal, $cart_item, $cart_item_key ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+									echo wp_kses_post( apply_filters( 'woocommerce_cart_item_subtotal', $product_subtotal, $cart_item, $cart_item_key ) );
 									?>
 								</div>
 							</li>
@@ -714,14 +714,14 @@ trait Woo_Checkout_Template {
 
 		$checkout = WC()->checkout();
 
-		if ( empty( $_POST ) && wc_notice_count( 'error' ) > 0 ) { // phpcs:ignore WordPress.Security.NonceVerification.Missing
+		if ( empty( $_POST ) && wc_notice_count( 'error' ) > 0 ) { // phpcs:ignore WordPress.Security.NonceVerification.Missing -- Nonce verification skipped as this is a read-only check.
 
 			wc_get_template( 'checkout/cart-errors.php', array( 'checkout' => $checkout ) );
 			wc_clear_notices();
 
 		} else {
 
-			$non_js_checkout = ! empty( $_POST['woocommerce_checkout_update_totals'] ); // phpcs:ignore WordPress.Security.NonceVerification.Missing
+			$non_js_checkout = ! empty( $_POST['woocommerce_checkout_update_totals'] ); // phpcs:ignore WordPress.Security.NonceVerification.Missing -- Nonce verification skipped as this is a read-only check.
 
 			if ( wc_notice_count( 'error' ) === 0 && $non_js_checkout ) {
 				wc_add_notice( __( 'The order totals have been updated. Please confirm your order by pressing the "Place order" button at the bottom of the page.', 'uael' ) );
@@ -729,15 +729,15 @@ trait Woo_Checkout_Template {
 
 			switch ( $setting['layout'] ) {
 				case '1':
-					echo self::single_column_layout( $checkout ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					echo self::single_column_layout( $checkout ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If escaped breaking the frontend.
 					break;
 
 				case '2':
-					echo self::two_column_layout( $checkout ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					echo self::two_column_layout( $checkout ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If escaped breaking the frontend.
 					break;
 
 				case '3':
-					echo self::multistep_layout( $checkout, $setting ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+					echo self::multistep_layout( $checkout, $setting ); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If escaped breaking the frontend.
 					break;
 
 				default:
@@ -968,7 +968,7 @@ trait Woo_Checkout_Template {
 				if ( self::$enable_login_reminder ) {
 					?>
 					<div class="uael-tab-panel" id="uael-tab-panel-0">
-						<?php echo self::uael_login_template(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+						<?php echo self::uael_login_template(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaping may break the template output. ?>
 					</div>
 					<?php
 				}

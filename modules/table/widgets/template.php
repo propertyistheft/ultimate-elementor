@@ -230,7 +230,7 @@ $csv = $this->parse_csv();
 										<?php } ?>
 										<?php } ?>
 									<?php } ?>
-									<span <?php echo wp_kses_post( $this->get_render_attribute_string( $repeater_cell_text ) ); ?>><?php echo $row['cell_text'];// phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></span>
+									<span <?php echo wp_kses_post( $this->get_render_attribute_string( $repeater_cell_text ) ); ?>><?php echo wp_kses_post( $row['cell_text'] ); ?></span>
 									<?php if ( 'icon' === $row['cell_content_icon_image'] && $row['new_cell_icon']['value'] ) { ?>
 										<?php if ( 'right' === $settings['all_icon_align'] ) { ?>
 											<?php $this->render_row_icon( $row ); ?>

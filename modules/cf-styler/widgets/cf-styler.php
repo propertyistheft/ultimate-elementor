@@ -1435,7 +1435,7 @@ class CfStyler extends Common_Widget {
 		} else {
 			$html = __( 'You have not added any Contact Form 7 yet.', 'uael' );
 		}
-		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo wp_kses_post( $html );
 
 		$this->render_editor_script();
 	}

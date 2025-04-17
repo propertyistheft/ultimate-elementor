@@ -395,10 +395,12 @@ msgstr ""
 
 #: src/Components/Onboarding/Build.jsx:56
 #: src/Components/Settings/Branding.jsx:107
+#: src/Components/Settings/UsageTracking.jsx:32
 msgid "Settings saved successfully!"
 msgstr ""
 
 #: src/Components/Onboarding/Build.jsx:61
+#: src/Components/Settings/UsageTracking.jsx:37
 msgid "Failed to save settings!"
 msgstr ""
 
@@ -612,7 +614,7 @@ msgid "Enter Instagram Access Token"
 msgstr ""
 
 #: src/Components/Settings/Integrations.jsx:206
-#: src/Components/Settings/Settings.jsx:114
+#: src/Components/Settings/Settings.jsx:135
 msgid "Integrations"
 msgstr ""
 
@@ -826,7 +828,7 @@ msgid "Consumer Secret"
 msgstr ""
 
 #: src/Components/Settings/MyAccount.jsx:102
-#: src/Components/Settings/Settings.jsx:33
+#: src/Components/Settings/Settings.jsx:34
 msgid "My Account"
 msgstr ""
 
@@ -871,7 +873,7 @@ msgid "An error occurred while deactivating license."
 msgstr ""
 
 #: src/Components/Settings/PostSkins.jsx:158
-#: src/Components/Settings/Settings.jsx:134
+#: src/Components/Settings/Settings.jsx:155
 msgid "Post Widget Skins"
 msgstr ""
 
@@ -899,32 +901,37 @@ msgstr ""
 msgid "An error occurred while deactivating all skins."
 msgstr ""
 
-#: src/Components/Settings/Settings.jsx:113
+#: src/Components/Settings/Settings.jsx:115
+#: src/Components/Settings/UsageTracking.jsx:51
+msgid "Usage Tracking"
+msgstr ""
+
+#: src/Components/Settings/Settings.jsx:134
 msgid "Preferences"
 msgstr ""
 
-#: src/Components/Settings/Settings.jsx:133
+#: src/Components/Settings/Settings.jsx:154
 msgid "Skins"
 msgstr ""
 
-#: src/Components/Settings/Settings.jsx:52
+#: src/Components/Settings/Settings.jsx:53
 msgid "Editor"
 msgstr ""
 
-#: src/Components/Settings/Settings.jsx:53
+#: src/Components/Settings/Settings.jsx:54
 msgid "Theme Support"
 msgstr ""
 
-#: src/Components/Settings/Settings.jsx:72
+#: src/Components/Settings/Settings.jsx:73
 msgid "Utilities"
 msgstr ""
 
-#: src/Components/Settings/Settings.jsx:73
+#: src/Components/Settings/Settings.jsx:74
 #: src/Components/Settings/VersionControl.jsx:103
 msgid "Version Control"
 msgstr ""
 
-#: src/Components/Settings/Settings.jsx:94
+#: src/Components/Settings/Settings.jsx:95
 msgid "Branding"
 msgstr ""
 
@@ -955,6 +962,19 @@ msgstr ""
 
 #: src/Components/Settings/ThemeSupport.jsx:91
 msgid "Select Option to Add Theme Support"
+msgstr ""
+
+#: src/Components/Settings/UsageTracking.jsx:81
+msgid "Enable Usage Tracking"
+msgstr ""
+
+#: src/Components/Settings/UsageTracking.jsx:84
+msgid "Allow Brainstorm Force products to track non-sensitive usage tracking data. "
+msgstr ""
+
+#: src/Components/Settings/UsageTracking.jsx:94
+#: src/Components/Templates/ExploreTemplates.jsx:247
+msgid "Learn More"
 msgstr ""
 
 #: src/Components/Settings/VersionControl.jsx:124
@@ -1047,10 +1067,6 @@ msgstr ""
 
 #: src/Components/Templates/ExploreTemplates.jsx:236
 msgid "Explore Templates"
-msgstr ""
-
-#: src/Components/Templates/ExploreTemplates.jsx:247
-msgid "Learn More"
 msgstr ""
 
 #: src/Components/Templates/ExploreTemplates.jsx:27

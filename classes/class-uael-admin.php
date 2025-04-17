@@ -454,8 +454,8 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 				return false;
 			}
 
-			$current_page_slug = isset( $_GET['page'] ) ? sanitize_text_field( $_GET['page'] ) : ''; //phpcs:ignore WordPress.Security.NonceVerification.Recommended
-			$current_action    = isset( $_GET['action'] ) ? sanitize_text_field( $_GET['action'] ) : ''; //phpcs:ignore WordPress.Security.NonceVerification.Recommended
+			$current_page_slug = isset( $_GET['page'] ) ? sanitize_text_field( $_GET['page'] ) : ''; //phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Nonce verification not required as this is a read-only operation and data is already sanitized.
+			$current_action    = isset( $_GET['action'] ) ? sanitize_text_field( $_GET['action'] ) : ''; //phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Nonce verification not required as this is a read-only operation and data is already sanitized.
 
 			if ( ! is_array( $action ) ) {
 				$action = explode( ' ', $action );
@@ -704,6 +704,8 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 					'integrations__selected_url'          => UAEL_URL . 'assets/images/settings/integrations-selected.svg',
 					'version_url'                         => UAEL_URL . 'assets/images/settings/version.svg',
 					'integrations_url'                    => UAEL_URL . 'assets/images/settings/integrations.svg',
+					'tracking_url'                        => UAEL_URL . 'assets/images/settings/tracking.svg',
+					'tracking__selected_url'              => UAEL_URL . 'assets/images/settings/tracking-selected.svg',
 					'postskins_url'                       => UAEL_URL . 'assets/images/settings/Post-Skin.svg',
 					'postskins_selected_url'              => UAEL_URL . 'assets/images/settings/Post-Skin-Selected.svg',
 					'user_url'                            => UAEL_URL . 'assets/images/settings/user.svg',

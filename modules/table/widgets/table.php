@@ -2472,7 +2472,7 @@ class Table extends Common_Widget {
 		ob_start();
 		include UAEL_MODULES_DIR . 'table/widgets/template.php';
 		$html = ob_get_clean();
-		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped --If escaped the icon for column will not render on FE.
 	}
 
 }

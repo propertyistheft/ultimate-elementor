@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the Ultimate Addons for Elementor Pro package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ultimate Addons for Elementor Pro 1.39.2\n"
+"Project-Id-Version: Ultimate Addons for Elementor Pro 1.39.3\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/ultimate-elementor\n"
-"POT-Creation-Date: 2025-04-09 06:21:13+00:00\n"
+"POT-Creation-Date: 2025-04-15 13:54:11+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -117,7 +117,6 @@ msgid "Oops! Something went wrong. Please refresh the page and try again."
 msgstr ""
 
 #: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:80
-#: classes/class-uael-loader.php:73
 msgid "Quick Feedback"
 msgstr ""
 
@@ -333,7 +332,7 @@ msgid ""
 "option, adding the App Secret Key will fix it."
 msgstr ""
 
-#: classes/class-uael-admin.php:229 classes/class-uael-admin.php:1465
+#: classes/class-uael-admin.php:229 classes/class-uael-admin.php:1467
 msgid "Ultimate Addons for Elementor"
 msgstr ""
 
@@ -368,92 +367,92 @@ msgstr ""
 msgid "Onboarding"
 msgstr ""
 
-#: classes/class-uael-admin.php:933
+#: classes/class-uael-admin.php:935
 msgid "Plugin slug is missing."
 msgstr ""
 
-#: classes/class-uael-admin.php:957
+#: classes/class-uael-admin.php:959
 msgid "Plugin installation function not found."
 msgstr ""
 
-#: classes/class-uael-admin.php:979
+#: classes/class-uael-admin.php:981
 msgid "Theme slug is missing."
 msgstr ""
 
-#: classes/class-uael-admin.php:1002
+#: classes/class-uael-admin.php:1004
 msgid "Theme installation function not found."
 msgstr ""
 
-#: classes/class-uael-admin.php:1051
+#: classes/class-uael-admin.php:1053
 msgid "License key not found."
 msgstr ""
 
-#: classes/class-uael-admin.php:1077
+#: classes/class-uael-admin.php:1079
 msgid "License Successfully Activated"
 msgstr ""
 
-#: classes/class-uael-admin.php:1081
+#: classes/class-uael-admin.php:1083
 msgid "License activation failed!"
 msgstr ""
 
-#: classes/class-uael-admin.php:1122
+#: classes/class-uael-admin.php:1124
 msgid "License Successfully Deactivated"
 msgstr ""
 
-#: classes/class-uael-admin.php:1126
+#: classes/class-uael-admin.php:1128
 msgid "License deactivation failed!"
 msgstr ""
 
-#: classes/class-uael-admin.php:1155
+#: classes/class-uael-admin.php:1157
 msgid "Plugin activation is disabled for you on this site."
 msgstr ""
 
-#: classes/class-uael-admin.php:1164
+#: classes/class-uael-admin.php:1166
 msgid "Plugin Activated."
 msgstr ""
 
-#: classes/class-uael-admin.php:1175
+#: classes/class-uael-admin.php:1177
 msgid "Theme activation is disabled for you on this site."
 msgstr ""
 
-#: classes/class-uael-admin.php:1184
+#: classes/class-uael-admin.php:1186
 msgid "Theme Activated."
 msgstr ""
 
-#: classes/class-uael-admin.php:1191
+#: classes/class-uael-admin.php:1193
 msgid "Could not activate plugin. Please activate from the Plugins page."
 msgstr ""
 
-#: classes/class-uael-admin.php:1193
+#: classes/class-uael-admin.php:1195
 msgid "Could not activate theme. Please activate from the Themes page."
 msgstr ""
 
-#: classes/class-uael-admin.php:1466
+#: classes/class-uael-admin.php:1468
 msgid ""
 "How likely are you to recommend Ultimate Addons for Elementor to your "
 "friends or colleagues?"
 msgstr ""
 
-#: classes/class-uael-admin.php:1468
+#: classes/class-uael-admin.php:1470
 msgid ""
 "Could you please do us a favor and give us a 5-star rating on Trustpilot? "
 "It would help others choose Ultimate Addons for Elementor with confidence. "
 "Thank you!"
 msgstr ""
 
-#: classes/class-uael-admin.php:1471
+#: classes/class-uael-admin.php:1473
 msgid "Thank you for your feedback"
 msgstr ""
 
-#: classes/class-uael-admin.php:1472
+#: classes/class-uael-admin.php:1474
 msgid "We value your input. How can we improve your experience?"
 msgstr ""
 
-#: classes/class-uael-admin.php:1495
+#: classes/class-uael-admin.php:1497
 msgid "Settings saved successfully!"
 msgstr ""
 
-#: classes/class-uael-admin.php:1498
+#: classes/class-uael-admin.php:1500
 msgid "Unable to save settings."
 msgstr ""
 
@@ -548,35 +547,29 @@ msgstr ""
 msgid "Looks like content is empty. Cannot be processed."
 msgstr ""
 
-#: classes/class-uael-loader.php:75
-msgid ""
-"If you have a moment, please share why you are deactivating Ultimate Addons "
-"for Elementor Pro:"
-msgstr ""
-
-#: classes/class-uael-loader.php:276
+#: classes/class-uael-loader.php:318
 #. translators: %s: html tags
 msgid ""
 "The %1$sUltimate Addons for Elementor Pro%2$s plugin requires "
 "%1$sElementor%2$s plugin installed & activated."
 msgstr ""
 
-#: classes/class-uael-loader.php:286
+#: classes/class-uael-loader.php:328
 msgid "Activate Elementor"
 msgstr ""
 
-#: classes/class-uael-loader.php:294 classes/class-uael-loader.php:332
+#: classes/class-uael-loader.php:336 classes/class-uael-loader.php:374
 msgid "Install Elementor"
 msgstr ""
 
-#: classes/class-uael-loader.php:313
+#: classes/class-uael-loader.php:355
 #. translators: %s: html tags
 msgid ""
 "The %1$sUltimate Addons for Elementor Pro%2$s plugin has stopped working "
 "because you are using an older version of %1$sElementor%2$s plugin."
 msgstr ""
 
-#: classes/class-uael-loader.php:324
+#: classes/class-uael-loader.php:366
 msgid "Update Elementor"
 msgstr ""
 
@@ -10137,23 +10130,23 @@ msgstr ""
 msgid "Text Hover Color"
 msgstr ""
 
-#: modules/hotspot/widgets/hotspot.php:1940
-#: modules/hotspot/widgets/hotspot.php:2158
+#: modules/hotspot/widgets/hotspot.php:1968
+#: modules/hotspot/widgets/hotspot.php:2186
 #: modules/woocommerce/widgets/woo-checkout.php:310
 msgid "Next"
 msgstr ""
 
-#: modules/hotspot/widgets/hotspot.php:1941
-#: modules/hotspot/widgets/hotspot.php:2158
+#: modules/hotspot/widgets/hotspot.php:1969
+#: modules/hotspot/widgets/hotspot.php:2186
 #: modules/woocommerce/widgets/woo-checkout.php:295
 msgid "Previous"
 msgstr ""
 
-#: modules/hotspot/widgets/hotspot.php:1942
+#: modules/hotspot/widgets/hotspot.php:1970
 msgid "End Tour"
 msgstr ""
 
-#: modules/hotspot/widgets/hotspot.php:1950
+#: modules/hotspot/widgets/hotspot.php:1978
 msgid "of"
 msgstr ""
 

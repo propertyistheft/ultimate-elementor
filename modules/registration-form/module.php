@@ -142,8 +142,8 @@ class Module extends Module_Base {
 			return false;
 		}
 
-		if ( ! empty( $_POST['phone'] ) ) { //phpcs:ignore WordPress.Security.NonceVerification.Missing
-			update_user_meta( $user_id, 'phone', intval( $_POST['phone'] ) ); //phpcs:ignore WordPress.Security.NonceVerification.Missing
+		if ( ! empty( $_POST['phone'] ) ) { //phpcs:ignore WordPress.Security.NonceVerification.Missing -- Nonce verification is handled by WordPress during the user profile update process.
+			update_user_meta( $user_id, 'phone', sanitize_text_field( $_POST['phone'] ) ); //phpcs:ignore WordPress.Security.NonceVerification.Missing -- Nonce verification is handled by WordPress during the user profile update process.
 		}
 	}
 

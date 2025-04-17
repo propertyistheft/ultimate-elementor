@@ -2283,7 +2283,7 @@ class Infobox extends Common_Widget {
 			$this->add_render_attribute( 'cta_link', 'class', 'uael-infobox-cta-link ' );
 			?>
 			<div class="uael-infobox-cta-link-style">
-				<a <?php echo wp_kses_post( $this->get_render_attribute_string( 'cta_link' ) ); ?>> <?php //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+				<a <?php echo wp_kses_post( $this->get_render_attribute_string( 'cta_link' ) ); ?>>
 					<?php
 					if ( 'left' === $settings['infobox_button_icon_position'] ) {
 						if ( UAEL_Helper::is_elementor_updated() ) {
@@ -2440,7 +2440,7 @@ class Infobox extends Common_Widget {
 		ob_start();
 		include UAEL_MODULES_DIR . 'infobox/widgets/template.php';
 		$html = ob_get_clean();
-		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If escaped icon is not rendered.
 	}
 	/**
 	 * Render Info Box widget output in the editor.

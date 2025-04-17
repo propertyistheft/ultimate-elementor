@@ -762,7 +762,7 @@ class BaSlider extends Common_Widget {
 		</div>
 		<?php
 		$html = ob_get_clean();
-		echo $html; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo wp_kses_post( $html );
 	}
 
 	/**

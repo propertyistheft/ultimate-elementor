@@ -152,7 +152,7 @@ class Module extends Module_Base {
 		// load content template.
 		include UAEL_MODULES_DIR . 'woocommerce/templates/quick-view-product.php';
 
-		echo ob_get_clean(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo ob_get_clean(); // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If escaped it is not adding product in cart.
 
 		die();
 	}
@@ -315,7 +315,7 @@ class Module extends Module_Base {
 		add_action( 'wp_ajax_uae_woo_checkout_update_order_review', array( $this, 'uae_woo_checkout_update_order_review' ) );
 		add_action( 'wp_ajax_nopriv_uae_woo_checkout_update_order_review', array( $this, 'uae_woo_checkout_update_order_review' ) );
 
-		if ( empty( $_REQUEST['action'] ) && ! isset( $_REQUEST['elementor-preview'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended
+		if ( empty( $_REQUEST['action'] ) && ! isset( $_REQUEST['elementor-preview'] ) ) { // phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Nonce verification skipped as this is a read-only check.
 			remove_filter( 'woocommerce_checkout_redirect_empty_cart', '__return_false' );
 			remove_filter( 'woocommerce_checkout_update_order_review_expired', '__return_false' );
 		}
@@ -345,7 +345,7 @@ class Module extends Module_Base {
 				ob_start();
 				?>
 				<div class="uael-mc-dropdown__items">
-					<?php echo woocommerce_mini_cart();//phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+					<?php echo woocommerce_mini_cart();//phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaping may break the template output. ?>
 				</div>
 				<?php
 				$fragments['div.uael-mc-dropdown__items'] = ob_get_clean();
@@ -360,7 +360,7 @@ class Module extends Module_Base {
 				ob_start();
 				?>
 				<div class="uael-mc-modal__items">
-					<?php echo woocommerce_mini_cart();//phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+					<?php echo woocommerce_mini_cart();//phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaping may break the template output. ?>
 				</div>
 				<?php
 				$fragments['div.uael-mc-modal__items'] = ob_get_clean();
@@ -375,7 +375,7 @@ class Module extends Module_Base {
 				ob_start();
 				?>
 				<div class="uael-mc-offcanvas__items">
-					<?php echo woocommerce_mini_cart();//phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+					<?php echo woocommerce_mini_cart();//phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- Escaping may break the template output. ?>
 				</div>
 				<?php
 				$fragments['div.uael-mc-offcanvas__items'] = ob_get_clean();

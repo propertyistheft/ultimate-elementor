@@ -159,7 +159,7 @@ $this->add_render_attribute( 'line-inner', 'class', 'uael-timeline__line__inner'
 												$heading_size_tag = UAEL_Helper::validate_html_tag( $settings['timeline_heading_tag'] );
 												?>
 											<div class="uael-timeline-heading-text">
-												<<?php echo esc_attr( $heading_size_tag ); ?> <?php echo wp_kses_post( $this->get_render_attribute_string( $heading_setting_key ) ); ?>><?php echo $this->parse_text_editor( $item['timeline_single_heading'] ); ?></<?php echo esc_attr( $heading_size_tag ); ?>> <?php //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+												<<?php echo esc_attr( $heading_size_tag ); ?> <?php echo wp_kses_post( $this->get_render_attribute_string( $heading_setting_key ) ); ?>><?php echo wp_kses_post( $this->parse_text_editor( $item['timeline_single_heading'] ) ); ?></<?php echo esc_attr( $heading_size_tag ); ?>>
 											</div>
 											<?php } ?>
 											<?php do_action( 'uael_timeline_below_heading', $item ); ?>
@@ -167,7 +167,7 @@ $this->add_render_attribute( 'line-inner', 'class', 'uael-timeline__line__inner'
 											<?php
 											if ( '' !== $item['timeline_single_content'] ) {
 												?>
-												<div <?php echo wp_kses_post( $this->get_render_attribute_string( $content_setting_key ) ); ?>><?php echo $this->parse_text_editor( $item['timeline_single_content'] ); ?></div> <?php //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?>
+												<div <?php echo wp_kses_post( $this->get_render_attribute_string( $content_setting_key ) ); ?>><?php echo wp_kses_post( $this->parse_text_editor( $item['timeline_single_content'] ) ); ?></div>
 											<?php } ?>
 											<?php do_action( 'uael_timeline_below_content', $item ); ?>
 										</div>

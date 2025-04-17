@@ -1813,7 +1813,7 @@ class UAEL_Helper {
 			$encoded_data   = wp_json_encode( $schema_data, self::is_script_debug() ? JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES : JSON_UNESCAPED_SLASHES );
 			$schema_output .= '<script type="application/ld+json">' . $encoded_data . '</script>';
 		}
-		echo $schema_output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped
+		echo $schema_output; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If escaped the schema is not appearing correctly.
 	}
 
 	/**

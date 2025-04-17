@@ -5,6 +5,8 @@
  * @package UAEL
  */
 
+use Elementor\Modules\Usage\Module as Usage_Module;
+use UltimateElementor\Classes\UAEL_Helper;
 if ( ! class_exists( 'UAEL_Loader' ) ) {
 
 	/**
@@ -55,30 +57,7 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 				require_once UAEL_DIR . 'admin/bsf-analytics/class-bsf-analytics-loader.php';
 			}
 
-			$bsf_analytics = BSF_Analytics_Loader::get_instance();
-
-			$bsf_analytics->set_entity(
-				array(
-					'bsf' => array(
-						'product_name'        => 'Ultimate Addons for Elementor Pro',
-						'path'                => UAEL_DIR . 'admin/bsf-analytics',
-						'author'              => 'Brainstorm Force',
-						'time_to_display'     => '+24 hours',
-						'deactivation_survey' => array(
-							array(
-								'id'                => 'deactivation-survey-ultimate-elementor', // 'deactivation-survey-<your-plugin-slug>'
-								'popup_logo'        => UAEL_URL . 'assets/images/settings/logo.svg',
-								'plugin_slug'       => 'ultimate-elementor', // <your-plugin-slug>
-								'plugin_version'    => UAEL_VER,
-								'popup_title'       => __( 'Quick Feedback', 'uael' ),
-								'support_url'       => 'https://ultimateelementor.com/contact/',
-								'popup_description' => __( 'If you have a moment, please share why you are deactivating Ultimate Addons for Elementor Pro:', 'uael' ),
-								'show_on_screens'   => array( 'plugins' ),
-							),
-						),
-					),
-				)
-			);
+			require_once UAEL_DIR . 'classes/class-uael-analytics.php';
 		}
 
 		/**
@@ -99,7 +78,7 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 			define( 'UAEL_BASE', plugin_basename( UAEL_FILE ) );
 			define( 'UAEL_DIR', plugin_dir_path( UAEL_FILE ) );
 			define( 'UAEL_URL', plugins_url( '/', UAEL_FILE ) );
-			define( 'UAEL_VER', '1.39.2' );
+			define( 'UAEL_VER', '1.39.3' );
 			define( 'UAEL_MODULES_DIR', UAEL_DIR . 'modules/' );
 			define( 'UAEL_MODULES_URL', UAEL_URL . 'modules/' );
 			define( 'UAEL_SLUG', 'uae' );
@@ -161,8 +140,71 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 			if ( ! class_exists( 'Uae_Pro_Nps_Survey' ) ) {
 				require_once UAEL_DIR . 'lib/class-uae-pro-nps-survey.php';
 			}
+			if ( 'yes' === get_option( 'bsf_analytics_optin' ) ) {
+				add_action( 'shutdown', array( $this, 'maybe_run_uae_widgets_usage_check' ) );
+			}
 		}
+		
+		/**
+		 * Check the page on which Widget check need to be run.
+		 */
+		public function maybe_run_uae_widgets_usage_check() {
+			// Run only on admin.php?page=hfe and uae page.
+			// phpcs:ignore WordPress.Security.NonceVerification.Recommended -- Nonce verfication can't be done as just checking the value.
+			if ( is_admin() && isset( $_GET['page'] ) && 'uaepro' === $_GET['page'] ) {
+				$this->uae_check_widgets_data_usage();
+			}
+		}
+		/**
+		 * Handle AJAX request to get widgets usage data.
+		 *
+		 * @since 1.39.3
+		 */
+		public function uae_check_widgets_data_usage() {
+			// Check user permissions.
+			if ( ! current_user_can( 'manage_options' ) ) {
+				return;
+			}
 
+			$transient_key = 'uaepro_widgets_usage_data';
+			$widgets_usage = get_transient( $transient_key );
+
+			if ( false === $widgets_usage || false === get_option( 'uaepro_widgets_usage_data_option' ) ) {
+				/** 
+				 * Instance of the Usage_Module class.
+				 * 
+				 * @var Usage_Module $usage_module 
+				 */
+				$usage_module = Usage_Module::instance();
+				$usage_module->recalc_usage();
+
+				$widgets_usage = array();
+
+				foreach ( $usage_module->get_formatted_usage( 'raw' ) as $data ) {
+					foreach ( $data['elements'] as $element => $count ) {
+						$widgets_usage[ $element ] = isset( $widgets_usage[ $element ] ) ? $widgets_usage[ $element ] + $count : $count;
+					}
+				}
+				$widget_list     = UAEL_Helper::get_widget_list();
+				$allowed_widgets = array();
+				foreach ( $widget_list as $key => $value ) {
+					$allowed_widgets[] = $value['slug'];
+				}
+
+				// Filter widgets usage to include only allowed widgets.
+				$filtered_widgets_usage = array_filter(
+					$widgets_usage,
+					function ( $key ) use ( $allowed_widgets ) {
+						return in_array( $key, $allowed_widgets, true );
+					},
+					ARRAY_FILTER_USE_KEY
+				);
+
+				set_transient( $transient_key, $filtered_widgets_usage, MONTH_IN_SECONDS ); // Store for a month.
+				update_option( 'uaepro_widgets_usage_data_option', $filtered_widgets_usage );
+			}
+		}
+		
 		/**
 		 * Onboarding redirect function.
 		 */
