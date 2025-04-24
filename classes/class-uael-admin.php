@@ -71,7 +71,16 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 			add_action( 'after_setup_theme', __CLASS__ . '::init_hooks' );
 			add_action( 'elementor/init', __CLASS__ . '::load_admin', 0 );
 			add_action( 'admin_footer', __CLASS__ . '::show_nps_notice' );
+			add_action( 'init', __CLASS__ . '::allow_whitelabel' );
 
+		}
+
+		/**
+		 * Calls initialization for whitelabel
+		 *
+		 * @since 1.39.4
+		 */
+		public static function allow_whitelabel() {
 			if ( is_admin() ) {
 				global $pagenow;
 
@@ -99,13 +108,11 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 					add_action( 'admin_init', __CLASS__ . '::uael_login_form_notice' );
 				}
 			}
-
 			self::$errors = array(
 				'permission' => __( 'Sorry, you are not allowed to do this operation.', 'uael' ),
 				'nonce'      => __( 'Nonce validation failed', 'uael' ),
 				'default'    => __( 'Sorry, something went wrong.', 'uael' ),
 			);
-
 		}
 
 		/**
@@ -175,23 +182,26 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 
 			$admin_link = self::$widget_list['LoginForm']['setting_url'];
 
-			\Astra_Notices::add_notice(
-				array(
-					'id'                         => 'uael-login-facebook-notice',
-					'type'                       => 'error',
-					'message'                    => '<div class="notice-content">' . sprintf(
-						/* translators: %s: html tags */
+			if ( class_exists( 'Astra_Notices' ) ) {
 
-						__( 'With the new %1$s %3$s %2$s version 1.21.0 it is mandatory to add a Facebook App Secret Key for the Login Form widget.  You can add it from %1$s%4$shere%5$s%2$s. </br></br>This is to ensure extra security for the widget. In case your existing login form is not displaying Facebook login option, adding the App Secret Key will fix it.', 'uael' ),
-						'<strong>',
-						'</strong>',
-						$uae_name,
-						'<a href="' . $admin_link . '">',
-						'</a>'
-					) . '</div>',
-					'display-with-other-notices' => true,
-				)
-			);
+				\Astra_Notices::add_notice(
+					array(
+						'id'                         => 'uael-login-facebook-notice',
+						'type'                       => 'error',
+						'message'                    => '<div class="notice-content">' . sprintf(
+							/* translators: %s: html tags */
+	
+							__( 'With the new %1$s %3$s %2$s version 1.21.0 it is mandatory to add a Facebook App Secret Key for the Login Form widget.  You can add it from %1$s%4$shere%5$s%2$s. </br></br>This is to ensure extra security for the widget. In case your existing login form is not displaying Facebook login option, adding the App Secret Key will fix it.', 'uael' ),
+							'<strong>',
+							'</strong>',
+							$uae_name,
+							'<a href="' . $admin_link . '">',
+							'</a>'
+						) . '</div>',
+						'display-with-other-notices' => true,
+					)
+				);
+			}
 		}
 
 		/**
@@ -704,8 +714,6 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 					'integrations__selected_url'          => UAEL_URL . 'assets/images/settings/integrations-selected.svg',
 					'version_url'                         => UAEL_URL . 'assets/images/settings/version.svg',
 					'integrations_url'                    => UAEL_URL . 'assets/images/settings/integrations.svg',
-					'tracking_url'                        => UAEL_URL . 'assets/images/settings/tracking.svg',
-					'tracking__selected_url'              => UAEL_URL . 'assets/images/settings/tracking-selected.svg',
 					'postskins_url'                       => UAEL_URL . 'assets/images/settings/Post-Skin.svg',
 					'postskins_selected_url'              => UAEL_URL . 'assets/images/settings/Post-Skin-Selected.svg',
 					'user_url'                            => UAEL_URL . 'assets/images/settings/user.svg',

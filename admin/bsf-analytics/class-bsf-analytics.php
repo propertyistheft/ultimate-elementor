@@ -225,10 +225,10 @@ if ( ! class_exists( 'BSF_Analytics' ) ) {
 				}
 
 				/* translators: %s product name */
-				$notice_string = sprintf( __( 'Want to help make %1s even more awesome? Allow us to collect non-sensitive diagnostic data and usage information. ', 'uael' ), '<strong>' . esc_html( $data['product_name'] ) . '</strong>' );
+				$notice_string = sprintf( __( 'Want to help make %1s even more awesome? Allow us to collect non-sensitive diagnostic data and usage information. ' ), '<strong>' . esc_html( $data['product_name'] ) . '</strong>' );
 
 				if ( is_multisite() ) {
-					$notice_string .= __( 'This will be applicable for all sites from the network.', 'uael' );
+					$notice_string .= __( 'This will be applicable for all sites from the network.' );
 				}
 
 				$language_dir = is_rtl() ? 'rtl' : 'ltr';
@@ -252,7 +252,7 @@ if ( ! class_exists( 'BSF_Analytics' ) ) {
 									</div>
 								</div>',
 							/* translators: %s usage doc link */
-							sprintf( $notice_string . '<span dir="%1s"><a href="%2s" target="_blank" rel="noreferrer noopener">%3s</a><span>', $language_dir, esc_url( $usage_doc_link ), __( ' Know More.', 'uael' ) ),
+							sprintf( $notice_string . '<span dir="%1s"><a href="%2s" target="_blank" rel="noreferrer noopener">%3s</a><span>', $language_dir, esc_url( $usage_doc_link ), __( ' Know More.' ) ),
 							esc_url(
 								add_query_arg(
 									array(
@@ -262,7 +262,7 @@ if ( ! class_exists( 'BSF_Analytics' ) ) {
 									)
 								)
 							),
-							__( 'Yes! Allow it', 'uael' ),
+							__( 'Yes! Allow it' ),
 							esc_url(
 								add_query_arg(
 									array(
@@ -273,7 +273,7 @@ if ( ! class_exists( 'BSF_Analytics' ) ) {
 								)
 							),
 							MONTH_IN_SECONDS,
-							__( 'No Thanks', 'uael' )
+							__( 'No Thanks' )
 						),
 						'show_if'                    => true,
 						'repeat-notice-after'        => false,
@@ -384,7 +384,7 @@ if ( ! class_exists( 'BSF_Analytics' ) ) {
 
 				add_settings_field(
 					$key . '-analytics-optin',       // Field ID.
-					__( 'Usage Tracking', 'uael' ),       // Field title.
+					__( 'Usage Tracking' ),       // Field title.
 					array( $this, 'render_settings_field_html' ), // Field callback function.
 					'general',
 					'default',                   // Settings page slug.
@@ -428,15 +428,15 @@ if ( ! class_exists( 'BSF_Analytics' ) ) {
 				<input id="<?php echo esc_attr( $args['id'] ); ?>" type="checkbox" value="1" name="<?php echo esc_attr( $args['name'] ); ?>" <?php checked( get_site_option( $args['name'], 'no' ), 'yes' ); ?>>
 				<?php
 				/* translators: %s Product title */
-				echo esc_html( sprintf( __( 'Allow %s products to track non-sensitive usage tracking data.', 'uael' ), $args['title'] ) );// phpcs:ignore WordPress.WP.I18n.NonSingularStringLiteralText
+				echo esc_html( sprintf( __( 'Allow %s products to track non-sensitive usage tracking data.' ), $args['title'] ) );// phpcs:ignore WordPress.WP.I18n.NonSingularStringLiteralText
 
 				if ( is_multisite() ) {
-					esc_html_e( ' This will be applicable for all sites from the network.', 'uael' );
+					esc_html_e( ' This will be applicable for all sites from the network.' );
 				}
 				?>
 			</label>
 			<?php
-			echo wp_kses_post( sprintf( '<a href="%1s" target="_blank" rel="noreferrer noopener">%2s</a>', esc_url( $args['usage_doc_link'] ), __( 'Learn More.', 'uael' ) ) );
+			echo wp_kses_post( sprintf( '<a href="%1s" target="_blank" rel="noreferrer noopener">%2s</a>', esc_url( $args['usage_doc_link'] ), __( 'Learn More.' ) ) );
 			?>
 			</fieldset>
 			<?php
@@ -489,7 +489,7 @@ if ( ! class_exists( 'BSF_Analytics' ) ) {
 		}
 
 		/**
-		 * Send analaytics track event if tracking is enabled.
+		 * Send analytics track event if tracking is enabled.
 		 *
 		 * @since 1.0.0
 		 */
@@ -541,7 +541,7 @@ if ( ! class_exists( 'BSF_Analytics' ) ) {
 
 			if ( class_exists( 'Deactivation_Survey_Feedback' ) ) {
 				foreach ( $this->entities as $key => $data ) {
-					// If the deactibation_survery info in available then only add the form.
+					// If the deactivation_survey info in available then only add the form.
 					if ( ! empty( $data['deactivation_survey'] ) && is_array( $data['deactivation_survey'] ) ) {
 						foreach ( $data['deactivation_survey'] as $key => $survey_args ) {
 							Deactivation_Survey_Feedback::show_feedback_form(

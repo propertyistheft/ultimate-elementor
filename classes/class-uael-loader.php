@@ -51,13 +51,7 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 
 			// Hook the load_textdomain function to the init action.
 			add_action( 'init', array( $this, 'load_textdomain' ) );
-
-			// BSF Analytics.
-			if ( ! class_exists( 'BSF_Analytics_Loader' ) ) {
-				require_once UAEL_DIR . 'admin/bsf-analytics/class-bsf-analytics-loader.php';
-			}
-
-			require_once UAEL_DIR . 'classes/class-uael-analytics.php';
+			
 		}
 
 		/**
@@ -78,7 +72,7 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 			define( 'UAEL_BASE', plugin_basename( UAEL_FILE ) );
 			define( 'UAEL_DIR', plugin_dir_path( UAEL_FILE ) );
 			define( 'UAEL_URL', plugins_url( '/', UAEL_FILE ) );
-			define( 'UAEL_VER', '1.39.3' );
+			define( 'UAEL_VER', '1.39.4' );
 			define( 'UAEL_MODULES_DIR', UAEL_DIR . 'modules/' );
 			define( 'UAEL_MODULES_URL', UAEL_URL . 'modules/' );
 			define( 'UAEL_SLUG', 'uae' );
@@ -131,8 +125,6 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 			// Hook the onboarding redirect function to admin_init action.
 			add_action( 'admin_init', __CLASS__ . '::uael_redirect_to_onboarding' );
 
-
-			
 			add_action( 'admin_notices', __CLASS__ . '::hide_admin_notices', 1 );
 			add_action( 'all_admin_notices', __CLASS__ . '::hide_admin_notices', 1 );
 
@@ -140,6 +132,15 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 			if ( ! class_exists( 'Uae_Pro_Nps_Survey' ) ) {
 				require_once UAEL_DIR . 'lib/class-uae-pro-nps-survey.php';
 			}
+
+			require_once UAEL_DIR . 'lib/astra-notices/class-astra-notices.php';
+			
+			if ( ! class_exists( 'BSF_Analytics_Loader' ) ) {
+				require_once UAEL_DIR . 'admin/bsf-analytics/class-bsf-analytics-loader.php';
+			}
+
+			require_once UAEL_DIR . 'classes/class-uael-analytics.php';
+
 			if ( 'yes' === get_option( 'bsf_analytics_optin' ) ) {
 				add_action( 'shutdown', array( $this, 'maybe_run_uae_widgets_usage_check' ) );
 			}
@@ -250,7 +251,7 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 		 * Load Ultimate Elementor Text Domain.
 		 * This will load the translation textdomain depending on the file priorities.
 		 *      1. Global Languages /wp-content/languages/ultimate-elementor/ folder
-		 *      2. Local dorectory /wp-content/plugins/ultimate-elementor/languages/ folder
+		 *      2. Local directory /wp-content/plugins/ultimate-elementor/languages/ folder
 		 *
 		 * @since  1.0.0
 		 * @return void

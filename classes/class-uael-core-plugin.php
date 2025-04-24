@@ -69,7 +69,9 @@ class UAEL_Core_Plugin {
 
 		spl_autoload_register( array( $this, 'autoload' ) );
 
-		$this->includes();
+		require UAEL_DIR . 'classes/class-uael-admin.php';
+
+		add_action( 'init', array( $this, 'includes' ) );
 
 		$this->setup_actions_filters();
 	}
@@ -109,16 +111,11 @@ class UAEL_Core_Plugin {
 	 *
 	 * @since 0.0.1
 	 */
-	private function includes() {
-
-		require UAEL_DIR . 'classes/class-uael-admin.php';
-		require UAEL_DIR . 'includes/manager/modules-manager.php';
+	public function includes() {
 
 		if ( UAEL_Helper::is_widget_active( 'Image_Gallery' ) ) {
 			require UAEL_DIR . 'classes/class-uael-attachment.php';
 		}
-
-		require_once UAEL_DIR . 'lib/astra-notices/class-astra-notices.php';
 	}
 
 	/**
@@ -145,6 +142,16 @@ class UAEL_Core_Plugin {
 		// Active widgets data to analytics.
 		add_filter( 'bsf_core_stats', array( $this, 'uae_specific_stats' ) );
 
+		add_action( 'init', array( $this, 'load_branding_assets' ) );
+
+	}
+
+	/**
+	 * Load Branding Assets.
+	 *
+	 * @since x.x.x
+	 */
+	public function load_branding_assets() {
 		if ( UAEL_Helper::is_widget_active( 'Cross_Domain' ) ) {
 
 			add_action( 'elementor/editor/after_enqueue_scripts', array( $this, 'enqueue_copy_paste_scripts' ), 11, 0 );
@@ -161,7 +168,6 @@ class UAEL_Core_Plugin {
 
 			add_filter( 'bsf_white_label_options', array( $this, 'uae_bsf_analytics_white_label' ) );
 		}
-
 	}
 
 	/**
@@ -204,6 +210,8 @@ class UAEL_Core_Plugin {
 	 * @since 0.0.1
 	 */
 	public function elementor_init() {
+
+		require UAEL_DIR . 'includes/manager/modules-manager.php';
 
 		$this->modules_manager = new Module_Manager();
 

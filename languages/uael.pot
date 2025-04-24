@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the Ultimate Addons for Elementor Pro package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ultimate Addons for Elementor Pro 1.39.3\n"
+"Project-Id-Version: Ultimate Addons for Elementor Pro 1.39.4\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/ultimate-elementor\n"
-"POT-Creation-Date: 2025-04-15 13:54:11+00:00\n"
+"POT-Creation-Date: 2025-04-22 07:31:54+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -124,7 +124,7 @@ msgstr ""
 msgid "If you have a moment, please share why you are deactivating the plugin."
 msgstr ""
 
-#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:109
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:112
 #: modules/buttons/widgets/buttons.php:175
 #: modules/buttons/widgets/buttons.php:186 modules/faq/widgets/faq.php:324
 #: modules/faq/widgets/faq.php:334 modules/faq/widgets/faq.php:1198
@@ -174,67 +174,67 @@ msgstr ""
 msgid "Icon"
 msgstr ""
 
-#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:134
-#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:309
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:139
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:314
 msgid "Please tell us more details."
 msgstr ""
 
-#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:143
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:148
 #. translators: %1$s: link html start, %2$s: link html end
 msgid "Need help from our experts? %1$sClick here to contact us.%2$s"
 msgstr ""
 
-#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:154
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:159
 msgid "Submit & Deactivate"
 msgstr ""
 
-#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:155
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:160
 msgid "Skip & Deactivate"
 msgstr ""
 
-#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:224
-#: classes/class-uael-admin.php:104
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:229
+#: classes/class-uael-admin.php:112
 msgid "Sorry, you are not allowed to do this operation."
 msgstr ""
 
-#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:237
-#: classes/class-uael-admin.php:105
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:242
+#: classes/class-uael-admin.php:113
 msgid "Nonce validation failed"
 msgstr ""
 
-#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:284
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:289
 msgid "This is a temporary deactivation for testing."
 msgstr ""
 
-#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:285
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:290
 msgid "How can we assist you?"
 msgstr ""
 
-#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:290
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:295
 msgid "The plugin isn't working properly."
 msgstr ""
 
-#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:291
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:296
 msgid "Please tell us more about what went wrong?"
 msgstr ""
 
-#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:296
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:301
 msgid "I found a better alternative plugin."
 msgstr ""
 
-#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:297
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:302
 msgid "Could you please specify which plugin?"
 msgstr ""
 
-#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:302
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:307
 msgid "It's missing a specific feature."
 msgstr ""
 
-#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:303
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:308
 msgid "Please tell us more about the feature."
 msgstr ""
 
-#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:308
+#: admin/bsf-analytics/modules/deactivation-survey/classes/class-deactivation-survey-feedback.php:313
 msgid "Other"
 msgstr ""
 
@@ -305,8 +305,8 @@ msgstr ""
 msgid "View Settings"
 msgstr ""
 
-#: class-brainstorm-update-uael.php:112 classes/class-uael-admin.php:558
-#: classes/class-uael-admin.php:559 classes/uael-config.php:116
+#: class-brainstorm-update-uael.php:112 classes/class-uael-admin.php:565
+#: classes/class-uael-admin.php:566 classes/uael-config.php:116
 #: classes/uael-config.php:212 classes/uael-config.php:292
 #: classes/uael-config.php:307 classes/uael-config.php:391
 #: classes/uael-config.php:446 classes/uael-config.php:516
@@ -318,11 +318,11 @@ msgstr ""
 msgid "Get the license >>"
 msgstr ""
 
-#: classes/class-uael-admin.php:106
+#: classes/class-uael-admin.php:114
 msgid "Sorry, something went wrong."
 msgstr ""
 
-#: classes/class-uael-admin.php:185
+#: classes/class-uael-admin.php:192
 #. translators: %s: html tags
 msgid ""
 "With the new %1$s %3$s %2$s version 1.21.0 it is mandatory to add a "
@@ -332,11 +332,11 @@ msgid ""
 "option, adding the App Secret Key will fix it."
 msgstr ""
 
-#: classes/class-uael-admin.php:229 classes/class-uael-admin.php:1467
+#: classes/class-uael-admin.php:236 classes/class-uael-admin.php:1472
 msgid "Ultimate Addons for Elementor"
 msgstr ""
 
-#: classes/class-uael-admin.php:245
+#: classes/class-uael-admin.php:252
 msgid ""
 "Ultimate Addons is a premium extension for Elementor that adds 35+ widgets "
 "and works on top of any Elementor Package (Free, Pro). You can use it with "
@@ -347,112 +347,112 @@ msgstr ""
 msgid "Brainstorm Force"
 msgstr ""
 
-#: classes/class-uael-admin.php:532
+#: classes/class-uael-admin.php:539
 msgid "Dashboard"
 msgstr ""
 
-#: classes/class-uael-admin.php:540
+#: classes/class-uael-admin.php:547
 msgid "Widgets & Features"
 msgstr ""
 
-#: classes/class-uael-admin.php:541
+#: classes/class-uael-admin.php:548
 msgid "Widgets"
 msgstr ""
 
-#: classes/class-uael-admin.php:549 classes/class-uael-admin.php:550
+#: classes/class-uael-admin.php:556 classes/class-uael-admin.php:557
 msgid "Templates"
 msgstr ""
 
-#: classes/class-uael-admin.php:567 classes/class-uael-admin.php:568
+#: classes/class-uael-admin.php:574 classes/class-uael-admin.php:575
 msgid "Onboarding"
 msgstr ""
 
-#: classes/class-uael-admin.php:935
+#: classes/class-uael-admin.php:940
 msgid "Plugin slug is missing."
 msgstr ""
 
-#: classes/class-uael-admin.php:959
+#: classes/class-uael-admin.php:964
 msgid "Plugin installation function not found."
 msgstr ""
 
-#: classes/class-uael-admin.php:981
+#: classes/class-uael-admin.php:986
 msgid "Theme slug is missing."
 msgstr ""
 
-#: classes/class-uael-admin.php:1004
+#: classes/class-uael-admin.php:1009
 msgid "Theme installation function not found."
 msgstr ""
 
-#: classes/class-uael-admin.php:1053
+#: classes/class-uael-admin.php:1058
 msgid "License key not found."
 msgstr ""
 
-#: classes/class-uael-admin.php:1079
+#: classes/class-uael-admin.php:1084
 msgid "License Successfully Activated"
 msgstr ""
 
-#: classes/class-uael-admin.php:1083
+#: classes/class-uael-admin.php:1088
 msgid "License activation failed!"
 msgstr ""
 
-#: classes/class-uael-admin.php:1124
+#: classes/class-uael-admin.php:1129
 msgid "License Successfully Deactivated"
 msgstr ""
 
-#: classes/class-uael-admin.php:1128
+#: classes/class-uael-admin.php:1133
 msgid "License deactivation failed!"
 msgstr ""
 
-#: classes/class-uael-admin.php:1157
+#: classes/class-uael-admin.php:1162
 msgid "Plugin activation is disabled for you on this site."
 msgstr ""
 
-#: classes/class-uael-admin.php:1166
+#: classes/class-uael-admin.php:1171
 msgid "Plugin Activated."
 msgstr ""
 
-#: classes/class-uael-admin.php:1177
+#: classes/class-uael-admin.php:1182
 msgid "Theme activation is disabled for you on this site."
 msgstr ""
 
-#: classes/class-uael-admin.php:1186
+#: classes/class-uael-admin.php:1191
 msgid "Theme Activated."
 msgstr ""
 
-#: classes/class-uael-admin.php:1193
+#: classes/class-uael-admin.php:1198
 msgid "Could not activate plugin. Please activate from the Plugins page."
 msgstr ""
 
-#: classes/class-uael-admin.php:1195
+#: classes/class-uael-admin.php:1200
 msgid "Could not activate theme. Please activate from the Themes page."
 msgstr ""
 
-#: classes/class-uael-admin.php:1468
+#: classes/class-uael-admin.php:1473
 msgid ""
 "How likely are you to recommend Ultimate Addons for Elementor to your "
 "friends or colleagues?"
 msgstr ""
 
-#: classes/class-uael-admin.php:1470
+#: classes/class-uael-admin.php:1475
 msgid ""
 "Could you please do us a favor and give us a 5-star rating on Trustpilot? "
 "It would help others choose Ultimate Addons for Elementor with confidence. "
 "Thank you!"
 msgstr ""
 
-#: classes/class-uael-admin.php:1473
+#: classes/class-uael-admin.php:1478
 msgid "Thank you for your feedback"
 msgstr ""
 
-#: classes/class-uael-admin.php:1474
+#: classes/class-uael-admin.php:1479
 msgid "We value your input. How can we improve your experience?"
 msgstr ""
 
-#: classes/class-uael-admin.php:1497
+#: classes/class-uael-admin.php:1502
 msgid "Settings saved successfully!"
 msgstr ""
 
-#: classes/class-uael-admin.php:1500
+#: classes/class-uael-admin.php:1505
 msgid "Unable to save settings."
 msgstr ""
 
@@ -466,75 +466,75 @@ msgstr ""
 msgid "%1s - Categories (Ex: Cat1, Cat2)"
 msgstr ""
 
-#: classes/class-uael-core-plugin.php:297
+#: classes/class-uael-core-plugin.php:298
 msgid "Enter valid Email!"
 msgstr ""
 
-#: classes/class-uael-core-plugin.php:298
+#: classes/class-uael-core-plugin.php:299
 msgid "Enter valid Phone Number!"
 msgstr ""
 
-#: classes/class-uael-core-plugin.php:299
+#: classes/class-uael-core-plugin.php:300
 msgid "Phone number should not contain spaces!"
 msgstr ""
 
-#: classes/class-uael-core-plugin.php:300
+#: classes/class-uael-core-plugin.php:301
 msgid "The specified password do not match!"
 msgstr ""
 
-#: classes/class-uael-core-plugin.php:301
+#: classes/class-uael-core-plugin.php:302
 msgid "This Field is required!"
 msgstr ""
 
-#: classes/class-uael-core-plugin.php:302
+#: classes/class-uael-core-plugin.php:303
 #: modules/login-form/widgets/login-form.php:2490
 msgid "Error: The Password you have entered is incorrect."
 msgstr ""
 
-#: classes/class-uael-core-plugin.php:303
+#: classes/class-uael-core-plugin.php:304
 msgid "Unknown username. Check again or try your email address."
 msgstr ""
 
-#: classes/class-uael-core-plugin.php:304
+#: classes/class-uael-core-plugin.php:305
 msgid "Unknown email address. Check again or try your username."
 msgstr ""
 
-#: classes/class-uael-core-plugin.php:305
+#: classes/class-uael-core-plugin.php:306
 msgid "Thanks for logging in, "
 msgstr ""
 
-#: classes/class-uael-core-plugin.php:395
+#: classes/class-uael-core-plugin.php:396
 msgid "Invalid or data missing in the required(*) fields."
 msgstr ""
 
-#: classes/class-uael-core-plugin.php:403
+#: classes/class-uael-core-plugin.php:404
 msgid "No matching records found"
 msgstr ""
 
-#: classes/class-uael-core-plugin.php:404
+#: classes/class-uael-core-plugin.php:405
 msgid "Show _MENU_ Entries"
 msgstr ""
 
-#: classes/class-uael-core-plugin.php:609
+#: classes/class-uael-core-plugin.php:610
 msgid "The widget type you are trying to paste is not available on this site."
 msgstr ""
 
-#: classes/class-uael-core-plugin.php:611
+#: classes/class-uael-core-plugin.php:612
 #. translators: %s: html tags
 msgid "%1s Copy"
 msgstr ""
 
-#: classes/class-uael-core-plugin.php:613
+#: classes/class-uael-core-plugin.php:614
 #. translators: %s: html tags
 msgid "%1s Paste"
 msgstr ""
 
-#: classes/class-uael-core-plugin.php:615
+#: classes/class-uael-core-plugin.php:616
 #. translators: %s: html tags
 msgid "%1s Copy All"
 msgstr ""
 
-#: classes/class-uael-core-plugin.php:617
+#: classes/class-uael-core-plugin.php:618
 #. translators: %s: html tags
 msgid "%1s Paste All"
 msgstr ""
@@ -547,29 +547,29 @@ msgstr ""
 msgid "Looks like content is empty. Cannot be processed."
 msgstr ""
 
-#: classes/class-uael-loader.php:318
+#: classes/class-uael-loader.php:326
 #. translators: %s: html tags
 msgid ""
 "The %1$sUltimate Addons for Elementor Pro%2$s plugin requires "
 "%1$sElementor%2$s plugin installed & activated."
 msgstr ""
 
-#: classes/class-uael-loader.php:328
+#: classes/class-uael-loader.php:336
 msgid "Activate Elementor"
 msgstr ""
 
-#: classes/class-uael-loader.php:336 classes/class-uael-loader.php:374
+#: classes/class-uael-loader.php:344 classes/class-uael-loader.php:382
 msgid "Install Elementor"
 msgstr ""
 
-#: classes/class-uael-loader.php:355
+#: classes/class-uael-loader.php:363
 #. translators: %s: html tags
 msgid ""
 "The %1$sUltimate Addons for Elementor Pro%2$s plugin has stopped working "
 "because you are using an older version of %1$sElementor%2$s plugin."
 msgstr ""
 
-#: classes/class-uael-loader.php:366
+#: classes/class-uael-loader.php:374
 msgid "Update Elementor"
 msgstr ""
 
@@ -10130,23 +10130,23 @@ msgstr ""
 msgid "Text Hover Color"
 msgstr ""
 
-#: modules/hotspot/widgets/hotspot.php:1968
-#: modules/hotspot/widgets/hotspot.php:2186
+#: modules/hotspot/widgets/hotspot.php:1940
+#: modules/hotspot/widgets/hotspot.php:2158
 #: modules/woocommerce/widgets/woo-checkout.php:310
 msgid "Next"
 msgstr ""
 
-#: modules/hotspot/widgets/hotspot.php:1969
-#: modules/hotspot/widgets/hotspot.php:2186
+#: modules/hotspot/widgets/hotspot.php:1941
+#: modules/hotspot/widgets/hotspot.php:2158
 #: modules/woocommerce/widgets/woo-checkout.php:295
 msgid "Previous"
 msgstr ""
 
-#: modules/hotspot/widgets/hotspot.php:1970
+#: modules/hotspot/widgets/hotspot.php:1942
 msgid "End Tour"
 msgstr ""
 
-#: modules/hotspot/widgets/hotspot.php:1978
+#: modules/hotspot/widgets/hotspot.php:1950
 msgid "of"
 msgstr ""
 
