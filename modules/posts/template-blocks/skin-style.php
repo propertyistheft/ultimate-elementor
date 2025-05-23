@@ -1092,14 +1092,17 @@ abstract class Skin_Style {
 			$original_terms   = $settings[ 'tax_' . $filter_by . '_' . $post_type . '_filter' ];
 			$translated_terms = array();
 		 
-			foreach ( $original_terms as $term_slug ) {
-				$term_obj = get_term_by( 'slug', $term_slug, $filter_by );
+			if ( $original_terms && is_array( $original_terms ) ) {
+
+				foreach ( $original_terms as $term_slug ) {
+					$term_obj = get_term_by( 'slug', $term_slug, $filter_by );
 				 
-				if ( $term_obj ) {
-					$translated_term_id = apply_filters( 'wpml_object_id', $term_obj->term_id, $filter_by, true );
-					$translated_term    = get_term( $translated_term_id, $filter_by );
-					if ( $translated_term && ! is_wp_error( $translated_term ) ) {
-						$translated_terms[] = $translated_term->slug;
+					if ( $term_obj ) {
+						$translated_term_id = apply_filters( 'wpml_object_id', $term_obj->term_id, $filter_by, true );
+						$translated_term    = get_term( $translated_term_id, $filter_by );
+						if ( $translated_term && ! is_wp_error( $translated_term ) ) {
+							$translated_terms[] = $translated_term->slug;
+						}
 					}
 				}
 			}

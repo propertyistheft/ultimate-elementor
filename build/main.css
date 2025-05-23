@@ -440,6 +440,9 @@
 :is(#uae-settings-app, [data-floating-ui-portal]) .top-4{
 	top: 1rem;
 }
+:is(#uae-settings-app, [data-floating-ui-portal]) .top-8{
+	top: 2rem;
+}
 :is(#uae-settings-app, [data-floating-ui-portal]) .top-full{
 	top: 100%;
 }
@@ -457,6 +460,9 @@
 }
 :is(#uae-settings-app, [data-floating-ui-portal]) .z-20{
 	z-index: 20;
+}
+:is(#uae-settings-app, [data-floating-ui-portal]) .z-50{
+	z-index: 50;
 }
 :is(#uae-settings-app, [data-floating-ui-portal]) .z-999999{
 	z-index: 999999;
@@ -1019,8 +1025,8 @@
 :is(#uae-settings-app, [data-floating-ui-portal]) .w-52{
 	width: 13rem;
 }
-:is(#uae-settings-app, [data-floating-ui-portal]) .w-60{
-	width: 15rem;
+:is(#uae-settings-app, [data-floating-ui-portal]) .w-64{
+	width: 16rem;
 }
 :is(#uae-settings-app, [data-floating-ui-portal]) .w-72{
 	width: 18rem;
@@ -1881,6 +1887,10 @@
 :is(#uae-settings-app, [data-floating-ui-portal]) .border-focus-error-border{
 	--tw-border-opacity: 1;
 	border-color: rgb(254 202 202 / var(--tw-border-opacity, 1));
+}
+:is(#uae-settings-app, [data-floating-ui-portal]) .border-gray-200{
+	--tw-border-opacity: 1;
+	border-color: rgb(229 231 235 / var(--tw-border-opacity, 1));
 }
 :is(#uae-settings-app, [data-floating-ui-portal]) .border-slate-200{
 	--tw-border-opacity: 1;
@@ -3684,6 +3694,12 @@ button.uae-bulk-action-button {
 :is(#uae-settings-app, [data-floating-ui-portal]) .hover\:bg-field-background-error:hover{
 	--tw-bg-opacity: 1;
 	background-color: rgb(254 242 242 / var(--tw-bg-opacity, 1));
+}
+
+
+:is(#uae-settings-app, [data-floating-ui-portal]) .hover\:bg-gray-100:hover{
+	--tw-bg-opacity: 1;
+	background-color: rgb(243 244 246 / var(--tw-bg-opacity, 1));
 }
 
 

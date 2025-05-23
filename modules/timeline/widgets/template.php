@@ -167,7 +167,7 @@ $this->add_render_attribute( 'line-inner', 'class', 'uael-timeline__line__inner'
 											<?php
 											if ( '' !== $item['timeline_single_content'] ) {
 												?>
-												<div <?php echo wp_kses_post( $this->get_render_attribute_string( $content_setting_key ) ); ?>><?php echo wp_kses_post( $this->parse_text_editor( $item['timeline_single_content'] ) ); ?></div>
+												<div <?php echo wp_kses_post( $this->get_render_attribute_string( $content_setting_key ) ); ?>> <?php echo wp_kses_post( apply_filters( 'uael_timeline_content', wp_kses_post( $this->parse_text_editor( $item['timeline_single_content'] ) ), $item ) ); ?></div>
 											<?php } ?>
 											<?php do_action( 'uael_timeline_below_content', $item ); ?>
 										</div>

@@ -28,7 +28,7 @@ if ( ! class_exists( 'UAEL_Analytics' ) ) {
 		 * @access public
 		 */
 		public function __construct() {
-
+			add_filter( 'uae_tracking_enabled', '__return_true' );
 			// BSF Analytics Tracker.
 			if ( ! class_exists( 'BSF_Analytics_Loader' ) ) {
 				require_once UAEL_DIR . 'admin/bsf-analytics/class-bsf-analytics-loader.php';
@@ -38,10 +38,10 @@ if ( ! class_exists( 'UAEL_Analytics' ) ) {
 
 			$bsf_analytics->set_entity(
 				array(
-					'bsf' => array(
+					'uae' => array(
 						'product_name'        => 'Ultimate Addons for Elementor Pro',
 						'path'                => UAEL_DIR . 'admin/bsf-analytics',
-						'author'              => 'Brainstorm Force',
+						'author'              => 'Ultimate Addons for Elementor',
 						'time_to_display'     => '+24 hours',
 						'deactivation_survey' => array(
 							array(

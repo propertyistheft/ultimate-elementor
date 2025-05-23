@@ -302,7 +302,7 @@ abstract class Posts_Base extends Common_Widget {
 				'ignore_sticky_posts',
 				array(
 					'label'        => __( 'Ignore Sticky Posts', 'uael' ),
-					'description'  => __( 'Note: Sticky-posts ordering is visible on frontend only.', 'uael' ),
+					'description'  => __( 'Note: Sticky post ordering is visible on the frontend but may not work with custom queries due to WordPress query behavior.', 'uael' ),
 					'type'         => Controls_Manager::SWITCHER,
 					'label_on'     => __( 'Yes', 'uael' ),
 					'label_off'    => __( 'No', 'uael' ),

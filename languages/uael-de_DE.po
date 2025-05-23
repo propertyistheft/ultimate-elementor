@@ -247,7 +247,7 @@ msgstr "Ultimate Addons ist eine Premium-Erweiterung für Elementor, die über 3
 #: src/Components/NavMenu.js:117
 #: build/main.js:3406
 msgid "Dashboard"
-msgstr "Armaturenbrett"
+msgstr "Dashboard"
 
 #: classes/class-uael-admin.php:540
 msgid "Widgets & Features"

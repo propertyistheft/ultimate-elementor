@@ -51,7 +51,6 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 
 			// Hook the load_textdomain function to the init action.
 			add_action( 'init', array( $this, 'load_textdomain' ) );
-			
 		}
 
 		/**
@@ -72,7 +71,7 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 			define( 'UAEL_BASE', plugin_basename( UAEL_FILE ) );
 			define( 'UAEL_DIR', plugin_dir_path( UAEL_FILE ) );
 			define( 'UAEL_URL', plugins_url( '/', UAEL_FILE ) );
-			define( 'UAEL_VER', '1.39.4' );
+			define( 'UAEL_VER', '1.39.6' );
 			define( 'UAEL_MODULES_DIR', UAEL_DIR . 'modules/' );
 			define( 'UAEL_MODULES_URL', UAEL_URL . 'modules/' );
 			define( 'UAEL_SLUG', 'uae' );
@@ -141,9 +140,7 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 
 			require_once UAEL_DIR . 'classes/class-uael-analytics.php';
 
-			if ( 'yes' === get_option( 'bsf_analytics_optin' ) ) {
-				add_action( 'shutdown', array( $this, 'maybe_run_uae_widgets_usage_check' ) );
-			}
+			add_action( 'shutdown', array( $this, 'maybe_run_uae_widgets_usage_check' ) );
 		}
 		
 		/**

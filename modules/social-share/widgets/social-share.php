@@ -223,6 +223,7 @@ class SocialShare extends Common_Widget {
 					'email'         => 'Email',
 					'print'         => 'Print',
 					'whatsapp'      => 'WhatsApp',
+					'threads'       => 'Threads',
 					'buffer'        => 'Buffer',
 				),
 				'default'     => 'facebook',

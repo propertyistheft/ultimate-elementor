@@ -149,7 +149,7 @@ class UAEL_Core_Plugin {
 	/**
 	 * Load Branding Assets.
 	 *
-	 * @since x.x.x
+	 * @since 1.39.5
 	 */
 	public function load_branding_assets() {
 		if ( UAEL_Helper::is_widget_active( 'Cross_Domain' ) ) {

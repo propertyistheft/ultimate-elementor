@@ -212,7 +212,7 @@ class Acf_Text extends Condition {
 			if ( is_archive() ) {
 				$term = get_queried_object();
 
-				if ( get_class( $term ) === 'WP_Term' ) {
+				if ( is_object( $term ) && get_class( $term ) === 'WP_Term' ) {
 					$field_value = get_field( $key, $term );
 				}
 			}

@@ -35,6 +35,7 @@
 			twitter: 'https://twitter.com/intent/tweet?url=' + uael_page_url,
 			pinterest: 'https://www.pinterest.com/pin/create/button/?url=' + uael_page_url + '&media='+url,
 			facebook: 'https://www.facebook.com/sharer.php?u=' + uael_page_url,
+			threads: 'https://threads.net/intent/post?text=' + uael_page_url,
 			vk: 'https://vkontakte.ru/share.php?url=' + uael_page_url,
 			linkedin: 'https://www.linkedin.com/shareArticle?mini=true&url=' + uael_page_url,
 			odnoklassniki: 'https://connect.ok.ru/offer?url=' + uael_page_url,

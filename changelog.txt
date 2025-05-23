@@ -1,3 +1,14 @@
+Version 1.39.6 - Thursday, 22nd May 2025
+- Improvement: Social Share - Threads support added.
+
+Version 1.39.5 - Wednesday, 14th May 2025
+- Added: Accessibility support for Info box widget when link is added on complete box.
+- Improvement: Updated Dashboard translation from Armaturenbrett to Dashboard in German.
+- Improvement: Compatibility with latest Elementor and Elementor Pro 3.29 version.
+- Fix: Post Widget - Warning when there is only one category and the WPML plugin is active.
+- Fix: Add to Cart - Remove default Underline coming on add to cart button.
+- Fix: Display Conditions - PHP error in display conditions when no object was passed to get_class().
+
 Version 1.39.4 - Thursday, 24th April 2025
 - Fix: Resolved the issue for function _load_textdomain_just_in_time was called incorrectly in WP 6.8.
 
