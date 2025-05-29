@@ -89,7 +89,7 @@ msgstr ""
 msgid "Deactivate All"
 msgstr ""
 
-#: src/Components/Dashboard/QuickAccess.js:101
+#: src/Components/Dashboard/QuickAccess.js:122
 msgid "Request a Feature"
 msgstr ""
 
@@ -98,25 +98,29 @@ msgid "Quick Access"
 msgstr ""
 
 #: src/Components/Dashboard/QuickAccess.js:53
-msgid "Premium Support"
+msgid "VIP Priority Support"
 msgstr ""
 
-#: src/Components/Dashboard/QuickAccess.js:69
+#: src/Components/Dashboard/QuickAccess.js:74
+msgid "Knowledge Base"
+msgstr ""
+
+#: src/Components/Dashboard/QuickAccess.js:90
 msgid "Help Centre"
 msgstr ""
 
-#: src/Components/Dashboard/TemplateSection.js:67
+#: src/Components/Dashboard/TemplateSection.js:65
 msgid "Build Websites 10x Faster with Templates"
 msgstr ""
 
-#: src/Components/Dashboard/TemplateSection.js:69
+#: src/Components/Dashboard/TemplateSection.js:67
 msgid ""
 "Choose from our professionally designed websites to build your site faster, "
 "with easy customization options."
 msgstr ""
 
-#: src/Components/Dashboard/TemplateSection.js:92
-msgid "View Templates"
+#: src/Components/Dashboard/TemplateSection.js:82
+msgid "Explore Templates"
 msgstr ""
 
 #: src/Components/Dashboard/VideoTutorials.jsx:10
@@ -298,50 +302,46 @@ msgid "Dashboard"
 msgstr ""
 
 #: src/Components/NavMenu.js:135
-msgid "Header & Footer Builder"
+msgid "Header & Footer"
 msgstr ""
 
 #: src/Components/NavMenu.js:145
 msgid "Widgets"
 msgstr ""
 
-#: src/Components/NavMenu.js:157
-msgid "Templates"
-msgstr ""
-
-#: src/Components/NavMenu.js:167
+#: src/Components/NavMenu.js:154
 msgid "Settings"
 msgstr ""
 
-#: src/Components/NavMenu.js:180
+#: src/Components/NavMenu.js:167
 msgid "PRO"
 msgstr ""
 
-#: src/Components/NavMenu.js:190
+#: src/Components/NavMenu.js:177
 msgid "Version"
 msgstr ""
 
-#: src/Components/NavMenu.js:238
+#: src/Components/NavMenu.js:225
 msgid "Useful Resources"
 msgstr ""
 
-#: src/Components/NavMenu.js:249
+#: src/Components/NavMenu.js:236
 msgid "Getting Started"
 msgstr ""
 
-#: src/Components/NavMenu.js:260
+#: src/Components/NavMenu.js:247
 msgid "How to use widgets"
 msgstr ""
 
-#: src/Components/NavMenu.js:274
+#: src/Components/NavMenu.js:261
 msgid "How to use features"
 msgstr ""
 
-#: src/Components/NavMenu.js:288
+#: src/Components/NavMenu.js:275
 msgid "How to use templates"
 msgstr ""
 
-#: src/Components/NavMenu.js:302
+#: src/Components/NavMenu.js:289
 msgid "Contact us"
 msgstr ""
 
@@ -991,69 +991,6 @@ msgstr ""
 
 #: src/Components/Settings/VersionControl.jsx:350
 msgid " to know more."
-msgstr ""
-
-#: src/Components/Templates/ExploreTemplates.jsx:154
-msgid "Activating Starter Templates..."
-msgstr ""
-
-#: src/Components/Templates/ExploreTemplates.jsx:156
-msgid "Activated Starter Templates"
-msgstr ""
-
-#: src/Components/Templates/ExploreTemplates.jsx:165
-msgid "Activate Starter Templates"
-msgstr ""
-
-#: src/Components/Templates/ExploreTemplates.jsx:17
-msgid "250+ templates for every niche"
-msgstr ""
-
-#: src/Components/Templates/ExploreTemplates.jsx:189
-msgid "Design Your Website in Minutes"
-msgstr ""
-
-#: src/Components/Templates/ExploreTemplates.jsx:198
-msgid "Build your website faster using our prebuilt templates"
-msgstr ""
-
-#: src/Components/Templates/ExploreTemplates.jsx:203
-msgid ""
-"Stop building your site from scratch. Use our professional templates for "
-"your stunning website.It is easy to customize and completely responsive. "
-"Explore hundreds of designs and bring your vision to life in no time."
-msgstr ""
-
-#: src/Components/Templates/ExploreTemplates.jsx:22
-msgid "Modern, timeless designs"
-msgstr ""
-
-#: src/Components/Templates/ExploreTemplates.jsx:236
-msgid "Explore Templates"
-msgstr ""
-
-#: src/Components/Templates/ExploreTemplates.jsx:247
-msgid "Learn More"
-msgstr ""
-
-#: src/Components/Templates/ExploreTemplates.jsx:27
-msgid "Full design flexibility for easy customization"
-msgstr ""
-
-#: src/Components/Templates/ExploreTemplates.jsx:32
-msgid "100% responsive across all devices"
-msgstr ""
-
-#: src/Components/Templates/ExploreTemplates.jsx:81
-msgid "Installing Starter Templates..."
-msgstr ""
-
-#: src/Components/Templates/ExploreTemplates.jsx:90
-msgid "Installed Starter Templates"
-msgstr ""
-
-#: src/Components/Templates/ExploreTemplates.jsx:94
-msgid "Install Starter Templates"
 msgstr ""
 
 #: src/Components/Widgets/Features/FeatureWidgets.jsx:131

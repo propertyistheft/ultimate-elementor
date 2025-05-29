@@ -90,7 +90,7 @@ class LoginForm extends Common_Widget {
 	 * @return array Widget scripts dependencies.
 	 */
 	public function get_script_depends() {
-		return array( 'uael-frontend-script', 'uael-google-sign-in' );
+		return array( 'uael-frontend-script', 'uael-google-sign-in', 'uael-google-recaptcha' );
 	}
 
 	/**
@@ -282,6 +282,37 @@ class LoginForm extends Common_Widget {
 					'label_off' => __( 'No', 'uael' ),
 				)
 			);
+
+			$this->add_control(
+				'recaptcha_v3',
+				array(
+					'label'       => __( 'Enable Google reCaptcha v3', 'uael' ),
+					'description' => __( 'Enable this to protect your login form from spam.', 'uael' ),
+					'type'        => Controls_Manager::SWITCHER,
+					'default'     => 'no',
+					'label_off'   => __( 'Hide', 'uael' ),
+					'label_on'    => __( 'Show', 'uael' ),
+				)
+			);
+
+			$integration_options = UAEL_Helper::get_integrations_options();
+			$widget_list         = UAEL_Helper::get_widget_list();
+			$admin_link          = $widget_list['RegistrationForm']['setting_url'];
+
+		if ( ( ! isset( $integration_options['recaptcha_v3_key'] ) || '' === $integration_options['recaptcha_v3_key'] ) && ( ! isset( $integration_options['recaptcha_v3_secretkey'] ) || '' === $integration_options['recaptcha_v3_secretkey'] ) ) {
+			$this->add_control(
+				'recaptcha_setting',
+				array(
+					'type'            => Controls_Manager::RAW_HTML,
+					/* translators: %1$s admin link */
+						'raw'         => sprintf( __( 'Please configure reCAPTCHA v3 setup from %1$s here %2$s.', 'uael' ), '<a href="' . $admin_link . '" target="_blank" rel="noopener">', '</a>' ),
+					'content_classes' => 'elementor-panel-alert elementor-panel-alert-warning',
+					'condition'       => array(
+						'recaptcha_v3' => 'yes',
+					),
+				)
+			);
+		}
 
 			$this->add_control(
 				'inline_control',
@@ -1340,7 +1371,7 @@ class LoginForm extends Common_Widget {
 					array(
 						'type'            => Controls_Manager::RAW_HTML,
 						/* translators: %1$s doc link */
-						'raw'             => sprintf( __( '%1$s How to create a Google Client ID? » %2$s', 'uael' ), '<a href=' . UAEL_DOMAIN . 'docs/create-google-client-id-for-login-form-widget/?utm_source=uael-pro-dashboard&utm_medium=uael-editor-screen&utm_campaign=uael-pro-plugin" target="_blank" rel="noopener">', '</a>' ),
+						'raw'             => sprintf( __( '%1$s Google reCAPTCHA v3 support » %2$s', 'uael' ), '<a href=' . UAEL_DOMAIN . 'docs/user-registration-form-with-recaptcha/?utm_source=uael-pro-dashboard&utm_medium=uael-editor-screen&utm_campaign=uael-pro-plugin" target="_blank" rel="noopener">', '</a>' ),
 						'content_classes' => 'uael-editor-doc',
 					)
 				);
@@ -1350,13 +1381,23 @@ class LoginForm extends Common_Widget {
 					array(
 						'type'            => Controls_Manager::RAW_HTML,
 						/* translators: %1$s doc link */
-						'raw'             => sprintf( __( '%1$s How to create a Facebook App ID? » %2$s', 'uael' ), '<a href=' . UAEL_DOMAIN . 'docs/create-facebook-app-id-for-login-form-widget/?utm_source=uael-pro-dashboard&utm_medium=uael-editor-screen&utm_campaign=uael-pro-plugin" target="_blank" rel="noopener">', '</a>' ),
+						'raw'             => sprintf( __( '%1$s How to create a Google Client ID? » %2$s', 'uael' ), '<a href=' . UAEL_DOMAIN . 'docs/create-google-client-id-for-login-form-widget/?utm_source=uael-pro-dashboard&utm_medium=uael-editor-screen&utm_campaign=uael-pro-plugin" target="_blank" rel="noopener">', '</a>' ),
 						'content_classes' => 'uael-editor-doc',
 					)
 				);
 
 				$this->add_control(
 					'help_doc_4',
+					array(
+						'type'            => Controls_Manager::RAW_HTML,
+						/* translators: %1$s doc link */
+						'raw'             => sprintf( __( '%1$s How to create a Facebook App ID? » %2$s', 'uael' ), '<a href=' . UAEL_DOMAIN . 'docs/create-facebook-app-id-for-login-form-widget/?utm_source=uael-pro-dashboard&utm_medium=uael-editor-screen&utm_campaign=uael-pro-plugin" target="_blank" rel="noopener">', '</a>' ),
+						'content_classes' => 'uael-editor-doc',
+					)
+				);
+
+				$this->add_control(
+					'help_doc_5',
 					array(
 						'type'            => Controls_Manager::RAW_HTML,
 						/* translators: %1$s doc link */
@@ -2474,10 +2515,13 @@ class LoginForm extends Common_Widget {
 		$google_clientid = '';
 		$facebook_appid  = '';
 
-		$invalid_username = '';
-		$invalid_password = '';
-		$session_error    = isset( $_SESSION['uael_error'] ) ? $_SESSION['uael_error'] : ''; // phpcs:ignore WordPressVIPMinimum.Variables.RestrictedVariables.session___SESSION
-		$session_id       = session_id(); // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.session_session_id
+		$invalid_username     = '';
+		$invalid_password     = '';
+		$session_error        = isset( $_SESSION['uael_error'] ) ? $_SESSION['uael_error'] : ''; // phpcs:ignore WordPressVIPMinimum.Variables.RestrictedVariables.session___SESSION
+		$session_id           = session_id(); // phpcs:ignore WordPressVIPMinimum.Functions.RestrictedFunctions.session_session_id
+		$integration_settings = UAEL_Helper::get_integrations_options();
+		$sitekey              = $integration_settings['recaptcha_v3_key'];
+		$secretkey            = $integration_settings['recaptcha_v3_secretkey'];
 
 		if ( ! empty( $session_id ) ) {
 			if ( isset( $_SESSION['uael_error'] ) ) {
@@ -2702,6 +2746,14 @@ class LoginForm extends Common_Widget {
 							<?php if ( '' !== $invalid_password ) { ?>
 								<span class="uael-register-field-message"><span class="uael-loginform-error"><?php echo wp_kses_post( $invalid_password ); ?></span></span>
 							<?php } ?>
+						</div>
+
+						<div <?php echo wp_kses_post( $this->get_render_attribute_string( 'field-group' ) ); ?>>
+							<?php 
+							if ( 'yes' === $settings['recaptcha_v3'] && '' !== $sitekey && '' !== $secretkey ) {
+								echo '<div id="uael-g-recaptcha-' . esc_attr( $node_id ) . '" class="uael-g-recaptcha-field elementor-field form-field-recaptcha" data-sitekey=' . esc_attr( $sitekey ) . ' data-type="v3" data-action="Form" data-badge="inline" data-size="invisible"></div>';
+							}
+							?>
 						</div>
 
 						<?php if ( 'yes' === $settings['show_remember_me'] ) { ?>

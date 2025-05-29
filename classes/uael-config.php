@@ -1039,8 +1039,8 @@ class UAEL_Config {
 		$is_lite_active = UAEL_Helper::is_lite_active();
 		$images_url     = UAEL_URL . 'assets/images/settings/';
 
-		$uaelite_title        = $is_lite_active ? UAEL_PLUGIN_NAME . esc_html__( ' - Lite', 'uael' ) : esc_html__( 'Elementor Header & Footer Builder', 'uael' );
-		$uaelite_logo         = $is_lite_active ? $images_url . 'uaelite.svg' : $images_url . 'uaelite-hfe.svg';
+		$uaelite_title        = UAEL_PLUGIN_NAME . esc_html__( ' - Lite', 'uael' );
+		$uaelite_logo         = $is_lite_active ? $images_url . 'uaelite.svg' : $images_url . 'uaelite.svg';
 		$uaelite_settings_url = $is_lite_active ? admin_url( 'admin.php?page=uaepro' ) : admin_url( 'edit.php?post_type=elementor-hf' );
 		$uaelite_site         = $is_lite_active ? 'https://ultimateelementor.com/' : 'https://wordpress.org/plugins/header-footer-elementor/';
 

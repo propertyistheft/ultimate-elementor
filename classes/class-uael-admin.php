@@ -556,15 +556,6 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 		
 			add_submenu_page(
 				'uaepro',                                       // Parent slug.
-				__( 'Templates', 'uael' ),                      // Page title.
-				__( 'Templates', 'uael' ),                      // Menu title.
-				'manage_options',                               // Capability.
-				$menu_slug . '#templates',                      // Menu slug with page hash.
-				__CLASS__ . '::render',                            // Callback method.
-			);
-		
-			add_submenu_page(
-				'uaepro',                                       // Parent slug.
 				__( 'Settings', 'uael' ),                       // Page title.
 				__( 'Settings', 'uael' ),                       // Menu title.
 				'manage_options',                               // Capability.

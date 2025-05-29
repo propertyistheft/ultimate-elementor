@@ -1,6 +1,7 @@
 ( function( $ ) {
 
 	var hotspotInterval = [];
+	var UAELLoginForm = UAELLoginForm || {};
 	var hoverFlag = false;
 	var isElEditMode = false;
 	window.is_fb_loggedin = false;
@@ -1731,6 +1732,50 @@
 		});
 	};
 
+	UAELLoginForm._submitForm = function( $this, widget_wrapper, $scope ) {
+        var ajaxurl = uael_script.ajax_url;
+        var user_data = {};
+        var recaptcha_field = $scope.find( '.uael-g-recaptcha-field' );
+
+        if ( recaptcha_field.length > 0 ) {
+            user_data['is_recaptcha_enabled'] = 'yes';
+            user_data['recaptcha_token'] = $scope.find( '.uael-g-recaptcha-response' ).val();
+        }
+
+        
+    };
+
+	window.onLoadUAEReCaptcha = function() {
+		var reCaptchaFields = $( '.uael-g-recaptcha-field' ),
+			widgetID;
+	
+		if ( reCaptchaFields.length > 0 ) {
+			reCaptchaFields.each( function() {
+				var self = $( this ),
+					attrWidget = self.attr( 'data-widgetid' );
+	
+				if ( typeof attrWidget !== typeof undefined && attrWidget !== false ) {
+					return;
+				} else {
+					widgetID = grecaptcha.render( $( this ).attr( 'id' ), { 
+						sitekey : self.data( 'sitekey' ),
+						badge: 'inline', // Set the badge style to inline
+						callback: function( response ) {
+							if ( response != '' ) {
+								self.append( jQuery( '<input>', {
+									type: 'hidden',
+									value: response,
+									class: 'uael-g-recaptcha-response'
+								}));
+							}
+						}
+					});
+					self.attr( 'data-widgetid', widgetID );
+				}
+			});
+		}
+	};
+
 	/*
 	 * Login Form handler Function.
 	 *
@@ -1761,6 +1806,7 @@
 		var send_email = $scope.find( '.uael-login-form-social-wrapper' ).data( 'send-email' );
 
 		var nonce = $scope.find('.uael-login-form-wrapper' ).data('nonce');
+		var recaptcha_field = $scope.find( '.uael-g-recaptcha-field' );
 
 		var ajax_enable = submit_button.data( 'ajax-enable' );
 		var toggle_password = $scope.find('.toggle-password');
@@ -1783,6 +1829,18 @@
 				input.attr('type', 'password');
 			}
 		});
+
+
+		if ( recaptcha_field.length > 0 ) {
+			if ( elementorFrontend.isEditMode() && undefined == recaptcha_field.attr( 'data-widgetid' ) ) {
+				onLoadUAEReCaptcha();
+			}
+	
+			grecaptcha.ready( function () {
+				var recaptcha_id = recaptcha_field.attr( 'data-widgetid' );
+				grecaptcha.execute( recaptcha_id );
+			});
+		}
 
 		/**
 		 * Validate form on submit button click.
@@ -1808,6 +1866,9 @@
 				if( 'yes' === ajax_enable ) {
 
 					event.preventDefault();
+
+					var $this = $( this );
+					UAELLoginForm._submitForm( $this, widget_wrapper, $scope );
 
 					if( ! invalid_field && error_exists.length === 0 ) {
 

@@ -51,6 +51,7 @@
 			telegram: 'https://telegram.me/share/url?url=' + uael_page_url,
 			skype: 'https://web.skype.com/share?url=' + uael_page_url,
 			buffer: 'https://buffer.com/add?url=' + uael_page_url,
+			bluesky: 'https://bsky.app/intent/compose?text=' + uael_page_url, // Add Bluesky share URL.
 		};
 
 		if( ! elementorFrontend.isEditMode() ) {

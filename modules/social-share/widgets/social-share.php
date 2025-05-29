@@ -208,6 +208,7 @@ class SocialShare extends Common_Widget {
 					'facebook'      => 'Facebook',
 					'twitter'       => 'Twitter',
 					'linkedin'      => 'LinkedIn',
+					'bluesky'       => 'Bluesky',
 					'pinterest'     => 'Pinterest',
 					'reddit'        => 'Reddit',
 					'vk'            => 'VK',
@@ -284,7 +285,13 @@ class SocialShare extends Common_Widget {
 					networkClass = "fa " + networkClass;
 			    }
 			    #>
-			    <i class="{{ networkClass }}" aria-hidden="true"></i>{{text.charAt(0).toUpperCase() + text.slice(1)}}',
+				<# if (text === "bluesky") { #>
+					<svg class="uae-share-bluesky" width="12" height="12" viewBox="0 0 600 530" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle;">
+						<path d="M135.72 44.03C202.216 93.951 273.74 195.17 300 249.49C326.262 195.174 397.782 93.95 464.28 44.03C512.26 8.009 590 -19.862 590 68.825C590 86.537 579.845 217.615 573.889 238.895C553.186 312.879 477.745 331.749 410.639 320.328C527.939 340.292 557.779 406.42 493.336 472.548C370.946 598.138 317.426 441.037 303.706 400.782C301.192 393.402 300.016 389.95 299.998 392.886C299.981 389.95 298.805 393.402 296.291 400.782C282.577 441.037 229.058 598.142 106.661 472.548C42.2166 406.42 72.0556 340.288 189.358 320.328C122.25 331.749 46.8076 312.879 26.1076 238.895C20.1514 217.613 9.99658 86.535 9.99658 68.825C9.99658 -19.862 87.7386 8.009 135.717 44.03H135.72Z" fill="#515962"/>
+					</svg>{{text.charAt(0).toUpperCase() + text.slice(1)}}
+				<# } else { #>
+					<i class="{{ networkClass }}" aria-hidden="true"></i>{{text.charAt(0).toUpperCase() + text.slice(1)}}
+				<# } #>',
 				'render_type' => 'template',
 			)
 		);
@@ -746,6 +753,7 @@ class SocialShare extends Common_Widget {
 				'selectors'          => array(
 					'{{WRAPPER}} .uael-share-btn__icon i' => 'font-size: {{SIZE}}{{UNIT}};',
 					'{{WRAPPER}} .uael-share-btn__icon i' => 'font-size: {{SIZE}}{{UNIT}};',
+					'{{WRAPPER}} .uael-share-btn__icon svg.uae-share-bluesky' => 'width: {{SIZE}}{{UNIT}}; height: calc({{SIZE}}{{UNIT}} * 0.76);',
 				),
 				'condition'          => array(
 					'view!'            => array( 'text' ),
@@ -931,6 +939,22 @@ class SocialShare extends Common_Widget {
                             {{WRAPPER}}.elementor-widget-uael-social-share .uael-style-floating .elementor-grid .elementor-grid-item .uael-share-btn.uaelbtn--skin-flat div.uael-share-btn__text,
                             {{WRAPPER}}.elementor-widget-uael-social-share .uael-style-floating .elementor-grid .elementor-grid-item .uael-share-btn.uaelbtn--skin-flat span.uael-share-btn__icon' => 'color: {{VALUE}};',
 
+					'{{WRAPPER}}.elementor-widget-uael-social-share .uael-style-inline .elementor-grid .uael-share-btn.uaelbtn--skin-flat span.uael-share-btn__icon svg.uae-share-bluesky path' => 'fill: {{VALUE}};',
+			
+					'{{WRAPPER}}.elementor-widget-uael-social-share .uael-style-inline .elementor-grid .uael-share-btn.uaelbtn--skin-minimal span.uael-share-btn__icon svg.uae-share-bluesky path' => 'fill: {{VALUE}};',
+								
+					'{{WRAPPER}}.elementor-widget-uael-social-share .uael-style-inline .elementor-grid .uael-share-btn.uaelbtn--skin-boxed span.uael-share-btn__icon svg.uae-share-bluesky path' => 'fill: {{VALUE}};',
+								
+					'{{WRAPPER}}.elementor-widget-uael-social-share .uael-style-inline .elementor-grid .uael-share-btn.uaelbtn--skin-gradient span.uael-share-btn__icon svg.uae-share-bluesky path' => 'fill: {{VALUE}};',
+								
+					'{{WRAPPER}}.elementor-widget-uael-social-share .uael-style-floating .elementor-grid .uael-share-btn.uaelbtn--skin-flat span.uael-share-btn__icon svg.uae-share-bluesky path' => 'fill: {{VALUE}};',
+								
+					'{{WRAPPER}}.elementor-widget-uael-social-share .uael-style-floating .elementor-grid .uael-share-btn.uaelbtn--skin-minimal span.uael-share-btn__icon svg.uae-share-bluesky path' => 'fill: {{VALUE}};',
+								
+					'{{WRAPPER}}.elementor-widget-uael-social-share .uael-style-floating .elementor-grid .uael-share-btn.uaelbtn--skin-boxed span.uael-share-btn__icon svg.uae-share-bluesky path' => 'fill: {{VALUE}};',
+								
+					'{{WRAPPER}}.elementor-widget-uael-social-share .uael-style-floating .elementor-grid .uael-share-btn.uaelbtn--skin-gradient span.uael-share-btn__icon svg.uae-share-bluesky path' => 'fill: {{VALUE}};',
+
 				),
 			)
 		);
@@ -1027,6 +1051,22 @@ class SocialShare extends Common_Widget {
 
 					'{{WRAPPER}}.elementor-widget-uael-social-share .uael-style-floating .elementor-grid .elementor-grid-item .uael-share-btn.uaelbtn--skin-gradient:hover div.uael-share-btn__text,
 					{{WRAPPER}}.elementor-widget-uael-social-share .uael-style-floating .elementor-grid .elementor-grid-item .uael-share-btn.uaelbtn--skin-gradient:hover span.uael-share-btn__icon' => 'color: {{VALUE}}',
+
+					'{{WRAPPER}}.elementor-widget-uael-social-share .uael-style-inline .elementor-grid .elementor-grid-item .uael-share-btn.uaelbtn--skin-flat:hover span.uael-share-btn__icon svg.uae-share-bluesky path' => 'fill: {{VALUE}};',
+			
+					'{{WRAPPER}}.elementor-widget-uael-social-share .uael-style-inline .elementor-grid .elementor-grid-item .uael-share-btn.uaelbtn--skin-minimal:hover span.uael-share-btn__icon svg.uae-share-bluesky path' => 'fill: {{VALUE}};',
+							  
+					'{{WRAPPER}}.elementor-widget-uael-social-share .uael-style-inline .elementor-grid .elementor-grid-item .uael-share-btn.uaelbtn--skin-boxed:hover span.uael-share-btn__icon svg.uae-share-bluesky path' => 'fill: {{VALUE}};',
+							  
+					'{{WRAPPER}}.elementor-widget-uael-social-share .uael-style-inline .elementor-grid .elementor-grid-item .uael-share-btn.uaelbtn--skin-gradient:hover span.uael-share-btn__icon svg.uae-share-bluesky path' => 'fill: {{VALUE}};',
+							  
+					'{{WRAPPER}}.elementor-widget-uael-social-share .uael-style-floating .elementor-grid .elementor-grid-item .uael-share-btn.uaelbtn--skin-flat:hover span.uael-share-btn__icon svg.uae-share-bluesky path' => 'fill: {{VALUE}};',
+							  
+					'{{WRAPPER}}.elementor-widget-uael-social-share .uael-style-floating .elementor-grid .elementor-grid-item .uael-share-btn.uaelbtn--skin-minimal:hover span.uael-share-btn__icon svg.uae-share-bluesky path' => 'fill: {{VALUE}};',
+							  
+					'{{WRAPPER}}.elementor-widget-uael-social-share .uael-style-floating .elementor-grid .elementor-grid-item .uael-share-btn.uaelbtn--skin-boxed:hover span.uael-share-btn__icon svg.uae-share-bluesky path' => 'fill: {{VALUE}};',
+							  
+					'{{WRAPPER}}.elementor-widget-uael-social-share .uael-style-floating .elementor-grid .elementor-grid-item .uael-share-btn.uaelbtn--skin-gradient:hover span.uael-share-btn__icon svg.uae-share-bluesky path' => 'fill: {{VALUE}};',
 				),
 			)
 		);
@@ -1690,7 +1730,19 @@ class SocialShare extends Common_Widget {
 										if ( 'left' === $settings['icon_align'] ) {
 											?>
 											<span class="uael-share-btn__icon" aria-label="<?php /* translators: %s share text */ echo esc_attr( sprintf( __( 'Share on %s', 'uael' ), $custom_text ) ); ?>">
-												<i class="<?php echo esc_attr( self::uael_get_network_class( $button['text'] ) ); ?>" aria-hidden="true"></i>
+												<?php 
+												if ( 'bluesky' === $button['text'] ) {
+													?>
+														<svg class="uae-share-bluesky" width="20" height="13" viewBox="0 0 600 530" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle;">
+															<path d="M135.72 44.03C202.216 93.951 273.74 195.17 300 249.49C326.262 195.174 397.782 93.95 464.28 44.03C512.26 8.009 590 -19.862 590 68.825C590 86.537 579.845 217.615 573.889 238.895C553.186 312.879 477.745 331.749 410.639 320.328C527.939 340.292 557.779 406.42 493.336 472.548C370.946 598.138 317.426 441.037 303.706 400.782C301.192 393.402 300.016 389.95 299.998 392.886C299.981 389.95 298.805 393.402 296.291 400.782C282.577 441.037 229.058 598.142 106.661 472.548C42.2166 406.42 72.0556 340.288 189.358 320.328C122.25 331.749 46.8076 312.879 26.1076 238.895C20.1514 217.613 9.99658 86.535 9.99658 68.825C9.99658 -19.862 87.7386 8.009 135.717 44.03H135.72Z" fill="white"/>
+														</svg>
+													<?php
+												} else {
+													?>
+														<i class="<?php echo esc_attr( self::uael_get_network_class( $button['text'] ) ); ?>" aria-hidden="true"></i>
+													<?php
+												}
+												?>
 											</span>
 										<?php } ?>
 										<div class="uael-share-btn__text">
@@ -1698,7 +1750,19 @@ class SocialShare extends Common_Widget {
 										</div>
 										<?php if ( 'right' === $settings['icon_align'] ) { ?>
 											<span class="uael-share-btn__icon" aria-label="<?php /* translators: %s share text */ echo esc_attr( sprintf( __( 'Share on %s', 'uael' ), $custom_text ) ); ?>">
-												<i class="<?php echo esc_attr( self::uael_get_network_class( $button['text'] ) ); ?>" aria-hidden="true"></i>
+											<?php 
+											if ( 'bluesky' === $button['text'] ) {
+												?>
+													<svg class="uae-share-bluesky" width="20" height="13" viewBox="0 0 600 530" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle;">
+														<path d="M135.72 44.03C202.216 93.951 273.74 195.17 300 249.49C326.262 195.174 397.782 93.95 464.28 44.03C512.26 8.009 590 -19.862 590 68.825C590 86.537 579.845 217.615 573.889 238.895C553.186 312.879 477.745 331.749 410.639 320.328C527.939 340.292 557.779 406.42 493.336 472.548C370.946 598.138 317.426 441.037 303.706 400.782C301.192 393.402 300.016 389.95 299.998 392.886C299.981 389.95 298.805 393.402 296.291 400.782C282.577 441.037 229.058 598.142 106.661 472.548C42.2166 406.42 72.0556 340.288 189.358 320.328C122.25 331.749 46.8076 312.879 26.1076 238.895C20.1514 217.613 9.99658 86.535 9.99658 68.825C9.99658 -19.862 87.7386 8.009 135.717 44.03H135.72Z" fill="white"/>
+													</svg>
+												<?php
+											} else {
+												?>
+													<i class="<?php echo esc_attr( self::uael_get_network_class( $button['text'] ) ); ?>" aria-hidden="true"></i>
+												<?php
+											}
+											?>
 											</span>
 										<?php } ?>
 										<?php
@@ -1717,7 +1781,19 @@ class SocialShare extends Common_Widget {
 									case 'icon':
 										?>
 										<span class="uael-share-btn__icon" aria-label="<?php /* translators: %s share text */ echo esc_attr( sprintf( __( 'Share on %s', 'uael' ), $custom_text ) ); ?>">
-											<i class="<?php echo esc_attr( self::uael_get_network_class( $button['text'] ) ); ?>" aria-hidden="true"></i>
+											<?php 
+											if ( 'bluesky' === $button['text'] ) {
+												?>
+														<svg class="uae-share-bluesky" width="20" height="13" viewBox="0 0 600 530" xmlns="http://www.w3.org/2000/svg" style="vertical-align: middle;">
+															<path d="M135.72 44.03C202.216 93.951 273.74 195.17 300 249.49C326.262 195.174 397.782 93.95 464.28 44.03C512.26 8.009 590 -19.862 590 68.825C590 86.537 579.845 217.615 573.889 238.895C553.186 312.879 477.745 331.749 410.639 320.328C527.939 340.292 557.779 406.42 493.336 472.548C370.946 598.138 317.426 441.037 303.706 400.782C301.192 393.402 300.016 389.95 299.998 392.886C299.981 389.95 298.805 393.402 296.291 400.782C282.577 441.037 229.058 598.142 106.661 472.548C42.2166 406.42 72.0556 340.288 189.358 320.328C122.25 331.749 46.8076 312.879 26.1076 238.895C20.1514 217.613 9.99658 86.535 9.99658 68.825C9.99658 -19.862 87.7386 8.009 135.717 44.03H135.72Z" fill="white"/>
+														</svg>
+												<?php
+											} else {
+												?>
+													<i class="<?php echo esc_attr( self::uael_get_network_class( $button['text'] ) ); ?>" aria-hidden="true"></i>
+													<?php
+											}
+											?>
 										</span>
 										<?php
 										break;

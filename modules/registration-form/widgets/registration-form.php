@@ -2615,7 +2615,7 @@ class RegistrationForm extends Common_Widget {
 														echo '<div id="uael-g-recaptcha-' . esc_attr( $node_id ) . '" class="uael-g-recaptcha-field elementor-field form-field-recaptcha" data-sitekey=' . esc_attr( $sitekey ) . ' data-type="v3" data-action="Form" data-badge="' . esc_attr( $item['recaptcha_badge'] ) . '" data-size="invisible"></div>';
 													} else {
 														echo '<div class="elementor-alert uael-recaptcha-alert elementor-alert-warning">';
-														echo esc_attr__( 'To use reCAPTCHA v3, you need to add the API Key and complete the setup process in Dashboard > Settings > UAE > User Registration Form Settings > reCAPTCHA v3.', 'uael' );
+														echo esc_attr__( 'To use reCAPTCHA v3, you need to add the API Key and complete the setup process in Dashboard > UAE > Settings > Integrations > Setup reCAPTCHA v3', 'uael' );
 														echo '</div>';
 													}
 													break;

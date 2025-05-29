@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the Ultimate Addons for Elementor Pro package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ultimate Addons for Elementor Pro 1.39.6\n"
+"Project-Id-Version: Ultimate Addons for Elementor Pro 1.39.7\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/ultimate-elementor\n"
-"POT-Creation-Date: 2025-05-22 06:51:18+00:00\n"
+"POT-Creation-Date: 2025-05-28 05:30:09+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -134,8 +134,8 @@ msgstr ""
 #: modules/hotspot/widgets/hotspot.php:215
 #: modules/infobox/widgets/infobox.php:1281
 #: modules/instagram-feed/widgets/instagram-feed.php:1135
-#: modules/login-form/widgets/login-form.php:954
-#: modules/login-form/widgets/login-form.php:963
+#: modules/login-form/widgets/login-form.php:985
+#: modules/login-form/widgets/login-form.php:994
 #: modules/marketing-button/widgets/marketing-button.php:185
 #: modules/marketing-button/widgets/marketing-button.php:199
 #: modules/modal-popup/widgets/modal-popup.php:666
@@ -157,8 +157,8 @@ msgstr ""
 #: modules/price-table/widgets/price-table.php:1334
 #: modules/registration-form/widgets/registration-form.php:1074
 #: modules/registration-form/widgets/registration-form.php:1083
-#: modules/social-share/widgets/social-share.php:300
-#: modules/social-share/widgets/social-share.php:1323
+#: modules/social-share/widgets/social-share.php:307
+#: modules/social-share/widgets/social-share.php:1363
 #: modules/table/widgets/table.php:269 modules/table/widgets/table.php:281
 #: modules/table/widgets/table.php:297 modules/table/widgets/table.php:670
 #: modules/table/widgets/table.php:682 modules/table/widgets/table.php:697
@@ -308,8 +308,8 @@ msgstr ""
 msgid "View Settings"
 msgstr ""
 
-#: class-brainstorm-update-uael.php:112 classes/class-uael-admin.php:568
-#: classes/class-uael-admin.php:569 classes/uael-config.php:116
+#: class-brainstorm-update-uael.php:112 classes/class-uael-admin.php:559
+#: classes/class-uael-admin.php:560 classes/uael-config.php:116
 #: classes/uael-config.php:212 classes/uael-config.php:292
 #: classes/uael-config.php:307 classes/uael-config.php:391
 #: classes/uael-config.php:446 classes/uael-config.php:516
@@ -335,7 +335,7 @@ msgid ""
 "option, adding the App Secret Key will fix it."
 msgstr ""
 
-#: classes/class-uael-admin.php:239 classes/class-uael-admin.php:1472
+#: classes/class-uael-admin.php:239 classes/class-uael-admin.php:1463
 msgid "Ultimate Addons for Elementor"
 msgstr ""
 
@@ -362,92 +362,88 @@ msgstr ""
 msgid "Widgets"
 msgstr ""
 
-#: classes/class-uael-admin.php:559 classes/class-uael-admin.php:560
-msgid "Templates"
-msgstr ""
-
-#: classes/class-uael-admin.php:577 classes/class-uael-admin.php:578
+#: classes/class-uael-admin.php:568 classes/class-uael-admin.php:569
 msgid "Onboarding"
 msgstr ""
 
-#: classes/class-uael-admin.php:940
+#: classes/class-uael-admin.php:931
 msgid "Plugin slug is missing."
 msgstr ""
 
-#: classes/class-uael-admin.php:964
+#: classes/class-uael-admin.php:955
 msgid "Plugin installation function not found."
 msgstr ""
 
-#: classes/class-uael-admin.php:986
+#: classes/class-uael-admin.php:977
 msgid "Theme slug is missing."
 msgstr ""
 
-#: classes/class-uael-admin.php:1009
+#: classes/class-uael-admin.php:1000
 msgid "Theme installation function not found."
 msgstr ""
 
-#: classes/class-uael-admin.php:1058
+#: classes/class-uael-admin.php:1049
 msgid "License key not found."
 msgstr ""
 
-#: classes/class-uael-admin.php:1084
+#: classes/class-uael-admin.php:1075
 msgid "License Successfully Activated"
 msgstr ""
 
-#: classes/class-uael-admin.php:1088
+#: classes/class-uael-admin.php:1079
 msgid "License activation failed!"
 msgstr ""
 
-#: classes/class-uael-admin.php:1129
+#: classes/class-uael-admin.php:1120
 msgid "License Successfully Deactivated"
 msgstr ""
 
-#: classes/class-uael-admin.php:1133
+#: classes/class-uael-admin.php:1124
 msgid "License deactivation failed!"
 msgstr ""
 
-#: classes/class-uael-admin.php:1162
+#: classes/class-uael-admin.php:1153
 msgid "Plugin activation is disabled for you on this site."
 msgstr ""
 
-#: classes/class-uael-admin.php:1171
+#: classes/class-uael-admin.php:1162
 msgid "Plugin Activated."
 msgstr ""
 
-#: classes/class-uael-admin.php:1182
+#: classes/class-uael-admin.php:1173
 msgid "Theme activation is disabled for you on this site."
 msgstr ""
 
-#: classes/class-uael-admin.php:1191
+#: classes/class-uael-admin.php:1182
 msgid "Theme Activated."
 msgstr ""
 
-#: classes/class-uael-admin.php:1198
+#: classes/class-uael-admin.php:1189
 msgid "Could not activate plugin. Please activate from the Plugins page."
 msgstr ""
 
-#: classes/class-uael-admin.php:1200
+#: classes/class-uael-admin.php:1191
 msgid "Could not activate theme. Please activate from the Themes page."
 msgstr ""
 
-#: classes/class-uael-admin.php:1473
+#: classes/class-uael-admin.php:1464
 msgid ""
 "How likely are you to recommend Ultimate Addons for Elementor to your "
 "friends or colleagues?"
 msgstr ""
 
-#: classes/class-uael-admin.php:1475
+#: classes/class-uael-admin.php:1466
 msgid ""
 "Could you please do us a favor and give us a 5-star rating on Trustpilot? "
 "It would help others choose Ultimate Addons for Elementor with confidence. "
 "Thank you!"
 msgstr ""
 
-#: classes/class-uael-admin.php:1478
+#: classes/class-uael-admin.php:1469
 msgid "Thank you for your feedback"
 msgstr ""
 
-#: classes/class-uael-admin.php:1479
+#: classes/class-uael-admin.php:1470
 msgid "We value your input. How can we improve your experience?"
 msgstr ""
 
@@ -482,7 +478,7 @@ msgid "This Field is required!"
 msgstr ""
 
 #: classes/class-uael-core-plugin.php:310
-#: modules/login-form/widgets/login-form.php:2490
+#: modules/login-form/widgets/login-form.php:2534
 msgid "Error: The Password you have entered is incorrect."
 msgstr ""
 
@@ -793,7 +789,7 @@ msgstr ""
 #: classes/uael-config.php:440
 #: modules/image-gallery/widgets/image-gallery.php:712
 #: modules/social-share/widgets/social-share.php:196
-#: modules/social-share/widgets/social-share.php:553
+#: modules/social-share/widgets/social-share.php:560
 msgid "Social Share"
 msgstr ""
 
@@ -1008,10 +1004,6 @@ msgstr ""
 
 #: classes/uael-config.php:1042
 msgid " - Lite"
-msgstr ""
-
-#: classes/uael-config.php:1042
-msgid "Elementor Header & Footer Builder"
 msgstr ""
 
 #: classes/uael-config.php:1055
@@ -1333,7 +1325,7 @@ msgstr ""
 #: modules/registration-form/widgets/registration-form.php:1169
 #: modules/registration-form/widgets/registration-form.php:2164
 #: modules/registration-form/widgets/registration-form.php:2254
-#: modules/social-share/widgets/social-share.php:526
+#: modules/social-share/widgets/social-share.php:533
 #: modules/team-member/widgets/team-member.php:1212
 #: modules/timeline/widgets/timeline.php:171
 #: modules/timeline/widgets/timeline.php:659
@@ -2074,23 +2066,23 @@ msgstr ""
 msgid "Invalid notice ID."
 msgstr ""
 
-#: lib/nps-survey/classes/nps-survey-script.php:249
+#: lib/nps-survey/classes/nps-survey-script.php:248
 msgid "Sorry, you are not allowed to do that."
 msgstr ""
 
-#: lib/nps-survey/classes/nps-survey-script.php:271
-#: lib/nps-survey/classes/nps-survey-script.php:377
+#: lib/nps-survey/classes/nps-survey-script.php:270
+#: lib/nps-survey/classes/nps-survey-script.php:376
 msgid "Nonce verification failed."
 msgstr ""
 
 #: modules/ba-slider/widgets/ba-slider.php:127
 #: modules/ba-slider/widgets/ba-slider.php:193
 #: modules/buttons/widgets/buttons.php:200
-#: modules/login-form/widgets/login-form.php:977
+#: modules/login-form/widgets/login-form.php:1008
 #: modules/modal-popup/widgets/modal-popup.php:1321
 #: modules/posts/skins/skin-base.php:1839
 #: modules/registration-form/widgets/registration-form.php:1097
-#: modules/social-share/widgets/social-share.php:317
+#: modules/social-share/widgets/social-share.php:324
 #: modules/table/widgets/table.php:1742 modules/table/widgets/table.php:1815
 #: modules/woocommerce/widgets/woo-add-to-cart.php:340
 #: modules/woocommerce/widgets/woo-mini-cart.php:183
@@ -2129,11 +2121,11 @@ msgstr ""
 #: modules/ba-slider/widgets/ba-slider.php:208
 #: modules/ba-slider/widgets/ba-slider.php:274
 #: modules/buttons/widgets/buttons.php:201
-#: modules/login-form/widgets/login-form.php:978
+#: modules/login-form/widgets/login-form.php:1009
 #: modules/modal-popup/widgets/modal-popup.php:1322
 #: modules/posts/skins/skin-base.php:1840
 #: modules/registration-form/widgets/registration-form.php:1098
-#: modules/social-share/widgets/social-share.php:318
+#: modules/social-share/widgets/social-share.php:325
 #: modules/table/widgets/table.php:1743 modules/table/widgets/table.php:1816
 #: modules/woocommerce/widgets/woo-add-to-cart.php:341
 #: modules/woocommerce/widgets/woo-mini-cart.php:182
@@ -2188,9 +2180,9 @@ msgstr ""
 #: modules/how-to/widgets/how-to.php:1219
 #: modules/how-to/widgets/how-to.php:1301
 #: modules/how-to/widgets/how-to.php:1385
-#: modules/login-form/widgets/login-form.php:924
-#: modules/login-form/widgets/login-form.php:1256
-#: modules/login-form/widgets/login-form.php:2076
+#: modules/login-form/widgets/login-form.php:955
+#: modules/login-form/widgets/login-form.php:1287
+#: modules/login-form/widgets/login-form.php:2117
 #: modules/marketing-button/widgets/marketing-button.php:380
 #: modules/marketing-button/widgets/marketing-button.php:467
 #: modules/modal-popup/widgets/modal-popup.php:1223
@@ -2215,9 +2207,9 @@ msgstr ""
 #: modules/registration-form/widgets/registration-form.php:696
 #: modules/registration-form/widgets/registration-form.php:1044
 #: modules/retina-image/widgets/retina-image.php:174
-#: modules/social-share/widgets/social-share.php:399
-#: modules/social-share/widgets/social-share.php:427
-#: modules/social-share/widgets/social-share.php:1428
+#: modules/social-share/widgets/social-share.php:406
+#: modules/social-share/widgets/social-share.php:434
+#: modules/social-share/widgets/social-share.php:1468
 #: modules/table-of-contents/widgets/table-of-contents.php:625
 #: modules/woocommerce/skins/skin-grid-default.php:208
 #: modules/woocommerce/skins/skin-grid-franko.php:220
@@ -2271,9 +2263,9 @@ msgstr ""
 #: modules/instagram-feed/widgets/instagram-feed.php:802
 #: modules/instagram-feed/widgets/instagram-feed.php:835
 #: modules/instagram-feed/widgets/instagram-feed.php:926
-#: modules/login-form/widgets/login-form.php:928
-#: modules/login-form/widgets/login-form.php:1260
-#: modules/login-form/widgets/login-form.php:2080
+#: modules/login-form/widgets/login-form.php:959
+#: modules/login-form/widgets/login-form.php:1291
+#: modules/login-form/widgets/login-form.php:2121
 #: modules/marketing-button/widgets/marketing-button.php:384
 #: modules/marketing-button/widgets/marketing-button.php:471
 #: modules/modal-popup/widgets/modal-popup.php:1227
@@ -2312,9 +2304,9 @@ msgstr ""
 #: modules/registration-form/widgets/registration-form.php:700
 #: modules/registration-form/widgets/registration-form.php:1048
 #: modules/retina-image/widgets/retina-image.php:178
-#: modules/social-share/widgets/social-share.php:403
-#: modules/social-share/widgets/social-share.php:432
-#: modules/social-share/widgets/social-share.php:1432
+#: modules/social-share/widgets/social-share.php:410
+#: modules/social-share/widgets/social-share.php:439
+#: modules/social-share/widgets/social-share.php:1472
 #: modules/table/widgets/table.php:1089 modules/table/widgets/table.php:1377
 #: modules/table-of-contents/widgets/table-of-contents.php:629
 #: modules/team-member/widgets/team-member.php:715
@@ -2381,9 +2373,9 @@ msgstr ""
 #: modules/instagram-feed/widgets/instagram-feed.php:806
 #: modules/instagram-feed/widgets/instagram-feed.php:839
 #: modules/instagram-feed/widgets/instagram-feed.php:930
-#: modules/login-form/widgets/login-form.php:932
-#: modules/login-form/widgets/login-form.php:1264
-#: modules/login-form/widgets/login-form.php:2084
+#: modules/login-form/widgets/login-form.php:963
+#: modules/login-form/widgets/login-form.php:1295
+#: modules/login-form/widgets/login-form.php:2125
 #: modules/marketing-button/widgets/marketing-button.php:388
 #: modules/marketing-button/widgets/marketing-button.php:475
 #: modules/modal-popup/widgets/modal-popup.php:1231
@@ -2411,8 +2403,8 @@ msgstr ""
 #: modules/registration-form/widgets/registration-form.php:704
 #: modules/registration-form/widgets/registration-form.php:1052
 #: modules/retina-image/widgets/retina-image.php:182
-#: modules/social-share/widgets/social-share.php:407
-#: modules/social-share/widgets/social-share.php:1436
+#: modules/social-share/widgets/social-share.php:414
+#: modules/social-share/widgets/social-share.php:1476
 #: modules/table/widgets/table.php:1093 modules/table/widgets/table.php:1381
 #: modules/table-of-contents/widgets/table-of-contents.php:633
 #: modules/team-member/widgets/team-member.php:919
@@ -2474,9 +2466,9 @@ msgstr ""
 #: modules/instagram-feed/widgets/instagram-feed.php:810
 #: modules/instagram-feed/widgets/instagram-feed.php:843
 #: modules/instagram-feed/widgets/instagram-feed.php:934
-#: modules/login-form/widgets/login-form.php:936
-#: modules/login-form/widgets/login-form.php:1268
-#: modules/login-form/widgets/login-form.php:2088
+#: modules/login-form/widgets/login-form.php:967
+#: modules/login-form/widgets/login-form.php:1299
+#: modules/login-form/widgets/login-form.php:2129
 #: modules/marketing-button/widgets/marketing-button.php:392
 #: modules/marketing-button/widgets/marketing-button.php:479
 #: modules/modal-popup/widgets/modal-popup.php:1235
@@ -2514,9 +2506,9 @@ msgstr ""
 #: modules/registration-form/widgets/registration-form.php:708
 #: modules/registration-form/widgets/registration-form.php:1056
 #: modules/retina-image/widgets/retina-image.php:186
-#: modules/social-share/widgets/social-share.php:411
-#: modules/social-share/widgets/social-share.php:436
-#: modules/social-share/widgets/social-share.php:1440
+#: modules/social-share/widgets/social-share.php:418
+#: modules/social-share/widgets/social-share.php:443
+#: modules/social-share/widgets/social-share.php:1480
 #: modules/table/widgets/table.php:1097 modules/table/widgets/table.php:1385
 #: modules/table-of-contents/widgets/table-of-contents.php:637
 #: modules/team-member/widgets/team-member.php:716
@@ -2609,10 +2601,10 @@ msgstr ""
 #: modules/instagram-feed/widgets/instagram-feed.php:627
 #: modules/instagram-feed/widgets/instagram-feed.php:672
 #: modules/login-form/widgets/login-form.php:281
-#: modules/login-form/widgets/login-form.php:419
-#: modules/login-form/widgets/login-form.php:451
-#: modules/login-form/widgets/login-form.php:537
-#: modules/login-form/widgets/login-form.php:740
+#: modules/login-form/widgets/login-form.php:450
+#: modules/login-form/widgets/login-form.php:482
+#: modules/login-form/widgets/login-form.php:568
+#: modules/login-form/widgets/login-form.php:771
 #: modules/modal-popup/widgets/modal-popup.php:250
 #: modules/modal-popup/widgets/modal-popup.php:452
 #: modules/modal-popup/widgets/modal-popup.php:516
@@ -2769,11 +2761,11 @@ msgstr ""
 #: modules/instagram-feed/widgets/instagram-feed.php:628
 #: modules/instagram-feed/widgets/instagram-feed.php:673
 #: modules/login-form/widgets/login-form.php:282
-#: modules/login-form/widgets/login-form.php:420
-#: modules/login-form/widgets/login-form.php:452
-#: modules/login-form/widgets/login-form.php:507
+#: modules/login-form/widgets/login-form.php:451
+#: modules/login-form/widgets/login-form.php:483
 #: modules/login-form/widgets/login-form.php:538
-#: modules/login-form/widgets/login-form.php:741
+#: modules/login-form/widgets/login-form.php:569
+#: modules/login-form/widgets/login-form.php:772
 #: modules/modal-popup/widgets/modal-popup.php:249
 #: modules/modal-popup/widgets/modal-popup.php:451
 #: modules/modal-popup/widgets/modal-popup.php:515
@@ -2828,7 +2820,7 @@ msgstr ""
 #: modules/registration-form/widgets/registration-form.php:639
 #: modules/registration-form/widgets/registration-form.php:870
 #: modules/registration-form/widgets/registration-form.php:894
-#: modules/social-share/widgets/social-share.php:1103
+#: modules/social-share/widgets/social-share.php:1143
 #: modules/table/widgets/table.php:779 modules/table/widgets/table.php:990
 #: modules/table/widgets/table.php:1020
 #: modules/table-of-contents/widgets/table-of-contents.php:297
@@ -3018,11 +3010,11 @@ msgstr ""
 #: modules/infobox/widgets/infobox.php:1764
 #: modules/instagram-feed/widgets/instagram-feed.php:732
 #: modules/instagram-feed/widgets/instagram-feed.php:1202
-#: modules/login-form/widgets/login-form.php:358
-#: modules/login-form/widgets/login-form.php:748
-#: modules/login-form/widgets/login-form.php:1767
-#: modules/login-form/widgets/login-form.php:1972
-#: modules/login-form/widgets/login-form.php:2334
+#: modules/login-form/widgets/login-form.php:389
+#: modules/login-form/widgets/login-form.php:779
+#: modules/login-form/widgets/login-form.php:1808
+#: modules/login-form/widgets/login-form.php:2013
+#: modules/login-form/widgets/login-form.php:2375
 #: modules/modal-popup/widgets/modal-popup.php:787
 #: modules/modal-popup/widgets/modal-popup.php:1475
 #: modules/modal-popup/widgets/modal-popup.php:1555
@@ -3052,7 +3044,7 @@ msgstr ""
 #: modules/price-table/widgets/price-table.php:2626
 #: modules/price-table/widgets/price-table.php:3316
 #: modules/registration-form/widgets/registration-form.php:1775
-#: modules/social-share/widgets/social-share.php:817
+#: modules/social-share/widgets/social-share.php:825
 #: modules/table/widgets/table.php:403 modules/table/widgets/table.php:794
 #: modules/table-of-contents/widgets/table-of-contents.php:653
 #: modules/table-of-contents/widgets/table-of-contents.php:752
@@ -3174,9 +3166,9 @@ msgstr ""
 #: modules/infobox/widgets/infobox.php:1399
 #: modules/instagram-feed/widgets/instagram-feed.php:1000
 #: modules/instagram-feed/widgets/instagram-feed.php:1072
-#: modules/login-form/widgets/login-form.php:1885
-#: modules/login-form/widgets/login-form.php:2210
-#: modules/login-form/widgets/login-form.php:2274
+#: modules/login-form/widgets/login-form.php:1926
+#: modules/login-form/widgets/login-form.php:2251
+#: modules/login-form/widgets/login-form.php:2315
 #: modules/marketing-button/widgets/marketing-button.php:554
 #: modules/marketing-button/widgets/marketing-button.php:640
 #: modules/modal-popup/widgets/modal-popup.php:1490
@@ -3325,8 +3317,8 @@ msgstr ""
 #: modules/infobox/widgets/infobox.php:1511
 #: modules/instagram-feed/widgets/instagram-feed.php:860
 #: modules/instagram-feed/widgets/instagram-feed.php:1120
-#: modules/login-form/widgets/login-form.php:1909
-#: modules/login-form/widgets/login-form.php:2176
+#: modules/login-form/widgets/login-form.php:1950
+#: modules/login-form/widgets/login-form.php:2217
 #: modules/marketing-button/widgets/marketing-button.php:507
 #: modules/modal-popup/widgets/modal-popup.php:1273
 #: modules/modal-popup/widgets/modal-popup.php:1456
@@ -3405,7 +3397,7 @@ msgstr ""
 #: modules/infobox/widgets/infobox.php:258
 #: modules/instagram-feed/widgets/instagram-feed.php:754
 #: modules/instagram-feed/widgets/instagram-feed.php:896
-#: modules/login-form/widgets/login-form.php:656
+#: modules/login-form/widgets/login-form.php:687
 #: modules/marketing-button/widgets/marketing-button.php:241
 #: modules/particles/module.php:369 modules/posts/skins/skin-base.php:340
 #: modules/posts/skins/skin-business.php:133
@@ -3437,7 +3429,7 @@ msgstr ""
 #: modules/image-gallery/widgets/image-gallery.php:1358
 #: modules/instagram-feed/widgets/instagram-feed.php:762
 #: modules/instagram-feed/widgets/instagram-feed.php:904
-#: modules/login-form/widgets/login-form.php:657
+#: modules/login-form/widgets/login-form.php:688
 #: modules/particles/module.php:370
 #: modules/price-list/widgets/price-list.php:367
 #: modules/price-table/widgets/price-table.php:415
@@ -3471,7 +3463,7 @@ msgstr ""
 #: modules/image-gallery/widgets/image-gallery.php:1857
 #: modules/infobox/widgets/infobox.php:2097
 #: modules/instagram-feed/widgets/instagram-feed.php:1339
-#: modules/login-form/widgets/login-form.php:1324
+#: modules/login-form/widgets/login-form.php:1355
 #: modules/marketing-button/widgets/marketing-button.php:343
 #: modules/modal-popup/widgets/modal-popup.php:2242
 #: modules/nav-menu/widgets/nav-menu.php:2239
@@ -3481,7 +3473,7 @@ msgstr ""
 #: modules/price-table/widgets/price-table.php:3465
 #: modules/registration-form/widgets/registration-form.php:1326
 #: modules/retina-image/widgets/retina-image.php:650
-#: modules/social-share/widgets/social-share.php:1474
+#: modules/social-share/widgets/social-share.php:1514
 #: modules/table/widgets/table.php:2030
 #: modules/table-of-contents/widgets/table-of-contents.php:539
 #: modules/team-member/widgets/team-member.php:674
@@ -3540,7 +3532,7 @@ msgstr ""
 #: modules/image-gallery/widgets/image-gallery.php:1866
 #: modules/infobox/widgets/infobox.php:2116
 #: modules/instagram-feed/widgets/instagram-feed.php:1348
-#: modules/login-form/widgets/login-form.php:1333
+#: modules/login-form/widgets/login-form.php:1364
 #: modules/marketing-button/widgets/marketing-button.php:352
 #: modules/nav-menu/widgets/nav-menu.php:2248
 #: modules/offcanvas/widgets/offcanvas.php:1863
@@ -3549,7 +3541,7 @@ msgstr ""
 #: modules/price-table/widgets/price-table.php:3474
 #: modules/registration-form/widgets/registration-form.php:1335
 #: modules/retina-image/widgets/retina-image.php:659
-#: modules/social-share/widgets/social-share.php:1483
+#: modules/social-share/widgets/social-share.php:1523
 #: modules/table/widgets/table.php:2039
 #: modules/table-of-contents/widgets/table-of-contents.php:548
 #: modules/team-member/widgets/team-member.php:683
@@ -3742,8 +3734,8 @@ msgstr ""
 
 #: modules/business-hours/widgets/business-hours.php:283
 #: modules/business-hours/widgets/business-hours.php:292
-#: modules/login-form/widgets/login-form.php:321
-#: modules/login-form/widgets/login-form.php:1216
+#: modules/login-form/widgets/login-form.php:352
+#: modules/login-form/widgets/login-form.php:1247
 #: modules/nav-menu/widgets/nav-menu.php:1749
 #: modules/price-table/widgets/price-table.php:2581
 #: modules/registration-form/widgets/registration-form.php:795
@@ -3759,15 +3751,15 @@ msgstr ""
 #: modules/headings/widgets/fancy-heading.php:682
 #: modules/hotspot/widgets/hotspot.php:357
 #: modules/infobox/widgets/infobox.php:1084
-#: modules/login-form/widgets/login-form.php:337
+#: modules/login-form/widgets/login-form.php:368
 #: modules/particles/module.php:253
 #: modules/party-propz-extension/module.php:455
 #: modules/price-table/widgets/price-table.php:147
 #: modules/price-table/widgets/price-table.php:1173
 #: modules/price-table/widgets/price-table.php:2261
 #: modules/price-table/widgets/price-table.php:2605
-#: modules/social-share/widgets/social-share.php:295
-#: modules/social-share/widgets/social-share.php:1320
+#: modules/social-share/widgets/social-share.php:302
+#: modules/social-share/widgets/social-share.php:1360
 #: modules/table-of-contents/widgets/table-of-contents.php:731
 #: modules/timeline/widgets/timeline.php:878
 #: modules/woocommerce/widgets/woo-categories.php:499
@@ -3794,7 +3786,7 @@ msgstr ""
 #: modules/infobox/widgets/infobox.php:676
 #: modules/infobox/widgets/infobox.php:1089
 #: modules/infobox/widgets/infobox.php:1425
-#: modules/login-form/widgets/login-form.php:340
+#: modules/login-form/widgets/login-form.php:371
 #: modules/nav-menu/widgets/nav-menu.php:1764
 #: modules/price-list/widgets/price-list.php:309
 #: modules/price-table/widgets/price-table.php:2266
@@ -3824,7 +3816,7 @@ msgstr ""
 #: modules/infobox/widgets/infobox.php:678
 #: modules/infobox/widgets/infobox.php:1091
 #: modules/infobox/widgets/infobox.php:1427
-#: modules/login-form/widgets/login-form.php:341
+#: modules/login-form/widgets/login-form.php:372
 #: modules/nav-menu/widgets/nav-menu.php:1766
 #: modules/price-list/widgets/price-list.php:310
 #: modules/price-table/widgets/price-table.php:2268
@@ -3854,7 +3846,7 @@ msgstr ""
 #: modules/infobox/widgets/infobox.php:679
 #: modules/infobox/widgets/infobox.php:1090
 #: modules/infobox/widgets/infobox.php:1428
-#: modules/login-form/widgets/login-form.php:342
+#: modules/login-form/widgets/login-form.php:373
 #: modules/nav-menu/widgets/nav-menu.php:1767
 #: modules/price-list/widgets/price-list.php:311
 #: modules/price-table/widgets/price-table.php:2267
@@ -3934,11 +3926,12 @@ msgstr ""
 #: modules/instagram-feed/widgets/instagram-feed.php:316
 #: modules/login-form/widgets/login-form.php:209
 #: modules/login-form/widgets/login-form.php:271
-#: modules/login-form/widgets/login-form.php:311
-#: modules/login-form/widgets/login-form.php:325
-#: modules/login-form/widgets/login-form.php:1097
-#: modules/login-form/widgets/login-form.php:1162
-#: modules/login-form/widgets/login-form.php:1249
+#: modules/login-form/widgets/login-form.php:294
+#: modules/login-form/widgets/login-form.php:342
+#: modules/login-form/widgets/login-form.php:356
+#: modules/login-form/widgets/login-form.php:1128
+#: modules/login-form/widgets/login-form.php:1193
+#: modules/login-form/widgets/login-form.php:1280
 #: modules/party-propz-extension/module.php:976
 #: modules/posts/skins/skin-base.php:1270
 #: modules/posts/skins/skin-base.php:1353
@@ -3958,7 +3951,7 @@ msgstr ""
 #: modules/registration-form/widgets/registration-form.php:416
 #: modules/registration-form/widgets/registration-form.php:433
 #: modules/registration-form/widgets/registration-form.php:824
-#: modules/social-share/widgets/social-share.php:1089
+#: modules/social-share/widgets/social-share.php:1129
 #: modules/table/widgets/table.php:435 modules/table/widgets/table.php:826
 #: modules/table/widgets/table.php:974
 #: modules/table-of-contents/widgets/table-of-contents.php:219
@@ -4020,11 +4013,12 @@ msgstr ""
 #: modules/instagram-feed/widgets/instagram-feed.php:317
 #: modules/login-form/widgets/login-form.php:208
 #: modules/login-form/widgets/login-form.php:270
-#: modules/login-form/widgets/login-form.php:310
-#: modules/login-form/widgets/login-form.php:324
-#: modules/login-form/widgets/login-form.php:1096
-#: modules/login-form/widgets/login-form.php:1161
-#: modules/login-form/widgets/login-form.php:1248
+#: modules/login-form/widgets/login-form.php:293
+#: modules/login-form/widgets/login-form.php:341
+#: modules/login-form/widgets/login-form.php:355
+#: modules/login-form/widgets/login-form.php:1127
+#: modules/login-form/widgets/login-form.php:1192
+#: modules/login-form/widgets/login-form.php:1279
 #: modules/party-propz-extension/module.php:977
 #: modules/posts/skins/skin-base.php:1271
 #: modules/posts/skins/skin-base.php:1354
@@ -4044,7 +4038,7 @@ msgstr ""
 #: modules/registration-form/widgets/registration-form.php:417
 #: modules/registration-form/widgets/registration-form.php:432
 #: modules/registration-form/widgets/registration-form.php:825
-#: modules/social-share/widgets/social-share.php:1090
+#: modules/social-share/widgets/social-share.php:1130
 #: modules/table/widgets/table.php:436 modules/table/widgets/table.php:827
 #: modules/table/widgets/table.php:975
 #: modules/table-of-contents/widgets/table-of-contents.php:220
@@ -4195,7 +4189,7 @@ msgstr ""
 #: modules/party-propz-extension/module.php:514
 #: modules/party-propz-extension/module.php:894
 #: modules/price-table/widgets/price-table.php:2484
-#: modules/social-share/widgets/social-share.php:723
+#: modules/social-share/widgets/social-share.php:730
 #: modules/table-of-contents/widgets/table-of-contents.php:321
 #: modules/team-member/widgets/team-member.php:1129
 #: modules/timeline/widgets/timeline.php:1890
@@ -4269,10 +4263,10 @@ msgstr ""
 #: modules/infobox/widgets/infobox.php:1383
 #: modules/instagram-feed/widgets/instagram-feed.php:984
 #: modules/instagram-feed/widgets/instagram-feed.php:1056
-#: modules/login-form/widgets/login-form.php:847
-#: modules/login-form/widgets/login-form.php:1285
-#: modules/login-form/widgets/login-form.php:2197
-#: modules/login-form/widgets/login-form.php:2262
+#: modules/login-form/widgets/login-form.php:878
+#: modules/login-form/widgets/login-form.php:1316
+#: modules/login-form/widgets/login-form.php:2238
+#: modules/login-form/widgets/login-form.php:2303
 #: modules/marketing-button/widgets/marketing-button.php:529
 #: modules/marketing-button/widgets/marketing-button.php:617
 #: modules/modal-popup/widgets/modal-popup.php:1994
@@ -4377,7 +4371,7 @@ msgstr ""
 #: modules/gf-styler/widgets/gf-styler.php:1719
 #: modules/how-to/widgets/how-to.php:776
 #: modules/instagram-feed/widgets/instagram-feed.php:1146
-#: modules/login-form/widgets/login-form.php:1382
+#: modules/login-form/widgets/login-form.php:1423
 #: modules/nav-menu/widgets/nav-menu.php:2022
 #: modules/registration-form/widgets/registration-form.php:443
 #: modules/registration-form/widgets/registration-form.php:1445
@@ -4413,7 +4407,7 @@ msgstr ""
 #: modules/instagram-feed/widgets/instagram-feed.php:530
 #: modules/posts/skins/skin-base.php:1894
 #: modules/registration-form/widgets/registration-form.php:1453
-#: modules/social-share/widgets/social-share.php:561
+#: modules/social-share/widgets/social-share.php:568
 #: modules/twitter/widgets/twitter.php:1284
 #: modules/video-gallery/widgets/video-gallery.php:1030
 #: modules/woocommerce/widgets/woo-categories.php:790
@@ -4425,10 +4419,10 @@ msgstr ""
 #: modules/faq/widgets/faq.php:447 modules/faq/widgets/faq.php:511
 #: modules/image-gallery/widgets/image-gallery.php:878
 #: modules/instagram-feed/widgets/instagram-feed.php:563
-#: modules/login-form/widgets/login-form.php:1390
+#: modules/login-form/widgets/login-form.php:1431
 #: modules/posts/skins/skin-base.php:1918
 #: modules/registration-form/widgets/registration-form.php:1474
-#: modules/social-share/widgets/social-share.php:612
+#: modules/social-share/widgets/social-share.php:619
 #: modules/twitter/widgets/twitter.php:1309
 #: modules/video-gallery/widgets/video-gallery.php:1053
 #: modules/woocommerce/widgets/woo-categories.php:812
@@ -4489,8 +4483,8 @@ msgstr ""
 #: modules/instagram-feed/widgets/instagram-feed.php:647
 #: modules/instagram-feed/widgets/instagram-feed.php:1029
 #: modules/instagram-feed/widgets/instagram-feed.php:1101
-#: modules/login-form/widgets/login-form.php:1948
-#: modules/login-form/widgets/login-form.php:2233
+#: modules/login-form/widgets/login-form.php:1989
+#: modules/login-form/widgets/login-form.php:2274
 #: modules/marketing-button/widgets/marketing-button.php:579
 #: modules/modal-popup/widgets/modal-popup.php:2121
 #: modules/nav-menu/widgets/nav-menu.php:1618
@@ -4815,7 +4809,7 @@ msgstr ""
 #: modules/hotspot/widgets/hotspot.php:1185
 #: modules/infobox/widgets/infobox.php:712
 #: modules/infobox/widgets/infobox.php:1456
-#: modules/login-form/widgets/login-form.php:1922
+#: modules/login-form/widgets/login-form.php:1963
 #: modules/nav-menu/widgets/nav-menu.php:1796
 #: modules/nav-menu/widgets/nav-menu.php:1917
 #: modules/price-table/widgets/price-table.php:3157
@@ -4856,7 +4850,7 @@ msgstr ""
 #: modules/infobox/widgets/infobox.php:1441
 #: modules/infobox/widgets/infobox.php:1570
 #: modules/instagram-feed/widgets/instagram-feed.php:681
-#: modules/login-form/widgets/login-form.php:1935
+#: modules/login-form/widgets/login-form.php:1976
 #: modules/modal-popup/widgets/modal-popup.php:2074
 #: modules/nav-menu/widgets/nav-menu.php:1779
 #: modules/offcanvas/widgets/offcanvas.php:1104
@@ -4915,7 +4909,7 @@ msgstr ""
 #: modules/instagram-feed/widgets/instagram-feed.php:637
 #: modules/instagram-feed/widgets/instagram-feed.php:1016
 #: modules/instagram-feed/widgets/instagram-feed.php:1088
-#: modules/login-form/widgets/login-form.php:2225
+#: modules/login-form/widgets/login-form.php:2266
 #: modules/marketing-button/widgets/marketing-button.php:571
 #: modules/modal-popup/widgets/modal-popup.php:2107
 #: modules/nav-menu/widgets/nav-menu.php:2138
@@ -5180,8 +5174,8 @@ msgstr ""
 #: modules/image-gallery/widgets/image-gallery.php:196
 #: modules/image-gallery/widgets/image-gallery.php:845
 #: modules/instagram-feed/widgets/instagram-feed.php:519
-#: modules/login-form/widgets/login-form.php:289
-#: modules/login-form/widgets/login-form.php:560
+#: modules/login-form/widgets/login-form.php:320
+#: modules/login-form/widgets/login-form.php:591
 #: modules/nav-menu/widgets/nav-menu.php:500
 #: modules/nav-menu/widgets/nav-menu.php:507
 #: modules/posts/skins/skin-base.php:151 modules/posts/skins/skin-base.php:1886
@@ -5262,7 +5256,7 @@ msgstr ""
 #: modules/image-gallery/widgets/image-gallery.php:256
 #: modules/instagram-feed/widgets/instagram-feed.php:182
 #: modules/posts/skins/skin-base.php:137
-#: modules/social-share/widgets/social-share.php:375
+#: modules/social-share/widgets/social-share.php:382
 #: modules/twitter/widgets/twitter.php:289
 #: modules/video-gallery/widgets/video-gallery.php:575
 #: modules/woocommerce/widgets/woo-categories.php:164
@@ -5415,8 +5409,8 @@ msgstr ""
 #: modules/ff-styler/widgets/ff-styler.php:733
 #: modules/ff-styler/widgets/ff-styler.php:1839
 #: modules/infobox/widgets/infobox.php:1203
-#: modules/login-form/widgets/login-form.php:889
-#: modules/login-form/widgets/login-form.php:2129
+#: modules/login-form/widgets/login-form.php:920
+#: modules/login-form/widgets/login-form.php:2170
 #: modules/marketing-button/widgets/marketing-button.php:459
 #: modules/modal-popup/widgets/modal-popup.php:882
 #: modules/modal-popup/widgets/modal-popup.php:1945
@@ -5439,9 +5433,9 @@ msgstr ""
 #: modules/infobox/widgets/infobox.php:1202
 #: modules/infobox/widgets/infobox.php:1212
 #: modules/infobox/widgets/infobox.php:1227
-#: modules/login-form/widgets/login-form.php:896
-#: modules/login-form/widgets/login-form.php:1104
-#: modules/login-form/widgets/login-form.php:1169
+#: modules/login-form/widgets/login-form.php:927
+#: modules/login-form/widgets/login-form.php:1135
+#: modules/login-form/widgets/login-form.php:1200
 #: modules/modal-popup/widgets/modal-popup.php:881
 #: modules/modal-popup/widgets/modal-popup.php:1034
 #: modules/nav-menu/widgets/nav-menu.php:251
@@ -5455,9 +5449,9 @@ msgstr ""
 #: modules/registration-form/widgets/registration-form.php:649
 #: modules/registration-form/widgets/registration-form.php:879
 #: modules/registration-form/widgets/registration-form.php:998
-#: modules/social-share/widgets/social-share.php:301
-#: modules/social-share/widgets/social-share.php:1324
-#: modules/social-share/widgets/social-share.php:1337
+#: modules/social-share/widgets/social-share.php:308
+#: modules/social-share/widgets/social-share.php:1364
+#: modules/social-share/widgets/social-share.php:1377
 #: modules/table/widgets/table.php:237 modules/table/widgets/table.php:618
 #: modules/timeline/widgets/timeline.php:628
 #: modules/video/widgets/video.php:1505
@@ -5490,7 +5484,7 @@ msgstr ""
 #: modules/price-table/widgets/price-table.php:2984
 #: modules/retina-image/widgets/retina-image.php:231
 #: modules/retina-image/widgets/retina-image.php:244
-#: modules/social-share/widgets/social-share.php:536
+#: modules/social-share/widgets/social-share.php:543
 #: modules/table/widgets/table.php:633
 #: modules/team-member/widgets/team-member.php:569
 #: modules/timeline/widgets/timeline.php:862
@@ -5503,14 +5497,14 @@ msgstr ""
 #: modules/buttons/widgets/buttons.php:196
 #: modules/infobox/widgets/infobox.php:1319
 #: modules/instagram-feed/widgets/instagram-feed.php:476
-#: modules/login-form/widgets/login-form.php:973
+#: modules/login-form/widgets/login-form.php:1004
 #: modules/marketing-button/widgets/marketing-button.php:210
 #: modules/modal-popup/widgets/modal-popup.php:1317
 #: modules/offcanvas/widgets/offcanvas.php:654
 #: modules/posts/skins/skin-base.php:1835
 #: modules/price-table/widgets/price-table.php:1094
 #: modules/registration-form/widgets/registration-form.php:1093
-#: modules/social-share/widgets/social-share.php:313
+#: modules/social-share/widgets/social-share.php:320
 #: modules/table/widgets/table.php:1738
 #: modules/twitter/widgets/twitter.php:1703
 #: modules/woocommerce/widgets/woo-add-to-cart.php:336
@@ -5520,7 +5514,7 @@ msgstr ""
 
 #: modules/buttons/widgets/buttons.php:219
 #: modules/infobox/widgets/infobox.php:1335
-#: modules/login-form/widgets/login-form.php:989
+#: modules/login-form/widgets/login-form.php:1020
 #: modules/marketing-button/widgets/marketing-button.php:289
 #: modules/modal-popup/widgets/modal-popup.php:1345
 #: modules/offcanvas/widgets/offcanvas.php:683
@@ -5588,7 +5582,7 @@ msgstr ""
 #: modules/instagram-feed/widgets/instagram-feed.php:974
 #: modules/instagram-feed/widgets/instagram-feed.php:1195
 #: modules/instagram-feed/widgets/instagram-feed.php:1222
-#: modules/login-form/widgets/login-form.php:2190
+#: modules/login-form/widgets/login-form.php:2231
 #: modules/marketing-button/widgets/marketing-button.php:522
 #: modules/modal-popup/widgets/modal-popup.php:1984
 #: modules/nav-menu/widgets/nav-menu.php:1243
@@ -5612,7 +5606,7 @@ msgstr ""
 #: modules/price-table/widgets/price-table.php:3089
 #: modules/registration-form/widgets/registration-form.php:2013
 #: modules/retina-image/widgets/retina-image.php:437
-#: modules/social-share/widgets/social-share.php:832
+#: modules/social-share/widgets/social-share.php:840
 #: modules/table-of-contents/widgets/table-of-contents.php:865
 #: modules/team-member/widgets/team-member.php:1224
 #: modules/video/widgets/video.php:930
@@ -5654,7 +5648,7 @@ msgstr ""
 #: modules/instagram-feed/widgets/instagram-feed.php:662
 #: modules/instagram-feed/widgets/instagram-feed.php:1046
 #: modules/instagram-feed/widgets/instagram-feed.php:1281
-#: modules/login-form/widgets/login-form.php:2255
+#: modules/login-form/widgets/login-form.php:2296
 #: modules/marketing-button/widgets/marketing-button.php:610
 #: modules/modal-popup/widgets/modal-popup.php:2033
 #: modules/nav-menu/widgets/nav-menu.php:662
@@ -5678,7 +5672,7 @@ msgstr ""
 #: modules/price-table/widgets/price-table.php:3224
 #: modules/registration-form/widgets/registration-form.php:2072
 #: modules/retina-image/widgets/retina-image.php:472
-#: modules/social-share/widgets/social-share.php:942
+#: modules/social-share/widgets/social-share.php:966
 #: modules/table/widgets/table.php:1232 modules/table/widgets/table.php:1601
 #: modules/table-of-contents/widgets/table-of-contents.php:888
 #: modules/team-member/widgets/team-member.php:1266
@@ -5787,8 +5781,8 @@ msgstr ""
 #: modules/hotspot/widgets/hotspot.php:656
 #: modules/infobox/widgets/infobox.php:385
 #: modules/infobox/widgets/infobox.php:1262
-#: modules/login-form/widgets/login-form.php:908
-#: modules/login-form/widgets/login-form.php:1987
+#: modules/login-form/widgets/login-form.php:939
+#: modules/login-form/widgets/login-form.php:2028
 #: modules/marketing-button/widgets/marketing-button.php:497
 #: modules/modal-popup/widgets/modal-popup.php:730
 #: modules/modal-popup/widgets/modal-popup.php:765
@@ -5804,7 +5798,7 @@ msgstr ""
 #: modules/price-table/widgets/price-table.php:3053
 #: modules/registration-form/widgets/registration-form.php:1011
 #: modules/registration-form/widgets/registration-form.php:1790
-#: modules/social-share/widgets/social-share.php:1357
+#: modules/social-share/widgets/social-share.php:1397
 #: modules/table-of-contents/widgets/table-of-contents.php:410
 #: modules/twitter/widgets/twitter.php:890 modules/video/widgets/video.php:883
 #: modules/video-gallery/widgets/video-gallery.php:1479
@@ -5850,7 +5844,7 @@ msgstr ""
 #: modules/price-list/widgets/price-list.php:1011
 #: modules/price-table/widgets/price-table.php:163
 #: modules/retina-image/widgets/retina-image.php:504
-#: modules/social-share/widgets/social-share.php:1037
+#: modules/social-share/widgets/social-share.php:1077
 #: modules/team-member/widgets/team-member.php:884
 #: modules/team-member/widgets/team-member.php:1388
 #: modules/video/widgets/video.php:909 modules/video/widgets/video.php:1076
@@ -5875,7 +5869,7 @@ msgstr ""
 #: modules/gf-styler/widgets/gf-styler.php:329
 #: modules/gf-styler/widgets/gf-styler.php:1970
 #: modules/login-form/widgets/login-form.php:152
-#: modules/login-form/widgets/login-form.php:1733
+#: modules/login-form/widgets/login-form.php:1774
 #: modules/registration-form/widgets/registration-form.php:221
 #: modules/wpf-styler/widgets/wpf-styler.php:259
 #: modules/wpf-styler/widgets/wpf-styler.php:1205
@@ -5918,7 +5912,7 @@ msgstr ""
 #: modules/hotspot/widgets/hotspot.php:660
 #: modules/infobox/widgets/infobox.php:1266
 #: modules/login-form/widgets/login-form.php:254
-#: modules/login-form/widgets/login-form.php:911
+#: modules/login-form/widgets/login-form.php:942
 #: modules/modal-popup/widgets/modal-popup.php:1258
 #: modules/offcanvas/widgets/offcanvas.php:613
 #: modules/price-table/widgets/price-table.php:3057
@@ -5941,7 +5935,7 @@ msgstr ""
 #: modules/hotspot/widgets/hotspot.php:661
 #: modules/infobox/widgets/infobox.php:1267
 #: modules/login-form/widgets/login-form.php:255
-#: modules/login-form/widgets/login-form.php:912
+#: modules/login-form/widgets/login-form.php:943
 #: modules/modal-popup/widgets/modal-popup.php:1259
 #: modules/offcanvas/widgets/offcanvas.php:614
 #: modules/price-table/widgets/price-table.php:3058
@@ -5964,7 +5958,7 @@ msgstr ""
 #: modules/hotspot/widgets/hotspot.php:662
 #: modules/infobox/widgets/infobox.php:1268
 #: modules/login-form/widgets/login-form.php:256
-#: modules/login-form/widgets/login-form.php:913
+#: modules/login-form/widgets/login-form.php:944
 #: modules/modal-popup/widgets/modal-popup.php:1260
 #: modules/offcanvas/widgets/offcanvas.php:615
 #: modules/price-table/widgets/price-table.php:3059
@@ -5987,7 +5981,7 @@ msgstr ""
 #: modules/hotspot/widgets/hotspot.php:663
 #: modules/infobox/widgets/infobox.php:1269
 #: modules/login-form/widgets/login-form.php:257
-#: modules/login-form/widgets/login-form.php:914
+#: modules/login-form/widgets/login-form.php:945
 #: modules/modal-popup/widgets/modal-popup.php:1261
 #: modules/offcanvas/widgets/offcanvas.php:616
 #: modules/price-table/widgets/price-table.php:3060
@@ -6009,7 +6003,7 @@ msgstr ""
 #: modules/hotspot/widgets/hotspot.php:664
 #: modules/infobox/widgets/infobox.php:1270
 #: modules/login-form/widgets/login-form.php:258
-#: modules/login-form/widgets/login-form.php:915
+#: modules/login-form/widgets/login-form.php:946
 #: modules/modal-popup/widgets/modal-popup.php:1262
 #: modules/offcanvas/widgets/offcanvas.php:617
 #: modules/price-table/widgets/price-table.php:3061
@@ -6107,7 +6101,7 @@ msgstr ""
 #: modules/ff-styler/widgets/ff-styler.php:1288
 #: modules/gf-styler/widgets/gf-styler.php:627
 #: modules/gf-styler/widgets/gf-styler.php:1611
-#: modules/social-share/widgets/social-share.php:761
+#: modules/social-share/widgets/social-share.php:769
 #: modules/wpf-styler/widgets/wpf-styler.php:501
 msgid "Border Size"
 msgstr ""
@@ -6213,7 +6207,7 @@ msgstr ""
 #: modules/cf-styler/widgets/cf-styler.php:686 modules/faq/widgets/faq.php:547
 #: modules/gf-styler/widgets/gf-styler.php:1162
 #: modules/image-gallery/widgets/image-gallery.php:202
-#: modules/login-form/widgets/login-form.php:940
+#: modules/login-form/widgets/login-form.php:971
 #: modules/modal-popup/widgets/modal-popup.php:1239
 #: modules/offcanvas/widgets/offcanvas.php:491
 #: modules/registration-form/widgets/registration-form.php:1060
@@ -6308,7 +6302,7 @@ msgstr ""
 #: modules/caf-styler/widgets/caf-styler.php:1169
 #: modules/ff-styler/widgets/ff-styler.php:1581
 #: modules/gf-styler/widgets/gf-styler.php:1790
-#: modules/login-form/widgets/login-form.php:1412
+#: modules/login-form/widgets/login-form.php:1453
 #: modules/registration-form/widgets/registration-form.php:1494
 #: modules/wpf-styler/widgets/wpf-styler.php:1234
 msgid "Label Bottom Spacing"
@@ -6580,7 +6574,7 @@ msgstr ""
 #: modules/content-toggle/widgets/content-toggle.php:652
 #: modules/headings/widgets/dual-heading.php:271
 #: modules/headings/widgets/fancy-heading.php:588
-#: modules/login-form/widgets/login-form.php:564
+#: modules/login-form/widgets/login-form.php:595
 #: modules/posts/skins/skin-base.php:171
 msgid "Stack"
 msgstr ""
@@ -6588,11 +6582,11 @@ msgstr ""
 #: modules/content-toggle/widgets/content-toggle.php:653
 #: modules/headings/widgets/dual-heading.php:272
 #: modules/headings/widgets/fancy-heading.php:589
-#: modules/login-form/widgets/login-form.php:563
+#: modules/login-form/widgets/login-form.php:594
 #: modules/offcanvas/widgets/offcanvas.php:460
 #: modules/posts/skins/skin-base.php:170
 #: modules/registration-form/widgets/registration-form.php:324
-#: modules/social-share/widgets/social-share.php:362
+#: modules/social-share/widgets/social-share.php:369
 #: modules/woocommerce/widgets/woo-categories.php:236
 #: modules/woocommerce/widgets/woo-categories.php:434
 #: modules/woocommerce/widgets/woo-mini-cart.php:270
@@ -6945,7 +6939,7 @@ msgstr ""
 #: modules/headings/widgets/advanced-heading.php:280
 #: modules/infobox/widgets/infobox.php:1047
 #: modules/infobox/widgets/infobox.php:1054
-#: modules/login-form/widgets/login-form.php:701
+#: modules/login-form/widgets/login-form.php:732
 #: modules/posts/skins/skin-business.php:211
 #: modules/posts/skins/skin-card.php:180 modules/posts/skins/skin-feed.php:1613
 #: modules/price-table/widgets/price-table.php:586
@@ -7013,7 +7007,7 @@ msgstr ""
 
 #: modules/countdown/widgets/countdown.php:1030 modules/faq/widgets/faq.php:753
 #: modules/faq/widgets/faq.php:766 modules/infobox/widgets/infobox.php:1586
-#: modules/login-form/widgets/login-form.php:2288
+#: modules/login-form/widgets/login-form.php:2329
 #: modules/nav-menu/widgets/nav-menu.php:2159
 #: modules/nav-menu/widgets/nav-menu.php:2217
 #: modules/timeline/widgets/timeline.php:1535
@@ -7028,7 +7022,7 @@ msgstr ""
 #: modules/headings/widgets/dual-heading.php:280
 #: modules/image-gallery/widgets/image-gallery.php:407
 #: modules/infobox/widgets/infobox.php:234
-#: modules/login-form/widgets/login-form.php:589
+#: modules/login-form/widgets/login-form.php:620
 #: modules/posts/skins/skin-base.php:875 modules/posts/skins/skin-feed.php:241
 #: modules/posts/skins/skin-news.php:1220 modules/table/widgets/table.php:515
 #: modules/team-member/widgets/team-member.php:725
@@ -7050,9 +7044,9 @@ msgstr ""
 #: modules/google-map/widgets/google-map.php:555
 #: modules/google-map/widgets/google-map.php:583
 #: modules/google-map/widgets/google-map.php:609
-#: modules/login-form/widgets/login-form.php:592
-#: modules/login-form/widgets/login-form.php:1042
-#: modules/login-form/widgets/login-form.php:1069
+#: modules/login-form/widgets/login-form.php:623
+#: modules/login-form/widgets/login-form.php:1073
+#: modules/login-form/widgets/login-form.php:1100
 #: modules/party-propz-extension/module.php:206
 #: modules/party-propz-extension/module.php:650
 #: modules/table/widgets/table.php:518
@@ -7067,9 +7061,9 @@ msgstr ""
 #: modules/google-map/widgets/google-map.php:556
 #: modules/google-map/widgets/google-map.php:584
 #: modules/google-map/widgets/google-map.php:610
-#: modules/login-form/widgets/login-form.php:593
-#: modules/login-form/widgets/login-form.php:1041
-#: modules/login-form/widgets/login-form.php:1068
+#: modules/login-form/widgets/login-form.php:624
+#: modules/login-form/widgets/login-form.php:1072
+#: modules/login-form/widgets/login-form.php:1099
 #: modules/party-propz-extension/module.php:207
 #: modules/party-propz-extension/module.php:651
 #: modules/table/widgets/table.php:519
@@ -8538,7 +8532,7 @@ msgid "no"
 msgstr ""
 
 #: modules/faq/widgets/faq.php:564
-#: modules/login-form/widgets/login-form.php:737
+#: modules/login-form/widgets/login-form.php:768
 msgid "Enable Separator"
 msgstr ""
 
@@ -8549,7 +8543,7 @@ msgstr ""
 #: modules/how-to/widgets/how-to.php:1677
 #: modules/infobox/widgets/infobox.php:525
 #: modules/infobox/widgets/infobox.php:1148
-#: modules/login-form/widgets/login-form.php:787
+#: modules/login-form/widgets/login-form.php:818
 #: modules/price-list/widgets/price-list.php:788
 #: modules/price-table/widgets/price-table.php:959
 #: modules/price-table/widgets/price-table.php:2326
@@ -9163,7 +9157,7 @@ msgid "Retro"
 msgstr ""
 
 #: modules/google-map/widgets/google-map.php:366
-#: modules/login-form/widgets/login-form.php:627
+#: modules/login-form/widgets/login-form.php:658
 msgid "Dark"
 msgstr ""
 
@@ -9336,11 +9330,11 @@ msgstr ""
 #: modules/headings/widgets/dual-heading.php:192
 #: modules/hotspot/widgets/hotspot.php:345
 #: modules/how-to/widgets/how-to.php:661
-#: modules/login-form/widgets/login-form.php:1053
-#: modules/login-form/widgets/login-form.php:1080
+#: modules/login-form/widgets/login-form.php:1084
+#: modules/login-form/widgets/login-form.php:1111
 #: modules/party-propz-extension/module.php:440
 #: modules/retina-image/widgets/retina-image.php:249
-#: modules/social-share/widgets/social-share.php:539
+#: modules/social-share/widgets/social-share.php:546
 #: modules/team-member/widgets/team-member.php:575
 #: modules/timeline/widgets/timeline.php:864
 msgid "https://your-link.com"
@@ -9445,12 +9439,12 @@ msgid "Photo URL"
 msgstr ""
 
 #: modules/headings/widgets/advanced-heading.php:403
-#: modules/login-form/widgets/login-form.php:832
+#: modules/login-form/widgets/login-form.php:863
 msgid "Enter Text"
 msgstr ""
 
 #: modules/headings/widgets/advanced-heading.php:405
-#: modules/login-form/widgets/login-form.php:819
+#: modules/login-form/widgets/login-form.php:850
 msgid "Separator Text"
 msgstr ""
 
@@ -9497,7 +9491,7 @@ msgstr ""
 #: modules/party-propz-extension/module.php:367
 #: modules/party-propz-extension/module.php:813
 #: modules/price-table/widgets/price-table.php:1201
-#: modules/social-share/widgets/social-share.php:487
+#: modules/social-share/widgets/social-share.php:494
 msgid "Horizontal Position"
 msgstr ""
 
@@ -9509,7 +9503,7 @@ msgstr ""
 #: modules/price-table/widgets/price-table.php:1920
 #: modules/price-table/widgets/price-table.php:2033
 #: modules/price-table/widgets/price-table.php:2201
-#: modules/social-share/widgets/social-share.php:453
+#: modules/social-share/widgets/social-share.php:460
 msgid "Vertical Position"
 msgstr ""
 
@@ -9519,8 +9513,8 @@ msgstr ""
 
 #: modules/headings/widgets/advanced-heading.php:932
 #: modules/infobox/widgets/infobox.php:1123
-#: modules/login-form/widgets/login-form.php:374
-#: modules/login-form/widgets/login-form.php:762
+#: modules/login-form/widgets/login-form.php:405
+#: modules/login-form/widgets/login-form.php:793
 #: modules/posts/skins/skin-business.php:220
 #: modules/price-list/widgets/price-list.php:682
 #: modules/price-table/widgets/price-table.php:2300
@@ -9544,13 +9538,13 @@ msgstr ""
 #: modules/hotspot/widgets/hotspot.php:843
 #: modules/infobox/widgets/infobox.php:1066
 #: modules/instagram-feed/widgets/instagram-feed.php:397
-#: modules/login-form/widgets/login-form.php:653
+#: modules/login-form/widgets/login-form.php:684
 #: modules/offcanvas/widgets/offcanvas.php:456
 #: modules/offcanvas/widgets/offcanvas.php:1794
 #: modules/posts/skins/skin-base.php:3613
 #: modules/price-table/widgets/price-table.php:339
 #: modules/price-table/widgets/price-table.php:809
-#: modules/social-share/widgets/social-share.php:359
+#: modules/social-share/widgets/social-share.php:366
 #: modules/team-member/widgets/team-member.php:301
 #: modules/welcome-music/widgets/welcome-music.php:252
 #: modules/woocommerce/widgets/woo-categories.php:481
@@ -10559,7 +10553,7 @@ msgid "Autoplay Speed (ms)"
 msgstr ""
 
 #: modules/image-gallery/widgets/image-gallery.php:568
-#: modules/login-form/widgets/login-form.php:1031
+#: modules/login-form/widgets/login-form.php:1062
 msgid "Additional Options"
 msgstr ""
 
@@ -11347,10 +11341,10 @@ msgstr ""
 
 #: modules/login-form/widgets/login-form.php:174
 #: modules/login-form/widgets/login-form.php:218
-#: modules/login-form/widgets/login-form.php:2503
-#: modules/login-form/widgets/login-form.php:2668
-#: modules/login-form/widgets/login-form.php:2960
-#: modules/login-form/widgets/login-form.php:2977
+#: modules/login-form/widgets/login-form.php:2547
+#: modules/login-form/widgets/login-form.php:2712
+#: modules/login-form/widgets/login-form.php:3016
+#: modules/login-form/widgets/login-form.php:3033
 msgid "Username or Email Address"
 msgstr ""
 
@@ -11360,10 +11354,10 @@ msgstr ""
 
 #: modules/login-form/widgets/login-form.php:190
 #: modules/login-form/widgets/login-form.php:235
-#: modules/login-form/widgets/login-form.php:2504
-#: modules/login-form/widgets/login-form.php:2691
-#: modules/login-form/widgets/login-form.php:3000
-#: modules/login-form/widgets/login-form.php:3013
+#: modules/login-form/widgets/login-form.php:2548
+#: modules/login-form/widgets/login-form.php:2735
+#: modules/login-form/widgets/login-form.php:3056
+#: modules/login-form/widgets/login-form.php:3069
 #: modules/registration-form/widgets/registration-form.php:126
 #: modules/registration-form/widgets/registration-form.php:372
 #: modules/registration-form/widgets/registration-form.php:373
@@ -11391,62 +11385,76 @@ msgid "Input Size"
 msgstr ""
 
 #: modules/login-form/widgets/login-form.php:267
-#: modules/login-form/widgets/login-form.php:2708
-#: modules/login-form/widgets/login-form.php:3034
+#: modules/login-form/widgets/login-form.php:2764
+#: modules/login-form/widgets/login-form.php:3090
 msgid "Remember Me"
 msgstr ""
 
+#: modules/login-form/widgets/login-form.php:289
+msgid "Enable Google reCaptcha v3"
+msgstr ""
+
 #: modules/login-form/widgets/login-form.php:290
+msgid "Enable this to protect your login form from spam."
+msgstr ""
+
+#: modules/login-form/widgets/login-form.php:308
+#: modules/registration-form/widgets/registration-form.php:342
+#. translators: %1$s admin link
+msgid "Please configure reCAPTCHA v3 setup from %1$s here %2$s."
+msgstr ""
+
+#: modules/login-form/widgets/login-form.php:321
 msgid "Enable this to make Remember Me and Login inline."
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:293
+#: modules/login-form/widgets/login-form.php:324
 msgid "stack"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:294
+#: modules/login-form/widgets/login-form.php:325
 msgid "inline"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:306
-#: modules/login-form/widgets/login-form.php:1960
+#: modules/login-form/widgets/login-form.php:337
+#: modules/login-form/widgets/login-form.php:2001
 #: modules/registration-form/widgets/registration-form.php:428
 #: modules/registration-form/widgets/registration-form.php:1763
 msgid "Fields Icon"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:307
+#: modules/login-form/widgets/login-form.php:338
 msgid "Enable icon for fields."
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:409
-#: modules/login-form/widgets/login-form.php:2053
+#: modules/login-form/widgets/login-form.php:440
+#: modules/login-form/widgets/login-form.php:2094
 msgid "Social Login"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:416
+#: modules/login-form/widgets/login-form.php:447
 msgid "Enable Google Login"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:436
+#: modules/login-form/widgets/login-form.php:467
 #. translators: %s admin link
 msgid ""
 "Please configure Google Client ID from <a href=\"%s\" target=\"_blank\" "
 "rel=\"noopener\">here</a>."
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:448
+#: modules/login-form/widgets/login-form.php:479
 msgid "Enable Facebook Login"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:463
+#: modules/login-form/widgets/login-form.php:494
 #. translators: %s admin link
 msgid ""
 "Please configure Facebook App settings from <a href=\"%s\" "
 "target=\"_blank\" rel=\"noopener\">here</a>."
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:478
+#: modules/login-form/widgets/login-form.php:509
 #. translators: %s admin link
 msgid ""
 "Note: To avoid any issues while logging in with Google or Facebook, make "
@@ -11454,151 +11462,157 @@ msgid ""
 "rel=\"noopener\">here</a>."
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:502
+#: modules/login-form/widgets/login-form.php:533
 #: modules/registration-form/widgets/registration-form.php:945
 msgid "Send Email"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:503
+#: modules/login-form/widgets/login-form.php:534
 msgid ""
 "Send an Email to the user / site admin after a new user is successful "
 "logged in with Facebook / Google."
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:508
+#: modules/login-form/widgets/login-form.php:539
 msgid "Admin"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:509
+#: modules/login-form/widgets/login-form.php:540
 msgid "User"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:510
+#: modules/login-form/widgets/login-form.php:541
 msgid "Admin & User"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:534
+#: modules/login-form/widgets/login-form.php:565
 msgid "Hide Custom Form"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:590
+#: modules/login-form/widgets/login-form.php:621
 msgid "Enable this option to stack the social login buttons on mobile."
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:623
+#: modules/login-form/widgets/login-form.php:654
 msgid "Select Theme"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:626
+#: modules/login-form/widgets/login-form.php:657
 msgid "Light"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:834
+#: modules/login-form/widgets/login-form.php:865
 msgid "Or"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:901
+#: modules/login-form/widgets/login-form.php:932
 msgid "Log In"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:1038
+#: modules/login-form/widgets/login-form.php:1069
 msgid "Redirect After Login"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:1054
-#: modules/login-form/widgets/login-form.php:1081
+#: modules/login-form/widgets/login-form.php:1085
+#: modules/login-form/widgets/login-form.php:1112
 msgid "Note: For security reasons, you can ONLY use your current domain here."
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:1065
+#: modules/login-form/widgets/login-form.php:1096
 msgid "Redirect After Logout"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:1093
-#: modules/login-form/widgets/login-form.php:1109
+#: modules/login-form/widgets/login-form.php:1124
+#: modules/login-form/widgets/login-form.php:1140
 #: modules/registration-form/widgets/registration-form.php:1000
 #: modules/registration-form/widgets/registration-form.php:1001
 msgid "Register"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:1119
-#: modules/login-form/widgets/login-form.php:1184
+#: modules/login-form/widgets/login-form.php:1150
+#: modules/login-form/widgets/login-form.php:1215
 #: modules/registration-form/widgets/registration-form.php:604
 #: modules/registration-form/widgets/registration-form.php:665
 msgid "Link to"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:1122
-#: modules/login-form/widgets/login-form.php:1187
+#: modules/login-form/widgets/login-form.php:1153
+#: modules/login-form/widgets/login-form.php:1218
 #: modules/registration-form/widgets/registration-form.php:607
 #: modules/registration-form/widgets/registration-form.php:668
 msgid "Default WordPress Page"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:1123
-#: modules/login-form/widgets/login-form.php:1188
+#: modules/login-form/widgets/login-form.php:1154
+#: modules/login-form/widgets/login-form.php:1219
 #: modules/registration-form/widgets/registration-form.php:608
 #: modules/registration-form/widgets/registration-form.php:669
 #: modules/retina-image/widgets/retina-image.php:236
 msgid "Custom URL"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:1135
-#: modules/login-form/widgets/login-form.php:1200
+#: modules/login-form/widgets/login-form.php:1166
+#: modules/login-form/widgets/login-form.php:1231
 #: modules/party-propz-extension/module.php:435
 #: modules/registration-form/widgets/registration-form.php:620
 #: modules/registration-form/widgets/registration-form.php:681
 msgid "Enter URL"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:1158
-#: modules/login-form/widgets/login-form.php:1174
+#: modules/login-form/widgets/login-form.php:1189
+#: modules/login-form/widgets/login-form.php:1205
 #: modules/woocommerce/templates/woo-checkout-template.php:110
 msgid "Lost your password?"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:1245
+#: modules/login-form/widgets/login-form.php:1276
 msgid "Logged in Message"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:1343
+#: modules/login-form/widgets/login-form.php:1374
+#: modules/registration-form/widgets/registration-form.php:1385
+#. translators: %1$s doc link
+msgid "%1$s Google reCAPTCHA v3 support » %2$s"
+msgstr ""
+
+#: modules/login-form/widgets/login-form.php:1384
 #. translators: %1$s doc link
 msgid "%1$s How to create a Google Client ID? » %2$s"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:1353
+#: modules/login-form/widgets/login-form.php:1394
 #. translators: %1$s doc link
 msgid "%1$s How to create a Facebook App ID? » %2$s"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:1363
+#: modules/login-form/widgets/login-form.php:1404
 #. translators: %1$s doc link
 msgid "%1$s Create a Login Form only with social buttons. » %2$s"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:1434
+#: modules/login-form/widgets/login-form.php:1475
 msgid "Separator Top Spacing"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:1499
+#: modules/login-form/widgets/login-form.php:1540
 #: modules/table-of-contents/widgets/table-of-contents.php:791
 #: modules/team-member/widgets/team-member.php:1484
 msgid "Separator Bottom Spacing"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:1564
+#: modules/login-form/widgets/login-form.php:1605
 msgid "Social Login Top Spacing"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:1622
+#: modules/login-form/widgets/login-form.php:1663
 msgid "Social Login Bottom Spacing"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:1680
+#: modules/login-form/widgets/login-form.php:1721
 msgid "Spacing between Social Login"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:1744
+#: modules/login-form/widgets/login-form.php:1785
 #: modules/nav-menu/widgets/nav-menu.php:1981
 #: modules/registration-form/widgets/registration-form.php:240
 #: modules/registration-form/widgets/registration-form.php:402
@@ -11607,72 +11621,79 @@ msgstr ""
 msgid "Label"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:1823
+#: modules/login-form/widgets/login-form.php:1864
 msgid "Remember Me Typography"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:1861
+#: modules/login-form/widgets/login-form.php:1902
 msgid "Input Field"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:1869
+#: modules/login-form/widgets/login-form.php:1910
 msgid "Text / Placeholder Color"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:2007
+#: modules/login-form/widgets/login-form.php:2048
 msgid "Eye Icon"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:2015
+#: modules/login-form/widgets/login-form.php:2056
 msgid "Eye Icon Color"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:2027
+#: modules/login-form/widgets/login-form.php:2068
 msgid "Eye Icon Size"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:2151
+#: modules/login-form/widgets/login-form.php:2192
 #: modules/posts/skins/skin-business.php:748
 #: modules/price-table/widgets/price-table.php:2159
 msgid "Top Spacing"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:2312
+#: modules/login-form/widgets/login-form.php:2353
 msgid "Field Validation Message"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:2408
+#: modules/login-form/widgets/login-form.php:2449
 msgid "Sign in with Google"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:2425
+#: modules/login-form/widgets/login-form.php:2466
 msgid "Sign in with Facebook"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:2447
-#: modules/login-form/widgets/login-form.php:2929
+#: modules/login-form/widgets/login-form.php:2488
+#: modules/login-form/widgets/login-form.php:2985
 #. translators: %s: Error String
 msgid ""
 "Please configure Facebook App settings correctly from WP Dashboard -> UAE "
 "-> Settings -> Integrations -> Login Form - Facebook App Details."
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:2486
+#: modules/login-form/widgets/login-form.php:2530
 msgid "Unknown Username. Check again or try your email address."
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:2488
+#: modules/login-form/widgets/login-form.php:2532
 msgid "Unknown Email address. Check again or try your username."
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:2604
+#: modules/login-form/widgets/login-form.php:2648
 #: modules/nav-menu/widgets/nav-menu.php:839
 msgid "Label Text"
 msgstr ""
 
-#: modules/login-form/widgets/login-form.php:2631
+#: modules/login-form/widgets/login-form.php:2675
 #. translators: %1$s user name
 msgid "You are Logged in as %1$s (%2$sLogout%3$s)"
+msgstr ""
+
+#: modules/login-form/widgets/login-form.php:2757
+#: modules/registration-form/widgets/registration-form.php:2618
+msgid ""
+"To use reCAPTCHA v3, you need to add the API Key and complete the setup "
+"process in Dashboard > UAE > Settings > Integrations > Setup reCAPTCHA v3"
 msgstr ""
 
 #: modules/marketing-button/widgets/marketing-button.php:145
@@ -12394,7 +12415,7 @@ msgid "Double Line"
 msgstr ""
 
 #: modules/nav-menu/widgets/nav-menu.php:1146
-#: modules/social-share/widgets/social-share.php:334
+#: modules/social-share/widgets/social-share.php:341
 msgid "Framed"
 msgstr ""
 
@@ -12497,7 +12518,7 @@ msgid "Size (px)"
 msgstr ""
 
 #: modules/offcanvas/widgets/offcanvas.php:461
-#: modules/social-share/widgets/social-share.php:363
+#: modules/social-share/widgets/social-share.php:370
 #: modules/woocommerce/widgets/woo-mini-cart.php:1225
 msgid "Floating"
 msgstr ""
@@ -13119,7 +13140,7 @@ msgstr ""
 
 #: modules/posts/skins/skin-base.php:2133 modules/posts/skins/skin-feed.php:657
 #: modules/posts/skins/skin-news.php:413
-#: modules/social-share/widgets/social-share.php:333
+#: modules/social-share/widgets/social-share.php:340
 msgid "Flat"
 msgstr ""
 
@@ -13402,7 +13423,7 @@ msgid "Make sure all your posts do have a featured image."
 msgstr ""
 
 #: modules/posts/widgets/posts-base.php:101
-#: modules/social-share/widgets/social-share.php:329
+#: modules/social-share/widgets/social-share.php:336
 msgid "Skin"
 msgstr ""
 
@@ -13700,21 +13721,21 @@ msgid "Image Area"
 msgstr ""
 
 #: modules/price-list/widgets/price-list.php:763
-#: modules/social-share/widgets/social-share.php:345
+#: modules/social-share/widgets/social-share.php:352
 #: modules/team-member/widgets/team-member.php:615
 #: modules/team-member/widgets/team-member.php:766
 msgid "Shape"
 msgstr ""
 
 #: modules/price-list/widgets/price-list.php:768
-#: modules/social-share/widgets/social-share.php:349
+#: modules/social-share/widgets/social-share.php:356
 #: modules/team-member/widgets/team-member.php:620
 #: modules/team-member/widgets/team-member.php:771
 msgid "Rounded"
 msgstr ""
 
 #: modules/price-list/widgets/price-list.php:769
-#: modules/social-share/widgets/social-share.php:350
+#: modules/social-share/widgets/social-share.php:357
 #: modules/team-member/widgets/team-member.php:621
 #: modules/team-member/widgets/team-member.php:772
 #: modules/woocommerce/skins/skin-grid-default.php:838
@@ -14141,11 +14162,6 @@ msgstr ""
 msgid "Badge Position"
 msgstr ""
 
-#: modules/registration-form/widgets/registration-form.php:342
-#. translators: %1$s admin link
-msgid "Please configure reCAPTCHA v3 setup from %1$s here %2$s."
-msgstr ""
-
 #: modules/registration-form/widgets/registration-form.php:414
 msgid "Required Mark"
 msgstr ""
@@ -14363,11 +14379,6 @@ msgstr ""
 msgid "%1$s After Registration Actions » %2$s"
 msgstr ""
 
-#: modules/registration-form/widgets/registration-form.php:1385
-#. translators: %1$s doc link
-msgid "%1$s Google reCAPTCHA v3 support » %2$s"
-msgstr ""
-
 #: modules/registration-form/widgets/registration-form.php:1395
 #. translators: %1$s doc link
 msgid "%1$s Honeypot Spam Prevention field support » %2$s"
@@ -14446,13 +14457,6 @@ msgstr ""
 
 #: modules/registration-form/widgets/registration-form.php:2407
 msgid "Please accept the Terms and Conditions to proceed."
-msgstr ""
-
-#: modules/registration-form/widgets/registration-form.php:2618
-msgid ""
-"To use reCAPTCHA v3, you need to add the API Key and complete the setup "
-"process in Dashboard > Settings > UAE > User Registration Form Settings > "
-"reCAPTCHA v3."
 msgstr ""
 
 #: modules/registration-form/widgets/registration-form.php:2676
@@ -14538,41 +14542,41 @@ msgstr ""
 msgid "Select Network"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:238
-#: modules/social-share/widgets/social-share.php:1567
+#: modules/social-share/widgets/social-share.php:239
+#: modules/social-share/widgets/social-share.php:1607
 #. translators: %s Pinterest share link
 msgid ""
 "To share the post on Pinterest you must assign a featured image for the "
 "Post/Page."
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:249
+#: modules/social-share/widgets/social-share.php:250
 msgid "Custom Label"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:260
+#: modules/social-share/widgets/social-share.php:261
 #: modules/team-member/widgets/team-member.php:409
 #: modules/team-member/widgets/team-member.php:1118
 msgid "Social Icons"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:299
+#: modules/social-share/widgets/social-share.php:306
 msgid "Icon & Text"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:332
+#: modules/social-share/widgets/social-share.php:339
 msgid "Gradient"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:335
+#: modules/social-share/widgets/social-share.php:342
 msgid "Minimal"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:336
+#: modules/social-share/widgets/social-share.php:343
 msgid "Boxed"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:348
+#: modules/social-share/widgets/social-share.php:355
 #: modules/team-member/widgets/team-member.php:619
 #: modules/woocommerce/skins/skin-grid-default.php:839
 #: modules/woocommerce/skins/skin-grid-default.php:1055
@@ -14584,190 +14588,190 @@ msgstr ""
 msgid "Square"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:522
+#: modules/social-share/widgets/social-share.php:529
 msgid "Target URL"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:525
+#: modules/social-share/widgets/social-share.php:532
 msgid "Current Page"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:655
+#: modules/social-share/widgets/social-share.php:662
 msgid "Button Size"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:688
+#: modules/social-share/widgets/social-share.php:695
 msgid "Button Height"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:821
+#: modules/social-share/widgets/social-share.php:829
 #: modules/team-member/widgets/team-member.php:1211
 msgid "Official Color"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:822
+#: modules/social-share/widgets/social-share.php:830
 msgid "Custom color"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:842
-#: modules/social-share/widgets/social-share.php:952
+#: modules/social-share/widgets/social-share.php:850
+#: modules/social-share/widgets/social-share.php:976
 msgid "Primary Color"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:890
-#: modules/social-share/widgets/social-share.php:1003
+#: modules/social-share/widgets/social-share.php:898
+#: modules/social-share/widgets/social-share.php:1027
 msgid "Secondary Color"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1053
+#: modules/social-share/widgets/social-share.php:1093
 msgid "Text Padding"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1079
-#: modules/social-share/widgets/social-share.php:1086
+#: modules/social-share/widgets/social-share.php:1119
+#: modules/social-share/widgets/social-share.php:1126
 msgid "Share Count"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1087
+#: modules/social-share/widgets/social-share.php:1127
 msgid "Enable this option to display the total share count of target post/page."
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1099
+#: modules/social-share/widgets/social-share.php:1139
 msgid "Show Fake Count"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1104
+#: modules/social-share/widgets/social-share.php:1144
 msgid "Static Count"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1105
+#: modules/social-share/widgets/social-share.php:1145
 msgid "Random Count"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1117
+#: modules/social-share/widgets/social-share.php:1157
 msgid "Fake Count"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1118
+#: modules/social-share/widgets/social-share.php:1158
 msgid "Note: Enter the number of fake count you want to display."
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1134
+#: modules/social-share/widgets/social-share.php:1174
 msgid "Minimum Count"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1150
+#: modules/social-share/widgets/social-share.php:1190
 msgid "Maximum Count"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1180
+#: modules/social-share/widgets/social-share.php:1220
 #. translators: %s admin link
 msgid "Fake Count Limit"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1181
+#: modules/social-share/widgets/social-share.php:1221
 msgid ""
 "Once the original count reaches this limit the fake count will be hidden. "
 "Only the original count will be shown after this limit reaches."
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1197
+#: modules/social-share/widgets/social-share.php:1237
 msgid "Fetch Share Count From"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1198
+#: modules/social-share/widgets/social-share.php:1238
 msgid ""
 "Choose Social media from above actions to display share count of particular "
 "media."
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1203
-#: modules/social-share/widgets/social-share.php:1293
+#: modules/social-share/widgets/social-share.php:1243
+#: modules/social-share/widgets/social-share.php:1333
 msgid "Facebook"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1204
-#: modules/social-share/widgets/social-share.php:1234
+#: modules/social-share/widgets/social-share.php:1244
+#: modules/social-share/widgets/social-share.php:1274
 #. translators: %s admin link
 msgid "Twitter"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1205
-#: modules/social-share/widgets/social-share.php:1261
+#: modules/social-share/widgets/social-share.php:1245
+#: modules/social-share/widgets/social-share.php:1301
 msgid "Pinterest"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1206
+#: modules/social-share/widgets/social-share.php:1246
 msgid "Tumblr"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1207
+#: modules/social-share/widgets/social-share.php:1247
 msgid "Reddit"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1208
+#: modules/social-share/widgets/social-share.php:1248
 msgid "Buffer"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1209
+#: modules/social-share/widgets/social-share.php:1249
 msgid "VK"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1210
+#: modules/social-share/widgets/social-share.php:1250
 msgid "OK"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1249
+#: modules/social-share/widgets/social-share.php:1289
 #. translators: %s link
 msgid ""
 "For Twitter you will need to register your website %s in order to return "
 "the share counts."
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1275
+#: modules/social-share/widgets/social-share.php:1315
 msgid ""
 "For pinterest you need to set up a featured image and Image URL should "
 "contain https://"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1307
+#: modules/social-share/widgets/social-share.php:1347
 #. translators: %s admin link
 msgid ""
 "Please configure Facebook Access Token from <a href=\"%s\" "
 "target=\"_blank\" rel=\"noopener\">here</a>."
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1339
+#: modules/social-share/widgets/social-share.php:1379
 msgid "Share "
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1340
+#: modules/social-share/widgets/social-share.php:1380
 msgid "Custom Text"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1391
+#: modules/social-share/widgets/social-share.php:1431
 msgid "Text/Icon Color"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1523
+#: modules/social-share/widgets/social-share.php:1563
 msgid "Floating Social Share - ID"
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1524
+#: modules/social-share/widgets/social-share.php:1564
 msgid ""
 "Click here to edit the \"Floating Social Share\" settings. This text will "
 "not be visible on frontend."
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1551
+#: modules/social-share/widgets/social-share.php:1591
 msgid ""
 "Please set the Facebook token from WP Dashboard -> UAE -> Settings -> "
 "Integrations -> Social Share - Facebook Access Token."
 msgstr ""
 
-#: modules/social-share/widgets/social-share.php:1692
-#: modules/social-share/widgets/social-share.php:1700
-#: modules/social-share/widgets/social-share.php:1719
+#: modules/social-share/widgets/social-share.php:1732
+#: modules/social-share/widgets/social-share.php:1752
+#: modules/social-share/widgets/social-share.php:1783
 #. translators: %s share text
 msgid "Share on %s"
 msgstr ""
