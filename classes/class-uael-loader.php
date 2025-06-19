@@ -71,7 +71,7 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 			define( 'UAEL_BASE', plugin_basename( UAEL_FILE ) );
 			define( 'UAEL_DIR', plugin_dir_path( UAEL_FILE ) );
 			define( 'UAEL_URL', plugins_url( '/', UAEL_FILE ) );
-			define( 'UAEL_VER', '1.39.7' );
+			define( 'UAEL_VER', '1.39.8' );
 			define( 'UAEL_MODULES_DIR', UAEL_DIR . 'modules/' );
 			define( 'UAEL_MODULES_URL', UAEL_URL . 'modules/' );
 			define( 'UAEL_SLUG', 'uae' );
@@ -139,8 +139,9 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 			}
 
 			require_once UAEL_DIR . 'classes/class-uael-analytics.php';
-
-			add_action( 'shutdown', array( $this, 'maybe_run_uae_widgets_usage_check' ) );
+			if ( 'yes' === get_option( 'uae_analytics_optin', false ) ) {
+				add_action( 'shutdown', array( $this, 'maybe_run_uae_widgets_usage_check' ) );
+			}
 		}
 		
 		/**

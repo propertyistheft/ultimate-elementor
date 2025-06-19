@@ -68,7 +68,7 @@ msgid "WIDGETS"
 msgstr ""
 
 #: src/Components/Dashboard/OnboardingWidgets.jsx:149
-#: src/Components/Settings/MyAccount.jsx:153
+#: src/Components/Settings/MyAccount.jsx:154
 #: src/Components/Widgets/Features/FeatureWidgets.jsx:165
 msgid "Activating..."
 msgstr ""
@@ -79,7 +79,7 @@ msgid "Activate All"
 msgstr ""
 
 #: src/Components/Dashboard/OnboardingWidgets.jsx:161
-#: src/Components/Settings/MyAccount.jsx:153
+#: src/Components/Settings/MyAccount.jsx:154
 #: src/Components/Widgets/Features/FeatureWidgets.jsx:175
 msgid "Deactivating..."
 msgstr ""
@@ -425,6 +425,7 @@ msgid "Let's Get Started"
 msgstr ""
 
 #: src/Components/Settings/Branding.jsx:107
+#: src/Components/Settings/UsageTracking.jsx:32
 msgid "Settings saved successfully!"
 msgstr ""
 
@@ -767,7 +768,7 @@ msgid ""
 msgstr ""
 
 #: src/Components/Settings/Integrations.jsx:867
-#: src/Components/Settings/MyAccount.jsx:116
+#: src/Components/Settings/MyAccount.jsx:117
 msgid "License Key"
 msgstr ""
 
@@ -808,48 +809,48 @@ msgstr ""
 msgid "Consumer Secret"
 msgstr ""
 
-#: src/Components/Settings/MyAccount.jsx:102
+#: src/Components/Settings/MyAccount.jsx:103
 #: src/Components/Settings/Settings.jsx:33
 msgid "My Account"
 msgstr ""
 
-#: src/Components/Settings/MyAccount.jsx:117
+#: src/Components/Settings/MyAccount.jsx:118
 msgid "Please enter your valid license key below to activate !"
 msgstr ""
 
-#: src/Components/Settings/MyAccount.jsx:14
+#: src/Components/Settings/MyAccount.jsx:15
 msgid "Your license is active."
 msgstr ""
 
-#: src/Components/Settings/MyAccount.jsx:14
+#: src/Components/Settings/MyAccount.jsx:15
 msgid "Paste your license key here"
 msgstr ""
 
-#: src/Components/Settings/MyAccount.jsx:154
+#: src/Components/Settings/MyAccount.jsx:155
 msgid "Deactivate License"
 msgstr ""
 
-#: src/Components/Settings/MyAccount.jsx:154
+#: src/Components/Settings/MyAccount.jsx:155
 msgid "Activate License"
 msgstr ""
 
-#: src/Components/Settings/MyAccount.jsx:38
+#: src/Components/Settings/MyAccount.jsx:39
 msgid "License successfully validated!"
 msgstr ""
 
-#: src/Components/Settings/MyAccount.jsx:41
+#: src/Components/Settings/MyAccount.jsx:42
 msgid "Please enter a valid license key!"
 msgstr ""
 
-#: src/Components/Settings/MyAccount.jsx:42
+#: src/Components/Settings/MyAccount.jsx:43
 msgid "Enter a valid license key!"
 msgstr ""
 
-#: src/Components/Settings/MyAccount.jsx:62
+#: src/Components/Settings/MyAccount.jsx:63
 msgid "License successfully deactivated!"
 msgstr ""
 
-#: src/Components/Settings/MyAccount.jsx:66
+#: src/Components/Settings/MyAccount.jsx:67
 msgid "An error occurred while deactivating license."
 msgstr ""
 
@@ -938,6 +939,21 @@ msgstr ""
 
 #: src/Components/Settings/ThemeSupport.jsx:91
 msgid "Select Option to Add Theme Support"
+msgstr ""
+
+#: src/Components/Settings/UsageTracking.jsx:37
+msgid "Failed to save settings!"
+msgstr ""
+
+#: src/Components/Settings/UsageTracking.jsx:69
+msgid ""
+"Collect non-sensitive information from your website, such as the PHP "
+"version and features used, to help us fix bugs faster, make smarter "
+"decisions, and build features that actually matter to you. "
+msgstr ""
+
+#: src/Components/Settings/UsageTracking.jsx:79
+msgid "Learn More"
 msgstr ""
 
 #: src/Components/Settings/VersionControl.jsx:124

@@ -2,10 +2,10 @@
 # This file is distributed under the same license as the Ultimate Addons for Elementor Pro package.
 msgid ""
 msgstr ""
-"Project-Id-Version: Ultimate Addons for Elementor Pro 1.39.7\n"
+"Project-Id-Version: Ultimate Addons for Elementor Pro 1.39.8\n"
 "Report-Msgid-Bugs-To: "
 "https://wordpress.org/support/plugin/ultimate-elementor\n"
-"POT-Creation-Date: 2025-05-28 05:30:09+00:00\n"
+"POT-Creation-Date: 2025-06-13 09:24:42+00:00\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -335,7 +335,7 @@ msgid ""
 "option, adding the App Secret Key will fix it."
 msgstr ""
 
-#: classes/class-uael-admin.php:239 classes/class-uael-admin.php:1463
+#: classes/class-uael-admin.php:239 classes/class-uael-admin.php:1465
 msgid "Ultimate Addons for Elementor"
 msgstr ""
 
@@ -366,85 +366,93 @@ msgstr ""
 msgid "Onboarding"
 msgstr ""
 
-#: classes/class-uael-admin.php:931
+#: classes/class-uael-admin.php:933
 msgid "Plugin slug is missing."
 msgstr ""
 
-#: classes/class-uael-admin.php:955
+#: classes/class-uael-admin.php:957
 msgid "Plugin installation function not found."
 msgstr ""
 
-#: classes/class-uael-admin.php:977
+#: classes/class-uael-admin.php:979
 msgid "Theme slug is missing."
 msgstr ""
 
-#: classes/class-uael-admin.php:1000
+#: classes/class-uael-admin.php:1002
 msgid "Theme installation function not found."
 msgstr ""
 
-#: classes/class-uael-admin.php:1049
+#: classes/class-uael-admin.php:1051
 msgid "License key not found."
 msgstr ""
 
-#: classes/class-uael-admin.php:1075
+#: classes/class-uael-admin.php:1077
 msgid "License Successfully Activated"
 msgstr ""
 
-#: classes/class-uael-admin.php:1079
+#: classes/class-uael-admin.php:1081
 msgid "License activation failed!"
 msgstr ""
 
-#: classes/class-uael-admin.php:1120
+#: classes/class-uael-admin.php:1122
 msgid "License Successfully Deactivated"
 msgstr ""
 
-#: classes/class-uael-admin.php:1124
+#: classes/class-uael-admin.php:1126
 msgid "License deactivation failed!"
 msgstr ""
 
-#: classes/class-uael-admin.php:1153
+#: classes/class-uael-admin.php:1155
 msgid "Plugin activation is disabled for you on this site."
 msgstr ""
 
-#: classes/class-uael-admin.php:1162
+#: classes/class-uael-admin.php:1164
 msgid "Plugin Activated."
 msgstr ""
 
-#: classes/class-uael-admin.php:1173
+#: classes/class-uael-admin.php:1175
 msgid "Theme activation is disabled for you on this site."
 msgstr ""
 
-#: classes/class-uael-admin.php:1182
+#: classes/class-uael-admin.php:1184
 msgid "Theme Activated."
 msgstr ""
 
-#: classes/class-uael-admin.php:1189
+#: classes/class-uael-admin.php:1191
 msgid "Could not activate plugin. Please activate from the Plugins page."
 msgstr ""
 
-#: classes/class-uael-admin.php:1191
+#: classes/class-uael-admin.php:1193
 msgid "Could not activate theme. Please activate from the Themes page."
 msgstr ""
 
-#: classes/class-uael-admin.php:1464
+#: classes/class-uael-admin.php:1466
 msgid ""
 "How likely are you to recommend Ultimate Addons for Elementor to your "
 "friends or colleagues?"
 msgstr ""
 
-#: classes/class-uael-admin.php:1466
+#: classes/class-uael-admin.php:1468
 msgid ""
 "Could you please do us a favor and give us a 5-star rating on Trustpilot? "
 "It would help others choose Ultimate Addons for Elementor with confidence. "
 "Thank you!"
 msgstr ""
 
-#: classes/class-uael-admin.php:1469
+#: classes/class-uael-admin.php:1471
 msgid "Thank you for your feedback"
 msgstr ""
 
-#: classes/class-uael-admin.php:1470
+#: classes/class-uael-admin.php:1472
 msgid "We value your input. How can we improve your experience?"
+msgstr ""
+
+#: classes/class-uael-admin.php:1494
+msgid "Settings saved successfully!"
+msgstr ""
+
+#: classes/class-uael-admin.php:1497
+msgid "Unable to save settings."
 msgstr ""
 
 #: classes/class-uael-attachment.php:37
@@ -538,29 +546,29 @@ msgstr ""
 msgid "Looks like content is empty. Cannot be processed."
 msgstr ""
 
-#: classes/class-uael-loader.php:316
+#: classes/class-uael-loader.php:317
 #. translators: %s: html tags
 msgid ""
 "The %1$sUltimate Addons for Elementor Pro%2$s plugin requires "
 "%1$sElementor%2$s plugin installed & activated."
 msgstr ""
 
-#: classes/class-uael-loader.php:326
+#: classes/class-uael-loader.php:327
 msgid "Activate Elementor"
 msgstr ""
 
-#: classes/class-uael-loader.php:334 classes/class-uael-loader.php:372
+#: classes/class-uael-loader.php:335 classes/class-uael-loader.php:373
 msgid "Install Elementor"
 msgstr ""
 
-#: classes/class-uael-loader.php:353
+#: classes/class-uael-loader.php:354
 #. translators: %s: html tags
 msgid ""
 "The %1$sUltimate Addons for Elementor Pro%2$s plugin has stopped working "
 "because you are using an older version of %1$sElementor%2$s plugin."
 msgstr ""
 
-#: classes/class-uael-loader.php:364
+#: classes/class-uael-loader.php:365
 msgid "Update Elementor"
 msgstr ""
 
@@ -11343,8 +11351,8 @@ msgstr ""
 #: modules/login-form/widgets/login-form.php:218
 #: modules/login-form/widgets/login-form.php:2547
 #: modules/login-form/widgets/login-form.php:2712
-#: modules/login-form/widgets/login-form.php:3016
-#: modules/login-form/widgets/login-form.php:3033
+#: modules/login-form/widgets/login-form.php:3012
+#: modules/login-form/widgets/login-form.php:3029
 msgid "Username or Email Address"
 msgstr ""
 
@@ -11356,8 +11364,8 @@ msgstr ""
 #: modules/login-form/widgets/login-form.php:235
 #: modules/login-form/widgets/login-form.php:2548
 #: modules/login-form/widgets/login-form.php:2735
-#: modules/login-form/widgets/login-form.php:3056
-#: modules/login-form/widgets/login-form.php:3069
+#: modules/login-form/widgets/login-form.php:3052
+#: modules/login-form/widgets/login-form.php:3065
 #: modules/registration-form/widgets/registration-form.php:126
 #: modules/registration-form/widgets/registration-form.php:372
 #: modules/registration-form/widgets/registration-form.php:373
@@ -11385,8 +11393,8 @@ msgid "Input Size"
 msgstr ""
 
 #: modules/login-form/widgets/login-form.php:267
-#: modules/login-form/widgets/login-form.php:2764
-#: modules/login-form/widgets/login-form.php:3090
+#: modules/login-form/widgets/login-form.php:2760
+#: modules/login-form/widgets/login-form.php:3086
 msgid "Remember Me"
 msgstr ""
 
@@ -11664,7 +11672,7 @@ msgid "Sign in with Facebook"
 msgstr ""
 
 #: modules/login-form/widgets/login-form.php:2488
-#: modules/login-form/widgets/login-form.php:2985
+#: modules/login-form/widgets/login-form.php:2981
 #. translators: %s: Error String
 msgid ""
 "Please configure Facebook App settings correctly from WP Dashboard -> UAE "
@@ -11687,13 +11695,6 @@ msgstr ""
 #: modules/login-form/widgets/login-form.php:2675
 #. translators: %1$s user name
 msgid "You are Logged in as %1$s (%2$sLogout%3$s)"
-msgstr ""
-
-#: modules/login-form/widgets/login-form.php:2757
-#: modules/registration-form/widgets/registration-form.php:2618
-msgid ""
-"To use reCAPTCHA v3, you need to add the API Key and complete the setup "
-"process in Dashboard > UAE > Settings > Integrations > Setup reCAPTCHA v3"
 msgstr ""
 
 #: modules/marketing-button/widgets/marketing-button.php:145
@@ -14457,6 +14458,12 @@ msgstr ""
 
 #: modules/registration-form/widgets/registration-form.php:2407
 msgid "Please accept the Terms and Conditions to proceed."
+msgstr ""
+
+#: modules/registration-form/widgets/registration-form.php:2618
+msgid ""
+"To use reCAPTCHA v3, you need to add the API Key and complete the setup "
+"process in Dashboard > UAE > Settings > Integrations > Setup reCAPTCHA v3"
 msgstr ""
 
 #: modules/registration-form/widgets/registration-form.php:2676

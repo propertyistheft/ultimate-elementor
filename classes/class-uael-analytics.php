@@ -28,7 +28,6 @@ if ( ! class_exists( 'UAEL_Analytics' ) ) {
 		 * @access public
 		 */
 		public function __construct() {
-			add_filter( 'uae_tracking_enabled', '__return_true' );
 			// BSF Analytics Tracker.
 			if ( ! class_exists( 'BSF_Analytics_Loader' ) ) {
 				require_once UAEL_DIR . 'admin/bsf-analytics/class-bsf-analytics-loader.php';
@@ -55,11 +54,34 @@ if ( ! class_exists( 'UAEL_Analytics' ) ) {
 								'show_on_screens'   => array( 'plugins' ),
 							),
 						),
+						'hide_optin_checkbox' => true,
 					),
 				)
 			);
 			
 			add_filter( 'bsf_core_stats', array( $this, 'add_uae_analytics_data' ) );
+		}
+
+		/**
+		 * Migrates analytics tracking option from 'bsf_analytics_optin' to 'uae_analytics_optin'.
+		 *
+		 * Checks if the old analytics tracking option ('bsf_analytics_optin') is set to 'yes'
+		 * and if the new option ('uae_analytics_optin') is not already set.
+		 * If so, updates the new tracking option to 'yes' to maintain user consent during migration.
+		 *
+		 * @since 1.39.8
+		 * @access public
+		 *
+		 * @return void
+		 */
+		public function maybe_migrate_analytics_tracking() {
+			$old_tracking = get_option( 'bsf_analytics_optin', false );
+			$new_tracking = get_option( 'uae_analytics_optin', false );
+			if ( 'yes' === $old_tracking && false === $new_tracking ) {
+				update_option( 'uae_analytics_optin', 'yes' );
+				$time = get_option( 'bsf_analytics_installed_time' );
+				update_option( 'bsf_analytics_installed_time', $time );
+			}
 		}
 
 		/**

@@ -1,4 +1,7 @@
-Version 1.39.7 - Wednesday, 28th May
+Version 1.39.8 - Friday, 13th June 2025
+- Improvement: Optimized codebase and improved code quality.
+
+Version 1.39.7 - Wednesday, 28th May 2025
 - Improvement: Login form - Added reCAPTCHA support to protect your login form from spam.
 - Improvement: Social Share - Added Support for Bluesky Social Media
 
