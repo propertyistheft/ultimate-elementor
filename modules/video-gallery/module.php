@@ -142,6 +142,10 @@ class Module extends Module_Base {
 								$video_link = ( preg_match( '/https?\:\/\/[^\",]+/i', $val['wistia_url'], $url ) ) ? $url[0] : '';
 								break;
 
+							case 'bunny':
+								$video_link = $val['bunny_url'];
+								break;
+
 							case 'hosted':
 								if ( 'hosted' === $video_type && 'yes' !== $val['insert_url'] ) {
 									$video_link = $val['hosted_url']['url'];

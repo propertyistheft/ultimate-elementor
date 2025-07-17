@@ -898,6 +898,7 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 
 			add_action( 'wp_ajax_uael_bulk_activate_widgets', __CLASS__ . '::bulk_activate_widgets' );
 			add_action( 'wp_ajax_uael_bulk_deactivate_widgets', __CLASS__ . '::bulk_deactivate_widgets' );
+			add_action( 'wp_ajax_uael_bulk_deactivate_unused_widgets', __CLASS__ . '::bulk_deactivate_unused_widgets' );
 
 			add_action( 'wp_ajax_uael_bulk_activate_skins', __CLASS__ . '::bulk_activate_skins' );
 			add_action( 'wp_ajax_uael_bulk_deactivate_skins', __CLASS__ . '::bulk_deactivate_skins' );
@@ -1358,6 +1359,88 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 			// Send a JSON response.
 			wp_send_json_success( 'Widgets deactivated successfully.' );
 		}
+		
+		/**
+		 * Deactivate all unused widgets.
+		 */
+		public static function bulk_deactivate_unused_widgets() {
+			check_ajax_referer( 'uael-widget-nonce', 'nonce' );
+
+			if ( ! isset( self::$widget_list ) ) {
+				self::$widget_list = UAEL_Helper::get_widget_list();
+			}
+
+			$used_widgets   = UAEL_Helper::uaepro_get_used_widget();
+			$unused_widgets = array();
+		
+			// Compare slugs from widget_list to keys in $used_widgets.
+			foreach ( self::$widget_list as $slug => $value ) {
+				if ( ! isset( $used_widgets[ $value['slug'] ] ) ) {
+					if ( 'DisplayConditions' === $slug || 'Particles' === $slug || 'PartyPropzExtension' === $slug || 'SectionDivider' === $slug || 'Cross_Domain' === $slug || 'Presets' === $slug ) {
+						continue;
+					}
+					$unused_widgets[] = $slug;
+				}
+			}
+			$deactivated = array();
+
+			foreach ( self::$widget_list as $slug => $value ) {
+				if ( in_array( $slug, $unused_widgets ) ) {
+					$widgets[ $slug ] = 'disabled';
+					$deactivated[]    = $slug;
+				}
+			}
+
+			// Escape attrs.
+			$widgets = array_map( 'esc_attr', $widgets );
+
+			// Update new_extensions.
+			UAEL_Helper::update_admin_settings_option( '_uael_widgets', $widgets );
+			UAEL_Helper::create_specific_stylesheet();
+
+			// Activate all free widgets.
+			$is_lite_active = UAEL_Helper::is_lite_active(); // phpcs:ignore WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase
+			
+			if ( $is_lite_active && class_exists( '\HFE\WidgetsManager\Base\HFE_Helper' ) ) { // phpcs:ignore WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase
+				$hfe_helper = new \HFE\WidgetsManager\Base\HFE_Helper();
+				if ( ( ! isset( self::$free_widget_list ) ) ) {
+					self::$free_widget_list = $hfe_helper::get_widget_list();
+				}
+				$free_used_widgets   = $hfe_helper::get_used_widget();
+				$free_unused_widgets = array();
+			
+				// Compare slugs from widget_list to keys in $used_widgets.
+				foreach ( self::$free_widget_list as $slug => $value ) {
+					if ( ! isset( $free_used_widgets[ $value['slug'] ] ) ) {
+						if ( 'Scroll_To_Top' === $slug || 'Reading_Progress_Bar' === $slug ) {
+							continue;
+						}
+						$free_unused_widgets[] = $slug;
+					}
+				}
+			
+				$free_deactivated = array();
+		
+				// Set all extension to enabled.
+				foreach ( self::$free_widget_list as $slug => $value ) {
+					if ( in_array( $slug, $free_unused_widgets ) ) {
+						$free_widgets[ $slug ] = 'disabled';
+						$free_deactivated[]    = $slug;
+					}
+				}
+			
+				$free_widgets = array_map( 'esc_attr', $free_widgets );
+				
+				UAEL_Helper::update_admin_settings_option( '_hfe_widgets', $free_widgets );
+
+				// Merge free and pro deactivated widgets.
+				$deactivated = array_merge( $deactivated, $free_deactivated );
+
+			}
+
+			// Send a JSON response.
+			wp_send_json_success( array( 'deactivated' => $deactivated ) );
+		}
 
 		/**
 		 * Activate all module
@@ -1491,10 +1574,10 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 				update_option( 'uae_analytics_optin', $option );
 
 				// Return a success response.
-				wp_send_json_success( esc_html__( 'Settings saved successfully!', 'ultimate-elementor' ) );
+				wp_send_json_success( esc_html__( 'Settings saved successfully!', 'uael' ) );
 			} else {
 				// Return an error response if the option is not set.
-				wp_send_json_error( esc_html__( 'Unable to save settings.', 'ultimate-elementor' ) );
+				wp_send_json_error( esc_html__( 'Unable to save settings.', 'uael' ) );
 			}
 		} 
 	}

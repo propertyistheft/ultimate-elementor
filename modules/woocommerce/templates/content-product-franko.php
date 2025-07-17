@@ -73,12 +73,16 @@ $out_of_stock_string = apply_filters( 'uael_woo_out_of_stock_string', __( 'Out o
 
 		echo wp_kses_post( sanitize_text_field( $product_link_open ) );
 
+		// Get the selected image resolution from settings.
+		$image_size = isset( $settings['image_resolution'] ) ? $settings['image_resolution'] : 'woocommerce_thumbnail';
+
 		if ( 'yes' === $this->get_instance_value( 'show_image' ) ) {
-			woocommerce_template_loop_product_thumbnail();
+			// Use the selected image size.
+			echo wp_kses_post( woocommerce_get_product_thumbnail( $image_size ) );
 		}
 
 		if ( 'swap' === $settings['products_hover_style'] ) {
-			UAEL_Woo_Helper::get_instance()->woo_shop_product_flip_image();
+			UAEL_Woo_Helper::get_instance()->woo_shop_product_flip_image( $image_size );
 		}
 
 		echo wp_kses_post( $product_link_close );

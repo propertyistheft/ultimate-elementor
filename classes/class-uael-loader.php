@@ -5,7 +5,6 @@
  * @package UAEL
  */
 
-use Elementor\Modules\Usage\Module as Usage_Module;
 use UltimateElementor\Classes\UAEL_Helper;
 if ( ! class_exists( 'UAEL_Loader' ) ) {
 
@@ -71,7 +70,7 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 			define( 'UAEL_BASE', plugin_basename( UAEL_FILE ) );
 			define( 'UAEL_DIR', plugin_dir_path( UAEL_FILE ) );
 			define( 'UAEL_URL', plugins_url( '/', UAEL_FILE ) );
-			define( 'UAEL_VER', '1.39.8' );
+			define( 'UAEL_VER', '1.39.9' );
 			define( 'UAEL_MODULES_DIR', UAEL_DIR . 'modules/' );
 			define( 'UAEL_MODULES_URL', UAEL_URL . 'modules/' );
 			define( 'UAEL_SLUG', 'uae' );
@@ -114,8 +113,7 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 				require_once ABSPATH . 'wp-admin/includes/plugin.php';
 			}
 			
-			require_once UAEL_DIR . 'classes/class-uael-core-plugin.php';
-			require_once UAEL_DIR . 'includes/admin/settings-api.php';
+			
 			if ( is_admin() ) {
 				require_once UAEL_DIR . 'class-brainstorm-update-uael.php';
 				require_once UAEL_DIR . 'classes/class-uael-update.php';
@@ -142,6 +140,8 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 			if ( 'yes' === get_option( 'uae_analytics_optin', false ) ) {
 				add_action( 'shutdown', array( $this, 'maybe_run_uae_widgets_usage_check' ) );
 			}
+			require_once UAEL_DIR . 'classes/class-uael-core-plugin.php';
+			require_once UAEL_DIR . 'includes/admin/settings-api.php';
 		}
 		
 		/**
@@ -169,41 +169,12 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 			$widgets_usage = get_transient( $transient_key );
 
 			if ( false === $widgets_usage || false === get_option( 'uaepro_widgets_usage_data_option' ) ) {
-				/** 
-				 * Instance of the Usage_Module class.
-				 * 
-				 * @var Usage_Module $usage_module 
-				 */
-				$usage_module = Usage_Module::instance();
-				$usage_module->recalc_usage();
-
-				$widgets_usage = array();
-
-				foreach ( $usage_module->get_formatted_usage( 'raw' ) as $data ) {
-					foreach ( $data['elements'] as $element => $count ) {
-						$widgets_usage[ $element ] = isset( $widgets_usage[ $element ] ) ? $widgets_usage[ $element ] + $count : $count;
-					}
-				}
-				$widget_list     = UAEL_Helper::get_widget_list();
-				$allowed_widgets = array();
-				foreach ( $widget_list as $key => $value ) {
-					$allowed_widgets[] = $value['slug'];
-				}
-
-				// Filter widgets usage to include only allowed widgets.
-				$filtered_widgets_usage = array_filter(
-					$widgets_usage,
-					function ( $key ) use ( $allowed_widgets ) {
-						return in_array( $key, $allowed_widgets, true );
-					},
-					ARRAY_FILTER_USE_KEY
-				);
-
+				$filtered_widgets_usage = UAEL_Helper::uaepro_get_used_widget();
 				set_transient( $transient_key, $filtered_widgets_usage, MONTH_IN_SECONDS ); // Store for a month.
 				update_option( 'uaepro_widgets_usage_data_option', $filtered_widgets_usage );
 			}
 		}
-		
+
 		/**
 		 * Onboarding redirect function.
 		 */

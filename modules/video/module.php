@@ -101,6 +101,9 @@ class Module extends Module_Base {
 			case 'wistia':
 				$video_link = ( preg_match( '/https?\:\/\/[^\",]+/i', $settings['wistia_link'], $url ) ) ? $url[0] : '';
 				break;
+			case 'bunny':
+				$video_link = $settings['bunny_link'];
+				break;
 			case 'hosted':
 				if ( 'hosted' === $video_type && 'yes' !== $settings['insert_link'] ) {
 					$video_link = $settings['hosted_link']['url'];

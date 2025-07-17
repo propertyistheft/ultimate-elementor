@@ -16,6 +16,7 @@ use Elementor\Utils;
 use Elementor\Widget_Base;
 use UltimateElementor\Classes\UAEL_Config;
 use UltimateElementor\Classes\UAEL_Maxmind_Database;
+use Elementor\Modules\Usage\Module as Usage_Module;
 
 /**
  * Class UAEL_Helper.
@@ -203,7 +204,44 @@ class UAEL_Helper {
 
 		return false;
 	}
+	
+	/**
+	 * Get widgets usage data.
+	 *
+	 * @since 1.39.9
+	 */
+	public static function uaepro_get_used_widget() {
+		/** 
+		 * Instance of the Usage_Module class.
+		 * 
+		 * @var Usage_Module $usage_module 
+		 */
+		$usage_module = Usage_Module::instance();
+		$usage_module->recalc_usage();
+		$widgets_usage = array();
 
+		foreach ( $usage_module->get_formatted_usage( 'raw' ) as $data ) {
+			foreach ( $data['elements'] as $element => $count ) {
+				$widgets_usage[ $element ] = isset( $widgets_usage[ $element ] ) ? $widgets_usage[ $element ] + $count : $count;
+			}
+		}
+		$widget_list     = self::get_widget_list();
+		$allowed_widgets = array();
+		foreach ( $widget_list as $key => $value ) {
+			$allowed_widgets[] = $value['slug'];
+		}
+
+		// Filter widgets usage to include only allowed widgets.
+		$filtered_widgets_usage = array_filter(
+			$widgets_usage,
+			function ( $key ) use ( $allowed_widgets ) {
+				return in_array( $key, $allowed_widgets, true );
+			},
+			ARRAY_FILTER_USE_KEY
+		);
+		return $filtered_widgets_usage;
+	}
+	
 	/**
 	 * Provide General settings array().
 	 *

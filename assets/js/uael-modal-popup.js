@@ -341,6 +341,15 @@
 		var overlay_node = $( '#' + node_id + '-overlay' );
 		var content_type = overlay_node.data( 'content' );
 		var device = overlay_node.data( 'device' );
+		var trigger_on = overlay_node.data( 'trigger-on' );
+		
+		if (trigger_on === 'on_scroll_element' && $( '#modal-' + node_id ).hasClass( 'uael-modal-editor' )) {
+			setTimeout( function() {
+				if ($( '#modal-' + node_id ).hasClass( 'uael-show-preview' )) {
+					UAELModalPopup._show( node_id );
+				}
+			}, 400 );
+		}
 
 		if ( 'youtube' == content_type || 'vimeo' == content_type ) {
 
@@ -457,6 +466,8 @@
 			var after_sec_val = $this.data( 'after-sec-val' );
 			var custom = $this.data( 'custom' );
 			var custom_id = $this.data( 'custom-id' );
+			var scroll_direction = $this.data( 'scroll-direction' );
+			var scroll_percentage = $this.data( 'scroll-percentage' );
 
 			// Trigger automatically.
 			if( 'automatic' == trigger_on ) {
@@ -470,6 +481,99 @@
 							UAELModalPopup._show( id );
 						}
 					}, ( parseInt( after_sec_val ) * 1000 ) );
+				}
+			}
+
+			// On Scroll trigger.
+			if( 'on_scroll' == trigger_on ) {
+				var lastScrollTop = 0;
+				var significantScroll = 20; // Minimum scroll amount needed to consider upward scrolling significant.
+				var hasScrolledDown = false; // Track if user has scrolled down first.
+				
+				$(window).on('scroll', function() {
+					var st = $(this).scrollTop();
+					var scrollPercent = 100 * st / ($(document).height() - $(window).height());
+					var scrollingDown = st > lastScrollTop;
+					
+					// Track if user has scrolled down first (required for up direction).
+					if (scrollingDown && st > significantScroll) {
+						hasScrolledDown = true;
+					}
+					
+					// Only proceed if we have some scrolling history.
+					if (lastScrollTop > 0 || scrollingDown) {
+						var shouldTrigger = false;
+						
+						if (scroll_direction === 'down') {
+							// For down direction, use the percentage threshold.
+							if (scrollingDown && scrollPercent >= scroll_percentage) {
+								shouldTrigger = true;
+							}
+						} else if (scroll_direction === 'up') {
+							// For up direction, only trigger when:.
+							// 1. User has scrolled down first.
+							// 2. Is now scrolling up significantly
+							if (hasScrolledDown && !scrollingDown && (lastScrollTop - st) > significantScroll) {
+								shouldTrigger = true;
+							}
+						}
+						
+						if (shouldTrigger && UAELModalPopup._canShow(popup_id)) {
+							UAELModalPopup._show(popup_id);
+							// Remove scroll event after triggering to prevent multiple triggers.
+							$(window).off('scroll');
+						}
+					}
+					
+					lastScrollTop = st;
+				});
+			}
+			
+			// On Scroll to Element trigger.
+			if( 'on_scroll_element' == trigger_on ) {
+				var element_selector = $this.data('scroll-element');
+				
+				if ($this.closest('.elementor-element').hasClass('elementor-element-edit-mode')) {
+					return;
+				}
+				
+				if (element_selector) {
+					// Create an array of selectors if multiple are provided.
+					var selectors = element_selector.split(',').map(function(item) {
+						return item.trim();
+					});
+					
+					// Filter out potentially unsafe selectors
+					selectors = selectors.filter(function(selector) {
+						// Basic validation - ensure selector is not empty and doesn't contain script tags
+						return selector && selector.length > 0 && selector.indexOf('<script') === -1;
+					});
+					
+					selectors.forEach(function(selector) {
+						try {
+							var targetElements = document.querySelectorAll(selector);
+							
+							if (targetElements.length > 0) {
+							var observer = new IntersectionObserver(function(entries) {
+								entries.forEach(function(entry) {
+									if (entry.isIntersecting && UAELModalPopup._canShow(popup_id)) {
+										UAELModalPopup._show(popup_id);
+										// Disconnect observer after triggering to prevent multiple triggers.
+										observer.disconnect();
+									}
+								});
+							}, {
+								threshold: 0.1 // Show when 10% of the element is visible
+							});
+							
+							targetElements.forEach(function(element) {
+								observer.observe(element);
+							});
+						}
+						} catch (error) {
+							console.error('Invalid selector in Modal Popup: ' + selector);
+						}
+					});
 				}
 			}
 

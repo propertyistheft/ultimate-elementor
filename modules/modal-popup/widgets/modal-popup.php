@@ -876,14 +876,16 @@ class Modal_Popup extends Common_Widget {
 					'type'    => Controls_Manager::SELECT,
 					'default' => 'button',
 					'options' => array(
-						'icon'      => __( 'Icon', 'uael' ),
-						'photo'     => __( 'Image', 'uael' ),
-						'text'      => __( 'Text', 'uael' ),
-						'button'    => __( 'Button', 'uael' ),
-						'custom'    => __( 'Custom Class', 'uael' ),
-						'custom_id' => __( 'Custom ID', 'uael' ),
-						'automatic' => __( 'Automatic', 'uael' ),
-						'via_url'   => __( 'Via URL', 'uael' ),
+						'icon'              => __( 'Icon', 'uael' ),
+						'photo'             => __( 'Image', 'uael' ),
+						'text'              => __( 'Text', 'uael' ),
+						'button'            => __( 'Button', 'uael' ),
+						'custom'            => __( 'Custom Class', 'uael' ),
+						'custom_id'         => __( 'Custom ID', 'uael' ),
+						'automatic'         => __( 'Automatic', 'uael' ),
+						'via_url'           => __( 'Via URL', 'uael' ),
+						'on_scroll'         => __( 'On Scroll', 'uael' ),
+						'on_scroll_element' => __( 'On Scroll to Element', 'uael' ),
 					),
 				)
 			);
@@ -1120,6 +1122,206 @@ class Modal_Popup extends Common_Widget {
 					),
 					'selectors' => array(
 						'.uamodal-{{ID}}' => '',
+					),
+				)
+			);
+			
+			$this->add_control(
+				'scroll_heading',
+				array(
+					'label'     => __( 'Scroll Settings', 'uael' ),
+					'type'      => Controls_Manager::HEADING,
+					'separator' => 'before',
+					'condition' => array(
+						'modal_on' => 'on_scroll',
+					),
+				)
+			);
+			
+			$this->add_control(
+				'scroll_direction',
+				array(
+					'label'     => __( 'Direction', 'uael' ),
+					'type'      => Controls_Manager::SELECT,
+					'default'   => 'down',
+					'options'   => array(
+						'down' => __( 'Down', 'uael' ),
+						'up'   => __( 'Up', 'uael' ),
+					),
+					'condition' => array(
+						'modal_on' => 'on_scroll',
+					),
+				)
+			);
+			
+			$this->add_control(
+				'scroll_percentage',
+				array(
+					'label'       => __( 'Scroll Percentage (%)', 'uael' ),
+					'type'        => Controls_Manager::SLIDER,
+					'size_units'  => array( '%' ),
+					'default'     => array(
+						'size' => 30,
+						'unit' => '%',
+					),
+					'range'       => array(
+						'%' => array(
+							'min' => 1,
+							'max' => 100,
+						),
+					),
+					'condition'   => array(
+						'modal_on'         => 'on_scroll',
+						'scroll_direction' => 'down', // Only show for down direction.
+					),
+					'description' => __( 'Percentage of page scroll to display the modal popup', 'uael' ),
+				)
+			);
+			
+			$this->add_control(
+				'cookies_heading_scroll',
+				array(
+					'label'     => __( 'Cookie Settings', 'uael' ),
+					'type'      => Controls_Manager::HEADING,
+					'separator' => 'before',
+					'condition' => array(
+						'modal_on' => 'on_scroll',
+					),
+				)
+			);
+
+			$this->add_control(
+				'enable_cookies_scroll',
+				array(
+					'label'        => __( 'Enable Cookies', 'uael' ),
+					'type'         => Controls_Manager::SWITCHER,
+					'default'      => 'no',
+					'return_value' => 'yes',
+					'label_off'    => __( 'No', 'uael' ),
+					'label_on'     => __( 'Yes', 'uael' ),
+					'condition'    => array(
+						'modal_on' => 'on_scroll',
+					),
+				)
+			);
+
+			$this->add_control(
+				'set_cookie_on_scroll',
+				array(
+					'label'       => __( 'Set Cookies On', 'uael' ),
+					'description' => __( 'Choose an action on which you want to set cookies to hide the popup for number of days.', 'uael' ),
+					'type'        => Controls_Manager::SELECT,
+					'default'     => 'default',
+					'label_block' => false,
+					'condition'   => array(
+						'enable_cookies_scroll' => 'yes',
+						'modal_on'              => 'on_scroll',
+					),
+					'options'     => array(
+						'default' => __( 'Page Refresh', 'uael' ),
+						'closed'  => __( 'Close Action', 'uael' ),
+					),
+				)
+			);
+
+			$this->add_control(
+				'close_cookie_days_scroll',
+				array(
+					'label'     => __( 'Hide for Number of Days', 'uael' ),
+					'type'      => Controls_Manager::SLIDER,
+					'default'   => array(
+						'size' => 1,
+					),
+					'condition' => array(
+						'enable_cookies_scroll' => 'yes',
+						'modal_on'              => 'on_scroll',
+					),
+				)
+			);
+			
+			$this->add_control(
+				'scroll_element_heading',
+				array(
+					'label'     => __( 'Element Settings', 'uael' ),
+					'type'      => Controls_Manager::HEADING,
+					'separator' => 'before',
+					'condition' => array(
+						'modal_on' => 'on_scroll_element',
+					),
+				)
+			);
+			
+			$this->add_control(
+				'scroll_element_selector',
+				array(
+					'label'       => __( 'CSS Selector', 'uael' ),
+					'type'        => Controls_Manager::TEXT,
+					'default'     => '',
+					'placeholder' => __( '.my-class or #my-id', 'uael' ),
+					'description' => __( 'Enter the CSS selector of the element to trigger the popup. For classes, include the dot (.) before the class name. For IDs, include the hash (#) before the ID. Use comma-separated values for multiple selectors.', 'uael' ),
+					'condition'   => array(
+						'modal_on' => 'on_scroll_element',
+					),
+				)
+			);
+			
+			$this->add_control(
+				'cookies_heading_scroll_element',
+				array(
+					'label'     => __( 'Cookie Settings', 'uael' ),
+					'type'      => Controls_Manager::HEADING,
+					'separator' => 'before',
+					'condition' => array(
+						'modal_on' => 'on_scroll_element',
+					),
+				)
+			);
+
+			$this->add_control(
+				'enable_cookies_scroll_element',
+				array(
+					'label'        => __( 'Enable Cookies', 'uael' ),
+					'type'         => Controls_Manager::SWITCHER,
+					'default'      => 'no',
+					'return_value' => 'yes',
+					'label_off'    => __( 'No', 'uael' ),
+					'label_on'     => __( 'Yes', 'uael' ),
+					'condition'    => array(
+						'modal_on' => 'on_scroll_element',
+					),
+				)
+			);
+
+			$this->add_control(
+				'set_cookie_on_scroll_element',
+				array(
+					'label'       => __( 'Set Cookies On', 'uael' ),
+					'description' => __( 'Choose an action on which you want to set cookies to hide the popup for number of days.', 'uael' ),
+					'type'        => Controls_Manager::SELECT,
+					'default'     => 'default',
+					'label_block' => false,
+					'condition'   => array(
+						'enable_cookies_scroll_element' => 'yes',
+						'modal_on'                      => 'on_scroll_element',
+					),
+					'options'     => array(
+						'default' => __( 'Page Refresh', 'uael' ),
+						'closed'  => __( 'Close Action', 'uael' ),
+					),
+				)
+			);
+
+			$this->add_control(
+				'close_cookie_days_scroll_element',
+				array(
+					'label'     => __( 'Hide for Number of Days', 'uael' ),
+					'type'      => Controls_Manager::SLIDER,
+					'default'   => array(
+						'size' => 1,
+					),
+					'condition' => array(
+						'enable_cookies_scroll_element' => 'yes',
+						'modal_on'                      => 'on_scroll_element',
 					),
 				)
 			);
@@ -2649,7 +2851,9 @@ class Modal_Popup extends Common_Widget {
 				'custom' === $settings['modal_on'] ||
 				'custom_id' === $settings['modal_on'] ||
 				'automatic' === $settings['modal_on'] ||
-				'via_url' === $settings['modal_on']
+				'via_url' === $settings['modal_on'] ||
+				'on_scroll' === $settings['modal_on'] ||
+				'on_scroll_element' === $settings['modal_on']
 			) &&
 			$is_editor
 		) {
@@ -2678,7 +2882,9 @@ class Modal_Popup extends Common_Widget {
 			if ( 'custom' === $settings['modal_on'] ||
 				'custom_id' === $settings['modal_on'] ||
 				'automatic' === $settings['modal_on'] ||
-				'via_url' === $settings['modal_on']
+				'via_url' === $settings['modal_on'] ||
+				'on_scroll' === $settings['modal_on'] ||
+				'on_scroll_element' === $settings['modal_on']
 			) {
 				$this->add_render_attribute( 'action-wrap', 'class', 'uael-modal-popup-hide' );
 			}
@@ -2748,26 +2954,47 @@ class Modal_Popup extends Common_Widget {
 	 * @access public
 	 */
 	public function get_parent_wrapper_attributes( $settings ) {
+		// Determine which cookie settings to use based on trigger type.
+		$enable_cookies = isset( $settings['enable_cookies'] ) ? $settings['enable_cookies'] : 'no';
+		$cookie_days    = isset( $settings['close_cookie_days'] ) ? $settings['close_cookie_days'] : null;
+		$cookie_type    = isset( $settings['set_cookie_on'] ) ? $settings['set_cookie_on'] : 'default';
+		
+		// Override with scroll-specific settings if using scroll trigger.
+		if ( 'on_scroll' === $settings['modal_on'] ) {
+			$enable_cookies = isset( $settings['enable_cookies_scroll'] ) ? $settings['enable_cookies_scroll'] : 'no';
+			$cookie_days    = isset( $settings['close_cookie_days_scroll'] ) ? $settings['close_cookie_days_scroll'] : null;
+			$cookie_type    = isset( $settings['set_cookie_on_scroll'] ) ? $settings['set_cookie_on_scroll'] : 'default';
+		}
+		
+		// Override with scroll-to-element-specific settings if using that trigger.
+		if ( 'on_scroll_element' === $settings['modal_on'] ) {
+			$enable_cookies = isset( $settings['enable_cookies_scroll_element'] ) ? $settings['enable_cookies_scroll_element'] : 'no';
+			$cookie_days    = isset( $settings['close_cookie_days_scroll_element'] ) ? $settings['close_cookie_days_scroll_element'] : null;
+			$cookie_type    = isset( $settings['set_cookie_on_scroll_element'] ) ? $settings['set_cookie_on_scroll_element'] : 'default';
+		}
 
 		$this->add_render_attribute(
 			'parent-wrapper',
 			array(
-				'id'                    => $this->get_id() . '-overlay',
-				'data-trigger-on'       => $settings['modal_on'],
-				'data-close-on-esc'     => $settings['esc_keypress'],
-				'data-close-on-overlay' => $settings['overlay_click'],
-				'data-exit-intent'      => isset( $settings['exit_intent'] ) ? $settings['exit_intent'] : null,
-				'data-after-sec'        => isset( $settings['after_second'] ) ? $settings['after_second'] : null,
-				'data-after-sec-val'    => isset( $settings['after_second_value']['size'] ) ? $settings['after_second_value']['size'] : null,
-				'data-cookies'          => isset( $settings['enable_cookies'] ) ? $settings['enable_cookies'] : null,
-				'data-cookies-days'     => isset( $settings['close_cookie_days'] ) && $settings['close_cookie_days'] ? $settings['close_cookie_days']['size'] : null,
-				'data-cookies-type'     => $settings['set_cookie_on'],
-				'data-custom'           => $settings['modal_custom'],
-				'data-custom-id'        => $this->get_settings_for_display( 'modal_custom_id' ),
-				'data-content'          => $settings['content_type'],
-				'data-autoplay'         => $settings['video_autoplay'],
-				'data-device'           => ( isset( $_SERVER['HTTP_USER_AGENT'] ) && false !== ( stripos( sanitize_text_field( $_SERVER['HTTP_USER_AGENT'] ), 'iPhone' ) ) ? 'true' : 'false' ), // phpcs:ignore WordPressVIPMinimum.Variables.RestrictedVariables.cache_constraints___SERVER__HTTP_USER_AGENT__
-				'data-async'            => ( 'yes' === $settings['async_iframe'] ) ? true : false,
+				'id'                     => $this->get_id() . '-overlay',
+				'data-trigger-on'        => $settings['modal_on'],
+				'data-close-on-esc'      => $settings['esc_keypress'],
+				'data-close-on-overlay'  => $settings['overlay_click'],
+				'data-exit-intent'       => isset( $settings['exit_intent'] ) ? $settings['exit_intent'] : null,
+				'data-after-sec'         => isset( $settings['after_second'] ) ? $settings['after_second'] : null,
+				'data-after-sec-val'     => isset( $settings['after_second_value']['size'] ) ? $settings['after_second_value']['size'] : null,
+				'data-cookies'           => $enable_cookies,
+				'data-cookies-days'      => isset( $cookie_days ) && $cookie_days ? $cookie_days['size'] : null,
+				'data-cookies-type'      => $cookie_type,
+				'data-custom'            => $settings['modal_custom'],
+				'data-custom-id'         => $this->get_settings_for_display( 'modal_custom_id' ),
+				'data-content'           => $settings['content_type'],
+				'data-autoplay'          => $settings['video_autoplay'],
+				'data-device'            => ( isset( $_SERVER['HTTP_USER_AGENT'] ) && false !== ( stripos( sanitize_text_field( $_SERVER['HTTP_USER_AGENT'] ), 'iPhone' ) ) ? 'true' : 'false' ), // phpcs:ignore WordPressVIPMinimum.Variables.RestrictedVariables.cache_constraints___SERVER__HTTP_USER_AGENT__
+				'data-async'             => ( 'yes' === $settings['async_iframe'] ) ? true : false,
+				'data-scroll-direction'  => isset( $settings['scroll_direction'] ) ? $settings['scroll_direction'] : 'down',
+				'data-scroll-percentage' => isset( $settings['scroll_percentage']['size'] ) ? $settings['scroll_percentage']['size'] : '',
+				'data-scroll-element'    => isset( $settings['scroll_element_selector'] ) ? esc_attr( $settings['scroll_element_selector'] ) : '',
 			)
 		);
 

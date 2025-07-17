@@ -135,6 +135,7 @@ class Video extends Common_Widget {
 						'youtube' => __( 'YouTube', 'uael' ),
 						'vimeo'   => __( 'Vimeo', 'uael' ),
 						'wistia'  => __( 'Wistia', 'uael' ),
+						'bunny'   => __( 'Bunny.net', 'uael' ),
 						'hosted'  => __( 'Self Hosted', 'uael' ),
 					),
 				)
@@ -198,6 +199,9 @@ class Video extends Common_Widget {
 			$default_youtube = apply_filters( 'uael_video_default_youtube_link', 'https://www.youtube.com/watch?v=HJRzUQMhJMQ' );
 
 			$default_vimeo = apply_filters( 'uael_video_default_vimeo_link', 'https://vimeo.com/274860274' );
+
+			$default_bunny = apply_filters( 'uael_video_default_bunny_link', 'https://iframe.mediadelivery.net/play/432016/13530e19-ff52-4f20-a422-0075cccd73d4' );
+			
 
 			$default_wistia = apply_filters( 'uael_video_default_wistia_link', '<p><a href="https://pratikc.wistia.com/medias/gyvkfithw2?wvideo=gyvkfithw2"><img src="https://embed-ssl.wistia.com/deliveries/53eec5fa72737e60aa36731b57b607a7c0636f52.webp?image_play_button_size=2x&amp;image_crop_resized=960x540&amp;image_play_button=1&amp;image_play_button_color=54bbffe0" width="400" height="225" style="width: 400px; height: 225px;"></a></p><p><a href="https://pratikc.wistia.com/medias/gyvkfithw2?wvideo=gyvkfithw2">Video Placeholder - Brainstorm Force - pratikc</a></p>' );
 
@@ -315,6 +319,66 @@ class Video extends Common_Widget {
 			);
 		}
 
+
+			$this->add_control(
+				'bunny_link',
+				array(
+					'label'       => __( 'Link', 'uael' ),
+					'type'        => Controls_Manager::TEXT,
+					'dynamic'     => array(
+						'active'     => true,
+						'categories' => array(
+							TagsModule::POST_META_CATEGORY,
+							TagsModule::URL_CATEGORY,
+						),
+					),
+					'default'     => $default_bunny,
+					'label_block' => true,
+					'condition'   => array(
+						'video_type' => 'bunny',
+					),
+				)
+			);
+
+			$this->add_control(
+				'bunny_link_doc',
+				array(
+					'type'            => Controls_Manager::RAW_HTML,
+					'raw'             => sprintf( __( '<b>Note:</b> Use the Bunny.net embed iframe URL format.</br></br><b>Valid:</b>&nbsp;https://iframe.mediadelivery.net/play/libraryId/videoId</br><b>Example:</b>&nbsp;https://iframe.mediadelivery.net/play/432016/13530e19-ff52-4f20-a422-0075cccd73d4', 'uael' ) ),
+					'content_classes' => 'uael-editor-doc',
+					'condition'       => array(
+						'video_type' => 'bunny',
+					),
+					'separator'       => 'none',
+				)
+			);
+
+			$this->add_control(
+				'bunny_cdn_prefix',
+				array(
+					'label'       => __( 'Bunny CDN Prefix', 'uael' ),
+					'type'        => \Elementor\Controls_Manager::TEXT,
+					'placeholder' => 'vz-f9672ed3-d10',
+					'default'     => 'vz-f9672ed3-d10', // Default value, can be changed by user.
+					'condition'   => array(
+						'video_type' => 'bunny',
+					),
+				)
+			);
+
+			$this->add_control(
+				'bunny_cdn_doc',
+				array(
+					'type'            => Controls_Manager::RAW_HTML,
+					'raw'             => sprintf( __( '<b>Note:</b> This is required for default thumbnail to load, found in your Bunny.net Stream library delivery URL before .b-cdn.net or navigate to "Your Video Library >> API >> Pullzone" <br> Please check if the “Block direct URL file access” option is enabled. If it is, try disabling it', 'uael' ) ),
+					'content_classes' => 'uael-editor-doc',
+					'condition'       => array(
+						'video_type' => 'bunny',
+					),
+					'separator'       => 'none',
+				)
+			);
+
 			$this->add_control(
 				'start',
 				array(
@@ -325,7 +389,7 @@ class Video extends Common_Widget {
 					),
 					'description' => __( 'Specify a start time (in seconds)', 'uael' ),
 					'condition'   => array(
-						'video_type' => array( 'youtube', 'vimeo', 'hosted' ),
+						'video_type' => array( 'youtube', 'vimeo', 'bunny', 'hosted' ),
 					),
 				)
 			);
@@ -376,8 +440,11 @@ class Video extends Common_Widget {
 			$this->add_control(
 				'lightbox',
 				array(
-					'label' => __( 'Lightbox', 'uael' ),
-					'type'  => Controls_Manager::SWITCHER,
+					'label'     => __( 'Lightbox', 'uael' ),
+					'type'      => Controls_Manager::SWITCHER,
+					'condition' => array(
+						'video_type!' => 'bunny',
+					),
 				)
 			);
 
@@ -601,6 +668,42 @@ class Video extends Common_Widget {
 				)
 			);
 
+			// Bunny.net.
+			$this->add_control(
+				'bunny_autoplay',
+				array(
+					'label'     => __( 'Autoplay', 'uael' ),
+					'type'      => Controls_Manager::SWITCHER,
+					'condition' => array(
+						'video_type' => 'bunny',
+					),
+				)
+			);
+
+			$this->add_control(
+				'bunny_loop',
+				array(
+					'label'     => __( 'Loop', 'uael' ),
+					'type'      => Controls_Manager::SWITCHER,
+					'condition' => array(
+						'video_type' => 'bunny',
+					),
+				)
+			);
+
+
+			$this->add_control(
+				'bunny_controls_note',
+				array(
+					'type'            => Controls_Manager::RAW_HTML,
+					'raw'             => __( '<b>Note:</b> Bunny.net does not support hiding player controls via URL parameters. Controls are managed globally in your Bunny Stream library settings.', 'uael' ),
+					'content_classes' => 'uael-editor-doc',
+					'condition'       => array(
+						'video_type' => 'bunny',
+					),
+				)
+			);
+
 			// Hosted.
 			$this->add_control(
 				'autoplay',
@@ -656,7 +759,8 @@ class Video extends Common_Widget {
 					'type'            => Controls_Manager::RAW_HTML,
 					'content_classes' => 'elementor-descriptor',
 					'condition'       => array(
-						'lightbox' => 'yes',
+						'lightbox'    => 'yes',
+						'video_type!' => 'bunny',
 					),
 				)
 			);
@@ -2028,7 +2132,11 @@ class Video extends Common_Widget {
 		if ( 'yes' === $settings['show_image_overlay'] ) {
 
 			$thumb = Group_Control_Image_Size::get_attachment_image_src( $settings['image_overlay']['id'], 'image_overlay', $settings );
-
+			
+			// Fallback if Group_Control_Image_Size returns empty - use direct URL.
+			if ( empty( $thumb ) && isset( $settings['image_overlay']['url'] ) ) {
+				$thumb = $settings['image_overlay']['url'];
+			}       
 		} else {
 
 			if ( 'youtube' === $settings['video_type'] ) {
@@ -2050,6 +2158,23 @@ class Video extends Common_Widget {
 			} elseif ( 'wistia' === $settings['video_type'] ) {
 				$url   = $settings['wistia_link'];
 				$thumb = 'https://embed-ssl.wistia.com/deliveries/' . $this->getStringBetween( $url, 'deliveries/', '?' );
+			} elseif ( 'bunny' === $settings['video_type'] ) {
+				$bunny_url = $settings['bunny_link'];
+			
+				if ( preg_match( '/\/play\/([^\/]+)\/([^\/\?]+)/', $bunny_url, $matches ) ) {
+					$video_id = $matches[2];
+			
+					// Get the user's CDN prefix from settings.
+					$cdn_prefix = ! empty( $settings['bunny_cdn_prefix'] ) ? $settings['bunny_cdn_prefix'] : '';
+			
+					// Custom filter first.
+					$thumb = apply_filters( 'uael_bunny_thumbnail_url', '', $cdn_prefix, $video_id, $bunny_url );
+			
+					if ( empty( $thumb ) && $cdn_prefix ) {
+						// Use the b-cdn.net pattern with user-supplied prefix.
+						$thumb = 'https://' . $cdn_prefix . '.b-cdn.net/' . $video_id . '/thumbnail.jpg';
+					}
+				}
 			}
 		}
 		return $thumb;
@@ -2081,6 +2206,27 @@ class Video extends Common_Widget {
 
 			$id = $this->getStringBetween( $url, 'wvideo=', '"' );
 
+		} elseif ( 'bunny' === $settings['video_type'] ) {
+
+			if ( preg_match( '/\/embed\/([^\/]+)\/([^\/\?]+)/', $url, $matches ) ) {
+				$library_id = $matches[1];
+				$video_id   = $matches[2];
+
+				if ( 'libraryId' !== $library_id && 'videoId' !== $video_id && is_numeric( $library_id ) ) {
+					$id = $library_id . '/' . $video_id;
+				}
+			} elseif ( preg_match( '/\/play\/([^\/]+)\/([^\/\?]+)/', $url, $matches ) ) {
+				$library_id = $matches[1];
+				$video_id   = $matches[2];
+
+				if ( 'libraryId' !== $library_id && 'videoId' !== $video_id && is_numeric( $library_id ) ) {
+					$id = $library_id . '/' . $video_id;
+				}
+			}
+			
+			if ( empty( $id ) ) {
+				$id = 'bunny-video';
+			}       
 		}
 
 		return $id;
@@ -2132,13 +2278,35 @@ class Video extends Common_Widget {
 
 			$url = 'https://fast.wistia.net/embed/iframe/';
 
+		} elseif ( 'bunny' === $settings['video_type'] ) {
+
+			// For Bunny.net, construct URL from library ID and video ID.
+			if ( ! empty( $id ) && strpos( $id, '/' ) !== false ) {
+				// ID format is "libraryId/videoId".
+				$url = 'https://iframe.mediadelivery.net/embed/' . $id;
+			} else {
+				// Fallback: use the original link but clean it.
+				$url = $settings['bunny_link'];
+				// Convert /play/ URLs to /embed/ format if needed.
+				$url = str_replace( '/play/', '/embed/', $url );
+				// Remove any existing parameters from the original URL.
+				$url = strtok( $url, '?' );
+			}
+			
+			// Add the parameters.
+			if ( ! empty( $params ) ) {
+				$url = add_query_arg( $params, $url );
+			}
+			return $url;
+
 		}
 
 		$url = add_query_arg( $params, $url . $id );
 
-		$url .= ( empty( $params ) ) ? '?' : '&';
-
-		$url .= 'autoplay=1';
+		// Don't add extra autoplay parameter for Bunny.net as it's already handled.
+		if ( 'bunny' !== $settings['video_type'] ) {
+			$url .= ( empty( $params ) ) ? '?' : '&';
+		}
 
 		if ( 'vimeo' === $settings['video_type'] && '' !== $settings['start'] ) {
 
@@ -2284,6 +2452,10 @@ class Video extends Common_Widget {
 				$autoplay = ( 'yes' === $settings['wistia_autoplay'] ) ? '1' : '0';
 				break;
 
+			case 'bunny':
+				$autoplay = ( 'yes' === $settings['bunny_autoplay'] ) ? '1' : '0';
+				break;
+
 			case 'hosted':
 				$autoplay = ( 'yes' === $settings['autoplay'] ) ? '1' : '0';
 				break;
@@ -2347,6 +2519,12 @@ class Video extends Common_Widget {
 					$this->add_render_attribute( 'video-play', 'class', 'uael-video__vimeo-play' );
 
 					$html = '<button class="uael-video-wistia-play w-big-play-button w-css-reset-button-important w-vulcan-v2-button"><svg x="0px" y="0px" viewBox="0 0 125 80" enable-background="new 0 0 125 80" focusable="false" alt="" style="fill: rgb(255, 255, 255); height: 100%; left: 0px; stroke-width: 0px; top: 0px; width: 100%;"><rect fill-rule="evenodd" clip-rule="evenodd" fill="none" width="125" height="80"></rect><polygon fill-rule="evenodd" clip-rule="evenodd" fill="#FFFFFF" points="53,22 53,58 79,40"></polygon></svg></button>';
+					break;
+
+				case 'bunny':
+					$this->add_render_attribute( 'video-play', 'class', 'uael-video__bunny-play' );
+
+					$html = '<svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" class="uael-bunny-icon-bg" x="0px" y="0px" width="100%" height="100%" viewBox="0 14.375 95 66.25" enable-background="new 0 14.375 95 66.25" xml:space="preserve" fill="rgba(23,34,35,.75)"><path d="M12.5,14.375c-6.903,0-12.5,5.597-12.5,12.5v41.25c0,6.902,5.597,12.5,12.5,12.5h70c6.903,0,12.5-5.598,12.5-12.5v-41.25 c0-6.903-5.597-12.5-12.5-12.5H12.5z"/><polygon fill="#FFFFFF" points="39.992,64.299 39.992,30.701 62.075,47.5 "/></svg>';
 					break;
 
 				case 'hosted':
@@ -2417,6 +2595,13 @@ class Video extends Common_Widget {
 				$lightbox_src = $video_url;
 			} else {
 				$lightbox_src = $src;
+				if ( 'bunny' === $settings['video_type'] ) {
+					// Parse existing URL and add/update autoplay parameter.
+					$parsed_url = wp_parse_url( $lightbox_src );
+					parse_str( isset( $parsed_url['query'] ) ? $parsed_url['query'] : '', $query_params );
+					$query_params['autoplay'] = '1';
+					$lightbox_src             = $parsed_url['scheme'] . '://' . $parsed_url['host'] . $parsed_url['path'] . '?' . http_build_query( $query_params );
+				}
 			}
 
 			$lightbox_options = array(
@@ -2566,6 +2751,10 @@ class Video extends Common_Widget {
 		}
 
 		if ( '' === $settings['hosted_link'] && 'hosted' === $settings['video_type'] ) {
+			return '';
+		}
+
+		if ( '' === $settings['bunny_link'] && 'bunny' === $settings['video_type'] ) {
 			return '';
 		}
 
@@ -2766,6 +2955,36 @@ class Video extends Common_Widget {
 			}
 
 			$params['videoFoam'] = 'true';
+		}
+
+		if ( 'bunny' === $settings['video_type'] ) {
+
+			// Based on bunny.net documentation: supports autoplay, loop with true/false values.
+			$bunny_options = array( 'autoplay', 'loop' );
+
+			foreach ( $bunny_options as $option ) {
+
+				if ( 'autoplay' === $option ) {
+					if ( 'yes' === $settings['bunny_autoplay'] ) {
+						$params[ $option ] = '1';
+					}
+					continue;
+				}
+
+				// Bunny.net uses true/false values, not 1/0.
+				if ( 'yes' === $settings[ 'bunny_' . $option ] ) {
+					$params[ $option ] = 'true';
+				} else {
+					$params[ $option ] = 'false';
+				}
+			}
+			
+			// Add start time parameter if it exists.
+			// Bunny.net uses 't' parameter for start time, no end time support.
+			if ( ! empty( $settings['start'] ) ) {
+				$params['t'] = $settings['start'] . 's';
+			}
+			// Note: Bunny.net does not support end time parameter.	
 		}
 
 		return $params;

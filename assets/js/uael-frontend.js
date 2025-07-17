@@ -188,6 +188,25 @@
 		if ( 'undefined' == typeof $scope )
 			return;
 
+		const inputs = $scope.find(".wpcf7-checkbox input[type='checkbox'], .wpcf7-acceptance input[type='checkbox'], .wpcf7-radio input[type='radio']");
+
+			inputs.each(function() {
+				const input = $(this);
+
+				input.on("focus", function() {
+					const label = input.closest(".wpcf7-list-item").find(".wpcf7-list-item-label").first();
+					if (label.length) {
+						label.addClass("uael-cf7-highlight-label");
+					}
+				});
+
+				input.on("blur", function() {
+					const label = input.closest(".wpcf7-list-item").find(".wpcf7-list-item-label").first();
+					if (label.length) {
+						label.removeClass("uael-cf7-highlight-label");
+					}
+				});
+			});
 		var	cf7SelectFields = $scope.find('select:not([multiple])'),
 			cf7Loader = $scope.find('span.ajax-loader');
 
@@ -1484,7 +1503,7 @@
 
 	        if ( 0 == selector.find( 'iframe' ).length ) {
 
-				if( outer_wrap.hasClass( 'uael-video-type-vimeo' ) || outer_wrap.hasClass( 'uael-video-type-youtube' ) || outer_wrap.hasClass( 'uael-video-type-wistia' ) ){
+				if( outer_wrap.hasClass( 'uael-video-type-vimeo' ) || outer_wrap.hasClass( 'uael-video-type-youtube' ) || outer_wrap.hasClass( 'uael-video-type-wistia' ) || outer_wrap.hasClass( 'uael-video-type-bunny' ) ){
 					iframe.attr( 'src', vurl );
 				}
 				iframe.attr( 'frameborder', '0' );
@@ -1796,6 +1815,19 @@
 		var username = $scope.find( '.uael-login-form-username' );
 		var password = $scope.find( '.uael-login-form-password' );
 		var rememberme = $scope.find( '.uael-login-form-remember' );
+
+		if(rememberme.length){
+
+			rememberme.on("focus", function() {
+				const label = $scope.find("span.uael-login-form-remember");
+				label.addClass("uael-login-form-highlight-label");
+			});
+
+			rememberme.on("blur", function() {
+				const label = $scope.find("span.uael-login-form-remember");
+				label.removeClass("uael-login-form-highlight-label");
+			});
+		}
 
 		var facebook_button = $scope.find( '.uaelFacebookContentWrapper' );
 		var facebook_text = facebook_button.find('.uael-facebook-text');
@@ -2219,6 +2251,47 @@
 			var	gfSelectField = $( this );
 			gfSelectField.wrap( "<span class='uael-ff-select-custom'></span>" );
 		});
+
+		const inputs = $scope.find(".ff-el-form-check-label input[type='checkbox'], .ff-el-form-check-label input[type='radio']");
+			inputs.each(function() {
+				const input = $(this);
+
+				input.on("focus", function() {
+					input.addClass("uael-ff-highlight-label");
+				});
+
+				input.on("blur", function() {
+					input.removeClass("uael-ff-highlight-label");
+				});
+			});
+	}
+
+	/**
+	 * Function for WPF Styler select field.
+	 *
+	 */
+	var WidgetUAELWPFStylerHandler = function( $scope, $ ) {
+		if ( 'undefined' == typeof $scope ){
+			return;
+		}
+		const inputs = $scope.find(".wpforms-field input[type='checkbox'], .wpforms-field input[type='radio']");
+			inputs.each(function() {
+				const input = $(this);
+
+				input.on("focus", function() {
+					const label = $scope.find(`label[for="${this.id}"]`);
+					if (label.length) {
+						label.addClass("uael-wpf-highlight-label");
+					}
+				});
+
+				input.on("blur", function() {
+					const label = $scope.find(`label[for="${this.id}"]`);
+					if (label.length) {
+						label.removeClass("uael-wpf-highlight-label");
+					}
+				});
+			});
 	}
 
 	/**
@@ -2390,6 +2463,8 @@
 		elementorFrontend.hooks.addAction( 'frontend/element_ready/uael-faq.default', WidgetUAELFAQHandler );
 
 		elementorFrontend.hooks.addAction( 'frontend/element_ready/uael-ff-styler.default', WidgetUAELFFStylerHandler );
+
+		elementorFrontend.hooks.addAction( 'frontend/element_ready/uael-wpf-styler.default', WidgetUAELWPFStylerHandler );
 
 		elementorFrontend.hooks.addAction( 'frontend/element_ready/uael-price-table.default', WidgetUAELPriceTableHandler );
 

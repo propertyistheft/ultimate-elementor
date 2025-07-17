@@ -79,16 +79,23 @@ class UAEL_Woo_Helper {
 	 * Product Flip Image.
 	 *
 	 * @since 0.0.1
+	 * @param string $image_size The image size to use for the flip image.
 	 */
-	public function woo_shop_product_flip_image() {
+	public function woo_shop_product_flip_image( $image_size ) {
 
 		global $product;
 
 		$attachment_ids = $product->get_gallery_image_ids();
 
 		if ( $attachment_ids ) {
-
-			$image_size  = apply_filters( 'single_product_archive_thumbnail_size', 'shop_catalog' );
+			// Get the selected image resolution from settings.
+			$image_size = isset( $image_size ) ? $image_size : 'woocommerce_thumbnail';
+			
+			// Only apply filter if using the default size.
+			if ( 'woocommerce_thumbnail' === $image_size ) {
+				$image_size = apply_filters( 'single_product_archive_thumbnail_size', 'woocommerce_thumbnail' );
+			}
+			
 			$swap_images = apply_filters( 'uael_woocommerce_product_flip_image', wp_get_attachment_image( reset( $attachment_ids ), $image_size, false, array( 'class' => 'uael-show-on-hover' ) ) );
 
 			echo wp_kses_post( $swap_images );

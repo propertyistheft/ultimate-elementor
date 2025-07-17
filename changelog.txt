@@ -1,3 +1,13 @@
+Version 1.39.9 - Thursday, 17th July 2025
+- Improvement: Modal Popup - Added new control, On Scroll Percentage based trigger.
+- Improvement: Modal Popup - Added new control, On Scroll to Element based trigger.
+- Improvement: Video Widget - Added support for Bunney.net stream support.
+- Improvement: Video Gallery - Added support for Bunney.net stream support.
+- Improvement: Woo Products - Introduced a setting for Image Resolution to allow loading images in the desired size for better performance and control.
+- Improvement: Optimize performance with the new “Deactivate Unused Widgets” option.
+- Improvement: Compatibility with latest Elementor and Elementor Pro 3.30 version.
+- Fix: Form Styler - Resolved Accessibility Issues in Form styler Widgtes.
+
 Version 1.39.8 - Friday, 13th June 2025
 - Improvement: Optimized codebase and improved code quality.
 

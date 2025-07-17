@@ -69,23 +69,23 @@ msgstr ""
 
 #: src/Components/Dashboard/OnboardingWidgets.jsx:149
 #: src/Components/Settings/MyAccount.jsx:154
-#: src/Components/Widgets/Features/FeatureWidgets.jsx:165
+#: src/Components/Widgets/Features/FeatureWidgets.jsx:214
 msgid "Activating..."
 msgstr ""
 
 #: src/Components/Dashboard/OnboardingWidgets.jsx:149
-#: src/Components/Widgets/Features/FeatureWidgets.jsx:165
+#: src/Components/Widgets/Features/FeatureWidgets.jsx:214
 msgid "Activate All"
 msgstr ""
 
 #: src/Components/Dashboard/OnboardingWidgets.jsx:161
 #: src/Components/Settings/MyAccount.jsx:154
-#: src/Components/Widgets/Features/FeatureWidgets.jsx:175
+#: src/Components/Widgets/Features/FeatureWidgets.jsx:269
 msgid "Deactivating..."
 msgstr ""
 
 #: src/Components/Dashboard/OnboardingWidgets.jsx:161
-#: src/Components/Widgets/Features/FeatureWidgets.jsx:175
+#: src/Components/Widgets/Features/FeatureWidgets.jsx:269
 msgid "Deactivate All"
 msgstr ""
 
@@ -1009,12 +1009,28 @@ msgstr ""
 msgid " to know more."
 msgstr ""
 
-#: src/Components/Widgets/Features/FeatureWidgets.jsx:131
+#: src/Components/Widgets/Features/FeatureWidgets.jsx:165
 msgid "Widgets / Features"
 msgstr ""
 
-#: src/Components/Widgets/Features/FeatureWidgets.jsx:143
+#: src/Components/Widgets/Features/FeatureWidgets.jsx:177
 msgid "Search..."
+msgstr ""
+
+#: src/Components/Widgets/Features/FeatureWidgets.jsx:195
+msgid "Click here to activate all widgets & extensions."
+msgstr ""
+
+#: src/Components/Widgets/Features/FeatureWidgets.jsx:221
+msgid "Click here to deactivate all unused widgets, except Extensions."
+msgstr ""
+
+#: src/Components/Widgets/Features/FeatureWidgets.jsx:240
+msgid "Deactivate Unused"
+msgstr ""
+
+#: src/Components/Widgets/Features/FeatureWidgets.jsx:247
+msgid "Deactivate All "
 msgstr ""
 
 #: src/Components/Widgets/Features/FeatureWidgetsOnboarding.jsx:155

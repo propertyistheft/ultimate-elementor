@@ -314,6 +314,16 @@
 		var password_field = $scope.find( 'input[type=password]' );
 		var widget_wrapper = $scope.find( '.uael-registration-form' );
 		var form_wrapper = widget_wrapper.find( '.elementor-form' );
+		var acceptancecheck = $scope.find( 'input[name=uae-terms-checkbox]' );
+		acceptancecheck.on("focus", function() {
+			const label = $scope.find("span.checkbox-label");
+			label.addClass("uael-rf-highlight-label");
+		});
+
+		acceptancecheck.on("blur", function() {
+			const label = $scope.find("span.checkbox-label");
+			label.removeClass("uael-rf-highlight-label");
+		});		
 
 		if( 'yes' == widget_wrapper.data( 'strength-check' ) ) {
 			password_field.on( 'keyup', function( e ) {

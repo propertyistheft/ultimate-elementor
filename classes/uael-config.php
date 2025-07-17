@@ -540,7 +540,7 @@ class UAEL_Config {
 					'slug'        => 'uael-video',
 					'title'       => __( 'Video', 'uael' ),
 					'description' => __( 'Embed optimized videos with customizable thumbnails and play buttons.', 'uael' ),
-					'keywords'    => array( 'uael', 'video', 'youtube', 'vimeo', 'wistia', 'sticky', 'drag', 'float', 'subscribe' ),
+					'keywords'    => array( 'uael', 'video', 'youtube', 'vimeo', 'wistia', 'bunny', 'sticky', 'drag', 'float', 'subscribe' ),
 					'icon'        => 'uael-icon-video',
 					'title_url'   => '#',
 					'default'     => true,
@@ -746,6 +746,7 @@ class UAEL_Config {
 					'is_pro'      => true,
 					'demo_url'    => UAEL_DOMAIN . 'widgets/presets/',
 				),
+
 			);
 		}
 

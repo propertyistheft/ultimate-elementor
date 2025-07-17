@@ -846,22 +846,89 @@ class Woo_Products extends Common_Widget {
 			)
 		);
 
-			$this->add_control(
-				'products_hover_style',
-				array(
-					'label'   => __( 'Image Hover Style', 'uael' ),
-					'type'    => Controls_Manager::SELECT,
-					'default' => '',
-					'options' => array(
-						''     => __( 'None', 'uael' ),
-						'swap' => __( 'Swap Images', 'uael' ),
-						'zoom' => __( 'Zoom Image', 'uael' ),
-					),
-				)
-			);
+		$this->add_control(
+			'products_hover_style',
+			array(
+				'label'   => __( 'Image Hover Style', 'uael' ),
+				'type'    => Controls_Manager::SELECT,
+				'default' => '',
+				'options' => array(
+					''     => __( 'None', 'uael' ),
+					'swap' => __( 'Swap Images', 'uael' ),
+					'zoom' => __( 'Zoom Image', 'uael' ),
+				),
+			)
+		);
 
+		$this->add_control(
+			'image_resolution',
+			array(
+				'label'     => __( 'Image Resolution', 'uael' ),
+				'type'      => Controls_Manager::SELECT,
+				'default'   => 'woocommerce_thumbnail',
+				'options'   => self::uael_get_image_sizes_options(),
+				'separator' => 'before',
+			)
+		);
 		$this->end_controls_section();
 	}
+
+	/**
+	 * Get Image size options.
+	 *
+	 * @since 1.35.0
+	 * @access public
+	 */
+	public function uael_get_image_sizes_options() {
+		global $_wp_additional_image_sizes;
+		$sizes = array();
+		
+		// VIP-compatible approach to get image sizes without using get_intermediate_image_sizes().
+		$default_sizes     = array( 'thumbnail', 'medium', 'medium_large', 'large' );
+		$woocommerce_sizes = array( 'woocommerce_thumbnail', 'woocommerce_single', 'woocommerce_gallery_thumbnail' );
+		
+		// Combine default WordPress sizes with WooCommerce sizes.
+		$image_size = array_merge( $default_sizes, $woocommerce_sizes );
+		
+		// Add any custom sizes from $_wp_additional_image_sizes global.
+		if ( is_array( $_wp_additional_image_sizes ) && ! empty( $_wp_additional_image_sizes ) ) {
+			$image_size = array_merge( $image_size, array_keys( $_wp_additional_image_sizes ) );
+		}
+		
+		// Get default sizes.
+		foreach ( $image_size as $size ) {
+			$size_data = array(
+				'width'  => '',
+				'height' => '',
+				'crop'   => false,
+			);
+	
+			// Get the width/height/crop settings from the global variable if available.
+			if ( isset( $_wp_additional_image_sizes[ $size ] ) ) {
+				$size_data = array(
+					'width'  => $_wp_additional_image_sizes[ $size ]['width'],
+					'height' => $_wp_additional_image_sizes[ $size ]['height'],
+					'crop'   => $_wp_additional_image_sizes[ $size ]['crop'],
+				);
+			} else {
+				// Fallback for standard sizes.
+				$size_data = array(
+					'width'  => get_option( "{$size}_size_w" ),
+					'height' => get_option( "{$size}_size_h" ),
+					'crop'   => get_option( "{$size}_crop" ),
+				);
+			}
+	
+			$label          = ucfirst( $size ) . " ({$size_data['width']}x{$size_data['height']})";
+			$sizes[ $size ] = $label;
+		}
+	
+		// Add 'Full' size.
+		$sizes['full'] = __( 'Full', 'uael' );
+	
+		return $sizes;
+	}
+	
 
 	/**
 	 * Register Pagination Controls.

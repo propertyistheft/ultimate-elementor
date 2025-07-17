@@ -147,6 +147,8 @@ class Video_Gallery extends Common_Widget {
 
 			$youtube = apply_filters( 'uael_video_gallery_youtube_link', 'https://www.youtube.com/watch?v=HJRzUQMhJMQ' );
 
+			$bunny = apply_filters( 'uael_video_gallery_bunny_link', 'https://iframe.mediadelivery.net/play/432016/13530e19-ff52-4f20-a422-0075cccd73d4' );
+
 			$wistia = apply_filters( 'uael_video_gallery_wistia_link', '<p><a href="https://pratikc.wistia.com/medias/gyvkfithw2?wvideo=gyvkfithw2"><img src="https://embedwistia-a.akamaihd.net/deliveries/53eec5fa72737e60aa36731b57b607a7c0636f52.webp?image_play_button_size=2x&amp;image_crop_resized=960x540&amp;image_play_button=1&amp;image_play_button_color=54bbffe0" width="400" height="225" style="width: 400px; height: 225px;"></a></p><p><a href="https://pratikc.wistia.com/medias/gyvkfithw2?wvideo=gyvkfithw2">Video Placeholder - Brainstorm Force - pratikc</a></p>' );
 
 			$repeater = new Repeater();
@@ -166,6 +168,7 @@ class Video_Gallery extends Common_Widget {
 						'youtube' => __( 'YouTube Video', 'uael' ),
 						'vimeo'   => __( 'Vimeo Video', 'uael' ),
 						'wistia'  => __( 'Wistia Video', 'uael' ),
+						'bunny'   => __( 'Bunny.net Video', 'uael' ),
 						'hosted'  => __( 'Self Hosted', 'uael' ),
 					),
 
@@ -291,6 +294,65 @@ class Video_Gallery extends Common_Widget {
 					'condition'   => array(
 						'type' => 'wistia',
 					),
+				)
+			);
+
+			$repeater->add_control(
+				'bunny_url',
+				array(
+					'label'       => __( 'Link', 'uael' ),
+					'type'        => Controls_Manager::TEXT,
+					'dynamic'     => array(
+						'active'     => true,
+						'categories' => array(
+							TagsModule::POST_META_CATEGORY,
+							TagsModule::URL_CATEGORY,
+						),
+					),
+					'default'     => $bunny,
+					'label_block' => true,
+					'condition'   => array(
+						'type' => 'bunny',
+					),
+				)
+			);
+
+			$repeater->add_control(
+				'bunny_url_doc',
+				array(
+					'type'            => Controls_Manager::RAW_HTML,
+					'raw'             => sprintf( __( '<b>Note:</b> Use the Bunny.net embed iframe URL format.</br></br><b>Valid:</b>&nbsp;https://iframe.mediadelivery.net/play/libraryId/videoId</br><b>Example:</b>&nbsp;https://iframe.mediadelivery.net/play/432016/13530e19-ff52-4f20-a422-0075cccd73d4', 'uael' ) ),
+					'content_classes' => 'uael-editor-doc',
+					'condition'       => array(
+						'type' => 'bunny',
+					),
+					'separator'       => 'none',
+				)
+			);
+
+			$repeater->add_control(
+				'bunny_cdn_prefix',
+				array(
+					'label'       => __( 'Bunny CDN Prefix', 'uael' ),
+					'type'        => \Elementor\Controls_Manager::TEXT,
+					'placeholder' => 'vz-f9672ed3-d10',
+					'default'     => 'vz-f9672ed3-d10', // Default value, can be changed by user.
+					'condition'   => array(
+						'type' => 'bunny',
+					),
+				)
+			);
+
+			$repeater->add_control(
+				'bunny_cdn_doc',
+				array(
+					'type'            => Controls_Manager::RAW_HTML,
+					'raw'             => sprintf( __( '<b>Note:</b> This is required for default thumbnail to load, found in your Bunny.net Stream library delivery URL before .b-cdn.net or navigate to "Your Video Library >> API >> Pullzone" <br> Please check if the “Block direct URL file access” option is enabled. If it is, try disabling it', 'uael' ) ),
+					'content_classes' => 'uael-editor-doc',
+					'condition'       => array(
+						'type' => 'bunny',
+					),
+					'separator'       => 'none',
 				)
 			);
 
@@ -515,6 +577,18 @@ class Video_Gallery extends Common_Widget {
 							'schema_thumbnail'   => '',
 							'schema_upload_date' => gmdate( 'Y-m-d H:i' ),
 							'tags'               => 'Wistia',
+							'placeholder_image'  => '',
+						),
+						array(
+							'type'               => 'bunny',
+							'bunny_url'          => $bunny,
+							'bunny_cdn_prefix'   => 'vz-f9672ed3-d10',
+							'title'              => __( 'Seventh Video', 'uael' ),
+							'schema_title'       => __( 'Title of the video.', 'uael' ),
+							'schema_description' => __( 'Description of the video.', 'uael' ),
+							'schema_thumbnail'   => '',
+							'schema_upload_date' => gmdate( 'Y-m-d H:i' ),
+							'tags'               => 'Bunny',
 							'placeholder_image'  => '',
 						),
 
@@ -2207,17 +2281,21 @@ class Video_Gallery extends Common_Widget {
 	 * @access public
 	 */
 	public function get_tag_class( $item ) {
-
 		$tags = explode( ',', $item['tags'] );
 		$tags = array_map( 'trim', $tags );
-
+	
 		$tags_array = array();
-
+	
 		foreach ( $tags as $key => $value ) {
+			// Ensure Bunny.net videos are handled properly.
+			if ( 'bunny' === $item['type'] && empty( $value ) ) {
+				$value = 'Bunny.net'; // Default tag for Bunny.net videos.
+			}
+	
 			$arr_value                                = 'filter-' . $value;
 			$tags_array[ $this->clean( $arr_value ) ] = $value;
 		}
-
+	
 		return $tags_array;
 	}
 
@@ -2236,6 +2314,8 @@ class Video_Gallery extends Common_Widget {
 
 		if ( 'wistia' === $item['type'] ) {
 			$video_url = $item['wistia_url'];
+		} elseif ( 'bunny' === $item['type'] ) {
+			$video_url = $item['bunny_url'];
 		} else {
 			$video_url = $item['video_url'];
 		}
@@ -2250,6 +2330,27 @@ class Video_Gallery extends Common_Widget {
 			}
 		} elseif ( 'wistia' === $item['type'] ) {
 			$vid_id = $this->getStringBetween( $video_url, 'wvideo=', '"' );
+		} elseif ( 'bunny' === $item['type'] ) {
+
+			if ( preg_match( '/\/embed\/([^\/]+)\/([^\/\?]+)/', $video_url, $matches ) ) {
+				$library_id = $matches[1];
+				$video_id   = $matches[2];
+
+				if ( 'libraryId' !== $library_id && 'videoId' !== $video_id && is_numeric( $library_id ) ) {
+					$vid_id = $library_id . '/' . $video_id;
+				}
+			} elseif ( preg_match( '/\/play\/([^\/]+)\/([^\/\?]+)/', $video_url, $matches ) ) {
+				$library_id = $matches[1];
+				$video_id   = $matches[2];
+
+				if ( 'libraryId' !== $library_id && 'videoId' !== $video_id && is_numeric( $library_id ) ) {
+					$vid_id = $library_id . '/' . $video_id;
+				}
+			}
+			
+			if ( empty( $vid_id ) ) {
+				$vid_id = 'bunny-video';
+			}       
 		}
 
 		if ( ( 'yes' === $item['custom_placeholder'] && 'hosted' !== $item['type'] ) || 'hosted' === $item['type'] ) {
@@ -2278,6 +2379,11 @@ class Video_Gallery extends Common_Widget {
 				}
 			} elseif ( 'wistia' === $item['type'] ) {
 				$url = 'https://embed-ssl.wistia.com/deliveries/' . $this->getStringBetween( $video_url, 'deliveries/', '?' );
+			} elseif ( 'bunny' === $item['type'] ) {
+				$cdn_prefix   = ! empty( $item['bunny_cdn_prefix'] ) ? $item['bunny_cdn_prefix'] : '';
+				$vid_id_parts = explode( '/', $vid_id );
+				$vid_id       = isset( $vid_id_parts[1] ) ? $vid_id_parts[1] : $vid_id;
+				$url          = 'https://' . $cdn_prefix . '.b-cdn.net/' . $vid_id . '/thumbnail.jpg';
 			}
 		}
 
@@ -2377,6 +2483,12 @@ class Video_Gallery extends Common_Widget {
 
 			$video_url = $item['video_url'];
 
+			if ( 'bunny' === $item['type'] ) {
+				$video_url = $item['bunny_url'];
+				$video_url = str_replace( '/play/', '/embed/', $video_url );
+				$video_url = strtok( $video_url, '?' );
+			}
+
 			if ( 'hosted' === $item['type'] ) {
 				if ( ! empty( $item['insert_url'] ) ) {
 					$video_url = $item['external_url']['url'];
@@ -2423,7 +2535,7 @@ class Video_Gallery extends Common_Widget {
 				)
 			);
 
-			if ( 'wistia' === $item['type'] ) {
+			if ( 'wistia' === $item['type'] || 'bunny' === $item['type'] ) {
 				$this->add_render_attribute(
 					'video-container-link' . $index,
 					array(
@@ -2460,7 +2572,22 @@ class Video_Gallery extends Common_Widget {
 						}
 
 						break;
-
+					
+					case 'bunny':
+						// For Bunny.net, construct URL from library ID and video ID.
+						if ( ! empty( $url['video_id'] ) && strpos( $url['video_id'], '/' ) !== false ) {
+								// ID format is "libraryId/videoId".
+								$vurl = 'https://iframe.mediadelivery.net/embed/' . $url['video_id'];
+						} else {
+								// Fallback: use the original link but clean it.
+								$vurl = $item['bunny_url'];
+								// Convert /play/ URLs to /embed/ format if needed.
+								$vurl = str_replace( '/play/', '/embed/', $vurl );
+								// Remove any existing parameters from the original URL.
+								$vurl = strtok( $vurl, '?' );
+						}
+						break;
+						
 					case 'wistia':
 					case 'hosted':
 						$vurl = $video_url . '?&autoplay=1';
