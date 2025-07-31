@@ -1049,7 +1049,7 @@ class Table_Of_Contents extends Common_Widget {
 					</div>
 				</div>
 				<div class="uael-toc-empty-note">
-					<span><?php echo esc_html__( 'Add a header to begin generating the table of contents', 'uael' ); ?></span>
+					<span><?php echo esc_html( apply_filters( 'uael_toc_empty_note_text', __( 'Add a header to begin generating the table of contents', 'uael' ) ) ); ?></span>
 				</div>
 			</div>
 			<?php if ( 'yes' === $settings['scroll_to_top'] ) { ?>
@@ -1147,7 +1147,7 @@ class Table_Of_Contents extends Common_Widget {
 				</div>
 
 				<div class="uael-toc-empty-note">
-					<span><?php echo esc_html__( 'Add a header to begin generating the table of contents', 'uael' ); ?></span>
+					<span><?php echo esc_html( apply_filters( 'uael_toc_empty_note_text', __( 'Add a header to begin generating the table of contents', 'uael' ) ) ); ?></span>
 				</div>
 
 			</div>

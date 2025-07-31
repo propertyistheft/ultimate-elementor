@@ -70,7 +70,7 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 			define( 'UAEL_BASE', plugin_basename( UAEL_FILE ) );
 			define( 'UAEL_DIR', plugin_dir_path( UAEL_FILE ) );
 			define( 'UAEL_URL', plugins_url( '/', UAEL_FILE ) );
-			define( 'UAEL_VER', '1.39.9' );
+			define( 'UAEL_VER', '1.40.0' );
 			define( 'UAEL_MODULES_DIR', UAEL_DIR . 'modules/' );
 			define( 'UAEL_MODULES_URL', UAEL_URL . 'modules/' );
 			define( 'UAEL_SLUG', 'uae' );
@@ -142,6 +142,10 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 			}
 			require_once UAEL_DIR . 'classes/class-uael-core-plugin.php';
 			require_once UAEL_DIR . 'includes/admin/settings-api.php';
+
+			// Register hooks for modal popup tracking.
+			add_action( 'wp_footer', array( $this, 'uael_global_page_view_tracking' ) );
+			add_action( 'elementor/widget/before_render_content', array( $this, 'uael_check_for_modal_popups' ) );
 		}
 		
 		/**
@@ -383,6 +387,113 @@ if ( ! class_exists( 'UAEL_Loader' ) ) {
 		 * Deactivation Reset
 		 */
 		public function deactivation_reset() {
+		}
+
+		/**
+		 * Global Page View Tracking for Modal Popup Feature
+		 * This function tracks page views globally and per page for modal popups.
+		 *
+		 * It uses localStorage to store the view counts and logs debug information if enabled.
+		 */
+		public function uael_global_page_view_tracking() {
+			// Only run on frontend, not in admin or during AJAX requests.
+			if ( is_admin() || wp_doing_ajax() || wp_doing_cron() ) {
+				return;
+			}
+			
+			// Check if any modal popup widgets exist on the site (to avoid unnecessary tracking).
+			$has_modal_popups = get_option( 'uael_has_modal_popups', false );
+			
+			// If we haven't checked yet or if there are modal popups, add the tracking script.
+			if ( false === $has_modal_popups || $has_modal_popups ) {
+				// Check if any popup on the site uses global tracking.
+				$has_global_tracking  = get_option( 'uael_has_global_tracking', false );
+				$has_session_tracking = get_option( 'uael_has_session_tracking', false );
+				?>
+				<script type="text/javascript">
+				(function() {
+					// Global page view and session tracking for UAEL Modal Popup feature
+					try {
+						// Session tracking: increment if this is a new session
+						<?php if ( $has_session_tracking ) : ?>
+						var activeSessionKey = 'uael_active_session';
+						var isActiveSession = sessionStorage.getItem(activeSessionKey);
+						if (null === isActiveSession) {
+							// This is a new session, increment the counter
+							var currentSessions = parseInt(localStorage.getItem('uael_sessions') || '0');
+							currentSessions++;
+							localStorage.setItem('uael_sessions', currentSessions.toString());
+							// Mark this session as active
+							sessionStorage.setItem(activeSessionKey, 'true');
+						}
+						<?php endif; ?>
+
+						// Check if any popup on this page uses current page tracking
+						var hasCurrentPageTracking = false;
+						var currentPagePopups = [];
+						// Check all modal popups on this page for current page tracking
+						if (typeof jQuery !== 'undefined') {
+							jQuery('.uael-modal-parent-wrapper').each(function() {
+								var scope = jQuery(this).data('page-views-scope');
+								var enabled = jQuery(this).data('page-views-enabled');
+								var popupId = jQuery(this).attr('id').replace('-overlay', '');	
+								if (enabled === 'yes' && scope === 'current') {
+									hasCurrentPageTracking = true;
+									currentPagePopups.push(popupId);
+								}
+							});
+						}
+						// Global tracking: ALWAYS increment if ANY popup on the site uses global tracking
+						<?php if ( $has_global_tracking ) : ?>
+						var currentViews = parseInt(localStorage.getItem('uael_page_views') || '0');
+						currentViews++;
+						localStorage.setItem('uael_page_views', currentViews.toString());
+						<?php endif; ?>
+						// Current page tracking: increment per-page counters
+						if (hasCurrentPageTracking && currentPagePopups.length > 0) {
+							var currentUrl = window.location.href;
+							var urlKey = 'uael_page_views_' + btoa(currentUrl).replace(/[^a-zA-Z0-9]/g, '').substring(0, 50);
+							var currentPageViews = parseInt(localStorage.getItem(urlKey) || '0');
+							currentPageViews++;
+							localStorage.setItem(urlKey, currentPageViews.toString());
+							// Store URL mapping for each popup
+							for (var i = 0; i < currentPagePopups.length; i++) {
+								var popupUrlKey = 'uael_popup_' + currentPagePopups[i] + '_url_key';
+								localStorage.setItem(popupUrlKey, urlKey);
+							}
+						}
+					} catch (e) {
+						// Silently fail if localStorage is not available
+					}
+				})();
+				</script>
+				<?php
+			}
+		}
+
+		/**
+		 * Optimize by checking if site has modal popup widgets (optimization)
+		 *
+		 * @param object $widget The widget object.
+		 */
+		public function uael_check_for_modal_popups( $widget ) {
+			if ( 'uael-modal-popup' === $widget->get_name() ) {
+				update_option( 'uael_has_modal_popups', true );
+				
+				// Check if this popup uses global tracking.
+				$settings           = $widget->get_settings_for_display();
+				$page_views_enabled = isset( $settings['enable_page_views'] ) ? $settings['enable_page_views'] : 'no';
+				$tracking_scope     = isset( $settings['page_views_scope'] ) ? $settings['page_views_scope'] : 'global';
+				$sessions_enabled   = isset( $settings['enable_sessions'] ) ? $settings['enable_sessions'] : 'no';
+				
+				if ( 'yes' === $page_views_enabled && 'global' === $tracking_scope ) {
+					update_option( 'uael_has_global_tracking', true );
+				}
+				
+				if ( 'yes' === $sessions_enabled ) {
+					update_option( 'uael_has_session_tracking', true );
+				}
+			}
 		}
 	}
 

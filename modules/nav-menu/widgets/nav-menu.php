@@ -2554,7 +2554,7 @@ class Nav_Menu extends Common_Widget {
 						<div id="uael-flyout-content-id-<?php echo esc_attr( $this->get_id() ); ?>" class="uael-side uael-flyout-<?php echo esc_attr( $settings['flyout_layout'] ); ?> uael-flyout-open" data-layout="<?php echo wp_kses_post( $settings['flyout_layout'] ); ?>" data-flyout-type="<?php echo wp_kses_post( $settings['flyout_type'] ); ?>">
 							<div class="uael-flyout-content push">
 								<?php if ( 'wordpress_menu' === $settings['menu_type'] ) { ?>
-									<nav <?php echo wp_kses_post( $this->get_render_attribute_string( 'uael-nav-menu' ) ); ?>><?php echo wp_kses_post( $menu_html ); ?></nav>
+									<nav <?php echo wp_kses_post( $this->get_render_attribute_string( 'uael-nav-menu' ) ); ?>><?php echo $menu_html; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If escaped breaking open in new tab ?></nav>
 									<?php
 								} else {
 									$this->get_custom_style();
@@ -2637,7 +2637,7 @@ class Nav_Menu extends Common_Widget {
 					<?php } ?>
 				</div>
 			<?php if ( 'wordpress_menu' === $settings['menu_type'] ) { ?>
-				<nav <?php echo wp_kses_post( $this->get_render_attribute_string( 'uael-nav-menu' ) ); ?>><?php echo wp_kses_post( $menu_html ); ?></nav>
+				<nav <?php echo wp_kses_post( $this->get_render_attribute_string( 'uael-nav-menu' ) ); ?>><?php echo $menu_html; //phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped -- If escaped breaking open in new tab ?></nav>
 			<?php } else { ?>
 					<?php $this->get_custom_style(); ?>
 			<?php } ?>

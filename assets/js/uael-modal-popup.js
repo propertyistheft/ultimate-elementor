@@ -111,16 +111,18 @@
 		 * Check all the end conditions to show modal popup
 		 *
 		 */
-		_canShow: function( popup_id ) {0
+		_canShow: function( popup_id ) {
 
 			var is_cookie = $( '.uamodal-' + popup_id ).data( 'cookies' );
 			var current_cookie = Cookies.get( 'uael-modal-popup-' + popup_id );
 			var display = true;
+			var blockReasons = [];
 
 			// Check if cookies settings are set
 			if ( 'undefined' !== typeof is_cookie && 'yes' === is_cookie ) {
 				if( 'undefined' !== typeof current_cookie && 'true' == current_cookie ) {
 					display = false;
+					blockReasons.push( 'Cookie already set' );
 				} else {
 					Cookies.remove( 'uael-modal-popup-' + popup_id );
 				}
@@ -128,14 +130,40 @@
 				Cookies.remove( 'uael-modal-popup-' + popup_id );
 			}
 
+			// Check page views condition
+			var popup_element = $( '.uamodal-' + popup_id );
+			var page_views_enabled = popup_element.data( 'page-views-enabled' );
+			var required_views = parseInt( popup_element.data( 'page-views-count' ) || '3' );
+			var tracking_scope = popup_element.data( 'page-views-scope' ) || 'global';
+			
+			if ( 'yes' === page_views_enabled ) {
+				if ( ! UAELModalPopup._checkPageViewCondition( popup_id, required_views ) ) {
+					display = false;
+					blockReasons.push( 'Page views threshold not met' );
+				}
+			}
+
+			// Check sessions condition
+			var sessions_enabled = popup_element.data( 'sessions-enabled' );
+			var required_sessions = parseInt( popup_element.data( 'sessions-count' ) || '2' );
+			
+			if ( 'yes' === sessions_enabled ) {
+				if ( ! UAELModalPopup._checkSessionCondition( popup_id, required_sessions ) ) {
+					display = false;
+					blockReasons.push( 'Sessions threshold not met' );
+				}
+			}
+
 			// Check if any other modal is opened on screen.
 			if( $( '.uael-show' ).length > 0 ) {
 				display = false;
+				blockReasons.push( 'Another modal is already open' );
 			}
 
 			// Check if this is preview or actuall load.
 			if( $( '#modal-' + popup_id ).hasClass( 'uael-modal-editor' ) ) {
 				display = false;
+				blockReasons.push( 'Editor preview mode' );
 			}
 
 			return display;
@@ -251,6 +279,122 @@
 				Cookies.set( 'uael-modal-popup-' + popup_id, true, { expires: cookies_days, secure: url_condition } );
 			}
 		},
+
+		/**
+		 * Manual page views increment (for testing purposes)
+		 * Note: Actual page view tracking is now handled globally with scope options
+		 */
+		_incrementPageViews: function( scope ) {
+			scope = scope || 'global'; // Default to global if not specified
+			
+			if ( scope === 'global' ) {
+				var currentViews = parseInt( localStorage.getItem( 'uael_page_views' ) || '0' );
+				currentViews++;
+				localStorage.setItem( 'uael_page_views', currentViews.toString() );
+				return currentViews;
+			} else if ( scope === 'current' ) {
+				var currentUrl = window.location.href;
+				var urlKey = 'uael_page_views_' + btoa(currentUrl).replace(/[^a-zA-Z0-9]/g, '').substring(0, 50);
+				var currentPageViews = parseInt( localStorage.getItem( urlKey ) || '0' );
+				currentPageViews++;
+				localStorage.setItem( urlKey, currentPageViews.toString() );
+				
+				return currentPageViews;
+			}
+		},
+
+		/**
+		 * Check if page view condition is met for popup
+		 *
+		 */
+		_checkPageViewCondition: function( popup_id, required_views ) {
+			try {
+				// Get popup settings
+				var popup_element = $( '.uamodal-' + popup_id );
+				var tracking_scope = popup_element.data( 'page-views-scope' ) || 'global';
+				
+				var current_views = 0;
+				var condition_met = false;
+				
+				if ( tracking_scope === 'global' ) {
+					// Global tracking: check total site page views
+					current_views = parseInt( localStorage.getItem( 'uael_page_views' ) || '0' );
+					condition_met = current_views >= required_views;
+				} else if ( tracking_scope === 'current' ) {
+					// Current page tracking: check this page's view count
+					var currentUrl = window.location.href;
+					var urlKey = 'uael_page_views_' + btoa(currentUrl).replace(/[^a-zA-Z0-9]/g, '').substring(0, 50);
+					
+					// Alternative: get URL key from popup storage
+					var popupUrlKey = 'uael_popup_' + popup_id + '_url_key';
+					var storedUrlKey = localStorage.getItem( popupUrlKey );
+					if ( storedUrlKey ) {
+						urlKey = storedUrlKey;
+					}
+					
+					current_views = parseInt( localStorage.getItem( urlKey ) || '0' );
+					condition_met = current_views >= required_views;
+				}
+				
+				return condition_met;
+			} catch ( e ) {
+				// If localStorage is not available, always return true to avoid blocking
+				return true;
+			}
+		},
+
+		/**
+		 * Initialize session tracking for a popup
+		 *
+		 */
+		_initializeSessionTracking: function( popup_id ) {
+			try {
+				// Set baseline when popup session rule is first configured
+				var baselineKey = 'uael_popup_' + popup_id + '_sessions_baseline';
+				var currentSessions = UAELModalPopup._getCurrentSessionCount();
+
+				
+				// Only set baseline if it doesn't exist (first time configuration)
+				if ( null === localStorage.getItem( baselineKey ) ) {
+					localStorage.setItem( baselineKey, currentSessions.toString() );
+				}
+			} catch ( e ) {
+				// If localStorage is not available, silently fail
+			}
+		},
+
+		/**
+		 * Get current session count
+		 *
+		 */
+		_getCurrentSessionCount: function() {
+			try {
+				return parseInt( localStorage.getItem( 'uael_sessions' ) || '0' );
+			} catch ( e ) {
+				return 0;
+			}
+		},
+
+		/**
+		 * Check if session condition is met for popup
+		 *
+		 */
+		_checkSessionCondition: function( popup_id, required_sessions ) {
+			try {
+				var currentSessions = UAELModalPopup._getCurrentSessionCount();
+				var baselineKey = 'uael_popup_' + popup_id + '_sessions_baseline';
+				var baseline = parseInt( localStorage.getItem( baselineKey ) || '0' );
+				
+				// Calculate sessions since popup was configured
+				var sessionsSinceBaseline = currentSessions - baseline;
+				
+				return sessionsSinceBaseline >= required_sessions;
+			} catch ( e ) {
+				// If localStorage is not available, always return true to avoid blocking
+				return true;
+			}
+		},
+
 	}
 
 	/**
@@ -322,7 +466,9 @@
 			|| 'photo' == trigger_on
 			|| 'button' == trigger_on
 		) {
-			UAELModalPopup._show( popup_id );
+			if ( UAELModalPopup._canShow( popup_id ) ) {
+				UAELModalPopup._show( popup_id );
+			}
 		}
 	} );
 
@@ -443,6 +589,10 @@
 	 */
 	$( document ).ready( function( e ) {
 
+		// Note: Session tracking is now handled globally in the main plugin file
+		// Note: Page view tracking is now handled globally in the main plugin file
+		// This ensures ALL pages increment the counters, not just pages with modal popups
+
 		var current_url = window.location.href;
 		if( current_url.indexOf( '&action=elementor' ) <= 0 ) {
 			$( '.uael-modal-parent-wrapper' ).each( function() {
@@ -468,6 +618,12 @@
 			var custom_id = $this.data( 'custom-id' );
 			var scroll_direction = $this.data( 'scroll-direction' );
 			var scroll_percentage = $this.data( 'scroll-percentage' );
+
+			// Initialize session tracking for popups that have sessions enabled
+			var sessions_enabled = $this.data( 'sessions-enabled' );
+			if ( 'yes' === sessions_enabled ) {
+				UAELModalPopup._initializeSessionTracking( popup_id );
+			}
 
 			// Trigger automatically.
 			if( 'automatic' == trigger_on ) {
@@ -518,10 +674,12 @@
 							}
 						}
 						
-						if (shouldTrigger && UAELModalPopup._canShow(popup_id)) {
-							UAELModalPopup._show(popup_id);
-							// Remove scroll event after triggering to prevent multiple triggers.
-							$(window).off('scroll');
+						if (shouldTrigger) {
+							if (UAELModalPopup._canShow(popup_id)) {
+								UAELModalPopup._show(popup_id);
+								// Remove scroll event after triggering to prevent multiple triggers.
+								$(window).off('scroll');
+							}
 						}
 					}
 					

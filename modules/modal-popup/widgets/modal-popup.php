@@ -1603,6 +1603,138 @@ class Modal_Popup extends Common_Widget {
 				)
 			);
 
+			// Page Views Settings.
+			$this->add_control(
+				'page_views_heading',
+				array(
+					'label'     => __( 'Page Views Settings', 'uael' ),
+					'type'      => Controls_Manager::HEADING,
+					'separator' => 'before',
+					'condition' => array(
+						'modal_on' => array( 'automatic', 'on_scroll', 'on_scroll_element' ),
+					),
+				)
+			);
+
+			$this->add_control(
+				'enable_page_views',
+				array(
+					'label'        => __( 'Enable Page Views', 'uael' ),
+					'type'         => Controls_Manager::SWITCHER,
+					'default'      => 'no',
+					'return_value' => 'yes',
+					'label_off'    => __( 'No', 'uael' ),
+					'label_on'     => __( 'Yes', 'uael' ),
+					'description'  => __( 'Show popup only after visitor has viewed a specific number of pages.', 'uael' ),
+					'condition'    => array(
+						'modal_on' => array( 'automatic', 'on_scroll', 'on_scroll_element' ),
+					),
+				)
+			);
+
+			$this->add_control(
+				'page_views_scope',
+				array(
+					'label'       => __( 'Page Views Tracking Scope', 'uael' ),
+					'type'        => Controls_Manager::SELECT,
+					'default'     => 'global',
+					'options'     => array(
+						'global'  => __( 'Global (All Pages)', 'uael' ),
+						'current' => __( 'Current Page Only', 'uael' ),
+					),
+					'condition'   => array(
+						'modal_on'          => array( 'automatic', 'on_scroll', 'on_scroll_element' ),
+						'enable_page_views' => 'yes',
+					),
+					'description' => __( 'Choose how page views are counted for this popup.', 'uael' ),
+				)
+			);
+
+			$this->add_control(
+				'page_views_count',
+				array(
+					'label'       => __( 'Show After X Page Views', 'uael' ),
+					'type'        => Controls_Manager::NUMBER,
+					'default'     => 3,
+					'min'         => 1,
+					'max'         => 100,
+					'condition'   => array(
+						'modal_on'          => array( 'automatic', 'on_scroll', 'on_scroll_element' ),
+						'enable_page_views' => 'yes',
+					),
+					'description' => __( 'Display the popup after the visitor has viewed a specific number of pages on your site. Page views are counted per browser session.', 'uael' ),
+				)
+			);
+
+			$this->add_control(
+				'page_views_note',
+				array(
+					'type'      => Controls_Manager::RAW_HTML,
+					'raw'       => sprintf( '<p style="font-size: 11px;font-style: italic;line-height: 1.4;color: #a4afb7;">%s</p>', __( 'Note: Page views are tracked using the browsers local storage and will reset if the browser data is cleared. This condition works independently of other display rules.', 'uael' ) ),
+					'condition' => array(
+						'modal_on'          => array( 'automatic', 'on_scroll', 'on_scroll_element' ),
+						'enable_page_views' => 'yes',
+					),
+				)
+			);
+
+			// Sessions Settings.
+			$this->add_control(
+				'sessions_heading',
+				array(
+					'label'     => __( 'Sessions Settings', 'uael' ),
+					'type'      => Controls_Manager::HEADING,
+					'separator' => 'before',
+					'condition' => array(
+						'modal_on' => array( 'automatic', 'on_scroll', 'on_scroll_element' ),
+					),
+				)
+			);
+
+			$this->add_control(
+				'enable_sessions',
+				array(
+					'label'        => __( 'Enable Sessions', 'uael' ),
+					'type'         => Controls_Manager::SWITCHER,
+					'default'      => 'no',
+					'return_value' => 'yes',
+					'label_off'    => __( 'No', 'uael' ),
+					'label_on'     => __( 'Yes', 'uael' ),
+					'description'  => __( 'Show popup only after visitor has completed a specific number of browser sessions.', 'uael' ),
+					'condition'    => array(
+						'modal_on' => array( 'automatic', 'on_scroll', 'on_scroll_element' ),
+					),
+				)
+			);
+
+			$this->add_control(
+				'sessions_count',
+				array(
+					'label'       => __( 'Show After X Sessions', 'uael' ),
+					'type'        => Controls_Manager::NUMBER,
+					'default'     => 2,
+					'min'         => 1,
+					'max'         => 100,
+					'condition'   => array(
+						'modal_on'        => array( 'automatic', 'on_scroll', 'on_scroll_element' ),
+						'enable_sessions' => 'yes',
+					),
+					'description' => __( 'The popup will show after the visitor completes the set number of browser sessions. A new session starts when they reopen your site in a new browser window.', 'uael' ),
+				)
+			);
+
+			$this->add_control(
+				'sessions_note',
+				array(
+					'type'      => Controls_Manager::RAW_HTML,
+					'raw'       => sprintf( '<p style="font-size: 11px;font-style: italic;line-height: 1.4;color: #a4afb7;">%s</p>', __( 'Note: Sessions track unique browser visits to your website. A new session starts when a visitor opens your site in a new browser session. Multiple pages viewed in the same session count as one session. Sessions are tracked using browser storage and reset when browser data is cleared.', 'uael' ) ),
+					'condition' => array(
+						'modal_on'        => array( 'automatic', 'on_scroll', 'on_scroll_element' ),
+						'enable_sessions' => 'yes',
+					),
+				)
+			);
+
 		$this->end_controls_section();
 	}
 
@@ -2976,25 +3108,30 @@ class Modal_Popup extends Common_Widget {
 		$this->add_render_attribute(
 			'parent-wrapper',
 			array(
-				'id'                     => $this->get_id() . '-overlay',
-				'data-trigger-on'        => $settings['modal_on'],
-				'data-close-on-esc'      => $settings['esc_keypress'],
-				'data-close-on-overlay'  => $settings['overlay_click'],
-				'data-exit-intent'       => isset( $settings['exit_intent'] ) ? $settings['exit_intent'] : null,
-				'data-after-sec'         => isset( $settings['after_second'] ) ? $settings['after_second'] : null,
-				'data-after-sec-val'     => isset( $settings['after_second_value']['size'] ) ? $settings['after_second_value']['size'] : null,
-				'data-cookies'           => $enable_cookies,
-				'data-cookies-days'      => isset( $cookie_days ) && $cookie_days ? $cookie_days['size'] : null,
-				'data-cookies-type'      => $cookie_type,
-				'data-custom'            => $settings['modal_custom'],
-				'data-custom-id'         => $this->get_settings_for_display( 'modal_custom_id' ),
-				'data-content'           => $settings['content_type'],
-				'data-autoplay'          => $settings['video_autoplay'],
-				'data-device'            => ( isset( $_SERVER['HTTP_USER_AGENT'] ) && false !== ( stripos( sanitize_text_field( $_SERVER['HTTP_USER_AGENT'] ), 'iPhone' ) ) ? 'true' : 'false' ), // phpcs:ignore WordPressVIPMinimum.Variables.RestrictedVariables.cache_constraints___SERVER__HTTP_USER_AGENT__
-				'data-async'             => ( 'yes' === $settings['async_iframe'] ) ? true : false,
-				'data-scroll-direction'  => isset( $settings['scroll_direction'] ) ? $settings['scroll_direction'] : 'down',
-				'data-scroll-percentage' => isset( $settings['scroll_percentage']['size'] ) ? $settings['scroll_percentage']['size'] : '',
-				'data-scroll-element'    => isset( $settings['scroll_element_selector'] ) ? esc_attr( $settings['scroll_element_selector'] ) : '',
+				'id'                      => $this->get_id() . '-overlay',
+				'data-trigger-on'         => $settings['modal_on'],
+				'data-close-on-esc'       => $settings['esc_keypress'],
+				'data-close-on-overlay'   => $settings['overlay_click'],
+				'data-exit-intent'        => isset( $settings['exit_intent'] ) ? $settings['exit_intent'] : null,
+				'data-after-sec'          => isset( $settings['after_second'] ) ? $settings['after_second'] : null,
+				'data-after-sec-val'      => isset( $settings['after_second_value']['size'] ) ? $settings['after_second_value']['size'] : null,
+				'data-cookies'            => $enable_cookies,
+				'data-cookies-days'       => isset( $cookie_days ) && $cookie_days ? $cookie_days['size'] : null,
+				'data-cookies-type'       => $cookie_type,
+				'data-custom'             => $settings['modal_custom'],
+				'data-custom-id'          => $this->get_settings_for_display( 'modal_custom_id' ),
+				'data-content'            => $settings['content_type'],
+				'data-autoplay'           => $settings['video_autoplay'],
+				'data-device'             => ( isset( $_SERVER['HTTP_USER_AGENT'] ) && false !== ( stripos( sanitize_text_field( $_SERVER['HTTP_USER_AGENT'] ), 'iPhone' ) ) ? 'true' : 'false' ), // phpcs:ignore WordPressVIPMinimum.Variables.RestrictedVariables.cache_constraints___SERVER__HTTP_USER_AGENT__
+				'data-async'              => ( 'yes' === $settings['async_iframe'] ) ? true : false,
+				'data-scroll-direction'   => isset( $settings['scroll_direction'] ) ? $settings['scroll_direction'] : 'down',
+				'data-scroll-percentage'  => isset( $settings['scroll_percentage']['size'] ) ? $settings['scroll_percentage']['size'] : '',
+				'data-scroll-element'     => isset( $settings['scroll_element_selector'] ) ? esc_attr( $settings['scroll_element_selector'] ) : '',
+				'data-page-views-enabled' => isset( $settings['enable_page_views'] ) ? $settings['enable_page_views'] : 'no',
+				'data-page-views-count'   => isset( $settings['page_views_count'] ) ? $settings['page_views_count'] : 3,
+				'data-page-views-scope'   => isset( $settings['page_views_scope'] ) ? $settings['page_views_scope'] : 'global',
+				'data-sessions-enabled'   => isset( $settings['enable_sessions'] ) ? $settings['enable_sessions'] : 'no',
+				'data-sessions-count'     => isset( $settings['sessions_count'] ) ? $settings['sessions_count'] : 2,
 			)
 		);
 

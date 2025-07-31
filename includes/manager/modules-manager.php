@@ -85,6 +85,7 @@ class Module_Manager {
 			'section-divider',
 			'instagram-feed',
 			'twitter',
+			'sticky-header',
 		);
 
 		foreach ( $all_modules as $module_name ) {

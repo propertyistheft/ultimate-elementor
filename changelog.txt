@@ -1,3 +1,12 @@
+Version 1.40.0 - 31st July 2025
+- New: Sticky Header functionality.
+- Improvement: Added filter to change empty note for Table of content widget.
+- Improvement: Modal Popup - Advanced Rule - Show after X page views
+- Improvement: Modal Popup - Advanced Rule - Show after X Sessions
+- Fix: Advanced Navigation Menu - Added support to "Open in new tab" setting for WordPress deafult menu.
+- Fix: Login Form - Emails not getting accepted like WordPress login system.
+- Fix: Strengthened codebase with security improvements.
+
 Version 1.39.9 - Thursday, 17th July 2025
 - Improvement: Modal Popup - Added new control, On Scroll Percentage based trigger.
 - Improvement: Modal Popup - Added new control, On Scroll to Element based trigger.

@@ -926,6 +926,11 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 
 			check_ajax_referer( 'updates', '_ajax_nonce' );
 
+			// Check if user has permission to install plugin.
+			if ( ! current_user_can( 'install_plugins' ) ) {
+				wp_send_json_error( esc_html__( 'Plugin installation is disabled for you on this site.', 'uael' ) );
+			}
+
 			// Fetching the plugin slug from the AJAX request.
 			// @psalm-suppress PossiblyInvalidArgument.
 			$plugin_slug = isset( $_POST['slug'] ) && is_string( $_POST['slug'] ) ? sanitize_text_field( wp_unslash( $_POST['slug'] ) ) : '';
@@ -972,6 +977,11 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 
 			check_ajax_referer( 'updates', '_ajax_nonce' );
 
+			// Check if user has permission to install theme.
+			if ( ! current_user_can( 'install_themes' ) ) {
+				wp_send_json_error( esc_html__( 'Theme installation is disabled for you on this site.', 'uael' ) );
+			}
+
 			// Fetching the plugin slug from the AJAX request.
 			// @psalm-suppress PossiblyInvalidArgument.
 			$theme_slug = isset( $_POST['slug'] ) && is_string( $_POST['slug'] ) ? sanitize_text_field( wp_unslash( $_POST['slug'] ) ) : '';
@@ -1013,6 +1023,11 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 		public static function save_hfe_compatibility_option_callback() {
 			// Check nonce for security.
 			check_ajax_referer( 'uael-widget-nonce', 'nonce' );
+
+			// Check if user has permission to manage options.
+			if ( ! current_user_can( 'manage_options' ) ) {
+				wp_send_json_error( esc_html__( 'You do not have permission to perform this action.', 'uael' ) );
+			}
 
 			if ( isset( $_POST['hfe_compatibility_option'] ) ) {
 				// Sanitize and update option.
@@ -1202,6 +1217,11 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 
 			check_ajax_referer( 'uael-widget-nonce', 'nonce' );
 
+			// Check if user has permission to manage options.
+			if ( ! current_user_can( 'manage_options' ) ) {
+				wp_send_json_error( __( 'You do not have permission to perform this action.', 'uael' ) );
+			}
+
 			$module_id      = isset( $_POST['module_id'] ) ? sanitize_text_field( $_POST['module_id'] ) : '';
 			$is_pro         = isset( $_POST['is_pro'] ) ? sanitize_text_field( $_POST['is_pro'] ) : '';
 			$is_lite_active = UAEL_Helper::is_lite_active(); // phpcs:ignore WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase
@@ -1236,6 +1256,11 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 
 			check_ajax_referer( 'uael-widget-nonce', 'nonce' );
 
+			// Check if user has permission to manage options.
+			if ( ! current_user_can( 'manage_options' ) ) {
+				wp_send_json_error( __( 'You do not have permission to perform this action.', 'uael' ) );
+			}
+
 			$module_id      = isset( $_POST['module_id'] ) ? sanitize_text_field( $_POST['module_id'] ) : '';
 			$is_pro         = isset( $_POST['is_pro'] ) ? sanitize_text_field( $_POST['is_pro'] ) : '';
 			$is_lite_active = UAEL_Helper::is_lite_active(); // phpcs:ignore WordPress.NamingConventions.ValidVariableName.VariableNotSnakeCase
@@ -1268,6 +1293,11 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 		public static function bulk_activate_widgets() {
 
 			check_ajax_referer( 'uael-widget-nonce', 'nonce' );
+
+			// Check if user has permission to manage options.
+			if ( ! current_user_can( 'manage_options' ) ) {
+				wp_send_json_error( __( 'You do not have permission to perform this action.', 'uael' ) );
+			}
 
 			if ( ! isset( self::$widget_list ) ) {
 				self::$widget_list = UAEL_Helper::get_widget_list();
@@ -1318,6 +1348,11 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 
 			check_ajax_referer( 'uael-widget-nonce', 'nonce' );
 
+			// Check if user has permission to manage options.
+			if ( ! current_user_can( 'manage_options' ) ) {
+				wp_send_json_error( __( 'You do not have permission to perform this action.', 'uael' ) );
+			}
+
 			if ( ! isset( self::$widget_list ) ) {
 				self::$widget_list = UAEL_Helper::get_widget_list();
 			}
@@ -1366,6 +1401,11 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 		public static function bulk_deactivate_unused_widgets() {
 			check_ajax_referer( 'uael-widget-nonce', 'nonce' );
 
+			// Check if user has permission to manage options.
+			if ( ! current_user_can( 'manage_options' ) ) {
+				wp_send_json_error( __( 'You do not have permission to perform this action.', 'uael' ) );
+			}
+
 			if ( ! isset( self::$widget_list ) ) {
 				self::$widget_list = UAEL_Helper::get_widget_list();
 			}
@@ -1376,7 +1416,7 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 			// Compare slugs from widget_list to keys in $used_widgets.
 			foreach ( self::$widget_list as $slug => $value ) {
 				if ( ! isset( $used_widgets[ $value['slug'] ] ) ) {
-					if ( 'DisplayConditions' === $slug || 'Particles' === $slug || 'PartyPropzExtension' === $slug || 'SectionDivider' === $slug || 'Cross_Domain' === $slug || 'Presets' === $slug ) {
+					if ( 'DisplayConditions' === $slug || 'Particles' === $slug || 'PartyPropzExtension' === $slug || 'SectionDivider' === $slug || 'Cross_Domain' === $slug || 'Presets' === $slug || 'StickyHeader' === $slug ) {
 						continue;
 					}
 					$unused_widgets[] = $slug;
@@ -1449,6 +1489,11 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 
 			check_ajax_referer( 'uael-widget-nonce', 'nonce' );
 
+			// Check if user has permission to manage options.
+			if ( ! current_user_can( 'manage_options' ) ) {
+				wp_send_json_error( __( 'You do not have permission to perform this action.', 'uael' ) );
+			}
+
 			// Get all skins.
 			$post_skins = UAEL_Helper::get_post_skin_list();
 
@@ -1476,6 +1521,11 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 
 			check_ajax_referer( 'uael-widget-nonce', 'nonce' );
 
+			// Check if user has permission to manage options.
+			if ( ! current_user_can( 'manage_options' ) ) {
+				wp_send_json_error( __( 'You do not have permission to perform this action.', 'uael' ) );
+			}
+
 			// Get all skins.
 			$post_skins = UAEL_Helper::get_post_skin_list();
 
@@ -1502,6 +1552,11 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 		public static function allow_beta_updates() {
 
 			check_ajax_referer( 'uael-widget-nonce', 'nonce' );
+
+			// Check if user has permission to manage options.
+			if ( ! current_user_can( 'manage_options' ) ) {
+				wp_send_json_error( __( 'You do not have permission to perform this action.', 'uael' ) );
+			}
 
 			$beta_update = isset( $_POST['allow_beta'] ) ? sanitize_text_field( $_POST['allow_beta'] ) : '';
 
@@ -1568,6 +1623,12 @@ if ( ! class_exists( 'UAEL_Admin' ) ) {
 		public static function uael_save_analytics_option() {
 			// Check nonce for security.
 			check_ajax_referer( 'uael-widget-nonce', 'nonce' );
+
+			// Check if user has permission to manage options.
+			if ( ! current_user_can( 'manage_options' ) ) {
+				wp_send_json_error( __( 'You do not have permission to perform this action.', 'uael' ) );
+			}
+			
 			if ( isset( $_POST['uae_analytics_optin'] ) ) {
 				// Sanitize and update option.
 				$option = sanitize_text_field( $_POST['uae_analytics_optin'] );

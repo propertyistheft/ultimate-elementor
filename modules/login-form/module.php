@@ -93,9 +93,13 @@ class Module extends Module_Base {
 
 				$data = $_POST;
 
-				$username   = ! empty( $data['username'] ) ? $data['username'] : '';
+				// Handle username separately - it might be an email with special characters like apostrophes.
+				// WordPress wp-login.php doesn't sanitize the username/email field to allow RFC 5322 compliant emails.
+				$username = ! empty( $data['username'] ) ? $data['username'] : '';
+				
+				// Password should not be sanitized as it may contain special characters.
 				$password   = ! empty( $data['password'] ) ? $data['password'] : '';
-				$rememberme = ! empty( $data['rememberme'] ) ? $data['rememberme'] : '';
+				$rememberme = ! empty( $data['rememberme'] ) ? sanitize_text_field( $data['rememberme'] ) : '';
 
 				$user_data = wp_signon(
 					array(
@@ -147,11 +151,16 @@ class Module extends Module_Base {
 
 		if ( isset( $_POST['data'] ) ) {
 
-			$data = array_map( 'sanitize_text_field', $_POST['data'] );
+			// Get the raw data first.
+			$raw_data = $_POST['data']; // phpcs:ignore WordPress.Security.ValidatedSanitizedInput.InputNotSanitized
 
-			$username   = ! empty( $data['username'] ) ? sanitize_user( $data['username'] ) : '';
-			$password   = ! empty( $data['password'] ) ? $data['password'] : '';
-			$rememberme = ! empty( $data['rememberme'] ) ? sanitize_text_field( $data['rememberme'] ) : '';
+			// Handle username separately - it might be an email with special characters like apostrophes.
+			// WordPress wp-login.php doesn't sanitize the username/email field to allow RFC 5322 compliant emails.
+			$username = ! empty( $raw_data['username'] ) ? wp_unslash( $raw_data['username'] ) : '';
+			
+			// Password should not be sanitized as it may contain special characters.
+			$password   = ! empty( $raw_data['password'] ) ? $raw_data['password'] : '';
+			$rememberme = ! empty( $raw_data['rememberme'] ) ? sanitize_text_field( $raw_data['rememberme'] ) : '';
 
 			$user_data = wp_signon(
 				array(
